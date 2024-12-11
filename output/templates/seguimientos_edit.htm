@@ -1,0 +1,605 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+			
+	</head>
+	<body class="{$stylename} function-edit"  >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<div class="r-topbar-page">
+			<div data-menu-width="full" 
+				 
+				class="r-topheader" 
+				data-resize-name="topbar"
+				data-body-align="left"
+			>
+								{BEGIN supertop_block}
+<nav class="navbar navbar-default" 
+	data-location="supertop" id="form_supertop_{$pageid}" data-makeup="topbar" {$form_supertop} data-pageid="{$pageid}" >
+			 
+							 
+				<span data-cellId="supertop_c1" data-pageid="{$pageid}" class=" r-ori-vert navbar-header" data-itemid="logo" {$item_logo}>
+				{BEGIN logo_block}
+	<A data-itemtype="logo" data-itemid="logo" {$item_logo} data-pageid="{$pageid}" class="navbar-brand" href="{$home_link}" data-pageid="{$pageid}" {$logo_hiddenattr}>
+		{$logo}
+	</A>
+{END logo_block}
+				<button data-pageid="1" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target="[data-mobile-controlled]">	
+					<span class="sr-only">Toggle navigation</span>	
+					<span class="icon-bar"></span>					
+				</button>				
+			</span>
+							 
+							 
+				<span data-cellId="supertop_c2" data-pageid="{$pageid}" class=" r-ori-vert navbar-collapse" data-itemtype="menu" data-itemid="menu" {$item_menu} data-pageid="{$pageid}">
+				{BEGIN menuitems_main}
+<ul data-itemtype="menu" data-itemid="menu" {$item_menu} data-pageid="{$pageid}"	class="r-menu nav navbar-nav" 
+	data-menulevel="1"
+>
+
+{BEGIN item_children1}
+<li class="
+	{BEGIN item_haschildren2} dropdown {END item_haschildren2} 
+	{$item_current}">
+<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h data-menu-top >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren2}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-bottom"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren2}
+	</span>
+	</a>
+{BEGIN item_showchildren2}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="2">
+	{BEGIN item_children2}
+		{BEGIN item_menulink2}
+		<li class="
+						{BEGIN item_haschildren2} dropdown {END item_haschildren2}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren2}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren2}
+	</span>
+	</a>
+			{BEGIN item_showchildren3}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="3">
+	{BEGIN item_children3}
+		{BEGIN item_menulink3}
+		<li class="
+						{BEGIN item_haschildren3} dropdown {END item_haschildren3}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren3}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren3}
+	</span>
+	</a>
+			{BEGIN item_showchildren4}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="4">
+	{BEGIN item_children4}
+		{BEGIN item_menulink4}
+		<li class="
+						{BEGIN item_haschildren4} dropdown {END item_haschildren4}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren4}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren4}
+	</span>
+	</a>
+			{BEGIN item_showchildren5}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="5">
+	{BEGIN item_children5}
+		{BEGIN item_menulink5}
+		<li class="
+						{BEGIN item_haschildren5} dropdown {END item_haschildren5}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren5}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren5}
+	</span>
+	</a>
+					</li>
+		{END item_menulink5}
+	{END item_children5}
+</ul>
+{END item_showchildren5}
+		</li>
+		{END item_menulink4}
+	{END item_children4}
+</ul>
+{END item_showchildren4}
+		</li>
+		{END item_menulink3}
+	{END item_children3}
+</ul>
+{END item_showchildren3}
+		</li>
+		{END item_menulink2}
+	{END item_children2}
+</ul>
+{END item_showchildren2}
+</li>
+{END item_children1}
+</ul>
+{END menuitems_main}
+			</span>
+							 
+							 
+				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c3" data-pageid="{$pageid}" data-itemid="loginform_login" {$item_loginform_login} data-topcell-item-type="loginform_login" >
+				{BEGIN guestloginbutton}
+<span data-itemtype="loginform_login" data-itemid="loginform_login" {$item_loginform_login} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" href="#" {$guestloginlink_attrs} >
+							Conectar			</a>
+</span>
+{END guestloginbutton}
+			</span>
+		 
+				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c3" data-pageid="{$pageid}" data-itemid="username_button" {$item_username_button} data-topcell-item-type="username_button" >
+				{BEGIN loggedas_message}
+<span data-itemtype="username_button" data-itemid="username_button" {$item_username_button} data-pageid="{$pageid}" data-small data-button-item>
+	<span class="dropdown ">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+			{BEGIN userbutton_icon}							<span class="glyphicon glyphicon-user"></span>
+						{END userbutton_icon}{$userbutton_image}			{$username}			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							{BEGIN userinfo_link}
+	<li data-itemtype="userinfo_link" data-itemid="userinfo_link" {$item_userinfo_link} data-pageid="{$pageid}" data-small >
+				<a  href="userinfo.php"  title="" >
+				
+		Perfil del usuario		
+		</a>
+	</li>
+{END userinfo_link}
+							{BEGIN logoutbutton}
+	<li data-itemtype="logout_link" data-itemid="logout_link" {$item_logout_link} data-pageid="{$pageid}" data-small >
+				<a  href="#" {$logoutlink_attrs}  title="" >
+				
+		Desconectarse		
+		</a>
+	</li>
+{END logoutbutton}
+							{BEGIN changepwd_link}
+	<li data-itemtype="changepassword_link" data-itemid="changepassword_link" {$item_changepassword_link} data-pageid="{$pageid}" data-small >
+				<a  href="changepwd.php" {$changepwdlink_attrs} id="changePasswordButton{$id}"  title="" >
+				
+		Cambiar contraseña		
+		</a>
+	</li>
+{END changepwd_link}
+					</ul>
+	</span>
+</span>
+{END loggedas_message}
+			</span>
+								</nav>
+{END supertop_block}
+					{$locking}
+			</div>	
+			<div data-body-align="left"  data-body-width="standard" class="r-body" data-resize-top="topbar" >
+				<div class="r-top">
+								{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="topbar" {$form_top} data-pageid="{$pageid}" >		
+	 
+				<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	
+">
+		 
+		<h2 data-itemtype="edit_header" data-itemid="edit_header" {$item_edit_header} data-pageid="{$pageid}" >{$pagetitlelabel bolsa_empleo_seguimientos edit}</h2>
+		</div>					</div>
+			</div>		
+{END top_block}
+					</div>
+				<div class="r-content">
+										<div class="r-data-block" data-body-width="standard" >
+						
+											<div class="r-above">
+					{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="topbar" {$form_above-grid} data-pageid="{$pageid}" >		
+	 
+				<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	
+">
+		{BEGIN firstAboveGridCell}
+		 
+		<div data-itemtype="edit_message" data-itemid="edit_message" {$item_edit_message} data-pageid="{$pageid}" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN message_back_button}
+			<button class="btn btn-sm btn-default" {$backbutton_attrs}>Volver a la lista</button>
+	{END message_back_button}
+{BEGIN message_view_page_button}
+		<a class="btn btn-sm btn-default" href="seguimientos_view.php?{$editlink}" {$view_page_button_attrs}>Ver</a>
+{END message_view_page_button}
+</div>
+</div>
+			{END firstAboveGridCell}	
+	</div>					</div>
+			</div>		
+{END above-grid_block}
+	</div>
+<div class="r-grid">
+	{BEGIN grid_tabs}
+  <ul class="nav nav-tabs bsgrid_tabs">
+	{$grid_tabs_content}
+  </ul>
+{END grid_tabs}
+					{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="left"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="topbar" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr {$row_grid_0} >
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="4"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN fecha_creacion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fecha_creacion}  r-vertical-field" 
+	data-signal-error-for="fecha_creacion{$id}" {$required_attr_fecha_creacion}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="fecha_creacion" data-fieldname="fecha_creacion" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_fecha_creacion}">
+		{BEGIN fecha_creacion_label}{$label bolsa_empleo_seguimientos fecha_creacion }{END fecha_creacion_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$fecha_creacion_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="fecha_creacion" {$tooltipAttr bolsa_empleo_seguimientos fecha_creacion } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_seguimientos fecha_creacion }		</div>
+	</div>
+</div>
+
+
+{END fecha_creacion_fieldblock}
+											
+{BEGIN id_postulacion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_postulacion}  r-vertical-field" 
+	data-signal-error-for="id_postulacion{$id}" {$required_attr_id_postulacion}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" {$item_integrated_edit_field5} data-pageid="{$pageid}" data-field="id_postulacion" data-fieldname="id_postulacion" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_postulacion}">
+		{BEGIN id_postulacion_label}{$label bolsa_empleo_seguimientos id_postulacion }{END id_postulacion_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_postulacion_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_postulacion" {$tooltipAttr bolsa_empleo_seguimientos id_postulacion } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_seguimientos id_postulacion }		</div>
+	</div>
+</div>
+
+
+{END id_postulacion_fieldblock}
+											
+{BEGIN id_estado_anterior_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_estado_anterior}  r-vertical-field" 
+	data-signal-error-for="id_estado_anterior{$id}" {$required_attr_id_estado_anterior}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="id_estado_anterior" data-fieldname="id_estado_anterior" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_estado_anterior}">
+		{BEGIN id_estado_anterior_label}{$label bolsa_empleo_seguimientos id_estado_anterior }{END id_estado_anterior_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_estado_anterior_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_estado_anterior" {$tooltipAttr bolsa_empleo_seguimientos id_estado_anterior } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_seguimientos id_estado_anterior }		</div>
+	</div>
+</div>
+
+
+{END id_estado_anterior_fieldblock}
+											
+{BEGIN id_nuevo_estado_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_nuevo_estado}  r-vertical-field" 
+	data-signal-error-for="id_nuevo_estado{$id}" {$required_attr_id_nuevo_estado}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="id_nuevo_estado" data-fieldname="id_nuevo_estado" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_nuevo_estado}">
+		{BEGIN id_nuevo_estado_label}{$label bolsa_empleo_seguimientos id_nuevo_estado }{END id_nuevo_estado_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_nuevo_estado_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_nuevo_estado" {$tooltipAttr bolsa_empleo_seguimientos id_nuevo_estado } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_seguimientos id_nuevo_estado }		</div>
+	</div>
+</div>
+
+
+{END id_nuevo_estado_fieldblock}
+											
+{BEGIN usuario_carga_id_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_usuario_carga_id}  r-vertical-field" 
+	data-signal-error-for="usuario_carga_id{$id}" {$required_attr_usuario_carga_id}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="usuario_carga_id" data-fieldname="usuario_carga_id" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_usuario_carga_id}">
+		{BEGIN usuario_carga_id_label}{$label bolsa_empleo_seguimientos usuario_carga_id }{END usuario_carga_id_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$usuario_carga_id_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="usuario_carga_id" {$tooltipAttr bolsa_empleo_seguimientos usuario_carga_id } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_seguimientos usuario_carga_id }		</div>
+	</div>
+</div>
+
+
+{END usuario_carga_id_fieldblock}
+											
+{BEGIN usuario_carga_nombre_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_usuario_carga_nombre}  r-vertical-field" 
+	data-signal-error-for="usuario_carga_nombre{$id}" {$required_attr_usuario_carga_nombre}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="usuario_carga_nombre" data-fieldname="usuario_carga_nombre" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_usuario_carga_nombre}">
+		{BEGIN usuario_carga_nombre_label}{$label bolsa_empleo_seguimientos usuario_carga_nombre }{END usuario_carga_nombre_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$usuario_carga_nombre_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="usuario_carga_nombre" {$tooltipAttr bolsa_empleo_seguimientos usuario_carga_nombre } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_seguimientos usuario_carga_nombre }		</div>
+	</div>
+</div>
+
+
+{END usuario_carga_nombre_fieldblock}
+											
+{BEGIN id_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_vacancia}  r-vertical-field" 
+	data-signal-error-for="id_vacancia{$id}" {$required_attr_id_vacancia}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" {$item_integrated_edit_field6} data-pageid="{$pageid}" data-field="id_vacancia" data-fieldname="id_vacancia" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_vacancia}">
+		{BEGIN id_vacancia_label}{$label bolsa_empleo_seguimientos id_vacancia }{END id_vacancia_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_vacancia_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_vacancia" {$tooltipAttr bolsa_empleo_seguimientos id_vacancia } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_seguimientos id_vacancia }		</div>
+	</div>
+</div>
+
+
+{END id_vacancia_fieldblock}
+											
+{BEGIN id_empresa_sucursal_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_empresa_sucursal}  r-vertical-field" 
+	data-signal-error-for="id_empresa_sucursal{$id}" {$required_attr_id_empresa_sucursal}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" {$item_integrated_edit_field7} data-pageid="{$pageid}" data-field="id_empresa_sucursal" data-fieldname="id_empresa_sucursal" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_empresa_sucursal}">
+		{BEGIN id_empresa_sucursal_label}{$label bolsa_empleo_seguimientos id_empresa_sucursal }{END id_empresa_sucursal_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_empresa_sucursal_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_empresa_sucursal" {$tooltipAttr bolsa_empleo_seguimientos id_empresa_sucursal } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_seguimientos id_empresa_sucursal }		</div>
+	</div>
+</div>
+
+
+{END id_empresa_sucursal_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+	</div>
+<div class="r-below">
+					{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="topbar" {$form_below-grid} data-pageid="{$pageid}" >		
+	 
+				<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-6
+	
+">
+		 
+		{BEGIN save_edit}
+<span data-itemtype="edit_save" data-itemid="edit_save" {$item_edit_save} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$savebutton_attrs} >
+							Guardar			</a>
+</span>
+{END save_edit}
+	 
+		{BEGIN back_button}
+<span data-itemtype="edit_back_list" data-itemid="edit_back_list" {$item_edit_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$backbutton_attrs} >
+							Volver a la lista			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN close_button}
+<span data-itemtype="edit_close" data-itemid="edit_close" {$item_edit_close} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$closebutton_attrs} >
+							Cancelar			</a>
+</span>
+{END close_button}
+		</div>			 
+				<div 
+	data-cellId="below-grid_c2" data-pageid="{$pageid}"	{$cell_below-grid_c2}
+	class="r-align-right r-ori-vert			col-md-6
+	
+">
+		 
+		<span data-itemtype="hamburger" data-itemid="hamburger" {$item_hamburger} data-pageid="{$pageid}" data-small data-button-item>
+	<span class="dropdown dropup">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+										<span class="glyphicon glyphicon-menu-hamburger"></span>
+												<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+								<li data-itemtype="edit_reset" data-itemid="edit_reset" {$item_edit_reset} data-pageid="{$pageid}" data-small >
+				<a  {$resetbutton_attrs}  title="" >
+				
+		Reiniciar		
+		</a>
+	</li>
+							{BEGIN view_page_button}
+	<li data-itemtype="edit_view" data-itemid="edit_view" {$item_edit_view} data-pageid="{$pageid}" data-small >
+				<a  href="seguimientos_view.php?{$editlink}" {$view_page_button_attrs}  title="" >
+				
+		Ver		
+		</a>
+	</li>
+{END view_page_button}
+					</ul>
+	</span>
+</span>
+		</div>					</div>
+			</div>		
+{END below-grid_block}
+	</div>
+
+
+
+
+											
+					</div>
+				</div>
+			</div>
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

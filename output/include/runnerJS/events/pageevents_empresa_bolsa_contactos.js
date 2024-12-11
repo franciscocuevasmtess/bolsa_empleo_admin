@@ -1,0 +1,5 @@
+
+Runner.pages.PageSettings.addPageEvent('bolsa_empleo.empresa_bolsa_contactos',Runner.pages.constants.PAGE_ADD,"afterPageReady",function(pageObj,proxy,pageid,inlineRow,inlineObject,row){$(".value_id_cargo_"+pageid).select2({tags:true,placeholder:'Seleccionar',allowClear:true,multiple:false,language:"es"}).on('select2:close',function(){var element=$(this);var new_category=$.trim(element.val());if(new_category!='')
+{$.ajax({url:"add_cargo.php",method:"POST",data:{category_name:new_category},success:function(data)
+{if(data>=1)
+{element.append('<option value="'+data+'">'+new_category+'</option>').val(data);}}})}});this.on('afterSave',function(){swal({icon:"success",title:"NUEVO CONTACTO AGREGADO"});setTimeout(function(){location.reload();},3000);});var nombre=Runner.getControl(pageid,'nombre');var telefono=Runner.getControl(pageid,'telefono');var correo=Runner.getControl(pageid,'email');var sucursal=Runner.getControl(pageid,'empresas_bolsa_sucursales_id');nombre.addStyle('text-transform: uppercase;');telefono.addStyle('text-transform: uppercase;');sucursal.addStyle('text-transform: uppercase;');;});

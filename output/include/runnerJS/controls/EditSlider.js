@@ -1,0 +1,3 @@
+
+Runner.controls.EditSlider=Runner.extend(Runner.controls.Control,{lowerBound:1,upperBound:10,decimals:0,constructor:function(cfg){this.addEvent(["change","keyup"]);Runner.controls.EditSlider.superclass.constructor.call(this,cfg);this.lowerBound=this.getFieldSetting("lowerBound");this.upperBound=this.getFieldSetting("upperBound");this.decimals=this.getFieldSetting("decimals");$("#"+this.valContId).slideControl({lowerBound:this.lowerBound,upperBound:this.upperBound,decimals:this.decimals});},getForSubmit:function(){if(!this.appearOnPage()){return[];}
+return[this.valueElem.clone().val(this.getValue())]}});Runner.controls.constants["EditSlider"]="EditSlider";

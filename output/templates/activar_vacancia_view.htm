@@ -1,0 +1,998 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+			
+	</head>
+
+	<body class="{$stylename} function-view" >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="view_header" data-itemid="view_header" {$item_view_header} data-pageid="{$pageid}" >{$pagetitlelabel activar_vacancia view}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr {$row_grid_0} >
+										
+
+{BEGIN cellblock_grid_c1}
+<td
+	{$cell_grid_c1}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c1" data-pageid="{$pageid}"
+		data-v-cell="4"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN ruc_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_ruc}  r-vertical-field" data-fieldname="ruc" data-signal-error-for="ruc{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="ruc" data-fieldname="ruc" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_ruc}">
+		
+		{BEGIN ruc_label}{$label activar_vacancia ruc }{END ruc_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$ruc_value}	</div>
+
+		
+</div>
+
+
+{END ruc_fieldblock}
+											
+{BEGIN id_empresa_sucursal_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_empresa_sucursal}  r-vertical-field" data-fieldname="id_empresa_sucursal" data-signal-error-for="id_empresa_sucursal{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="id_empresa_sucursal" data-fieldname="id_empresa_sucursal" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_empresa_sucursal}">
+		
+		{BEGIN id_empresa_sucursal_label}{$label activar_vacancia id_empresa_sucursal }{END id_empresa_sucursal_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_empresa_sucursal_value}	</div>
+
+		
+</div>
+
+
+{END id_empresa_sucursal_fieldblock}
+											
+{BEGIN id_contacto_sucursal_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_contacto_sucursal}  r-vertical-field" data-fieldname="id_contacto_sucursal" data-signal-error-for="id_contacto_sucursal{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="id_contacto_sucursal" data-fieldname="id_contacto_sucursal" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_contacto_sucursal}">
+		
+		{BEGIN id_contacto_sucursal_label}{$label activar_vacancia id_contacto_sucursal }{END id_contacto_sucursal_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_contacto_sucursal_value}	</div>
+
+		
+</div>
+
+
+{END id_contacto_sucursal_fieldblock}
+											
+{BEGIN id_rubro_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_rubro}  r-vertical-field" data-fieldname="id_rubro" data-signal-error-for="id_rubro{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="id_rubro" data-fieldname="id_rubro" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_rubro}">
+		
+		{BEGIN id_rubro_label}{$label activar_vacancia id_rubro }{END id_rubro_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_rubro_value}	</div>
+
+		
+</div>
+
+
+{END id_rubro_fieldblock}
+											
+{BEGIN fk_ocupacion_puesto_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fk_ocupacion_puesto}  r-vertical-field" data-fieldname="fk_ocupacion_puesto" data-signal-error-for="fk_ocupacion_puesto{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="fk_ocupacion_puesto" data-fieldname="fk_ocupacion_puesto" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_fk_ocupacion_puesto}">
+		
+		{BEGIN fk_ocupacion_puesto_label}{$label activar_vacancia fk_ocupacion_puesto }{END fk_ocupacion_puesto_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$fk_ocupacion_puesto_value}	</div>
+
+		
+</div>
+
+
+{END fk_ocupacion_puesto_fieldblock}
+											
+{BEGIN descripcion_puesto_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_descripcion_puesto}  r-vertical-field" data-fieldname="descripcion_puesto" data-signal-error-for="descripcion_puesto{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" {$item_integrated_edit_field5} data-pageid="{$pageid}" data-field="descripcion_puesto" data-fieldname="descripcion_puesto" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_descripcion_puesto}">
+		
+		{BEGIN descripcion_puesto_label}{$label activar_vacancia descripcion_puesto }{END descripcion_puesto_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$descripcion_puesto_value}	</div>
+
+		
+</div>
+
+
+{END descripcion_puesto_fieldblock}
+											
+{BEGIN id_departamento_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_departamento}  r-vertical-field" data-fieldname="id_departamento" data-signal-error-for="id_departamento{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" {$item_integrated_edit_field6} data-pageid="{$pageid}" data-field="id_departamento" data-fieldname="id_departamento" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_departamento}">
+		
+		{BEGIN id_departamento_label}{$label activar_vacancia id_departamento }{END id_departamento_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_departamento_value}	</div>
+
+		
+</div>
+
+
+{END id_departamento_fieldblock}
+											
+{BEGIN id_cidudad_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_cidudad}  r-vertical-field" data-fieldname="id_cidudad" data-signal-error-for="id_cidudad{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" {$item_integrated_edit_field7} data-pageid="{$pageid}" data-field="id_cidudad" data-fieldname="id_cidudad" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_cidudad}">
+		
+		{BEGIN id_cidudad_label}{$label activar_vacancia id_cidudad }{END id_cidudad_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_cidudad_value}	</div>
+
+		
+</div>
+
+
+{END id_cidudad_fieldblock}
+											
+{BEGIN salario_final_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_salario_final}  r-vertical-field" data-fieldname="salario_final" data-signal-error-for="salario_final{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" {$item_integrated_edit_field8} data-pageid="{$pageid}" data-field="salario_final" data-fieldname="salario_final" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_salario_final}">
+		
+		{BEGIN salario_final_label}{$label activar_vacancia salario_final }{END salario_final_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$salario_final_value}	</div>
+
+		
+</div>
+
+
+{END salario_final_fieldblock}
+											
+{BEGIN salario_descripcion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_salario_descripcion}  r-vertical-field" data-fieldname="salario_descripcion" data-signal-error-for="salario_descripcion{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="salario_descripcion" data-fieldname="salario_descripcion" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_salario_descripcion}">
+		
+		{BEGIN salario_descripcion_label}{$label activar_vacancia salario_descripcion }{END salario_descripcion_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$salario_descripcion_value}	</div>
+
+		
+</div>
+
+
+{END salario_descripcion_fieldblock}
+											
+{BEGIN tipo_contrato_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_tipo_contrato}  r-vertical-field" data-fieldname="tipo_contrato" data-signal-error-for="tipo_contrato{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field10" {$item_integrated_edit_field10} data-pageid="{$pageid}" data-field="tipo_contrato" data-fieldname="tipo_contrato" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_tipo_contrato}">
+		
+		{BEGIN tipo_contrato_label}{$label activar_vacancia tipo_contrato }{END tipo_contrato_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$tipo_contrato_value}	</div>
+
+		
+</div>
+
+
+{END tipo_contrato_fieldblock}
+											
+{BEGIN horario_rotativo_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_horario_rotativo}  r-vertical-field" data-fieldname="horario_rotativo" data-signal-error-for="horario_rotativo{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field11" {$item_integrated_edit_field11} data-pageid="{$pageid}" data-field="horario_rotativo" data-fieldname="horario_rotativo" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_horario_rotativo}">
+		
+		{BEGIN horario_rotativo_label}{$label activar_vacancia horario_rotativo }{END horario_rotativo_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$horario_rotativo_value}	</div>
+
+		
+</div>
+
+
+{END horario_rotativo_fieldblock}
+											
+{BEGIN modalidad_trabajo_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_modalidad_trabajo}  r-vertical-field" data-fieldname="modalidad_trabajo" data-signal-error-for="modalidad_trabajo{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field12" {$item_integrated_edit_field12} data-pageid="{$pageid}" data-field="modalidad_trabajo" data-fieldname="modalidad_trabajo" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_modalidad_trabajo}">
+		
+		{BEGIN modalidad_trabajo_label}{$label activar_vacancia modalidad_trabajo }{END modalidad_trabajo_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$modalidad_trabajo_value}	</div>
+
+		
+</div>
+
+
+{END modalidad_trabajo_fieldblock}
+											
+{BEGIN cantidad_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_cantidad_vacancia}  r-vertical-field" data-fieldname="cantidad_vacancia" data-signal-error-for="cantidad_vacancia{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field13" {$item_integrated_edit_field13} data-pageid="{$pageid}" data-field="cantidad_vacancia" data-fieldname="cantidad_vacancia" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_cantidad_vacancia}">
+		
+		{BEGIN cantidad_vacancia_label}{$label activar_vacancia cantidad_vacancia }{END cantidad_vacancia_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$cantidad_vacancia_value}	</div>
+
+		
+</div>
+
+
+{END cantidad_vacancia_fieldblock}
+											
+{BEGIN fecha_expiracion_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fecha_expiracion_vacancia}  r-vertical-field" data-fieldname="fecha_expiracion_vacancia" data-signal-error-for="fecha_expiracion_vacancia{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field14" {$item_integrated_edit_field14} data-pageid="{$pageid}" data-field="fecha_expiracion_vacancia" data-fieldname="fecha_expiracion_vacancia" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_fecha_expiracion_vacancia}">
+		
+		{BEGIN fecha_expiracion_vacancia_label}{$label activar_vacancia fecha_expiracion_vacancia }{END fecha_expiracion_vacancia_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$fecha_expiracion_vacancia_value}	</div>
+
+		
+</div>
+
+
+{END fecha_expiracion_vacancia_fieldblock}
+											
+{BEGIN nacionalidad_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_nacionalidad}  r-vertical-field" data-fieldname="nacionalidad" data-signal-error-for="nacionalidad{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field15" {$item_integrated_edit_field15} data-pageid="{$pageid}" data-field="nacionalidad" data-fieldname="nacionalidad" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_nacionalidad}">
+		
+		{BEGIN nacionalidad_label}{$label activar_vacancia nacionalidad }{END nacionalidad_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$nacionalidad_value}	</div>
+
+		
+</div>
+
+
+{END nacionalidad_fieldblock}
+											
+{BEGIN genero_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_genero}  r-vertical-field" data-fieldname="genero" data-signal-error-for="genero{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field16" {$item_integrated_edit_field16} data-pageid="{$pageid}" data-field="genero" data-fieldname="genero" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_genero}">
+		
+		{BEGIN genero_label}{$label activar_vacancia genero }{END genero_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$genero_value}	</div>
+
+		
+</div>
+
+
+{END genero_fieldblock}
+											
+{BEGIN id_formacion_academica_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_formacion_academica}  r-vertical-field" data-fieldname="id_formacion_academica" data-signal-error-for="id_formacion_academica{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field17" {$item_integrated_edit_field17} data-pageid="{$pageid}" data-field="id_formacion_academica" data-fieldname="id_formacion_academica" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_formacion_academica}">
+		
+		{BEGIN id_formacion_academica_label}{$label activar_vacancia id_formacion_academica }{END id_formacion_academica_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_formacion_academica_value}	</div>
+
+		
+</div>
+
+
+{END id_formacion_academica_fieldblock}
+											
+{BEGIN movilidad_propia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_movilidad_propia}  r-vertical-field" data-fieldname="movilidad_propia" data-signal-error-for="movilidad_propia{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field18" {$item_integrated_edit_field18} data-pageid="{$pageid}" data-field="movilidad_propia" data-fieldname="movilidad_propia" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_movilidad_propia}">
+		
+		{BEGIN movilidad_propia_label}{$label activar_vacancia movilidad_propia }{END movilidad_propia_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$movilidad_propia_value}	</div>
+
+		
+</div>
+
+
+{END movilidad_propia_fieldblock}
+											
+{BEGIN tipo_movilidad_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_tipo_movilidad}  r-vertical-field" data-fieldname="tipo_movilidad" data-signal-error-for="tipo_movilidad{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field19" {$item_integrated_edit_field19} data-pageid="{$pageid}" data-field="tipo_movilidad" data-fieldname="tipo_movilidad" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_tipo_movilidad}">
+		
+		{BEGIN tipo_movilidad_label}{$label activar_vacancia tipo_movilidad }{END tipo_movilidad_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$tipo_movilidad_value}	</div>
+
+		
+</div>
+
+
+{END tipo_movilidad_fieldblock}
+											
+{BEGIN id_registro_conducir_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_registro_conducir}  r-vertical-field" data-fieldname="id_registro_conducir" data-signal-error-for="id_registro_conducir{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field20" {$item_integrated_edit_field20} data-pageid="{$pageid}" data-field="id_registro_conducir" data-fieldname="id_registro_conducir" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_registro_conducir}">
+		
+		{BEGIN id_registro_conducir_label}{$label activar_vacancia id_registro_conducir }{END id_registro_conducir_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_registro_conducir_value}	</div>
+
+		
+</div>
+
+
+{END id_registro_conducir_fieldblock}
+											
+{BEGIN discapacidad_aceptada_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_discapacidad_aceptada}  r-vertical-field" data-fieldname="discapacidad_aceptada" data-signal-error-for="discapacidad_aceptada{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field21" {$item_integrated_edit_field21} data-pageid="{$pageid}" data-field="discapacidad_aceptada" data-fieldname="discapacidad_aceptada" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_discapacidad_aceptada}">
+		
+		{BEGIN discapacidad_aceptada_label}{$label activar_vacancia discapacidad_aceptada }{END discapacidad_aceptada_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$discapacidad_aceptada_value}	</div>
+
+		
+</div>
+
+
+{END discapacidad_aceptada_fieldblock}
+											
+{BEGIN edad_rango_bajo_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_edad_rango_bajo}  r-vertical-field" data-fieldname="edad_rango_bajo" data-signal-error-for="edad_rango_bajo{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field22" {$item_integrated_edit_field22} data-pageid="{$pageid}" data-field="edad_rango_bajo" data-fieldname="edad_rango_bajo" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_edad_rango_bajo}">
+		
+		{BEGIN edad_rango_bajo_label}{$label activar_vacancia edad_rango_bajo }{END edad_rango_bajo_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$edad_rango_bajo_value}	</div>
+
+		
+</div>
+
+
+{END edad_rango_bajo_fieldblock}
+											
+{BEGIN edad_rango_alto_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_edad_rango_alto}  r-vertical-field" data-fieldname="edad_rango_alto" data-signal-error-for="edad_rango_alto{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field23" {$item_integrated_edit_field23} data-pageid="{$pageid}" data-field="edad_rango_alto" data-fieldname="edad_rango_alto" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_edad_rango_alto}">
+		
+		{BEGIN edad_rango_alto_label}{$label activar_vacancia edad_rango_alto }{END edad_rango_alto_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$edad_rango_alto_value}	</div>
+
+		
+</div>
+
+
+{END edad_rango_alto_fieldblock}
+											
+{BEGIN requisitos_exclu_formacion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_requisitos_exclu_formacion}  r-vertical-field" data-fieldname="requisitos_exclu_formacion" data-signal-error-for="requisitos_exclu_formacion{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field24" {$item_integrated_edit_field24} data-pageid="{$pageid}" data-field="requisitos_exclu_formacion" data-fieldname="requisitos_exclu_formacion" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_requisitos_exclu_formacion}">
+		
+		{BEGIN requisitos_exclu_formacion_label}{$label activar_vacancia requisitos_exclu_formacion }{END requisitos_exclu_formacion_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$requisitos_exclu_formacion_value}	</div>
+
+		
+</div>
+
+
+{END requisitos_exclu_formacion_fieldblock}
+											
+{BEGIN habilidades_conocimiento_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_habilidades_conocimiento}  r-vertical-field" data-fieldname="habilidades_conocimiento" data-signal-error-for="habilidades_conocimiento{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field25" {$item_integrated_edit_field25} data-pageid="{$pageid}" data-field="habilidades_conocimiento" data-fieldname="habilidades_conocimiento" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_habilidades_conocimiento}">
+		
+		{BEGIN habilidades_conocimiento_label}{$label activar_vacancia habilidades_conocimiento }{END habilidades_conocimiento_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$habilidades_conocimiento_value}	</div>
+
+		
+</div>
+
+
+{END habilidades_conocimiento_fieldblock}
+											
+{BEGIN anos_experiencia_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_anos_experiencia_vacancia}  r-vertical-field" data-fieldname="anos_experiencia_vacancia" data-signal-error-for="anos_experiencia_vacancia{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field26" {$item_integrated_edit_field26} data-pageid="{$pageid}" data-field="anos_experiencia_vacancia" data-fieldname="anos_experiencia_vacancia" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_anos_experiencia_vacancia}">
+		
+		{BEGIN anos_experiencia_vacancia_label}{$label activar_vacancia anos_experiencia_vacancia }{END anos_experiencia_vacancia_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$anos_experiencia_vacancia_value}	</div>
+
+		
+</div>
+
+
+{END anos_experiencia_vacancia_fieldblock}
+											
+{BEGIN meses_experiencia_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_meses_experiencia_vacancia}  r-vertical-field" data-fieldname="meses_experiencia_vacancia" data-signal-error-for="meses_experiencia_vacancia{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field27" {$item_integrated_edit_field27} data-pageid="{$pageid}" data-field="meses_experiencia_vacancia" data-fieldname="meses_experiencia_vacancia" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_meses_experiencia_vacancia}">
+		
+		{BEGIN meses_experiencia_vacancia_label}{$label activar_vacancia meses_experiencia_vacancia }{END meses_experiencia_vacancia_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$meses_experiencia_vacancia_value}	</div>
+
+		
+</div>
+
+
+{END meses_experiencia_vacancia_fieldblock}
+											
+{BEGIN id_vacancias_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_vacancias}  r-vertical-field" data-fieldname="id_vacancias" data-signal-error-for="id_vacancias{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field28" {$item_integrated_edit_field28} data-pageid="{$pageid}" data-field="id_vacancias" data-fieldname="id_vacancias" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_vacancias}">
+		
+		{BEGIN id_vacancias_label}{$label activar_vacancia id_vacancias }{END id_vacancias_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_vacancias_value}	</div>
+
+		
+</div>
+
+
+{END id_vacancias_fieldblock}
+											
+{BEGIN fecha_creacion_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fecha_creacion_vacancia}  r-vertical-field" data-fieldname="fecha_creacion_vacancia" data-signal-error-for="fecha_creacion_vacancia{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field29" {$item_integrated_edit_field29} data-pageid="{$pageid}" data-field="fecha_creacion_vacancia" data-fieldname="fecha_creacion_vacancia" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_fecha_creacion_vacancia}">
+		
+		{BEGIN fecha_creacion_vacancia_label}{$label activar_vacancia fecha_creacion_vacancia }{END fecha_creacion_vacancia_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$fecha_creacion_vacancia_value}	</div>
+
+		
+</div>
+
+
+{END fecha_creacion_vacancia_fieldblock}
+											
+{BEGIN id_estado_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_estado_vacancia}  r-vertical-field" data-fieldname="id_estado_vacancia" data-signal-error-for="id_estado_vacancia{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field30" {$item_integrated_edit_field30} data-pageid="{$pageid}" data-field="id_estado_vacancia" data-fieldname="id_estado_vacancia" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_estado_vacancia}">
+		
+		{BEGIN id_estado_vacancia_label}{$label activar_vacancia id_estado_vacancia }{END id_estado_vacancia_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_estado_vacancia_value}	</div>
+
+		
+</div>
+
+
+{END id_estado_vacancia_fieldblock}
+											
+{BEGIN descripcion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_descripcion}  r-vertical-field" data-fieldname="descripcion" data-signal-error-for="descripcion{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field31" {$item_integrated_edit_field31} data-pageid="{$pageid}" data-field="descripcion" data-fieldname="descripcion" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_descripcion}">
+		
+		{BEGIN descripcion_label}{$label activar_vacancia descripcion }{END descripcion_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$descripcion_value}	</div>
+
+		
+</div>
+
+
+{END descripcion_fieldblock}
+											
+{BEGIN salario_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_salario}  r-vertical-field" data-fieldname="salario" data-signal-error-for="salario{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field32" {$item_integrated_edit_field32} data-pageid="{$pageid}" data-field="salario" data-fieldname="salario" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_salario}">
+		
+		{BEGIN salario_label}{$label activar_vacancia salario }{END salario_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$salario_value}	</div>
+
+		
+</div>
+
+
+{END salario_fieldblock}
+											
+{BEGIN nombre_puesto_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_nombre_puesto}  r-vertical-field" data-fieldname="nombre_puesto" data-signal-error-for="nombre_puesto{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field33" {$item_integrated_edit_field33} data-pageid="{$pageid}" data-field="nombre_puesto" data-fieldname="nombre_puesto" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_nombre_puesto}">
+		
+		{BEGIN nombre_puesto_label}{$label activar_vacancia nombre_puesto }{END nombre_puesto_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$nombre_puesto_value}	</div>
+
+		
+</div>
+
+
+{END nombre_puesto_fieldblock}
+											
+{BEGIN documentos_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_documentos}  r-vertical-field" data-fieldname="documentos" data-signal-error-for="documentos{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field34" {$item_integrated_edit_field34} data-pageid="{$pageid}" data-field="documentos" data-fieldname="documentos" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_documentos}">
+		
+		{BEGIN documentos_label}{$label activar_vacancia documentos }{END documentos_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$documentos_value}	</div>
+
+		
+</div>
+
+
+{END documentos_fieldblock}
+											
+{BEGIN id_vacancia_requisito_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_vacancia_requisito}  r-vertical-field" data-fieldname="id_vacancia_requisito" data-signal-error-for="id_vacancia_requisito{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field35" {$item_integrated_edit_field35} data-pageid="{$pageid}" data-field="id_vacancia_requisito" data-fieldname="id_vacancia_requisito" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_vacancia_requisito}">
+		
+		{BEGIN id_vacancia_requisito_label}{$label activar_vacancia id_vacancia_requisito }{END id_vacancia_requisito_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_vacancia_requisito_value}	</div>
+
+		
+</div>
+
+
+{END id_vacancia_requisito_fieldblock}
+											
+{BEGIN legal_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_legal}  r-vertical-field" data-fieldname="legal" data-signal-error-for="legal{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field36" {$item_integrated_edit_field36} data-pageid="{$pageid}" data-field="legal" data-fieldname="legal" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_legal}">
+		
+		{BEGIN legal_label}{$label activar_vacancia legal }{END legal_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$legal_value}	</div>
+
+		
+</div>
+
+
+{END legal_fieldblock}
+											
+{BEGIN Latitude_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Latitude}  r-vertical-field" data-fieldname="Latitude" data-signal-error-for="Latitude{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field37" {$item_integrated_edit_field37} data-pageid="{$pageid}" data-field="Latitude" data-fieldname="Latitude" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Latitude}">
+		
+		{BEGIN Latitude_label}{$label activar_vacancia Latitude }{END Latitude_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Latitude_value}	</div>
+
+		
+</div>
+
+
+{END Latitude_fieldblock}
+											
+{BEGIN Longitude_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Longitude}  r-vertical-field" data-fieldname="Longitude" data-signal-error-for="Longitude{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field38" {$item_integrated_edit_field38} data-pageid="{$pageid}" data-field="Longitude" data-fieldname="Longitude" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Longitude}">
+		
+		{BEGIN Longitude_label}{$label activar_vacancia Longitude }{END Longitude_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Longitude_value}	</div>
+
+		
+</div>
+
+
+{END Longitude_fieldblock}
+											
+{BEGIN Lat_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Lat}  r-vertical-field" data-fieldname="Lat" data-signal-error-for="Lat{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field39" {$item_integrated_edit_field39} data-pageid="{$pageid}" data-field="Lat" data-fieldname="Lat" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Lat}">
+		
+		{BEGIN Lat_label}{$label activar_vacancia Lat }{END Lat_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Lat_value}	</div>
+
+		
+</div>
+
+
+{END Lat_fieldblock}
+											
+{BEGIN Lng_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Lng}  r-vertical-field" data-fieldname="Lng" data-signal-error-for="Lng{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field40" {$item_integrated_edit_field40} data-pageid="{$pageid}" data-field="Lng" data-fieldname="Lng" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Lng}">
+		
+		{BEGIN Lng_label}{$label activar_vacancia Lng }{END Lng_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Lng_value}	</div>
+
+		
+</div>
+
+
+{END Lng_fieldblock}
+											
+{BEGIN geolocation_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_geolocation}  r-vertical-field" data-fieldname="geolocation" data-signal-error-for="geolocation{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field41" {$item_integrated_edit_field41} data-pageid="{$pageid}" data-field="geolocation" data-fieldname="geolocation" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_geolocation}">
+		
+		{BEGIN geolocation_label}{$label activar_vacancia geolocation }{END geolocation_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$geolocation_value}	</div>
+
+		
+</div>
+
+
+{END geolocation_fieldblock}
+											
+{BEGIN map_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_map}  r-vertical-field" data-fieldname="map" data-signal-error-for="map{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field42" {$item_integrated_edit_field42} data-pageid="{$pageid}" data-field="map" data-fieldname="map" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_map}">
+		
+		{BEGIN map_label}{$label activar_vacancia map }{END map_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$map_value}	</div>
+
+		
+</div>
+
+
+{END map_fieldblock}
+											
+{BEGIN descripcion_salario_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_descripcion_salario}  r-vertical-field" data-fieldname="descripcion_salario" data-signal-error-for="descripcion_salario{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field43" {$item_integrated_edit_field43} data-pageid="{$pageid}" data-field="descripcion_salario" data-fieldname="descripcion_salario" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_descripcion_salario}">
+		
+		{BEGIN descripcion_salario_label}{$label activar_vacancia descripcion_salario }{END descripcion_salario_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$descripcion_salario_value}	</div>
+
+		
+</div>
+
+
+{END descripcion_salario_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c1}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-6
+	">
+	 
+		{BEGIN back_button}
+<span data-itemtype="view_back_list" data-itemid="view_back_list" {$item_view_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$backbutton_attrs} >
+							Volver a la lista			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN close_button}
+<span data-itemtype="view_close" data-itemid="view_close" {$item_view_close} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" href="#" {$closebutton_attrs} >
+							Cerrar ventana			</a>
+</span>
+{END close_button}
+	</div>			 
+				<div 
+	data-cellId="below-grid_c2" data-pageid="{$pageid}"	{$cell_below-grid_c2}
+	class="r-align-right r-ori-vert			col-md-6
+	">
+	 
+		<span data-itemtype="hamburger" data-itemid="hamburger" {$item_hamburger} data-pageid="{$pageid}" data-small data-button-item>
+	<span class="dropdown dropup">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+										<span class="glyphicon glyphicon-menu-hamburger"></span>
+												<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							{BEGIN edit_page_button}
+	<li data-itemtype="view_edit" data-itemid="view_edit" {$item_view_edit} data-pageid="{$pageid}" data-small >
+				<a  href="activar_vacancia_edit.php?{$editlink}" {$edit_page_button_attrs}  title="" >
+				
+		Editar		
+		</a>
+	</li>
+{END edit_page_button}
+					</ul>
+	</span>
+</span>
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

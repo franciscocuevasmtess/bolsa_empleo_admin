@@ -1,0 +1,502 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+			
+	</head>
+
+	<body class="{$stylename} function-search" >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="search_header" data-itemid="search_header" {$item_search_header} data-pageid="{$pageid}" >{$pagetitlelabel bolsa_empleo_postulacion_insertado search}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="6"
+	>
+	<tbody>
+										<tr {$row_grid_0} >
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="6"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN id_vacancia_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_vacancia}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="id_vacancia{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field1" {$item_integrated_search_field1} data-pageid="{$pageid}" data-field="id_vacancia" data-fieldname="id_vacancia" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_id_vacancia}">
+		{$label bolsa_empleo_postulacion_insertado id_vacancia }	</label>
+	<div class="r-search-option">
+		{$searchtype_id_vacancia}
+	</div>
+	<div class="r-search-field">
+		{$id_vacancia_editcontrol}	</div>
+	<div class="r-search-field">
+		{$id_vacancia_editcontrol1}
+	</div>
+	
+</div>
+
+{END id_vacancia_fieldblock}
+											
+{BEGIN fechanac_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fechanac}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="fechanac{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field4" {$item_integrated_search_field4} data-pageid="{$pageid}" data-field="fechanac" data-fieldname="fechanac" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_fechanac}">
+		{$label bolsa_empleo_postulacion_insertado fechanac }	</label>
+	<div class="r-search-option">
+		{$searchtype_fechanac}
+	</div>
+	<div class="r-search-field">
+		{$fechanac_editcontrol}	</div>
+	<div class="r-search-field">
+		{$fechanac_editcontrol1}
+	</div>
+	
+</div>
+
+{END fechanac_fieldblock}
+											
+{BEGIN sexo_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_sexo}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="sexo{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field5" {$item_integrated_search_field5} data-pageid="{$pageid}" data-field="sexo" data-fieldname="sexo" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_sexo}">
+		{$label bolsa_empleo_postulacion_insertado sexo }	</label>
+	<div class="r-search-option">
+		{$searchtype_sexo}
+	</div>
+	<div class="r-search-field">
+		{$sexo_editcontrol}	</div>
+	<div class="r-search-field">
+		{$sexo_editcontrol1}
+	</div>
+	
+</div>
+
+{END sexo_fieldblock}
+											
+{BEGIN domicilio_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_domicilio}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="domicilio{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field6" {$item_integrated_search_field6} data-pageid="{$pageid}" data-field="domicilio" data-fieldname="domicilio" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_domicilio}">
+		{$label bolsa_empleo_postulacion_insertado domicilio }	</label>
+	<div class="r-search-option">
+		{$searchtype_domicilio}
+	</div>
+	<div class="r-search-field">
+		{$domicilio_editcontrol}	</div>
+	<div class="r-search-field">
+		{$domicilio_editcontrol1}
+	</div>
+	
+</div>
+
+{END domicilio_fieldblock}
+											
+{BEGIN ciudad_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_ciudad}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="ciudad{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field7" {$item_integrated_search_field7} data-pageid="{$pageid}" data-field="ciudad" data-fieldname="ciudad" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_ciudad}">
+		{$label bolsa_empleo_postulacion_insertado ciudad }	</label>
+	<div class="r-search-option">
+		{$searchtype_ciudad}
+	</div>
+	<div class="r-search-field">
+		{$ciudad_editcontrol}	</div>
+	<div class="r-search-field">
+		{$ciudad_editcontrol1}
+	</div>
+	
+</div>
+
+{END ciudad_fieldblock}
+											
+{BEGIN distrito_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_distrito}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="distrito{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field8" {$item_integrated_search_field8} data-pageid="{$pageid}" data-field="distrito" data-fieldname="distrito" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_distrito}">
+		{$label bolsa_empleo_postulacion_insertado distrito }	</label>
+	<div class="r-search-option">
+		{$searchtype_distrito}
+	</div>
+	<div class="r-search-field">
+		{$distrito_editcontrol}	</div>
+	<div class="r-search-field">
+		{$distrito_editcontrol1}
+	</div>
+	
+</div>
+
+{END distrito_fieldblock}
+											
+{BEGIN estado_civil_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_estado_civil}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="estado_civil{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field10" {$item_integrated_search_field10} data-pageid="{$pageid}" data-field="estado_civil" data-fieldname="estado_civil" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_estado_civil}">
+		{$label bolsa_empleo_postulacion_insertado estado_civil }	</label>
+	<div class="r-search-option">
+		{$searchtype_estado_civil}
+	</div>
+	<div class="r-search-field">
+		{$estado_civil_editcontrol}	</div>
+	<div class="r-search-field">
+		{$estado_civil_editcontrol1}
+	</div>
+	
+</div>
+
+{END estado_civil_fieldblock}
+											
+{BEGIN cedula_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_cedula}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="cedula{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field11" {$item_integrated_search_field11} data-pageid="{$pageid}" data-field="cedula" data-fieldname="cedula" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_cedula}">
+		{$label bolsa_empleo_postulacion_insertado cedula }	</label>
+	<div class="r-search-option">
+		{$searchtype_cedula}
+	</div>
+	<div class="r-search-field">
+		{$cedula_editcontrol}	</div>
+	<div class="r-search-field">
+		{$cedula_editcontrol1}
+	</div>
+	
+</div>
+
+{END cedula_fieldblock}
+											
+{BEGIN telefono_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_telefono}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="telefono{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field12" {$item_integrated_search_field12} data-pageid="{$pageid}" data-field="telefono" data-fieldname="telefono" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_telefono}">
+		{$label bolsa_empleo_postulacion_insertado telefono }	</label>
+	<div class="r-search-option">
+		{$searchtype_telefono}
+	</div>
+	<div class="r-search-field">
+		{$telefono_editcontrol}	</div>
+	<div class="r-search-field">
+		{$telefono_editcontrol1}
+	</div>
+	
+</div>
+
+{END telefono_fieldblock}
+											
+{BEGIN pais_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_pais}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="pais{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field9" {$item_integrated_search_field9} data-pageid="{$pageid}" data-field="pais" data-fieldname="pais" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_pais}">
+		{$label bolsa_empleo_postulacion_insertado pais }	</label>
+	<div class="r-search-option">
+		{$searchtype_pais}
+	</div>
+	<div class="r-search-field">
+		{$pais_editcontrol}	</div>
+	<div class="r-search-field">
+		{$pais_editcontrol1}
+	</div>
+	
+</div>
+
+{END pais_fieldblock}
+											
+{BEGIN nombre_completo_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_nombre_completo}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="nombre_completo{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field2" {$item_integrated_search_field2} data-pageid="{$pageid}" data-field="nombre_completo" data-fieldname="nombre_completo" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_nombre_completo}">
+		{$label bolsa_empleo_postulacion_insertado nombre_completo }	</label>
+	<div class="r-search-option">
+		{$searchtype_nombre_completo}
+	</div>
+	<div class="r-search-field">
+		{$nombre_completo_editcontrol}	</div>
+	<div class="r-search-field">
+		{$nombre_completo_editcontrol1}
+	</div>
+	
+</div>
+
+{END nombre_completo_fieldblock}
+											
+{BEGIN hash_generado_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_hash_generado}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="hash_generado{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field15" {$item_integrated_search_field15} data-pageid="{$pageid}" data-field="hash_generado" data-fieldname="hash_generado" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_hash_generado}">
+		{$label bolsa_empleo_postulacion_insertado hash_generado }	</label>
+	<div class="r-search-option">
+		{$searchtype_hash_generado}
+	</div>
+	<div class="r-search-field">
+		{$hash_generado_editcontrol}	</div>
+	<div class="r-search-field">
+		{$hash_generado_editcontrol1}
+	</div>
+	
+</div>
+
+{END hash_generado_fieldblock}
+											
+{BEGIN empresa_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_empresa}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="empresa{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field16" {$item_integrated_search_field16} data-pageid="{$pageid}" data-field="empresa" data-fieldname="empresa" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_empresa}">
+		{$label bolsa_empleo_postulacion_insertado empresa }	</label>
+	<div class="r-search-option">
+		{$searchtype_empresa}
+	</div>
+	<div class="r-search-field">
+		{$empresa_editcontrol}	</div>
+	<div class="r-search-field">
+		{$empresa_editcontrol1}
+	</div>
+	
+</div>
+
+{END empresa_fieldblock}
+											
+{BEGIN descri_empresa_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_descri_empresa}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="descri_empresa{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field17" {$item_integrated_search_field17} data-pageid="{$pageid}" data-field="descri_empresa" data-fieldname="descri_empresa" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_descri_empresa}">
+		{$label bolsa_empleo_postulacion_insertado descri_empresa }	</label>
+	<div class="r-search-option">
+		{$searchtype_descri_empresa}
+	</div>
+	<div class="r-search-field">
+		{$descri_empresa_editcontrol}	</div>
+	<div class="r-search-field">
+		{$descri_empresa_editcontrol1}
+	</div>
+	
+</div>
+
+{END descri_empresa_fieldblock}
+											
+{BEGIN id_postulacion_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_postulacion}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="id_postulacion{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field" {$item_integrated_search_field} data-pageid="{$pageid}" data-field="id_postulacion" data-fieldname="id_postulacion" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_id_postulacion}">
+		{$label bolsa_empleo_postulacion_insertado id_postulacion }	</label>
+	<div class="r-search-option">
+		{$searchtype_id_postulacion}
+	</div>
+	<div class="r-search-field">
+		{$id_postulacion_editcontrol}	</div>
+	<div class="r-search-field">
+		{$id_postulacion_editcontrol1}
+	</div>
+	
+</div>
+
+{END id_postulacion_fieldblock}
+											
+{BEGIN id_estado_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_estado}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="id_estado{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field3" {$item_integrated_search_field3} data-pageid="{$pageid}" data-field="id_estado" data-fieldname="id_estado" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_id_estado}">
+		{$label bolsa_empleo_postulacion_insertado id_estado }	</label>
+	<div class="r-search-option">
+		{$searchtype_id_estado}
+	</div>
+	<div class="r-search-field">
+		{$id_estado_editcontrol}	</div>
+	<div class="r-search-field">
+		{$id_estado_editcontrol1}
+	</div>
+	
+</div>
+
+{END id_estado_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-12
+	">
+	 
+		<span data-itemtype="search_search" data-itemid="search_search" {$item_search_search} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$searchbutton_attrs} data-page=undefined >
+							Buscar			</a>
+</span>
+	 
+		<span data-itemtype="search_reset" data-itemid="search_reset" {$item_search_reset} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$resetbutton_attrs} >
+							Reiniciar			</a>
+</span>
+	 
+		{BEGIN back_button}
+<span data-itemtype="search_back_list" data-itemid="search_back_list" {$item_search_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$backbutton_attrs} >
+							Volver a la lista			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN cancel_button}
+<span data-itemtype="search_cancel" data-itemid="search_cancel" {$item_search_cancel} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="cancelButton{$id}" >
+							Cancelar			</a>
+</span>
+{END cancel_button}
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

@@ -1,0 +1,1616 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+			
+	</head>
+	<body class="{$stylename} function-add"  >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<div class="r-topbar-page">
+			<div data-menu-width="full" 
+				 
+				class="r-topheader" 
+				data-resize-name="topbar"
+				data-body-align="center"
+			>
+								{BEGIN supertop_block}
+<nav class="navbar navbar-default" 
+	data-location="supertop" id="form_supertop_{$pageid}" data-makeup="topbar" {$form_supertop} data-pageid="{$pageid}" >
+			 
+							 
+				<span data-cellId="supertop_c1" data-pageid="{$pageid}" data-page="activar_vacancia_add" class=" r-ori-vert navbar-header" data-itemid="logo" {$item_logo}>
+				{BEGIN logo_block}
+	<A data-itemtype="logo" data-itemid="logo" {$item_logo} data-pageid="{$pageid}" class="navbar-brand" href="{$home_link}" data-pageid="{$pageid}" {$logo_hiddenattr}>
+		{$logo}
+	</A>
+{END logo_block}
+				<button data-pageid="1" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target="[data-mobile-controlled]">	
+					<span class="sr-only">Toggle navigation</span>	
+					<span class="icon-bar"></span>					
+				</button>				
+			</span>
+							 
+												 
+							 
+				<span data-cellId="supertop_c3" data-pageid="{$pageid}" data-page="activar_vacancia_add" class="r-align-right navbar-collapse" data-itemtype="menu" data-itemid="menu" {$item_menu} data-pageid="{$pageid}">
+				{BEGIN menuitems_main}
+<ul data-itemtype="menu" data-itemid="menu" {$item_menu} data-pageid="{$pageid}"	class="r-menu nav navbar-nav" 
+	data-menulevel="1"
+>
+
+{BEGIN item_children1}
+<li class="
+	{BEGIN item_haschildren2} dropdown {END item_haschildren2} 
+	{$item_current}">
+<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h data-menu-top >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren2}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-bottom"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren2}
+	</span>
+	</a>
+{BEGIN item_showchildren2}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="2">
+	{BEGIN item_children2}
+		{BEGIN item_menulink2}
+		<li class="
+						{BEGIN item_haschildren2} dropdown {END item_haschildren2}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren2}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren2}
+	</span>
+	</a>
+			{BEGIN item_showchildren3}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="3">
+	{BEGIN item_children3}
+		{BEGIN item_menulink3}
+		<li class="
+						{BEGIN item_haschildren3} dropdown {END item_haschildren3}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren3}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren3}
+	</span>
+	</a>
+			{BEGIN item_showchildren4}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="4">
+	{BEGIN item_children4}
+		{BEGIN item_menulink4}
+		<li class="
+						{BEGIN item_haschildren4} dropdown {END item_haschildren4}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren4}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren4}
+	</span>
+	</a>
+			{BEGIN item_showchildren5}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="5">
+	{BEGIN item_children5}
+		{BEGIN item_menulink5}
+		<li class="
+						{BEGIN item_haschildren5} dropdown {END item_haschildren5}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren5}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren5}
+	</span>
+	</a>
+					</li>
+		{END item_menulink5}
+	{END item_children5}
+</ul>
+{END item_showchildren5}
+		</li>
+		{END item_menulink4}
+	{END item_children4}
+</ul>
+{END item_showchildren4}
+		</li>
+		{END item_menulink3}
+	{END item_children3}
+</ul>
+{END item_showchildren3}
+		</li>
+		{END item_menulink2}
+	{END item_children2}
+</ul>
+{END item_showchildren2}
+</li>
+{END item_children1}
+</ul>
+{END menuitems_main}
+			</span>
+		 
+				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c3" data-pageid="{$pageid}" data-page="activar_vacancia_add" data-itemid="username_button" {$item_username_button} data-topcell-item-type="username_button" >
+				{BEGIN loggedas_message}
+<span data-itemtype="username_button" data-itemid="username_button" {$item_username_button} data-pageid="{$pageid}" data-small data-button-item>
+	<span class="dropdown ">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+			{BEGIN userbutton_icon}							<span class="glyphicon glyphicon-user"></span>
+						{END userbutton_icon}{$userbutton_image}			{$username}			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							{BEGIN userinfo_link}
+	<li data-itemtype="userinfo_link" data-itemid="userinfo_link" {$item_userinfo_link} data-pageid="{$pageid}" data-small >
+				<a  href="userinfo.php"  title="" >
+				
+		Perfil del usuario		
+		</a>
+	</li>
+{END userinfo_link}
+							{BEGIN logoutbutton}
+	<li data-itemtype="logout_link" data-itemid="logout_link" {$item_logout_link} data-pageid="{$pageid}" data-small >
+				<a  href="#" {$logoutlink_attrs}  title="" >
+				
+		Desconectarse		
+		</a>
+	</li>
+{END logoutbutton}
+					</ul>
+	</span>
+</span>
+{END loggedas_message}
+			</span>
+								</nav>
+{END supertop_block}
+					{$locking}
+			</div>	
+			<div data-body-align="center"  data-body-width="standard" class="r-body" data-resize-top="topbar" >
+				<div class="r-top">
+								{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="topbar" {$form_top} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="0"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}" data-page="activar_vacancia_add"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="add_header" data-itemid="add_header" {$item_add_header} data-pageid="{$pageid}" >{$pagetitlelabel activar_vacancia add}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+					</div>
+				<div class="r-content">
+										<div class="r-data-block" data-body-width="standard" >
+						
+											<div class="r-above">
+					{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="topbar" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="0"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}" data-page="activar_vacancia_add"	{$cell_above-grid_c1}
+	class="r-align-left r-ori-vert			col-md-12
+	">
+	 
+		{BEGIN message_block}
+<div data-itemtype="add_message" data-itemid="add_message" {$item_add_message} data-pageid="{$pageid}" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN message_back_button}
+		
+	<button class="btn btn-sm btn-default" {$backbutton_attrs}>Volver a la lista</button>
+	{END message_back_button}
+{BEGIN view_page_button}
+	<button class="btn btn-sm btn-default" {$view_page_button_attrs}>Ver</button>
+{END view_page_button}
+{BEGIN edit_page_button}
+	<button class="btn btn-sm btn-default" {$edit_page_button_attrs}>Editar</button>
+{END edit_page_button}
+</div>
+</div>
+{END message_block}	</div>					</div>
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c2" data-pageid="{$pageid}" data-page="activar_vacancia_add"	{$cell_above-grid_c2}
+	class="r-align-left			col-md-12
+	">
+	 
+		<ul class="nav nav-pills nav-justified" id="stepnav{$id}"  data-stepcontrol data-itemtype="step_nav" data-itemid="step_nav" {$item_step_nav} data-pageid="{$pageid}">
+			<li role="presentation" data-step="0">
+			<a href="#">Empresa</a>
+		</li>
+			<li role="presentation" data-step="1">
+			<a href="#">Puesto</a>
+		</li>
+			<li role="presentation" data-step="2">
+			<a href="#">Requisitos</a>
+		</li>
+			<li role="presentation" data-step="3">
+			<a href="#">Habilidades & Conocimientos</a>
+		</li>
+	</ul>	 
+		<span data-itemtype="snippet" data-itemid="snippet" {$item_snippet} data-pageid="{$pageid}" >
+{$event plugins_auxiliares}
+</span>	 
+		<span data-itemtype="snippet" data-itemid="snippet1" {$item_snippet1} data-pageid="{$pageid}" >
+{$event bolsa_empleo_vacancia_snippet2}
+</span>	</div>					</div>
+	</div>		
+{END above-grid_block}
+	</div>
+<div class="r-grid">
+	{BEGIN grid_tabs}
+  <ul class="nav nav-tabs bsgrid_tabs">
+	{$grid_tabs_content}
+  </ul>
+{END grid_tabs}
+					{BEGIN steps_block}
+			<div id="step_0_{$id}" class="stepFrame" data-step="0" >
+		{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="topbar" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="2"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr {$row_grid_0} >
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="grid_c3" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN ruc_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_ruc}  r-vertical-field" 
+	data-signal-error-for="ruc{$id}" {$required_attr_ruc}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="ruc" data-fieldname="ruc" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_ruc}">
+		{BEGIN ruc_label}{$label activar_vacancia ruc }{END ruc_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$ruc_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="ruc" {$tooltipAttr activar_vacancia ruc } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia ruc }		</div>
+	</div>
+</div>
+
+
+{END ruc_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+			 
+		
+							
+
+{BEGIN cellblock_grid_c}
+<td
+	{$cell_grid_c}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="grid_c" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_grid_c}
+								</tr>
+	 
+	 
+														<tr {$row_grid_1} >
+										
+
+{BEGIN cellblock_grid_c5}
+<td
+	{$cell_grid_c5}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="grid_c5" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN id_empresa_sucursal_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_empresa_sucursal}  r-vertical-field" 
+	data-signal-error-for="id_empresa_sucursal{$id}" {$required_attr_id_empresa_sucursal}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="id_empresa_sucursal" data-fieldname="id_empresa_sucursal" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_empresa_sucursal}">
+		{BEGIN id_empresa_sucursal_label}{$label activar_vacancia id_empresa_sucursal }{END id_empresa_sucursal_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_empresa_sucursal_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_empresa_sucursal" {$tooltipAttr activar_vacancia id_empresa_sucursal } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia id_empresa_sucursal }		</div>
+	</div>
+</div>
+
+
+{END id_empresa_sucursal_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c5}
+			 
+																
+
+{BEGIN cellblock_grid_c6}
+<td
+	{$cell_grid_c6}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="grid_c6" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN id_contacto_sucursal_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_contacto_sucursal}  r-vertical-field" 
+	data-signal-error-for="id_contacto_sucursal{$id}" {$required_attr_id_contacto_sucursal}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="id_contacto_sucursal" data-fieldname="id_contacto_sucursal" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_contacto_sucursal}">
+		{BEGIN id_contacto_sucursal_label}{$label activar_vacancia id_contacto_sucursal }{END id_contacto_sucursal_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_contacto_sucursal_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_contacto_sucursal" {$tooltipAttr activar_vacancia id_contacto_sucursal } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia id_contacto_sucursal }		</div>
+	</div>
+</div>
+
+
+{END id_contacto_sucursal_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c6}
+								</tr>
+	 
+	 
+														<tr {$row_grid_2} >
+										
+
+{BEGIN cellblock_grid_c7}
+<td
+	{$cell_grid_c7}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="grid_c7" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN id_rubro_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_rubro}  r-vertical-field" 
+	data-signal-error-for="id_rubro{$id}" {$required_attr_id_rubro}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="id_rubro" data-fieldname="id_rubro" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_rubro}">
+		{BEGIN id_rubro_label}{$label activar_vacancia id_rubro }{END id_rubro_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_rubro_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_rubro" {$tooltipAttr activar_vacancia id_rubro } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia id_rubro }		</div>
+	</div>
+</div>
+
+
+{END id_rubro_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c7}
+			 
+		
+							
+
+{BEGIN cellblock_grid_c8}
+<td
+	{$cell_grid_c8}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="grid_c8" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_grid_c8}
+								</tr>
+			</tbody></table>
+{END grid_block}
+</div>	
+				<div id="step_1_{$id}" class="stepFrame" data-step="1" style="display:none">
+		{BEGIN step2_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="step2" id="form_step2_{$pageid}" data-makeup="topbar" {$form_step2} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="2"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr {$row_step2_0} >
+										
+
+{BEGIN cellblock_step2_c1}
+<td
+	{$cell_step2_c1}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c1" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN fk_ocupacion_puesto_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fk_ocupacion_puesto}  r-vertical-field" 
+	data-signal-error-for="fk_ocupacion_puesto{$id}" {$required_attr_fk_ocupacion_puesto}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="fk_ocupacion_puesto" data-fieldname="fk_ocupacion_puesto" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_fk_ocupacion_puesto}">
+		{BEGIN fk_ocupacion_puesto_label}{$label activar_vacancia fk_ocupacion_puesto }{END fk_ocupacion_puesto_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$fk_ocupacion_puesto_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="fk_ocupacion_puesto" {$tooltipAttr activar_vacancia fk_ocupacion_puesto } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia fk_ocupacion_puesto }		</div>
+	</div>
+</div>
+
+
+{END fk_ocupacion_puesto_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c1}
+			 
+		
+							
+
+{BEGIN cellblock_step2_c}
+<td
+	{$cell_step2_c}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_step2_c}
+								</tr>
+	 
+	 
+														<tr {$row_step2_1} >
+										
+
+{BEGIN cellblock_step2_c10}
+<td
+	{$cell_step2_c10}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+	ocolspan="2"		data-cellId="step2_c10" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN descripcion_puesto_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_descripcion_puesto}  r-vertical-field" 
+	data-signal-error-for="descripcion_puesto{$id}" {$required_attr_descripcion_puesto}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" {$item_integrated_edit_field5} data-pageid="{$pageid}" data-field="descripcion_puesto" data-fieldname="descripcion_puesto" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_descripcion_puesto}">
+		{BEGIN descripcion_puesto_label}{$label activar_vacancia descripcion_puesto }{END descripcion_puesto_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$descripcion_puesto_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="descripcion_puesto" {$tooltipAttr activar_vacancia descripcion_puesto } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia descripcion_puesto }		</div>
+	</div>
+</div>
+
+
+{END descripcion_puesto_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c10}
+								</tr>
+	 
+	 
+														<tr {$row_step2_2} >
+										
+
+{BEGIN cellblock_step2_c8}
+<td
+	{$cell_step2_c8}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c8" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN id_departamento_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_departamento}  r-vertical-field" 
+	data-signal-error-for="id_departamento{$id}" {$required_attr_id_departamento}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" {$item_integrated_edit_field6} data-pageid="{$pageid}" data-field="id_departamento" data-fieldname="id_departamento" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_departamento}">
+		{BEGIN id_departamento_label}{$label activar_vacancia id_departamento }{END id_departamento_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_departamento_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_departamento" {$tooltipAttr activar_vacancia id_departamento } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia id_departamento }		</div>
+	</div>
+</div>
+
+
+{END id_departamento_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c8}
+			 
+																
+
+{BEGIN cellblock_step2_c9}
+<td
+	{$cell_step2_c9}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c9" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN id_cidudad_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_cidudad}  r-vertical-field" 
+	data-signal-error-for="id_cidudad{$id}" {$required_attr_id_cidudad}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" {$item_integrated_edit_field7} data-pageid="{$pageid}" data-field="id_cidudad" data-fieldname="id_cidudad" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_cidudad}">
+		{BEGIN id_cidudad_label}{$label activar_vacancia id_cidudad }{END id_cidudad_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_cidudad_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_cidudad" {$tooltipAttr activar_vacancia id_cidudad } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia id_cidudad }		</div>
+	</div>
+</div>
+
+
+{END id_cidudad_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c9}
+								</tr>
+	 
+	 
+														<tr {$row_step2_3} >
+										
+
+{BEGIN cellblock_step2_c6}
+<td
+	{$cell_step2_c6}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c6" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN salario_final_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_salario_final}  r-vertical-field" 
+	data-signal-error-for="salario_final{$id}" {$required_attr_salario_final}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" {$item_integrated_edit_field8} data-pageid="{$pageid}" data-field="salario_final" data-fieldname="salario_final" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_salario_final}">
+		{BEGIN salario_final_label}{$label activar_vacancia salario_final }{END salario_final_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$salario_final_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="salario_final" {$tooltipAttr activar_vacancia salario_final } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia salario_final }		</div>
+	</div>
+</div>
+
+
+{END salario_final_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c6}
+			 
+																
+
+{BEGIN cellblock_step2_c7}
+<td
+	{$cell_step2_c7}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c7" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN salario_descripcion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_salario_descripcion}  r-vertical-field" 
+	data-signal-error-for="salario_descripcion{$id}" {$required_attr_salario_descripcion}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="salario_descripcion" data-fieldname="salario_descripcion" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_salario_descripcion}">
+		{BEGIN salario_descripcion_label}{$label activar_vacancia salario_descripcion }{END salario_descripcion_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$salario_descripcion_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="salario_descripcion" {$tooltipAttr activar_vacancia salario_descripcion } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia salario_descripcion }		</div>
+	</div>
+</div>
+
+
+{END salario_descripcion_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c7}
+								</tr>
+	 
+	 
+														<tr {$row_step2_4} >
+										
+
+{BEGIN cellblock_step2_c4}
+<td
+	{$cell_step2_c4}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c4" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN tipo_contrato_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_tipo_contrato}  r-vertical-field" 
+	data-signal-error-for="tipo_contrato{$id}" {$required_attr_tipo_contrato}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field10" {$item_integrated_edit_field10} data-pageid="{$pageid}" data-field="tipo_contrato" data-fieldname="tipo_contrato" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_tipo_contrato}">
+		{BEGIN tipo_contrato_label}{$label activar_vacancia tipo_contrato }{END tipo_contrato_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$tipo_contrato_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="tipo_contrato" {$tooltipAttr activar_vacancia tipo_contrato } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia tipo_contrato }		</div>
+	</div>
+</div>
+
+
+{END tipo_contrato_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c4}
+			 
+																
+
+{BEGIN cellblock_step2_c5}
+<td
+	{$cell_step2_c5}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c5" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN horario_rotativo_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_horario_rotativo}  r-horizontal-field form-horizontal" 
+	data-signal-error-for="horario_rotativo{$id}" {$required_attr_horario_rotativo}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field11" {$item_integrated_edit_field11} data-pageid="{$pageid}" data-field="horario_rotativo" data-fieldname="horario_rotativo" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_horario_rotativo}">
+		{BEGIN horario_rotativo_label}{$label activar_vacancia horario_rotativo }{END horario_rotativo_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$horario_rotativo_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="horario_rotativo" {$tooltipAttr activar_vacancia horario_rotativo } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia horario_rotativo }		</div>
+	</div>
+</div>
+
+
+{END horario_rotativo_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c5}
+								</tr>
+	 
+	 
+														<tr {$row_step2_5} >
+										
+
+{BEGIN cellblock_step2_c2}
+<td
+	{$cell_step2_c2}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c2" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN modalidad_trabajo_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_modalidad_trabajo}  r-vertical-field" 
+	data-signal-error-for="modalidad_trabajo{$id}" {$required_attr_modalidad_trabajo}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field12" {$item_integrated_edit_field12} data-pageid="{$pageid}" data-field="modalidad_trabajo" data-fieldname="modalidad_trabajo" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_modalidad_trabajo}">
+		{BEGIN modalidad_trabajo_label}{$label activar_vacancia modalidad_trabajo }{END modalidad_trabajo_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$modalidad_trabajo_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="modalidad_trabajo" {$tooltipAttr activar_vacancia modalidad_trabajo } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia modalidad_trabajo }		</div>
+	</div>
+</div>
+
+
+{END modalidad_trabajo_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c2}
+			 
+																
+
+{BEGIN cellblock_step2_c3}
+<td
+	{$cell_step2_c3}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c3" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN cantidad_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_cantidad_vacancia}  r-vertical-field" 
+	data-signal-error-for="cantidad_vacancia{$id}" {$required_attr_cantidad_vacancia}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field13" {$item_integrated_edit_field13} data-pageid="{$pageid}" data-field="cantidad_vacancia" data-fieldname="cantidad_vacancia" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_cantidad_vacancia}">
+		{BEGIN cantidad_vacancia_label}{$label activar_vacancia cantidad_vacancia }{END cantidad_vacancia_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$cantidad_vacancia_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="cantidad_vacancia" {$tooltipAttr activar_vacancia cantidad_vacancia } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia cantidad_vacancia }		</div>
+	</div>
+</div>
+
+
+{END cantidad_vacancia_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c3}
+								</tr>
+	 
+	 
+														<tr {$row_step2_6} >
+										
+
+{BEGIN cellblock_step2_c12}
+<td
+	{$cell_step2_c12}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c12" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				<span data-itemtype="text" data-itemid="text" {$item_text} data-pageid="{$pageid}" data-small > 
+	<p>&nbsp;&nbsp;<strong>&nbsp; Dias y Horarios de trabajo</strong></p></span>
+	
+								</td>
+			{END cellblock_step2_c12}
+			 
+																
+
+{BEGIN cellblock_step2_c13}
+<td
+	{$cell_step2_c13}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step2_c13" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN fecha_expiracion_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fecha_expiracion_vacancia}  r-vertical-field" 
+	data-signal-error-for="fecha_expiracion_vacancia{$id}" {$required_attr_fecha_expiracion_vacancia}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field14" {$item_integrated_edit_field14} data-pageid="{$pageid}" data-field="fecha_expiracion_vacancia" data-fieldname="fecha_expiracion_vacancia" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_fecha_expiracion_vacancia}">
+		{BEGIN fecha_expiracion_vacancia_label}{$label activar_vacancia fecha_expiracion_vacancia }{END fecha_expiracion_vacancia_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$fecha_expiracion_vacancia_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="fecha_expiracion_vacancia" {$tooltipAttr activar_vacancia fecha_expiracion_vacancia } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia fecha_expiracion_vacancia }		</div>
+	</div>
+</div>
+
+
+{END fecha_expiracion_vacancia_fieldblock}
+	
+								</td>
+			{END cellblock_step2_c13}
+								</tr>
+			</tbody></table>
+{END step2_block}
+</div>	
+				<div id="step_2_{$id}" class="stepFrame" data-step="2" style="display:none">
+		{BEGIN step3_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="step3" id="form_step3_{$pageid}" data-makeup="topbar" {$form_step3} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="2"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr {$row_step3_0} >
+										
+
+{BEGIN cellblock_step3_c1}
+<td
+	{$cell_step3_c1}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step3_c1" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN nacionalidad_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_nacionalidad}  r-vertical-field" 
+	data-signal-error-for="nacionalidad{$id}" {$required_attr_nacionalidad}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field15" {$item_integrated_edit_field15} data-pageid="{$pageid}" data-page="activar_vacancia_add" data-field="nacionalidad" data-fieldname="nacionalidad" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_nacionalidad}">
+		{BEGIN nacionalidad_label}{$label activar_vacancia nacionalidad }{END nacionalidad_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$nacionalidad_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="nacionalidad" {$tooltipAttr activar_vacancia nacionalidad } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia nacionalidad }		</div>
+	</div>
+</div>
+
+
+{END nacionalidad_fieldblock}
+	
+								</td>
+			{END cellblock_step3_c1}
+			 
+		
+							
+
+{BEGIN cellblock_step3_c}
+<td
+	{$cell_step3_c}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step3_c" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_step3_c}
+								</tr>
+	 
+	 
+														<tr {$row_step3_1} >
+										
+
+{BEGIN cellblock_step3_c3}
+<td
+	{$cell_step3_c3}
+	class="r-align-left r-ori-vert"
+	
+			
+			data-cellId="step3_c3" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN genero_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_genero}  r-vertical-field" 
+	data-signal-error-for="genero{$id}" {$required_attr_genero}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field16" {$item_integrated_edit_field16} data-pageid="{$pageid}" data-field="genero" data-fieldname="genero" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_genero}">
+		{BEGIN genero_label}{$label activar_vacancia genero }{END genero_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$genero_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="genero" {$tooltipAttr activar_vacancia genero } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia genero }		</div>
+	</div>
+</div>
+
+
+{END genero_fieldblock}
+											
+{BEGIN id_formacion_academica_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_formacion_academica}  r-vertical-field" 
+	data-signal-error-for="id_formacion_academica{$id}" {$required_attr_id_formacion_academica}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field17" {$item_integrated_edit_field17} data-pageid="{$pageid}" data-field="id_formacion_academica" data-fieldname="id_formacion_academica" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_formacion_academica}">
+		{BEGIN id_formacion_academica_label}{$label activar_vacancia id_formacion_academica }{END id_formacion_academica_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_formacion_academica_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_formacion_academica" {$tooltipAttr activar_vacancia id_formacion_academica } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia id_formacion_academica }		</div>
+	</div>
+</div>
+
+
+{END id_formacion_academica_fieldblock}
+											
+{BEGIN movilidad_propia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_movilidad_propia}  r-vertical-field" 
+	data-signal-error-for="movilidad_propia{$id}" {$required_attr_movilidad_propia}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field18" {$item_integrated_edit_field18} data-pageid="{$pageid}" data-field="movilidad_propia" data-fieldname="movilidad_propia" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_movilidad_propia}">
+		{BEGIN movilidad_propia_label}{$label activar_vacancia movilidad_propia }{END movilidad_propia_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$movilidad_propia_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="movilidad_propia" {$tooltipAttr activar_vacancia movilidad_propia } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia movilidad_propia }		</div>
+	</div>
+</div>
+
+
+{END movilidad_propia_fieldblock}
+											
+{BEGIN tipo_movilidad_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_tipo_movilidad}  r-vertical-field" 
+	data-signal-error-for="tipo_movilidad{$id}" {$required_attr_tipo_movilidad}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field19" {$item_integrated_edit_field19} data-pageid="{$pageid}" data-field="tipo_movilidad" data-fieldname="tipo_movilidad" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_tipo_movilidad}">
+		{BEGIN tipo_movilidad_label}{$label activar_vacancia tipo_movilidad }{END tipo_movilidad_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$tipo_movilidad_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="tipo_movilidad" {$tooltipAttr activar_vacancia tipo_movilidad } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia tipo_movilidad }		</div>
+	</div>
+</div>
+
+
+{END tipo_movilidad_fieldblock}
+											
+{BEGIN id_registro_conducir_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_registro_conducir}  r-vertical-field" 
+	data-signal-error-for="id_registro_conducir{$id}" {$required_attr_id_registro_conducir}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field20" {$item_integrated_edit_field20} data-pageid="{$pageid}" data-field="id_registro_conducir" data-fieldname="id_registro_conducir" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_id_registro_conducir}">
+		{BEGIN id_registro_conducir_label}{$label activar_vacancia id_registro_conducir }{END id_registro_conducir_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$id_registro_conducir_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="id_registro_conducir" {$tooltipAttr activar_vacancia id_registro_conducir } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia id_registro_conducir }		</div>
+	</div>
+</div>
+
+
+{END id_registro_conducir_fieldblock}
+											
+{BEGIN discapacidad_aceptada_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_discapacidad_aceptada}  r-vertical-field" 
+	data-signal-error-for="discapacidad_aceptada{$id}" {$required_attr_discapacidad_aceptada}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field21" {$item_integrated_edit_field21} data-pageid="{$pageid}" data-field="discapacidad_aceptada" data-fieldname="discapacidad_aceptada" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_discapacidad_aceptada}">
+		{BEGIN discapacidad_aceptada_label}{$label activar_vacancia discapacidad_aceptada }{END discapacidad_aceptada_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$discapacidad_aceptada_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="discapacidad_aceptada" {$tooltipAttr activar_vacancia discapacidad_aceptada } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia discapacidad_aceptada }		</div>
+	</div>
+</div>
+
+
+{END discapacidad_aceptada_fieldblock}
+	
+								</td>
+			{END cellblock_step3_c3}
+			 
+		
+							
+
+{BEGIN cellblock_step3_c4}
+<td
+	{$cell_step3_c4}
+	class=" r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step3_c4" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+									</td>
+			{END cellblock_step3_c4}
+								</tr>
+	 
+	 
+														<tr {$row_step3_2} >
+										
+
+{BEGIN cellblock_step3_c2}
+<td
+	{$cell_step3_c2}
+	class="r-align-left r-ori-vert"
+	
+			
+	ocolspan="2"		data-cellId="step3_c2" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				<span data-itemtype="text" data-itemid="text1" {$item_text1} data-pageid="{$pageid}" data-page="activar_vacancia_add" data-small > 
+	Rango de edad</span>
+											
+{BEGIN edad_rango_bajo_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_edad_rango_bajo}  r-vertical-field" 
+	data-signal-error-for="edad_rango_bajo{$id}" {$required_attr_edad_rango_bajo}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field22" {$item_integrated_edit_field22} data-pageid="{$pageid}" data-page="activar_vacancia_add" data-field="edad_rango_bajo" data-fieldname="edad_rango_bajo" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_edad_rango_bajo}">
+		{BEGIN edad_rango_bajo_label}{$label activar_vacancia edad_rango_bajo }{END edad_rango_bajo_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$edad_rango_bajo_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="edad_rango_bajo" {$tooltipAttr activar_vacancia edad_rango_bajo } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia edad_rango_bajo }		</div>
+	</div>
+</div>
+
+
+{END edad_rango_bajo_fieldblock}
+											
+{BEGIN edad_rango_alto_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_edad_rango_alto}  r-vertical-field" 
+	data-signal-error-for="edad_rango_alto{$id}" {$required_attr_edad_rango_alto}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field23" {$item_integrated_edit_field23} data-pageid="{$pageid}" data-page="activar_vacancia_add" data-field="edad_rango_alto" data-fieldname="edad_rango_alto" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_edad_rango_alto}">
+		{BEGIN edad_rango_alto_label}{$label activar_vacancia edad_rango_alto }{END edad_rango_alto_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$edad_rango_alto_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="edad_rango_alto" {$tooltipAttr activar_vacancia edad_rango_alto } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia edad_rango_alto }		</div>
+	</div>
+</div>
+
+
+{END edad_rango_alto_fieldblock}
+	
+								</td>
+			{END cellblock_step3_c2}
+								</tr>
+			</tbody></table>
+{END step3_block}
+</div>	
+				<div id="step_3_{$id}" class="stepFrame" data-step="3" style="display:none">
+		{BEGIN step4_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="step4" id="form_step4_{$pageid}" data-makeup="topbar" {$form_step4} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr {$row_step4_0} >
+										
+
+{BEGIN cellblock_step4_c1}
+<td
+	{$cell_step4_c1}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step4_c1" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN requisitos_exclu_formacion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_requisitos_exclu_formacion}  r-vertical-field" 
+	data-signal-error-for="requisitos_exclu_formacion{$id}" {$required_attr_requisitos_exclu_formacion}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field24" {$item_integrated_edit_field24} data-pageid="{$pageid}" data-field="requisitos_exclu_formacion" data-fieldname="requisitos_exclu_formacion" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_requisitos_exclu_formacion}">
+		{BEGIN requisitos_exclu_formacion_label}{$label activar_vacancia requisitos_exclu_formacion }{END requisitos_exclu_formacion_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$requisitos_exclu_formacion_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="requisitos_exclu_formacion" {$tooltipAttr activar_vacancia requisitos_exclu_formacion } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia requisitos_exclu_formacion }		</div>
+	</div>
+</div>
+
+
+{END requisitos_exclu_formacion_fieldblock}
+	
+								</td>
+			{END cellblock_step4_c1}
+								</tr>
+	 
+	 
+														<tr {$row_step4_1} >
+										
+
+{BEGIN cellblock_step4_c3}
+<td
+	{$cell_step4_c3}
+	class="r-align-left r-ori-vert"
+	
+			data-single
+			
+			data-cellId="step4_c3" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell="2"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN habilidades_conocimiento_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_habilidades_conocimiento}  r-vertical-field" 
+	data-signal-error-for="habilidades_conocimiento{$id}" {$required_attr_habilidades_conocimiento}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field25" {$item_integrated_edit_field25} data-pageid="{$pageid}" data-field="habilidades_conocimiento" data-fieldname="habilidades_conocimiento" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_habilidades_conocimiento}">
+		{BEGIN habilidades_conocimiento_label}{$label activar_vacancia habilidades_conocimiento }{END habilidades_conocimiento_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$habilidades_conocimiento_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="habilidades_conocimiento" {$tooltipAttr activar_vacancia habilidades_conocimiento } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia habilidades_conocimiento }		</div>
+	</div>
+</div>
+
+
+{END habilidades_conocimiento_fieldblock}
+	
+								</td>
+			{END cellblock_step4_c3}
+								</tr>
+	 
+	 
+														<tr {$row_step4_2} >
+										
+
+{BEGIN cellblock_step4_c2}
+<td
+	{$cell_step4_c2}
+	class="r-align-left"
+	
+			
+			data-cellId="step4_c2" data-pageid="{$pageid}" data-page="activar_vacancia_add"
+		data-v-cell=""
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN anos_experiencia_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_anos_experiencia_vacancia}  r-vertical-field" 
+	data-signal-error-for="anos_experiencia_vacancia{$id}" {$required_attr_anos_experiencia_vacancia}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field26" {$item_integrated_edit_field26} data-pageid="{$pageid}" data-field="anos_experiencia_vacancia" data-fieldname="anos_experiencia_vacancia" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_anos_experiencia_vacancia}">
+		{BEGIN anos_experiencia_vacancia_label}{$label activar_vacancia anos_experiencia_vacancia }{END anos_experiencia_vacancia_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$anos_experiencia_vacancia_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="anos_experiencia_vacancia" {$tooltipAttr activar_vacancia anos_experiencia_vacancia } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia anos_experiencia_vacancia }		</div>
+	</div>
+</div>
+
+
+{END anos_experiencia_vacancia_fieldblock}
+											
+{BEGIN meses_experiencia_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_meses_experiencia_vacancia}  r-vertical-field" 
+	data-signal-error-for="meses_experiencia_vacancia{$id}" {$required_attr_meses_experiencia_vacancia}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field27" {$item_integrated_edit_field27} data-pageid="{$pageid}" data-field="meses_experiencia_vacancia" data-fieldname="meses_experiencia_vacancia" data-compact >
+
+	<label class="r-edit-label control-label" for="{$labelfor_meses_experiencia_vacancia}">
+		{BEGIN meses_experiencia_vacancia_label}{$label activar_vacancia meses_experiencia_vacancia }{END meses_experiencia_vacancia_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$meses_experiencia_vacancia_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="meses_experiencia_vacancia" {$tooltipAttr activar_vacancia meses_experiencia_vacancia } >
+		<div class="text-muted" >
+		{$tooltip activar_vacancia meses_experiencia_vacancia }		</div>
+	</div>
+</div>
+
+
+{END meses_experiencia_vacancia_fieldblock}
+	
+								</td>
+			{END cellblock_step4_c2}
+								</tr>
+			</tbody></table>
+{END step4_block}
+</div>	
+	{END steps_block}	</div>
+<div class="r-below">
+					{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="topbar" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="0"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-12
+	">
+	 
+		{BEGIN nextStepButton}
+<span data-itemtype="next_step" data-itemid="next_step" {$item_next_step} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" href="#" id="nextstep{$id}" >
+							Siguiente			</a>
+</span>
+{END nextStepButton}
+	 
+		<span data-itemtype="add_save" data-itemid="add_save" {$item_add_save} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$savebutton_attrs} >
+							Cargar Vacancia			</a>
+</span>
+	 
+		{BEGIN back_button}
+<span data-itemtype="add_back_list" data-itemid="add_back_list" {$item_add_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="backButton{$id}" >
+							Volver a la lista			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN cancel_button}
+<span data-itemtype="add_cancel" data-itemid="add_cancel" {$item_add_cancel} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="cancelButton{$id}" >
+							Cancelar			</a>
+</span>
+{END cancel_button}
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+	</div>
+
+
+
+
+											
+					</div>
+				</div>
+			</div>
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

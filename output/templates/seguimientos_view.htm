@@ -1,0 +1,409 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+			
+	</head>
+
+	<body class="{$stylename} function-view" >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="view_header" data-itemid="view_header" {$item_view_header} data-pageid="{$pageid}" >{$pagetitlelabel bolsa_empleo_seguimientos view}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr {$row_grid_0} >
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="4"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN id_seguimiento_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_seguimiento}  r-vertical-field" data-fieldname="id_seguimiento" data-signal-error-for="id_seguimiento{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="id_seguimiento" data-fieldname="id_seguimiento" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_seguimiento}">
+		
+		{BEGIN id_seguimiento_label}{$label bolsa_empleo_seguimientos id_seguimiento }{END id_seguimiento_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_seguimiento_value}	</div>
+
+		
+</div>
+
+
+{END id_seguimiento_fieldblock}
+											
+{BEGIN fecha_creacion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fecha_creacion}  r-vertical-field" data-fieldname="fecha_creacion" data-signal-error-for="fecha_creacion{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="fecha_creacion" data-fieldname="fecha_creacion" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_fecha_creacion}">
+		
+		{BEGIN fecha_creacion_label}{$label bolsa_empleo_seguimientos fecha_creacion }{END fecha_creacion_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$fecha_creacion_value}	</div>
+
+		
+</div>
+
+
+{END fecha_creacion_fieldblock}
+											
+{BEGIN id_postulacion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_postulacion}  r-vertical-field" data-fieldname="id_postulacion" data-signal-error-for="id_postulacion{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" {$item_integrated_edit_field6} data-pageid="{$pageid}" data-field="id_postulacion" data-fieldname="id_postulacion" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_postulacion}">
+		
+		{BEGIN id_postulacion_label}{$label bolsa_empleo_seguimientos id_postulacion }{END id_postulacion_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_postulacion_value}	</div>
+
+		
+</div>
+
+
+{END id_postulacion_fieldblock}
+											
+{BEGIN id_estado_anterior_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_estado_anterior}  r-vertical-field" data-fieldname="id_estado_anterior" data-signal-error-for="id_estado_anterior{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="id_estado_anterior" data-fieldname="id_estado_anterior" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_estado_anterior}">
+		
+		{BEGIN id_estado_anterior_label}{$label bolsa_empleo_seguimientos id_estado_anterior }{END id_estado_anterior_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_estado_anterior_value}	</div>
+
+		
+</div>
+
+
+{END id_estado_anterior_fieldblock}
+											
+{BEGIN id_nuevo_estado_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_nuevo_estado}  r-vertical-field" data-fieldname="id_nuevo_estado" data-signal-error-for="id_nuevo_estado{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="id_nuevo_estado" data-fieldname="id_nuevo_estado" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_nuevo_estado}">
+		
+		{BEGIN id_nuevo_estado_label}{$label bolsa_empleo_seguimientos id_nuevo_estado }{END id_nuevo_estado_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_nuevo_estado_value}	</div>
+
+		
+</div>
+
+
+{END id_nuevo_estado_fieldblock}
+											
+{BEGIN usuario_carga_id_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_usuario_carga_id}  r-vertical-field" data-fieldname="usuario_carga_id" data-signal-error-for="usuario_carga_id{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="usuario_carga_id" data-fieldname="usuario_carga_id" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_usuario_carga_id}">
+		
+		{BEGIN usuario_carga_id_label}{$label bolsa_empleo_seguimientos usuario_carga_id }{END usuario_carga_id_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$usuario_carga_id_value}	</div>
+
+		
+</div>
+
+
+{END usuario_carga_id_fieldblock}
+											
+{BEGIN usuario_carga_nombre_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_usuario_carga_nombre}  r-vertical-field" data-fieldname="usuario_carga_nombre" data-signal-error-for="usuario_carga_nombre{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" {$item_integrated_edit_field5} data-pageid="{$pageid}" data-field="usuario_carga_nombre" data-fieldname="usuario_carga_nombre" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_usuario_carga_nombre}">
+		
+		{BEGIN usuario_carga_nombre_label}{$label bolsa_empleo_seguimientos usuario_carga_nombre }{END usuario_carga_nombre_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$usuario_carga_nombre_value}	</div>
+
+		
+</div>
+
+
+{END usuario_carga_nombre_fieldblock}
+											
+{BEGIN id_vacancia_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_vacancia}  r-vertical-field" data-fieldname="id_vacancia" data-signal-error-for="id_vacancia{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" {$item_integrated_edit_field7} data-pageid="{$pageid}" data-field="id_vacancia" data-fieldname="id_vacancia" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_vacancia}">
+		
+		{BEGIN id_vacancia_label}{$label bolsa_empleo_seguimientos id_vacancia }{END id_vacancia_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_vacancia_value}	</div>
+
+		
+</div>
+
+
+{END id_vacancia_fieldblock}
+											
+{BEGIN id_empresa_sucursal_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_id_empresa_sucursal}  r-vertical-field" data-fieldname="id_empresa_sucursal" data-signal-error-for="id_empresa_sucursal{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" {$item_integrated_edit_field8} data-pageid="{$pageid}" data-field="id_empresa_sucursal" data-fieldname="id_empresa_sucursal" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_id_empresa_sucursal}">
+		
+		{BEGIN id_empresa_sucursal_label}{$label bolsa_empleo_seguimientos id_empresa_sucursal }{END id_empresa_sucursal_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$id_empresa_sucursal_value}	</div>
+
+		
+</div>
+
+
+{END id_empresa_sucursal_fieldblock}
+											
+{BEGIN fk_personaid_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_fk_personaid}  r-vertical-field" data-fieldname="fk_personaid" data-signal-error-for="fk_personaid{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="fk_personaid" data-fieldname="fk_personaid" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_fk_personaid}">
+		
+		{BEGIN fk_personaid_label}{$label bolsa_empleo_seguimientos fk_personaid }{END fk_personaid_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$fk_personaid_value}	</div>
+
+		
+</div>
+
+
+{END fk_personaid_fieldblock}
+											
+{BEGIN nombre_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_nombre}  r-vertical-field" data-fieldname="nombre" data-signal-error-for="nombre{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field10" {$item_integrated_edit_field10} data-pageid="{$pageid}" data-field="nombre" data-fieldname="nombre" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_nombre}">
+		
+		{BEGIN nombre_label}{$label bolsa_empleo_seguimientos nombre }{END nombre_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$nombre_value}	</div>
+
+		
+</div>
+
+
+{END nombre_fieldblock}
+											
+{BEGIN apellidos_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_apellidos}  r-vertical-field" data-fieldname="apellidos" data-signal-error-for="apellidos{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field11" {$item_integrated_edit_field11} data-pageid="{$pageid}" data-field="apellidos" data-fieldname="apellidos" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_apellidos}">
+		
+		{BEGIN apellidos_label}{$label bolsa_empleo_seguimientos apellidos }{END apellidos_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$apellidos_value}	</div>
+
+		
+</div>
+
+
+{END apellidos_fieldblock}
+											
+{BEGIN valor_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_valor}  r-vertical-field" data-fieldname="valor" data-signal-error-for="valor{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field12" {$item_integrated_edit_field12} data-pageid="{$pageid}" data-field="valor" data-fieldname="valor" data-compact >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_valor}">
+		
+		{BEGIN valor_label}{$label bolsa_empleo_seguimientos valor }{END valor_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$valor_value}	</div>
+
+		
+</div>
+
+
+{END valor_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-6
+	">
+	 
+		{BEGIN back_button}
+<span data-itemtype="view_back_list" data-itemid="view_back_list" {$item_view_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$backbutton_attrs} >
+							Volver a la lista			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN close_button}
+<span data-itemtype="view_close" data-itemid="view_close" {$item_view_close} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" href="#" {$closebutton_attrs} >
+							Cerrar ventana			</a>
+</span>
+{END close_button}
+	</div>			 
+				<div 
+	data-cellId="below-grid_c2" data-pageid="{$pageid}"	{$cell_below-grid_c2}
+	class="r-align-right r-ori-vert			col-md-6
+	">
+	 
+		<span data-itemtype="hamburger" data-itemid="hamburger" {$item_hamburger} data-pageid="{$pageid}" data-small data-button-item>
+	<span class="dropdown dropup">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+										<span class="glyphicon glyphicon-menu-hamburger"></span>
+												<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							{BEGIN edit_page_button}
+	<li data-itemtype="view_edit" data-itemid="view_edit" {$item_view_edit} data-pageid="{$pageid}" data-small >
+				<a  href="seguimientos_edit.php?{$editlink}" {$edit_page_button_attrs}  title="" >
+				
+		Editar		
+		</a>
+	</li>
+{END edit_page_button}
+					</ul>
+	</span>
+</span>
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

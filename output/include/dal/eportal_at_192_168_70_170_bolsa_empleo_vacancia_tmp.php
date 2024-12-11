@@ -1,0 +1,40 @@
+<?php
+$dalTablevacancia_tmp = array();
+$dalTablevacancia_tmp["id_vacancias"] = array("type"=>20,"varname"=>"id_vacancias", "name" => "id_vacancias", "autoInc" => "1");
+$dalTablevacancia_tmp["fecha_creacion_vacancia"] = array("type"=>135,"varname"=>"fecha_creacion_vacancia", "name" => "fecha_creacion_vacancia", "autoInc" => "0");
+$dalTablevacancia_tmp["id_estado_vacancia"] = array("type"=>200,"varname"=>"id_estado_vacancia", "name" => "id_estado_vacancia", "autoInc" => "0");
+$dalTablevacancia_tmp["fecha_expiracion_vacancia"] = array("type"=>135,"varname"=>"fecha_expiracion_vacancia", "name" => "fecha_expiracion_vacancia", "autoInc" => "0");
+$dalTablevacancia_tmp["cantidad_vacancia"] = array("type"=>3,"varname"=>"cantidad_vacancia", "name" => "cantidad_vacancia", "autoInc" => "0");
+$dalTablevacancia_tmp["fk_id_feria_empleo"] = array("type"=>3,"varname"=>"fk_id_feria_empleo", "name" => "fk_id_feria_empleo", "autoInc" => "0");
+$dalTablevacancia_tmp["usuario"] = array("type"=>200,"varname"=>"usuario", "name" => "usuario", "autoInc" => "0");
+$dalTablevacancia_tmp["fk_ocupacion_puesto"] = array("type"=>3,"varname"=>"fk_ocupacion_puesto", "name" => "fk_ocupacion_puesto", "autoInc" => "0");
+$dalTablevacancia_tmp["salario"] = array("type"=>3,"varname"=>"salario", "name" => "salario", "autoInc" => "0");
+$dalTablevacancia_tmp["tipo_contrato"] = array("type"=>3,"varname"=>"tipo_contrato", "name" => "tipo_contrato", "autoInc" => "0");
+$dalTablevacancia_tmp["descripcion_puesto"] = array("type"=>201,"varname"=>"descripcion_puesto", "name" => "descripcion_puesto", "autoInc" => "0");
+$dalTablevacancia_tmp["id_rubro"] = array("type"=>3,"varname"=>"id_rubro", "name" => "id_rubro", "autoInc" => "0");
+$dalTablevacancia_tmp["anos_experiencia_vacancia"] = array("type"=>3,"varname"=>"anos_experiencia_vacancia", "name" => "anos_experiencia_vacancia", "autoInc" => "0");
+$dalTablevacancia_tmp["meses_experiencia_vacancia"] = array("type"=>3,"varname"=>"meses_experiencia_vacancia", "name" => "meses_experiencia_vacancia", "autoInc" => "0");
+$dalTablevacancia_tmp["horario_rotativo"] = array("type"=>11,"varname"=>"horario_rotativo", "name" => "horario_rotativo", "autoInc" => "0");
+$dalTablevacancia_tmp["modalidad_trabajo"] = array("type"=>3,"varname"=>"modalidad_trabajo", "name" => "modalidad_trabajo", "autoInc" => "0");
+$dalTablevacancia_tmp["descripcion_salario"] = array("type"=>3,"varname"=>"descripcion_salario", "name" => "descripcion_salario", "autoInc" => "0");
+$dalTablevacancia_tmp["id_empresa_sucursal"] = array("type"=>3,"varname"=>"id_empresa_sucursal", "name" => "id_empresa_sucursal", "autoInc" => "0");
+$dalTablevacancia_tmp["id_cidudad"] = array("type"=>3,"varname"=>"id_cidudad", "name" => "id_cidudad", "autoInc" => "0");
+$dalTablevacancia_tmp["id_departamento"] = array("type"=>3,"varname"=>"id_departamento", "name" => "id_departamento", "autoInc" => "0");
+$dalTablevacancia_tmp["genero"] = array("type"=>2,"varname"=>"genero", "name" => "genero", "autoInc" => "0");
+$dalTablevacancia_tmp["movilidad_propia"] = array("type"=>200,"varname"=>"movilidad_propia", "name" => "movilidad_propia", "autoInc" => "0");
+$dalTablevacancia_tmp["tipo_movilidad"] = array("type"=>200,"varname"=>"tipo_movilidad", "name" => "tipo_movilidad", "autoInc" => "0");
+$dalTablevacancia_tmp["id_registro_conducir"] = array("type"=>200,"varname"=>"id_registro_conducir", "name" => "id_registro_conducir", "autoInc" => "0");
+$dalTablevacancia_tmp["discapacidad_aceptada"] = array("type"=>200,"varname"=>"discapacidad_aceptada", "name" => "discapacidad_aceptada", "autoInc" => "0");
+$dalTablevacancia_tmp["nacionalidad"] = array("type"=>200,"varname"=>"nacionalidad", "name" => "nacionalidad", "autoInc" => "0");
+$dalTablevacancia_tmp["edad_minimo"] = array("type"=>200,"varname"=>"edad_minimo", "name" => "edad_minimo", "autoInc" => "0");
+$dalTablevacancia_tmp["requisitos_exclu_formacion"] = array("type"=>200,"varname"=>"requisitos_exclu_formacion", "name" => "requisitos_exclu_formacion", "autoInc" => "0");
+$dalTablevacancia_tmp["habilidades_conocimiento"] = array("type"=>200,"varname"=>"habilidades_conocimiento", "name" => "habilidades_conocimiento", "autoInc" => "0");
+$dalTablevacancia_tmp["id_formacion_academica"] = array("type"=>200,"varname"=>"id_formacion_academica", "name" => "id_formacion_academica", "autoInc" => "0");
+$dalTablevacancia_tmp["id_contacto_sucursal"] = array("type"=>3,"varname"=>"id_contacto_sucursal", "name" => "id_contacto_sucursal", "autoInc" => "0");
+$dalTablevacancia_tmp["edad_maximo"] = array("type"=>200,"varname"=>"edad_maximo", "name" => "edad_maximo", "autoInc" => "0");
+$dalTablevacancia_tmp["origen"] = array("type"=>200,"varname"=>"origen", "name" => "origen", "autoInc" => "0");
+$dalTablevacancia_tmp["tipo_remuneracion"] = array("type"=>3,"varname"=>"tipo_remuneracion", "name" => "tipo_remuneracion", "autoInc" => "0");
+$dalTablevacancia_tmp["id_vacancias"]["key"]=true;
+
+$dal_info["eportal_at_192_168_70_170_bolsa_empleo_vacancia_tmp"] = &$dalTablevacancia_tmp;
+?>

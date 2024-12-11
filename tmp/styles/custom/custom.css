@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    /* background: #e9ecee; */
+    background-image: linear-gradient(100deg,#4e49f8 0%,#d5018a 100%)!important;
+}
+.panel-default > .panel-heading {
+    color: #555555;
+    background-color: #ffffff;
+    border-color: #fff;
+}
+.panel-info > .panel-heading {
+    color: #3a87ad;
+    background-color: #d5018a;
+    border-color: #ddd;
+}
+/* Button */
+.clearfix .bs-details .details-grid .panel-heading .panel-title span span:nth-child(1) .btn-info{
+ background-color:#4e49f8;
+}
+.panel-info > .panel-heading .btn.btn-info:not(:hover) {
+    background-color: #4e49f8;
+}
+.r-topbar-page .r-topheader{
+ background-color:transparent;
+}
+
+/* Form supertop 1 */
+#form_supertop_1{
+ background-color:transparent;
+ border-style:none;
+ border-top-style:none;
+ border-right-style:none;
+ border-bottom-style:none;
+ border-left-style:none;
+}
+
+
+.badge-pendiente {  
+background-color: #946D00!important;
+color: #FFFFFF!important;
+}  
+  
+.badge-busqueda {  
+background-color: #398361!important;
+color: #FFFFFF!important;
+
+}  
+
+.badge-evaluacion {  
+background-color: #6F42C1!important;
+color: #FFFFFF!important;
+} 
+
+.badge-rechazado {  
+background-color: #DC3545!important; 
+color: #FFFFFF!important;
+
+} 
+  
+.badge-completada {  
+background-color:  #FF0000!important; 
+color: #FFFFFF!important;
+} 
+
+.badge-cerrada {  
+background-color: #FF0000 !important; 
+color: #FFFFFF!important;
+} 
+  
+.badge {  
+      
+    font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;  
+    font-weight: 600;  
+    padding: 2px 8px;  
+    text-shadow: none;      
+    border-radius: .25em !important;  
+    float: left!important;  
+}
+
+/* Contact */
+#contact{
+ background-color:#ffffff;
+}
+[data-itemid="puesto_select"] .select2-container {
+    width: 135vh !important; /* Ancho deseado para el campo select2 */
+}
+[data-itemid="salario_descripcion"] .select2-container {
+    width: 650px !important; /* Ancho deseado para el campo select2 */
+}
+[data-itemid="field_requisitos_exclu_formacion"] .select2-container {
+    width: 135vh !important; /* Ancho deseado para el campo select2 */
+}
+[data-itemid="habilidades_cono"] .select2-container {
+    width: 135vh !important; /* Ancho deseado para el campo select2 */
+}
+
+
+[data-itemid="puesto_select1"] .select2-container {
+    width: 160vh !important; /* Ancho deseado para el campo select2 */
+}
+
+[data-itemid="descripcion_salario"] .select2-selection--single { 
+    width: 715px !important; /* Ancho deseado para el campo select2 */
+}
+[data-itemid="descripcion_salario"] .select2-container {
+    width: 78vh !important; /* Ancho deseado para el campo select2 */
+}
+[data-itemid="field_requisitos_exclu_formacion1"] .select2-container {
+    width: 160vh !important; /* Ancho deseado para el campo select2 */
+}
+[data-itemid="habilidades_cono1"] .select2-container {
+    width: 160vh !important; /* Ancho deseado para el campo select2 */
+}
+
+/*#form_step2_1 tr[data-itemid="descripcion_puesto"] .r-edit-field {
+    width: 130vh !important;
+}*/
+[data-itemid="descripcion_salario"].select2-dropdown.select2-dropdown--below {
+
+     width: 78vh !important; /* Ancho deseado para el campo select2 */
+}

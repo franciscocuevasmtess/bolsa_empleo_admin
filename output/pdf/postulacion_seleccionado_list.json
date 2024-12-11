@@ -1,0 +1,1064 @@
+
+pdfDocument = {
+{BEGIN backgroundImage}
+	background: {
+		image: {$backgroundImage},
+		{BEGIN bgWidth}
+		imgWidth: {$bgWidth},
+		imgHeight: {$bgHeight},
+		{END bgWidth}
+	},
+{END backgroundImage}
+	styles: {
+				bodycell: {
+			fontSize:12,
+		},
+		headcell: {
+			fontSize:12,
+			bold: true
+		},
+
+	
+			},
+	defaultStyle: {
+		fontSize: 14,
+	},
+	"content": [
+		{BEGIN body}
+		{BEGIN embedded_grid_caption}
+			{
+				text: '{$jscaption bolsa_empleo_postulacion_seleccionado}',
+			},
+		{END embedded_grid_caption}
+		{BEGIN embedded_page_title}
+			{
+				text: '{$jspagetitlelabel bolsa_empleo_postulacion_seleccionado list}',
+			},
+		{END embedded_page_title}		
+		{ 
+			{BEGIN standalone_page}
+			pageBreak: 'before',
+			standAlonePage: true,
+			{END standalone_page}
+			{BEGIN embedded_grid}
+			embeddedPage: true,
+			{END embedded_grid}
+			layout: {
+				hLineWidth: function(i, node) { return 0; },
+				vLineWidth: function(i, node) { 
+					return 0; 
+				},
+				hLineColor: function(i, node) { return 'lightgray'; },
+				vLineColor: function(i, node) { return 'lightgray'; },
+			},
+			table: {
+				{BEGIN embedded_grid}
+				embeddedPage: true,
+				{END embedded_grid}
+				
+				tableForm: true,
+				headerRows: 1 
+								{BEGIN embedded_grid} -1 {END embedded_grid} ,
+
+				widths: [
+														"*",
+															],
+							
+				body: [
+				{BEGIN standalone_page}
+					[
+						{
+							colSpan: 1,
+							border:[false, false,false,false],
+							stack: [
+
+																										
+{
+	table: {
+	
+				
+		location: 'top',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+				[
+																{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+											],
+						[
+																{
+	cellId: 'c3',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+			
+	
+			"text": [
+		
+				
+			{BEGIN mastertable_block}
+			{$showmasterfile}
+		{END mastertable_block},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+											],
+		
+		]
+	}
+}
+,
+								
+																										
+{
+	table: {
+	
+				
+		location: 'above-grid',
+		
+		
+		widths: [
+								"*", 
+											"*", 
+					 ],	
+		
+	
+		body: [
+				
+				[
+																{
+	cellId: 'c',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+			
+	
+			"text": [
+		
+				
+			{"text":"Postulantes","color":"#ffffff","hidden":"{$item_hide_text8}","fontSize":26,"bold":true,"isHtml":true},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+																							{
+	cellId: 'c3',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'right',
+     
+      
+      },
+
+											],
+						[
+																{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+			
+	
+			"text": [
+		
+				
+			{"text":"Mostrando %first% - %last% de %total% postulados convocados","color":"#ffffff","hidden":"{$item_hide_details_found}","bold":true,"isHtml":true,"page_indicator":true},
+				
+				
+			{"text":"","hidden":"{$item_hide_inline_add}"},
+				
+				
+			{"text":"","hidden":"{$item_hide_delete}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+																							{
+	cellId: 'c2',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+			
+	
+			"text": [
+		
+				
+			{"text":"","hidden":"{$item_hide_simple_search}"},
+				
+				
+			{"text":"","hidden":"{$item_hide_print_panel}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'right',
+     
+      
+      },
+
+											],
+		
+		]
+	}
+}
+,
+															]
+						},
+					],
+				{END standalone_page}
+
+																	
+	{BEGIN grid_row}
+	[ 
+	
+	{BEGIN grid_record}
+	{BEGIN grid_vrecord}
+	
+		{ 
+			layout: 'vrecord',
+			table: {
+				widths: ['*'],
+				body: [[
+					{
+						
+						table: {
+							tableForm: true,
+							widths: [
+																{BEGIN col_grid_0}
+								"40%",
+								{END col_grid_0}
+																{BEGIN col_grid_1}
+								"40%",
+								{END col_grid_1}
+															],
+													heights: [
+															{BEGIN row_grid_0}			
+								"%",
+								{END row_grid_0}
+															{BEGIN row_grid_1}			
+								"%",
+								{END row_grid_1}
+															{BEGIN row_grid_2}			
+								"%",
+								{END row_grid_2}
+															{BEGIN row_grid_3}			
+								"%",
+								{END row_grid_3}
+															{BEGIN row_grid_4}			
+								"%",
+								{END row_grid_4}
+															{BEGIN row_grid_5}			
+								"%",
+								{END row_grid_5}
+															{BEGIN row_grid_6}			
+								"%",
+								{END row_grid_6}
+															{BEGIN row_grid_7}			
+								"%",
+								{END row_grid_7}
+															{BEGIN row_grid_8}			
+								"%",
+								{END row_grid_8}
+															{BEGIN row_grid_9}			
+								"%",
+								{END row_grid_9}
+															{BEGIN row_grid_10}			
+								"%",
+								{END row_grid_10}
+															{BEGIN row_grid_11}			
+								"%",
+								{END row_grid_11}
+															{BEGIN row_grid_12}			
+								"%",
+								{END row_grid_12}
+														],
+													
+							body: [
+									
+				{BEGIN row_grid_0}
+				[
+																{BEGIN cellblock_grid_cell_top}
+{
+	cellId: 'cell_top',
+	col:0,
+	row:0,
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_top}
+			colSpan: {$colspan_grid_cell_top},
+			{END colspan_grid_cell_top}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"","fontSize":16,"bold":true},
+				
+				
+			{"text":"","hidden":"{$item_hide_grid_checkbox}"},
+				
+				
+			{"text":"","hidden":"{$item_hide_grid_inline_cancel}"},
+				
+				
+			{"text":"","hidden":"{$item_hide_grid_alldetails_link}"},
+				
+				
+			{"text":"","hidden":"{$item_hide_grid_details_link}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'right',
+     
+      
+      },
+
+{END cellblock_grid_cell_top}
+																		{ 
+				cellId: 'cell_top',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_0}
+						{BEGIN row_grid_1}
+				[
+																{BEGIN cellblock_grid_cell_label2}
+{
+	cellId: 'cell_label2',
+	col:0,
+	row:0,
+			fieldName: 'empresa',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_label2}
+			colSpan: {$colspan_grid_cell_label2},
+			{END colspan_grid_cell_label2}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$pdf_image images/empresa_vector.png undefined 0},"hidden":"{$item_hide_image}"},
+				
+				
+			{"text":{$empresa_pdfvalue},"hidden":"{$item_hide_grid_field3}","fontSize":24,"bold":true},
+				
+				
+			{"text":" || ","hidden":"{$item_hide_text3}","fontSize":24,"bold":true,"isHtml":true},
+				
+				
+			{"text":{$descri_empresa_pdfvalue},"color":"#aa0a72","background":"transparent","hidden":"{$item_hide_grid_field4}","fontSize":24,"bold":true},
+				
+				
+			{"text":{$hash_generado_pdfvalue},"hidden":"{$item_hide_grid_field2}"},
+				
+				
+			{"text":" || Cod.Vacancia:","color":"#aa0a72","hidden":"{$item_hide_text4}","isHtml":true},
+				
+				
+			{"text":{$id_vacancia_pdfvalue},"color":"#aa0a72","hidden":"{$item_hide_simple_grid_field1}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_label2}
+																		{ 
+				cellId: 'cell_label2',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_1}
+						{BEGIN row_grid_2}
+				[
+																{BEGIN cellblock_grid_cell_label}
+{
+	cellId: 'cell_label',
+	col:0,
+	row:0,
+			fieldName: 'nombre_completo',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_label}
+			colSpan: {$colspan_grid_cell_label},
+			{END colspan_grid_cell_label}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$pdf_image images/person-circle.png undefined 0},"hidden":"{$item_hide_image1}"},
+				
+				
+			{"text":{$nombre_completo_pdfvalue},"hidden":"{$item_hide_grid_field1}","fontSize":20,"bold":true},
+				
+				
+			{"text":" || Cod.Postulante:","hidden":"{$item_hide_text}","bold":true,"isHtml":true},
+				
+				
+			{"text":{$id_postulacion_pdfvalue},"hidden":"{$item_hide_grid_field5}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_label}
+																		{ 
+				cellId: 'cell_label',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_2}
+						{BEGIN row_grid_3}
+				[
+																{BEGIN cellblock_grid_cell_label1}
+{
+	cellId: 'cell_label1',
+	col:0,
+	row:0,
+			fieldName: 'cedula',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_label1}
+			colSpan: {$colspan_grid_cell_label1},
+			{END colspan_grid_cell_label1}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$pdf_image images/documento.png undefined 0},"hidden":"{$item_hide_image2}"},
+				
+				
+			{"text":{$cedula_pdfvalue},"hidden":"{$item_hide_simple_grid_field11}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_label1}
+																		{ 
+				cellId: 'cell_label1',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_3}
+						{BEGIN row_grid_4}
+				[
+																{BEGIN cellblock_grid_cell_label35}
+{
+	cellId: 'cell_label35',
+	col:0,
+	row:0,
+			fieldName: 'sexo',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_label35}
+			colSpan: {$colspan_grid_cell_label35},
+			{END colspan_grid_cell_label35}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado sexo }","hidden":"{$item_hide_simple_grid_field18}","bold":true},
+				
+				
+			{"text":{$sexo_pdfvalue},"hidden":"{$item_hide_simple_grid_field5}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_label35}
+																		{ 
+				cellId: 'cell_label35',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_4}
+						{BEGIN row_grid_5}
+				[
+																{BEGIN cellblock_grid_cell_label45}
+{
+	cellId: 'cell_label45',
+	col:0,
+	row:0,
+			fieldName: 'telefono',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_label45}
+			colSpan: {$colspan_grid_cell_label45},
+			{END colspan_grid_cell_label45}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$pdf_image images/cel%20pequeno%20vector.png undefined 0},"hidden":"{$item_hide_image3}"},
+				
+				
+			{"text":{$telefono_pdfvalue},"hidden":"{$item_hide_simple_grid_field12}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_label45}
+																		{ 
+				cellId: 'cell_label45',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_5}
+						{BEGIN row_grid_6}
+				[
+																{BEGIN cellblock_grid_cell_label33}
+{
+	cellId: 'cell_label33',
+	col:0,
+	row:0,
+			fieldName: 'estado_civil',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_label33}
+			colSpan: {$colspan_grid_cell_label33},
+			{END colspan_grid_cell_label33}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado estado_civil }","hidden":"{$item_hide_simple_grid_field23}","bold":true},
+				
+				
+			{"text":{$estado_civil_pdfvalue},"hidden":"{$item_hide_simple_grid_field10}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_label33}
+																		{ 
+				cellId: 'cell_label33',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_6}
+						{BEGIN row_grid_7}
+				[
+																{BEGIN cellblock_grid_cell_label31}
+{
+	cellId: 'cell_label31',
+	col:0,
+	row:0,
+			fieldName: 'fechanac',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_label31}
+			colSpan: {$colspan_grid_cell_label31},
+			{END colspan_grid_cell_label31}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$pdf_image images/calendario_vector.png undefined 0},"hidden":"{$item_hide_image4}"},
+				
+				
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado fechanac }","hidden":"{$item_hide_simple_grid_field17}","bold":true},
+				
+				
+			{"text":{$fechanac_pdfvalue},"hidden":"{$item_hide_simple_grid_field4}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_label31}
+																		{ 
+				cellId: 'cell_label31',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_7}
+						{BEGIN row_grid_8}
+				[
+																{BEGIN cellblock_grid_cell_label29}
+{
+	cellId: 'cell_label29',
+	col:0,
+	row:0,
+			fieldName: 'domicilio',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_label29}
+			colSpan: {$colspan_grid_cell_label29},
+			{END colspan_grid_cell_label29}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$pdf_image images/direccion%20vector.png undefined 0},"hidden":"{$item_hide_image5}"},
+				
+				
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado domicilio }","hidden":"{$item_hide_simple_grid_field19}","bold":true},
+				
+				
+			{"text":{$domicilio_pdfvalue},"hidden":"{$item_hide_simple_grid_field6}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_label29}
+																		{ 
+				cellId: 'cell_label29',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_8}
+						{BEGIN row_grid_9}
+				[
+																{BEGIN cellblock_grid_cell_label27}
+{
+	cellId: 'cell_label27',
+	col:0,
+	row:0,
+			fieldName: 'distrito',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_label27}
+			colSpan: {$colspan_grid_cell_label27},
+			{END colspan_grid_cell_label27}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$pdf_image images/ciudad%20departamento%20vector.png undefined 0},"hidden":"{$item_hide_image6}"},
+				
+				
+			{"text":{$distrito_pdfvalue},"hidden":"{$item_hide_simple_grid_field8}"},
+				
+				
+			{"text":" , ","hidden":"{$item_hide_text7}","isHtml":true},
+				
+				
+			{"text":{$ciudad_pdfvalue},"hidden":"{$item_hide_simple_grid_field7}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_label27}
+																		{ 
+				cellId: 'cell_label27',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_9}
+						{BEGIN row_grid_10}
+				[
+																{BEGIN cellblock_grid_cell_label41}
+{
+	cellId: 'cell_label41',
+	col:0,
+	row:0,
+			fieldName: 'pais',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_label41}
+			colSpan: {$colspan_grid_cell_label41},
+			{END colspan_grid_cell_label41}
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado pais }","hidden":"{$item_hide_grid_field_label}","bold":true},
+				
+				
+			{"text":{$pais_pdfvalue},"hidden":"{$item_hide_grid_field}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_label41}
+																		{ 
+				cellId: 'cell_label41',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_10}
+						{BEGIN row_grid_11}
+				[
+																{BEGIN cellblock_grid_cell_label3}
+{
+	cellId: 'cell_label3',
+	col:0,
+	row:0,
+			fieldName: 'id_vacancias',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado id_vacancias }","hidden":"{$item_hide_grid_field_label1}","bold":true},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'right',
+     
+      
+      },
+
+{END cellblock_grid_cell_label3}
+																							{BEGIN cellblock_grid_cell_field}
+{
+	cellId: 'cell_field',
+	col:0,
+	row:0,
+			fieldName: 'id_vacancias',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$id_vacancias_pdfvalue},"hidden":"{$item_hide_grid_field6}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": '{$id_vacancias_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field}
+											],
+				{END row_grid_11}
+						{BEGIN row_grid_12}
+				[
+																{BEGIN cellblock_grid_cell_dpreview}
+{
+	cellId: 'cell_dpreview',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+					{BEGIN colspan_grid_cell_dpreview}
+			colSpan: {$colspan_grid_cell_dpreview},
+			{END colspan_grid_cell_dpreview}
+		
+		
+	
+			
+	
+			"stack": [
+		
+				
+			 {BEGIN details_seguimientos}
+			{$displayDetailTable_seguimientos }
+		{END details_seguimientos},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_cell_dpreview}
+																		{ 
+				cellId: 'cell_dpreview',
+				row:  0,
+				col:  1,
+				text: '',
+				compensateColspan: true
+			},
+							],
+				{END row_grid_12}
+		
+							]
+						}
+					}
+				]]
+			}
+		},
+	{END grid_vrecord}
+	{END grid_record}
+	]
+,
+	{END grid_row}
+	
+									]
+			
+			}
+		},
+		{END body}
+	],
+	footer: [
+								
+{
+	table: {
+	
+				
+		location: 'below-grid',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+				[
+																{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			
+		
+	//	static colspan/rowspan
+		
+			
+			
+	
+			"text": [
+		
+				
+			{"text":"","hidden":"{$item_hide_pagination}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'center',
+     
+      
+      },
+
+											],
+		
+		]
+	}
+}
+			],
+	};
+
+
+pdfFonts = {$pdfFonts};

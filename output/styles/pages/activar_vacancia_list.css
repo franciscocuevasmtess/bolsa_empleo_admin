@@ -1,0 +1,131 @@
+[data-cellid="supertop_c1"][data-page="activar_vacancia_list"][data-cellid="supertop_c1"][data-page="activar_vacancia_list"][data-cellid="supertop_c1"][data-page="activar_vacancia_list"] {
+  background-color: transparent;
+}
+[data-cellid="supertop_c2"][data-page="activar_vacancia_list"][data-cellid="supertop_c2"][data-page="activar_vacancia_list"][data-cellid="supertop_c2"][data-page="activar_vacancia_list"] {
+  background-color: transparent;
+}
+[data-cellid="grid_cell_label"][data-page="activar_vacancia_list"][data-cellid="grid_cell_label"][data-page="activar_vacancia_list"][data-cellid="grid_cell_label"][data-page="activar_vacancia_list"] {
+  width: 80%;
+}
+[data-page="activar_vacancia_list"][data-itemid="details_found"] {
+  color: #ffffff;
+  font-weight: bold;
+}
+[data-page="activar_vacancia_list"][data-itemid="grid_field2"] {
+  font-size: 12px;
+}
+[data-page="activar_vacancia_list"][data-itemid="grid_field"] {
+  font-size: 16px;
+}
+[data-page="activar_vacancia_list"][data-itemid="grid_field1"] {
+  width: 100%;
+  white-space: normal;
+}
+[data-page="activar_vacancia_list"][data-itemid="grid_field8"] {
+  color: #374154;
+  font-size: 12px;
+}
+[data-page="activar_vacancia_list"][data-itemid="grid_field_label1"] {
+  color: #374154;
+  font-weight: bold;
+  font-size: 12px;
+}
+[data-page="activar_vacancia_list"][data-itemid="grid_field4"] {
+  font-size: 12px;
+}
+[data-page="activar_vacancia_list"][data-itemid="grid_field_label"] {
+  color: #374154;
+  font-weight: bold;
+  font-size: 12px;
+}
+[data-page="activar_vacancia_list"][data-itemid="grid_field3"] {
+  font-size: 12px;
+}
+[data-page="activar_vacancia_list"][data-itemid="grid_field6"] {
+  font-size: 16px;
+}
+[data-page="activar_vacancia_list"][data-itemid="grid_field5"] {
+  font-weight: bold;
+  font-size: 24px;
+}
+[data-page="activar_vacancia_list"][data-itemid="page_image_ash8f23hr"] {
+  width: 400px;
+}
+
+
+/* Put  your custom CSS code here */
+
+/* Link */
+.nav-justified .active a{
+ background-color:transparent !important;
+ color:#151313 !important;
+ border-style:solid !important;
+ border-width:1px !important;
+ border-color:#faf9f9  !important;
+ border-bottom-style:none !important;
+}
+
+/* Link */
+.nav-justified li a{
+ border-bottom-color:#ececed !important;
+ border-bottom-style:solid !important;
+ border-top-left-radius:0px !important;
+ border-top-right-radius:0px !important;
+ border-bottom-left-radius:0px !important;
+ border-bottom-right-radius:0px !important;
+}
+/* Select */
+#form_step3_27 tr select{
+ width:321px !important;
+ transform:translatex(0px) translatey(0px) !important;
+}
+
+/* Input */
+#form_step3_27 tr input[type=text]{
+ width:321px !important;
+}
+/* Link */
+.r-topbar-page .r-body .r-content .r-data-block .r-above #form_above-grid_1 .row .col-md-12 .nav-justified li a{
+ border-bottom-width:1px !important;
+}
+
+/* Select */
+#form_step3_1 tr select{
+ width:321px !important;
+}
+
+/* Input */
+#form_step3_1 tr input[type=text]{
+ width:321px !important;
+}
+
+/* Strong Tag */
+#form_top_1 h3 strong{
+ color:#0c0c0d !important;
+}
+
+/* Heading */
+#form_top_1 span h5{
+ color:#090a0a !important;
+}
+/* Link */
+.bs-popup .modal-dialog .ui-resizable .modal-body .rnr-pagewrapper #form_above-grid_11 .row .col-md-12 .nav-justified li a{
+ border-bottom-width:2px !important;
+}
+/* Button */
+.input-group .input-group-btn .btn-primary{
+ background-color:#0d6efd;
+ background-blend-mode:multiply;
+}
+
+/* Button */
+#form_above-grid_1 .row .r-align-right > span > .btn-primary{
+ background-color:#0c14fc;
+ background-blend-mode:saturation;
+}
+
+.panel-default > .panel-heading {
+    color: #555555;
+    background-color: #ffffff;
+    border-color: #fff;
+}

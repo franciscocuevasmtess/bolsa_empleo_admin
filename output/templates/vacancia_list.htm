@@ -1,0 +1,1127 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+			
+	</head>
+	<body class="{$stylename} function-list"  >
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<div class="r-topbar-page">
+			<div data-menu-width="full" 
+				 
+				class="r-topheader" 
+				data-resize-name="topbar"
+				data-body-align="center"
+			>
+								{BEGIN supertop_block}
+<nav class="navbar navbar-default" 
+	data-location="supertop" id="form_supertop_{$pageid}" data-makeup="topbar" {$form_supertop} data-pageid="{$pageid}" >
+			 
+							 
+				<span data-cellId="supertop_c1" data-pageid="{$pageid}" data-page="vacancia_list" class="r-align-left r-ori-vert navbar-header" data-itemid="logo" {$item_logo}>
+				{BEGIN logo_block}
+	<A data-itemtype="logo" data-itemid="logo" {$item_logo} data-pageid="{$pageid}" class="navbar-brand" href="{$home_link}" data-pageid="{$pageid}" {$logo_hiddenattr}>
+		{$logo}
+	</A>
+{END logo_block}
+				<button data-pageid="1" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target="[data-mobile-controlled]">	
+					<span class="sr-only">Toggle navigation</span>	
+					<span class="icon-bar"></span>					
+				</button>				
+			</span>
+							 
+							 
+				<span data-cellId="supertop_c2" data-pageid="{$pageid}" data-page="vacancia_list" class="r-align-right navbar-collapse" data-itemtype="menu" data-itemid="menu" {$item_menu} data-pageid="{$pageid}">
+				{BEGIN menuitems_main}
+<ul data-itemtype="menu" data-itemid="menu" {$item_menu} data-pageid="{$pageid}"	class="r-menu nav navbar-nav" 
+	data-menulevel="1"
+>
+
+{BEGIN item_children1}
+<li class="
+	{BEGIN item_haschildren2} dropdown {END item_haschildren2} 
+	{$item_current}">
+<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h data-menu-top >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren2}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-bottom"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren2}
+	</span>
+	</a>
+{BEGIN item_showchildren2}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="2">
+	{BEGIN item_children2}
+		{BEGIN item_menulink2}
+		<li class="
+						{BEGIN item_haschildren2} dropdown {END item_haschildren2}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren2}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren2}
+	</span>
+	</a>
+			{BEGIN item_showchildren3}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="3">
+	{BEGIN item_children3}
+		{BEGIN item_menulink3}
+		<li class="
+						{BEGIN item_haschildren3} dropdown {END item_haschildren3}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren3}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren3}
+	</span>
+	</a>
+			{BEGIN item_showchildren4}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="4">
+	{BEGIN item_children4}
+		{BEGIN item_menulink4}
+		<li class="
+						{BEGIN item_haschildren4} dropdown {END item_haschildren4}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren4}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren4}
+	</span>
+	</a>
+			{BEGIN item_showchildren5}
+<ul class="
+			dropdown-menu
+			{$submenu_class}" 
+		id="submenu{$item_id}" data-menulevel="5">
+	{BEGIN item_children5}
+		{BEGIN item_menulink5}
+		<li class="
+						{BEGIN item_haschildren5} dropdown {END item_haschildren5}
+						{$item_current}"
+		>
+			<a {$item_attrs} title="{$item_tooltip}" data-menu-link data-menu-h >
+	{$item_separator}
+	<span class="r-menu-link  "> 
+		<span class="r-menu-title">
+		{$item_icon} {$item_title}
+		</span>
+		{BEGIN item_haschildren5}
+		{BEGIN item_expand_icon}
+		<span class="r-menu-expand-icon glyphicon glyphicon-triangle-right"></span>
+		<span class="r-menu-mobile-expand-icon fa fa-angle-left"></span>
+		{END item_expand_icon}
+		{END item_haschildren5}
+	</span>
+	</a>
+					</li>
+		{END item_menulink5}
+	{END item_children5}
+</ul>
+{END item_showchildren5}
+		</li>
+		{END item_menulink4}
+	{END item_children4}
+</ul>
+{END item_showchildren4}
+		</li>
+		{END item_menulink3}
+	{END item_children3}
+</ul>
+{END item_showchildren3}
+		</li>
+		{END item_menulink2}
+	{END item_children2}
+</ul>
+{END item_showchildren2}
+</li>
+{END item_children1}
+</ul>
+{END menuitems_main}
+			</span>
+		 
+				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-page="vacancia_list" data-itemid="list_options" {$item_list_options} data-topcell-item-type="list_options" >
+				<span data-itemtype="list_options" data-itemid="list_options" {$item_list_options} data-pageid="{$pageid}" data-small data-button-item>
+</span>
+			</span>
+		 
+				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-page="vacancia_list" data-itemid="username_button" {$item_username_button} data-topcell-item-type="username_button" >
+				{BEGIN loggedas_message}
+<span data-itemtype="username_button" data-itemid="username_button" {$item_username_button} data-pageid="{$pageid}" data-small data-button-item>
+	<span class="dropdown ">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+			{BEGIN userbutton_icon}							<span class="glyphicon glyphicon-user"></span>
+						{END userbutton_icon}{$userbutton_image}			{$username}			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							{BEGIN userinfo_link}
+	<li data-itemtype="userinfo_link" data-itemid="userinfo_link" {$item_userinfo_link} data-pageid="{$pageid}" data-small >
+				<a  href="userinfo.php"  title="" >
+				
+		Perfil del usuario		
+		</a>
+	</li>
+{END userinfo_link}
+							{BEGIN logoutbutton}
+	<li data-itemtype="logout_link" data-itemid="logout_link" {$item_logout_link} data-pageid="{$pageid}" data-small >
+				<a  href="#" {$logoutlink_attrs}  title="" >
+				
+		Desconectarse		
+		</a>
+	</li>
+{END logoutbutton}
+							{BEGIN changepwd_link}
+	<li data-itemtype="changepassword_link" data-itemid="changepassword_link" {$item_changepassword_link} data-pageid="{$pageid}" data-small >
+				<a  href="changepwd.php" {$changepwdlink_attrs} id="changePasswordButton{$id}"  title="" >
+				
+		Cambiar contraseña		
+		</a>
+	</li>
+{END changepwd_link}
+					</ul>
+	</span>
+</span>
+{END loggedas_message}
+			</span>
+								</nav>
+{END supertop_block}
+					{$locking}
+			</div>	
+			<div data-body-align="center"  data-body-width="standard" class="r-body" data-resize-top="topbar" >
+				<div class="r-top">
+								{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="topbar" {$form_top} data-pageid="{$pageid}" >		
+	 
+				<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class="r-align-left r-ori-vert			col-md-12
+	
+">
+		 
+		{BEGIN breadcrumb}
+<ol class="breadcrumb" data-itemtype="breadcrumb" data-itemid="breadcrumb" {$item_breadcrumb} data-pageid="{$pageid}">
+<li ><a href="{$crumb_home_link}"><span class="glyphicon glyphicon-home"></span></a>{$crumb_dropdown}</li>
+{BEGIN crumb}
+  <li class="{$crumb_item_class}">
+{BEGIN crumb_title_link}
+	<a {$crumb_attrs}>{$crumb_title}</a>
+{END crumb_title_link}
+{BEGIN crumb_title_span}
+	<span {$crumb_attrs}>{$crumb_title}</span>
+{END crumb_title_span}	
+	{$crumb_dropdown}
+  </li>
+{END crumb}
+</ol>
+{END breadcrumb}		</div>					</div>
+			</div>		
+{END top_block}
+					</div>
+				<div class="r-content">
+										<div class="r-left" {$blockattr_left} {$form_left} >
+										{BEGIN left_block}
+<table class="r-fluid r-form" data-location="left" id="form_left_{$pageid}" data-makeup="topbar" {$form_left} data-pageid="{$pageid}" >
+						<tbody>
+			
+								<tr {$row_left_0} >
+									<td 
+	class=" r-ori-vert			"
+			 
+	data-cellId="left_c1" data-pageid="{$pageid}">
+</td>
+							</tr>
+					
+					</tbody>
+				</table>
+{END left_block}
+						</div>
+										<div class="r-data-block" data-body-width="standard" >
+						
+											<div class="r-above">
+					{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="topbar" {$form_above-grid} data-pageid="{$pageid}" >		
+	 
+				<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c" data-pageid="{$pageid}"	{$cell_above-grid_c}
+	class=" r-ori-vert			col-md-6
+	
+">
+		{BEGIN firstAboveGridCell}
+		 
+		<span data-itemtype="text" data-itemid="text3" {$item_text3} data-pageid="{$pageid}" data-page="vacancia_list" data-small > 
+	Ofertas Laborales</span>
+			{END firstAboveGridCell}	
+	</div>			 
+				<div 
+	data-cellId="above-grid_c5" data-pageid="{$pageid}"	{$cell_above-grid_c5}
+	class="r-align-right r-ori-vert			col-md-6
+	
+">
+			</div>					</div>
+			 
+				<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-6
+	
+">
+		 
+		<span data-itemtype="details_found" data-itemid="details_found" {$item_details_found} data-pageid="{$pageid}" data-page="vacancia_list" data-small >
+{$mlp_push}{$mlparam first var first_shown}{$mlparam last var last_shown}{$mlparam total var records_found}{$mltext %first%\_-\_%last%\_de\_%total%\_Ofertas\_de\_Empleo}{$mlp_pop}</span>		</div>			 
+				<div 
+	data-cellId="above-grid_c2" data-pageid="{$pageid}"	{$cell_above-grid_c2}
+	class="r-align-right			col-md-6
+	
+">
+		 
+		<span data-itemtype="simple_search" data-itemid="simple_search" {$item_simple_search} data-pageid="{$pageid}" class="form-group">
+
+<div  class="input-group">
+{BEGIN searchform_text}
+	<input type="search" class="form-control" {$searchfor_attrs} size="25">
+{END searchform_text}
+	<span class="input-group-btn">
+	{BEGIN searchform_showall}
+				<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs} title="Mostrar todo">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+	{END searchform_showall}
+
+	{BEGIN searchform_search}
+	<button {$searchbutton_attrs} class="btn btn-primary" >
+		<span class="glyphicon glyphicon-search"></span>
+	</button>
+	{END searchform_search}
+	</span>
+</div>
+		
+</span>	 
+		<span data-itemtype="custom_button" data-itemid="boton_nueva_oferta_laboral" {$item_boton_nueva_oferta_laboral} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" id="New_Button2" href="javascript:void(0)" typeid="ib" >
+							 Nueva Oferta Laboral			</a>
+</span>
+	 
+		{BEGIN print_friendly}
+<span id="printpanelblock{$id}"  data-pageid="{$pageid}" {$printpanel_hiddenattr} data-itemtype="print_panel" data-itemid="print_panel" {$item_print_panel} data-pageid="{$pageid}">
+	<button title="Página para imprimir" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-print"></span>
+				<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu pull-right">
+										 
+				 
+					<li class="container-fluid 
+										">
+									{BEGIN print_details}
+<div>
+	<label for="printDetailsToggler{$id}">
+		<input type="checkbox" id="printDetailsToggler{$id}">
+		Detalles de impresión	</label>
+	<div  id="printdetailstables{$id}" style="display:none;">
+											{BEGIN print_details_seguimientos}
+			<div>
+				<label for="printDetailsseguimientos{$id}">
+					<input type="checkbox" value="seguimientos" id="printDetailsseguimientos{$id}" checked>
+					Seguimientos				</label>
+			</div>
+			{END print_details_seguimientos}
+														{BEGIN print_details_postulacion_seleccionado}
+			<div>
+				<label for="printDetailspostulacion_seleccionado{$id}">
+					<input type="checkbox" value="postulacion_seleccionado" id="printDetailspostulacion_seleccionado{$id}" checked>
+					Postulacion Seleccionado				</label>
+			</div>
+			{END print_details_postulacion_seleccionado}
+														{BEGIN print_details_postulacion_convocado}
+			<div>
+				<label for="printDetailspostulacion_convocado{$id}">
+					<input type="checkbox" value="postulacion_convocado" id="printDetailspostulacion_convocado{$id}" checked>
+					Postulacion Convocado				</label>
+			</div>
+			{END print_details_postulacion_convocado}
+														{BEGIN print_details_postulacion_postulado}
+			<div>
+				<label for="printDetailspostulacion_postulado{$id}">
+					<input type="checkbox" value="postulacion_postulado" id="printDetailspostulacion_postulado{$id}" checked>
+					Postulacion Postulado				</label>
+			</div>
+			{END print_details_postulacion_postulado}
+														{BEGIN print_details_postulacion_insertado}
+			<div>
+				<label for="printDetailspostulacion_insertado{$id}">
+					<input type="checkbox" value="postulacion_insertado" id="printDetailspostulacion_insertado{$id}" checked>
+					Postulacion Insertado				</label>
+			</div>
+			{END print_details_postulacion_insertado}
+														{BEGIN print_details_postulacion_preseleccionado}
+			<div>
+				<label for="printDetailspostulacion_preseleccionado{$id}">
+					<input type="checkbox" value="postulacion_preseleccionado" id="printDetailspostulacion_preseleccionado{$id}" checked>
+					Postulacion Preseleccionado				</label>
+			</div>
+			{END print_details_postulacion_preseleccionado}
+														{BEGIN print_details_bolsa_users_popup}
+			<div>
+				<label for="printDetailsbolsa_users_popup{$id}">
+					<input type="checkbox" value="bolsa_users_popup" id="printDetailsbolsa_users_popup{$id}" checked>
+					Bolsa Users Popup				</label>
+			</div>
+			{END print_details_bolsa_users_popup}
+														{BEGIN print_details_postulacion_importar_planilla}
+			<div>
+				<label for="printDetailspostulacion_importar_planilla{$id}">
+					<input type="checkbox" value="postulacion_importar_planilla" id="printDetailspostulacion_importar_planilla{$id}" checked>
+					Postulacion Importar Planilla				</label>
+			</div>
+			{END print_details_postulacion_importar_planilla}
+						</div>
+</div>
+{END print_details}
+				 
+					</li>
+															</ul>
+</span>
+{END print_friendly}
+		</div>					</div>
+			 
+				<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c3" data-pageid="{$pageid}"	{$cell_above-grid_c3}
+	class=" r-ori-vert			col-md-6
+	
+">
+		 
+		<span data-itemtype="snippet" data-itemid="snippet" {$item_snippet} data-pageid="{$pageid}" >
+{$event bolsa_empleo_vacancia_snippet1}
+</span>		</div>			 
+				<div 
+	data-cellId="above-grid_c4" data-pageid="{$pageid}"	{$cell_above-grid_c4}
+	class="r-align-right r-ori-vert			col-md-6
+	
+">
+			</div>					</div>
+			</div>		
+{END above-grid_block}
+	</div>
+<div class="r-grid">
+	{BEGIN grid_tabs}
+  <ul class="nav nav-tabs bsgrid_tabs">
+	{$grid_tabs_content}
+  </ul>
+{END grid_tabs}
+					
+{BEGIN grid_block}
+{BEGIN message_block}
+<div data-grid-message data-pageid="{$pageid}" class="alert {$message_class}" role="alert" {$grid_message_attrs}>{$message}</div>
+{END message_block}<div data-vcolumns=1 class="r-fluid r-grid-vertical bs-grid-vertical" data-location="grid" id="form_grid_{$pageid}" data-makeup="topbar" {$form_grid} data-pageid="{$pageid}" >
+{BEGIN grid_row}
+	{BEGIN grid_record}
+	{BEGIN grid_vrecord}
+	<div class="r-record-body {$rowclass}" {$rowattrs} {$rowstyle} data-record-id="{$recId}">
+		<div class="panel panel-default" {$recordattrs}>
+											{BEGIN grid_recordheader}
+			<div class="panel-heading">
+					
+	
+				<table data-width="2" class="header-table">
+				 
+										<tr>
+						 
+							<td 
+	class="			"
+	colspan="2"		 
+	data-cellId="grid_cell_top" data-pageid="{$pageid}" data-record-id="{$recId}">
+ 
+{BEGIN dtables_link}
+	<a 
+		data-itemtype="grid_alldetails_link" data-itemid="grid_alldetails_link" {$item_grid_alldetails_link} data-pageid="{$pageid}" data-record-id="{$recId}" 
+		{$dtables_link_attrs} 
+		class="{$dtables_link_class}" 
+		title="Mostrar detalles"
+				
+	>
+					<span class="glyphicon glyphicon-th-list"></span>
+				Ver Detalles	</a>
+{END dtables_link}
+ 
+
+		
+	{BEGIN seguimientos_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link1" {$item_grid_details_link1} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$seguimientos_link_attrs} data-short-details="seguimientos"
+		 
+					>
+						Seguimientos		
+									<span {$seguimientos_childnumber_attr} dir="ltr">
+					{BEGIN seguimientos_childcount}({$seguimientos_childnumber}){END seguimientos_childcount}
+				</span>
+						</a>
+	</span>
+	{END seguimientos_dtable_link}
+
+
+ 
+
+		
+	{BEGIN bolsa_users_popup_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link7" {$item_grid_details_link7} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$bolsa_users_popup_link_attrs} data-short-details="bolsa_users_popup"
+		class="{$bolsa_users_popup_dlink_class}" 
+		title="{$caption bolsa_empleo_bolsa_users_popup }"			>
+								
+									{BEGIN bolsa_users_popup_childcount}
+				<span class="details-badge badge bolsa_users_popup_badge" {$bolsa_users_popup_childnumber_attr}>
+					{$bolsa_users_popup_childnumber}				
+				</span>
+				{END bolsa_users_popup_childcount}
+						</a>
+	</span>
+	{END bolsa_users_popup_dtable_link}
+
+
+ 
+
+		
+	{BEGIN postulacion_seleccionado_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link2" {$item_grid_details_link2} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$postulacion_seleccionado_link_attrs} data-short-details="postulacion_seleccionado"
+		class="{$postulacion_seleccionado_dlink_class}" 
+		title="{$caption bolsa_empleo_postulacion_seleccionado }"			>
+								
+									{BEGIN postulacion_seleccionado_childcount}
+				<span class="details-badge badge postulacion_seleccionado_badge" {$postulacion_seleccionado_childnumber_attr}>
+					{$postulacion_seleccionado_childnumber}				
+				</span>
+				{END postulacion_seleccionado_childcount}
+						</a>
+	</span>
+	{END postulacion_seleccionado_dtable_link}
+
+
+ 
+
+		
+	{BEGIN postulacion_convocado_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link3" {$item_grid_details_link3} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$postulacion_convocado_link_attrs} data-short-details="postulacion_convocado"
+		class="{$postulacion_convocado_dlink_class}" 
+		title="{$caption bolsa_empleo_postulacion_convocado }"			>
+								
+									{BEGIN postulacion_convocado_childcount}
+				<span class="details-badge badge postulacion_convocado_badge" {$postulacion_convocado_childnumber_attr}>
+					{$postulacion_convocado_childnumber}				
+				</span>
+				{END postulacion_convocado_childcount}
+						</a>
+	</span>
+	{END postulacion_convocado_dtable_link}
+
+
+ 
+
+		
+	{BEGIN postulacion_postulado_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link4" {$item_grid_details_link4} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$postulacion_postulado_link_attrs} data-short-details="postulacion_postulado"
+		class="{$postulacion_postulado_dlink_class}" 
+		title="{$caption bolsa_empleo_postulacion_postulado }"			>
+								
+									{BEGIN postulacion_postulado_childcount}
+				<span class="details-badge badge postulacion_postulado_badge" {$postulacion_postulado_childnumber_attr}>
+					{$postulacion_postulado_childnumber}				
+				</span>
+				{END postulacion_postulado_childcount}
+						</a>
+	</span>
+	{END postulacion_postulado_dtable_link}
+
+
+ 
+
+		
+	{BEGIN postulacion_insertado_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link5" {$item_grid_details_link5} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$postulacion_insertado_link_attrs} data-short-details="postulacion_insertado"
+		class="{$postulacion_insertado_dlink_class}" 
+		title="{$caption bolsa_empleo_postulacion_insertado }"			>
+								
+									{BEGIN postulacion_insertado_childcount}
+				<span class="details-badge badge postulacion_insertado_badge" {$postulacion_insertado_childnumber_attr}>
+					{$postulacion_insertado_childnumber}				
+				</span>
+				{END postulacion_insertado_childcount}
+						</a>
+	</span>
+	{END postulacion_insertado_dtable_link}
+
+
+ 
+
+		
+	{BEGIN postulacion_preseleccionado_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link6" {$item_grid_details_link6} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$postulacion_preseleccionado_link_attrs} data-short-details="postulacion_preseleccionado"
+		class="{$postulacion_preseleccionado_dlink_class}" 
+		title="{$caption bolsa_empleo_postulacion_preseleccionado }"			>
+								
+									{BEGIN postulacion_preseleccionado_childcount}
+				<span class="details-badge badge postulacion_preseleccionado_badge" {$postulacion_preseleccionado_childnumber_attr}>
+					{$postulacion_preseleccionado_childnumber}				
+				</span>
+				{END postulacion_preseleccionado_childcount}
+						</a>
+	</span>
+	{END postulacion_preseleccionado_dtable_link}
+
+
+ 
+
+		
+	{BEGIN postulacion_importar_planilla_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link_preseleccionados" {$item_grid_details_link_preseleccionados} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$postulacion_importar_planilla_link_attrs} data-short-details="postulacion_importar_planilla"
+		class="{$postulacion_importar_planilla_dlink_class}" 
+		title="{$caption bolsa_empleo_postulacion_importar_planilla }"			>
+								
+									{BEGIN postulacion_importar_planilla_childcount}
+				<span class="details-badge badge postulacion_importar_planilla_badge" {$postulacion_importar_planilla_childnumber_attr}>
+					{$postulacion_importar_planilla_childnumber}				
+				</span>
+				{END postulacion_importar_planilla_childcount}
+						</a>
+	</span>
+	{END postulacion_importar_planilla_dtable_link}
+
+
+</td>
+											</tr>
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+									 
+													</table>
+
+					</div>
+		{END grid_recordheader}
+									
+			<div class="panel-body">					
+					
+	
+				<table data-width="2" >
+				 
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert			"
+	colspan="2"		 
+	data-cellId="grid_cell_label6" data-pageid="{$pageid}" data-record-id="{$recId}">
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-left				{$descripcion_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_label7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-label-col>
+ 
+{BEGIN descripcion_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field5" {$item_grid_field5} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="descripcion" data-fieldname="descripcion" data-default-width >
+{$descripcion_value}
+</span>
+{END descripcion_fieldcolumn} 
+<span data-itemtype="text" data-itemid="text" {$item_text} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
+	| ID:</span>
+ 
+{BEGIN id_vacancias_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field7" {$item_grid_field7} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_vacancias" data-fieldname="id_vacancias" data-default-width >
+{$id_vacancias_value}
+</span>
+{END id_vacancias_fieldcolumn}</td>
+						 
+							<td 
+	class="r-align-right			"
+			 
+	data-cellId="grid_cell_label8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-value-col>
+ 
+
+		
+	{BEGIN postulacion_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link" {$item_grid_details_link} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}">
+	<a  {$postulacion_link_attrs} data-short-details="postulacion"
+		class="{$postulacion_dlink_class}" 
+					>
+						 Postulantes		
+									{BEGIN postulacion_childcount}
+				<span class="details-badge badge postulacion_badge" {$postulacion_childnumber_attr}>
+					{$postulacion_childnumber}				
+				</span>
+				{END postulacion_childcount}
+						</a>
+	</span>
+	{END postulacion_dtable_link}
+
+
+ 
+<span data-itemtype="text" data-itemid="text4" {$item_text4} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
+	0 Postulantes</span>
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-left				{$empresa_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_label5" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+ 
+<span data-itemtype="text" data-itemid="text2" {$item_text2} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
+	<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAZCAYAAADaILXQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGDSURBVHgBrVPtUcJAEN29HP5CBzvASoRKxALEWAGhAwQLoASpQEqgAyyBGfMLkj1vY+IcMR+3mDeTmbvblzf79u4hdIxBaAYnoof0qDYaOgKLEsFzShQqu8Wr5Pbf4q4ob40xW0QccU3BhWDRm6mZWdG9AYqs6M4QjeOVHhcccedVnYIx8/itty1zvcXbRK+nqbEO5vGyF4nErX0WjaChUxYGgq24c/vjAgF3ROlLlX2G23EB7wslSDcszPb701PEZ3VrsXgB137dWoSqrnz44s4lY6m90H54GinS99buxD2XjAUbBIf2O3DyOM7lN9zmjvmKBTnG9mCPpD7sYWgFP+1bfgyUunPjLB5LLvjTIcA8CIL3wwIPdV1JxqLzwmu88rPsjqZuXeDstbTZbOK0hsgnFKIQ+QSkkxD5jCWrPSUTrjvfvoonHktWQzP85RhkzrCKd5bQttsvgznsDkGNqurItuBCfC0DzMVn5Rq70pzEwqYECDqbs1Z6nVDyp54c9fobcxaKAPFD1ZwAAAAASUVORK5CYII="></p></span>
+ 
+{BEGIN empresa_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field10" {$item_grid_field10} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="empresa" data-fieldname="empresa" data-default-width >
+{$empresa_value}
+</span>
+{END empresa_fieldcolumn} 
+<span data-itemtype="text" data-itemid="text6" {$item_text6} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
+	|</span>
+ 
+<span data-itemtype="text" data-itemid="text8" {$item_text8} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
+	Salario:</span>
+ 
+{BEGIN salario_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field12" {$item_grid_field12} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="salario" data-fieldname="salario" data-default-width >
+{$salario_value}
+</span>
+{END salario_fieldcolumn} 
+<span data-itemtype="text" data-itemid="text7" {$item_text7} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
+	|</span>
+ 
+{BEGIN cantidad_vacancia_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field13" {$item_grid_field13} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="cantidad_vacancia" data-fieldname="cantidad_vacancia" data-default-width >
+{$cantidad_vacancia_value}
+</span>
+{END cantidad_vacancia_fieldcolumn}</td>
+						 
+							<td 
+	class=" r-ori-vert			"
+			 
+	data-cellId="grid_cell_label9" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-left				{$id_departamento_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_label" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-label-col>
+ 
+{BEGIN id_departamento_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field2" {$item_grid_field2} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_departamento" data-fieldname="id_departamento" data-default-width >
+{$id_departamento_value}
+</span>
+{END id_departamento_fieldcolumn} 
+<span data-itemtype="text" data-itemid="text1" {$item_text1} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
+	, </span>
+ 
+{BEGIN id_cidudad_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field3" {$item_grid_field3} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_cidudad" data-fieldname="id_cidudad" data-default-width >
+{$id_cidudad_value}
+</span>
+{END id_cidudad_fieldcolumn}</td>
+						 
+							<td 
+	class="r-align-right			"
+			 
+	data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+ 
+<span data-itemtype="custom_button_container" data-itemid="custom_button_container" {$item_custom_button_container} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+	<span class="dropdown ">
+		<button type="button" title="" class="btn btn-success   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+										<span class="glyphicon glyphicon-menu-hamburger"></span>
+									Acciones			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							{BEGIN edit_column}
+{BEGIN edit_link}
+	<li data-itemtype="grid_edit" data-itemid="grid_edit" {$item_grid_edit} data-pageid="{$pageid}" data-record-id="{$recId}" data-small >
+				<a  href="vacancia_edit.php?{$editlink}" {$editlink_attrs} title="Editar"  title="Editar" >
+					<span class="glyphicon glyphicon-"></span>
+				
+		Editar Oferta de Empleo		
+		</a>
+	</li>
+{END edit_link}
+{END edit_column}
+								<li data-itemtype="custom_button" data-itemid="boton_activar_vacancia" {$item_boton_activar_vacancia} data-pageid="{$pageid}" data-record-id="{$recId}" data-small >
+				<a  id="Activar" href="javascript:void(0)" typeid="ib"  title="" >
+				
+		Activar		
+		</a>
+	</li>
+								<li data-itemtype="custom_button" data-itemid="boton_cerrar_vacancia" {$item_boton_cerrar_vacancia} data-pageid="{$pageid}" data-record-id="{$recId}" data-small >
+				<a  id="Cerrar" href="javascript:void(0)" typeid="ib"  title="" >
+				
+		Cerrar		
+		</a>
+	</li>
+								<li data-itemtype="custom_button" data-itemid="Evaluacion" {$item_Evaluacion} data-pageid="{$pageid}" data-record-id="{$recId}" data-small >
+				<a  id="New_Button3" href="javascript:void(0)" typeid="ib"  title="" >
+				
+		En Evaluación		
+		</a>
+	</li>
+								<li data-itemtype="custom_button" data-itemid="boton_ver_personas_postuladas" {$item_boton_ver_personas_postuladas} data-pageid="{$pageid}" data-record-id="{$recId}" data-small >
+				<a  id="New_Button" href="javascript:void(0)" typeid="ib"  title="" >
+				
+		Ver Personas Postuladas		
+		</a>
+	</li>
+					</ul>
+	</span>
+</span>
+ 
+<span data-itemtype="custom_button" data-itemid="boton_importar_planilla" {$item_boton_importar_planilla} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-danger   
+	" id="btn_importar_planilla1" href="javascript:void(0)" typeid="ib" >
+							Importar Planilla			</a>
+</span>
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-left r-ori-vert				{$id_estado_vacancia_class}
+			"
+	colspan="2"		 
+		data-field=""
+	 
+	data-cellId="grid_cell_label1" data-pageid="{$pageid}" data-record-id="{$recId}">
+ 
+{BEGIN id_estado_vacancia_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field6" {$item_grid_field6} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_estado_vacancia" data-fieldname="id_estado_vacancia" data-default-width >
+{$id_estado_vacancia_value}
+</span>
+{END id_estado_vacancia_fieldcolumn}</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-left				{$fk_id_feria_empleo_class}
+			"
+	colspan="2"		 
+		data-field=""
+	 
+	data-cellId="grid_cell_label10" data-pageid="{$pageid}" data-record-id="{$recId}">
+ 
+{BEGIN fk_id_feria_empleo_fieldheadercolumn}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label2" {$item_grid_field_label2} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fk_id_feria_empleo" data-fieldname="fk_id_feria_empleo" 
+
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_vacancia fk_id_feria_empleo }</span>
+			</span>
+	</span>
+{END fk_id_feria_empleo_fieldheadercolumn}
+
+ 
+{BEGIN fk_id_feria_empleo_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field11" {$item_grid_field11} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fk_id_feria_empleo" data-fieldname="fk_id_feria_empleo" data-default-width >
+{$fk_id_feria_empleo_value}
+</span>
+{END fk_id_feria_empleo_fieldcolumn}</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert			"
+	colspan="2"		 
+	data-cellId="grid_cell_label12" data-pageid="{$pageid}" data-record-id="{$recId}">
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right				{$id_rubro_class}
+			"
+	colspan="2"		 
+		data-field=""
+	 
+	data-cellId="grid_cell_label11" data-pageid="{$pageid}" data-record-id="{$recId}">
+ 
+{BEGIN id_rubro_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_rubro" data-fieldname="id_rubro" data-default-width >
+{$id_rubro_value}
+</span>
+{END id_rubro_fieldcolumn} 
+{BEGIN id_tipo_sucursal_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field9" {$item_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_tipo_sucursal" data-fieldname="id_tipo_sucursal" data-default-width >
+{$id_tipo_sucursal_value}
+</span>
+{END id_tipo_sucursal_fieldcolumn} 
+<span data-itemtype="text" data-itemid="text5" {$item_text5} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
+	<p><strong>-<span class="ql-cursor">﻿</span></strong></p></span>
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-left r-ori-vert			"
+	colspan="2"		 
+	data-cellId="grid_cell_label2" data-pageid="{$pageid}" data-record-id="{$recId}">
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-left r-ori-vert				{$descripcion_puesto_class}
+			"
+	colspan="2"		 
+		data-field=""
+	 
+	data-cellId="grid_cell_label3" data-pageid="{$pageid}" data-record-id="{$recId}">
+ 
+{BEGIN descripcion_puesto_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field1" {$item_grid_field1} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="descripcion_puesto" data-fieldname="descripcion_puesto" >
+{$descripcion_puesto_value}
+</span>
+{END descripcion_puesto_fieldcolumn}</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert				{$fecha_expiracion_vacancia_class}
+			"
+	colspan="2"		 
+		data-field=""
+	 
+	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}">
+ 
+{BEGIN fecha_expiracion_vacancia_fieldheadercolumn}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label" {$item_grid_field_label} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fecha_expiracion_vacancia" data-fieldname="fecha_expiracion_vacancia" 
+
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_vacancia fecha_expiracion_vacancia }</span>
+			</span>
+	</span>
+{END fecha_expiracion_vacancia_fieldheadercolumn}
+
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-left r-ori-vert				{$fecha_expiracion_vacancia_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_label4" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+ 
+{BEGIN fecha_expiracion_vacancia_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field4" {$item_grid_field4} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fecha_expiracion_vacancia" data-fieldname="fecha_expiracion_vacancia" data-default-width >
+{$fecha_expiracion_vacancia_value}
+</span>
+{END fecha_expiracion_vacancia_fieldcolumn}</td>
+						 
+							<td 
+	class="r-align-right				{$fecha_creacion_vacancia_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+ 
+{BEGIN fecha_creacion_vacancia_fieldheadercolumn}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label1" {$item_grid_field_label1} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fecha_creacion_vacancia" data-fieldname="fecha_creacion_vacancia" 
+
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_vacancia fecha_creacion_vacancia }</span>
+			</span>
+	</span>
+{END fecha_creacion_vacancia_fieldheadercolumn}
+
+ 
+{BEGIN fecha_creacion_vacancia_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field8" {$item_grid_field8} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fecha_creacion_vacancia" data-fieldname="fecha_creacion_vacancia" data-default-width >
+{$fecha_creacion_vacancia_value}
+</span>
+{END fecha_creacion_vacancia_fieldcolumn}</td>
+											</tr>
+									 
+													</table>
+
+				
+			</div>				
+									
+		</div>
+</div>
+		
+
+ 
+		 
+						<div data-itemtype="details_preview" data-itemid="details_preview1" {$item_details_preview1} data-pageid="{$pageid}" data-record-id="{$recId}" 
+	data-orders="bolsa_users_popup,postulacion_preseleccionado,postulacion_seleccionado,postulacion_convocado,seguimientos,postulacion_importar_planilla"
+			data-details-bolsa_users_popup			data-details-postulacion_preseleccionado			data-details-postulacion_seleccionado			data-details-postulacion_convocado			data-details-seguimientos			data-details-postulacion_importar_planilla	>
+		<span data-details-inside data-short-table="bolsa_users_popup">
+			</span>
+		<span data-details-inside data-short-table="postulacion_preseleccionado">
+			</span>
+		<span data-details-inside data-short-table="postulacion_seleccionado">
+			</span>
+		<span data-details-inside data-short-table="postulacion_convocado">
+			</span>
+		<span data-details-inside data-short-table="seguimientos">
+			</span>
+		<span data-details-inside data-short-table="postulacion_importar_planilla">
+			</span>
+		<div data-details-preview>
+	</div>
+</div>
+ 
+ 
+ 
+ 
+ 
+	{END grid_vrecord}
+	{END grid_record}
+{END grid_row}
+</div>
+{END grid_block}
+	</div>
+<div class="r-below">
+					{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="topbar" {$form_below-grid} data-pageid="{$pageid}" >		
+	 
+				<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}" data-page="vacancia_list"	{$cell_below-grid_c1}
+	class="r-align-center r-ori-vert			col-md-12
+	
+">
+		 
+		{BEGIN pagination_block}
+<span data-itemtype="pagination" data-itemid="pagination" {$item_pagination} data-pageid="{$pageid}" >
+{$pagination}
+</span>
+{END pagination_block}
+		</div>					</div>
+			</div>		
+{END below-grid_block}
+	</div>
+
+
+
+
+											
+					</div>
+				</div>
+			</div>
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>
