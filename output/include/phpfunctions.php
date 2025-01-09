@@ -1028,6 +1028,17 @@ function CustomExpression($value, $data, $field, $ptype, $table="")
 		$value = format_number($value,0,',','.');;
 		return $value;
 	}
+				if($table=="bolsa_empleo.vacancia" && $field=="fecha_expiracion_vacancia")
+	{
+		setlocale(LC_TIME, 'es_ES.UTF-8','esp'); // Crear un objeto DateTime
+
+$date = new DateTime($value); // Formatear la fecha usando strftime 
+
+$formattedDate = strftime('%A %d de %B de %Y a las %H:%M hs.', $date->getTimestamp()); // Imprimir el resultado 
+
+$value= $formattedDate;;
+		return $value;
+	}
 				if($table=="bolsa_empleo.vacancia" && $field=="cantidad_vacancia")
 	{
 		if($value>1){
@@ -1071,6 +1082,22 @@ if ($data["id_estado_vacancia"] == '6') {
 if ($data["id_estado_vacancia"] > '6') {  
      $value="<span class='badge badge-defecto'>" .$value . "</span>";  
 };
+		return $value;
+	}
+				if($table=="bolsa_empleo.vacancia" && $field=="fecha_creacion_vacancia")
+	{
+		setlocale(LC_TIME, 'es_ES.UTF-8','esp'); // Crear un objeto DateTime
+
+$date = new DateTime($value); // Formatear la fecha usando strftime 
+
+$formattedDate = strftime('%A %d de %B de %Y', $date->getTimestamp()); // Imprimir el resultado 
+
+$value= $formattedDate;;
+		return $value;
+	}
+				if($table=="bolsa_empleo.vacancia" && $field=="fk_id_feria_empleo")
+	{
+		$value="<span class='badge badge-feria'>" .$value . "</span>"; ;
 		return $value;
 	}
 				if($table=="bolsa_empleo.empresa_bolsa_contactos" && $field=="id_cargo" && $ptype=="list")

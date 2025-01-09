@@ -893,7 +893,7 @@ if ($data && is_array($data)) {
 	// Si el estado de la oferta No está cerrado.
 	if (!in_array($data["id_estado_vacancia"], ESTADOS_CERRADOS)) {
 		
-		// Verificar si la persona ya está en postulaciones
+		// Verificar si la persona ya está en la tabla postulacion.
 		$strSQLExistsPostulacion = DB::PrepareSQL("SELECT count(*) as total
 																											FROM bolsa_empleo.postulacion 
 																											WHERE id_vacancia = " . $params["id_vacancias"] . " 
@@ -1185,7 +1185,18 @@ function buttonHandler_btn_importar_planilla1($params)
 	}
 
 	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
-	;
+	$record = $button->getCurrentRecord();
+$userData = Security::currentUserData();
+$result["id"] = $userData["id"]; //Utilizado en el evento Client After.
+//$result["UserID"] = $_SESSION["UserID"];
+
+//
+$strSQL = DB::PrepareSQL("SELECT bolsa_empleo.gestores_users.username
+															FROM bolsa_empleo.gestores_users
+															WHERE bolsa_empleo.gestores_users.id = '" . $result["id"] . "'");
+$resultSQL = DB::Query($strSQL);
+$data = $resultSQL->fetchAssoc();
+$result["username"] = $data["username"]; //Utilizado en el evento Client After.;
 	RunnerContext::pop();
 	echo my_json_encode($result);
 	$button->deleteTempFiles();

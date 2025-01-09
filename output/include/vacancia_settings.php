@@ -2521,7 +2521,7 @@ $tdatavacancia[".hideMobileList"] = array();
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
 
-	$vdata = array("ViewFormat" => "Datetime");
+	$vdata = array("ViewFormat" => "Custom");
 
 	
 	
@@ -2537,8 +2537,7 @@ $tdatavacancia[".hideMobileList"] = array();
 	
 	
 	
-		$vdata["NeedEncode"] = true;
-
+	
 	
 		$vdata["truncateText"] = true;
 	$vdata["NumberOfChars"] = 80;
@@ -5620,7 +5619,7 @@ $tdatavacancia[".hideMobileList"] = array();
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
 
-	$vdata = array("ViewFormat" => "Datetime");
+	$vdata = array("ViewFormat" => "Custom");
 
 	
 	
@@ -5636,8 +5635,7 @@ $tdatavacancia[".hideMobileList"] = array();
 	
 	
 	
-		$vdata["NeedEncode"] = true;
-
+	
 	
 		$vdata["truncateText"] = true;
 	$vdata["NumberOfChars"] = 80;
@@ -7909,7 +7907,7 @@ $tdatavacancia[".hideMobileList"] = array();
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
 
-	$vdata = array("ViewFormat" => "");
+	$vdata = array("ViewFormat" => "Custom");
 
 	
 	
@@ -7925,8 +7923,7 @@ $tdatavacancia[".hideMobileList"] = array();
 	
 	
 	
-		$vdata["NeedEncode"] = true;
-
+	
 	
 		$vdata["truncateText"] = true;
 	$vdata["NumberOfChars"] = 80;

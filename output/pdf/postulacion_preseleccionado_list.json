@@ -402,7 +402,7 @@ pdfDocument = {
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": 'left',
+              "alignment": 'center',
      
       
       },
@@ -554,7 +554,7 @@ pdfDocument = {
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": 'left',
+              "alignment": 'center',
      
       
       },

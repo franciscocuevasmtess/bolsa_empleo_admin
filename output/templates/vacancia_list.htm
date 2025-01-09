@@ -450,12 +450,15 @@
 			 
 				<div 
 	data-cellId="above-grid_c3" data-pageid="{$pageid}"	{$cell_above-grid_c3}
-	class=" r-ori-vert			col-md-6
+	class="			col-md-6
 	
 ">
 		 
 		<span data-itemtype="snippet" data-itemid="snippet" {$item_snippet} data-pageid="{$pageid}" >
 {$event bolsa_empleo_vacancia_snippet1}
+</span>	 
+		<span data-itemtype="snippet" data-itemid="snippet1" {$item_snippet1} data-pageid="{$pageid}" >
+{$event bolsa_empleo_vacancia_snippet4}
 </span>		</div>			 
 				<div 
 	data-cellId="above-grid_c4" data-pageid="{$pageid}"	{$cell_above-grid_c4}
@@ -671,6 +674,8 @@
 									 
 									 
 									 
+									 
+									 
 													</table>
 
 					</div>
@@ -783,40 +788,9 @@
 {END cantidad_vacancia_fieldcolumn}</td>
 						 
 							<td 
-	class=" r-ori-vert			"
-			 
-	data-cellId="grid_cell_label9" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
-</td>
-											</tr>
-									 
-										<tr>
-						 
-							<td 
-	class="r-align-left				{$id_departamento_class}
-			"
-			 
-		data-field=""
-	 
-	data-cellId="grid_cell_label" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-label-col>
- 
-{BEGIN id_departamento_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="grid_field2" {$item_grid_field2} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_departamento" data-fieldname="id_departamento" data-default-width >
-{$id_departamento_value}
-</span>
-{END id_departamento_fieldcolumn} 
-<span data-itemtype="text" data-itemid="text1" {$item_text1} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
-	, </span>
- 
-{BEGIN id_cidudad_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="grid_field3" {$item_grid_field3} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_cidudad" data-fieldname="id_cidudad" data-default-width >
-{$id_cidudad_value}
-</span>
-{END id_cidudad_fieldcolumn}</td>
-						 
-							<td 
 	class="r-align-right			"
 			 
-	data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+	data-cellId="grid_cell_label9" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
  
 <span data-itemtype="custom_button_container" data-itemid="custom_button_container" {$item_custom_button_container} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
 	<span class="dropdown ">
@@ -869,6 +843,44 @@
 	" id="btn_importar_planilla1" href="javascript:void(0)" typeid="ib" >
 							Importar Planilla			</a>
 </span>
+ 
+<span data-itemtype="text" data-itemid="text9" {$item_text9} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
+	<!-- <input id="fileSelect" name="fileSelect" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" /> -->
+
+<input type="file" id="fileInput" name="fileInput" accept=".csv, .xlsx, .xls">
+<br>
+<div id="result"></div></span>
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-left				{$id_departamento_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_label" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-label-col>
+ 
+{BEGIN id_departamento_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field2" {$item_grid_field2} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_departamento" data-fieldname="id_departamento" data-default-width >
+{$id_departamento_value}
+</span>
+{END id_departamento_fieldcolumn} 
+<span data-itemtype="text" data-itemid="text1" {$item_text1} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
+	, </span>
+ 
+{BEGIN id_cidudad_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field3" {$item_grid_field3} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_cidudad" data-fieldname="id_cidudad" data-default-width >
+{$id_cidudad_value}
+</span>
+{END id_cidudad_fieldcolumn}</td>
+						 
+							<td 
+	class="r-align-right r-ori-vert			"
+			 
+	data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
 </td>
 											</tr>
 									 
@@ -892,26 +904,12 @@
 										<tr>
 						 
 							<td 
-	class="r-align-left				{$fk_id_feria_empleo_class}
+	class="r-align-left r-ori-vert				{$fk_id_feria_empleo_class}
 			"
 	colspan="2"		 
 		data-field=""
 	 
 	data-cellId="grid_cell_label10" data-pageid="{$pageid}" data-record-id="{$recId}">
- 
-{BEGIN fk_id_feria_empleo_fieldheadercolumn}
-<span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label2" {$item_grid_field_label2} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fk_id_feria_empleo" data-fieldname="fk_id_feria_empleo" 
-
-	
-	
-	>
-	<span class="text-label">
-		<span>{$label bolsa_empleo_vacancia fk_id_feria_empleo }</span>
-			</span>
-	</span>
-{END fk_id_feria_empleo_fieldheadercolumn}
-
  
 {BEGIN fk_id_feria_empleo_fieldcolumn}
 <span data-itemtype="grid_field" data-itemid="grid_field11" {$item_grid_field11} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fk_id_feria_empleo" data-fieldname="fk_id_feria_empleo" data-default-width >
@@ -923,7 +921,7 @@
 										<tr>
 						 
 							<td 
-	class="r-align-right r-ori-vert			"
+	class="r-align-left r-ori-vert			"
 	colspan="2"		 
 	data-cellId="grid_cell_label12" data-pageid="{$pageid}" data-record-id="{$recId}">
 </td>
@@ -932,25 +930,27 @@
 										<tr>
 						 
 							<td 
-	class="r-align-right				{$id_rubro_class}
-			"
+	class="r-align-left r-ori-vert			"
 	colspan="2"		 
-		data-field=""
-	 
-	data-cellId="grid_cell_label11" data-pageid="{$pageid}" data-record-id="{$recId}">
- 
-{BEGIN id_rubro_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_rubro" data-fieldname="id_rubro" data-default-width >
-{$id_rubro_value}
-</span>
-{END id_rubro_fieldcolumn} 
-{BEGIN id_tipo_sucursal_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="grid_field9" {$item_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_tipo_sucursal" data-fieldname="id_tipo_sucursal" data-default-width >
-{$id_tipo_sucursal_value}
-</span>
-{END id_tipo_sucursal_fieldcolumn} 
-<span data-itemtype="text" data-itemid="text5" {$item_text5} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
-	<p><strong>-<span class="ql-cursor">﻿</span></strong></p></span>
+	data-cellId="grid_cell_label13" data-pageid="{$pageid}" data-record-id="{$recId}">
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert			"
+	colspan="2"		 
+	data-cellId="grid_cell_label14" data-pageid="{$pageid}" data-record-id="{$recId}">
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert			"
+	colspan="2"		 
+	data-cellId="grid_cell_label15" data-pageid="{$pageid}" data-record-id="{$recId}">
 </td>
 											</tr>
 									 
@@ -959,19 +959,22 @@
 							<td 
 	class="r-align-left r-ori-vert			"
 	colspan="2"		 
-	data-cellId="grid_cell_label2" data-pageid="{$pageid}" data-record-id="{$recId}">
+	data-cellId="grid_cell_label11" data-pageid="{$pageid}" data-record-id="{$recId}">
 </td>
 											</tr>
 									 
 										<tr>
 						 
 							<td 
-	class="r-align-left r-ori-vert				{$descripcion_puesto_class}
+	class="r-align-left				{$descripcion_puesto_class}
 			"
 	colspan="2"		 
 		data-field=""
 	 
 	data-cellId="grid_cell_label3" data-pageid="{$pageid}" data-record-id="{$recId}">
+ 
+<span data-itemtype="text" data-itemid="text5" {$item_text5} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
+	Descripcion del Puesto:</span>
  
 {BEGIN descripcion_puesto_fieldcolumn}
 <span data-itemtype="grid_field" data-itemid="grid_field1" {$item_grid_field1} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="descripcion_puesto" data-fieldname="descripcion_puesto" >
@@ -983,52 +986,21 @@
 										<tr>
 						 
 							<td 
-	class="r-align-right r-ori-vert				{$fecha_expiracion_vacancia_class}
-			"
+	class="r-align-right r-ori-vert			"
 	colspan="2"		 
-		data-field=""
-	 
 	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}">
- 
-{BEGIN fecha_expiracion_vacancia_fieldheadercolumn}
-<span 
-	data-itemtype="grid_field_label" data-itemid="grid_field_label" {$item_grid_field_label} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fecha_expiracion_vacancia" data-fieldname="fecha_expiracion_vacancia" 
-
-	
-	
-	>
-	<span class="text-label">
-		<span>{$label bolsa_empleo_vacancia fecha_expiracion_vacancia }</span>
-			</span>
-	</span>
-{END fecha_expiracion_vacancia_fieldheadercolumn}
-
 </td>
 											</tr>
 									 
 										<tr>
 						 
 							<td 
-	class="r-align-left r-ori-vert				{$fecha_expiracion_vacancia_class}
+	class="r-align-left				{$fecha_creacion_vacancia_class}
 			"
 			 
 		data-field=""
 	 
 	data-cellId="grid_cell_label4" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
- 
-{BEGIN fecha_expiracion_vacancia_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="grid_field4" {$item_grid_field4} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fecha_expiracion_vacancia" data-fieldname="fecha_expiracion_vacancia" data-default-width >
-{$fecha_expiracion_vacancia_value}
-</span>
-{END fecha_expiracion_vacancia_fieldcolumn}</td>
-						 
-							<td 
-	class="r-align-right				{$fecha_creacion_vacancia_class}
-			"
-			 
-		data-field=""
-	 
-	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
  
 {BEGIN fecha_creacion_vacancia_fieldheadercolumn}
 <span 
@@ -1049,6 +1021,34 @@
 {$fecha_creacion_vacancia_value}
 </span>
 {END fecha_creacion_vacancia_fieldcolumn}</td>
+						 
+							<td 
+	class="r-align-right				{$fecha_expiracion_vacancia_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+ 
+{BEGIN fecha_expiracion_vacancia_fieldheadercolumn}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label" {$item_grid_field_label} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fecha_expiracion_vacancia" data-fieldname="fecha_expiracion_vacancia" 
+
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_vacancia fecha_expiracion_vacancia }</span>
+			</span>
+	</span>
+{END fecha_expiracion_vacancia_fieldheadercolumn}
+
+ 
+{BEGIN fecha_expiracion_vacancia_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field4" {$item_grid_field4} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fecha_expiracion_vacancia" data-fieldname="fecha_expiracion_vacancia" data-default-width >
+{$fecha_expiracion_vacancia_value}
+</span>
+{END fecha_expiracion_vacancia_fieldcolumn}</td>
 											</tr>
 									 
 													</table>

@@ -751,7 +751,7 @@ function BeforeEdit(&$values, &$sqlValues, $where, &$oldvalues, &$keys, &$messag
 {
 
 			//insertar nuevos ids si son detectados en requisitos, se detectan por sus ids no son numericos
-	$id_valores_multi_ocupacion_puesto_todos= explode(",", $_REQUEST["valores_multi_ocupacion_puesto_todos"]);
+	$id_valores_multi_ocupacion_puesto_todos = explode(",", $_REQUEST["valores_multi_ocupacion_puesto_todos"]);
 
 	$id_valores_multi_descripcion_salario_todos = explode(",", $_REQUEST["valores_multi_descripcion_salario_todos"]);
 	$id_requisitos_multi_todos = explode(",", $_REQUEST["valores_multi_requisitos_todos"]);
@@ -766,11 +766,11 @@ function BeforeEdit(&$values, &$sqlValues, $where, &$oldvalues, &$keys, &$messag
 	foreach ($id_valores_multi_ocupacion_puesto_todos as  $valuetoinsert1) {
 		if (!is_numeric($valuetoinsert1)) {
 			$sqlinsert1 = DB::PrepareSQL("INSERT INTO bolsa_empleo.ocupaciones_nuevas(descripcion) 
-																						VALUES (':1') 
-																						ON CONFLICT ON CONSTRAINT ocupaciones_nuevas_un 
-																						DO UPDATE 
-																						SET descripcion = excluded.descripcion  
-																						RETURNING id_ocu_puest_clasic", $valuetoinsert1);
+																			VALUES (':1') 
+																			ON CONFLICT ON CONSTRAINT ocupaciones_nuevas_un 
+																			DO UPDATE 
+																			SET descripcion = excluded.descripcion  
+																			RETURNING id_ocu_puest_clasic", $valuetoinsert1);
 			$rx1 = DB::Query($sqlinsert1);
 			$row1 = $rx1->fetchAssoc();
 			$new_id_ocupacion_puesto_nuevos = $row1['id_ocu_puest_clasic'];
@@ -790,7 +790,7 @@ function BeforeEdit(&$values, &$sqlValues, $where, &$oldvalues, &$keys, &$messag
 	foreach ($id_valores_multi_descripcion_salario_todos as  $valuetoinsert4) {
 		if (!is_numeric($valuetoinsert4)) {
 			$sqlinsert4 = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_salario_descripcion(descripcion_salario) 
-																						VALUES (':1') 
+																			VALUES (':1') 
 																						ON CONFLICT ON CONSTRAINT vacancia_salario_descripcion_un 
 																						DO UPDATE 
 																						SET descripcion_salario = excluded.descripcion_salario  
@@ -1260,7 +1260,7 @@ return false;
 function ProcessValuesEdit(&$values, $pageObject)
 {
 
-		
+		/*
 $strSQLExists5 = DB::PrepareSQL("SELECT bolsa_empleo.vista_edades_desglosado.fk_ocupacion_puesto,
 																							bolsa_empleo.vista_edades_desglosado.descripcion_salario,
 																							bolsa_empleo.vista_edades_desglosado.salario,
@@ -1272,7 +1272,9 @@ $strSQLExists5 = DB::PrepareSQL("SELECT bolsa_empleo.vista_edades_desglosado.fk_
 																			FROM bolsa_empleo.vista_edades_desglosado
 																			WHERE bolsa_empleo.vista_edades_desglosado.id_vacancias= ':1' 
 																			LIMIT 1",
-																			$keys['id_vacancias']);
+																			//$keys['id_vacancias']
+																			$values['id_vacancias']
+																			);
 $rsExists5 = DB::Query($strSQLExists5);
 $data5 = db_fetch_array($rsExists5);
 
@@ -1283,7 +1285,8 @@ if ($data5['horario_rotativo'] == 'f'){
 	$values['horario_rotativo'] = false;
 }
 
-$_SESSION['postid_vacancias'] = $keys['id_vacancias'];
+//$_SESSION['postid_vacancias'] = $keys['id_vacancias'];
+$_SESSION['postid_vacancias'] = $values['id_vacancias'];
 $values['tipo_remuneracion'] = $data5['tipo_remuneracion'];
 $values['salario_descripcion'] = $data5['descripcion_salario'];
 $values['salario_final'] = $data5['salario'];
@@ -1291,7 +1294,7 @@ $values['edad_rango_bajo'] = $data5['edad_minimo'];
 $values['edad_rango_alto'] = $data5['edad_maximo'];
 $pageObject->setProxyValue("edad_rango_bajo1", $data5['edad_minimo']);
 $pageObject->setProxyValue("edad_rango_alto1", $data5['edad_maximo']);
-
+*/
 ;		
 } // function ProcessValuesEdit
 
@@ -1372,6 +1375,47 @@ function BeforeShowEdit(&$xt, &$templatefile, $values, $pageObject)
 
 		
 $pageObject->hideItem("integrated_edit_field6");
+
+
+
+
+
+/***********/
+
+$strSQLExists5 = DB::PrepareSQL("SELECT bolsa_empleo.vista_edades_desglosado.fk_ocupacion_puesto,
+																							bolsa_empleo.vista_edades_desglosado.descripcion_salario,
+																							bolsa_empleo.vista_edades_desglosado.salario,
+																							bolsa_empleo.vista_edades_desglosado.edad_minimo,
+																							bolsa_empleo.vista_edades_desglosado.edad_maximo,
+																							bolsa_empleo.vista_edades_desglosado.id_vacancias,
+																							bolsa_empleo.vista_edades_desglosado.horario_rotativo,
+																							bolsa_empleo.vista_edades_desglosado.tipo_remuneracion
+																			FROM bolsa_empleo.vista_edades_desglosado
+																			WHERE bolsa_empleo.vista_edades_desglosado.id_vacancias= ':1' 
+																			LIMIT 1",
+																			$keys['id_vacancias']
+																			//$values['id_vacancias']
+																			);
+$rsExists5 = DB::Query($strSQLExists5);
+$data5 = db_fetch_array($rsExists5);
+
+if ($data5['horario_rotativo'] == 't') {
+	$values['horario_rotativo'] = true;
+}
+if ($data5['horario_rotativo'] == 'f'){
+	$values['horario_rotativo'] = false;
+}
+
+$_SESSION['postid_vacancias'] = $keys['id_vacancias'];
+//$_SESSION['postid_vacancias'] = $values['id_vacancias'];
+$values['tipo_remuneracion'] = $data5['tipo_remuneracion'];
+$values['salario_descripcion'] = $data5['descripcion_salario'];
+$values['salario_final'] = $data5['salario'];
+$values['edad_rango_bajo'] = $data5['edad_minimo'];
+$values['edad_rango_alto'] = $data5['edad_maximo'];
+$pageObject->setProxyValue("edad_rango_bajo1", $data5['edad_minimo']);
+$pageObject->setProxyValue("edad_rango_alto1", $data5['edad_maximo']);
+
 ;		
 } // function BeforeShowEdit
 
@@ -1501,49 +1545,40 @@ $pageObject->hideItem("integrated_edit_field6");
 function BeforeMoveNextList(&$data, &$row, &$record, $recordId, $pageObject)
 {
 
-		//Ocultar items que inicialmente no van a ser visibles en el formulario.
-$pageObject->hideItem("boton_cerrar_vacancia", $recordId);	//desbilitar boton cerrar, dependiendo de que se cumplan ciertas condiciones mostrar o no.
+		/*
+ * Estados de Vacancia
+ * Convocatoria Cerrada = 5, Activa = 2
+*/
+
+
+//Ocultar items que inicialmente no van a ser visibles en el formulario.
+$pageObject->hideItem("boton_cerrar_vacancia", $recordId);		//desbilitar boton cerrar, dependiendo de que se cumplan ciertas condiciones mostrar o no.
 $pageObject->hideItem("boton_activar_vacancia", $recordId);	//desbilitar boton activar, dependiendo de que se cumplan ciertas condiciones mostrar o no.
 $pageObject->hideItem("grid_details_link", $recordId);				//oculta inicialmente el detalle de cantidad postulantes.
-$pageObject->hideItem("text4", $recordId);											//oculta inicialmente el texto del detalle de cantidad postulantes.
+$pageObject->hideItem("text4", $recordId);										//oculta inicialmente el texto del detalle de cantidad postulantes.
 
 $now = date("Y-m-d H:i:s");
-
-
-// $data["fecha_expiracion_vacancia"]
-// $data["id_estado_vacancia"]
-// 5 Representa al estado: Convocatoria Cerrada
-// 2 Representa al estado: Activa
-
-
-
-
 
 //desactivar ambos botones
 if ($data["fecha_expiracion_vacancia"] < $now && $data["id_estado_vacancia"] == 5) {
 	$pageObject->hideItem("boton_cerrar_vacancia", $recordId);		//desbilitar boton Cerrar.
-	$pageObject->hideItem("boton_activar_vacancia", $recordId);		//deshabilitar boton Activar.
-	$pageObject->hideItem("Evaluacion", $recordId); 									//deshabilitar boton "En Evaluacion".
+	$pageObject->hideItem("boton_activar_vacancia", $recordId);	//deshabilitar boton Activar.
+	$pageObject->hideItem("Evaluacion", $recordId);								//deshabilitar boton "En Evaluacion".
 }
-
-
 
 //habilitar botones "Activar Vacancia" y "En Evaluacion".
 if ($data["fecha_expiracion_vacancia"] > $now && $data["id_estado_vacancia"] == 5) {
 	$pageObject->hideItem("boton_cerrar_vacancia", $recordId);		//deshabilitar boton cerrar.
-	$pageObject->showItem("boton_activar_vacancia", $recordId);		//habilitar boton activar.
-	$pageObject->showItem("Evaluacion", $recordId);									//habilitar boton "En Evaluacion".
+	$pageObject->showItem("boton_activar_vacancia", $recordId);	//habilitar boton activar.
+	$pageObject->showItem("Evaluacion", $recordId);								//habilitar boton "En Evaluacion".
 }
-
-
 
 //habilitar boton "Cerrar Vacancia".
 if ($data["fecha_expiracion_vacancia"] > $now && $data["id_estado_vacancia"] == 2) {
-	$pageObject->showItem("boton_cerrar_vacancia", $recordId);	//habilitar boton Cerrar.
+	$pageObject->showItem("boton_cerrar_vacancia", $recordId);		//habilitar boton Cerrar.
 	$pageObject->hideItem("boton_activar_vacancia", $recordId);	//deshabilitar boton Activar.
 	$pageObject->hideItem("Evaluacion", $recordId);								//deshabilitar boton "En Evaluacion".
 }
-	
 
 $strSQLExists5 = DB::PrepareSQL("SELECT bolsa_empleo.postulacion.id_vacancia,
 																									bolsa_empleo.postulacion.id_postulacion,
@@ -1774,6 +1809,14 @@ function BeforeShowList(&$xt, &$templatefile, $pageObject)
 
 		$pageObject->hideItem("print_panel");  //Oculta el icono de la impresora
 
+
+$pageObject->hideItem("grid_details_link1"); //Oculta el enlace que muestra el total de registros en la tabla seguimientos
+$pageObject->hideItem("grid_details_link7"); //Oculta el enlace que muestra el total de registros de usuarios del sistema.
+$pageObject->hideItem("grid_details_link2"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Seleccionado
+$pageObject->hideItem("grid_details_link3"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Convocado
+$pageObject->hideItem("grid_details_link4"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Postulado
+$pageObject->hideItem("grid_details_link5"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Insertado
+$pageObject->hideItem("grid_details_link6"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Preseleccionado
 //print_r($_SESSION);
 ;		
 } // function BeforeShowList

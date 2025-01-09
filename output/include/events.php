@@ -35,6 +35,7 @@ class class_GlobalEvents extends eventsBase
 		$this->events["bolsa_empleo_vacancia_snippet2"] = true;
 		$this->events["bolsa_empleo_bolsa_users_popup_snippet"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet3"] = true;
+		$this->events["bolsa_empleo_vacancia_snippet4"] = true;
 
 
 
@@ -104,7 +105,6 @@ if (!$data) {
 	$message = "Usuario INACTIVO, por favor contactarse a sistemas@mtess.gov.py";
 	return false;
 }
-
 return true;
 
 ;		
@@ -218,6 +218,13 @@ echo "
 </script>
 ';
 
+	;
+}
+	function event_bolsa_empleo_vacancia_snippet4(&$params)
+	{
+	// Put your code here.
+//echo "Your message";
+echo '<script src="xlsx.full.min.js"></script>';
 	;
 }
 

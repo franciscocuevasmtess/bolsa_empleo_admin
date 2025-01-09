@@ -25,9 +25,6 @@
 [data-page="vacancia_list"][data-itemid="grid_field2"] {
   font-size: 14px;
 }
-[data-page="vacancia_list"][data-itemid="grid_field"] {
-  font-size: 16px;
-}
 [data-page="vacancia_list"][data-itemid="grid_field1"] {
   width: 100%;
   white-space: normal;
@@ -71,7 +68,7 @@
 }
 [data-page="vacancia_list"][data-itemid="grid_field10"] {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
 }
 [data-page="vacancia_list"][data-itemid="text2"] {
   font-size: 12px;
@@ -96,10 +93,6 @@
   font-size: 12px;
 }
 [data-page="vacancia_list"][data-itemid="grid_field11"] {
-  font-weight: bold;
-  font-size: 12px;
-}
-[data-page="vacancia_list"][data-itemid="grid_field_label2"] {
   font-weight: bold;
   font-size: 12px;
 }
