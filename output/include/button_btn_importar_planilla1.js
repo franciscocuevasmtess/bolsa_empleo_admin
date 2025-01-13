@@ -92,132 +92,137 @@ function sendDataToServer(data) {
 	if ( !pageObj.buttonEventAfter['btn_importar_planilla1'] ) {
 		pageObj.buttonEventAfter['btn_importar_planilla1'] = function( result, ctrl, pageObj, proxy, pageid, rowData, row, params ) {
 			var ajax = ctrl;
-//document.getElementById('processFile').addEventListener('click', function () {
-    
-	const fileInput = document.getElementById('fileInput');
-    const file = fileInput.files[0];
-	const id_vacancias = row.getFieldValue("id_vacancias"); //se obtiene id_vacancias desde el formulario.
-	const usuario_carga_id = result["id"]; //se obtiene desde el evento "Server" de este boton.
-	const usuario_carga_nombre = result["username"]; //se obtiene desde el evento "Server" de este boton.
-	//const usuario_carga_id = 1002;
-	//const usuario_carga_nombre = 'aaaa';
+
+// Referencia al input de archivo del formulario.
+const fileInput = document.getElementById('fileInput');
+
+// Obtener el archivo seleccionado por el usuario.
+const file = fileInput.files[0];
+
+// Obtener datos adicionales del formulario y el servidor.
+const id_vacancias = row.getFieldValue("id_vacancias"); // ID de la vacancia (se obtiene desde el formulario).
+const usuario_carga_id = result["id"]; // ID del usuario que realiza la carga (obtenido desde el servidor).
+const usuario_carga_nombre = result["username"]; // Nombre del usuario que realiza la carga (obtenido desde el servidor).
+
+
+// Validar si el usuario seleccionó un archivo.
+if (!file) {
+	//alert('Por favor, seleccione un archivo.');
+	alert('Por favor, seleccione un archivo.'
+		+' id_vacancias: '+id_vacancias
+		+' usuario_carga_id: '+usuario_carga_id
+		+' usuario_carga_nombre: '+usuario_carga_nombre
+	);
+	return; // Detener ejecución si no hay archivo seleccionado.
+}
+
+
+// Crear un lector de archivos para procesar el archivo seleccionado.
+const reader = new FileReader();
+
+
+// Evento que se ejecuta cuando el archivo ha sido leído.
+reader.onload = async function (e) {
+	const fileData = e.target.result; // Contenido del archivo leído.
 	
-	if (!file) {
-		alert('Por favor, seleccione un archivo.\n' 
-			+ 'fileInput ' + fileInput 
-			+ ' file ' + file 
-			+ ' id_vacancias ' + id_vacancias
-			+ ' usuario_carga_id ' + usuario_carga_id
-			+ ' usuario_carga_nombre ' + usuario_carga_nombre
-		);
-		return;
-    }
 	
-	const reader = new FileReader();
-    reader.onload = async function (e) {
-        const fileData = e.target.result;
+	// Procesar archivo CSV.
+	if (file.name.endsWith('.csv')) {
+		processCSV(fileData);
+	} else {
+		// Procesar archivo Excel.
+		const data = new Uint8Array(fileData); // Convertir datos en bytes para procesar Excel.
+		const workbook = XLSX.read(data, { type: 'array' }); // Leer el archivo Excel.
+		const worksheet = workbook.Sheets[workbook.SheetNames[0]]; // Seleccionar la primera hoja.
+		const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 }); // Convertir datos a JSON.
+		processExcel(jsonData);
+	}
+};
 
-        if (file.name.endsWith('.csv')) {
-            processCSV(fileData);
-        } else {
-            const data = new Uint8Array(fileData);
-            const workbook = XLSX.read(data, { type: 'array' });
-            const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-            const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-            processExcel(jsonData);
-        }
-    };
 
-    if (file.name.endsWith('.csv')) {
-        reader.readAsText(file);
-    } else {
-        reader.readAsArrayBuffer(file);
-    }
-//});
+// Leer el archivo según su tipo (CSV o Excel).
+if (file.name.endsWith('.csv')) {
+	reader.readAsText(file); // Leer archivo como texto.
+} else {
+	reader.readAsArrayBuffer(file); // Leer archivo como buffer.
+}
 
+
+// Función para procesar datos CSV.
 function processCSV(csvData) {
-    const rows = csvData.split('\n').map(row => row.split(','));
-    console.log('CSV Data:', rows);
-    sendDataToServer(rows);
-	
-	//const rows = csvData.split('\n').map(row => row.split(','));
-	//const filteredData = rows.filter(row => row.some(value => value.trim() !== '')); // Filtrar filas vacías
-	//console.log('CSV Data (filtered):', filteredData);
-	//sendDataToServer(filteredData);
+    const rows = csvData.split('\n').map(row => row.split(',')); // Dividir el archivo CSV en filas y columnas.
+    console.log('CSV Data:', rows); // Mostrar datos en consola para depuración.
+    sendDataToServer(rows); // Enviar datos al servidor.
 }
 
+
+// Función para procesar datos Excel.
 function processExcel(jsonData) {
-    console.log('Excel Data:', jsonData);
-    sendDataToServer(jsonData);
-	
-	//const filteredData = jsonData.filter(row => row.some(value => value.trim() !== '')); // Filtrar filas vacías
-	//console.log('Excel Data (filtered):', filteredData);
-	//sendDataToServer(filteredData);
+    console.log('Excel Data:', jsonData); // Mostrar datos en consola para depuración.
+    sendDataToServer(jsonData); // Enviar datos al servidor.
 }
 
+
+// Función para enviar datos al servidor mediante AJAX.
 function sendDataToServer(data) {
+	
+	// Mostrar el div de resultados.
+    $("#result").hide(); // Ocultar resultados previos.
+    $("#loading").show(); // Mostrar el spinner de carga.
+	
+	// Antes de enviar la solicitud AJAX.
+	document.getElementById('loading').style.display = 'block';
+	document.getElementById('result').innerHTML = ''; // Limpia resultados previos.
+
 	$.ajax({
-		url: 'planillas_empleados_up_ajax3.php',
+		url: 'upload_postulantes_ajax.php', // URL del script PHP que procesará los datos.
         method: 'POST',
-        data: { fileData: JSON.stringify(data), 
-				id_vacancias: id_vacancias,
-				usuario_carga_id:usuario_carga_id,
-				usuario_carga_nombre:usuario_carga_nombre
+        data: { fileData: JSON.stringify(data), // Datos del archivo en formato JSON.
+				id_vacancias: id_vacancias, // ID de la vacancia.
+				usuario_carga_id:usuario_carga_id, // ID del usuario.
+				usuario_carga_nombre:usuario_carga_nombre // Nombre del usuario.
 			},
         success: function (response) {
-            /*
-			console.log("Respuesta desde el server " + response);
+			$("#loading").hide(); // Ocultar el spinner de carga.
+            $("#result").show(); // Mostrar los resultados.
 			
-			document.getElementById('result').innerHTML = `
-                <h3>Respuesta del servidor:</h3>
-                <pre>${response.data}</pre>`;
-			*/
-			
-			// Asegúrate de convertir el JSON a un objeto
-			//const jsonResponse = JSON.parse(response);
-			// Acceder al campo "message"
-			//document.getElementById('result').innerHTML = `
-			//	<h3>Respuesta del servidor:</h3>
-			//	<pre>${jsonResponse.message}</pre>`;
-			
-			try {
-                // Asegúrarse de que la respuesta es un objeto JSON
+            try {
+                // Asegúrarse de que la respuesta es un objeto JSON, intentar 
+				//convertir la respuesta en JSON.
                 const jsonResponse = typeof response === "string" ? JSON.parse(response) : response;
-
-                if (jsonResponse.success) {
-                    console.log("Datos procesados correctamente:", jsonResponse.data);
-                    document.getElementById('result').innerHTML = `
-                        <h3>Respuesta del servidor:</h3>
-                        <pre>${JSON.stringify(jsonResponse.message, null, 2)}</pre>`;
+				
+				if (jsonResponse.success) {
+					console.log("Datos procesados correctamente:", jsonResponse.data);
+					// Mostrar mensaje de éxito en el DOM.
+					$("#result").html(`<pre>${jsonResponse.message}</pre>`);
                 } else {
                     console.warn("Error en el servidor:", jsonResponse.message);
-                    document.getElementById('result').innerHTML = `
-                        <h3>Error del servidor:</h3>
-                        <pre>${jsonResponse.message}</pre>`;
+					// Mostrar mensaje de error del servidor en el DOM.
+					$("#result").html(`<pre>${jsonResponse.message}</pre>`);
                 }
             } catch (error) {
                 console.error("Error procesando la respuesta del servidor:", error.message);
+				
+				// Mostrar error de procesamiento en el DOM.
                 document.getElementById('result').innerHTML = `
                     <h3>Error procesando la respuesta del servidor:</h3>
                     <pre>${error.message}</pre>`;
             }
-			
 		},
         error: function (xhr, status, error) {
-			/*
-            console.error("Error procesando la respuesta del servidor:", error);
-			document.getElementById('result').innerHTML = `
-                <h3>Error en la solicitud:</h3>
-                <pre>${error}</pre>`;
-            console.error('Detalles del error:', xhr.responseText);
-			*/
 			console.error("Error en la solicitud:", error);
+			
+			$("#loading").hide(); // Ocultar el spinner de carga.
+            $("#result").show(); // Mostrar los resultados.
+				
+			// Mostrar error de solicitud en el DOM.
             document.getElementById('result').innerHTML = `
                 <h3>Error en la solicitud:</h3>
                 <pre>${xhr.responseText || error}</pre>`;
         }
     });
 }
+
 		}
 	}
 	

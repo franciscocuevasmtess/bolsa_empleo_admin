@@ -2763,7 +2763,6 @@ $tdataseguimientos[".sqlquery"] = $queryData_seguimientos;
 
 
 
-include_once(getabspath("include/seguimientos_events.php"));
-$tdataseguimientos[".hasEvents"] = true;
+$tdataseguimientos[".hasEvents"] = false;
 
 ?>

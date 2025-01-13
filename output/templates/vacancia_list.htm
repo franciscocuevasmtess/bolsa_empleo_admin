@@ -676,6 +676,7 @@
 									 
 									 
 									 
+									 
 													</table>
 
 					</div>
@@ -838,18 +839,33 @@
 	</span>
 </span>
  
+<span data-itemtype="text" data-itemid="text9" {$item_text9} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
+	<input type="file" id="fileInput" name="fileInput" accept=".csv, .xlsx, .xls">
+<br>
+</span>
+ 
 <span data-itemtype="custom_button" data-itemid="boton_importar_planilla" {$item_boton_importar_planilla} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
 	<a type="button" title="" class="btn btn-danger   
 	" id="btn_importar_planilla1" href="javascript:void(0)" typeid="ib" >
 							Importar Planilla			</a>
 </span>
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-center r-ori-vert			"
+	colspan="2"		 
+	data-cellId="grid_cell_label16" data-pageid="{$pageid}" data-record-id="{$recId}">
  
-<span data-itemtype="text" data-itemid="text9" {$item_text9} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
-	<!-- <input id="fileSelect" name="fileSelect" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" /> -->
+<span data-itemtype="text" data-itemid="text10" {$item_text10} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
+	<div id="loading" style="display: none; text-align: center; margin-top: 20px;">
+    <p>Procesando, por favor espere...</p>
+    <div class="spinner"></div>
+</div>
 
-<input type="file" id="fileInput" name="fileInput" accept=".csv, .xlsx, .xls">
-<br>
-<div id="result"></div></span>
+<div id="result" class="result-container"></div></span>
 </td>
 											</tr>
 									 

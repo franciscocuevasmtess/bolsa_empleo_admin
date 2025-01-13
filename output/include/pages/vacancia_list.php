@@ -236,9 +236,10 @@
 'text7',
 'grid_field13',
 'custom_button_container',
-'boton_importar_planilla',
 'text9',
-'grid_field11' ) ),
+'boton_importar_planilla',
+'grid_field11',
+'text10' ) ),
 'formXtTags' => array( 'below-grid' => array( 'pagination' ),
 'left' => array(  ),
 'top' => array( 'breadcrumb' ) ),
@@ -293,9 +294,10 @@
 'text7' => 'grid',
 'grid_field13' => 'grid',
 'custom_button_container' => 'grid',
-'boton_importar_planilla' => 'grid',
 'text9' => 'grid',
-'grid_field11' => 'grid' ),
+'boton_importar_planilla' => 'grid',
+'grid_field11' => 'grid',
+'text10' => 'grid' ),
 'itemLocations' => array( 'grid_alldetails_link' => array( 'location' => 'grid',
 'cellId' => 'cell_top' ),
 'grid_details_link1' => array( 'location' => 'grid',
@@ -372,12 +374,14 @@
 'cellId' => 'cell_label5' ),
 'custom_button_container' => array( 'location' => 'grid',
 'cellId' => 'cell_label9' ),
-'boton_importar_planilla' => array( 'location' => 'grid',
-'cellId' => 'cell_label9' ),
 'text9' => array( 'location' => 'grid',
 'cellId' => 'cell_label9' ),
+'boton_importar_planilla' => array( 'location' => 'grid',
+'cellId' => 'cell_label9' ),
 'grid_field11' => array( 'location' => 'grid',
-'cellId' => 'cell_label10' ) ),
+'cellId' => 'cell_label10' ),
+'text10' => array( 'location' => 'grid',
+'cellId' => 'cell_label16' ) ),
 'itemVisiblity' => array( 'simple_search' => 3,
 'menu' => 3,
 'username_button' => 3,
@@ -419,7 +423,8 @@
 'text6',
 'text7',
 'text8',
-'text9' ),
+'text9',
+'text10' ),
 'grid_details_link' => array( 'grid_details_link',
 'grid_details_link1',
 'grid_details_link2',
@@ -501,8 +506,15 @@
 'items' => array(  ),
 'fixedAtServer' => true,
 'fixedAtClient' => true ),
-'cell_label' => array( 'cols' => array( 0 ),
+'cell_label16' => array( 'cols' => array( 0,
+1 ),
 'rows' => array( 4 ),
+'tags' => array(  ),
+'items' => array( 'text10' ),
+'fixedAtServer' => true,
+'fixedAtClient' => false ),
+'cell_label' => array( 'cols' => array( 0 ),
+'rows' => array( 5 ),
 'tags' => array(  ),
 'items' => array( 'grid_field2',
 'text1',
@@ -510,63 +522,63 @@
 'fixedAtServer' => true,
 'fixedAtClient' => false ),
 'cell_field' => array( 'cols' => array( 1 ),
-'rows' => array( 4 ),
+'rows' => array( 5 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label1' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 5 ),
+'rows' => array( 6 ),
 'tags' => array( 'id_estado_vacancia_fieldcolumn' ),
 'items' => array( 'grid_field6' ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label10' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 6 ),
+'rows' => array( 7 ),
 'tags' => array( 'fk_id_feria_empleo_fieldcolumn' ),
 'items' => array( 'grid_field11' ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label12' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 7 ),
+'rows' => array( 8 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label13' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 8 ),
+'rows' => array( 9 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label14' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 9 ),
+'rows' => array( 10 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label15' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 10 ),
+'rows' => array( 11 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label11' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 11 ),
+'rows' => array( 12 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label3' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 12 ),
+'rows' => array( 13 ),
 'tags' => array(  ),
 'items' => array( 'text5',
 'grid_field1' ),
@@ -574,13 +586,13 @@
 'fixedAtClient' => false ),
 'cell_field5' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 13 ),
+'rows' => array( 14 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label4' => array( 'cols' => array( 0 ),
-'rows' => array( 14 ),
+'rows' => array( 15 ),
 'tags' => array( 'fecha_creacion_vacancia_fieldheadercolumn',
 'fecha_creacion_vacancia_fieldcolumn' ),
 'items' => array( 'grid_field_label1',
@@ -588,7 +600,7 @@
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_field4' => array( 'cols' => array( 1 ),
-'rows' => array( 14 ),
+'rows' => array( 15 ),
 'tags' => array( 'fecha_expiracion_vacancia_fieldheadercolumn',
 'fecha_expiracion_vacancia_fieldcolumn' ),
 'items' => array( 'grid_field_label',
@@ -597,7 +609,7 @@
 'fixedAtClient' => false ),
 'cell_dpreview' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 15 ),
+'rows' => array( 16 ),
 'tags' => array(  ),
 'items' => array( 'details_preview1',
 'details_preview',
@@ -608,7 +620,7 @@
 'fixedAtServer' => true,
 'fixedAtClient' => false ) ),
 'width' => 2,
-'height' => 16 ) ) ),
+'height' => 17 ) ) ),
 'loginForm' => array( 'loginForm' => 3 ),
 'page' => array( 'verticalBar' => false,
 'labeledButtons' => array( 'update_records' => array(  ),
@@ -724,6 +736,9 @@ array( 'cell' => 'cell_label8' ) ) ),
 array( 'section' => 'body',
 'cells' => array( array( 'cell' => 'cell_label5' ),
 array( 'cell' => 'cell_label9' ) ) ),
+array( 'section' => 'body',
+'cells' => array( array( 'cell' => 'cell_label16',
+'colspan' => 2 ) ) ),
 array( 'cells' => array( array( 'cell' => 'cell_label' ),
 array( 'cell' => 'cell_field' ) ),
 'section' => 'body' ),
@@ -850,8 +865,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'columnName' => 'field' ),
 'cell_label9' => array( 'model' => 'cell_field',
 'items' => array( 'custom_button_container',
-'boton_importar_planilla',
-'text9' ),
+'text9',
+'boton_importar_planilla' ),
 'align' => 'right' ),
 'cell_label10' => array( 'model' => 'cell_label',
 'items' => array( 'grid_field11' ),
@@ -870,7 +885,10 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'cell_label14' => array( 'model' => 'cell_label',
 'items' => array(  ) ),
 'cell_label15' => array( 'model' => 'cell_label',
-'items' => array(  ) ) ),
+'items' => array(  ) ),
+'cell_label16' => array( 'model' => 'cell_label',
+'items' => array( 'text10' ),
+'align' => 'center' ) ),
 'deferredItems' => array(  ),
 'recsPerRow' => 1 ) ),
 'items' => array( 'details_found' => array( 'type' => 'details_found',
@@ -1232,13 +1250,86 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'type' => 0 ),
 'type' => 'snippet' ),
 'text9' => array( 'type' => 'text',
-'label' => array( 'text' => '<!-- <input id="fileSelect" name="fileSelect" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" /> -->
-
-<input type="file" id="fileInput" name="fileInput" accept=".csv, .xlsx, .xls">
+'label' => array( 'text' => '<input type="file" id="fileInput" name="fileInput" accept=".csv, .xlsx, .xls">
 <br>
-<div id="result"></div>',
+',
 'type' => 0 ),
-'editedByRte' => false ) ),
+'editedByRte' => false,
+'customCSS' => '/* Put  your custom CSS code here */
+
+:host {
+  color: red;
+}' ),
+'text10' => array( 'type' => 'text',
+'label' => array( 'text' => '<div id="loading" style="display: none; text-align: center; margin-top: 20px;">
+    <p>Procesando, por favor espere...</p>
+    <div class="spinner"></div>
+</div>
+
+<div id="result" class="result-container"></div>',
+'type' => 0 ),
+'editedByRte' => false,
+'customCSS' => '/* Put  your custom CSS code here 
+
+:host {
+  color: red;
+}
+*/
+
+/* Estilos para el div de resultados. */
+.result-container {
+    max-width: 800px; /* Limitar el ancho del contenido */
+    margin: 20px auto; /* Centrar horizontalmente el div */
+    padding: 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Fondo claro para contraste */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    text-align: left; /* Alinear el texto a la izquierda */
+    font-family: Arial, sans-serif; /* Fuente legible */
+    font-size: 14px; /* Tamaño de fuente legible */
+    color: #333; /* Color del texto */
+}
+
+.result-container h3 {
+    text-align: center; /* Centrar el título */
+    color: #007bff; /* Color azul (puedes ajustarlo al tema de tu app) */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.result-container pre {
+    white-space: pre-wrap; /* Ajustar el texto para que no salga de los límites */
+    word-wrap: break-word; /* Romper palabras largas si es necesario */
+    background-color: #fff; /* Fondo blanco para contraste */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    overflow: auto; /* Permitir desplazamiento si el contenido es muy grande */
+    font-size: 13px; /* Ajustar el tamaño del texto */
+}
+
+
+
+/* Estilos para el spinner animado. */
+.spinner {
+    margin: 10px auto;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff; /* Color principal */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+' ) ),
 'dbProps' => array(  ),
 'responsiveGrid' => false,
 'spreadsheetGrid' => false,
