@@ -23,6 +23,7 @@
     define('ESTADOS_CERRADOS', [5, 6]);
 
     /** FUNCIONES AUXILIARES **/
+    
     /** 
      * Responder con JSON.
      * @param bool $success Éxito o fallo de la operación.
@@ -56,11 +57,11 @@
      * Validar datos de una persona.
      * 
      * @param int $person_id ID de la persona en la base de datos.
-     * @param string $code Número de cédula.
+     * @param string $nroCedula Número de cédula.
      * @param resource $conn Conexión a la base de datos.
      * @return array|false Datos de la persona o `false` si no se encontraron.
     */
-    function validatePersonData($person_id, $code, $conn)
+    function validatePersonData($person_id, $nroCedula, $conn)
     {
         // Consulta para verificar múltiples aspectos de los datos de la persona.
         $query = "SELECT p.resumen AS existe_resumen,
@@ -74,14 +75,14 @@
                         (SELECT COUNT(*) FROM bolsa_empleo.cvc_idiomas WHERE fk_personaid = $1) AS count_idiomas
                     FROM eportal.persons p
                     WHERE p.id = $1";
-        $result = pg_query_params($conn, $query, [$person_id, $code]);
+        $result = pg_query_params($conn, $query, [$person_id, $nroCedula]);
         if (!$result) {
             return false; // Si la consulta falla, devuelve `false`.
         }
 
         $data = pg_fetch_assoc($result);
         if (!$data) {
-            //error_log("No se encontraron datos para person_id: $person_id, code: $code");
+            //error_log("No se encontraron datos para person_id: $person_id, nroCedula: $nroCedula");
             return false;
         }
     
@@ -127,7 +128,6 @@
                                                         fecha_postulacion, 
                                                         fk_personaid) 
                     VALUES ($1, 1, now(), $2) RETURNING id_postulacion";
-
         $result = pg_query_params($conn, $query, [$id_vacancias, $person_id]);
 
         if ($result) {
@@ -141,8 +141,9 @@
                                                                         usuario_carga_id, 
                                                                         usuario_carga_nombre, 
                                                                         id_vacancia, 
-                                                                        id_empresa_sucursal) 
-                                    VALUES (now(), $1, 1, 1, $2, $3, $4, $5)";
+                                                                        id_empresa_sucursal,
+                                                                        metodo_insercion) 
+                                    VALUES (now(), $1, 1, 1, $2, $3, $4, $5, 'VIA_PLANILLA')";
             $result_seguimiento = pg_query_params($conn, $seguimientoQuery, [
                 $postulacion['id_postulacion'], 
                 $usuario_carga_id, 
@@ -181,9 +182,9 @@
         $results = [
             'processed' => 0, // Total de filas procesadas.
             'inserted' => 0, // Total de inserciones exitosas.
-            'errors' => [], // Lista de errores encontrados.
-            'totalrows' => 0 // Total de filas del archivo (excluyendo encabezado).
-            ,'grupo_error' => []
+            //'errors' => [], // Lista de errores encontrados.
+            'totalrows' => 0, // Total de filas del archivo (excluyendo encabezado).
+            'grupo_error' => [] // Lista para grupos de errores encontrados.
         ];
 
         // Calcular filas totales (excluyendo el encabezado).
@@ -193,21 +194,34 @@
         // Iterar sobre cada fila del archivo.
         foreach ($fileData as $index => $row) {
             if ($index === 0) continue; // Omitir encabezado.
-
-            // Validar que el campo "Número de cédula" no esté vacío.
-            $code = trim($row[1] ?? '');
-            if (empty($code)) {
-                $results['errors'][] = "Fila $index: El campo Número de cédula esta vacío.";
-                $results['grupo_error'][] = "El número de cédula esta vacío en la fila:$index";
+            
+            // Validar que el campo "ID Vacancia" no esté vacío.
+            $nroVacancia = trim($row[0] ?? ''); // Eliminar espacios en blanco
+            $nroVacancia = str_replace('"', '', $nroVacancia); // Eliminar comillas dobles
+            if (empty($nroVacancia)) {
+                $results['grupo_error'][] = "El IdVacancia esta vacío en la fila:$index";
                 continue;
             }
 
+            // Validar que el ID Vacancia del archivo coincida con el proporcionado a la función.
+            if ((int)$nroVacancia !== (int)$id_vacancias) {
+                $results['grupo_error'][] = "IdVacancia proporcionado no coincide. Por favor, verifique los valores del archivo y asegúrese de que coincidan con el ID esperado en la fila:$index";
+                continue;
+            }
+
+            
+            // Validar que el campo "Número de cédula" no esté vacío.
+            $nroCedula = trim($row[1] ?? ''); // Eliminar espacios en blanco
+            $nroCedula = str_replace('"', '', $nroCedula); // Eliminar comillas dobles
+            if (empty($nroCedula)) {
+                $results['grupo_error'][] = "El número de cédula esta vacío en la fila:$index";
+                continue;
+            }
+            
             // Buscar persona por cédula.
-            //La persona existe en la tabla de personas..., pero debe ser un usuario del sistema???
-            $person = getSingleResult($conn, "SELECT person_id FROM eportal.eportal.persons_docs WHERE valor = $1", [$code]);
+            $person = getSingleResult($conn, "SELECT person_id FROM eportal.eportal.persons_docs WHERE valor = $1", [$nroCedula]);
             if (!$person) {
-                $results['errors'][] = "Fila $index: Persona con cédula número $code no encontrada en la base de datos del sistema.";
-                $results['grupo_error'][] = "Persona no encontrada en la base de datos con número de cédula:$code";
+                $results['grupo_error'][] = "Persona no encontrada en la base de datos con número de cédula:$nroCedula";
                 continue;
             }
             $person_id = $person['person_id'];
@@ -215,16 +229,14 @@
             // Verificar si la persona ya está postulada en esta vacancia.
             $postulacion = getSingleResult($conn, "SELECT count(*) as total FROM bolsa_empleo.postulacion WHERE id_vacancia = $1 AND fk_personaid = $2", [$id_vacancias, $person_id]);
             if ($postulacion['total'] > 0) {
-                $results['errors'][] = "Fila $index: Persona con numero de cédula <b>$code</b> ya postulada en esta vacancia.";
-                $results['grupo_error'][] = "Persona con número de cédula ya postulada en esta vacancia:$code";
+                $results['grupo_error'][] = "Persona con número de cédula ya postulada en esta vacancia:$nroCedula";
                 continue;
             }
             
             // Validar datos obligatorios de la persona.
-            $personData = validatePersonData($person_id, $code, $conn);
+            $personData = validatePersonData($person_id, $nroCedula, $conn);
             if (!$personData) {
-                $results['errors'][] = "Fila $index: Error al verificar datos de la persona con cédula número <b>$code</b>.";
-                $results['grupo_error'][] = "Error al verificar datos de la persona con número de cédula:$code";
+                $results['grupo_error'][] = "Error al verificar datos de la persona con número de cédula:$nroCedula";
                 continue;
             }
             
@@ -233,15 +245,13 @@
                 $personData['count_phones'] == 0 || 
                 empty($personData['existe_city']) || 
                 empty($personData['existe_domicilio']) || 
-                //empty($personData['existe_canthijos']) || 
                 (!isset($personData['existe_canthijos']) || $personData['existe_canthijos'] === null) ||
                 $personData['count_educacion'] == 0 || 
                 $personData['count_experiencia_laboral'] == 0 || 
                 $personData['count_referencias_personales'] == 0 || 
                 $personData['count_idiomas'] == 0
             ) {
-                $results['errors'][] = "Fila $index: Datos incompletos para la persona con cédula número <b>$code</b>.";
-                $results['grupo_error'][] = "Datos incompletos para la persona con número de cédula:$code";
+                $results['grupo_error'][] = "Datos incompletos para la persona con número de cédula:$nroCedula";
                 continue;
             }
 
@@ -249,8 +259,7 @@
             if (insertPostulacion($id_vacancias, $person_id, $usuario_carga_id, $usuario_carga_nombre, $conn)) {
                 $results['inserted']++;
             } else {
-                $results['errors'][] = "Fila $index: Error al insertar la postulación para la persona con cédula número <b>$code</b>.";
-                $results['grupo_error'][] = "Error al insertar la postulación para la persona con número de cédula:$code";
+                $results['grupo_error'][] = "Error al insertar la postulación para la persona con número de cédula:$nroCedula";
             }
             
             $results['processed']++;
@@ -266,44 +275,6 @@
      * @return array Un array con el mensaje final y los datos detallados.
     */
     function generateSummary($results)
-    {
-        //$message = "Proceso Completado <br>Filas Procesadas: <b>{$results['processed']}</b>, Filas Insertadas:  <b>{$results['inserted']}</b>, Total de registros: <b>{$results['totalrows']}</b>";
-        //if (!empty($results['errors'])) {
-        //    $message .= "<br>Verifique las siguientes filas del archivo:<br>" . implode("<br>", $results['errors']);
-        //}
-        //return ['message' => $message, 'data' => $results];
-        
-        // Mensaje inicial del resumen.
-        $message = "Proceso Completado<br>";
-        $message .= "Total de registros en el archivo: <b>{$results['totalrows']}</b><br>";
-        $message .= "Filas procesadas correctamente: <b>{$results['processed']}</b><br>";
-        $message .= "Filas insertadas en la base de datos: <b>{$results['inserted']}</b><br>";
-
-        // Verificar si hubo errores y añadirlos al mensaje.
-        if (!empty($results['errors'])) {
-            $errorCount = count($results['errors']);
-            $message .= "<br>Errores encontrados: <b>{$errorCount}</b><br>";
-            $message .= "Detalles de los errores:<br>";
-            $message .= "<ul>";
-
-            // Incluir cada error en una lista ordenada.
-            foreach ($results['errors'] as $error) {
-                $message .= "<li>{$error}</li>";
-            }
-
-            $message .= "</ul>";
-        } else {
-            $message .= "<br>El proceso se completó sin errores.";
-        }
-
-        // Retornar el mensaje y los datos detallados.
-        return [
-            'message' => $message,
-            'data' => $results,
-        ];
-    }
-
-    function generateSummary2($results)
     {
         // 1. Crear el mensaje inicial del resumen.
         $message = "Proceso Completado<br>";
@@ -343,8 +314,78 @@
         // 7. Retornar el mensaje final y los datos procesados
         return [
             'message' => $message,
-            'data' => $results,
+            'data' => $results
         ];
+    }
+
+
+    /**
+     * Insertar un resumen del proceso en la tabla `seguimiento_resumen`.
+     *
+     * @param int $total Total de registros en el archivo.
+     * @param int $insertados Total de registros insertados.
+     * @param int $fallidos Total de registros fallidos.
+     * @param int $usuario_id ID del usuario que realizó el proceso.
+     * @param string $usuario_nombre Nombre del usuario que realizó el proceso.
+     * @param resource $conn Conexión a la base de datos.
+     * @return bool `true` si la inserción fue exitosa; `false` en caso contrario.
+     */
+    function insertSummary($total, $insertados, $fallidos, $usuario_id, $usuario_nombre, $conn, $id_vacancias, $fileName, $results)
+    {
+        // 1. Crear el mensaje inicial del resumen.
+        $message = "";
+        // 2. Comprobar si hay errores.
+        if (!empty($results['grupo_error'])) {
+            $errorGroups = []; // Array para agrupar los errores por tipo.
+
+            // 3. Iterar por cada error para agruparlos.
+            foreach ($results['grupo_error'] as $error) {
+                // a) Usar una expresión regular para separar el tipo de error y la cédula.
+                if (preg_match('/^(.*?):\s*(.*)$/', $error, $matches)) {
+                    $errorType = $matches[1]; // Tipo de error (Ej: "Datos incompletos para la persona con cédula número").
+                    $cedula = $matches[2];    // Número de cédula (Ej: "2196920").
+
+                    // b) Agrupar las cédulas bajo el tipo de error.
+                    $errorGroups[$errorType][] = $cedula;
+                }
+            }
+
+            // 4. Construir el mensaje de errores agrupados.
+            $message .= "Errores encontrados: " . count($results['grupo_error']) . "||";
+            $message .= "Detalles de los errores agrupados:";
+
+            // 5. Iterar por cada grupo de errores para añadir al mensaje
+            foreach ($errorGroups as $type => $cedulas) {
+                $message .= "$type:";                  // Título del error.
+                $message .= implode(", ", $cedulas) . "||";    // Lista de cédulas separadas por comas.
+            }
+        } else {
+            // 6. Si no hay errores, indicar que todo se completó sin problemas.
+            $message .= "El proceso se completó sin errores.";
+        }
+        
+        $query = "INSERT INTO bolsa_empleo.seguimiento_resumen (total_registros, 
+                                                                registros_fallidos, 
+                                                                usuario_id, 
+                                                                usuario_nombre,
+                                                                registros_insertados, 
+                                                                fecha_hora,
+                                                                id_vacancia,
+                                                                nombre_archivo,
+                                                                errores)
+                    VALUES ($1, $2, $3, $4, $5, now(), $6, $7, $8)";
+        $result = pg_query_params($conn, $query, [
+            $total,
+            $fallidos,
+            $usuario_id,
+            $usuario_nombre,
+            $insertados,
+            $id_vacancias,
+            $fileName,
+            $message
+        ]);
+
+        return $result ? true : false;
     }
 
 
@@ -358,6 +399,7 @@
         $id_vacancias = json_decode($_POST['id_vacancias'], true);
         $usuario_carga_id = json_decode($_POST['usuario_carga_id'], true);
         $usuario_carga_nombre = $_POST['usuario_carga_nombre'];
+        $fileName = $_POST['fileName'];
     
         // Validar datos iniciales.
         if (!$fileData) {
@@ -389,8 +431,26 @@
         $results = processFile($fileData, $id_vacancias, $usuario_carga_id, $usuario_carga_nombre, $conn);
         
         // Generar resumen del proceso.
-        //$summary = generateSummary($results);
-        $summary = generateSummary2($results);
+        $summary = generateSummary($results);
+
+
+        // Insertar resumen en la tabla `resumen`.
+        $fallidos = $results['totalrows'] - $results['inserted'];
+        $insertSuccess = insertSummary(
+            $results['totalrows'],
+            $results['inserted'],
+            $fallidos,
+            $usuario_carga_id,
+            $usuario_carga_nombre,
+            $conn,
+            $id_vacancias,
+            $fileName,
+            $results
+        );
+
+        if (!$insertSuccess) {
+            respond(false, 'Error al guardar el resumen del proceso.');
+        }
 
         // Responder al cliente con el resultado del proceso.
         respond(true, $summary['message'], $summary['data']);

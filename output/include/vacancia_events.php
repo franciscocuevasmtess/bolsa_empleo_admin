@@ -1553,16 +1553,16 @@ function BeforeMoveNextList(&$data, &$row, &$record, $recordId, $pageObject)
 
 //Ocultar items que inicialmente no van a ser visibles en el formulario.
 $pageObject->hideItem("boton_cerrar_vacancia", $recordId);		//desbilitar boton cerrar, dependiendo de que se cumplan ciertas condiciones mostrar o no.
-$pageObject->hideItem("boton_activar_vacancia", $recordId);	//desbilitar boton activar, dependiendo de que se cumplan ciertas condiciones mostrar o no.
+$pageObject->hideItem("boton_activar_vacancia", $recordId);		//desbilitar boton activar, dependiendo de que se cumplan ciertas condiciones mostrar o no.
 $pageObject->hideItem("grid_details_link", $recordId);				//oculta inicialmente el detalle de cantidad postulantes.
-$pageObject->hideItem("text4", $recordId);										//oculta inicialmente el texto del detalle de cantidad postulantes.
+$pageObject->hideItem("text4", $recordId);											//oculta inicialmente el texto del detalle de cantidad postulantes.
 
 $now = date("Y-m-d H:i:s");
 
 //desactivar ambos botones
 if ($data["fecha_expiracion_vacancia"] < $now && $data["id_estado_vacancia"] == 5) {
 	$pageObject->hideItem("boton_cerrar_vacancia", $recordId);		//desbilitar boton Cerrar.
-	$pageObject->hideItem("boton_activar_vacancia", $recordId);	//deshabilitar boton Activar.
+	$pageObject->hideItem("boton_activar_vacancia", $recordId);		//deshabilitar boton Activar.
 	$pageObject->hideItem("Evaluacion", $recordId);								//deshabilitar boton "En Evaluacion".
 }
 
@@ -1817,6 +1817,7 @@ $pageObject->hideItem("grid_details_link3"); //Oculta el enlace que muestra el t
 $pageObject->hideItem("grid_details_link4"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Postulado
 $pageObject->hideItem("grid_details_link5"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Insertado
 $pageObject->hideItem("grid_details_link6"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Preseleccionado
+$pageObject->hideItem("grid_details_link8"); //Oculta el enlace que muestra el total de registros de resumen por vacancia
 //print_r($_SESSION);
 ;		
 } // function BeforeShowList

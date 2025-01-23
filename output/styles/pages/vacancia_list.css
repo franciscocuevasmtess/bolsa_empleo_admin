@@ -145,18 +145,12 @@
 }
 
 /* Put  your custom CSS code here */
-
-[data-page="vacancia_list"][data-itemid="text9"] {
-  color: red;
-}
-/* Put  your custom CSS code here 
-
-[data-page="vacancia_list"][data-itemid="text10"] {
+/*
+[data-page="vacancia_list"][data-itemid="snippet2"] {
   color: red;
 }
 */
 
-/* Estilos para el div de resultados. */
 .result-container {
     max-width: 800px; /* Limitar el ancho del contenido */
     margin: 20px auto; /* Centrar horizontalmente el div */
@@ -189,8 +183,6 @@
 }
 
 
-
-/* Estilos para el spinner animado. */
 .spinner {
     margin: 10px auto;
     width: 50px;
@@ -210,6 +202,11 @@
     }
 }
 
+/* Put  your custom CSS code here */
+
+[data-page="vacancia_list"][data-itemid="grid_field"] {
+  color: red;
+}
 /* Put  your custom CSS code here */
 
 /* Link */

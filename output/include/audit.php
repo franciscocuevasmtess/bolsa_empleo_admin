@@ -638,6 +638,10 @@ class AuditTrailTable
 		{
 			return false;
 		}
+		if($table=="bolsa_empleo.seguimiento_resumen")
+		{
+			return false;
+		}
 	}
 
 	protected function insert($datetime, $ip, $user, $table, $action, $description)
@@ -1225,6 +1229,10 @@ class AuditTrailFile
 			return false;
 		}
 		if($table=="bolsa_empleo.postulacion_importar_planilla")
+		{
+			return false;
+		}
+		if($table=="bolsa_empleo.seguimiento_resumen")
 		{
 			return false;
 		}

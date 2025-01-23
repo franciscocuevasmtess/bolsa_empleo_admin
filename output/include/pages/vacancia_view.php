@@ -21,6 +21,8 @@
 'bolsa_empleo.bolsa_users_popup' => array( 'displayPreview' => 2,
 'previewPageId' => '' ),
 'bolsa_empleo.seguimientos' => array( 'displayPreview' => 2,
+'previewPageId' => '' ),
+'bolsa_empleo.seguimiento_resumen' => array( 'displayPreview' => 2,
 'previewPageId' => '' ) ),
 'fields' => array( 'gridFields' => array( 'descripcion_salario',
 'geolocation',

@@ -84,6 +84,7 @@ if (in_array($data_result["id_estado_vacancia"], $estadosOcultar)) {
     $pageObject->hideItem("text_cambiar_estado_preseleccionado", $recordId);
 } else {
     // Mostrar los elementos
+		// Observacion: Solo se puede realizar un cambio de estado cuando el estado de la vacancia esta en: Evaluación(id=3)
     $pageObject->showItem("button_cambiar_estado_preseleccionado", $recordId);
     $pageObject->showItem("text_cambiar_estado_preseleccionado", $recordId);
 }

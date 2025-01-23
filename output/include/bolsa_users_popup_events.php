@@ -65,19 +65,18 @@
 function BeforeShowList(&$xt, &$templatefile, $pageObject)
 {
 
-		//Ocultar elementos que es necesario que sean visibles en el listado.
+		//Ocultar elementos que No es necesario que sean visibles en el listado.
 //$pageObject->hideItem("grid_view");
-$pageObject->hideItem("add", $recordId);					//oculta el boton "Añadir Nuevo"
-$pageObject->hideItem("print_panel", $recordId);	//oculta el icono de impresora
+$pageObject->hideItem("add", $recordId);							//oculta el boton "Añadir Nuevo"
+$pageObject->hideItem("print_panel", $recordId);		//oculta el icono de impresora
 $pageObject->hideItem("breadcrumb", $recordId);		//oculta el breadcrumb
 $pageObject->hideItem("list_options", $recordId);	//oculta la lista de opciones del menu
-$pageObject->hideItem("page_size", $recordId);		//oculta la cantidad de registros por pagina
-$pageObject->hideItem("grid_field1", $recordId);	//Oculta el campo id_vacancias
-$pageObject->hideItem("grid_field2", $recordId);	//Oculta el campo id_persona
-
+$pageObject->hideItem("page_size", $recordId);			//oculta la cantidad de registros por pagina
+$pageObject->hideItem("grid_field1", $recordId);		//Oculta el campo id_vacancias
+$pageObject->hideItem("grid_field2", $recordId);		//Oculta el campo id_persona
 
 //print_r($_SESSION);
-//$_SESSION["UserData"]["id"],
+//$_SESSION["UserData"]["id"]
 ;		
 } // function BeforeShowList
 

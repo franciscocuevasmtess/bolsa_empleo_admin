@@ -9,6 +9,7 @@ $dalTableseguimientos["usuario_carga_id"] = array("type"=>3,"varname"=>"usuario_
 $dalTableseguimientos["usuario_carga_nombre"] = array("type"=>200,"varname"=>"usuario_carga_nombre", "name" => "usuario_carga_nombre", "autoInc" => "0");
 $dalTableseguimientos["id_vacancia"] = array("type"=>20,"varname"=>"id_vacancia", "name" => "id_vacancia", "autoInc" => "0");
 $dalTableseguimientos["id_empresa_sucursal"] = array("type"=>20,"varname"=>"id_empresa_sucursal", "name" => "id_empresa_sucursal", "autoInc" => "0");
+$dalTableseguimientos["metodo_insercion"] = array("type"=>200,"varname"=>"metodo_insercion", "name" => "metodo_insercion", "autoInc" => "0");
 $dalTableseguimientos["id_seguimiento"]["key"]=true;
 
 $dal_info["eportal_at_192_168_70_170_bolsa_empleo_seguimientos"] = &$dalTableseguimientos;

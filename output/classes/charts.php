@@ -492,6 +492,8 @@ class Chart
 			return true;
 		if("bolsa_empleo.postulacion" == $this->chrt_array['tables'][0])
 			return true;
+		if("bolsa_empleo.seguimiento_resumen" == $this->chrt_array['tables'][0])
+			return true;
 		return false;
 	}
 

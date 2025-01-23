@@ -2585,6 +2585,7 @@ $proto33["m_columns"][] = "usuario_carga_id";
 $proto33["m_columns"][] = "usuario_carga_nombre";
 $proto33["m_columns"][] = "id_vacancia";
 $proto33["m_columns"][] = "id_empresa_sucursal";
+$proto33["m_columns"][] = "metodo_insercion";
 $obj = new SQLTable($proto33);
 
 $proto32["m_table"] = $obj;

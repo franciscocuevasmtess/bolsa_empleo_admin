@@ -3216,6 +3216,11 @@ pdfDocument = {
 			{$displayDetailTable_postulacion_importar_planilla }
 		{END details_postulacion_importar_planilla},
 				
+				
+			 {BEGIN details_seguimiento_resumen}
+			{$displayDetailTable_seguimiento_resumen }
+		{END details_seguimiento_resumen},
+				
 		  ],
   "border": [ true, true, true, true ],
               "alignment": 'left',

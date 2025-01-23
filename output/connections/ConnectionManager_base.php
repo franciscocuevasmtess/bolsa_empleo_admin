@@ -300,6 +300,7 @@ class ConnectionManager_Base
 		$connectionsIds["bolsa_empleo.postulacion_preseleccionado"] = "eportal_at_192_168_70_170";
 		$connectionsIds["bolsa_empleo.bolsa_users_popup"] = "eportal_at_192_168_70_170";
 		$connectionsIds["bolsa_empleo.postulacion_importar_planilla"] = "eportal_at_192_168_70_170";
+		$connectionsIds["bolsa_empleo.seguimiento_resumen"] = "eportal_at_192_168_70_170";
 
 		$this->_tablesConnectionIds = &$connectionsIds;
 	}

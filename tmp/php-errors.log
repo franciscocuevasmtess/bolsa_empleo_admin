@@ -1,0 +1,35 @@
+[23-Jan-2025 08:20:27 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function processFile(), 5 passed in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 466 and exactly 6 expected in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php:212
+Stack trace:
+#0 C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php(466): processFile(Array, 2587, 56, 'franciscoc', Resource id #58)
+#1 {main}
+  thrown in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 212
+[23-Jan-2025 08:38:51 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function processFile(), 5 passed in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 466 and exactly 6 expected in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php:212
+Stack trace:
+#0 C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php(466): processFile(Array, 2587, 56, 'franciscoc', Resource id #58)
+#1 {main}
+  thrown in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 212
+[23-Jan-2025 08:55:30 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function processFile(), 5 passed in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 466 and exactly 6 expected in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php:212
+Stack trace:
+#0 C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php(466): processFile(Array, 2587, 56, 'franciscoc', Resource id #58)
+#1 {main}
+  thrown in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 212
+[23-Jan-2025 09:05:41 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function processFile(), 5 passed in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 466 and exactly 6 expected in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php:212
+Stack trace:
+#0 C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php(466): processFile(Array, 2587, 56, 'franciscoc', Resource id #58)
+#1 {main}
+  thrown in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 212
+[23-Jan-2025 09:41:04 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function processFile(), 5 passed in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 466 and exactly 6 expected in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php:212
+Stack trace:
+#0 C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php(466): processFile(Array, 2587, 56, 'franciscoc', Resource id #58)
+#1 {main}
+  thrown in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 212
+[23-Jan-2025 09:48:47 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function processFile(), 5 passed in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 466 and exactly 6 expected in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php:212
+Stack trace:
+#0 C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php(466): processFile(Array, 2587, 56, 'franciscoc', Resource id #58)
+#1 {main}
+  thrown in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 212
+[23-Jan-2025 09:51:10 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function processFile(), 5 passed in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 466 and exactly 6 expected in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php:212
+Stack trace:
+#0 C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php(466): processFile(Array, 2587, 56, 'franciscoc', Resource id #58)
+#1 {main}
+  thrown in C:\xampp\htdocs\bolsa_empleo_admin\output\upload_postulantes_ajax.php on line 212

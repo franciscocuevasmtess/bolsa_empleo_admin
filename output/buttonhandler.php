@@ -876,7 +876,61 @@ function buttonHandler_agregar_postulante($params)
 	}
 
 	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
-	// Constantes o configuración de estados de la vacancia
+	/*
+ * Funcionalidad del Código:
+ * Este código gestiona la vinculación de un postulante a una oferta laboral en un sistema de bolsa de empleo, 
+ * asegurando que el postulante cumpla con los requisitos establecidos y que no exista una vinculación previa 
+ * en el estado actual de la vacancia.
+
+ * Proceso General:
+ * 1. Verificar el estado de la vacancia:
+ *    - Solo se permite vincular postulantes si la vacancia no está en un estado cerrado (definido en `ESTADOS_CERRADOS`).
+ *
+ * 2. Validar si el postulante ya está registrado en la tabla `postulacion` para la vacancia actual:
+ *    - Si ya existe, no se realiza ninguna acción.
+ * 
+ * 3. Validar los datos del postulante:
+ *    - Verificar que el postulante cumpla con los requisitos básicos (resumen, teléfonos, dirección, hijos, 
+ *      educación, experiencia laboral, referencias personales e idiomas). 
+ *    - Si alguno de estos datos no está cargado, la acción no se realiza.
+ * 
+ * 4. Registrar la postulación:
+ *    - Si todas las validaciones son exitosas, se inserta un registro en la tabla `postulacion`.
+ *    - Se recupera el ID generado para realizar un seguimiento.
+ * 
+ * 5. Registrar el seguimiento:
+ *    - Se registra un historial de cambios en la tabla `seguimientos`, 
+ *      incluyendo detalles como usuario que realiza la acción, vacancia e IDs relevantes.
+
+ * Variables Importantes:
+ * - `$params["id_vacancias"]`: Identificador de la vacancia seleccionada.
+ * - `$record["personaid"]`: Identificador único del postulante.
+ * - `ESTADOS_CERRADOS`: Array de estados donde no se permite realizar acciones sobre la vacancia.
+ * - `$result`: Array que contiene el estado final del proceso y mensajes relacionados.
+ *
+ * Estados del Resultado:
+ * - `bandera = 1`: Acción exitosa, postulante vinculado correctamente.
+ * - `bandera = 2`: Acción fallida, postulante no cumple con los requisitos o datos incompletos.
+ * - Otros valores indican procesos intermedios.
+ *
+ * Tablas Involucradas:
+ * - `bolsa_empleo.vacancia`: Información sobre las vacancias laborales.
+ * - `bolsa_empleo.postulacion`: Tabla que registra la relación entre vacancias y postulantes.
+ * - `bolsa_empleo.seguimientos`: Historial de cambios de estado de postulaciones.
+ * - `eportal.persons`: Datos básicos del postulante (resumen, ciudad, domicilio, etc.).
+ * - `eportal.persons_phones`: Teléfonos del postulante.
+ * - `bolsa_empleo.vista_estudios_realizados_union_mec`: Información educativa del postulante.
+ * - `bolsa_empleo.cvc_experiencia_laboral`: Experiencia laboral del postulante.
+ * - `eportal.persons_referencia`: Referencias personales del postulante.
+ * - `bolsa_empleo.cvc_idiomas`: Idiomas registrados del postulante.
+ *
+ * Notas:
+ * - Asegurarse de que los valores de entrada sean sanitizados para evitar inyección SQL.
+ * - Mejorar las consultas para optimizar el rendimiento en bases de datos grandes.
+ */
+
+/*
+// Constantes o configuración de estados de la vacancia
 define('ESTADOS_CERRADOS', [5, 6]);
 
 // Obtener registro actual
@@ -885,8 +939,8 @@ $result["bandera"] = $params["bandera"]; // Valor por defecto
 
 // Verificar el estado de la vacancia
 $strSQLExists = DB::PrepareSQL("SELECT * 
-																			FROM bolsa_empleo.vacancia 
-																			WHERE id_vacancias = " . $params["id_vacancias"]);
+																	FROM bolsa_empleo.vacancia 
+																	WHERE id_vacancias = " . $params["id_vacancias"]);
 $rsExists = DB::Query($strSQLExists);
 $data = $rsExists->fetchAssoc();
 if ($data && is_array($data)) {
@@ -895,21 +949,21 @@ if ($data && is_array($data)) {
 		
 		// Verificar si la persona ya está en la tabla postulacion.
 		$strSQLExistsPostulacion = DB::PrepareSQL("SELECT count(*) as total
-																											FROM bolsa_empleo.postulacion 
-																											WHERE id_vacancia = " . $params["id_vacancias"] . " 
-																											AND fk_personaid = " . $record["personaid"]);
+																									FROM bolsa_empleo.postulacion 
+																									WHERE id_vacancia = " . $params["id_vacancias"] . " 
+																									AND fk_personaid = " . $record["personaid"]);
 		$rsExistsPostulacion = DB::Query($strSQLExistsPostulacion);
 		$dataPostulacion = $rsExistsPostulacion->fetchAssoc();
 		if ($dataPostulacion["total"] == 0) {
 			//Verificar que el postulante reuna todos los requisito para postularse a una oferta, debe tener todos sus datos cargados en el sistema.
 			$strSQLExistsDatosCV = DB::PrepareSQL("SELECT	(SELECT resumen 
-																														FROM eportal.persons 
-																														WHERE id = " . $record["personaid"] . ") AS existe_resumen,
-																													(SELECT COUNT(*) 
-																														FROM eportal.persons_phones 
-																														WHERE type = 2 
-																														AND person_id = " . $record["personaid"] . ") AS count_phones,
-																													(SELECT city_id 
+																												FROM eportal.persons 
+																												WHERE id = " . $record["personaid"] . ") AS existe_resumen,
+																											(SELECT COUNT(*) 
+																												FROM eportal.persons_phones 
+																												WHERE type = 2 
+																												AND person_id = " . $record["personaid"] . ") AS count_phones,
+																											(SELECT city_id 
 																														FROM eportal.persons 
 																														WHERE id = " . $record["personaid"] . ") AS existe_city,
 																													(SELECT domicilio  
@@ -1005,7 +1059,135 @@ if ($data && is_array($data)) {
 		} //End if - $dataPostulacion["total"]==0
 	} //End if - !in_array(ESTADOS_CERRADOS)
 } //End if - $data && is_array($data)
-;
+*/
+
+// Constantes o configuración de estados de la vacancia
+define('ESTADOS_CERRADOS', [5, 6]);
+
+// Obtener registro actual
+$record = $button->getCurrentRecord();
+$result["bandera"] = $params["bandera"]; // Valor por defecto
+
+// Verificar el estado de la vacancia
+$strSQLExists = DB::PrepareSQL("SELECT * 
+																			FROM bolsa_empleo.vacancia 
+																			WHERE id_vacancias = " . $params["id_vacancias"]);
+$rsExists = DB::Query($strSQLExists);
+$data = $rsExists->fetchAssoc();
+if ($data && is_array($data)) {
+	// Validar que la vacancia esté abierta para postulaciones.
+	if (!in_array($data["id_estado_vacancia"], ESTADOS_CERRADOS)) {
+		
+		// Verificar si la persona ya está postulada en esta vacancia.
+		$strSQLExistsPostulacion = DB::PrepareSQL("SELECT count(*) as total 
+																											FROM bolsa_empleo.postulacion 
+																											WHERE id_vacancia = " . $params["id_vacancias"] . 
+																											" AND fk_personaid = " . $record["personaid"]);
+		$rsExistsPostulacion = DB::Query($strSQLExistsPostulacion);
+		$dataPostulacion = $rsExistsPostulacion->fetchAssoc();
+		if ($dataPostulacion["total"] == 0) {
+			// Verificar que el postulante reuna todos los requisitos para postularse a una oferta, debe tener todos sus datos cargados en el sistema.
+			$strSQLExistsDatosCV = DB::PrepareSQL("SELECT	(SELECT resumen 
+																														FROM eportal.persons 
+																														WHERE id = " . $record["personaid"] . ") AS existe_resumen,
+																													(SELECT COUNT(*) 
+																														FROM eportal.persons_phones 
+																														WHERE type = 2 
+																														AND person_id = " . $record["personaid"] . ") AS count_phones,
+																													(SELECT city_id 
+																														FROM eportal.persons 
+																														WHERE id = " . $record["personaid"] . ") AS existe_city,
+																													(SELECT domicilio  
+																														FROM eportal.persons 
+																														WHERE id = " . $record["personaid"] . ") AS existe_domicilio,
+																													(SELECT canthijos 
+																														FROM eportal.persons 
+																														WHERE id = " . $record["personaid"] . ") AS existe_canthijos,
+																													(SELECT COUNT(*) 
+																														FROM bolsa_empleo.vista_estudios_realizados_union_mec 
+																														WHERE nro_documento = '" . $record["nro_documento"] . "') AS count_educacion,
+																													(SELECT COUNT(*) 
+																														FROM bolsa_empleo.cvc_experiencia_laboral 
+																														WHERE fk_persona_id = " . $record["personaid"] . ") AS count_experiencia_laboral,
+																													(SELECT COUNT(*) 
+																														FROM eportal.persons_referencia 
+																														WHERE id_persona = " . $record["personaid"] . ") AS count_referencias_personales,
+																													(SELECT COUNT(*) 
+																														FROM bolsa_empleo.cvc_idiomas 
+																														WHERE fk_personaid = " . $record["personaid"] . ") AS count_idiomas");
+			$rsExistsDatosCV = DB::Query($strSQLExistsDatosCV);
+			$dataDatosCV = $rsExistsDatosCV->fetchAssoc();
+			
+			//Validar que el postulante tenga todos los datos requeridos para poder postularlo a una oferta laboral.
+			if ( empty($dataDatosCV['existe_resumen']) == false && 
+					$dataDatosCV['count_phones'] > 0 && 
+					empty($dataDatosCV['existe_city']) == false && 
+					empty($dataDatosCV['existe_domicilio']) == false && 
+					empty($dataDatosCV['existe_canthijos']) == false  && 
+					$dataDatosCV['count_educacion'] > 0 &&
+					$dataDatosCV['count_experiencia_laboral'] > 0 && 
+					$dataDatosCV['count_referencias_personales'] > 0 && 
+					$dataDatosCV['count_idiomas'] > 0 ) {
+				// Insertar en postulaciones
+				$strSQLInsert = DB::PrepareSQL("INSERT INTO bolsa_empleo.postulacion (id_vacancia,
+																																												id_estado,
+																																												fecha_postulacion,
+																																												fk_personaid) 
+																						VALUES (':1', ':2', ':3', ':4')",
+																										$params["id_vacancias"],
+																										1,
+																										now(),
+																										$record["personaid"]);
+				DB::Exec($strSQLInsert);
+				
+				// Obtener el ID de la nueva postulacion y datos adicionales
+				$strSQLInserted = DB::PrepareSQL("SELECT p.id_postulacion, 
+																										ve.id_empresa_sucursal, 
+																										per.nombre || ' ' || per.apellidos as nombre_completo, 
+																										ocupn.descripcion
+																								FROM bolsa_empleo.vacancia v 
+																											JOIN eportal.bolsa_empleo.postulacion p ON p.id_vacancia = v.id_vacancias
+																											JOIN eportal.bolsa_empleo.vacancia_empresa ve ON p.id_vacancia = ve.id_vacancia 
+																											JOIN eportal.eportal.persons per ON per.id = p.fk_personaid
+																											JOIN eportal.bolsa_empleo.vacancia_puesto vp ON v.id_vacancias = vp.id_vacancia
+																											JOIN eportal.bolsa_empleo.ocupaciones_nuevas ocupn ON vp.fk_ocupacion_puesto = ocupn.id_ocu_puest_clasic
+																								WHERE v.id_vacancias = '" . $params["id_vacancias"] . "'
+																								AND p.fk_personaid = '" . $record["personaid"] ."'");
+				$resultInserted = DB::Query($strSQLInserted);
+				$dataInserted = $resultInserted->fetchAssoc();
+				if ($dataInserted) {
+					// Insertar en seguimientos
+					$strSqlInsertSeguimiento = DB::PrepareSQL("INSERT INTO bolsa_empleo.seguimientos (fecha_creacion, 
+																																																				id_postulacion, 
+																																																				id_estado_anterior, 
+																																																				id_nuevo_estado,
+																																																				usuario_carga_id, 
+																																																				usuario_carga_nombre, 
+																																																				id_vacancia, 
+																																																				id_empresa_sucursal) 
+																														VALUES (':1', ':2', ':3', ':4', ':5', ':6', ':7', ':8')",
+																																			now(),
+																																			$dataInserted["id_postulacion"],
+																																			1,
+																																			1,
+																																			$_SESSION["UserData"]["id"],
+																																			$_SESSION["UserData"]["username"],
+																																			$params["id_vacancias"],
+																																			$dataInserted["id_empresa_sucursal"]);
+					DB::Exec($strSqlInsertSeguimiento);
+
+					// Éxito
+					$result["descripcion"] = $dataInserted["descripcion"];
+					$result["nombre_completo"] = $dataInserted["nombre_completo"];
+					$result["bandera"] = 1;
+				} //End if - $dataInserted
+			} else {
+				//El postulante no cumple con todos los requisitos solicitados, no tiene cargados todos sus datos.
+				$result["bandera"] = 2;
+			}//End if validacion datos requeridos postulante
+		} //End if - $dataPostulacion["total"]==0
+	} //End if - !in_array(ESTADOS_CERRADOS)
+} //End if - $data && is_array($data);
 	RunnerContext::pop();
 	echo my_json_encode($result);
 	$button->deleteTempFiles();
@@ -1185,18 +1367,24 @@ function buttonHandler_btn_importar_planilla1($params)
 	}
 
 	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
-	$record = $button->getCurrentRecord();
+	/*
+// Put your code here.
+$result["txt"] = $params["txt"]." world!";
+*/
+
+$record = $button->getCurrentRecord();
 $userData = Security::currentUserData();
 $result["id"] = $userData["id"]; //Utilizado en el evento Client After.
 //$result["UserID"] = $_SESSION["UserID"];
-
+$result['id_vacancias']=$record['id_vacancias'];
 //
 $strSQL = DB::PrepareSQL("SELECT bolsa_empleo.gestores_users.username
 															FROM bolsa_empleo.gestores_users
 															WHERE bolsa_empleo.gestores_users.id = '" . $result["id"] . "'");
 $resultSQL = DB::Query($strSQL);
 $data = $resultSQL->fetchAssoc();
-$result["username"] = $data["username"]; //Utilizado en el evento Client After.;
+$result["username"] = $data["username"]; //Utilizado en el evento Client After.
+;
 	RunnerContext::pop();
 	echo my_json_encode($result);
 	$button->deleteTempFiles();

@@ -1100,6 +1100,18 @@ $value= $formattedDate;;
 		$value="<span class='badge badge-feria'>" .$value . "</span>"; ;
 		return $value;
 	}
+				if($table=="bolsa_empleo.vacancia" && $field=="importar_archivo")
+	{
+		$value = '
+<input type="file" id="fileInput_'.$data['id_vacancias'].'" name="fileInput_'.$data['id_vacancias'].'" accept=".csv, .xlsx, .xls">
+<br>
+<div id="loading_'.$data['id_vacancias'].'" name="loading_'.$data['id_vacancias'].'" style="display: none; text-align: center; margin-top: 20px;">
+    <p>Procesando, por favor espere...</p>
+    <div class="spinner"></div>
+</div>
+';;
+		return $value;
+	}
 				if($table=="bolsa_empleo.empresa_bolsa_contactos" && $field=="id_cargo" && $ptype=="list")
 	{
 		

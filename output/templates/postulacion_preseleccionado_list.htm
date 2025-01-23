@@ -490,7 +490,9 @@
 	class=" r-ori-vert			col-md-6
 	
 ">
-			</div>			 
+		 
+		<span data-itemtype="details_found" data-itemid="details_found" {$item_details_found} data-pageid="{$pageid}" data-page="postulacion_preseleccionado_list" data-small >
+{$mlp_push}{$mlparam first var first_shown}{$mlparam last var last_shown}{$mlparam total var records_found}{$custom DISPLAYING5}{$mlp_pop}</span>		</div>			 
 				<div 
 	data-cellId="above-grid_c2" data-pageid="{$pageid}"	{$cell_above-grid_c2}
 	class="r-align-right			col-md-6
@@ -510,23 +512,6 @@
 	<option value="3">Convocado</option>
 </select></span>
 		</div>					</div>
-			 
-				<div class="row">
-			 
-				<div 
-	data-cellId="above-grid_c4" data-pageid="{$pageid}"	{$cell_above-grid_c4}
-	class=" r-ori-vert			col-md-6
-	
-">
-		 
-		<span data-itemtype="details_found" data-itemid="details_found" {$item_details_found} data-pageid="{$pageid}" data-page="postulacion_preseleccionado_list" data-small >
-{$mlp_push}{$mlparam first var first_shown}{$mlparam last var last_shown}{$mlparam total var records_found}{$custom DISPLAYING5}{$mlp_pop}</span>		</div>			 
-				<div 
-	data-cellId="above-grid_c5" data-pageid="{$pageid}"	{$cell_above-grid_c5}
-	class="r-align-right r-ori-vert			col-md-6
-	
-">
-			</div>					</div>
 			</div>		
 {END above-grid_block}
 	</div>

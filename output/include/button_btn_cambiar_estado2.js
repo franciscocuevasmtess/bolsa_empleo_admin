@@ -10,7 +10,7 @@ Runner.buttonEvents["btn_cambiar_estado2"] = function( pageObj, proxy, pageid ) 
  * Obtiene el valor del nuevo estado seleccionado por el usuario.
  * Obtener las personas seleccionados de la lista para realizar el cambio de estado masivo.
 */
-
+/*
 ctrl.setEnabled();
 
 Swal.fire({
@@ -58,7 +58,70 @@ Swal.fire({
 });
 
 return false;
+*/
 
+
+	/*
+	 * Botón "Cambia Estado".
+	 * Funcionalidad para realizar un cambio masivo de estado a los postulantes seleccionados.
+	 * Se utiliza SweetAlert2 para mostrar confirmaciones y mensajes.
+	 */
+
+	// Habilita el botón para su uso.
+	ctrl.setEnabled();
+
+	// Mostrar confirmación al usuario antes de realizar el cambio masivo
+	Swal.fire({
+		title: "¿Está seguro que desea realizar el cambio masivo?",
+		showCancelButton: true,
+		confirmButtonText: "Confirmar",
+		cancelButtonText: "Cancelar"
+	}).then((result) => {
+
+		// Si el usuario confirma la acción
+		if (result.isConfirmed) {
+
+			// **PASO 1**: Obtener el estado nuevo seleccionado por el usuario
+			var estadoSeleccionado = document.getElementById("estados_preseleccionados").value;
+
+			// Asignar el estado nuevo a `params` para enviarlo al servidor
+			params["id_nuevo_estado"] = estadoSeleccionado;
+
+			// Contador para verificar cuántas personas se seleccionaron
+			var contadorSeleccionados = 0;
+
+			// **PASO 2**: Obtener la lista de postulantes seleccionados (checkboxes)
+			var checkboxes = document.getElementsByName('selection[]'); // Array de todos los checkboxes
+			var totalCheckboxes = checkboxes.length;
+
+			// Inicializar la lista de IDs seleccionados
+			params["cboxes"] = "";
+
+			// Iterar sobre los checkboxes y agregar los seleccionados a `params["cboxes"]`
+			for (var i = 0; i < totalCheckboxes; i++) {
+				if (checkboxes[i].checked) {
+					// Agregar el ID del postulante seleccionado a la lista separada por comas
+					params["cboxes"] += checkboxes[i].value + ",";
+					contadorSeleccionados++;
+				}
+			}
+
+			// **Validación**: Verificar si no se seleccionó ningún postulante
+			if (contadorSeleccionados === 0) {
+				// Mostrar mensaje de error si no hay seleccionados
+				Swal.fire({
+					icon: 'error',
+					title: 'Error',
+					text: 'Debe seleccionar al menos un postulante.'
+				});
+			} else {
+				// Enviar el formulario al servidor
+				submit();
+			}
+		}
+	});
+
+	return false;
 		}
 	}
 	

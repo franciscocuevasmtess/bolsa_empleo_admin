@@ -36,6 +36,11 @@ class class_GlobalEvents extends eventsBase
 		$this->events["bolsa_empleo_bolsa_users_popup_snippet"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet3"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet4"] = true;
+		$this->events["bolsa_empleo_vacancia_snippet5"] = true;
+		$this->events["bolsa_empleo_vacancia_snippet6"] = true;
+		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet"] = true;
+		$this->events["bolsa_empleo_vacancia_snippet7"] = true;
+		$this->events["bolsa_empleo_vacancia_snippet8"] = true;
 
 
 
@@ -225,6 +230,126 @@ echo "
 	// Put your code here.
 //echo "Your message";
 echo '<script src="xlsx.full.min.js"></script>';
+	;
+}
+	function event_bolsa_empleo_vacancia_snippet5(&$params)
+	{
+	// Put your code here.  
+/*echo '<div id="loading" style="display: none; text-align: center; margin-top: 20px;">
+    <p>Procesando, por favor espereaaaaa...</p>
+    <div class="spinner"></div>
+</div>';*/
+	;
+}
+	function event_bolsa_empleo_vacancia_snippet6(&$params)
+	{
+	/*$six_digit_random_number = random_int(100000, 999999);
+
+$variar= 'fileInput_'.$six_digit_random_number;
+// Put your code here.
+echo '<input type="file" id="'.$variar.'" name="fileInput" accept=".csv, .xlsx, .xls">
+<br>';*/
+	;
+}
+	function event_bolsa_empleo_postulacion_preseleccionado_snippet(&$params)
+	{
+	// Put your code here.
+//echo "Your message";
+
+echo '
+<input type="file" id="fileInput" name="fileInput" accept=".csv, .xlsx, .xls">
+<br>
+<div id="loading" name="loading" style="display: none; text-align: center; margin-top: 20px;">
+    <p>Procesando, por favor espere...</p>
+    <div class="spinner"></div>
+</div>
+';
+	;
+}
+	function event_bolsa_empleo_vacancia_snippet7(&$params)
+	{
+	// Put your code here.
+echo '
+<style>
+    .custom-buttons-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .custom-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-button:hover {
+        background-color: #0056b3;
+    }
+
+    .custom-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+</style>
+
+<div class="custom-buttons-container">
+    <!-- Botón Activar Vacancia -->
+    <button 
+        id="boton_activar_vacancia_' . $data['id_vacancias'] . '" 
+        class="custom-button"
+        onclick="activarVacancia(' . $data['id_vacancias'] . ')"
+    >
+        Activar Vacancia
+    </button>
+
+    <!-- Botón Cerrar Vacancia -->
+    <button 
+        id="boton_cerrar_vacancia_' . $data['id_vacancias'] . '" 
+        class="custom-button"
+        onclick="cerrarVacancia(' . $data['id_vacancias'] . ')"
+    >
+        Cerrar Vacancia
+    </button>
+</div>
+
+<script>
+    // Función para manejar el botón "Activar Vacancia"
+    function activarVacancia(idVacancia) {
+        if (confirm("¿Está seguro que desea activar esta vacancia?")) {
+            // Aquí puedes realizar una llamada AJAX o redirigir
+            alert("Vacancia activada: " + idVacancia);
+            // Código adicional para tu lógica
+        }
+    }
+
+    // Función para manejar el botón "Cerrar Vacancia"
+    function cerrarVacancia(idVacancia) {
+        if (confirm("¿Está seguro que desea cerrar esta vacancia?")) {
+            // Aquí puedes realizar una llamada AJAX o redirigir
+            alert("Vacancia cerrada: " + idVacancia);
+            // Código adicional para tu lógica
+        }
+    }
+</script>
+';
+
+	;
+}
+	function event_bolsa_empleo_vacancia_snippet8(&$params)
+	{
+	// Put your code here.
+//echo "Your message";
+
+echo '
+$sql =
+';
 	;
 }
 

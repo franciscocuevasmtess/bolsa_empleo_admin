@@ -767,9 +767,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "2033_1732030794";
+$projectBuildKey = "2239_1737551596";
 $wizardBuildKey = "41974";
-$projectBuildNumber = "2033";
+$projectBuildNumber = "2239";
 
 $mlang_messages = array();
 $mlang_charsets = array();
@@ -852,6 +852,7 @@ $tableCaptions["Spanish"]["bolsa_empleo_postulacion_insertado"] = "Postulacion I
 $tableCaptions["Spanish"]["bolsa_empleo_postulacion_preseleccionado"] = "Postulacion Preseleccionado";
 $tableCaptions["Spanish"]["bolsa_empleo_bolsa_users_popup"] = "Bolsa Users Popup";
 $tableCaptions["Spanish"]["bolsa_empleo_postulacion_importar_planilla"] = "Postulacion Importar Planilla";
+$tableCaptions["Spanish"]["bolsa_empleo_seguimiento_resumen"] = "Seguimiento Resumen";
 
 
 $globalEvents = new class_GlobalEvents;

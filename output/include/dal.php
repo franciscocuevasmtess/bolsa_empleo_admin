@@ -67,6 +67,7 @@ class tDAL
 	var $tbleportal_at_192_168_70_170_bolsa_empleo_ocupaciones_nuevas;
 	var $tbleportal_at_192_168_70_170_bolsa_empleo_postulacion;
 	var $tbleportal_at_192_168_70_170_bolsa_empleo_programas;
+	var $tbleportal_at_192_168_70_170_bolsa_empleo_seguimiento_resumen;
 	var $tbleportal_at_192_168_70_170_bolsa_empleo_seguimientos;
 	var $tbleportal_at_192_168_70_170_bolsa_empleo_tipo_contrato;
 	var $tbleportal_at_192_168_70_170_bolsa_empleo_tipo_movilidad;
@@ -124,6 +125,7 @@ class tDAL
 		$this->lstTables[] = array("name" => "ocupaciones_nuevas", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_ocupaciones_nuevas", "altvarname" => "ocupaciones_nuevas", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "postulacion", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_postulacion", "altvarname" => "postulacion", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "programas", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_programas", "altvarname" => "programas", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
+		$this->lstTables[] = array("name" => "seguimiento_resumen", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_seguimiento_resumen", "altvarname" => "seguimiento_resumen", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "seguimientos", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_seguimientos", "altvarname" => "seguimientos", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "tipo_contrato", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_tipo_contrato", "altvarname" => "tipo_contrato", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "tipo_movilidad", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_tipo_movilidad", "altvarname" => "tipo_movilidad", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");

@@ -317,6 +317,8 @@ function checkTableName($shortTName )
 		return true;
 	if ("postulacion_importar_planilla" == $shortTName )
 		return true;
+	if ("seguimiento_resumen" == $shortTName )
+		return true;
 	return false;
 }
 
@@ -880,6 +882,15 @@ function GetTablesList($pdfMode = false)
 	if( $tableAvailable ) {
 		$arr[]="bolsa_empleo.postulacion_importar_planilla";
 	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("bolsa_empleo.seguimiento_resumen");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="bolsa_empleo.seguimiento_resumen";
+	}
 	return $arr;
 }
 
@@ -946,6 +957,7 @@ function GetTablesListWithoutSecurity()
 	$arr[]="bolsa_empleo.postulacion_preseleccionado";
 	$arr[]="bolsa_empleo.bolsa_users_popup";
 	$arr[]="bolsa_empleo.postulacion_importar_planilla";
+	$arr[]="bolsa_empleo.seguimiento_resumen";
 	return $arr;
 }
 
@@ -2072,6 +2084,15 @@ function GetUserPermissionsStatic( $table )
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="bolsa_empleo.postulacion_importar_planilla" )
+	{
+		if( $sUserGroup=="<Guest>" )
+		{
+						return "S".$extraPerm;
+		}
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="bolsa_empleo.seguimiento_resumen" )
 	{
 		if( $sUserGroup=="<Guest>" )
 		{

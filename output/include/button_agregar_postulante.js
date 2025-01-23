@@ -6,9 +6,14 @@ Runner.buttonEvents["agregar_postulante"] = function( pageObj, proxy, pageid ) {
 		pageObj.buttonEventBefore['agregar_postulante'] = function( params, ctrl, pageObj, proxy, pageid, rowData, row, submit ) {		
 			var ajax = ctrl;
 /*
- * El uso que tendra este boton es vincular un postulante a una oferta de trabajo con
- * el estado inicial de "Preseleccionado" y tener un historico de cambios en la tabla "seguimientos".
-*/
+ * Este botón permite vincular un postulante a una oferta laboral específica.
+ * - Al confirmarse la acción, se crea un registro inicial en la tabla "seguimientos" con el estado "Preseleccionado".
+ * - También se conserva un historial de cambios en la misma tabla para rastrear el progreso del postulante.
+ * 
+ * Variables utilizadas:
+ * - params["id_vacancias"]: Identifica la vacancia seleccionada para asociar al postulante.
+ * - params["bandera"]: Indicador utilizado en el servidor para procesar la acción correspondiente.
+ */
 params["id_vacancias"] = row.getFieldValue("id_vacancias");
 
 ctrl.setEnabled();

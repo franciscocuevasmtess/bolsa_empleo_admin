@@ -3692,6 +3692,8 @@ function fillProjectEntites()
 	$projectEntitiesReverse[ "bolsa_users_popup" ] = "bolsa_empleo.bolsa_users_popup";
 	$projectEntities[ "bolsa_empleo.postulacion_importar_planilla" ] = array( "url" => "postulacion_importar_planilla", "type" => 1 );
 	$projectEntitiesReverse[ "postulacion_importar_planilla" ] = "bolsa_empleo.postulacion_importar_planilla";
+	$projectEntities[ "bolsa_empleo.seguimiento_resumen" ] = array( "url" => "seguimiento_resumen", "type" => 1 );
+	$projectEntitiesReverse[ "seguimiento_resumen" ] = "bolsa_empleo.seguimiento_resumen";
 }
 
 function findTable( $table ) {

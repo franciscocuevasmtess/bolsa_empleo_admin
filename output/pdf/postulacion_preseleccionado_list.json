@@ -258,8 +258,10 @@ pdfDocument = {
 	
 			"text": [
 		
-				'',
-	  ],
+				
+			{"text":"Mostrando %first% - %last% de %total% postulados preseleccionados","hidden":"{$item_hide_details_found}","bold":true,"isHtml":true,"page_indicator":true},
+				
+		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',
      
@@ -286,52 +288,6 @@ pdfDocument = {
 			{"text":"<label>Estado:</label>\n<select name=\"estados_preseleccionados\" id=\"estados_preseleccionados\">\n\t<option value=\"2\" selected=\"selected\">Seleccionado</option>\n\t<option value=\"3\">Convocado</option>\n</select>","color":"#000000","hidden":"{$item_hide_text_cambiar_estado_preseleccionado}","isHtml":true},
 				
 		  ],
-  "border": [ false, false, false, false ],
-              "alignment": 'right',
-     
-      
-      },
-
-											],
-						[
-																{
-	cellId: 'c4',
-	col:0,
-	row:0,
-			
-		
-	//	static colspan/rowspan
-		
-			
-			
-	
-			"text": [
-		
-				
-			{"text":"Mostrando %first% - %last% de %total% postulados preseleccionados","hidden":"{$item_hide_details_found}","bold":true,"isHtml":true,"page_indicator":true},
-				
-		  ],
-  "border": [ false, false, false, false ],
-              "alignment": 'left',
-     
-      
-      },
-
-																							{
-	cellId: 'c5',
-	col:0,
-	row:0,
-			
-		
-	//	static colspan/rowspan
-		
-			
-			
-	
-			"text": [
-		
-				'',
-	  ],
   "border": [ false, false, false, false ],
               "alignment": 'right',
      
