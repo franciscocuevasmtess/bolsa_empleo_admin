@@ -99,7 +99,7 @@
      * @param resource $conn Conexión a la base de datos.
      * @return bool `true` si la inserción fue exitosa; `false` en caso contrario.
     */
-    function insertPostulacion($id_vacancias, $person_id, $usuario_carga_id, $usuario_carga_nombre, $conn)
+    function insertPostulacion($id_vacancias, $person_id, $usuario_carga_id, $usuario_carga_nombre, $estado_postulacion, $conn)
     {
         // Obtener información adicional de la vacancia.
         $selectDatosAdicionales = "SELECT ve.id_empresa_sucursal
@@ -123,18 +123,23 @@
         $id_empresa_sucursal = $data_select_datos_adicionales['id_empresa_sucursal'];
 
         // Insertar en `postulacion`.
-        $query = "INSERT INTO bolsa_empleo.postulacion (id_vacancia, 
+        /*$query = "INSERT INTO bolsa_empleo.postulacion (id_vacancia, 
                                                         id_estado, 
                                                         fecha_postulacion, 
                                                         fk_personaid) 
                     VALUES ($1, 1, now(), $2) RETURNING id_postulacion";
-        $result = pg_query_params($conn, $query, [$id_vacancias, $person_id]);
-
+        $result = pg_query_params($conn, $query, [$id_vacancias, $person_id]);*/
+        $query = "INSERT INTO bolsa_empleo.postulacion (id_vacancia, 
+                                                        id_estado, 
+                                                        fecha_postulacion, 
+                                                        fk_personaid) 
+                    VALUES ($1, $2, now(), $3) RETURNING id_postulacion";
+        $result = pg_query_params($conn, $query, [$id_vacancias, $estado_postulacion, $person_id]);
         if ($result) {
             $postulacion = pg_fetch_assoc($result);
 
             // Insertar en la tabla de seguimientos.
-            $seguimientoQuery = "INSERT INTO bolsa_empleo.seguimientos (fecha_creacion, 
+            /*$seguimientoQuery = "INSERT INTO bolsa_empleo.seguimientos (fecha_creacion, 
                                                                         id_postulacion, 
                                                                         id_estado_anterior, 
                                                                         id_nuevo_estado, 
@@ -146,6 +151,25 @@
                                     VALUES (now(), $1, 1, 1, $2, $3, $4, $5, 'VIA_PLANILLA')";
             $result_seguimiento = pg_query_params($conn, $seguimientoQuery, [
                 $postulacion['id_postulacion'], 
+                $usuario_carga_id, 
+                $usuario_carga_nombre, 
+                $id_vacancias, 
+                $id_empresa_sucursal
+            ]);*/
+            $seguimientoQuery = "INSERT INTO bolsa_empleo.seguimientos (fecha_creacion, 
+                                                                        id_postulacion, 
+                                                                        id_estado_anterior, 
+                                                                        id_nuevo_estado, 
+                                                                        usuario_carga_id, 
+                                                                        usuario_carga_nombre, 
+                                                                        id_vacancia, 
+                                                                        id_empresa_sucursal,
+                                                                        metodo_insercion) 
+                                    VALUES (now(), $1, $2, $3, $4, $5, $6, $7, 'VIA_PLANILLA')";
+            $result_seguimiento = pg_query_params($conn, $seguimientoQuery, [
+                $postulacion['id_postulacion'],
+                $estado_postulacion,
+                $estado_postulacion,
                 $usuario_carga_id, 
                 $usuario_carga_nombre, 
                 $id_vacancias, 
@@ -176,7 +200,7 @@
      * @param string $usuario_carga_nombre Nombre del usuario que carga el archivo.
      * @return array Resultados del proceso (total, procesados, insertados, errores).
     */
-    function processFile($fileData, $id_vacancias, $usuario_carga_id, $usuario_carga_nombre, $conn)
+    function processFile($fileData, $id_vacancias, $usuario_carga_id, $usuario_carga_nombre, $estado_postulacion, $conn)
     {
         // Variables para el resumen de resultados
         $results = [
@@ -256,7 +280,7 @@
             }
 
             // Intentar insertar la postulación.
-            if (insertPostulacion($id_vacancias, $person_id, $usuario_carga_id, $usuario_carga_nombre, $conn)) {
+            if (insertPostulacion($id_vacancias, $person_id, $usuario_carga_id, $usuario_carga_nombre, $estado_postulacion, $conn)) {
                 $results['inserted']++;
             } else {
                 $results['grupo_error'][] = "Error al insertar la postulación para la persona con número de cédula:$nroCedula";
@@ -400,7 +424,8 @@
         $usuario_carga_id = json_decode($_POST['usuario_carga_id'], true);
         $usuario_carga_nombre = $_POST['usuario_carga_nombre'];
         $fileName = $_POST['fileName'];
-    
+        $estado_postulacion = json_decode($_POST['estado_postulacion'], true);
+
         // Validar datos iniciales.
         if (!$fileData) {
             respond(false, 'No se recibió el archivo a procesar.');
@@ -428,7 +453,7 @@
         }
         
         // Procesar archivo.
-        $results = processFile($fileData, $id_vacancias, $usuario_carga_id, $usuario_carga_nombre, $conn);
+        $results = processFile($fileData, $id_vacancias, $usuario_carga_id, $usuario_carga_nombre, $estado_postulacion, $conn);
         
         // Generar resumen del proceso.
         $summary = generateSummary($results);

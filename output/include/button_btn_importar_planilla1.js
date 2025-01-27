@@ -43,6 +43,28 @@ if (!file) {
 // Obtener el nombre del archivo
 const fileName = file.name;
 
+
+// Obtener el estado seleccionado
+//var e = document.getElementById('estado_postulacion_'+result['id_vacancias']);
+//var value = e.value;
+//var text = e.options[e.selectedIndex].text;
+//console.log("value: " + value + " text: " + text);
+const est = document.getElementById('estado_postulacion_'+result['id_vacancias']);
+//const estado_postulacion = est.value;
+var text = est.options[est.selectedIndex].text;
+//console.log("value: " + estado_postulacion + " text: " + text);
+let estado_postulacion = est.value;
+
+// Si el valor seleccionado es vacío, asignar por defecto el valor "1"
+if (!estado_postulacion) {
+    estado_postulacion = '1'; // Valor predeterminado
+    est.value = estado_postulacion; // Actualizar el select al valor predeterminado
+}
+
+
+
+
+
 // Validar que el archivo sea de tipo CSV o Excel
 const allowedExtensions = ['csv', 'xls', 'xlsx']; // Extensiones permitidas
 const fileExtension = file.name.split('.').pop().toLowerCase(); // Obtener la extensión del archivo
@@ -113,7 +135,8 @@ function sendDataToServer(data) {
 				id_vacancias:id_vacancias, // ID de la vacancia.
 				usuario_carga_id:usuario_carga_id, // ID del usuario.
 				usuario_carga_nombre:usuario_carga_nombre, // Nombre del usuario.
-				fileName: fileName // Nombre del archivo.
+				fileName:fileName, // Nombre del archivo.
+				estado_postulacion:estado_postulacion //ID del Estado Postulacion.
 		},
         success: function (response) {
 			loading.style.display = 'none'; // Ocultar el spinner de carga.

@@ -153,7 +153,7 @@ $tdataseguimiento_resumen[".isUseAjaxSuggest"] = true;
 
 
 
-																																																																																																						
+																																																																																																												
 
 $tdataseguimiento_resumen[".ajaxCodeSnippetAdded"] = false;
 
@@ -1546,7 +1546,7 @@ $tdataseguimiento_resumen[".hideMobileList"] = array();
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
 
-	$vdata = array("ViewFormat" => "");
+	$vdata = array("ViewFormat" => "HTML");
 
 	
 	
@@ -1562,8 +1562,7 @@ $tdataseguimiento_resumen[".hideMobileList"] = array();
 	
 	
 	
-		$vdata["NeedEncode"] = true;
-
+	
 	
 		$vdata["truncateText"] = true;
 	$vdata["NumberOfChars"] = 80;

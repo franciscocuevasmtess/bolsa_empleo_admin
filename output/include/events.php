@@ -41,6 +41,9 @@ class class_GlobalEvents extends eventsBase
 		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet7"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet8"] = true;
+		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet1"] = true;
+		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet2"] = true;
+		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet3"] = true;
 
 
 
@@ -350,6 +353,122 @@ echo '
 echo '
 $sql =
 ';
+	;
+}
+	function event_bolsa_empleo_postulacion_preseleccionado_snippet1(&$params)
+	{
+	$value = '
+<style>
+    .custom-file-input {
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+        transition: border-color 0.3s, background-color 0.3s;
+    }
+	
+	.custom-file-input:hover {
+        border-color: #007bff;
+        background-color: #f8f9fa;
+    }
+	
+	.custom-file-input:focus {
+        outline: none;
+        border-color: #0056b3;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<input type="file" accept=".csv, .xlsx, .xls" class="custom-file-input" />
+';
+	;
+}
+	function event_bolsa_empleo_postulacion_preseleccionado_snippet2(&$params)
+	{
+	/*
+echo '
+<style>
+    .custom-file-input {
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+        transition: border-color 0.3s, background-color 0.3s;
+    }
+	
+	.custom-file-input:hover {
+        border-color: #007bff;
+        background-color: #f8f9fa;
+    }
+	
+	.custom-file-input:focus {
+        outline: none;
+        border-color: #0056b3;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+	
+	.spinner {
+        width: 30px;
+        height: 30px;
+        border: 4px solid #ccc;
+        border-top: 4px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: auto;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<input type="file" 
+id="fileInputPreseleccionado" 
+name="fileInputPreseleccionado" 
+accept=".csv, .xlsx, .xls" class="custom-file-input" />
+<br />
+<div id="loadingPreseleccionado" 
+    name="loadingPreseleccionado" 
+    style="display: none; text-align: center; margin-top: 20px;">
+    <p>Procesando, por favor espere...</p>
+    <div class="spinner"></div>
+</div>
+';
+*/
+//$data = $pageObject ->getMasterRecord();
+//$sql = "SELECT id_estado_vacancia FROM bolsa_empleo.vacancia WHERE id_vacancias = " . $data["id_vacancias"];
+
+echo '
+<p>---'.$data["id_vacancias"].'---</p>
+';
+	;
+}
+	function event_bolsa_empleo_postulacion_preseleccionado_snippet3(&$params)
+	{
+	// Put your code here.
+echo "<p>hola mundo</p>";
 	;
 }
 

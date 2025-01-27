@@ -145,64 +145,6 @@
 }
 
 /* Put  your custom CSS code here */
-/*
-[data-page="vacancia_list"][data-itemid="snippet2"] {
-  color: red;
-}
-*/
-
-.result-container {
-    max-width: 800px; /* Limitar el ancho del contenido */
-    margin: 20px auto; /* Centrar horizontalmente el div */
-    padding: 20px; /* Espaciado interno */
-    background-color: #f9f9f9; /* Fondo claro para contraste */
-    border: 1px solid #ddd; /* Borde sutil */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-    text-align: left; /* Alinear el texto a la izquierda */
-    font-family: Arial, sans-serif; /* Fuente legible */
-    font-size: 14px; /* Tamaño de fuente legible */
-    color: #333; /* Color del texto */
-}
-
-.result-container h3 {
-    text-align: center; /* Centrar el título */
-    color: #007bff; /* Color azul (puedes ajustarlo al tema de tu app) */
-    margin-bottom: 20px; /* Espacio debajo del título */
-}
-
-.result-container pre {
-    white-space: pre-wrap; /* Ajustar el texto para que no salga de los límites */
-    word-wrap: break-word; /* Romper palabras largas si es necesario */
-    background-color: #fff; /* Fondo blanco para contraste */
-    padding: 10px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde alrededor del texto */
-    border-radius: 5px; /* Bordes redondeados */
-    overflow: auto; /* Permitir desplazamiento si el contenido es muy grande */
-    font-size: 13px; /* Ajustar el tamaño del texto */
-}
-
-
-.spinner {
-    margin: 10px auto;
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #007bff; /* Color principal */
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Put  your custom CSS code here */
 
 [data-page="vacancia_list"][data-itemid="grid_field"] {
   color: red;

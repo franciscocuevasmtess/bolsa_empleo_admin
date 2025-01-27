@@ -160,14 +160,14 @@
 'empresa',
 'salario',
 'cantidad_vacancia',
-'importar_archivo',
 'id_departamento',
 'id_cidudad',
 'id_estado_vacancia',
 'fk_id_feria_empleo',
 'descripcion_puesto',
 'fecha_creacion_vacancia',
-'fecha_expiracion_vacancia' ),
+'fecha_expiracion_vacancia',
+'importar_archivo' ),
 'searchRequiredFields' => array(  ),
 'searchPanelFields' => array(  ),
 'filterFields' => array(  ),
@@ -249,9 +249,8 @@
 'grid_field13',
 'custom_button_container',
 'grid_field11',
-'snippet2',
-'boton_importar_planilla',
-'grid_field' ) ),
+'grid_field',
+'boton_importar_planilla' ) ),
 'formXtTags' => array( 'below-grid' => array( 'pagination' ),
 'left' => array(  ),
 'top' => array( 'breadcrumb' ) ),
@@ -309,9 +308,8 @@
 'grid_field13' => 'grid',
 'custom_button_container' => 'grid',
 'grid_field11' => 'grid',
-'snippet2' => 'grid',
-'boton_importar_planilla' => 'grid',
-'grid_field' => 'grid' ),
+'grid_field' => 'grid',
+'boton_importar_planilla' => 'grid' ),
 'itemLocations' => array( 'grid_alldetails_link' => array( 'location' => 'grid',
 'cellId' => 'cell_top' ),
 'grid_details_link1' => array( 'location' => 'grid',
@@ -394,12 +392,10 @@
 'cellId' => 'cell_label9' ),
 'grid_field11' => array( 'location' => 'grid',
 'cellId' => 'cell_label10' ),
-'snippet2' => array( 'location' => 'grid',
-'cellId' => 'cell_label16' ),
-'boton_importar_planilla' => array( 'location' => 'grid',
-'cellId' => 'cell_label18' ),
 'grid_field' => array( 'location' => 'grid',
-'cellId' => 'cell_label18' ) ),
+'cellId' => 'cell_label6' ),
+'boton_importar_planilla' => array( 'location' => 'grid',
+'cellId' => 'cell_label6' ) ),
 'itemVisiblity' => array( 'simple_search' => 3,
 'menu' => 3,
 'username_button' => 3,
@@ -432,8 +428,7 @@
 'username_button' => array( 'username_button' ),
 'custom_button_container' => array( 'custom_button_container' ),
 'snippet' => array( 'snippet',
-'snippet1',
-'snippet2' ),
+'snippet1' ),
 'text' => array( 'text',
 'text1',
 'text2',
@@ -530,14 +525,14 @@
 'rows' => array( 3 ),
 'tags' => array(  ),
 'items' => array(  ),
-'fixedAtServer' => true,
-'fixedAtClient' => true ),
+'fixedAtServer' => false,
+'fixedAtClient' => false ),
 'cell_label16' => array( 'cols' => array( 0,
 1 ),
 'rows' => array( 4 ),
 'tags' => array(  ),
-'items' => array( 'snippet2' ),
-'fixedAtServer' => true,
+'items' => array(  ),
+'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label20' => array( 'cols' => array( 0,
 1 ),
@@ -617,9 +612,16 @@
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
-'cell_dpreview' => array( 'cols' => array( 0,
+'cell_label6' => array( 'cols' => array( 0,
 1 ),
 'rows' => array( 13 ),
+'tags' => array(  ),
+'items' => array(  ),
+'fixedAtServer' => true,
+'fixedAtClient' => true ),
+'cell_dpreview' => array( 'cols' => array( 0,
+1 ),
+'rows' => array( 14 ),
 'tags' => array(  ),
 'items' => array( 'details_preview1',
 'details_preview',
@@ -631,7 +633,7 @@
 'fixedAtServer' => true,
 'fixedAtClient' => false ) ),
 'width' => 2,
-'height' => 14 ) ) ),
+'height' => 15 ) ) ),
 'loginForm' => array( 'loginForm' => 3 ),
 'page' => array( 'verticalBar' => false,
 'labeledButtons' => array( 'update_records' => array(  ),
@@ -774,6 +776,9 @@ array( 'cell' => 'cell_field4' ) ),
 array( 'cells' => array( array( 'cell' => 'cell_label2' ),
 array( 'cell' => 'cell_field1' ) ),
 'section' => 'body' ),
+array( 'section' => 'body',
+'cells' => array( array( 'cell' => 'cell_label6',
+'colspan' => 2 ) ) ),
 array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'colspan' => 2 ) ),
 'section' => 'foot' ) ),
@@ -873,21 +878,24 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'field' => 'fk_id_feria_empleo',
 'columnName' => 'field' ),
 'cell_label16' => array( 'model' => 'cell_label',
-'items' => array( 'snippet2' ),
+'items' => array(  ),
 'align' => 'center' ),
 'cell_label17' => array( 'model' => 'cell_label',
 'items' => array(  ) ),
 'cell_label18' => array( 'model' => 'cell_label',
-'items' => array( 'boton_importar_planilla',
-'grid_field' ),
-'field' => 'importar_archivo',
-'columnName' => 'field' ),
+'items' => array(  ) ),
 'cell_label20' => array( 'model' => 'cell_label',
 'items' => array(  ) ),
 'cell_label2' => array( 'model' => 'cell_label',
 'items' => array(  ) ),
 'cell_field1' => array( 'model' => 'cell_field',
-'items' => array(  ) ) ),
+'items' => array(  ) ),
+'cell_label6' => array( 'model' => 'cell_label',
+'items' => array( 'grid_field',
+'boton_importar_planilla' ),
+'align' => 'center',
+'field' => 'importar_archivo',
+'columnName' => 'field' ) ),
 'deferredItems' => array(  ),
 'recsPerRow' => 1 ) ),
 'items' => array( 'details_found' => array( 'type' => 'details_found',
@@ -1252,68 +1260,6 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'label' => array( 'text' => 'bolsa_empleo_vacancia_snippet4',
 'type' => 0 ),
 'type' => 'snippet' ),
-'snippet2' => array( 'eventId' => 'bolsa_empleo_vacancia_snippet5',
-'label' => array( 'text' => 'bolsa_empleo_vacancia_snippet5',
-'type' => 0 ),
-'type' => 'snippet',
-'customCSS' => '/* Put  your custom CSS code here */
-/*
-:host {
-  color: red;
-}
-*/
-
-.result-container {
-    max-width: 800px; /* Limitar el ancho del contenido */
-    margin: 20px auto; /* Centrar horizontalmente el div */
-    padding: 20px; /* Espaciado interno */
-    background-color: #f9f9f9; /* Fondo claro para contraste */
-    border: 1px solid #ddd; /* Borde sutil */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-    text-align: left; /* Alinear el texto a la izquierda */
-    font-family: Arial, sans-serif; /* Fuente legible */
-    font-size: 14px; /* Tamaño de fuente legible */
-    color: #333; /* Color del texto */
-}
-
-.result-container h3 {
-    text-align: center; /* Centrar el título */
-    color: #007bff; /* Color azul (puedes ajustarlo al tema de tu app) */
-    margin-bottom: 20px; /* Espacio debajo del título */
-}
-
-.result-container pre {
-    white-space: pre-wrap; /* Ajustar el texto para que no salga de los límites */
-    word-wrap: break-word; /* Romper palabras largas si es necesario */
-    background-color: #fff; /* Fondo blanco para contraste */
-    padding: 10px; /* Espaciado interno */
-    border: 1px solid #ccc; /* Borde alrededor del texto */
-    border-radius: 5px; /* Bordes redondeados */
-    overflow: auto; /* Permitir desplazamiento si el contenido es muy grande */
-    font-size: 13px; /* Ajustar el tamaño del texto */
-}
-
-
-.spinner {
-    margin: 10px auto;
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #007bff; /* Color principal */
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-' ),
 'grid_field' => array( 'field' => 'importar_archivo',
 'type' => 'grid_field',
 'inlineAdd' => false,

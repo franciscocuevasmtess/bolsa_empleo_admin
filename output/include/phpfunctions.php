@@ -1102,10 +1102,285 @@ $value= $formattedDate;;
 	}
 				if($table=="bolsa_empleo.vacancia" && $field=="importar_archivo")
 	{
-		$value = '
+		/*
+$value = '
 <input type="file" id="fileInput_'.$data['id_vacancias'].'" name="fileInput_'.$data['id_vacancias'].'" accept=".csv, .xlsx, .xls">
 <br>
 <div id="loading_'.$data['id_vacancias'].'" name="loading_'.$data['id_vacancias'].'" style="display: none; text-align: center; margin-top: 20px;">
+    <p>Procesando, por favor espere...</p>
+    <div class="spinner"></div>
+</div>
+';
+*/
+
+//$result_query = DB::Query("SELECT id_estado_postulacion, descripcion FROM bolsa_empleo.estado_postulacion WHERE id_estado_postulacion IN(1,2,3)");
+//// Construir las opciones del <select>
+//$select = '<label for="estado_postulacion_' . $data['id_vacancias'] . '">Seleccione un estado:</label>'; // Etiqueta para el select
+//$select .= '<select name="estado_postulacion_' . $data['id_vacancias'] . '" id="estado_postulacion_' . $data['id_vacancias'] . '" class="form-control">';
+//$select .= '<option value="">Seleccione una opción</option>'; // Opción vacía inicial
+//while ($estados = db_fetch_array($result_query)) {
+//	$select .= '<option value="' . htmlspecialchars($estados['id_estado_postulacion']) . '">' . htmlspecialchars($estados['descripcion']) . '</option>';
+//}
+//$select .= '</select>';
+//
+//$value = '
+//<style>
+//    .custom-file-input {
+//        border: 2px solid #ccc;
+//        border-radius: 5px;
+//        padding: 10px;
+//        width: 100%;
+//        max-width: 100%; /* Ajusta este ancho según lo necesites */
+//        font-family: Arial, sans-serif;
+//        font-size: 14px;
+//        color: #666;
+//        cursor: pointer;
+//        transition: border-color 0.3s, background-color 0.3s;
+//    }
+//	
+//	.custom-file-input:hover {
+//        border-color: #007bff; /* Azul claro para hover */
+//        background-color: #f8f9fa;
+//    }
+//	
+//	.custom-file-input:focus {
+//        outline: none;
+//        border-color: #0056b3; /* Azul oscuro para enfoque */
+//        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+//    }
+//	
+//	.spinner {
+//        width: 30px;
+//        height: 30px;
+//        border: 4px solid #ccc;
+//        border-top: 4px solid #007bff; /* Azul para el efecto de carga */
+//        border-radius: 50%;
+//        animation: spin 1s linear infinite;
+//        margin: auto;
+//    }
+//
+//    @keyframes spin {
+//        from {
+//            transform: rotate(0deg);
+//        }
+//        to {
+//            transform: rotate(360deg);
+//        }
+//    }
+//	
+//	label {
+//		font-weight: bold;
+//		display: block; /* Asegura que la etiqueta ocupe toda la línea */
+//		margin-bottom: 5px; /* Espacio entre la etiqueta y el select */
+//	}
+//</style>
+//
+//<input type="file" 
+//		id="fileInput_' . $data['id_vacancias'] . '" 
+//		name="fileInput_' . $data['id_vacancias'] . '" 
+//		accept=".csv, .xlsx, .xls"
+//		class="custom-file-input" />
+//<br />
+//' . $select . '
+//<br />
+//<div id="loading_' . $data['id_vacancias'] . '" 
+//    name="loading_' . $data['id_vacancias'] . '" 
+//    style="display: none; text-align: center; margin-top: 20px;">
+//    <p>Procesando, por favor espere...</p>
+//    <div class="spinner"></div>
+//</div>
+//';
+
+/*
+$result_query = DB::Query("SELECT id_estado_postulacion, descripcion FROM bolsa_empleo.estado_postulacion WHERE id_estado_postulacion IN(1,2,3)");
+
+// Construir las opciones del <select>
+$select = '<label for="estado_postulacion_' . $data['id_vacancias'] . '">Seleccione un estado:</label>'; // Etiqueta para el select
+$select .= '<select name="estado_postulacion_' . $data['id_vacancias'] . '" id="estado_postulacion_' . $data['id_vacancias'] . '" class="form-control">';
+$select .= '<option value="">Seleccione una opción</option>'; // Opción vacía inicial
+while ($estados = db_fetch_array($result_query)) {
+    $select .= '<option value="' . htmlspecialchars($estados['id_estado_postulacion']) . '">' . htmlspecialchars($estados['descripcion']) . '</option>';
+}
+$select .= '</select>';
+
+$value = '
+<style>
+    .form-horizontal {
+        display: flex; /* Alineación horizontal *
+        flex-direction: row; /* Elementos en fila *
+        align-items: center; /* Centrar verticalmente *
+        gap: 15px; /* Espaciado entre elementos *
+        flex-wrap: nowrap; /* Evita que salten a otra línea *
+        margin-bottom: 20px; /* Espaciado inferior *
+    }
+
+    .custom-file-input {
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        width: auto; /* Ajusta el ancho según contenido *
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+        transition: border-color 0.3s, background-color 0.3s;
+    }
+
+    .custom-file-input:hover {
+        border-color: #007bff;
+        background-color: #f8f9fa;
+    }
+
+    .custom-file-input:focus {
+        outline: none;
+        border-color: #0056b3;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    label {
+        font-weight: bold;
+        margin: 0; /* Sin márgenes *
+        white-space: nowrap; /* Evita que el texto se divida *
+    }
+
+    select.form-control {
+        padding: 5px;
+        font-size: 14px;
+        max-width: 200px; /* Ajusta el ancho del select *
+    }
+
+    .spinner {
+        width: 30px;
+        height: 30px;
+        border: 4px solid #ccc;
+        border-top: 4px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<div class="form-horizontal">
+    <!-- Input de archivo -->
+    <label for="fileInput_' . $data['id_vacancias'] . '">Seleccionar archivo:</label>
+    <input type="file" 
+           id="fileInput_' . $data['id_vacancias'] . '" 
+           name="fileInput_' . $data['id_vacancias'] . '" 
+           accept=".csv, .xlsx, .xls"
+           class="custom-file-input" />
+
+    <!-- Select de estado -->
+    ' . $select . '
+</div>
+
+<div id="loading_' . $data['id_vacancias'] . '" 
+    name="loading_' . $data['id_vacancias'] . '" 
+    style="display: none; text-align: center; margin-top: 20px;">
+    <p>Procesando, por favor espere...</p>
+    <div class="spinner"></div>
+</div>
+';
+*/
+
+$result_query = DB::Query("SELECT id_estado_postulacion, descripcion FROM bolsa_empleo.estado_postulacion WHERE id_estado_postulacion IN(1,2,3)");
+
+// Construir las opciones del <select>
+$select = '<label for="estado_postulacion_' . $data['id_vacancias'] . '">Seleccione un estado:</label>'; // Etiqueta para el select
+$select .= '<select name="estado_postulacion_' . $data['id_vacancias'] . '" id="estado_postulacion_' . $data['id_vacancias'] . '" class="form-control">';
+$select .= '<option value="">Seleccione una opción</option>'; // Opción vacía inicial
+while ($estados = db_fetch_array($result_query)) {
+    $select .= '<option value="' . htmlspecialchars($estados['id_estado_postulacion']) . '">' . htmlspecialchars($estados['descripcion']) . '</option>';
+}
+$select .= '</select>';
+
+$value = '
+<style>
+    .form-horizontal {
+        display: flex; /* Alineación horizontal */
+        flex-direction: row; /* Elementos en fila */
+        align-items: center; /* Centrar verticalmente */
+        gap: 15px; /* Espaciado entre elementos */
+        flex-wrap: nowrap; /* Evita que salten a otra línea */
+        margin-bottom: 20px; /* Espaciado inferior */
+    }
+
+    .custom-file-input {
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        width: auto; /* Ajusta el ancho según contenido */
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+        transition: border-color 0.3s, background-color 0.3s;
+    }
+
+    .custom-file-input:hover {
+        border-color: #007bff;
+        background-color: #f8f9fa;
+    }
+
+    .custom-file-input:focus {
+        outline: none;
+        border-color: #0056b3;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    label {
+        font-weight: bold;
+        margin: 0; /* Sin márgenes */
+        white-space: nowrap; /* Evita que el texto se divida */
+    }
+
+    select.form-control {
+        padding: 5px;
+        font-size: 14px;
+        max-width: 200px; /* Ajusta el ancho del select */
+    }
+
+    .spinner {
+        width: 30px;
+        height: 30px;
+        border: 4px solid #ccc;
+        border-top: 4px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<div class="form-horizontal">
+	<!-- Select de estado -->
+    ' . $select . '
+	<!-- Input de archivo -->
+    <label for="fileInput_' . $data['id_vacancias'] . '">Seleccionar archivo:</label>
+    <input type="file" 
+           id="fileInput_' . $data['id_vacancias'] . '" 
+           name="fileInput_' . $data['id_vacancias'] . '" 
+           accept=".csv, .xlsx, .xls"
+           class="custom-file-input" />
+</div>
+
+<div id="loading_' . $data['id_vacancias'] . '" 
+    name="loading_' . $data['id_vacancias'] . '" 
+    style="display: none; text-align: center; margin-top: 20px;">
     <p>Procesando, por favor espere...</p>
     <div class="spinner"></div>
 </div>
