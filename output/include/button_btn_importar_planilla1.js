@@ -5,13 +5,7 @@ Runner.buttonEvents["btn_importar_planilla1"] = function( pageObj, proxy, pageid
 	if ( !pageObj.buttonEventBefore['btn_importar_planilla1'] ) {
 		pageObj.buttonEventBefore['btn_importar_planilla1'] = function( params, ctrl, pageObj, proxy, pageid, rowData, row, submit ) {		
 			var ajax = ctrl;
-/*
-// Put your code here.
-params["txt"] = "Hello";
-ajax.setMessage("Sending request to server...");
-// Uncomment the following line to prevent execution of "Server" and "Client After" events.
-// return false;
-*/
+
 		}
 	}
 	
@@ -43,26 +37,14 @@ if (!file) {
 // Obtener el nombre del archivo
 const fileName = file.name;
 
-
 // Obtener el estado seleccionado
-//var e = document.getElementById('estado_postulacion_'+result['id_vacancias']);
-//var value = e.value;
-//var text = e.options[e.selectedIndex].text;
-//console.log("value: " + value + " text: " + text);
 const est = document.getElementById('estado_postulacion_'+result['id_vacancias']);
-//const estado_postulacion = est.value;
-var text = est.options[est.selectedIndex].text;
-//console.log("value: " + estado_postulacion + " text: " + text);
 let estado_postulacion = est.value;
-
 // Si el valor seleccionado es vacío, asignar por defecto el valor "1"
 if (!estado_postulacion) {
     estado_postulacion = '1'; // Valor predeterminado
     est.value = estado_postulacion; // Actualizar el select al valor predeterminado
 }
-
-
-
 
 
 // Validar que el archivo sea de tipo CSV o Excel
@@ -188,6 +170,7 @@ function sendDataToServer(data) {
         }
     });
 }
+
 		}
 	}
 	

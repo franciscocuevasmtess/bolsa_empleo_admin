@@ -66,7 +66,6 @@ function BeforeShowList(&$xt, &$templatefile, $pageObject)
 {
 
 		//Ocultar elementos que No es necesario que sean visibles en el listado.
-//$pageObject->hideItem("grid_view");
 $pageObject->hideItem("add", $recordId);							//oculta el boton "Añadir Nuevo"
 $pageObject->hideItem("print_panel", $recordId);		//oculta el icono de impresora
 $pageObject->hideItem("breadcrumb", $recordId);		//oculta el breadcrumb

@@ -123,39 +123,17 @@
         $id_empresa_sucursal = $data_select_datos_adicionales['id_empresa_sucursal'];
 
         // Insertar en `postulacion`.
-        /*$query = "INSERT INTO bolsa_empleo.postulacion (id_vacancia, 
-                                                        id_estado, 
-                                                        fecha_postulacion, 
-                                                        fk_personaid) 
-                    VALUES ($1, 1, now(), $2) RETURNING id_postulacion";
-        $result = pg_query_params($conn, $query, [$id_vacancias, $person_id]);*/
         $query = "INSERT INTO bolsa_empleo.postulacion (id_vacancia, 
                                                         id_estado, 
                                                         fecha_postulacion, 
-                                                        fk_personaid) 
-                    VALUES ($1, $2, now(), $3) RETURNING id_postulacion";
+                                                        fk_personaid,
+                                                        metodo_insercion) 
+                    VALUES ($1, $2, now(), $3, 'VIA_PLANILLA') RETURNING id_postulacion";
         $result = pg_query_params($conn, $query, [$id_vacancias, $estado_postulacion, $person_id]);
         if ($result) {
             $postulacion = pg_fetch_assoc($result);
 
             // Insertar en la tabla de seguimientos.
-            /*$seguimientoQuery = "INSERT INTO bolsa_empleo.seguimientos (fecha_creacion, 
-                                                                        id_postulacion, 
-                                                                        id_estado_anterior, 
-                                                                        id_nuevo_estado, 
-                                                                        usuario_carga_id, 
-                                                                        usuario_carga_nombre, 
-                                                                        id_vacancia, 
-                                                                        id_empresa_sucursal,
-                                                                        metodo_insercion) 
-                                    VALUES (now(), $1, 1, 1, $2, $3, $4, $5, 'VIA_PLANILLA')";
-            $result_seguimiento = pg_query_params($conn, $seguimientoQuery, [
-                $postulacion['id_postulacion'], 
-                $usuario_carga_id, 
-                $usuario_carga_nombre, 
-                $id_vacancias, 
-                $id_empresa_sucursal
-            ]);*/
             $seguimientoQuery = "INSERT INTO bolsa_empleo.seguimientos (fecha_creacion, 
                                                                         id_postulacion, 
                                                                         id_estado_anterior, 
@@ -375,13 +353,15 @@
             }
 
             // 4. Construir el mensaje de errores agrupados.
-            $message .= "Errores encontrados: " . count($results['grupo_error']) . "||";
+            //$message .= "Errores encontrados: " . count($results['grupo_error']) . "||";
+            $message .= "<br>Errores encontrados: <b>" . count($results['grupo_error']) . "</b><br>";
             $message .= "Detalles de los errores agrupados:";
 
             // 5. Iterar por cada grupo de errores para añadir al mensaje
             foreach ($errorGroups as $type => $cedulas) {
                 $message .= "$type:";                  // Título del error.
-                $message .= implode(", ", $cedulas) . "||";    // Lista de cédulas separadas por comas.
+                //$message .= implode(", ", $cedulas) . "||";    // Lista de cédulas separadas por comas.
+                $message .= implode(", ", $cedulas) . "<br>";    // Lista de cédulas separadas por comas.
             }
         } else {
             // 6. Si no hay errores, indicar que todo se completó sin problemas.

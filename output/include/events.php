@@ -230,8 +230,7 @@ echo "
 }
 	function event_bolsa_empleo_vacancia_snippet4(&$params)
 	{
-	// Put your code here.
-//echo "Your message";
+	
 echo '<script src="xlsx.full.min.js"></script>';
 	;
 }

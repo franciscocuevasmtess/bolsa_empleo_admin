@@ -71,3 +71,8 @@ Stack trace:
 #5 C:\xampp\htdocs\bolsa_empleo_admin\output\classes\xtempl_base.php(414): XTempl_Base->process_template('{BEGIN above-gr...')
 #6 C:\xampp\htdocs\bolsa_empleo_admin\output\classes\xtempl_base.php(340): XTempl_Base->display_loaded('above-grid_bloc...')
 #7 C:\xampp\htdocs\bolsa_empleo_adm in C:\xampp\htdocs\bolsa_empleo_admin\output\include\events.php on line 459
+[29-Jan-2025 09:09:19 America/New_York] PHP Parse error:  syntax error, unexpected '||' (T_BOOLEAN_OR) in C:\xampp\htdocs\bolsa_empleo_admin\output\buttonhandler.php on line 1073
+[29-Jan-2025 09:10:05 America/New_York] PHP Parse error:  syntax error, unexpected '||' (T_BOOLEAN_OR) in C:\xampp\htdocs\bolsa_empleo_admin\output\buttonhandler.php on line 1073
+[29-Jan-2025 09:29:59 America/New_York] PHP Parse error:  syntax error, unexpected '||' (T_BOOLEAN_OR) in C:\xampp\htdocs\bolsa_empleo_admin\output\buttonhandler.php on line 1075
+[29-Jan-2025 09:50:42 America/New_York] PHP Parse error:  syntax error, unexpected ')' in C:\xampp\htdocs\bolsa_empleo_admin\output\buttonhandler.php on line 1146
+[29-Jan-2025 09:56:42 America/New_York] PHP Parse error:  syntax error, unexpected ')' in C:\xampp\htdocs\bolsa_empleo_admin\output\buttonhandler.php on line 1082

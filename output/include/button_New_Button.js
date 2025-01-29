@@ -13,6 +13,8 @@ Runner.buttonEvents["New_Button"] = function( pageObj, proxy, pageid ) {
 		pageObj.buttonEventAfter['New_Button'] = function( result, ctrl, pageObj, proxy, pageid, rowData, row, params ) {
 			var ajax = ctrl;
 var url = 'postulacion_list.php?masterkey1='+ result['id_vacancias'] +'&page=list&mastertable=bolsa_empleo.vacancia';
+
+//Redirecciona a la pagina de postulantes de la oferta laboral seleccionada.
 var myWindow = location.replace(url);
 		}
 	}

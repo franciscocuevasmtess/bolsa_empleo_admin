@@ -60,33 +60,49 @@
 function BeforeShowList(&$xt, &$templatefile, $pageObject)
 {
 
-		//Ocultar campos que no van a ser visibles en el listado.
+		// ──────────────────────────────────────────────────────────────────────────
+// OCULTAR CAMPOS QUE NO DEBEN SER VISIBLES EN EL LISTADO
+// ──────────────────────────────────────────────────────────────────────────
 $pageObject->hideItem("grid_field3", $recordId); //Oculta el campo id_postulacion
 $pageObject->hideItem("grid_field4", $recordId); //Oculta el campo id_vacancias
 
 
+// ──────────────────────────────────────────────────────────────────────────
+// VALIDACIÓN DE ESTADO PARA CAMBIO MASIVO
+// ──────────────────────────────────────────────────────────────────────────
+
 /*
- * Para realizar un cambio de estados masivo la condicion es que una vacancia no este con el estado
- * "Cerrada" o "Convocatoria Cerrada".
-*/
+ * Para permitir el cambio masivo de estados, la vacancia no debe estar en estado "Cerrada"
+ * ni "Convocatoria Cerrada". Se define una lista de estados donde se restringe esta acción.
+ */
+
+// Obtener el registro principal de la página
 $data = $pageObject ->getMasterRecord();
 
-$sql = "SELECT id_estado_vacancia FROM bolsa_empleo.vacancia WHERE id_vacancias = " . $data["id_vacancias"];
+// Consulta para obtener el estado actual de la vacancia
+$sql = "SELECT id_estado_vacancia 
+					FROM bolsa_empleo.vacancia 
+					WHERE id_vacancias = " . $data["id_vacancias"];
 $result = CustomQuery($sql);
 $data_result = db_fetch_array($result);
 
-// Definir los estados en los que se deben ocultar los elementos
-//$estadosOcultar = [5, 6];
-$estadosOcultar = [1, 2, 4, 5, 6, 7];
 
+// ──────────────────────────────────────────────────────────────────────────
+// LISTA DE ESTADOS DONDE SE DEBEN OCULTAR LOS ELEMENTOS
+// ──────────────────────────────────────────────────────────────────────────
+$estadosOcultar = [1, 2, 4, 5, 6, 7]; // Estados en los que se deshabilita el cambio de estado masivo
+
+
+// Verificar si la vacancia está en un estado restringido
 if (in_array($data_result["id_estado_vacancia"], $estadosOcultar)) {
-    // Ocultar los elementos
-    $pageObject->hideItem("button_cambiar_estado_convocado", $recordId);
-    $pageObject->hideItem("text_cambiar_estado_convocado", $recordId);
+	// Ocultar botones y textos relacionados con el cambio de estado masivo
+	$pageObject->hideItem("button_cambiar_estado_convocado", $recordId);
+	$pageObject->hideItem("text_cambiar_estado_convocado", $recordId);
 } else {
-    // Mostrar los elementos
-    $pageObject->showItem("button_cambiar_estado_convocado", $recordId);
-    $pageObject->showItem("text_cambiar_estado_convocado", $recordId);
+	// Mostrar los elementos si la vacancia permite el cambio masivo de estado
+	// Observacion: Solo se puede realizar un cambio de estado cuando el estado de la vacancia esta en: Evaluación(id=3)
+	$pageObject->showItem("button_cambiar_estado_convocado", $recordId);
+	$pageObject->showItem("text_cambiar_estado_convocado", $recordId);
 }
 
 ;		

@@ -1547,54 +1547,66 @@ function BeforeMoveNextList(&$data, &$row, &$record, $recordId, $pageObject)
 
 		/*
  * Estados de Vacancia
- * Convocatoria Cerrada = 5, Activa = 2
-*/
+ * Convocatoria Cerrada = 5, Activa = 2, En Evaluación = 3
+ */
 
+// Ocultar inicialmente los elementos que no deben ser visibles en el formulario.
+$pageObject->hideItem("boton_cerrar_vacancia", $recordId);		// Oculta el botón "Cerrar Vacancia". Se mostrará o no dependiendo de las condiciones.
+$pageObject->hideItem("boton_activar_vacancia", $recordId);		// Oculta el botón "Activar Vacancia". Se mostrará o no dependiendo de las condiciones.
+$pageObject->hideItem("Evaluacion", $recordId);									// Oculta el botón "En Evaluacion". Se mostrará o no dependiendo de las condiciones.
+$pageObject->hideItem("grid_details_link", $recordId);					// Oculta el enlace de detalles de cantidad de postulantes.
+$pageObject->hideItem("text4", $recordId);											// Oculta el texto relacionado con el detalle de postulantes.
 
-//Ocultar items que inicialmente no van a ser visibles en el formulario.
-$pageObject->hideItem("boton_cerrar_vacancia", $recordId);		//desbilitar boton cerrar, dependiendo de que se cumplan ciertas condiciones mostrar o no.
-$pageObject->hideItem("boton_activar_vacancia", $recordId);		//desbilitar boton activar, dependiendo de que se cumplan ciertas condiciones mostrar o no.
-$pageObject->hideItem("grid_details_link", $recordId);				//oculta inicialmente el detalle de cantidad postulantes.
-$pageObject->hideItem("text4", $recordId);											//oculta inicialmente el texto del detalle de cantidad postulantes.
+$now = date("Y-m-d H:i:s"); // Obtiene la fecha y hora actual en formato `Y-m-d H:i:s`.
 
-$now = date("Y-m-d H:i:s");
-
-//desactivar ambos botones
+// Condición 1: Si la vacancia ha expirado y está cerrada (estado = 5).
 if ($data["fecha_expiracion_vacancia"] < $now && $data["id_estado_vacancia"] == 5) {
-	$pageObject->hideItem("boton_cerrar_vacancia", $recordId);		//desbilitar boton Cerrar.
-	$pageObject->hideItem("boton_activar_vacancia", $recordId);		//deshabilitar boton Activar.
-	$pageObject->hideItem("Evaluacion", $recordId);								//deshabilitar boton "En Evaluacion".
+	$pageObject->hideItem("boton_cerrar_vacancia", $recordId);		// Deshabilita el botón "Cerrar Vacancia".
+	$pageObject->hideItem("boton_activar_vacancia", $recordId);		// Deshabilita el botón "Activar Vacancia".
+	$pageObject->hideItem("Evaluacion", $recordId);									// Deshabilita el botón "En Evaluación".
 }
 
-//habilitar botones "Activar Vacancia" y "En Evaluacion".
+
+// Condición 2: Si la vacancia está activa y su fecha de expiración no ha pasado (estado = 5).
 if ($data["fecha_expiracion_vacancia"] > $now && $data["id_estado_vacancia"] == 5) {
-	$pageObject->hideItem("boton_cerrar_vacancia", $recordId);		//deshabilitar boton cerrar.
-	$pageObject->showItem("boton_activar_vacancia", $recordId);	//habilitar boton activar.
-	$pageObject->showItem("Evaluacion", $recordId);								//habilitar boton "En Evaluacion".
+	$pageObject->hideItem("boton_cerrar_vacancia", $recordId);		// Deshabilita el botón "Cerrar Vacancia".
+	$pageObject->showItem("boton_activar_vacancia", $recordId);		// Habilita el botón "Activar Vacancia".
+	$pageObject->showItem("Evaluacion", $recordId);									// Habilita el botón "En Evaluación".
 }
 
-//habilitar boton "Cerrar Vacancia".
+// Condición 3: Si la vacancia está activa y en proceso (estado = 2), y su fecha de expiración no ha pasado.
 if ($data["fecha_expiracion_vacancia"] > $now && $data["id_estado_vacancia"] == 2) {
-	$pageObject->showItem("boton_cerrar_vacancia", $recordId);		//habilitar boton Cerrar.
-	$pageObject->hideItem("boton_activar_vacancia", $recordId);	//deshabilitar boton Activar.
-	$pageObject->hideItem("Evaluacion", $recordId);								//deshabilitar boton "En Evaluacion".
+	$pageObject->showItem("boton_cerrar_vacancia", $recordId);		// Habilita el botón "Cerrar Vacancia".
+	$pageObject->hideItem("boton_activar_vacancia", $recordId);		// Deshabilita el botón "Activar Vacancia".
+	$pageObject->showItem("Evaluacion", $recordId);									// Habilita el botón "En Evaluación".
 }
 
-$strSQLExists5 = DB::PrepareSQL("SELECT bolsa_empleo.postulacion.id_vacancia,
-																									bolsa_empleo.postulacion.id_postulacion,
-																									bolsa_empleo.postulacion.id_estado,
-																									bolsa_empleo.postulacion.fecha_postulacion,
-																									bolsa_empleo.postulacion.fk_personaid
-																					FROM bolsa_empleo.postulacion
-																					WHERE bolsa_empleo.postulacion.id_vacancia = '" . $data["id_vacancias"] . "'");
-$rsExists5 = DB::Query($strSQLExists5);
-$data5 = $rsExists5->fetchAssoc();  
+// Condición 4: Si la vacancia está "En Evaluacion" y en proceso (estado = 3), y su fecha de expiración no ha pasado.
+if ($data["fecha_expiracion_vacancia"] > $now && $data["id_estado_vacancia"] == 3) {
+	$pageObject->showItem("boton_cerrar_vacancia", $recordId);		// Habilita el botón "Cerrar Vacancia".
+	$pageObject->showItem("boton_activar_vacancia", $recordId);		// Habilita el botón "Activar Vacancia".
+}
+
+
+// Consultar si existen postulaciones asociadas a la vacancia actual.
+$strSQLExists5 = DB::PrepareSQL("
+	SELECT bolsa_empleo.postulacion.id_vacancia,
+					bolsa_empleo.postulacion.id_postulacion,
+					bolsa_empleo.postulacion.id_estado,
+					bolsa_empleo.postulacion.fecha_postulacion,
+					bolsa_empleo.postulacion.fk_personaid
+	FROM bolsa_empleo.postulacion
+	WHERE bolsa_empleo.postulacion.id_vacancia = '" . $data["id_vacancias"] . "'");
+$rsExists5 = DB::Query($strSQLExists5); // Ejecutar la consulta.
+$data5 = $rsExists5->fetchAssoc();			// Obtener el primer resultado como un array asociativo.  
+
+// Si no hay postulaciones asociadas a la vacancia.
 if (!$data5) {
-	$pageObject->hideItem("grid_details_link", $recordId); 
-	$pageObject->showItem("text4", $recordId); 
+	$pageObject->hideItem("grid_details_link", $recordId);	// Oculta el enlace de detalles de cantidad de postulantes.
+	$pageObject->showItem("text4", $recordId);							// Muestra el texto alternativo.
 } else {
-	$pageObject->showItem("grid_details_link", $recordId); 
-	$pageObject->hideItem("text4", $recordId);
+	$pageObject->showItem("grid_details_link", $recordId);	// Muestra el enlace de detalles de cantidad de postulantes.
+	$pageObject->hideItem("text4", $recordId);							// Oculta el texto alternativo.
 }
 
 ;		

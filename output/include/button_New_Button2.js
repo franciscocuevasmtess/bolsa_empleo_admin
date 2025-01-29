@@ -5,6 +5,7 @@ Runner.buttonEvents["New_Button2"] = function( pageObj, proxy, pageid ) {
 	if ( !pageObj.buttonEventBefore['New_Button2'] ) {
 		pageObj.buttonEventBefore['New_Button2'] = function( params, ctrl, pageObj, proxy, pageid, rowData, row, submit ) {		
 			var ajax = ctrl;
+//Redirecciona a la pagina para poder crear una nueva vacancia.
 window.location.href = 'vacancia_tmp_add.php';
 		}
 	}

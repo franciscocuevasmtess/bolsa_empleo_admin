@@ -96,6 +96,10 @@
   font-weight: bold;
   font-size: 12px;
 }
+[data-page="vacancia_list"][data-itemid="grid_alldetails_link"] > a {
+  font-weight: bold;
+  font-size: 26px;
+}
 [data-page="vacancia_list"][data-itemid="grid_field12"] {
   font-weight: bold;
   font-size: 12px;
