@@ -127,7 +127,7 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsvacancia_tmp["Spanish"]["tipo_remuneracion"] = "Tipo Remuneración";
 	$fieldToolTipsvacancia_tmp["Spanish"]["tipo_remuneracion"] = "";
 	$placeHoldersvacancia_tmp["Spanish"]["tipo_remuneracion"] = "";
-	$pageTitlesvacancia_tmp["Spanish"]["add"] = "Oferta Laboral, Añadir nuevo";
+	$pageTitlesvacancia_tmp["Spanish"]["add"] = "Oferta Laboral, Añadir nuevo2";
 	if (count($fieldToolTipsvacancia_tmp["Spanish"]))
 		$tdatavacancia_tmp[".isUseToolTips"] = true;
 }
@@ -225,7 +225,7 @@ $tdatavacancia_tmp[".isUseAjaxSuggest"] = true;
 
 
 
-																																																						
+																																																			
 
 $tdatavacancia_tmp[".ajaxCodeSnippetAdded"] = false;
 

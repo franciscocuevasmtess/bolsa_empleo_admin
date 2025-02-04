@@ -21,7 +21,25 @@ var nowISO = now.toISOString();
 // Verificar si la fecha de expiración de la vacancia es posterior a la fecha y hora actual.
 if (new Date(fechaExpiracion) > new Date(nowISO)) {
 	// Si la fecha de expiración es válida (posterior a la actual), proceder a enviar el formulario.
-	submit();
+	//submit();
+	
+	// Mostrar un mensaje de confirmación antes de enviar el formulario.
+    Swal.fire({
+        title: '¿Está seguro?',
+        text: '¿Realmente desea realizar este cambio?',
+        icon: 'warning',
+        showCancelButton: true, // Muestra botón de "Cancelar"
+        confirmButtonColor: '#3085d6', // Color del botón de confirmación
+        cancelButtonColor: '#d33', // Color del botón de cancelar
+        confirmButtonText: 'Sí, confirmar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Si el usuario confirma, se envía el formulario.
+            submit();
+        }
+    });
+	
 } else {
 	// Si la fecha de expiración ya pasó, mostrar un mensaje de error utilizando SweetAlert2.
 	Swal.fire({

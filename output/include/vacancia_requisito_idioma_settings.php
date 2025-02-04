@@ -140,7 +140,7 @@ $tdatavacancia_requisito_idioma[".isUseAjaxSuggest"] = true;
 
 
 
-																																																																																																																																																																		
+																																																																																																																																																									
 
 $tdatavacancia_requisito_idioma[".ajaxCodeSnippetAdded"] = false;
 

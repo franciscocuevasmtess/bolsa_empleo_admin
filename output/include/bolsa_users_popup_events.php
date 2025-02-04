@@ -75,7 +75,6 @@ $pageObject->hideItem("grid_field1", $recordId);		//Oculta el campo id_vacancias
 $pageObject->hideItem("grid_field2", $recordId);		//Oculta el campo id_persona
 
 //print_r($_SESSION);
-//$_SESSION["UserData"]["id"]
 ;		
 } // function BeforeShowList
 

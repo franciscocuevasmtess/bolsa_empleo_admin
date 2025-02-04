@@ -128,7 +128,7 @@ $tdatatipo_remuneracion[".isUseAjaxSuggest"] = true;
 
 
 
-																																																						
+																																																			
 
 $tdatatipo_remuneracion[".ajaxCodeSnippetAdded"] = false;
 

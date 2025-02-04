@@ -12,10 +12,33 @@ Runner.buttonEvents["New_Button"] = function( pageObj, proxy, pageid ) {
 	if ( !pageObj.buttonEventAfter['New_Button'] ) {
 		pageObj.buttonEventAfter['New_Button'] = function( result, ctrl, pageObj, proxy, pageid, rowData, row, params ) {
 			var ajax = ctrl;
+/*
 var url = 'postulacion_list.php?masterkey1='+ result['id_vacancias'] +'&page=list&mastertable=bolsa_empleo.vacancia';
 
 //Redirecciona a la pagina de postulantes de la oferta laboral seleccionada.
 var myWindow = location.replace(url);
+*/
+
+
+var url = 'postulacion_list.php?masterkey1=' + result['id_vacancias'] + '&page=list&mastertable=bolsa_empleo.vacancia';
+
+// Mostrar mensaje de confirmación antes de redirigir.
+Swal.fire({
+    title: '¿Está seguro?',
+    text: '¿Desea ver la lista de postulantes para esta vacancia?',
+    icon: 'question',
+    showCancelButton: true, // Muestra botón de "Cancelar"
+    confirmButtonColor: '#3085d6', // Color del botón de confirmación
+    cancelButtonColor: '#d33', // Color del botón de cancelar
+    confirmButtonText: 'Sí, ver lista',
+    cancelButtonText: 'Cancelar'
+}).then((result) => {
+    if (result.isConfirmed) {
+        // Si el usuario confirma, redirigir a la página de postulantes.
+        location.replace(url);
+    }
+});
+
 		}
 	}
 	

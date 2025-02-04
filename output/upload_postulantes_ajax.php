@@ -141,9 +141,8 @@
                                                                         usuario_carga_id, 
                                                                         usuario_carga_nombre, 
                                                                         id_vacancia, 
-                                                                        id_empresa_sucursal,
-                                                                        metodo_insercion) 
-                                    VALUES (now(), $1, $2, $3, $4, $5, $6, $7, 'VIA_PLANILLA')";
+                                                                        id_empresa_sucursal) 
+                                    VALUES (now(), $1, $2, $3, $4, $5, $6, $7)";
             $result_seguimiento = pg_query_params($conn, $seguimientoQuery, [
                 $postulacion['id_postulacion'],
                 $estado_postulacion,

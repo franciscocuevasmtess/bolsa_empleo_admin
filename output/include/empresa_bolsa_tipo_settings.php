@@ -128,7 +128,7 @@ $tdataempresa_bolsa_tipo[".isUseAjaxSuggest"] = true;
 
 
 
-																																																						
+																																																			
 
 $tdataempresa_bolsa_tipo[".ajaxCodeSnippetAdded"] = false;
 

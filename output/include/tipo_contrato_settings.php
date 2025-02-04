@@ -128,7 +128,7 @@ $tdatatipo_contrato[".isUseAjaxSuggest"] = true;
 
 
 
-																																																						
+																																																			
 
 $tdatatipo_contrato[".ajaxCodeSnippetAdded"] = false;
 

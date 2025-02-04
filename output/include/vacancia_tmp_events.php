@@ -111,45 +111,37 @@ function BeforeAdd(&$values, &$sqlValues, &$message, $inline, $pageObject)
 
 		//insertar nuevos ids si son detectados en requisitos, se detectan por sus ids no son numericos
 $id_valores_multi_ocupacion_puesto_todos = explode(",", $_REQUEST["valores_multi_ocupacion_puesto_todos"]);
-
 $id_valores_multi_descripcion_salario_todos = explode(",", $_REQUEST["valores_multi_descripcion_salario_todos"]);
-
 $id_requisitos_multi_todos = explode(",", $_REQUEST["valores_multi_requisitos_todos"]);
-
 $id_valores_multi_habilidades_conocimiento_todos = explode(",", $_REQUEST["valores_multi_habilidades_conocimiento_todos"]);
 
 $rray_nuevos_puestos_id = [];
-
 $rray_nuevos_des_salario_id = [];
-
 $rray_nuevos_requisitos_id = [];
-
 $rray_nuevos_habilidades_id = [];
 
 //proceso de puestos
 foreach ($id_valores_multi_ocupacion_puesto_todos as  $valuetoinsert1) {
 	if (!is_numeric($valuetoinsert1)) {
 		$sqlinsert1 = DB::PrepareSQL("INSERT INTO bolsa_empleo.ocupaciones_nuevas(descripcion) 
-																			VALUES (':1') 
-																			ON CONFLICT 
-																			ON CONSTRAINT ocupaciones_nuevas_un 
-																			DO UPDATE 
-																			SET descripcion = excluded.descripcion  
-																			RETURNING id_ocu_puest_clasic", $valuetoinsert1);
+																				VALUES (':1') 
+																				ON CONFLICT 
+																				ON CONSTRAINT ocupaciones_nuevas_un 
+																				DO UPDATE 
+																				SET descripcion = excluded.descripcion  
+																				RETURNING id_ocu_puest_clasic", $valuetoinsert1);
 		$rx1 = DB::Query($sqlinsert1);
 		$row1 = $rx1->fetchAssoc(); 
 		$new_id_ocupacion_puesto_nuevos = $row1['id_ocu_puest_clasic'];
 		array_push($rray_nuevos_puestos_id, $new_id_ocupacion_puesto_nuevos);
 	}
 }
-
 //crear el array con los posibles id ya existentes
 foreach ($id_valores_multi_ocupacion_puesto_todos as  $valuetoinsert1) {
 	if (is_numeric($valuetoinsert1)) {
 		array_push($rray_nuevos_puestos_id, $valuetoinsert1);
 	}
 }
-////////////////////////
 
 
 //proceso de descrip salario
@@ -167,9 +159,7 @@ foreach ($id_valores_multi_descripcion_salario_todos as  $valuetoinsert4) {
 		$new_id_desc_salario_nuevos = $row4['id_va_salario_desc'];
 		array_push($rray_nuevos_des_salario_id, $new_id_desc_salario_nuevos);
 	}
-}
-
-  
+} 
 //crear el array con los posibles id ya existentes
 foreach ($id_valores_multi_descripcion_salario_todos as $valuetoinsert4) {
 	if (is_numeric($valuetoinsert4)) {
@@ -193,8 +183,6 @@ foreach ($id_requisitos_multi_todos as $valuetoinsert) {
 		array_push($rray_nuevos_requisitos_id, $new_id_requisitos_nuevos);
 	}
 }
-
-
 //crear el array con los posibles id ya existentes
 foreach ($id_requisitos_multi_todos as $valuetoinsert) {
 	if (is_numeric($valuetoinsert)) {
@@ -218,14 +206,14 @@ foreach ($id_valores_multi_habilidades_conocimiento_todos as $valuetoinsert2) {
 		array_push($rray_nuevos_habilidades_id, $new_id_habilidades_nuevos);
 	}
 }
-
-
 //crear el array con los posibles id ya existentes
 foreach ($id_valores_multi_habilidades_conocimiento_todos as $valuetoinsert3) {
 	if (is_numeric($valuetoinsert3)) {
 		array_push($rray_nuevos_habilidades_id, $valuetoinsert3);
 	}
 }
+
+
 
 $values["fk_ocupacion_puesto"] = implode(',', $rray_nuevos_puestos_id);
 $values["descripcion_salario"] = implode(',', $rray_nuevos_des_salario_id);
@@ -240,7 +228,6 @@ $values["habilidades_conocimiento"] = ucfirst($values["habilidades_conocimiento"
 $values["fk_ocupacion_puesto"] = ucfirst($values["fk_ocupacion_puesto"]);
 
 return true;
-
 ;		
 } // function BeforeAdd
 
@@ -316,16 +303,13 @@ function AfterAdd(&$values, &$keys, $inline, $pageObject)
 {
 
 		
-   DB::Exec($auditoria);
+DB::Exec($auditoria);
+
 $vacancia = DB::PrepareSQL("update bolsa_empleo.vacancia_tmp 
-set 	origen= 'DGE-MTESS'
-	where id_vacancias = ':1'",
-	
-						$keys["id_vacancias"]);
-
+															set origen = 'DGE-MTESS'
+															where id_vacancias = ':1'",
+$keys["id_vacancias"]);
 DB::Exec($vacancia);
-
-
 
 //**********  Redirect to another page  ************
 //header("Location: vacancia_list.php");

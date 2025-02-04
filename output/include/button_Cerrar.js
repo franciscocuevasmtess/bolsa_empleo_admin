@@ -5,7 +5,27 @@ Runner.buttonEvents["Cerrar"] = function( pageObj, proxy, pageid ) {
 	if ( !pageObj.buttonEventBefore['Cerrar'] ) {
 		pageObj.buttonEventBefore['Cerrar'] = function( params, ctrl, pageObj, proxy, pageid, rowData, row, submit ) {		
 			var ajax = ctrl;
+// Habilitar el control asociado (asegura que las acciones siguientes puedan ejecutarse correctamente).
+ctrl.setEnabled();
 
+// Mostrar un mensaje de confirmación antes de enviar el formulario.
+ Swal.fire({
+	  title: '¿Está seguro?',
+	  text: 'Esta acción cerrará la vacancia y no podrá recibir más postulaciones.',
+	  icon: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: '#3085d6',
+	  cancelButtonColor: '#d33',
+	  confirmButtonText: 'Sí, cerrar vacancia',
+	  cancelButtonText: 'Cancelar'
+ }).then((result) => {
+	  if (result.isConfirmed) {
+			// Si el usuario confirma, se envía el formulario.
+			submit();
+	  }
+ });
+
+return false;
 		}
 	}
 	
