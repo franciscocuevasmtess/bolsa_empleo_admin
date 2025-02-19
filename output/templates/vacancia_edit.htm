@@ -450,7 +450,6 @@
 	{$cell_grid_c3}
 	class="r-align-left r-ori-vert"
 	
-			data-single
 			
 			data-cellId="grid_c3" data-pageid="{$pageid}" data-page="vacancia_edit"
 		data-v-cell="2"
@@ -479,6 +478,28 @@
 
 
 {END id_contacto_sucursal_fieldblock}
+											
+{BEGIN imagen_perfil_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_imagen_perfil}  r-vertical-field" 
+	data-signal-error-for="imagen_perfil{$id}" {$required_attr_imagen_perfil}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="imagen_perfil" data-fieldname="imagen_perfil" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_imagen_perfil}">
+		{BEGIN imagen_perfil_label}{$label bolsa_empleo_vacancia imagen_perfil }{END imagen_perfil_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$imagen_perfil_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="imagen_perfil" {$tooltipAttr bolsa_empleo_vacancia imagen_perfil } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_vacancia imagen_perfil }		</div>
+	</div>
+</div>
+
+
+{END imagen_perfil_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c3}

@@ -34,6 +34,7 @@ $dalTablevacancia_tmp["id_contacto_sucursal"] = array("type"=>3,"varname"=>"id_c
 $dalTablevacancia_tmp["edad_maximo"] = array("type"=>200,"varname"=>"edad_maximo", "name" => "edad_maximo", "autoInc" => "0");
 $dalTablevacancia_tmp["origen"] = array("type"=>200,"varname"=>"origen", "name" => "origen", "autoInc" => "0");
 $dalTablevacancia_tmp["tipo_remuneracion"] = array("type"=>3,"varname"=>"tipo_remuneracion", "name" => "tipo_remuneracion", "autoInc" => "0");
+$dalTablevacancia_tmp["imagen_perfil"] = array("type"=>128,"varname"=>"imagen_perfil", "name" => "imagen_perfil", "autoInc" => "0");
 $dalTablevacancia_tmp["id_vacancias"]["key"]=true;
 
 $dal_info["eportal_at_192_168_70_170_bolsa_empleo_vacancia_tmp"] = &$dalTablevacancia_tmp;

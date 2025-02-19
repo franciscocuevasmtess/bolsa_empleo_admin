@@ -421,14 +421,13 @@ $this->settings["multiple"] = false;        ;
 	}
 				if($tName=="bolsa_empleo.vacancia_tmp" && $field=="fk_ocupacion_puesto")
 	{
-		$this->settings["required"] = true;                                         // Wether is mandatory
+		$this->settings["required"] = true;                                         			// Wether is mandatory
 $this->settings["placeholder"] = "Nueva Oferta Laboral";                         // Text to appear in dialog box
 $this->settings["select"] = "select id_ocu_puest_clasic,descripcion from bolsa_empleo.ocupaciones_nuevas order by descripcion asc limit 10 ";
-$this->settings["language"] = "es";                                          // interface language, example: es, it, fr, .....
-$this->settings["allowClear"] = true;                                        // if it shows an icon to leave the field empty. Values "true" and "false"
+$this->settings["language"] = "es";                                          		// interface language, example: es, it, fr, .....
+$this->settings["allowClear"] = true;                                        		// if it shows an icon to leave the field empty. Values "true" and "false"
 $this->settings["multiple"] = false;  
-$this->settings["FieldWidth"] = "100%";  
-                                  // image rendering size;
+$this->settings["FieldWidth"] = "100%";  																					// image rendering size;
 		return;
 	}	
 	$tName = $this->pageObject->tName;

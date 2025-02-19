@@ -3705,6 +3705,7 @@ $proto53["m_columns"][] = "geolocation";
 $proto53["m_columns"][] = "fk_id_feria_empleo";
 $proto53["m_columns"][] = "usuario";
 $proto53["m_columns"][] = "origen";
+$proto53["m_columns"][] = "imagen_perfil";
 $obj = new SQLTable($proto53);
 
 $proto52["m_table"] = $obj;

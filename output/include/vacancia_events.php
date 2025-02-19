@@ -750,130 +750,7 @@ $pageObject->setProxyValue("vacancia_dias", $_SESSION["vacancia_dias"]);
 function BeforeEdit(&$values, &$sqlValues, $where, &$oldvalues, &$keys, &$message, $inline, $pageObject)
 {
 
-			/*
-	//Codigo original
-	//insertar nuevos ids si son detectados en requisitos, se detectan por sus ids no son numericos
-	$id_valores_multi_ocupacion_puesto_todos = explode(",", $_REQUEST["valores_multi_ocupacion_puesto_todos"]);
-
-	$id_valores_multi_descripcion_salario_todos = explode(",", $_REQUEST["valores_multi_descripcion_salario_todos"]);
-	$id_requisitos_multi_todos = explode(",", $_REQUEST["valores_multi_requisitos_todos"]);
-	$id_valores_multi_habilidades_conocimiento_todos = explode(",", $_REQUEST["valores_multi_habilidades_conocimiento_todos"]);
-
-	$rray_nuevos_puestos_id = [];
-	$rray_nuevos_des_salario_id = [];
-	$rray_nuevos_requisitos_id = [];
-	$rray_nuevos_habilidades_id = [];
-	
-	//proceso de puestos
-	foreach ($id_valores_multi_ocupacion_puesto_todos as  $valuetoinsert1) {
-		if (!is_numeric($valuetoinsert1)) {
-			$sqlinsert1 = DB::PrepareSQL("INSERT INTO bolsa_empleo.ocupaciones_nuevas(descripcion) 
-																			VALUES (':1') 
-																			ON CONFLICT ON CONSTRAINT ocupaciones_nuevas_un 
-																			DO UPDATE 
-																			SET descripcion = excluded.descripcion  
-																			RETURNING id_ocu_puest_clasic", $valuetoinsert1);
-			$rx1 = DB::Query($sqlinsert1);
-			$row1 = $rx1->fetchAssoc();
-			$new_id_ocupacion_puesto_nuevos = $row1['id_ocu_puest_clasic'];
-     array_push($rray_nuevos_puestos_id, $new_id_ocupacion_puesto_nuevos);
-		}
-	} //End foreach
-
-	//crear el array con los posibles id ya existentes
-	foreach ($id_valores_multi_ocupacion_puesto_todos as  $valuetoinsert1) {
-		if (is_numeric($valuetoinsert1)) {
-			array_push($rray_nuevos_puestos_id, $valuetoinsert1);
-		}
-	}
-	////////////////////////
-
-	//proceso de descrip salario
-	foreach ($id_valores_multi_descripcion_salario_todos as  $valuetoinsert4) {
-		if (!is_numeric($valuetoinsert4)) {
-			$sqlinsert4 = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_salario_descripcion(descripcion_salario) 
-																			VALUES (':1') 
-																						ON CONFLICT ON CONSTRAINT vacancia_salario_descripcion_un 
-																						DO UPDATE 
-																						SET descripcion_salario = excluded.descripcion_salario  
-																						RETURNING id_va_salario_desc", $valuetoinsert4);
-			$rx4 = DB::Query($sqlinsert4);
-			$row4 = $rx4->fetchAssoc(); 
-			$new_id_desc_salario_nuevos = $row4['id_va_salario_desc'];
-     array_push($rray_nuevos_des_salario_id, $new_id_desc_salario_nuevos);
-		}
-	}
-
-  //crear el array con los posibles id ya existentes
-	foreach ($id_valores_multi_descripcion_salario_todos as  $valuetoinsert4) {
-		if (is_numeric($valuetoinsert4)) {
-			array_push($rray_nuevos_des_salario_id, $valuetoinsert4);
-		}
-	}
-
-	//proceso de requisitos
-	foreach ($id_requisitos_multi_todos as  $valuetoinsert){
-		if (!is_numeric($valuetoinsert)) {
-			$sqlinsert = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_requisitos_excluyentes(descripcion) 
-																					VALUES (':1') 
-																					ON CONFLICT ON CONSTRAINT vacancia_requisitos_excluyentes_descripcion_key 
-																					DO UPDATE 
-																					SET descripcion = excluded.descripcion  
-																					RETURNING id_requisitos_vacancia", $valuetoinsert);
-			$rx = DB::Query($sqlinsert);
-			$row = $rx->fetchAssoc(); 
-			$new_id_requisitos_nuevos = $row['id_requisitos_vacancia'];
-     array_push($rray_nuevos_requisitos_id, $new_id_requisitos_nuevos);
-		}
-	}
-
-  //crear el array con los posibles id ya existentes
-	foreach ($id_requisitos_multi_todos as  $valuetoinsert) {
-		if (is_numeric($valuetoinsert)) {
-			array_push($rray_nuevos_requisitos_id, $valuetoinsert);
-		}
-	}
-
-
-	//aqui empieza procesamiento de habilidades
-	foreach ($id_valores_multi_habilidades_conocimiento_todos as  $valuetoinsert2) {
-		if (!is_numeric($valuetoinsert2)) {
-			$sqlinsert2 = DB::PrepareSQL("INSERT INTO bolsa_empleo.habilidades(descripcion) 
-																						VALUES (':1') 
-																						ON CONFLICT ON CONSTRAINT habilidades_descripcion_key 
-																						DO UPDATE 
-																						SET descripcion = excluded.descripcion  
-																						RETURNING id_habilidad", $valuetoinsert2);
-			$rx2 = DB::Query($sqlinsert2);
-			$row2 = $rx2->fetchAssoc(); 
-			$new_id_habilidades_nuevos = $row2['id_habilidad'];
-     array_push($rray_nuevos_habilidades_id, $new_id_habilidades_nuevos);
-		}
-	}
-
-  //crear el array con los posibles id ya existentes
-	foreach ($id_valores_multi_habilidades_conocimiento_todos as  $valuetoinsert3) {
-		if (is_numeric($valuetoinsert3)) {
-			array_push($rray_nuevos_habilidades_id, $valuetoinsert3);
-		}
-	}
-
-	$values["fk_ocupacion_puesto"] = implode(',', $rray_nuevos_puestos_id); 
-	$values["salario_descripcion"] = implode(',', $rray_nuevos_des_salario_id); 
-	$values["requisitos_exclu_formacion"] = implode(',', $rray_nuevos_requisitos_id); 
-	$values["habilidades_conocimiento"] = implode(',', $rray_nuevos_habilidades_id); 
-	//$values["salario_final"] = str_replace('.', '', $values["salario_final"]);
-	$values["id_formacion_academica"] = ucfirst($values["id_formacion_academica"]);
-	$values["tipo_movilidad"] = ucfirst($values["tipo_movilidad"]);
-	$values["descripcion_puesto"] = ucfirst($values["descripcion_puesto"]);
-	$values["requisitos_exclu_formacion"] = ucfirst($values["requisitos_exclu_formacion"]);
-	$values["habilidades_conocimiento"] = ucfirst($values["habilidades_conocimiento"]);
-	
-	return true;
-	*/
-	
-	//Version mejorada con ChatGPT.
-	// Obtener valores de los campos múltiples enviados por formulario (como listas separadas por comas)
+			// Obtener valores de los campos múltiples enviados por formulario (como listas separadas por comas)
 	$ocupaciones_puesto_ids = explode(",", $_REQUEST["valores_multi_ocupacion_puesto_todos"]);
 	$salarios_descripcion_ids = explode(",", $_REQUEST["valores_multi_descripcion_salario_todos"]);
 	$requisitos_ids = explode(",", $_REQUEST["valores_multi_requisitos_todos"]);
@@ -1091,234 +968,242 @@ function CustomEdit(&$values, $where, &$oldvalues, &$keys, &$error, $inline, $pa
 global $cman;
 
 $vacancia = DB::PrepareSQL("UPDATE bolsa_empleo.vacancia 
-																	SET fecha_expiracion_vacancia = ':1',
-																				cantidad_vacancia = ':2',
-																				fk_id_feria_empleo = ':3'
-																	WHERE id_vacancias = ':4'",
-																		$values["fecha_expiracion_vacancia"],
-																		$values["cantidad_vacancia"], 
-																		$values["fk_id_feria_empleo"], 
-																		$keys["id_vacancias"]);
+																SET fecha_expiracion_vacancia = ':1',
+																	cantidad_vacancia = ':2',
+																	fk_id_feria_empleo = ':3',
+																	imagen_perfil = ':4'
+																WHERE id_vacancias = ':5'",
+																	$values["fecha_expiracion_vacancia"],
+																	$values["cantidad_vacancia"], 
+																	$values["fk_id_feria_empleo"],
+																	pg_escape_bytea($values["imagen_perfil"]),
+																	$keys["id_vacancias"]);
 DB::Exec($vacancia);
 
 
 $puesto = DB::PrepareSQL("UPDATE bolsa_empleo.vacancia_puesto 
-																SET fk_ocupacion_puesto = ':1',
-																			salario = ':2',
-																			tipo_contrato = ':3',
-																			descripcion_puesto = ':4',
-																			id_rubro = ':5',
-																			anos_experiencia_vacancia = ':6',
-																			meses_experiencia_vacancia = ':7',
-																			horario_rotativo = ':8',
-																			modalidad_trabajo = ':9',
-																			descripcion_salario = ':10',
-																			tipo_remuneracion = ':11'
-																WHERE id_vacancia = ':12'",
-																	$values["fk_ocupacion_puesto"],
-																	$values["salario_final"],
-																	$values["tipo_contrato"],
-																	$values["descripcion_puesto"],
-																	$values["id_rubro"],
-																	$values["anos_experiencia_vacancia"],
-																	$values["meses_experiencia_vacancia"],
-																	$values["horario_rotativo"],
-																	$values["modalidad_trabajo"],
-																	$values["salario_descripcion"],
-																	$values["tipo_remuneracion"],
-																	$keys["id_vacancias"]);
+															SET fk_ocupacion_puesto = ':1',
+																salario = ':2',
+																tipo_contrato = ':3',
+																descripcion_puesto = ':4',
+																id_rubro = ':5',
+																anos_experiencia_vacancia = ':6',
+																meses_experiencia_vacancia = ':7',
+																horario_rotativo = ':8',
+																modalidad_trabajo = ':9',
+																descripcion_salario = ':10',
+																tipo_remuneracion = ':11'
+															WHERE id_vacancia = ':12'",
+																$values["fk_ocupacion_puesto"],
+																$values["salario_final"],
+																$values["tipo_contrato"],
+																$values["descripcion_puesto"],
+																$values["id_rubro"],
+																$values["anos_experiencia_vacancia"],
+																$values["meses_experiencia_vacancia"],
+																$values["horario_rotativo"],
+																$values["modalidad_trabajo"],
+																$values["salario_descripcion"],
+																$values["tipo_remuneracion"],
+																$keys["id_vacancias"]);
 DB::Exec($puesto);
 
 
 $empresa = DB::PrepareSQL("UPDATE bolsa_empleo.vacancia_empresa 
-																	SET id_empresa_sucursal = ':1',
-																				id_contacto_sucursal = ':2',
-																				id_cidudad = ':3',
-																				id_departamento = ':4' 
-																	WHERE id_vacancia = ':5'",
-																	$values["id_empresa_sucursal"],
-																	$values["id_contacto_sucursal"],
-																	$values["id_cidudad"],
-																	$values["id_departamento"],
-																	$keys["id_vacancias"]);
+															SET id_empresa_sucursal = ':1',
+																id_contacto_sucursal = ':2',
+																id_cidudad = ':3',
+																id_departamento = ':4' 
+															WHERE id_vacancia = ':5'",
+																$values["id_empresa_sucursal"],
+																$values["id_contacto_sucursal"],
+																$values["id_cidudad"],
+																$values["id_departamento"],
+																$keys["id_vacancias"]);
 DB::Exec($empresa);
 
 $vacancia_requisito = DB::PrepareSQL("UPDATE bolsa_empleo.vacancia_requisito 
-																								SET genero = ':1',
-																											movilidad_propia = ':2',
-																											tipo_movilidad	= ':3', 
-																											id_registro_conducir = ':4', 
-																											discapacidad_aceptada = ':5', 
-																											nacionalidad = ':6', 
-																											edad = ':7', 
-																											requisitos_exclu_formacion = ':8', 
-																											habilidades_conocimiento = ':9',
-																											id_formacion_academica = ':10' 
-																								WHERE id_vacancia = ':11'",
-																									$values["genero"],
-																									$values["movilidad_propia"],
-																									$values["tipo_movilidad"],
-																									$values["id_registro_conducir"],
-																									$values["discapacidad_aceptada"],
-																									$values["nacionalidad"],
-																									"[".$values["edad_rango_bajo"]."-".$values['edad_rango_alto']."]",		
-																									$values["requisitos_exclu_formacion"],
-																									$values["habilidades_conocimiento"],
-																									$values["id_formacion_academica"],
-																									$keys["id_vacancias"]);
+																					SET genero = ':1',
+																						movilidad_propia = ':2',
+																						tipo_movilidad	= ':3', 
+																						id_registro_conducir = ':4', 
+																						discapacidad_aceptada = ':5', 
+																						nacionalidad = ':6', 
+																						edad = ':7', 
+																						requisitos_exclu_formacion = ':8', 
+																						habilidades_conocimiento = ':9',
+																						id_formacion_academica = ':10' 
+																					WHERE id_vacancia = ':11'",
+																						$values["genero"],
+																						$values["movilidad_propia"],
+																						$values["tipo_movilidad"],
+																						$values["id_registro_conducir"],
+																						$values["discapacidad_aceptada"],
+																						$values["nacionalidad"],
+																						"[".$values["edad_rango_bajo"]."-".$values['edad_rango_alto']."]",		
+																						$values["requisitos_exclu_formacion"],
+																						$values["habilidades_conocimiento"],
+																						$values["id_formacion_academica"],
+																						$keys["id_vacancias"]);
 DB::Exec($vacancia_requisito);
 
 
 $consulta_requisitos = DB::PrepareSQL("SELECT bolsa_empleo.vacancia_requisito.id_vacancia_requisito
-																								FROM bolsa_empleo.vacancia_requisito
-																								WHERE bolsa_empleo.vacancia_requisito.id_vacancia =  ':1' 
-																								LIMIT 1", $keys["id_vacancias"]);
+																						FROM bolsa_empleo.vacancia_requisito
+																						WHERE bolsa_empleo.vacancia_requisito.id_vacancia =  ':1' 
+																						LIMIT 1", $keys["id_vacancias"]);
 $consulta_requi_eli1 = DB::Query($consulta_requisitos);
-$consulta_requi_eli=$consulta_requi_eli1->fetchAssoc();
+$consulta_requi_eli = $consulta_requi_eli1->fetchAssoc();
 
 
-$eliminar_discapa = DB::PrepareSQL("DELETE from bolsa_empleo.vacancia_discapa_aceptada
-																							WHERE bolsa_empleo.vacancia_discapa_aceptada.id_vacancia_requisito = ':1'",
-$consulta_requi_eli['id_vacancia_requisito']);
+$eliminar_discapa = DB::PrepareSQL("DELETE FROM bolsa_empleo.vacancia_discapa_aceptada
+																				WHERE bolsa_empleo.vacancia_discapa_aceptada.id_vacancia_requisito = ':1'",
+																					$consulta_requi_eli['id_vacancia_requisito']);
 DB::Exec($eliminar_discapa);
 
-$eliminar_requisito = DB::PrepareSQL("DELETE from bolsa_empleo.vacancia_requisito_excluyente_detalle
-																								WHERE bolsa_empleo.vacancia_requisito_excluyente_detalle.id_vacancia_requisito = ':1'",
-$consulta_requi_eli['id_vacancia_requisito']);
+$eliminar_requisito = DB::PrepareSQL("DELETE FROM bolsa_empleo.vacancia_requisito_excluyente_detalle
+																					WHERE bolsa_empleo.vacancia_requisito_excluyente_detalle.id_vacancia_requisito = ':1'",
+																					$consulta_requi_eli['id_vacancia_requisito']);
 DB::Exec($eliminar_requisito);
 
 
-$eliminar_habilidad = DB::PrepareSQL("DELETE from bolsa_empleo.vacancia_habilidad_conocimiento
-																								WHERE bolsa_empleo.vacancia_habilidad_conocimiento.id_vacancia_requisito = ':1'",
-$consulta_requi_eli['id_vacancia_requisito']);
+$eliminar_habilidad = DB::PrepareSQL("DELETE FROM bolsa_empleo.vacancia_habilidad_conocimiento
+																					WHERE bolsa_empleo.vacancia_habilidad_conocimiento.id_vacancia_requisito = ':1'",
+																						$consulta_requi_eli['id_vacancia_requisito']);
 DB::Exec($eliminar_habilidad);
 
-$eliminar_vacancia_detalle_movilidad = DB::PrepareSQL("DELETE from bolsa_empleo.vacancia_detalle_movilidad
-																																		WHERE bolsa_empleo.vacancia_detalle_movilidad.id_vacancia_requisito = ':1'",
-$consulta_requi_eli['id_vacancia_requisito']);
+$eliminar_vacancia_detalle_movilidad = DB::PrepareSQL("DELETE FROM bolsa_empleo.vacancia_detalle_movilidad
+																															WHERE bolsa_empleo.vacancia_detalle_movilidad.id_vacancia_requisito = ':1'",
+																																$consulta_requi_eli['id_vacancia_requisito']);
 DB::Exec($eliminar_vacancia_detalle_movilidad);
 
-$eliminar_vacancia_detalle_registro_conducir = DB::PrepareSQL("DELETE from bolsa_empleo.vacancia_detalle_registro_conducir
-																																								WHERE bolsa_empleo.vacancia_detalle_registro_conducir.id_vacancia_requisitos = ':1'",
-$consulta_requi_eli['id_vacancia_requisito']);
+$eliminar_vacancia_detalle_registro_conducir = DB::PrepareSQL("DELETE FROM bolsa_empleo.vacancia_detalle_registro_conducir
+																																				WHERE bolsa_empleo.vacancia_detalle_registro_conducir.id_vacancia_requisitos = ':1'",
+																																					$consulta_requi_eli['id_vacancia_requisito']);
 DB::Exec($eliminar_vacancia_detalle_registro_conducir);
 
-$eliminar_vacancia_formacion_academica_detalle = DB::PrepareSQL("DELETE from bolsa_empleo.vacancia_formacion_academica_detalle
-																																									WHERE bolsa_empleo.vacancia_formacion_academica_detalle.id_vacancia_requisito = ':1'", $consulta_requi_eli['id_vacancia_requisito']);
+$eliminar_vacancia_formacion_academica_detalle = DB::PrepareSQL("DELETE FROM bolsa_empleo.vacancia_formacion_academica_detalle
+																																					WHERE bolsa_empleo.vacancia_formacion_academica_detalle.id_vacancia_requisito = ':1'", $consulta_requi_eli['id_vacancia_requisito']);
 DB::Exec($eliminar_vacancia_formacion_academica_detalle);
 
 
 $vacancia_discapa_aceptada = explode(",",$values["discapacidad_aceptada"]);
 foreach ($vacancia_discapa_aceptada as  $value1) {
-	$discapacidad = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_discapa_aceptada
-																					(id_discapacidad_vacancia, id_vacancia_requisito) 
-																					VALUES (':1', ':2')",
-																					$value1,
-																					$consulta_requi_eli['id_vacancia_requisito']);
+	$discapacidad = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_discapa_aceptada(id_discapacidad_vacancia, 
+																																															id_vacancia_requisito) 
+																			VALUES (':1', ':2')",
+																				$value1,
+																				$consulta_requi_eli['id_vacancia_requisito']);
 	DB::Exec($discapacidad); 
 }
 
 
 $tipo_movilidad = explode(",",$values["tipo_movilidad"]);
 foreach ($tipo_movilidad as  $value) {
-	$movilidad = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_detalle_movilidad
-																			(id_tipo_movilidad, id_vacancia_requisito, movilidad_propia) 
-																			VALUES (':1', ':2', ':3')",
-																			$value,
-																			$new_id_vacancia_requisito,
-																			$values["movilidad_propia"]);
+	$movilidad = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_detalle_movilidad(id_tipo_movilidad, 
+																																														id_vacancia_requisito, 
+																																														movilidad_propia) 
+																		VALUES (':1', ':2', ':3')",
+																		$value,
+																		$new_id_vacancia_requisito,
+																		$values["movilidad_propia"]);
 	DB::Exec($movilidad); 
 }
 
 
 $vacancia_requisito_excluyente_detalle = explode(",", $values["requisitos_exclu_formacion"]);
 foreach ($vacancia_requisito_excluyente_detalle as  $value4) {
-	$requisitos_exclu_formacion = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_requisito_excluyente_detalle
-																														(id_vacancia_requisito, id_requisito_excluyente) 
-																														VALUES (':1',':2')",
-	$consulta_requi_eli['id_vacancia_requisito'], $value4);
+	$requisitos_exclu_formacion = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_requisito_excluyente_detalle(id_vacancia_requisito, 
+																																																														id_requisito_excluyente) 
+																											VALUES (':1',':2')",
+																											$consulta_requi_eli['id_vacancia_requisito'], 
+																											$value4);
 	DB::Exec($requisitos_exclu_formacion); 
 }
 
 $vacancia_habilidad_conocimiento = explode(",", $values["habilidades_conocimiento"]);
 foreach ($vacancia_habilidad_conocimiento as  $value5) {
-	$habilidades_conocimiento = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_habilidad_conocimiento
-																													(id_habilidad, id_vacancia_requisito) 
-																													values (':1', ':2')",
-																													$value5,
-																													$consulta_requi_eli['id_vacancia_requisito']);
+	$habilidades_conocimiento = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_habilidad_conocimiento(id_habilidad, 
+																																																									id_vacancia_requisito) 
+																										VALUES (':1', ':2')",
+																										$value5,
+																										$consulta_requi_eli['id_vacancia_requisito']);
 	DB::Exec($habilidades_conocimiento); 
 }
 
 $vacancia_formacion_academica_detalle = explode(",", $values["id_formacion_academica"]);
 foreach ($vacancia_formacion_academica_detalle as  $value6) {
-	$formacion_academica = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_formacion_academica_detalle
-																									(id_formacion_vacancia, id_vacancia_requisito) 
-																									VALUES (':1', ':2')",
-																									$value6,
-																									$consulta_requi_eli['id_vacancia_requisito']);
+	$formacion_academica = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_formacion_academica_detalle(id_formacion_vacancia, 
+																																																									id_vacancia_requisito) 
+																							VALUES (':1', ':2')",
+																								$value6,
+																								$consulta_requi_eli['id_vacancia_requisito']);
 	DB::Exec($formacion_academica); 
 }
 
 $registro_conducir = explode(",", $values["id_registro_conducir"]);
 foreach ($registro_conducir as $value_regi) {
-	$registro_conducir_vaca = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_detalle_registro_conducir
-																											(id_vacancia_requisitos, id_tipo_registro_conducir) 
-																											VALUES (':1',':2')",
-																											$consulta_requi_eli['id_vacancia_requisito'],
-																											$value_regi);
+	$registro_conducir_vaca = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_detalle_registro_conducir(id_vacancia_requisitos, 
+																																																										id_tipo_registro_conducir) 
+																									VALUES (':1',':2')",
+																										$consulta_requi_eli['id_vacancia_requisito'],
+																										$value_regi);
 	DB::Exec($registro_conducir_vaca); 
 }
 
 $consulta_audit = DB::PrepareSQL("SELECT bolsa_empleo.vacancia.id_vacancias,
-																										bolsa_empleo.vacancia_puesto.id_puesto_vacancia,
-																										bolsa_empleo.vacancia_empresa.id_empresa_vacancia,
-																										bolsa_empleo.vacancia_requisito.id_vacancia_requisito
-																					FROM bolsa_empleo.vacancia
-																									INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia_empresa.id_vacancia = bolsa_empleo.vacancia.id_vacancias
-																									INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia_puesto.id_vacancia = bolsa_empleo.vacancia.id_vacancias
-																									INNER JOIN bolsa_empleo.vacancia_requisito ON bolsa_empleo.vacancia_requisito.id_vacancia = bolsa_empleo.vacancia.id_vacancias
-																					WHERE bolsa_empleo.vacancia.id_vacancias = ':1' 
-																					LIMIT 1", $keys["id_vacancias"]);
+																					bolsa_empleo.vacancia_puesto.id_puesto_vacancia,
+																					bolsa_empleo.vacancia_empresa.id_empresa_vacancia,
+																					bolsa_empleo.vacancia_requisito.id_vacancia_requisito
+																			FROM bolsa_empleo.vacancia
+																				INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia_empresa.id_vacancia = bolsa_empleo.vacancia.id_vacancias
+																				INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia_puesto.id_vacancia = bolsa_empleo.vacancia.id_vacancias
+																				INNER JOIN bolsa_empleo.vacancia_requisito ON bolsa_empleo.vacancia_requisito.id_vacancia = bolsa_empleo.vacancia.id_vacancias
+																			WHERE bolsa_empleo.vacancia.id_vacancias = ':1' 
+																			LIMIT 1", $keys["id_vacancias"]);
 $consulta_audit_now = DB::Query($consulta_audit);
 $consulta_audit_resul = $consulta_audit_now->fetchAssoc();
 
 
-$auditoria = DB::PrepareSQL("INSERT INTO bolsa_empleo.auditoria_administrador_bolsa (tabla_afectada, operacion, usuario, detalles, direccion_ip)
-																		VALUES (':1', ':2', ':3', ':4', ':5')", 
-																		'bolsa_empleo.vacancia', 
-																		'edit', 
-																		$userData["id"], 
-																		"id_vacancia:'".$consulta_audit_resul["id_vacancias"]."'||id_puesto_vacancia:'".$consulta_audit_resul["id_puesto_vacancia"]."'||id_empresa_vacancia:'".$consulta_audit_resul["id_empresa_vacancia"]."'
-																		||id_vacancia_requisito:'". $consulta_audit_resul["id_vacancia_requisito"]."'||id_registro_conducir:'". $values["id_registro_conducir"]."'
-																		||id_formacion_academica:'". $values["id_formacion_academica"]."'||habilidades_conocimiento:'". $values["habilidades_conocimiento"]."'
-																		||requisitos_exclu_formacion:'". $values["requisitos_exclu_formacion"]."'||tipo_movilidad:'". $values["tipo_movilidad"]."'
-																		||discapacidad_aceptada:'". $values["discapacidad_aceptada"]."'    fecha_expiracion_vacancia:'".$values["fecha_expiracion_vacancia"]."
-																		'||cantidad_vacancia:'".$values["cantidad_vacancia"]."'||fk_id_feria_empleo:'".$values["fk_id_feria_empleo"]."'
-																		||fk_ocupacion_puesto:'". $values["fk_ocupacion_puesto"]."'||salario_final:'". $values["salario_final"]."'
-																		||tipo_contrato:'". $values["tipo_contrato"]."'||descripcion_puesto:'". $values["descripcion_puesto"]."'
-																		||id_rubro:'". $values["id_rubro"]."'||anos_experiencia_vacancia:'". $values["anos_experiencia_vacancia"]."'
-																		||meses_experiencia_vacancia:'". $values["meses_experiencia_vacancia"]."'
-																		||horario_rotativo:'". $values["horario_rotativo"]."'
-																		||modalidad_trabajo:'".$values["modalidad_trabajo"]."'
-																		||salario_descripcion:'".$values["salario_descripcion"]."'
-																		||tipo_remuneracion:'".$values["tipo_remuneracion"]."'
-																		||id_empresa_sucursal:'".$values["id_empresa_sucursal"]."'
-																		||id_contacto_sucursal:'".$values["id_contacto_sucursal"]."'
-																		||id_cidudad:'".$values["id_cidudad"]."'
-																		||id_departamento:'".$values["id_departamento"]."'
-																		||genero:'".$values["genero"]."'
-																		||movilidad_propia:'".$values["movilidad_propia"]."'
-																		||tipo_movilidad:'".$values["tipo_movilidad"]."'
-																		||id_registro_conducir:'".$values["id_registro_conducir"]."'
-																		||discapacidad_aceptada:'".$values["discapacidad_aceptada"]."'
-																		||nacionalidad:'".$values["nacionalidad"]."'
-																		||edad_rango_bajo:'".$values["edad_rango_bajo"]."'
-																		||edad_rango_alto:'".$values["edad_rango_alto"]."'
-																		||requisitos_exclu_formacion:'".$values["requisitos_exclu_formacion"]."'
-																		||habilidades_conocimiento:'".$values["habilidades_conocimiento"]."'
-																		||id_formacion_academica:'".$values["id_formacion_academica"]."'",
-																		$_SERVER['REMOTE_ADDR']);
+$auditoria = DB::PrepareSQL("INSERT INTO bolsa_empleo.auditoria_administrador_bolsa (tabla_afectada, 
+																																																operacion, 
+																																																usuario, 
+																																																detalles, 
+																																																direccion_ip)
+																	VALUES (':1', ':2', ':3', ':4', ':5')", 
+																						'bolsa_empleo.vacancia', 
+																						'edit', 
+																						$userData["id"], 
+																						"id_vacancia:'".$consulta_audit_resul["id_vacancias"]."'||id_puesto_vacancia:'".$consulta_audit_resul["id_puesto_vacancia"]."'||id_empresa_vacancia:'".$consulta_audit_resul["id_empresa_vacancia"]."'
+																							||id_vacancia_requisito:'". $consulta_audit_resul["id_vacancia_requisito"]."'||id_registro_conducir:'". $values["id_registro_conducir"]."'
+																							||id_formacion_academica:'". $values["id_formacion_academica"]."'||habilidades_conocimiento:'". $values["habilidades_conocimiento"]."'
+																							||requisitos_exclu_formacion:'". $values["requisitos_exclu_formacion"]."'||tipo_movilidad:'". $values["tipo_movilidad"]."'
+																							||discapacidad_aceptada:'". $values["discapacidad_aceptada"]."'    fecha_expiracion_vacancia:'".$values["fecha_expiracion_vacancia"]."
+																							'||cantidad_vacancia:'".$values["cantidad_vacancia"]."'||fk_id_feria_empleo:'".$values["fk_id_feria_empleo"]."'
+																							||fk_ocupacion_puesto:'". $values["fk_ocupacion_puesto"]."'||salario_final:'". $values["salario_final"]."'
+																							||tipo_contrato:'". $values["tipo_contrato"]."'||descripcion_puesto:'". $values["descripcion_puesto"]."'
+																							||id_rubro:'". $values["id_rubro"]."'||anos_experiencia_vacancia:'". $values["anos_experiencia_vacancia"]."'
+																							||meses_experiencia_vacancia:'". $values["meses_experiencia_vacancia"]."'
+																							||horario_rotativo:'". $values["horario_rotativo"]."'
+																							||modalidad_trabajo:'".$values["modalidad_trabajo"]."'
+																							||salario_descripcion:'".$values["salario_descripcion"]."'
+																							||tipo_remuneracion:'".$values["tipo_remuneracion"]."'
+																							||id_empresa_sucursal:'".$values["id_empresa_sucursal"]."'
+																							||id_contacto_sucursal:'".$values["id_contacto_sucursal"]."'
+																							||id_cidudad:'".$values["id_cidudad"]."'
+																							||id_departamento:'".$values["id_departamento"]."'
+																							||genero:'".$values["genero"]."'
+																							||movilidad_propia:'".$values["movilidad_propia"]."'
+																							||tipo_movilidad:'".$values["tipo_movilidad"]."'
+																							||id_registro_conducir:'".$values["id_registro_conducir"]."'
+																							||discapacidad_aceptada:'".$values["discapacidad_aceptada"]."'
+																							||nacionalidad:'".$values["nacionalidad"]."'
+																							||edad_rango_bajo:'".$values["edad_rango_bajo"]."'
+																							||edad_rango_alto:'".$values["edad_rango_alto"]."'
+																							||requisitos_exclu_formacion:'".$values["requisitos_exclu_formacion"]."'
+																							||habilidades_conocimiento:'".$values["habilidades_conocimiento"]."'
+																							||id_formacion_academica:'".$values["id_formacion_academica"]."'",
+																							$_SERVER['REMOTE_ADDR']);
  DB::Exec($auditoria);
 
 return false;
@@ -1467,7 +1352,7 @@ if ($datosVacante['horario_rotativo'] == 't') {
 	$values['horario_rotativo'] = true; // Indica si el puesto tiene horario rotativo
 }
 
-if ($datosVacante['horario_rotativo'] == 'f'){
+if ($datosVacante['horario_rotativo'] == 'f') {
 	$values['horario_rotativo'] = false;
 }
 
@@ -1567,19 +1452,19 @@ function BeforeShowEdit(&$xt, &$templatefile, $values, $pageObject)
 $pageObject->hideItem("integrated_edit_field6");
 
 $strSQLExists5 = DB::PrepareSQL("SELECT bolsa_empleo.vista_edades_desglosado.fk_ocupacion_puesto,
-																								bolsa_empleo.vista_edades_desglosado.descripcion_salario,
-																								bolsa_empleo.vista_edades_desglosado.salario,
-																								bolsa_empleo.vista_edades_desglosado.edad_minimo,
-																								bolsa_empleo.vista_edades_desglosado.edad_maximo,
-																								bolsa_empleo.vista_edades_desglosado.id_vacancias,
-																								bolsa_empleo.vista_edades_desglosado.horario_rotativo,
-																								bolsa_empleo.vista_edades_desglosado.tipo_remuneracion
-																					FROM bolsa_empleo.vista_edades_desglosado
-																					WHERE bolsa_empleo.vista_edades_desglosado.id_vacancias= ':1' 
-																					LIMIT 1",
-																					//$keys['id_vacancias']
-																					$values['id_vacancias']
-																				);
+																						bolsa_empleo.vista_edades_desglosado.descripcion_salario,
+																						bolsa_empleo.vista_edades_desglosado.salario,
+																						bolsa_empleo.vista_edades_desglosado.edad_minimo,
+																						bolsa_empleo.vista_edades_desglosado.edad_maximo,
+																						bolsa_empleo.vista_edades_desglosado.id_vacancias,
+																						bolsa_empleo.vista_edades_desglosado.horario_rotativo,
+																						bolsa_empleo.vista_edades_desglosado.tipo_remuneracion
+																		FROM bolsa_empleo.vista_edades_desglosado
+																		WHERE bolsa_empleo.vista_edades_desglosado.id_vacancias= ':1' 
+																		LIMIT 1",
+																		//$keys['id_vacancias']
+																		$values['id_vacancias']
+																	);
 $rsExists5 = DB::Query($strSQLExists5);
 $data5 = db_fetch_array($rsExists5);
 
@@ -1740,7 +1625,7 @@ $pageObject->hideItem("boton_cerrar_vacancia", $recordId);		// Oculta el botón 
 $pageObject->hideItem("boton_activar_vacancia", $recordId);		// Oculta el botón "Activar Vacancia". Se mostrará o no dependiendo de las condiciones.
 $pageObject->hideItem("Evaluacion", $recordId);									// Oculta el botón "En Evaluacion". Se mostrará o no dependiendo de las condiciones.
 $pageObject->hideItem("grid_details_link", $recordId);					// Oculta el enlace de detalles de cantidad de postulantes.
-$pageObject->hideItem("text4", $recordId);											// Oculta el texto relacionado con el detalle de postulantes.
+$pageObject->hideItem("text4", $recordId);												// Oculta el texto relacionado con el detalle de postulantes.
 
 $now = date("Y-m-d H:i:s"); // Obtiene la fecha y hora actual en formato `Y-m-d H:i:s`.
 
@@ -2005,8 +1890,6 @@ function BeforeShowList(&$xt, &$templatefile, $pageObject)
 {
 
 		$pageObject->hideItem("print_panel");  //Oculta el icono de la impresora
-
-
 $pageObject->hideItem("grid_details_link1"); //Oculta el enlace que muestra el total de registros en la tabla seguimientos
 $pageObject->hideItem("grid_details_link7"); //Oculta el enlace que muestra el total de registros de usuarios del sistema.
 $pageObject->hideItem("grid_details_link2"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Seleccionado
@@ -2015,6 +1898,8 @@ $pageObject->hideItem("grid_details_link4"); //Oculta el enlace que muestra el t
 $pageObject->hideItem("grid_details_link5"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Insertado
 $pageObject->hideItem("grid_details_link6"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Preseleccionado
 $pageObject->hideItem("grid_details_link8"); //Oculta el enlace que muestra el total de registros de resumen por vacancia
+
+$pageObject->hideItem("grid_field9");
 //print_r($_SESSION);
 ;		
 } // function BeforeShowList

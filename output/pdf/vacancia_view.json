@@ -310,6 +310,9 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_integrated_edit_field37}","stack":[{"text":"{$jslabel bolsa_empleo_vacancia fk_id_feria_empleo }","bold":true},{"text":{$fk_id_feria_empleo_pdfvalue}}],"margin":[0,0,0,15]},
 				
+				
+			{"hidden":"{$item_hide_integrated_edit_field38}","stack":[{"text":"{$jslabel bolsa_empleo_vacancia imagen_perfil }","bold":true},{"text":{$imagen_perfil_pdfvalue}}],"margin":[0,0,0,15]},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

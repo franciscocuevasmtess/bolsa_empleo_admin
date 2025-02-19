@@ -30,20 +30,16 @@ class class_GlobalEvents extends eventsBase
 
 
 //	onscreen events
-		$this->events["bolsa_empleo_vacancia_snippet"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet1"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet2"] = true;
 		$this->events["bolsa_empleo_bolsa_users_popup_snippet"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet3"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet4"] = true;
-		$this->events["bolsa_empleo_vacancia_snippet5"] = true;
-		$this->events["bolsa_empleo_vacancia_snippet6"] = true;
 		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet7"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet8"] = true;
 		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet1"] = true;
 		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet2"] = true;
-		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet3"] = true;
 
 
 
@@ -182,11 +178,6 @@ function AfterSuccessfulLogin($username, $password, &$data, $pageObject)
 		
 
 //	onscreen events
-	function event_bolsa_empleo_vacancia_snippet(&$params)
-	{
-	//echo '<script src="jquery.masknumber.min.js"></script>';
-	;
-}
 	function event_bolsa_empleo_vacancia_snippet1(&$params)
 	{
 	echo '<script src="jquery.masknumber.min.js"></script>';
@@ -232,25 +223,6 @@ echo "
 	{
 	
 echo '<script src="xlsx.full.min.js"></script>';
-	;
-}
-	function event_bolsa_empleo_vacancia_snippet5(&$params)
-	{
-	// Put your code here.  
-/*echo '<div id="loading" style="display: none; text-align: center; margin-top: 20px;">
-    <p>Procesando, por favor espereaaaaa...</p>
-    <div class="spinner"></div>
-</div>';*/
-	;
-}
-	function event_bolsa_empleo_vacancia_snippet6(&$params)
-	{
-	/*$six_digit_random_number = random_int(100000, 999999);
-
-$variar= 'fileInput_'.$six_digit_random_number;
-// Put your code here.
-echo '<input type="file" id="'.$variar.'" name="fileInput" accept=".csv, .xlsx, .xls">
-<br>';*/
 	;
 }
 	function event_bolsa_empleo_postulacion_preseleccionado_snippet(&$params)
@@ -462,12 +434,6 @@ accept=".csv, .xlsx, .xls" class="custom-file-input" />
 echo '
 <p>---'.$data["id_vacancias"].'---</p>
 ';
-	;
-}
-	function event_bolsa_empleo_postulacion_preseleccionado_snippet3(&$params)
-	{
-	// Put your code here.
-echo "<p>hola mundo</p>";
 	;
 }
 

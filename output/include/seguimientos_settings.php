@@ -2622,6 +2622,7 @@ $proto37["m_columns"][] = "id_vacancia";
 $proto37["m_columns"][] = "id_estado";
 $proto37["m_columns"][] = "fecha_postulacion";
 $proto37["m_columns"][] = "fk_personaid";
+$proto37["m_columns"][] = "metodo_insercion";
 $obj = new SQLTable($proto37);
 
 $proto36["m_table"] = $obj;

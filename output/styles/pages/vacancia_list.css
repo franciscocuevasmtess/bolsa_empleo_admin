@@ -18,6 +18,10 @@
   background-color: #ffffff;
   padding: 1px;
 }
+[data-cellid="grid_cell_field6"][data-page="vacancia_list"][data-cellid="grid_cell_field6"][data-page="vacancia_list"][data-cellid="grid_cell_field6"][data-page="vacancia_list"] {
+  font-weight: bold;
+  font-size: 26px;
+}
 [data-page="vacancia_list"][data-itemid="details_found"] {
   color: #ffffff;
   font-weight: bold;
@@ -153,6 +157,12 @@
 [data-page="vacancia_list"][data-itemid="grid_field"] {
   color: red;
 }
+/* Put  your custom CSS code here */
+
+/*[data-page="vacancia_list"][data-itemid="grid_field9"] {
+  color: red;
+}*/
+
 /* Put  your custom CSS code here */
 
 /* Link */

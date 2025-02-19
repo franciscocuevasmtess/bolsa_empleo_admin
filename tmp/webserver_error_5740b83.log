@@ -1,0 +1,11 @@
+[Wed Feb 19 09:02:00.045487 2025] [core:warn] [pid 17896:tid 356] AH00117: Ignoring deprecated use of DefaultType in line 21 of C:/xampp/htdocs/bolsa_empleo_admin/tmp/webserver.conf.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::4eae:fbef:67fe:b65c. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 19 09:02:00.055153 2025] [mpm_winnt:notice] [pid 17896:tid 356] AH00455: Apache/2.4.54 (Win64) PHP/7.4.30 configured -- resuming normal operations
+[Wed Feb 19 09:02:00.055153 2025] [mpm_winnt:notice] [pid 17896:tid 356] AH00456: Server built: Jul 26 2022 23:58:26
+[Wed Feb 19 09:02:00.055153 2025] [core:notice] [pid 17896:tid 356] AH00094: Command line: 'C:\\Program Files\\PHPRunner10.91\\EmbeddedServer64\\bin\\httpd.exe -d C:/Program Files/PHPRunner10.91/EmbeddedServer64 -d C:\\Program Files\\PHPRunner10.91\\EmbeddedServer64 -f C:\\xampp\\htdocs\\bolsa_empleo_admin\\tmp\\webserver.conf'
+[Wed Feb 19 09:02:00.055153 2025] [mpm_winnt:notice] [pid 17896:tid 356] AH00418: Parent: Created child process 7176
+[Wed Feb 19 09:02:00.227921 2025] [core:warn] [pid 7176:tid 356] AH00117: Ignoring deprecated use of DefaultType in line 21 of C:/xampp/htdocs/bolsa_empleo_admin/tmp/webserver.conf.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::4eae:fbef:67fe:b65c. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 19 09:02:00.237157 2025] [core:warn] [pid 7176:tid 356] AH00117: Ignoring deprecated use of DefaultType in line 21 of C:/xampp/htdocs/bolsa_empleo_admin/tmp/webserver.conf.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::4eae:fbef:67fe:b65c. Set the 'ServerName' directive globally to suppress this message
+[Wed Feb 19 09:02:00.253025 2025] [mpm_winnt:notice] [pid 7176:tid 356] AH00354: Child: Starting 64 worker threads.

@@ -12,8 +12,6 @@
 	function __construct()
 	{
 	// fill list of events
-		$this->events["BeforeMoveNextList"]=true;
-
 
 		$this->events["BeforeShowList"]=true;
 
@@ -21,79 +19,6 @@
 	}
 
 //	handlers
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-				// List page: After record processed
-function BeforeMoveNextList(&$data, &$row, &$record, $recordId, $pageObject)
-{
-
-		
-;		
-} // function BeforeMoveNextList
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 
 		
 		

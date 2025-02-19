@@ -3136,6 +3136,7 @@ $proto43["m_columns"][] = "id_vacancia";
 $proto43["m_columns"][] = "id_estado";
 $proto43["m_columns"][] = "fecha_postulacion";
 $proto43["m_columns"][] = "fk_personaid";
+$proto43["m_columns"][] = "metodo_insercion";
 $obj = new SQLTable($proto43);
 
 $proto42["m_table"] = $obj;
@@ -3176,6 +3177,7 @@ $proto47["m_columns"][] = "geolocation";
 $proto47["m_columns"][] = "fk_id_feria_empleo";
 $proto47["m_columns"][] = "usuario";
 $proto47["m_columns"][] = "origen";
+$proto47["m_columns"][] = "imagen_perfil";
 $obj = new SQLTable($proto47);
 
 $proto46["m_table"] = $obj;

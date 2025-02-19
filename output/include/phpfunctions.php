@@ -1293,7 +1293,7 @@ $value = '
 $result_query = DB::Query("SELECT id_estado_postulacion, descripcion FROM bolsa_empleo.estado_postulacion WHERE id_estado_postulacion IN(1,2,3)");
 
 // Construir las opciones del <select>
-$select = '<label for="estado_postulacion_' . $data['id_vacancias'] . '">Seleccione un estado:</label>'; // Etiqueta para el select
+$select = '<label for="estado_postulacion_' . $data['id_vacancias'] . '">Seleccione Estado:</label>'; // Etiqueta para el select
 $select .= '<select name="estado_postulacion_' . $data['id_vacancias'] . '" id="estado_postulacion_' . $data['id_vacancias'] . '" class="form-control">';
 $select .= '<option value="">Seleccione una opción</option>'; // Opción vacía inicial
 while ($estados = db_fetch_array($result_query)) {
@@ -1370,7 +1370,7 @@ $value = '
 	<!-- Select de estado -->
     ' . $select . '
 	<!-- Input de archivo -->
-    <label for="fileInput_' . $data['id_vacancias'] . '">Seleccionar archivo:</label>
+    <label for="fileInput_' . $data['id_vacancias'] . '">Seleccione Archivo:</label>
     <input type="file" 
            id="fileInput_' . $data['id_vacancias'] . '" 
            name="fileInput_' . $data['id_vacancias'] . '" 

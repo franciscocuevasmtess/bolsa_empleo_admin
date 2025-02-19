@@ -8980,6 +8980,7 @@ $proto103["m_columns"][] = "geolocation";
 $proto103["m_columns"][] = "fk_id_feria_empleo";
 $proto103["m_columns"][] = "usuario";
 $proto103["m_columns"][] = "origen";
+$proto103["m_columns"][] = "imagen_perfil";
 $obj = new SQLTable($proto103);
 
 $proto102["m_table"] = $obj;

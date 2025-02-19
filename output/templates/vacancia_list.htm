@@ -505,18 +505,6 @@
 	colspan="2"		 
 	data-cellId="grid_cell_top" data-pageid="{$pageid}" data-record-id="{$recId}">
  
-{BEGIN dtables_link}
-	<a 
-		data-itemtype="grid_alldetails_link" data-itemid="grid_alldetails_link" {$item_grid_alldetails_link} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" 
-		{$dtables_link_attrs} 
-		class="{$dtables_link_class}" 
-		title="Mostrar detalles"
-				
-	>
-					<span class="glyphicon glyphicon-th-list"></span>
-				Ver Detalles	</a>
-{END dtables_link}
- 
 
 		
 	{BEGIN seguimientos_dtable_link}
@@ -687,6 +675,11 @@
 
 </td>
 											</tr>
+									 
+									 
+									 
+									 
+									 
 									 
 									 
 									 
@@ -874,6 +867,29 @@
 										<tr>
 						 
 							<td 
+	class="r-align-right r-ori-vert			"
+			 
+	data-cellId="grid_cell_label19" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+</td>
+						 
+							<td 
+	class="r-align-center r-ori-vert				{$imagen_perfil_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_label23" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+ 
+{BEGIN imagen_perfil_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field9" {$item_grid_field9} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="imagen_perfil" data-fieldname="imagen_perfil" data-default-width >
+{$imagen_perfil_value}
+</span>
+{END imagen_perfil_fieldcolumn}</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
 	class="r-align-center r-ori-vert			"
 	colspan="2"		 
 	data-cellId="grid_cell_label16" data-pageid="{$pageid}" data-record-id="{$recId}">
@@ -884,8 +900,23 @@
 						 
 							<td 
 	class="r-align-right r-ori-vert			"
+			 
+	data-cellId="grid_cell_label20" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+</td>
+						 
+							<td 
+	class="r-align-right r-ori-vert			"
+			 
+	data-cellId="grid_cell_label22" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert			"
 	colspan="2"		 
-	data-cellId="grid_cell_label20" data-pageid="{$pageid}" data-record-id="{$recId}">
+	data-cellId="grid_cell_label21" data-pageid="{$pageid}" data-record-id="{$recId}">
 </td>
 											</tr>
 									 
@@ -986,6 +1017,51 @@
 										<tr>
 						 
 							<td 
+	class="r-align-center r-ori-vert			"
+	colspan="2"		 
+	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list">
+ 
+<span data-itemtype="text" data-itemid="text9" {$item_text9} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
+	Cargar Postulantes desde Planilla</span>
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-center				{$importar_archivo_class}
+			"
+	colspan="2"		 
+		data-field=""
+	 
+	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}">
+ 
+{BEGIN importar_archivo_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="importar_archivo" data-fieldname="importar_archivo" data-default-width >
+{$importar_archivo_value}
+</span>
+{END importar_archivo_fieldcolumn} 
+<span data-itemtype="custom_button" data-itemid="boton_importar_planilla" {$item_boton_importar_planilla} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-danger   
+	" id="btn_importar_planilla1" href="javascript:void(0)" typeid="ib" >
+					<span class="fa fa-share-square"></span>
+							Cargar Planilla			</a>
+</span>
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert			"
+	colspan="2"		 
+	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}">
+</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
 	class="r-align-left				{$fecha_creacion_vacancia_class}
 			"
 			 
@@ -1045,39 +1121,36 @@
 										<tr>
 						 
 							<td 
-	class="r-align-right r-ori-vert			"
-			 
-	data-cellId="grid_cell_label2" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
-</td>
-						 
-							<td 
-	class=" r-ori-vert			"
-			 
-	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+	class="r-align-center r-ori-vert			"
+	colspan="2"		 
+	data-cellId="grid_cell_label6" data-pageid="{$pageid}" data-record-id="{$recId}">
 </td>
 											</tr>
 									 
 										<tr>
 						 
 							<td 
-	class="r-align-center				{$importar_archivo_class}
-			"
-	colspan="2"		 
-		data-field=""
-	 
-	data-cellId="grid_cell_label6" data-pageid="{$pageid}" data-record-id="{$recId}">
+	class="r-align-left r-ori-vert			"
+			 
+	data-cellId="grid_cell_label11" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
  
-{BEGIN importar_archivo_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="importar_archivo" data-fieldname="importar_archivo" data-default-width >
-{$importar_archivo_value}
-</span>
-{END importar_archivo_fieldcolumn} 
-<span data-itemtype="custom_button" data-itemid="boton_importar_planilla" {$item_boton_importar_planilla} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
-	<a type="button" title="" class="btn btn-danger   
-	" id="btn_importar_planilla1" href="javascript:void(0)" typeid="ib" >
-					<span class="fa fa-share-square"></span>
-							Importar Planilla			</a>
-</span>
+{BEGIN dtables_link}
+	<a 
+		data-itemtype="grid_alldetails_link" data-itemid="grid_alldetails_link" {$item_grid_alldetails_link} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" 
+		{$dtables_link_attrs} 
+		class="{$dtables_link_class}" 
+		title="Mostrar detalles"
+				
+	>
+					<span class="glyphicon glyphicon-th-list"></span>
+				Ver Detalles	</a>
+{END dtables_link}
+</td>
+						 
+							<td 
+	class=" r-ori-vert			"
+			 
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
 </td>
 											</tr>
 									 

@@ -208,6 +208,9 @@ pdfDocument = {
 										{BEGIN col_grid_47}
 					"%",
 					{END col_grid_47}
+										{BEGIN col_grid_48}
+					"%",
+					{END col_grid_48}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -358,7 +361,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia ruc }","hidden":"{$item_hide_simple_grid_field38}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia ruc }","hidden":"{$item_hide_simple_grid_field39}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -387,7 +390,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_empresa_sucursal }","hidden":"{$item_hide_simple_grid_field39}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_empresa_sucursal }","hidden":"{$item_hide_simple_grid_field40}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -416,7 +419,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_contacto_sucursal }","hidden":"{$item_hide_simple_grid_field40}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_contacto_sucursal }","hidden":"{$item_hide_simple_grid_field42}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -445,7 +448,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_rubro }","hidden":"{$item_hide_simple_grid_field42}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_rubro }","hidden":"{$item_hide_simple_grid_field52}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -474,7 +477,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia fk_ocupacion_puesto }","hidden":"{$item_hide_simple_grid_field52}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia fk_ocupacion_puesto }","hidden":"{$item_hide_simple_grid_field53}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -503,7 +506,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia descripcion_puesto }","hidden":"{$item_hide_simple_grid_field53}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia descripcion_puesto }","hidden":"{$item_hide_simple_grid_field54}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -532,7 +535,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_departamento }","hidden":"{$item_hide_simple_grid_field54}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_departamento }","hidden":"{$item_hide_simple_grid_field55}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -561,7 +564,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_cidudad }","hidden":"{$item_hide_simple_grid_field55}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_cidudad }","hidden":"{$item_hide_simple_grid_field56}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -590,7 +593,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia salario_final }","hidden":"{$item_hide_simple_grid_field56}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia salario_final }","hidden":"{$item_hide_simple_grid_field57}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -619,7 +622,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia salario_descripcion }","hidden":"{$item_hide_simple_grid_field57}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia salario_descripcion }","hidden":"{$item_hide_simple_grid_field58}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -648,7 +651,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia tipo_contrato }","hidden":"{$item_hide_simple_grid_field58}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia tipo_contrato }","hidden":"{$item_hide_simple_grid_field59}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -677,7 +680,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia horario_rotativo }","hidden":"{$item_hide_simple_grid_field59}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia horario_rotativo }","hidden":"{$item_hide_simple_grid_field60}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -706,7 +709,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia modalidad_trabajo }","hidden":"{$item_hide_simple_grid_field60}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia modalidad_trabajo }","hidden":"{$item_hide_simple_grid_field61}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -735,7 +738,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia cantidad_vacancia }","hidden":"{$item_hide_simple_grid_field61}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia cantidad_vacancia }","hidden":"{$item_hide_simple_grid_field62}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -764,7 +767,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia fecha_expiracion_vacancia }","hidden":"{$item_hide_simple_grid_field62}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia fecha_expiracion_vacancia }","hidden":"{$item_hide_simple_grid_field63}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -793,7 +796,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia nacionalidad }","hidden":"{$item_hide_simple_grid_field63}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia nacionalidad }","hidden":"{$item_hide_simple_grid_field64}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -822,7 +825,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia genero }","hidden":"{$item_hide_simple_grid_field64}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia genero }","hidden":"{$item_hide_simple_grid_field65}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -851,7 +854,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_formacion_academica }","hidden":"{$item_hide_simple_grid_field65}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_formacion_academica }","hidden":"{$item_hide_simple_grid_field66}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -880,7 +883,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia movilidad_propia }","hidden":"{$item_hide_simple_grid_field66}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia movilidad_propia }","hidden":"{$item_hide_simple_grid_field67}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -909,7 +912,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia tipo_movilidad }","hidden":"{$item_hide_simple_grid_field67}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia tipo_movilidad }","hidden":"{$item_hide_simple_grid_field68}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -938,7 +941,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_registro_conducir }","hidden":"{$item_hide_simple_grid_field68}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_registro_conducir }","hidden":"{$item_hide_simple_grid_field69}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -967,7 +970,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia discapacidad_aceptada }","hidden":"{$item_hide_simple_grid_field69}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia discapacidad_aceptada }","hidden":"{$item_hide_simple_grid_field70}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -996,7 +999,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia edad_rango_bajo }","hidden":"{$item_hide_simple_grid_field70}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia edad_rango_bajo }","hidden":"{$item_hide_simple_grid_field71}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1025,7 +1028,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia edad_rango_alto }","hidden":"{$item_hide_simple_grid_field71}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia edad_rango_alto }","hidden":"{$item_hide_simple_grid_field72}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1054,7 +1057,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia requisitos_exclu_formacion }","hidden":"{$item_hide_simple_grid_field72}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia requisitos_exclu_formacion }","hidden":"{$item_hide_simple_grid_field73}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1083,7 +1086,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia habilidades_conocimiento }","hidden":"{$item_hide_simple_grid_field73}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia habilidades_conocimiento }","hidden":"{$item_hide_simple_grid_field74}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1112,7 +1115,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia anos_experiencia_vacancia }","hidden":"{$item_hide_simple_grid_field74}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia anos_experiencia_vacancia }","hidden":"{$item_hide_simple_grid_field75}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1141,7 +1144,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia meses_experiencia_vacancia }","hidden":"{$item_hide_simple_grid_field75}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia meses_experiencia_vacancia }","hidden":"{$item_hide_simple_grid_field76}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1170,7 +1173,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_vacancias }","hidden":"{$item_hide_simple_grid_field76}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_vacancias }","hidden":"{$item_hide_simple_grid_field77}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1199,7 +1202,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia fecha_creacion_vacancia }","hidden":"{$item_hide_simple_grid_field77}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia fecha_creacion_vacancia }","hidden":"{$item_hide_simple_grid_field78}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1228,7 +1231,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_estado_vacancia }","hidden":"{$item_hide_simple_grid_field78}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_estado_vacancia }","hidden":"{$item_hide_simple_grid_field79}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1257,7 +1260,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia descripcion }","hidden":"{$item_hide_simple_grid_field79}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia descripcion }","hidden":"{$item_hide_simple_grid_field80}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1286,7 +1289,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia salario }","hidden":"{$item_hide_simple_grid_field80}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia salario }","hidden":"{$item_hide_simple_grid_field81}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1315,7 +1318,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia nombre_puesto }","hidden":"{$item_hide_simple_grid_field81}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia nombre_puesto }","hidden":"{$item_hide_simple_grid_field82}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1344,7 +1347,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia documentos }","hidden":"{$item_hide_simple_grid_field82}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia documentos }","hidden":"{$item_hide_simple_grid_field83}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1373,7 +1376,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_vacancia_requisito }","hidden":"{$item_hide_simple_grid_field83}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_vacancia_requisito }","hidden":"{$item_hide_simple_grid_field84}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1402,7 +1405,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia legal }","hidden":"{$item_hide_simple_grid_field84}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia legal }","hidden":"{$item_hide_simple_grid_field85}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1431,7 +1434,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia geolocation }","hidden":"{$item_hide_simple_grid_field85}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia geolocation }","hidden":"{$item_hide_simple_grid_field86}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1460,7 +1463,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia descripcion_salario }","hidden":"{$item_hide_simple_grid_field86}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia descripcion_salario }","hidden":"{$item_hide_simple_grid_field87}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1489,7 +1492,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia lavacancias }","hidden":"{$item_hide_simple_grid_field87}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia lavacancias }","hidden":"{$item_hide_simple_grid_field88}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1518,7 +1521,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia estadodevacancias }","hidden":"{$item_hide_simple_grid_field88}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia estadodevacancias }","hidden":"{$item_hide_simple_grid_field89}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1547,7 +1550,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia empresa }","hidden":"{$item_hide_simple_grid_field89}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia empresa }","hidden":"{$item_hide_simple_grid_field90}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1576,7 +1579,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia id_tipo_sucursal }","hidden":"{$item_hide_simple_grid_field90}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia id_tipo_sucursal }","hidden":"{$item_hide_simple_grid_field91}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1605,7 +1608,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia tipo_remuneracion }","hidden":"{$item_hide_simple_grid_field91}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia tipo_remuneracion }","hidden":"{$item_hide_simple_grid_field92}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1634,7 +1637,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia otro_tipo_remuneracion }","hidden":"{$item_hide_simple_grid_field92}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia otro_tipo_remuneracion }","hidden":"{$item_hide_simple_grid_field93}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1663,7 +1666,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia otro_tipo_movilidad }","hidden":"{$item_hide_simple_grid_field93}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia otro_tipo_movilidad }","hidden":"{$item_hide_simple_grid_field94}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1692,7 +1695,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia sin_discapacidad }","hidden":"{$item_hide_simple_grid_field94}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia sin_discapacidad }","hidden":"{$item_hide_simple_grid_field95}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1721,7 +1724,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_vacancia fk_id_feria_empleo }","hidden":"{$item_hide_simple_grid_field95}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_vacancia fk_id_feria_empleo }","hidden":"{$item_hide_simple_grid_field96}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -1731,6 +1734,35 @@ pdfDocument = {
       },
 
 {END cellblock_grid_headcell_field47}
+																							{BEGIN cellblock_grid_headcell_field48}
+{
+	cellId: 'headcell_field48',
+	col:0,
+	row:0,
+			fieldName: 'imagen_perfil',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel bolsa_empleo_vacancia imagen_perfil }","hidden":"{$item_hide_simple_grid_field97}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$imagen_perfil_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field48}
 											],
 				{END row_grid_0}
 		
@@ -3132,6 +3164,35 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_field47}
+																							{BEGIN cellblock_grid_cell_field48}
+{
+	cellId: 'cell_field48',
+	col:0,
+	row:0,
+			fieldName: 'imagen_perfil',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$imagen_perfil_pdfvalue},"hidden":"{$item_hide_simple_grid_field38}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$imagen_perfil_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field48}
 											],
 				{END row_grid_1}
 						{BEGIN row_grid_2}
@@ -3555,6 +3616,13 @@ pdfDocument = {
 				cellId: 'cell_dpreview',
 				row:  0,
 				col:  47,
+				text: '',
+				compensateColspan: true
+			},
+														{ 
+				cellId: 'cell_dpreview',
+				row:  0,
+				col:  48,
 				text: '',
 				compensateColspan: true
 			},
@@ -4815,6 +4883,32 @@ pdfDocument = {
       },
 
 {END cellblock_grid_footcell_field47}
+																							{BEGIN cellblock_grid_footcell_field48}
+{
+	cellId: 'footcell_field48',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field48}
 											],
 				{END row_grid_3}
 		

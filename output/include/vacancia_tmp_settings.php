@@ -127,7 +127,10 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsvacancia_tmp["Spanish"]["tipo_remuneracion"] = "Tipo Remuneración";
 	$fieldToolTipsvacancia_tmp["Spanish"]["tipo_remuneracion"] = "";
 	$placeHoldersvacancia_tmp["Spanish"]["tipo_remuneracion"] = "";
-	$pageTitlesvacancia_tmp["Spanish"]["add"] = "Oferta Laboral, Añadir nuevo2";
+	$fieldLabelsvacancia_tmp["Spanish"]["imagen_perfil"] = "Adjuntar Imagen(opcional)";
+	$fieldToolTipsvacancia_tmp["Spanish"]["imagen_perfil"] = "";
+	$placeHoldersvacancia_tmp["Spanish"]["imagen_perfil"] = "";
+	$pageTitlesvacancia_tmp["Spanish"]["add"] = "Oferta Laboral, Añadir nuevo";
 	if (count($fieldToolTipsvacancia_tmp["Spanish"]))
 		$tdatavacancia_tmp[".isUseToolTips"] = true;
 }
@@ -312,7 +315,7 @@ $tdatavacancia_tmp[".strOrderBy"] = $tstrOrderBy;
 $tdatavacancia_tmp[".orderindexes"] = array();
 
 
-$tdatavacancia_tmp[".sqlHead"] = "SELECT id_vacancias,  	fecha_creacion_vacancia,  	id_estado_vacancia,  	fecha_expiracion_vacancia,  	cantidad_vacancia,  	fk_id_feria_empleo,  	usuario,  	fk_ocupacion_puesto,  	salario,  	tipo_contrato,  	descripcion_puesto,  	id_rubro,  	anos_experiencia_vacancia,  	meses_experiencia_vacancia,  	horario_rotativo,  	modalidad_trabajo,  	descripcion_salario,  	id_empresa_sucursal,  	id_cidudad,  	id_departamento,  	genero,  	movilidad_propia,  	tipo_movilidad,  	id_registro_conducir,  	discapacidad_aceptada,  	nacionalidad,  	edad_minimo,  	requisitos_exclu_formacion,  	habilidades_conocimiento,  	id_formacion_academica,  	id_contacto_sucursal,  	edad_maximo,  	origen,  	tipo_remuneracion";
+$tdatavacancia_tmp[".sqlHead"] = "SELECT id_vacancias,  	fecha_creacion_vacancia,  	id_estado_vacancia,  	fecha_expiracion_vacancia,  	cantidad_vacancia,  	fk_id_feria_empleo,  	usuario,  	fk_ocupacion_puesto,  	salario,  	tipo_contrato,  	descripcion_puesto,  	id_rubro,  	anos_experiencia_vacancia,  	meses_experiencia_vacancia,  	horario_rotativo,  	modalidad_trabajo,  	descripcion_salario,  	id_empresa_sucursal,  	id_cidudad,  	id_departamento,  	genero,  	movilidad_propia,  	tipo_movilidad,  	id_registro_conducir,  	discapacidad_aceptada,  	nacionalidad,  	edad_minimo,  	requisitos_exclu_formacion,  	habilidades_conocimiento,  	id_formacion_academica,  	id_contacto_sucursal,  	edad_maximo,  	origen,  	tipo_remuneracion,  	imagen_perfil";
 $tdatavacancia_tmp[".sqlFrom"] = "FROM bolsa_empleo.vacancia_tmp";
 $tdatavacancia_tmp[".sqlWhereExpr"] = "";
 $tdatavacancia_tmp[".sqlTail"] = "";
@@ -5642,7 +5645,154 @@ $tdatavacancia_tmp[".hideMobileList"] = array();
 
 	$tdatavacancia_tmp["tipo_remuneracion"] = $fdata;
 		$tdatavacancia_tmp[".searchableFields"][] = "tipo_remuneracion";
+//	imagen_perfil
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 35;
+	$fdata["strName"] = "imagen_perfil";
+	$fdata["GoodName"] = "imagen_perfil";
+	$fdata["ownerTable"] = "bolsa_empleo.vacancia_tmp";
+	$fdata["Label"] = GetFieldLabel("bolsa_empleo_vacancia_tmp","imagen_perfil");
+	$fdata["FieldType"] = 128;
 
+
+	
+	
+			
+
+		$fdata["strField"] = "imagen_perfil";
+
+		$fdata["sourceSingle"] = "imagen_perfil";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "imagen_perfil";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Database Image");
+
+	
+	
+				$vdata["ImageWidth"] = 600;
+	$vdata["ImageHeight"] = 400;
+
+		
+			$vdata["showGallery"] = true;
+	$vdata["galleryMode"] = 2;
+	$vdata["captionMode"] = 1;
+	$vdata["captionField"] = "";
+
+	$vdata["imageBorder"] = 1;
+	$vdata["imageFullWidth"] = 1;
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Database image");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "NOT Empty";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatavacancia_tmp["imagen_perfil"] = $fdata;
+	
 
 $tables_data["bolsa_empleo.vacancia_tmp"]=&$tdatavacancia_tmp;
 $field_labels["bolsa_empleo_vacancia_tmp"] = &$fieldLabelsvacancia_tmp;
@@ -5776,7 +5926,7 @@ function createSqlQuery_vacancia_tmp()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "id_vacancias,  	fecha_creacion_vacancia,  	id_estado_vacancia,  	fecha_expiracion_vacancia,  	cantidad_vacancia,  	fk_id_feria_empleo,  	usuario,  	fk_ocupacion_puesto,  	salario,  	tipo_contrato,  	descripcion_puesto,  	id_rubro,  	anos_experiencia_vacancia,  	meses_experiencia_vacancia,  	horario_rotativo,  	modalidad_trabajo,  	descripcion_salario,  	id_empresa_sucursal,  	id_cidudad,  	id_departamento,  	genero,  	movilidad_propia,  	tipo_movilidad,  	id_registro_conducir,  	discapacidad_aceptada,  	nacionalidad,  	edad_minimo,  	requisitos_exclu_formacion,  	habilidades_conocimiento,  	id_formacion_academica,  	id_contacto_sucursal,  	edad_maximo,  	origen,  	tipo_remuneracion";
+$proto0["m_strFieldList"] = "id_vacancias,  	fecha_creacion_vacancia,  	id_estado_vacancia,  	fecha_expiracion_vacancia,  	cantidad_vacancia,  	fk_id_feria_empleo,  	usuario,  	fk_ocupacion_puesto,  	salario,  	tipo_contrato,  	descripcion_puesto,  	id_rubro,  	anos_experiencia_vacancia,  	meses_experiencia_vacancia,  	horario_rotativo,  	modalidad_trabajo,  	descripcion_salario,  	id_empresa_sucursal,  	id_cidudad,  	id_departamento,  	genero,  	movilidad_propia,  	tipo_movilidad,  	id_registro_conducir,  	discapacidad_aceptada,  	nacionalidad,  	edad_minimo,  	requisitos_exclu_formacion,  	habilidades_conocimiento,  	id_formacion_academica,  	id_contacto_sucursal,  	edad_maximo,  	origen,  	tipo_remuneracion,  	imagen_perfil";
 $proto0["m_strFrom"] = "FROM bolsa_empleo.vacancia_tmp";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
@@ -6292,70 +6442,85 @@ $proto72["m_alias"] = "";
 $obj = new SQLFieldListItem($proto72);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto74=array();
-$proto74["m_link"] = "SQLL_MAIN";
-			$proto75=array();
-$proto75["m_strName"] = "bolsa_empleo.vacancia_tmp";
-$proto75["m_srcTableName"] = "bolsa_empleo.vacancia_tmp";
-$proto75["m_columns"] = array();
-$proto75["m_columns"][] = "id_vacancias";
-$proto75["m_columns"][] = "fecha_creacion_vacancia";
-$proto75["m_columns"][] = "id_estado_vacancia";
-$proto75["m_columns"][] = "fecha_expiracion_vacancia";
-$proto75["m_columns"][] = "cantidad_vacancia";
-$proto75["m_columns"][] = "fk_id_feria_empleo";
-$proto75["m_columns"][] = "usuario";
-$proto75["m_columns"][] = "fk_ocupacion_puesto";
-$proto75["m_columns"][] = "salario";
-$proto75["m_columns"][] = "tipo_contrato";
-$proto75["m_columns"][] = "descripcion_puesto";
-$proto75["m_columns"][] = "id_rubro";
-$proto75["m_columns"][] = "anos_experiencia_vacancia";
-$proto75["m_columns"][] = "meses_experiencia_vacancia";
-$proto75["m_columns"][] = "horario_rotativo";
-$proto75["m_columns"][] = "modalidad_trabajo";
-$proto75["m_columns"][] = "descripcion_salario";
-$proto75["m_columns"][] = "id_empresa_sucursal";
-$proto75["m_columns"][] = "id_cidudad";
-$proto75["m_columns"][] = "id_departamento";
-$proto75["m_columns"][] = "genero";
-$proto75["m_columns"][] = "movilidad_propia";
-$proto75["m_columns"][] = "tipo_movilidad";
-$proto75["m_columns"][] = "id_registro_conducir";
-$proto75["m_columns"][] = "discapacidad_aceptada";
-$proto75["m_columns"][] = "nacionalidad";
-$proto75["m_columns"][] = "edad_minimo";
-$proto75["m_columns"][] = "requisitos_exclu_formacion";
-$proto75["m_columns"][] = "habilidades_conocimiento";
-$proto75["m_columns"][] = "id_formacion_academica";
-$proto75["m_columns"][] = "id_contacto_sucursal";
-$proto75["m_columns"][] = "edad_maximo";
-$proto75["m_columns"][] = "origen";
-$proto75["m_columns"][] = "tipo_remuneracion";
-$obj = new SQLTable($proto75);
+						$proto74=array();
+			$obj = new SQLField(array(
+	"m_strName" => "imagen_perfil",
+	"m_strTable" => "bolsa_empleo.vacancia_tmp",
+	"m_srcTableName" => "bolsa_empleo.vacancia_tmp"
+));
 
-$proto74["m_table"] = $obj;
-$proto74["m_sql"] = "bolsa_empleo.vacancia_tmp";
-$proto74["m_alias"] = "";
+$proto74["m_sql"] = "imagen_perfil";
 $proto74["m_srcTableName"] = "bolsa_empleo.vacancia_tmp";
-$proto76=array();
-$proto76["m_sql"] = "";
-$proto76["m_uniontype"] = "SQLL_UNKNOWN";
+$proto74["m_expr"]=$obj;
+$proto74["m_alias"] = "";
+$obj = new SQLFieldListItem($proto74);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto76=array();
+$proto76["m_link"] = "SQLL_MAIN";
+			$proto77=array();
+$proto77["m_strName"] = "bolsa_empleo.vacancia_tmp";
+$proto77["m_srcTableName"] = "bolsa_empleo.vacancia_tmp";
+$proto77["m_columns"] = array();
+$proto77["m_columns"][] = "id_vacancias";
+$proto77["m_columns"][] = "fecha_creacion_vacancia";
+$proto77["m_columns"][] = "id_estado_vacancia";
+$proto77["m_columns"][] = "fecha_expiracion_vacancia";
+$proto77["m_columns"][] = "cantidad_vacancia";
+$proto77["m_columns"][] = "fk_id_feria_empleo";
+$proto77["m_columns"][] = "usuario";
+$proto77["m_columns"][] = "fk_ocupacion_puesto";
+$proto77["m_columns"][] = "salario";
+$proto77["m_columns"][] = "tipo_contrato";
+$proto77["m_columns"][] = "descripcion_puesto";
+$proto77["m_columns"][] = "id_rubro";
+$proto77["m_columns"][] = "anos_experiencia_vacancia";
+$proto77["m_columns"][] = "meses_experiencia_vacancia";
+$proto77["m_columns"][] = "horario_rotativo";
+$proto77["m_columns"][] = "modalidad_trabajo";
+$proto77["m_columns"][] = "descripcion_salario";
+$proto77["m_columns"][] = "id_empresa_sucursal";
+$proto77["m_columns"][] = "id_cidudad";
+$proto77["m_columns"][] = "id_departamento";
+$proto77["m_columns"][] = "genero";
+$proto77["m_columns"][] = "movilidad_propia";
+$proto77["m_columns"][] = "tipo_movilidad";
+$proto77["m_columns"][] = "id_registro_conducir";
+$proto77["m_columns"][] = "discapacidad_aceptada";
+$proto77["m_columns"][] = "nacionalidad";
+$proto77["m_columns"][] = "edad_minimo";
+$proto77["m_columns"][] = "requisitos_exclu_formacion";
+$proto77["m_columns"][] = "habilidades_conocimiento";
+$proto77["m_columns"][] = "id_formacion_academica";
+$proto77["m_columns"][] = "id_contacto_sucursal";
+$proto77["m_columns"][] = "edad_maximo";
+$proto77["m_columns"][] = "origen";
+$proto77["m_columns"][] = "tipo_remuneracion";
+$proto77["m_columns"][] = "imagen_perfil";
+$obj = new SQLTable($proto77);
+
+$proto76["m_table"] = $obj;
+$proto76["m_sql"] = "bolsa_empleo.vacancia_tmp";
+$proto76["m_alias"] = "";
+$proto76["m_srcTableName"] = "bolsa_empleo.vacancia_tmp";
+$proto78=array();
+$proto78["m_sql"] = "";
+$proto78["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto76["m_column"]=$obj;
-$proto76["m_contained"] = array();
-$proto76["m_strCase"] = "";
-$proto76["m_havingmode"] = false;
-$proto76["m_inBrackets"] = false;
-$proto76["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto76);
+$proto78["m_column"]=$obj;
+$proto78["m_contained"] = array();
+$proto78["m_strCase"] = "";
+$proto78["m_havingmode"] = false;
+$proto78["m_inBrackets"] = false;
+$proto78["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto78);
 
-$proto74["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto74);
+$proto76["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto76);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -6371,7 +6536,7 @@ $queryData_vacancia_tmp = createSqlQuery_vacancia_tmp();
 	
 		;
 
-																																		
+																																			
 
 $tdatavacancia_tmp[".sqlquery"] = $queryData_vacancia_tmp;
 

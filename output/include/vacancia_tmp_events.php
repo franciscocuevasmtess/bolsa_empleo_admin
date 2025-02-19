@@ -121,15 +121,15 @@ $rray_nuevos_requisitos_id = [];
 $rray_nuevos_habilidades_id = [];
 
 //proceso de puestos
-foreach ($id_valores_multi_ocupacion_puesto_todos as  $valuetoinsert1) {
+foreach ($id_valores_multi_ocupacion_puesto_todos as $valuetoinsert1) {
 	if (!is_numeric($valuetoinsert1)) {
 		$sqlinsert1 = DB::PrepareSQL("INSERT INTO bolsa_empleo.ocupaciones_nuevas(descripcion) 
-																				VALUES (':1') 
-																				ON CONFLICT 
-																				ON CONSTRAINT ocupaciones_nuevas_un 
-																				DO UPDATE 
-																				SET descripcion = excluded.descripcion  
-																				RETURNING id_ocu_puest_clasic", $valuetoinsert1);
+																					VALUES (':1') 
+																					ON CONFLICT 
+																					ON CONSTRAINT ocupaciones_nuevas_un 
+																					DO UPDATE 
+																					SET descripcion = excluded.descripcion  
+																					RETURNING id_ocu_puest_clasic", $valuetoinsert1);
 		$rx1 = DB::Query($sqlinsert1);
 		$row1 = $rx1->fetchAssoc(); 
 		$new_id_ocupacion_puesto_nuevos = $row1['id_ocu_puest_clasic'];
@@ -159,7 +159,7 @@ foreach ($id_valores_multi_descripcion_salario_todos as  $valuetoinsert4) {
 		$new_id_desc_salario_nuevos = $row4['id_va_salario_desc'];
 		array_push($rray_nuevos_des_salario_id, $new_id_desc_salario_nuevos);
 	}
-} 
+}
 //crear el array con los posibles id ya existentes
 foreach ($id_valores_multi_descripcion_salario_todos as $valuetoinsert4) {
 	if (is_numeric($valuetoinsert4)) {
@@ -172,11 +172,11 @@ foreach ($id_valores_multi_descripcion_salario_todos as $valuetoinsert4) {
 foreach ($id_requisitos_multi_todos as $valuetoinsert) {
 	if (!is_numeric($valuetoinsert)) {
 		$sqlinsert = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_requisitos_excluyentes(descripcion) 
-																			VALUES (':1') 
-																			ON CONFLICT 
-																			ON CONSTRAINT vacancia_requisitos_excluyentes_descripcion_key 
-																			DO UPDATE SET descripcion = excluded.descripcion  
-																			RETURNING id_requisitos_vacancia", $valuetoinsert);
+																				VALUES (':1') 
+																				ON CONFLICT 
+																				ON CONSTRAINT vacancia_requisitos_excluyentes_descripcion_key 
+																				DO UPDATE SET descripcion = excluded.descripcion  
+																				RETURNING id_requisitos_vacancia", $valuetoinsert);
 		$rx = DB::Query($sqlinsert);
 		$row = $rx->fetchAssoc(); 
 		$new_id_requisitos_nuevos = $row['id_requisitos_vacancia'];
@@ -195,11 +195,11 @@ foreach ($id_requisitos_multi_todos as $valuetoinsert) {
 foreach ($id_valores_multi_habilidades_conocimiento_todos as $valuetoinsert2) {
 	if (!is_numeric($valuetoinsert2)) {
 		$sqlinsert2 = DB::PrepareSQL("INSERT INTO bolsa_empleo.habilidades(descripcion) 
-																				VALUES (':1') 
-																				ON CONFLICT 
-																				ON CONSTRAINT habilidades_descripcion_key 
-																				DO UPDATE SET descripcion = excluded.descripcion  
-																				RETURNING id_habilidad", $valuetoinsert2);
+																			VALUES (':1') 
+																			ON CONFLICT 
+																			ON CONSTRAINT habilidades_descripcion_key 
+																			DO UPDATE SET descripcion = excluded.descripcion  
+																			RETURNING id_habilidad", $valuetoinsert2);
 		$rx2 = DB::Query($sqlinsert2);
 		$row2 = $rx2->fetchAssoc(); 
 		$new_id_habilidades_nuevos = $row2['id_habilidad'];
@@ -214,11 +214,11 @@ foreach ($id_valores_multi_habilidades_conocimiento_todos as $valuetoinsert3) {
 }
 
 
-
 $values["fk_ocupacion_puesto"] = implode(',', $rray_nuevos_puestos_id);
 $values["descripcion_salario"] = implode(',', $rray_nuevos_des_salario_id);
 $values["requisitos_exclu_formacion"] = implode(',', $rray_nuevos_requisitos_id);
 $values["habilidades_conocimiento"] = implode(',', $rray_nuevos_habilidades_id);
+
 //$values["salario"] = str_replace('.', '', $values["salario"]);
 $values["id_formacion_academica"] = ucfirst($values["id_formacion_academica"]);
 $values["tipo_movilidad"] = ucfirst($values["tipo_movilidad"]);
@@ -306,8 +306,8 @@ function AfterAdd(&$values, &$keys, $inline, $pageObject)
 DB::Exec($auditoria);
 
 $vacancia = DB::PrepareSQL("update bolsa_empleo.vacancia_tmp 
-															set origen = 'DGE-MTESS'
-															where id_vacancias = ':1'",
+																	set origen = 'DGE-MTESS'
+																	where id_vacancias = ':1'",
 $keys["id_vacancias"]);
 DB::Exec($vacancia);
 
@@ -498,7 +498,7 @@ $pageObject->hideItem("integrated_edit_field1", $recordId);
    
 $pageObject->hideItem("integrated_edit_field5", $recordId); 
    
-$pageObject->hideItem("integrated_edit_field31", $recordId); 
+$pageObject->hideItem("integrated_edit_field31", $recordId);
 ;		
 } // function BeforeShowAdd
 

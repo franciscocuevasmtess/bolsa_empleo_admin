@@ -66,7 +66,7 @@ function BeforeShowList(&$xt, &$templatefile, $pageObject)
 {
 
 		//Ocultar elementos que No es necesario que sean visibles en el listado.
-$pageObject->hideItem("add", $recordId);							//oculta el boton "Añadir Nuevo"
+$pageObject->hideItem("add", $recordId);						//oculta el boton "Añadir Nuevo"
 $pageObject->hideItem("print_panel", $recordId);		//oculta el icono de impresora
 $pageObject->hideItem("breadcrumb", $recordId);		//oculta el breadcrumb
 $pageObject->hideItem("list_options", $recordId);	//oculta la lista de opciones del menu
