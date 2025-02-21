@@ -128,7 +128,7 @@ $tdataestado_postulacion[".isUseAjaxSuggest"] = true;
 
 
 
-																																																			
+																																																						
 
 $tdataestado_postulacion[".ajaxCodeSnippetAdded"] = false;
 

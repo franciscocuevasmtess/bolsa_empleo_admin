@@ -6,8 +6,8 @@ Runner.buttonEvents["New_Button6"] = function( pageObj, proxy, pageid ) {
 		pageObj.buttonEventBefore['New_Button6'] = function( params, ctrl, pageObj, proxy, pageid, rowData, row, submit ) {		
 			var ajax = ctrl;
 // Put your code here.
-params["txt"] = "Hello";
-ajax.setMessage("Sending request to server...");
+//params["txt"] = "Hello";
+//ajax.setMessage("Sending request to server...");
  // Uncomment the following line to prevent execution of "Server" and "Client After" events.
  // return false;
 		}
@@ -17,8 +17,9 @@ ajax.setMessage("Sending request to server...");
 		pageObj.buttonEventAfter['New_Button6'] = function( result, ctrl, pageObj, proxy, pageid, rowData, row, params ) {
 			var ajax = ctrl;
 // Put your code here.
-var message = result["txt"] + " !!!";
-ajax.setMessage(message);
+//var message = "txt: " + result["txt"] + " id_vacancia: " + result["id_vacancias"];
+//var message = "id_vacancia: " + result["id_vacancias"];
+//ajax.setMessage(message);
 
 		}
 	}

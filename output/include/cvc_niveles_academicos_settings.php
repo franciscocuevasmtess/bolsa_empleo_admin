@@ -128,7 +128,7 @@ $tdatacvc_niveles_academicos[".isUseAjaxSuggest"] = true;
 
 
 
-																																																			
+																																																						
 
 $tdatacvc_niveles_academicos[".ajaxCodeSnippetAdded"] = false;
 

@@ -1,0 +1,4 @@
+[20-Feb-2025 12:27:29 America/New_York] PHP Warning:  pg_connect(): Unable to connect to PostgreSQL server: could not connect to server: No route to host (0x00002751/10065)
+	Is the server running on host &quot;192.168.70.170&quot; and accepting
+	TCP/IP connections on port 5432? in C:\xampp\htdocs\bolsa_empleo_admin\output\connections\PostgreConnection.php on line 62
+[20-Feb-2025 12:27:29 America/New_York] PHP Fatal error:  Unable to connect in C:\xampp\htdocs\bolsa_empleo_admin\output\connections\Connection.php on line 668

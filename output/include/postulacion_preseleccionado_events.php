@@ -105,6 +105,8 @@ if (in_array($data_result["id_estado_vacancia"], $estadosOcultar)) {
 	$pageObject->showItem("text_cambiar_estado_preseleccionado", $recordId);
 }
 
+//print_r($_SESSION);
+
 ;		
 } // function BeforeShowList
 

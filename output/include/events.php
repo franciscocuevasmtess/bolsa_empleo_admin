@@ -191,11 +191,8 @@ echo '<script src="jquery.masknumber.js"></script>';
 }
 	function event_bolsa_empleo_bolsa_users_popup_snippet(&$params)
 	{
-	// Put your code here.
-//echo "Your message";
-echo "
-<input type='checkbox' name='user_checkbox' value='1'>
-";
+	echo "<input type='checkbox' name='user_checkbox' value='1'>";
+
 	;
 }
 	function event_bolsa_empleo_vacancia_snippet3(&$params)
@@ -227,10 +224,7 @@ echo '<script src="xlsx.full.min.js"></script>';
 }
 	function event_bolsa_empleo_postulacion_preseleccionado_snippet(&$params)
 	{
-	// Put your code here.
-//echo "Your message";
-
-echo '
+	echo '
 <input type="file" id="fileInput" name="fileInput" accept=".csv, .xlsx, .xls">
 <br>
 <div id="loading" name="loading" style="display: none; text-align: center; margin-top: 20px;">
@@ -318,10 +312,7 @@ echo '
 }
 	function event_bolsa_empleo_vacancia_snippet8(&$params)
 	{
-	// Put your code here.
-//echo "Your message";
-
-echo '
+	echo '
 $sql =
 ';
 	;
@@ -431,9 +422,7 @@ accept=".csv, .xlsx, .xls" class="custom-file-input" />
 //$data = $pageObject ->getMasterRecord();
 //$sql = "SELECT id_estado_vacancia FROM bolsa_empleo.vacancia WHERE id_vacancias = " . $data["id_vacancias"];
 
-echo '
-<p>---'.$data["id_vacancias"].'---</p>
-';
+echo '<p>---'.$data["id_vacancias"].'---</p>';
 	;
 }
 

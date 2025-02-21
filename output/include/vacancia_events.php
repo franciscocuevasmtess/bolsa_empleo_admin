@@ -34,6 +34,8 @@
 
 		$this->events["BeforeShowList"]=true;
 
+		$this->events["BeforeProcessList"]=true;
+
 
 	}
 
@@ -1900,10 +1902,91 @@ $pageObject->hideItem("grid_details_link6"); //Oculta el enlace que muestra el t
 $pageObject->hideItem("grid_details_link8"); //Oculta el enlace que muestra el total de registros de resumen por vacancia
 
 $pageObject->hideItem("grid_field9");
+
+//$pageObject->hideItem("grid_field");//OCULTA EL INPUT AUTOGENERADO
+
 //print_r($_SESSION);
 ;		
 } // function BeforeShowList
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+				// List page: Before process
+function BeforeProcessList($pageObject)
+{
+
+		
+
+// Place event code here.
+// Use "Add Action" button to add code snippets.
+
+$options["preserveSearch"] = true;
+;		
+} // function BeforeProcessList
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

@@ -554,12 +554,12 @@
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="topbar" {$form_grid} data-pageid="{$pageid}" class=" table  r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable"
 	cellpadding="0"
-	data-body-height="1"
+	data-body-height="2"
 >
 						<thead>
 			{BEGIN grid_header}
 			
-																									<tr {$rowattrs} {$row_grid_0} class="{$rowclass}
+																														<tr {$rowattrs} {$row_grid_0} class="{$rowclass}
 									{$gridHeader_class}
 					
 								r-gridrow
@@ -705,13 +705,13 @@
 	</th>
 	{END cellblock_grid_headcell_field12}
 							</tr>
-															
+																				
 					{END grid_header}
 			</thead>
 															<tbody>
 					{BEGIN grid_row}
 							
-																														<tr {$rowattrs} {$row_grid_1} class="{$rowclass}
+																																			<tr {$rowattrs} {$row_grid_1} class="{$rowclass}
 				
 								r-gridrow
 							">
@@ -724,8 +724,7 @@
 		 r-ori-vert			"
 
 	
-	data-cellId="grid_cell_icons" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="postulacion_preseleccionado_list"		data-control-cell
-	
+	data-cellId="grid_cell_icons" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="postulacion_preseleccionado_list"	
 	>
 
 	 
@@ -740,6 +739,87 @@
 	
 	</td>
 	{END cellblock_grid_cell_icons}
+									{BEGIN cellblock_grid_cell_field}
+	<td
+	
+	{$cell_grid_cell_field}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field}
+									{BEGIN cellblock_grid_cell_field13}
+	<td
+	
+	{$cell_grid_cell_field13}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field13" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field13}
+									{BEGIN cellblock_grid_cell_field14}
+	<td
+	
+	{$cell_grid_cell_field14}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field14" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field14}
+									{BEGIN cellblock_grid_cell_field15}
+	<td
+	
+	{$cell_grid_cell_field15}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field15" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field15}
+							</tr>
+											<tr {$rowattrs} {$row_grid_2} class="{$rowclass}
+				
+								r-gridrow
+							">
+									{BEGIN cellblock_grid_cell_icons1}
+	<td
+	
+	{$cell_grid_cell_icons1}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_icons1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="postulacion_preseleccionado_list"		data-control-cell
+	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_icons1}
 									{BEGIN cellblock_grid_cell_checkbox}
 	<td
 	
@@ -843,7 +923,7 @@
 					</tbody>
 													<tfoot>
 			
-																																			<tr {$rowattrs} {$row_grid_2} class="{$rowclass}
+																																													<tr {$rowattrs} {$row_grid_3} class="{$rowclass}
 									{$gridFooter_class}
 					
 								r-gridrow
