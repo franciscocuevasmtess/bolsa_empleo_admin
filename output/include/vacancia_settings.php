@@ -172,9 +172,9 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsvacancia["Spanish"]["importar_archivo"] = "Importar Archivo";
 	$fieldToolTipsvacancia["Spanish"]["importar_archivo"] = "";
 	$placeHoldersvacancia["Spanish"]["importar_archivo"] = "";
-	$fieldLabelsvacancia["Spanish"]["imagen_perfil"] = "Imagen Perfil";
-	$fieldToolTipsvacancia["Spanish"]["imagen_perfil"] = "Visualizar";
-	$placeHoldersvacancia["Spanish"]["imagen_perfil"] = "Visuali";
+	$fieldLabelsvacancia["Spanish"]["imagen_perfil"] = "FLYER";
+	$fieldToolTipsvacancia["Spanish"]["imagen_perfil"] = "Visualizar FLYER";
+	$placeHoldersvacancia["Spanish"]["imagen_perfil"] = "Visualizar FLYER";
 	$pageTitlesvacancia["Spanish"]["edit"] = "Oferta de Empleo, Editar";
 	if (count($fieldToolTipsvacancia["Spanish"]))
 		$tdatavacancia[".isUseToolTips"] = true;
@@ -273,7 +273,7 @@ $tdatavacancia[".isUseAjaxSuggest"] = true;
 
 
 
-																																																						
+																																																															
 
 $tdatavacancia[".ajaxCodeSnippetAdded"] = false;
 
@@ -8431,7 +8431,7 @@ $tdatavacancia[".hideMobileList"] = array();
 
 	
 				$edata["ResizeImage"] = true;
-				$edata["NewSize"] = 150;
+				$edata["NewSize"] = 600;
 
 	
 	

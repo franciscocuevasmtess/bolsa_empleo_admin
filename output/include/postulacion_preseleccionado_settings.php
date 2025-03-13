@@ -174,7 +174,7 @@ $tdatapostulacion_preseleccionado[".isUseAjaxSuggest"] = true;
 
 
 
-																																																																																																																																																																		
+																																																																																																																																																																																													
 
 $tdatapostulacion_preseleccionado[".ajaxCodeSnippetAdded"] = false;
 
@@ -3277,6 +3277,7 @@ $proto51["m_columns"][] = "adjunto_certificado_discapacidad";
 $proto51["m_columns"][] = "foto";
 $proto51["m_columns"][] = "resumen";
 $proto51["m_columns"][] = "fk_habilidades";
+$proto51["m_columns"][] = "id_barrio";
 $obj = new SQLTable($proto51);
 
 $proto50["m_table"] = $obj;
@@ -3314,6 +3315,7 @@ $proto55["m_columns"][] = "id";
 $proto55["m_columns"][] = "name";
 $proto55["m_columns"][] = "countrycode";
 $proto55["m_columns"][] = "distrito_id";
+$proto55["m_columns"][] = "cod_ine_ciudad";
 $obj = new SQLTable($proto55);
 
 $proto54["m_table"] = $obj;

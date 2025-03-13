@@ -1,0 +1,9 @@
+El proyecto usa una librería para poder realizar las descargas en Excel de los postulantes
+por estado, para ello se deben descargar las librerías necesarias para su correcto funcionamiento.
+
+Abrir desde el cmd y posicionarse en la carpeta output y ejecutar el siguiente comando:
+$ composer require phpoffice/phpspreadsheet
+
+
+EJEMPLO:
+C:\xampp\htdocs\bolsa_empleo_admin\output> composer require phpoffice/phpspreadsheet

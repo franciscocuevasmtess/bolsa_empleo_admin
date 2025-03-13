@@ -302,8 +302,7 @@ return true;
 function AfterAdd(&$values, &$keys, $inline, $pageObject)
 {
 
-		
-DB::Exec($auditoria);
+		DB::Exec($auditoria);
 
 $vacancia = DB::PrepareSQL("update bolsa_empleo.vacancia_tmp 
 																	set origen = 'DGE-MTESS'

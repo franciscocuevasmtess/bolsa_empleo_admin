@@ -32,7 +32,6 @@ return false;
 	if ( !pageObj.buttonEventAfter['Cerrar'] ) {
 		pageObj.buttonEventAfter['Cerrar'] = function( result, ctrl, pageObj, proxy, pageid, rowData, row, params ) {
 			var ajax = ctrl;
-
 // Muestra un cuadro de diálogo de SweetAlert con un mensaje de éxito.
 Swal.fire({
 	// Icono que indica el tipo de mensaje (en este caso, éxito).

@@ -161,7 +161,6 @@
 'empresa',
 'salario',
 'cantidad_vacancia',
-'imagen_perfil',
 'id_departamento',
 'id_cidudad',
 'id_estado_vacancia',
@@ -189,8 +188,7 @@
 'fk_id_feria_empleo' => array( 'grid_field11' ),
 'salario' => array( 'grid_field12' ),
 'cantidad_vacancia' => array( 'grid_field13' ),
-'importar_archivo' => array( 'grid_field' ),
-'imagen_perfil' => array( 'grid_field9' ) ),
+'importar_archivo' => array( 'grid_field' ) ),
 'hideEmptyFields' => array(  ),
 'fieldFilterFields' => array(  ) ),
 'pageLinks' => array( 'edit' => true,
@@ -254,7 +252,6 @@
 'text9',
 'grid_field',
 'boton_importar_planilla',
-'grid_field9',
 'grid_alldetails_link' ) ),
 'formXtTags' => array( 'below-grid' => array( 'pagination' ),
 'left' => array(  ),
@@ -315,7 +312,6 @@
 'text9' => 'grid',
 'grid_field' => 'grid',
 'boton_importar_planilla' => 'grid',
-'grid_field9' => 'grid',
 'grid_alldetails_link' => 'grid' ),
 'itemLocations' => array( 'grid_details_link1' => array( 'location' => 'grid',
 'cellId' => 'cell_top' ),
@@ -403,8 +399,6 @@
 'cellId' => 'cell_field7' ),
 'boton_importar_planilla' => array( 'location' => 'grid',
 'cellId' => 'cell_field7' ),
-'grid_field9' => array( 'location' => 'grid',
-'cellId' => 'cell_label23' ),
 'grid_alldetails_link' => array( 'location' => 'grid',
 'cellId' => 'cell_label11' ) ),
 'itemVisiblity' => array( 'simple_search' => 3,
@@ -427,8 +421,7 @@
 'grid_field11',
 'grid_field12',
 'grid_field13',
-'grid_field',
-'grid_field9' ),
+'grid_field' ),
 'grid_edit' => array( 'grid_edit' ),
 'grid_field_label' => array( 'grid_field_label1',
 'grid_field_label' ),
@@ -539,46 +532,8 @@
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
-'cell_label19' => array( 'cols' => array( 0 ),
-'rows' => array( 4 ),
-'tags' => array(  ),
-'items' => array(  ),
-'fixedAtServer' => false,
-'fixedAtClient' => false ),
-'cell_label23' => array( 'cols' => array( 1 ),
-'rows' => array( 4 ),
-'tags' => array( 'imagen_perfil_fieldcolumn' ),
-'items' => array( 'grid_field9' ),
-'fixedAtServer' => false,
-'fixedAtClient' => false ),
-'cell_label16' => array( 'cols' => array( 0,
-1 ),
-'rows' => array( 5 ),
-'tags' => array(  ),
-'items' => array(  ),
-'fixedAtServer' => false,
-'fixedAtClient' => false ),
-'cell_label20' => array( 'cols' => array( 0 ),
-'rows' => array( 6 ),
-'tags' => array(  ),
-'items' => array(  ),
-'fixedAtServer' => false,
-'fixedAtClient' => false ),
-'cell_label22' => array( 'cols' => array( 1 ),
-'rows' => array( 6 ),
-'tags' => array(  ),
-'items' => array(  ),
-'fixedAtServer' => false,
-'fixedAtClient' => false ),
-'cell_label21' => array( 'cols' => array( 0,
-1 ),
-'rows' => array( 7 ),
-'tags' => array(  ),
-'items' => array(  ),
-'fixedAtServer' => false,
-'fixedAtClient' => false ),
 'cell_label' => array( 'cols' => array( 0 ),
-'rows' => array( 8 ),
+'rows' => array( 4 ),
 'tags' => array(  ),
 'items' => array( 'grid_field2',
 'text1',
@@ -586,28 +541,28 @@
 'fixedAtServer' => true,
 'fixedAtClient' => false ),
 'cell_field' => array( 'cols' => array( 1 ),
-'rows' => array( 8 ),
+'rows' => array( 4 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label1' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 9 ),
+'rows' => array( 5 ),
 'tags' => array( 'id_estado_vacancia_fieldcolumn' ),
 'items' => array( 'grid_field6' ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label10' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 10 ),
+'rows' => array( 6 ),
 'tags' => array( 'fk_id_feria_empleo_fieldcolumn' ),
 'items' => array( 'grid_field11' ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label3' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 11 ),
+'rows' => array( 7 ),
 'tags' => array(  ),
 'items' => array( 'text5',
 'grid_field1' ),
@@ -615,34 +570,34 @@
 'fixedAtClient' => false ),
 'cell_field5' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 12 ),
+'rows' => array( 8 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_field6' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 13 ),
+'rows' => array( 9 ),
 'tags' => array(  ),
 'items' => array( 'text9' ),
 'fixedAtServer' => true,
 'fixedAtClient' => false ),
 'cell_field7' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 14 ),
+'rows' => array( 10 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => true,
 'fixedAtClient' => true ),
 'cell_field8' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 15 ),
+'rows' => array( 11 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_label4' => array( 'cols' => array( 0 ),
-'rows' => array( 16 ),
+'rows' => array( 12 ),
 'tags' => array( 'fecha_creacion_vacancia_fieldheadercolumn',
 'fecha_creacion_vacancia_fieldcolumn' ),
 'items' => array( 'grid_field_label1',
@@ -650,35 +605,28 @@
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_field4' => array( 'cols' => array( 1 ),
-'rows' => array( 16 ),
+'rows' => array( 12 ),
 'tags' => array( 'fecha_expiracion_vacancia_fieldheadercolumn',
 'fecha_expiracion_vacancia_fieldcolumn' ),
 'items' => array( 'grid_field_label',
 'grid_field4' ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
-'cell_label6' => array( 'cols' => array( 0,
-1 ),
-'rows' => array( 17 ),
-'tags' => array(  ),
-'items' => array(  ),
-'fixedAtServer' => false,
-'fixedAtClient' => false ),
 'cell_label11' => array( 'cols' => array( 0 ),
-'rows' => array( 18 ),
+'rows' => array( 13 ),
 'tags' => array(  ),
 'items' => array( 'grid_alldetails_link' ),
 'fixedAtServer' => true,
 'fixedAtClient' => false ),
 'cell_field2' => array( 'cols' => array( 1 ),
-'rows' => array( 18 ),
+'rows' => array( 13 ),
 'tags' => array(  ),
 'items' => array(  ),
 'fixedAtServer' => false,
 'fixedAtClient' => false ),
 'cell_dpreview' => array( 'cols' => array( 0,
 1 ),
-'rows' => array( 19 ),
+'rows' => array( 14 ),
 'tags' => array(  ),
 'items' => array( 'details_preview1',
 'details_preview',
@@ -690,7 +638,7 @@
 'fixedAtServer' => true,
 'fixedAtClient' => false ) ),
 'width' => 2,
-'height' => 20 ) ) ),
+'height' => 15 ) ) ),
 'loginForm' => array( 'loginForm' => 3 ),
 'page' => array( 'verticalBar' => false,
 'labeledButtons' => array( 'update_records' => array(  ),
@@ -806,18 +754,6 @@ array( 'cell' => 'cell_label9' ) ) ),
 array( 'section' => 'body',
 'cells' => array( array( 'cell' => 'cell_label17' ),
 array( 'cell' => 'cell_label18' ) ) ),
-array( 'section' => 'body',
-'cells' => array( array( 'cell' => 'cell_label19' ),
-array( 'cell' => 'cell_label23' ) ) ),
-array( 'section' => 'body',
-'cells' => array( array( 'cell' => 'cell_label16',
-'colspan' => 2 ) ) ),
-array( 'section' => 'body',
-'cells' => array( array( 'cell' => 'cell_label20' ),
-array( 'cell' => 'cell_label22' ) ) ),
-array( 'section' => 'body',
-'cells' => array( array( 'cell' => 'cell_label21',
-'colspan' => 2 ) ) ),
 array( 'cells' => array( array( 'cell' => 'cell_label' ),
 array( 'cell' => 'cell_field' ) ),
 'section' => 'body' ),
@@ -845,9 +781,6 @@ array( 'section' => 'body',
 array( 'cells' => array( array( 'cell' => 'cell_label4' ),
 array( 'cell' => 'cell_field4' ) ),
 'section' => 'body' ),
-array( 'section' => 'body',
-'cells' => array( array( 'cell' => 'cell_label6',
-'colspan' => 2 ) ) ),
 array( 'cells' => array( array( 'cell' => 'cell_label11' ),
 array( 'cell' => 'cell_field2' ) ),
 'section' => 'body' ),
@@ -864,22 +797,26 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'grid_details_link6',
 'grid_details_link_preseleccionados',
 'grid_details_link8' ),
-'useFullWidth' => true ),
+'useFullWidth' => true,
+'background' => '#ffffff' ),
 'cell_label' => array( 'model' => 'cell_label',
 'items' => array( 'grid_field2',
 'text1',
 'grid_field3' ),
 'align' => 'left',
 'width' => '80%',
+'background' => '#ffffff',
 'field' => 'id_departamento',
 'columnName' => 'field' ),
 'cell_field' => array( 'model' => 'cell_field',
 'items' => array(  ),
-'align' => 'right' ),
+'align' => 'right',
+'background' => '#ffffff' ),
 'cell_label1' => array( 'model' => 'cell_label',
 'items' => array( 'grid_field6' ),
 'align' => 'left',
 'useFullWidth' => true,
+'background' => '#ffffff',
 'field' => 'id_estado_vacancia',
 'columnName' => 'field' ),
 'cell_label3' => array( 'model' => 'cell_label',
@@ -887,18 +824,22 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'grid_field1' ),
 'align' => 'left',
 'useFullWidth' => true,
+'color' => '#ffffff',
+'background' => '#ffffff',
 'field' => 'descripcion_puesto',
 'columnName' => 'field' ),
 'cell_label4' => array( 'model' => 'cell_label',
 'items' => array( 'grid_field_label1',
 'grid_field8' ),
 'align' => 'left',
+'background' => '#ffffff',
 'field' => 'fecha_creacion_vacancia',
 'columnName' => 'field' ),
 'cell_field4' => array( 'model' => 'cell_field',
 'items' => array( 'grid_field_label',
 'grid_field4' ),
 'align' => 'right',
+'background' => '#ffffff',
 'field' => 'fecha_expiracion_vacancia',
 'columnName' => 'field' ),
 'cell_dpreview' => array( 'model' => 'cell_dpreview',
@@ -909,7 +850,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'details_preview5',
 'details_preview4',
 'details_preview6' ),
-'useFullWidth' => true ),
+'useFullWidth' => true,
+'background' => '#ffffff' ),
 'cell_label7' => array( 'model' => 'cell_label',
 'items' => array( 'grid_field5',
 'text',
@@ -928,7 +870,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'padding' => array( 'padding' => '1px' ) ),
 'cell_field5' => array( 'model' => 'cell_label',
 'items' => array(  ),
-'useFullWidth' => true ),
+'useFullWidth' => true,
+'background' => '#ffffff' ),
 'cell_label5' => array( 'model' => 'cell_label',
 'items' => array( 'text2',
 'grid_field10',
@@ -938,71 +881,65 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'text7',
 'grid_field13' ),
 'align' => 'left',
+'background' => '#ffffff',
 'field' => 'empresa',
 'columnName' => 'field' ),
 'cell_label9' => array( 'model' => 'cell_field',
 'items' => array( 'custom_button_container' ),
-'align' => 'right' ),
+'align' => 'right',
+'background' => '#ffffff' ),
 'cell_label10' => array( 'model' => 'cell_label',
 'items' => array( 'grid_field11' ),
 'align' => 'left',
+'background' => '#ffffff',
 'field' => 'fk_id_feria_empleo',
 'columnName' => 'field' ),
-'cell_label16' => array( 'model' => 'cell_label',
-'items' => array(  ),
-'align' => 'center' ),
 'cell_label17' => array( 'model' => 'cell_label',
-'items' => array(  ) ),
-'cell_label18' => array( 'model' => 'cell_label',
-'items' => array(  ) ),
-'cell_label20' => array( 'model' => 'cell_label',
-'items' => array(  ) ),
-'cell_label6' => array( 'model' => 'cell_label',
 'items' => array(  ),
-'align' => 'center' ),
+'background' => '#ffffff' ),
+'cell_label18' => array( 'model' => 'cell_label',
+'items' => array(  ),
+'background' => '#ffffff' ),
 'cell_field6' => array( 'model' => 'cell_label',
 'items' => array( 'text9' ),
 'align' => 'center',
 'bold' => true,
-'font-size' => '26px' ),
+'font-size' => '26px',
+'background' => '#ffffff' ),
 'cell_field7' => array( 'model' => 'cell_label',
 'items' => array( 'grid_field',
 'boton_importar_planilla' ),
 'align' => 'center',
+'background' => '#ffffff',
+'useFullWidth' => true,
 'field' => 'importar_archivo',
 'columnName' => 'field' ),
 'cell_field8' => array( 'model' => 'cell_label',
-'items' => array(  ) ),
-'cell_label21' => array( 'model' => 'cell_label',
-'items' => array(  ) ),
-'cell_label22' => array( 'model' => 'cell_label',
-'items' => array(  ) ),
-'cell_label19' => array( 'model' => 'cell_label',
-'items' => array(  ) ),
-'cell_label23' => array( 'model' => 'cell_label',
-'items' => array( 'grid_field9' ),
-'align' => 'center',
-'field' => 'imagen_perfil',
-'columnName' => 'field' ),
+'items' => array(  ),
+'background' => '#ffffff' ),
 'cell_label11' => array( 'model' => 'cell_label',
 'items' => array( 'grid_alldetails_link' ),
-'align' => 'left' ),
+'align' => 'left',
+'background' => '#ffffff' ),
 'cell_field2' => array( 'model' => 'cell_field',
-'items' => array(  ) ) ),
+'items' => array(  ),
+'background' => '#ffffff' ) ),
 'deferredItems' => array(  ),
 'recsPerRow' => 1 ) ),
 'items' => array( 'details_found' => array( 'type' => 'details_found',
 'label' => array( 'type' => 0,
 'text' => '%first% - %last% de %total% Ofertas de Empleo' ),
 'color' => '#ffffff',
-'bold' => true ),
+'bold' => true,
+'font-family' => 'Open Sans' ),
 'simple_search' => array( 'type' => 'simple_search' ),
 'pagination' => array( 'type' => 'pagination' ),
 'grid_field2' => array( 'field' => 'id_departamento',
 'type' => 'grid_field',
 'font-size' => '14px',
 'inlineAdd' => false,
-'inlineEdit' => false ),
+'inlineEdit' => false,
+'font-family' => 'Open Sans' ),
 'grid_edit' => array( 'type' => 'grid_edit',
 'icon' => array( 'glyph' => '' ),
 'label' => array( 'type' => 0,
@@ -1014,7 +951,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'nowrap' => false,
 'mobileDisplay' => 'both',
 'inlineAdd' => false,
-'inlineEdit' => false ),
+'inlineEdit' => false,
+'font-family' => 'Open Sans' ),
 'grid_field8' => array( 'field' => 'fecha_creacion_vacancia',
 'type' => 'grid_field',
 'font-size' => '12px',
@@ -1037,7 +975,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'inlineAdd' => false,
 'inlineEdit' => false,
 'bold' => true,
-'font-size' => '20px' ),
+'font-size' => '20px',
+'font-family' => 'Open Sans' ),
 'grid_field4' => array( 'field' => 'fecha_expiracion_vacancia',
 'type' => 'grid_field',
 'font-size' => '12px',
@@ -1058,18 +997,21 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'type' => 'grid_field',
 'font-size' => '14px',
 'inlineAdd' => false,
-'inlineEdit' => false ),
+'inlineEdit' => false,
+'font-family' => 'Open Sans' ),
 'grid_field6' => array( 'field' => 'id_estado_vacancia',
 'type' => 'grid_field',
 'font-size' => '16px',
 'inlineAdd' => false,
-'inlineEdit' => false ),
+'inlineEdit' => false,
+'font-family' => 'Open Sans' ),
 'grid_field5' => array( 'field' => 'descripcion',
 'type' => 'grid_field',
 'bold' => true,
 'font-size' => '25px',
 'inlineAdd' => false,
-'inlineEdit' => false ),
+'inlineEdit' => false,
+'font-family' => 'Open Sans' ),
 'userinfo_link' => array( 'type' => 'userinfo_link' ),
 'logout_link' => array( 'type' => 'logout_link' ),
 'changepassword_link' => array( 'type' => 'changepassword_link' ),
@@ -1099,7 +1041,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'text' => '| ID:' ),
 'editedByRte' => false,
 'bold' => true,
-'font-size' => '20px' ),
+'font-size' => '20px',
+'font-family' => 'Open Sans' ),
 'text1' => array( 'type' => 'text',
 'label' => array( 'type' => 0,
 'text' => ', ' ),
@@ -1109,19 +1052,22 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'inlineAdd' => false,
 'inlineEdit' => false,
 'font-size' => '14px',
-'bold' => true ),
+'bold' => true,
+'font-family' => 'Open Sans' ),
 'text2' => array( 'type' => 'text',
 'label' => array( 'text' => '<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAZCAYAAADaILXQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGDSURBVHgBrVPtUcJAEN29HP5CBzvASoRKxALEWAGhAwQLoASpQEqgAyyBGfMLkj1vY+IcMR+3mDeTmbvblzf79u4hdIxBaAYnoof0qDYaOgKLEsFzShQqu8Wr5Pbf4q4ob40xW0QccU3BhWDRm6mZWdG9AYqs6M4QjeOVHhcccedVnYIx8/itty1zvcXbRK+nqbEO5vGyF4nErX0WjaChUxYGgq24c/vjAgF3ROlLlX2G23EB7wslSDcszPb701PEZ3VrsXgB137dWoSqrnz44s4lY6m90H54GinS99buxD2XjAUbBIf2O3DyOM7lN9zmjvmKBTnG9mCPpD7sYWgFP+1bfgyUunPjLB5LLvjTIcA8CIL3wwIPdV1JxqLzwmu88rPsjqZuXeDstbTZbOK0hsgnFKIQ+QSkkxD5jCWrPSUTrjvfvoonHktWQzP85RhkzrCKd5bQttsvgznsDkGNqurItuBCfC0DzMVn5Rq70pzEwqYECDqbs1Z6nVDyp54c9fobcxaKAPFD1ZwAAAAASUVORK5CYII="></p>',
 'type' => 0 ),
 'editedByRte' => true,
-'font-size' => '12px' ),
+'font-size' => '12px',
+'font-family' => 'Open Sans' ),
 'text3' => array( 'type' => 'text',
 'label' => array( 'text' => 'Ofertas Laborales',
 'type' => 0 ),
 'editedByRte' => true,
 'bold' => true,
 'font-size' => '26px',
-'color' => '#ffffff' ),
+'color' => '#ffffff',
+'font-family' => 'Open Sans' ),
 'grid_details_link' => array( 'type' => 'grid_details_link',
 'table' => 'bolsa_empleo.postulacion',
 'badge' => true,
@@ -1176,13 +1122,15 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'text5' => array( 'type' => 'text',
 'label' => array( 'text' => 'Descripcion del Puesto:',
 'type' => 0 ),
-'editedByRte' => false ),
+'editedByRte' => false,
+'font-family' => 'Open Sans' ),
 'grid_field11' => array( 'field' => 'fk_id_feria_empleo',
 'type' => 'grid_field',
 'inlineAdd' => false,
 'inlineEdit' => false,
 'bold' => true,
-'font-size' => '12px' ),
+'font-size' => '12px',
+'font-family' => 'Open Sans' ),
 'details_preview' => array( 'type' => 'details_preview',
 'table' => 'bolsa_empleo.postulacion_preseleccionado',
 'items' => array(  ),
@@ -1192,7 +1140,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'pageId' => 'list',
 'caption' => array( 'page' => 'list',
 'table' => 'bolsa_empleo.postulacion_preseleccionado',
-'type' => 7 ) ),
+'type' => 7 ),
+'font-family' => 'Open Sans' ),
 'print_panel' => array( 'type' => 'print_panel',
 'items' => array( 'print_details' ) ),
 'print_details' => array( 'type' => 'print_details',
@@ -1214,7 +1163,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'text' => array( 'type' => 0,
 'text' => 'Ver Detalles' ),
 'bold' => true,
-'font-size' => '26px' ),
+'font-size' => '26px',
+'font-family' => 'Open Sans' ),
 'list_options' => array( 'type' => 'list_options',
 'items' => array(  ) ),
 'details_preview2' => array( 'type' => 'details_preview',
@@ -1226,7 +1176,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'pageId' => 'list_reacomodado',
 'caption' => array( 'page' => 'list_reacomodado',
 'table' => 'bolsa_empleo.postulacion_seleccionado',
-'type' => 7 ) ),
+'type' => 7 ),
+'font-family' => 'Open Sans' ),
 'grid_details_link2' => array( 'type' => 'grid_details_link',
 'table' => 'bolsa_empleo.postulacion_seleccionado',
 'badge' => true,
@@ -1241,7 +1192,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'pageId' => 'list',
 'caption' => array( 'page' => 'list',
 'table' => 'bolsa_empleo.postulacion_convocado',
-'type' => 7 ) ),
+'type' => 7 ),
+'font-family' => 'Open Sans' ),
 'grid_details_link3' => array( 'type' => 'grid_details_link',
 'table' => 'bolsa_empleo.postulacion_convocado',
 'badge' => true,
@@ -1268,7 +1220,9 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'popup' => false,
 'hideEmptyPreview' => false,
 'proceedLink' => false,
-'pageId' => 'list' ),
+'pageId' => 'list',
+'font-family' => 'Open Sans',
+'padding' => array( 'right' => '30px' ) ),
 'grid_details_link7' => array( 'type' => 'grid_details_link',
 'table' => 'bolsa_empleo.bolsa_users_popup',
 'badge' => true,
@@ -1280,7 +1234,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'popup' => false,
 'proceedLink' => true,
 'hideEmptyPreview' => false,
-'pageId' => 'list' ),
+'pageId' => 'list',
+'font-family' => 'Open Sans' ),
 'breadcrumb' => array( 'type' => 'breadcrumb' ),
 'details_preview5' => array( 'type' => 'details_preview',
 'table' => 'bolsa_empleo.seguimientos',
@@ -1291,7 +1246,8 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'pageId' => 'list',
 'caption' => array( 'page' => 'list',
 'table' => 'bolsa_empleo.seguimientos',
-'type' => 7 ) ),
+'type' => 7 ),
+'font-family' => 'Open Sans' ),
 'boton_cerrar_vacancia' => array( 'eventId' => 'Cerrar',
 'label' => array( 'text' => 'Cerrar',
 'type' => 0 ),
@@ -1304,14 +1260,16 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'label' => array( 'type' => 0,
 'text' => ' Nueva Oferta Laboral' ),
 'type' => 'custom_button',
-'buttonStyle' => 'primary' ),
+'buttonStyle' => 'primary',
+'font-family' => 'Open Sans' ),
 'boton_importar_planilla' => array( 'eventId' => 'btn_importar_planilla1',
-'label' => array( 'type' => 0,
-'text' => 'Cargar Planilla' ),
+'label' => array( 'text' => 'Cargar Planilla',
+'type' => 0 ),
 'type' => 'custom_button',
 'buttonStyle' => 'danger',
 'icon' => array( 'fa' => 'share-square' ),
-'buttonSize' => 'normal' ),
+'buttonSize' => 'normal',
+'font-family' => 'Open Sans' ),
 'boton_ver_personas_postuladas' => array( 'eventId' => 'New_Button',
 'label' => array( 'type' => 0,
 'text' => 'Ver Personas Postuladas' ),
@@ -1330,27 +1288,32 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'inlineAdd' => false,
 'inlineEdit' => false,
 'font-size' => '12px',
-'bold' => true ),
+'bold' => true,
+'font-family' => 'Open Sans' ),
 'text6' => array( 'type' => 'text',
 'label' => array( 'text' => '|',
 'type' => 0 ),
 'editedByRte' => false,
-'font-size' => '12px' ),
+'font-size' => '12px',
+'font-family' => 'Open Sans' ),
 'grid_field13' => array( 'field' => 'cantidad_vacancia',
 'type' => 'grid_field',
 'bold' => true,
 'font-size' => '12px',
 'inlineAdd' => false,
-'inlineEdit' => false ),
+'inlineEdit' => false,
+'font-family' => 'Open Sans' ),
 'text7' => array( 'type' => 'text',
 'label' => array( 'text' => '|',
 'type' => 0 ),
-'editedByRte' => false ),
+'editedByRte' => false,
+'font-family' => 'Open Sans' ),
 'text8' => array( 'type' => 'text',
 'label' => array( 'text' => 'Salario:',
 'type' => 0 ),
 'editedByRte' => false,
-'font-size' => '10px' ),
+'font-size' => '10px',
+'font-family' => 'Open Sans' ),
 'snippet1' => array( 'eventId' => 'bolsa_empleo_vacancia_snippet4',
 'label' => array( 'text' => 'bolsa_empleo_vacancia_snippet4',
 'type' => 0 ),
@@ -1428,7 +1391,8 @@ select.form-control {
         transform: rotate(360deg);
     }
 }
-' ),
+',
+'font-family' => 'Open Sans' ),
 'details_preview6' => array( 'type' => 'details_preview',
 'table' => 'bolsa_empleo.seguimiento_resumen',
 'items' => array(  ),
@@ -1438,7 +1402,8 @@ select.form-control {
 'pageId' => 'list',
 'caption' => array( 'page' => 'list',
 'table' => 'bolsa_empleo.seguimiento_resumen',
-'type' => 7 ) ),
+'type' => 7 ),
+'font-family' => 'Open Sans' ),
 'grid_details_link8' => array( 'type' => 'grid_details_link',
 'table' => 'bolsa_empleo.seguimiento_resumen',
 'badge' => true,
@@ -1447,22 +1412,8 @@ select.form-control {
 'text9' => array( 'type' => 'text',
 'label' => array( 'text' => 'Cargar Postulantes desde Planilla',
 'type' => 0 ),
-'editedByRte' => false ),
-'grid_field9' => array( 'field' => 'imagen_perfil',
-'type' => 'grid_field',
-'inlineAdd' => false,
-'inlineEdit' => false,
-'customCSS' => '/* Put  your custom CSS code here */
-
-/*:host {
-  color: red;
-}*/
-',
-'mobileDisplay' => '',
-'mobileControl' => '',
-'placeholder' => array( 'field' => 'imagen_perfil',
-'table' => 'bolsa_empleo.vacancia',
-'type' => 5 ) ) ),
+'editedByRte' => false,
+'font-family' => 'Open Sans' ) ),
 'dbProps' => array(  ),
 'responsiveGrid' => false,
 'spreadsheetGrid' => false,
@@ -1472,81 +1423,211 @@ select.form-control {
 'imageBgColor' => '#f2f2f2',
 'controlsBgColor' => 'white',
 'imagePosition' => 'right',
-'pageCSS' => '/* Put  your custom CSS code here */
-
-/* Link */
-.nav-justified .active a{
- background-color:transparent !important;
- color:#151313 !important;
- border-style:solid !important;
- border-width:1px !important;
- border-color:#faf9f9  !important;
- border-bottom-style:none !important;
+'pageCSS' => '/*
+/* Link /
+.nav-justified .active a {
+	background-color:transparent !important;
+	color:#151313 !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:#faf9f9  !important;
+	border-bottom-style:none !important;
 }
 
-/* Link */
-.nav-justified li a{
- border-bottom-color:#ececed !important;
- border-bottom-style:solid !important;
- border-top-left-radius:0px !important;
- border-top-right-radius:0px !important;
- border-bottom-left-radius:0px !important;
- border-bottom-right-radius:0px !important;
-}
-/* Select */
-#form_step3_27 tr select{
- /*width:321px !important;*/
- transform:translatex(0px) translatey(0px) !important;
+/* Link /
+.nav-justified li a {
+	border-bottom-color:#ececed !important;
+	border-bottom-style:solid !important;
+	border-top-left-radius:0px !important;
+	border-top-right-radius:0px !important;
+	border-bottom-left-radius:0px !important;
+	border-bottom-right-radius:0px !important;
 }
 
-/* Input */
-#form_step3_27 tr input[type=text]{
- width:321px !important;
-}
-/* Link */
-.r-topbar-page .r-body .r-content .r-data-block .r-above #form_above-grid_1 .row .col-md-12 .nav-justified li a{
- border-bottom-width:1px !important;
+/* Select /
+#form_step3_27 tr select {
+	/*width:321px !important;/
+	transform:translatex(0px) translatey(0px) !important;
 }
 
-/* Select */
-#form_step3_1 tr select{
- width:321px !important;
+/* Input /
+#form_step3_27 tr input[type=text] {
+	width:100% !important;
 }
 
-/* Input */
-#form_step3_1 tr input[type=text]{
- width:321px !important;
+/* Link /
+.r-topbar-page .r-body .r-content .r-data-block .r-above #form_above-grid_1 .row .col-md-12 .nav-justified li a {
+	border-bottom-width:1px !important;
 }
 
-/* Strong Tag */
-#form_top_1 h3 strong{
- color:#0c0c0d !important;
+/* Select /
+#form_step3_1 tr select {
+	width:100% !important;
 }
 
-/* Heading */
-#form_top_1 span h5{
- color:#090a0a !important;
-}
-/* Link */
-.bs-popup .modal-dialog .ui-resizable .modal-body .rnr-pagewrapper #form_above-grid_11 .row .col-md-12 .nav-justified li a{
- border-bottom-width:2px !important;
-}
-/* Button */
-.input-group .input-group-btn .btn-primary{
- background-color:#0d6efd;
- background-blend-mode:multiply;
+/* Input /
+#form_step3_1 tr input[type=text] {
+	width:100% !important;
 }
 
-/* Button */
-#form_above-grid_1 .row .r-align-right > span > .btn-primary{
- background-color:#0c14fc;
- background-blend-mode:saturation;
+/* Strong Tag /
+#form_top_1 h3 strong {
+	color:#0c0c0d !important;
 }
 
+/* Heading /
+#form_top_1 span h5 {
+	color:#090a0a !important;
+}
+
+/* Link /
+.bs-popup .modal-dialog .ui-resizable .modal-body .rnr-pagewrapper #form_above-grid_11 .row .col-md-12 .nav-justified li a {
+	border-bottom-width:2px !important;
+}
+
+/* Button /
+.input-group .input-group-btn .btn-primary {
+	background-color:#0d6efd;
+	background-blend-mode:multiply;
+}
+
+/* Button /
+#form_above-grid_1 .row .r-align-right > span > .btn-primary {
+	background-color:#0c14fc;
+	background-blend-mode:saturation;
+}
+
+.panel-default > .panel-heading {
+	color: #555555;
+	background-color: #ffffff;
+	border-color: #fff;
+}
+
+*/
+
+
+/* ------------------------- */
+/* 🌍 General */
+/* ------------------------- */
+body {
+    margin: 0;
+    background: linear-gradient(100deg, #4e49f8 0%, #d5018a 100%) !important;
+}
+
+/* ------------------------- */
+/* 📌 Links - Menú Justificado */
+/* ------------------------- */
+.nav-justified .active a {
+    background-color: transparent !important;
+    color: #151313 !important;
+    border: 1px solid #faf9f9 !important;
+    border-bottom: none !important;
+}
+
+.nav-justified li a {
+    border-bottom: 1px solid #ececed !important;
+    border-radius: 0px !important;
+}
+
+/* ------------------------- */
+/* 📌 Formulario - Inputs y Selects */
+/* ------------------------- */
+#form_step3_27 tr select,
+#form_step3_1 tr select {
+    width: 100% !important; /* Adaptable a cualquier pantalla */
+}
+
+#form_step3_27 tr input[type="text"],
+#form_step3_1 tr input[type="text"] {
+    width: 100% !important; /* Adaptable a cualquier pantalla */
+}
+
+/* ------------------------- */
+/* 📌 Botones */
+/* ------------------------- */
+.input-group .input-group-btn .btn-primary {
+    background-color: #0d6efd;
+    background-blend-mode: multiply;
+}
+
+#form_above-grid_1 .row .r-align-right > span > .btn-primary {
+    background-color: #0c14fc;
+    background-blend-mode: saturation;
+}
+
+/* ------------------------- */
+/* 📌 Paneles */
+/* ------------------------- */
 .panel-default > .panel-heading {
     color: #555555;
     background-color: #ffffff;
     border-color: #fff;
-}',
+}
+
+/* ------------------------- */
+/* 📌 Fuentes y Encabezados */
+/* ------------------------- */
+#form_top_1 h3 strong {
+    color: #0c0c0d !important;
+}
+
+#form_top_1 span h5 {
+    color: #090a0a !important;
+}
+
+/* ------------------------- */
+/* 📌 Modal y Popups */
+/* ------------------------- */
+.bs-popup .modal-dialog .modal-body .rnr-pagewrapper .nav-justified li a {
+    border-bottom-width: 2px !important;
+}
+
+/* ------------------------- */
+/* 📌 Ajustes de ancho - Evitar valores fijos */
+/* ------------------------- */
+.element-style {
+    max-width: 100% !important; /* Se adapta en cualquier pantalla */
+    min-width: 250px !important; /* Evita tamaños demasiado pequeños */
+}
+
+/* ------------------------- */
+/* 📌 Ajustes Responsivos con Media Queries */
+/* ------------------------- */
+@media (max-width: 1200px) { /* Tablets y laptops pequeñas */
+    .nav-justified .active a {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 768px) { /* Tablets */
+    .nav-justified li a {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .panel-default > .panel-heading {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) { /* Celulares */
+    .nav-justified li a {
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .panel-default > .panel-heading {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .input-group .btn-primary {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+',
 'listTotals' => 1 );
 		?>

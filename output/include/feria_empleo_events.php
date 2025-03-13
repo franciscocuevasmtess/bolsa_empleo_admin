@@ -64,6 +64,11 @@ function BeforeShowList(&$xt, &$templatefile, $pageObject)
 
 // Place event code here.
 // Use "Add Action" button to add code snippets.
+
+
+
+//OCULTA EL ID_FERIA_EMPLEO ########
+$pageObject->hideItem("grid_field2");
 ;		
 } // function BeforeShowList
 

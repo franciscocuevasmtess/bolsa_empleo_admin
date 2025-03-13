@@ -56,7 +56,6 @@ return false;
 	if ( !pageObj.buttonEventAfter['agregar_postulante'] ) {
 		pageObj.buttonEventAfter['agregar_postulante'] = function( result, ctrl, pageObj, proxy, pageid, rowData, row, params ) {
 			var ajax = ctrl;
-
 // Verificamos el estado de la bandera para determinar el resultado de la operación
 if (result["bandera"] == 1) {
 	// Si la bandera es 1, significa que el postulante se vinculó exitosamente

@@ -263,7 +263,10 @@ pdfDocument = {
 			{"text":""},
 				
 				
-			{"text":"<label>Estado:</label>\n<select name=\"estados_seleccionados\" id=\"estados_seleccionados\">\n\t<option value=\"1\" selected=\"selected\">Preseleccionado</option>\n\t<option value=\"3\">Convocado</option>\n</select>","color":"#000000","hidden":"{$item_hide_text_cambiar_estado_seleccionado}","isHtml":true},
+			{"text":"<label>Estado:</label>\n<select name=\"estados_seleccionados\" id=\"estados_seleccionados\">\n\t<option value=\"1\" selected=\"selected\">Preseleccionado</option>\n\t<option value=\"3\">Evaluacion-Empresa</option>\n</select>","color":"#000000","hidden":"{$item_hide_text_cambiar_estado_seleccionado}","isHtml":true},
+				
+				
+			{"text":""},
 				
 		  ],
   "border": [ false, false, false, false ],

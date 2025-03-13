@@ -143,7 +143,7 @@ $tdatapostulacion_importar_planilla[".isUseAjaxSuggest"] = true;
 
 
 
-																																																						
+																																																															
 
 $tdatapostulacion_importar_planilla[".ajaxCodeSnippetAdded"] = false;
 
@@ -1567,6 +1567,8 @@ $proto33["m_columns"][] = "fecha_inicio";
 $proto33["m_columns"][] = "fecha_fin";
 $proto33["m_columns"][] = "locacion";
 $proto33["m_columns"][] = "asistentes";
+$proto33["m_columns"][] = "descripcion";
+$proto33["m_columns"][] = "es_programa";
 $obj = new SQLTable($proto33);
 
 $proto32["m_table"] = $obj;
@@ -1655,6 +1657,7 @@ $proto41["m_columns"][] = "adjunto_certificado_discapacidad";
 $proto41["m_columns"][] = "foto";
 $proto41["m_columns"][] = "resumen";
 $proto41["m_columns"][] = "fk_habilidades";
+$proto41["m_columns"][] = "id_barrio";
 $obj = new SQLTable($proto41);
 
 $proto40["m_table"] = $obj;

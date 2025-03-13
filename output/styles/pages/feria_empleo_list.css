@@ -10,13 +10,19 @@
 [data-cellid="grid_footcell_field3"][data-page="feria_empleo_list"][data-cellid="grid_footcell_field3"][data-page="feria_empleo_list"][data-cellid="grid_footcell_field3"][data-page="feria_empleo_list"] {
   white-space: nowrap;
 }
-[data-cellid="grid_headcell_checkbox"][data-page="feria_empleo_list"][data-cellid="grid_headcell_checkbox"][data-page="feria_empleo_list"][data-cellid="grid_headcell_checkbox"][data-page="feria_empleo_list"] {
-  width: 30px;
-}
 [data-cellid="grid_headcell_icons"][data-page="feria_empleo_list"][data-cellid="grid_headcell_icons"][data-page="feria_empleo_list"][data-cellid="grid_headcell_icons"][data-page="feria_empleo_list"] {
   width: 30px;
 }
 [data-cellid="grid_cell_icons"][data-page="feria_empleo_list"][data-cellid="grid_cell_icons"][data-page="feria_empleo_list"][data-cellid="grid_cell_icons"][data-page="feria_empleo_list"] {
+  white-space: nowrap;
+}
+[data-cellid="grid_footcell_field4"][data-page="feria_empleo_list"][data-cellid="grid_footcell_field4"][data-page="feria_empleo_list"][data-cellid="grid_footcell_field4"][data-page="feria_empleo_list"] {
+  white-space: nowrap;
+}
+[data-cellid="grid_footcell_field5"][data-page="feria_empleo_list"][data-cellid="grid_footcell_field5"][data-page="feria_empleo_list"][data-cellid="grid_footcell_field5"][data-page="feria_empleo_list"] {
+  white-space: nowrap;
+}
+[data-cellid="grid_cell_field8"][data-page="feria_empleo_list"][data-cellid="grid_cell_field8"][data-page="feria_empleo_list"][data-cellid="grid_cell_field8"][data-page="feria_empleo_list"] {
   white-space: nowrap;
 }
 [data-page="feria_empleo_list"][data-itemid="details_found"] {

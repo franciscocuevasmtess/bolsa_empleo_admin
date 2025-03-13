@@ -3,10 +3,33 @@
 	<head>
 				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{$pagetitle}</title>
+	<title>EmpleaPy :: Admin :: {$pagetitle}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="icon" src="images/imgob23/gob_ico.png" type="image/x-icon" sizes="32x32"> 
 	<base href="{$projectPath}">
-		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	 <link rel="stylesheet" href="images/icons_v4/font/bootstrap-icons.css">
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.mtess.gov.py/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '14']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     crossorigin=""/>
+ <link rel="icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-180x180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
 	{BEGIN rtlCSS}
 	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
 	{END rtlCSS}
@@ -393,6 +416,28 @@
 
 {END nombre_fieldblock}
 											
+{BEGIN descripcion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_descripcion}  r-vertical-field" 
+	data-signal-error-for="descripcion{$id}" {$required_attr_descripcion}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="descripcion" data-fieldname="descripcion" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_descripcion}">
+		{BEGIN descripcion_label}{$label bolsa_empleo_feria_empleo descripcion }{END descripcion_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$descripcion_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="descripcion" {$tooltipAttr bolsa_empleo_feria_empleo descripcion } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_feria_empleo descripcion }		</div>
+	</div>
+</div>
+
+
+{END descripcion_fieldblock}
+											
 {BEGIN fecha_inicio_fieldblock}
 
 
@@ -458,6 +503,28 @@
 
 
 {END locacion_fieldblock}
+											
+{BEGIN es_programa_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_es_programa}  r-vertical-field" 
+	data-signal-error-for="es_programa{$id}" {$required_attr_es_programa}
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" {$item_integrated_edit_field5} data-pageid="{$pageid}" data-field="es_programa" data-fieldname="es_programa" >
+
+	<label class="r-edit-label control-label" for="{$labelfor_es_programa}">
+		{BEGIN es_programa_label}{$label bolsa_empleo_feria_empleo es_programa }{END es_programa_label}
+		<span class="icon-required"></span>
+	</label>
+	<div class="r-edit-field">
+		{$es_programa_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="es_programa" {$tooltipAttr bolsa_empleo_feria_empleo es_programa } >
+		<div class="text-muted" >
+		{$tooltip bolsa_empleo_feria_empleo es_programa }		</div>
+	</div>
+</div>
+
+
+{END es_programa_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c3}

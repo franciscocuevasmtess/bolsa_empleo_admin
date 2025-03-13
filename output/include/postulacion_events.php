@@ -57,8 +57,7 @@
 function BeforeMoveNextList(&$data, &$row, &$record, $recordId, $pageObject)
 {
 
-			//$pageObject->hideItem("grid_field2", $recordId);
-
+		//$pageObject->hideItem("grid_field2", $recordId);
 
 if ($data["sexo"] == 'M') {  
 	$data["sexo"] = "Masculino";

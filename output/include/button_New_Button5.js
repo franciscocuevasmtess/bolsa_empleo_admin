@@ -21,9 +21,20 @@ Runner.buttonEvents["New_Button5"] = function( pageObj, proxy, pageid ) {
 // Habilitar el botón antes de ejecutar la lógica
 ctrl.setEnabled();
 
+
+var valorConvocados = document.getElementById("estados_convocados").value;
+if (valorConvocados == "1") {
+	textValorConvocados = "Preseleccionado";
+} else {
+	textValorConvocados = "Seleccionado";
+}
+
+
+
 // Mostrar un cuadro de diálogo de confirmación usando SweetAlert2
 Swal.fire({
-	title: "Esta seguro que desea realizar el cambio masivo? ",
+	//title: "Esta seguro que desea realizar el cambio masivo? ",
+	title: "¿Está seguro que desea realizar el cambio de estado de Convocado a "+textValorConvocados+" de la Oferta ID: "+proxy.master['id_vacancias']+"?",
 	showCancelButton: true,
 	confirmButtonText: "Confirmar",
 	cancelButtonText: "Cancelar"

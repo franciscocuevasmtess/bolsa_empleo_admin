@@ -162,7 +162,7 @@ $tdataseguimientos[".isUseAjaxSuggest"] = true;
 
 
 
-																																																																																																																																																																																																																																																																																																																																																																																																																																																
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								
 
 $tdataseguimientos[".ajaxCodeSnippetAdded"] = false;
 
@@ -222,13 +222,13 @@ $tdataseguimientos[".warnLeavingPages"] = true;
 
 
 
-$tstrOrderBy = "";
+$tstrOrderBy = "ORDER BY s.id_seguimiento DESC";
 $tdataseguimientos[".strOrderBy"] = $tstrOrderBy;
 
 $tdataseguimientos[".orderindexes"] = array();
 
 
-$tdataseguimientos[".sqlHead"] = "SELECT s.id_seguimiento,  	s.fecha_creacion,  	s.id_postulacion,  	s.id_estado_anterior,  	s.id_nuevo_estado,  	s.usuario_carga_id,  	s.usuario_carga_nombre,  	s.id_vacancia,  	s.id_empresa_sucursal,  	p.fk_personaid,  	per.nombre,   	per.apellidos,  	pd.valor";
+$tdataseguimientos[".sqlHead"] = "SELECT s.id_seguimiento,  	s.fecha_creacion,  	s.id_postulacion,  	--s.id_estado_anterior,  	--s.id_nuevo_estado,  	CASE  	    WHEN s.id_estado_anterior = 1 THEN 'Preseleccionado'  	    WHEN s.id_estado_anterior = 2 THEN 'Seleccionado'  	    WHEN s.id_estado_anterior = 3 THEN 'Evaluacion-Empresa'  	    WHEN s.id_estado_anterior = 4 THEN 'Insertado'  	    ELSE 'Postulado'  	END AS id_estado_anterior,  	CASE  	    WHEN s.id_nuevo_estado = 1 THEN 'Preseleccionado'  	    WHEN s.id_nuevo_estado = 2 THEN 'Seleccionado'  	    WHEN s.id_nuevo_estado = 3 THEN 'Evaluacion-Empresa'  	    WHEN s.id_nuevo_estado = 4 THEN 'Insertado'  	    ELSE 'Postulado'  	END AS id_nuevo_estado,  	s.usuario_carga_id,  	s.usuario_carga_nombre,  	s.id_vacancia,  	s.id_empresa_sucursal,  	p.fk_personaid,  	per.nombre,   	per.apellidos,  	pd.valor";
 $tdataseguimientos[".sqlFrom"] = "FROM bolsa_empleo.seguimientos s LEFT JOIN bolsa_empleo.postulacion p ON s.id_postulacion = p.id_postulacion AND s.id_vacancia = p.id_vacancia  JOIN eportal.eportal.persons per ON p.fk_personaid = per.id  JOIN eportal.eportal.persons_docs pd ON per.id = pd.person_id";
 $tdataseguimientos[".sqlWhereExpr"] = "";
 $tdataseguimientos[".sqlTail"] = "";
@@ -729,7 +729,7 @@ $tdataseguimientos[".hideMobileList"] = array();
 	$fdata["GoodName"] = "id_estado_anterior";
 	$fdata["ownerTable"] = "";
 	$fdata["Label"] = GetFieldLabel("bolsa_empleo_seguimientos","id_estado_anterior");
-	$fdata["FieldType"] = 3;
+	$fdata["FieldType"] = 201;
 
 
 	
@@ -742,7 +742,7 @@ $tdataseguimientos[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "s.id_estado_anterior";
+	$fdata["FullName"] = "CASE  	    WHEN s.id_estado_anterior = 1 THEN 'Preseleccionado'  	    WHEN s.id_estado_anterior = 2 THEN 'Seleccionado'  	    WHEN s.id_estado_anterior = 3 THEN 'Evaluacion-Empresa'  	    WHEN s.id_estado_anterior = 4 THEN 'Insertado'  	    ELSE 'Postulado'  	END";
 
 	
 	
@@ -892,7 +892,7 @@ $tdataseguimientos[".hideMobileList"] = array();
 	$fdata["GoodName"] = "id_nuevo_estado";
 	$fdata["ownerTable"] = "";
 	$fdata["Label"] = GetFieldLabel("bolsa_empleo_seguimientos","id_nuevo_estado");
-	$fdata["FieldType"] = 3;
+	$fdata["FieldType"] = 201;
 
 
 	
@@ -905,7 +905,7 @@ $tdataseguimientos[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "s.id_nuevo_estado";
+	$fdata["FullName"] = "CASE  	    WHEN s.id_nuevo_estado = 1 THEN 'Preseleccionado'  	    WHEN s.id_nuevo_estado = 2 THEN 'Seleccionado'  	    WHEN s.id_nuevo_estado = 3 THEN 'Evaluacion-Empresa'  	    WHEN s.id_nuevo_estado = 4 THEN 'Insertado'  	    ELSE 'Postulado'  	END";
 
 	
 	
@@ -2373,10 +2373,10 @@ function createSqlQuery_seguimientos()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "s.id_seguimiento,  	s.fecha_creacion,  	s.id_postulacion,  	s.id_estado_anterior,  	s.id_nuevo_estado,  	s.usuario_carga_id,  	s.usuario_carga_nombre,  	s.id_vacancia,  	s.id_empresa_sucursal,  	p.fk_personaid,  	per.nombre,   	per.apellidos,  	pd.valor";
+$proto0["m_strFieldList"] = "s.id_seguimiento,  	s.fecha_creacion,  	s.id_postulacion,  	--s.id_estado_anterior,  	--s.id_nuevo_estado,  	CASE  	    WHEN s.id_estado_anterior = 1 THEN 'Preseleccionado'  	    WHEN s.id_estado_anterior = 2 THEN 'Seleccionado'  	    WHEN s.id_estado_anterior = 3 THEN 'Evaluacion-Empresa'  	    WHEN s.id_estado_anterior = 4 THEN 'Insertado'  	    ELSE 'Postulado'  	END AS id_estado_anterior,  	CASE  	    WHEN s.id_nuevo_estado = 1 THEN 'Preseleccionado'  	    WHEN s.id_nuevo_estado = 2 THEN 'Seleccionado'  	    WHEN s.id_nuevo_estado = 3 THEN 'Evaluacion-Empresa'  	    WHEN s.id_nuevo_estado = 4 THEN 'Insertado'  	    ELSE 'Postulado'  	END AS id_nuevo_estado,  	s.usuario_carga_id,  	s.usuario_carga_nombre,  	s.id_vacancia,  	s.id_empresa_sucursal,  	p.fk_personaid,  	per.nombre,   	per.apellidos,  	pd.valor";
 $proto0["m_strFrom"] = "FROM bolsa_empleo.seguimientos s LEFT JOIN bolsa_empleo.postulacion p ON s.id_postulacion = p.id_postulacion AND s.id_vacancia = p.id_vacancia  JOIN eportal.eportal.persons per ON p.fk_personaid = per.id  JOIN eportal.eportal.persons_docs pd ON per.id = pd.person_id";
 $proto0["m_strWhere"] = "";
-$proto0["m_strOrderBy"] = "";
+$proto0["m_strOrderBy"] = "ORDER BY s.id_seguimiento DESC";
 	
 		;
 			$proto0["cipherer"] = null;
@@ -2451,25 +2451,25 @@ $obj = new SQLFieldListItem($proto10);
 $proto0["m_fieldlist"][]=$obj;
 						$proto12=array();
 $obj = new SQLNonParsed(array(
-	"m_sql" => "s.id_estado_anterior"
+	"m_sql" => "CASE  	    WHEN s.id_estado_anterior = 1 THEN 'Preseleccionado'  	    WHEN s.id_estado_anterior = 2 THEN 'Seleccionado'  	    WHEN s.id_estado_anterior = 3 THEN 'Evaluacion-Empresa'  	    WHEN s.id_estado_anterior = 4 THEN 'Insertado'  	    ELSE 'Postulado'  	END"
 ));
 
-$proto12["m_sql"] = "s.id_estado_anterior";
+$proto12["m_sql"] = "CASE  	    WHEN s.id_estado_anterior = 1 THEN 'Preseleccionado'  	    WHEN s.id_estado_anterior = 2 THEN 'Seleccionado'  	    WHEN s.id_estado_anterior = 3 THEN 'Evaluacion-Empresa'  	    WHEN s.id_estado_anterior = 4 THEN 'Insertado'  	    ELSE 'Postulado'  	END";
 $proto12["m_srcTableName"] = "bolsa_empleo.seguimientos";
 $proto12["m_expr"]=$obj;
-$proto12["m_alias"] = "";
+$proto12["m_alias"] = "id_estado_anterior";
 $obj = new SQLFieldListItem($proto12);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto14=array();
 $obj = new SQLNonParsed(array(
-	"m_sql" => "s.id_nuevo_estado"
+	"m_sql" => "CASE  	    WHEN s.id_nuevo_estado = 1 THEN 'Preseleccionado'  	    WHEN s.id_nuevo_estado = 2 THEN 'Seleccionado'  	    WHEN s.id_nuevo_estado = 3 THEN 'Evaluacion-Empresa'  	    WHEN s.id_nuevo_estado = 4 THEN 'Insertado'  	    ELSE 'Postulado'  	END"
 ));
 
-$proto14["m_sql"] = "s.id_nuevo_estado";
+$proto14["m_sql"] = "CASE  	    WHEN s.id_nuevo_estado = 1 THEN 'Preseleccionado'  	    WHEN s.id_nuevo_estado = 2 THEN 'Seleccionado'  	    WHEN s.id_nuevo_estado = 3 THEN 'Evaluacion-Empresa'  	    WHEN s.id_nuevo_estado = 4 THEN 'Insertado'  	    ELSE 'Postulado'  	END";
 $proto14["m_srcTableName"] = "bolsa_empleo.seguimientos";
 $proto14["m_expr"]=$obj;
-$proto14["m_alias"] = "";
+$proto14["m_alias"] = "id_nuevo_estado";
 $obj = new SQLFieldListItem($proto14);
 
 $proto0["m_fieldlist"][]=$obj;
@@ -2748,6 +2748,17 @@ $obj = new SQLFromListItem($proto48);
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
+												$proto52=array();
+	$obj = new SQLNonParsed(array(
+	"m_sql" => "s.id_seguimiento DESC"
+));
+
+$proto52["m_column"]=$obj;
+$proto52["m_bAsc"] = 0;
+$proto52["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto52);
+
+$proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="bolsa_empleo.seguimientos";		
 $obj = new SQLQuery($proto0);
 

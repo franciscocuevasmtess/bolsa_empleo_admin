@@ -20,6 +20,7 @@ $dalTablepersons["adjunto_certificado_discapacidad"] = array("type"=>201,"varnam
 $dalTablepersons["foto"] = array("type"=>128,"varname"=>"foto", "name" => "foto", "autoInc" => "0");
 $dalTablepersons["resumen"] = array("type"=>201,"varname"=>"resumen", "name" => "resumen", "autoInc" => "0");
 $dalTablepersons["fk_habilidades"] = array("type"=>200,"varname"=>"fk_habilidades", "name" => "fk_habilidades", "autoInc" => "0");
+$dalTablepersons["id_barrio"] = array("type"=>3,"varname"=>"id_barrio", "name" => "id_barrio", "autoInc" => "0");
 $dalTablepersons["id"]["key"]=true;
 
 $dal_info["eportal_at_192_168_70_170_eportal_persons"] = &$dalTablepersons;

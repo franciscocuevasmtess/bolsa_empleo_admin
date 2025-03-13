@@ -37,6 +37,9 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelscity["Spanish"]["distrito_id"] = "Distrito Id";
 	$fieldToolTipscity["Spanish"]["distrito_id"] = "";
 	$placeHolderscity["Spanish"]["distrito_id"] = "";
+	$fieldLabelscity["Spanish"]["cod_ine_ciudad"] = "Cod Ine Ciudad";
+	$fieldToolTipscity["Spanish"]["cod_ine_ciudad"] = "";
+	$placeHolderscity["Spanish"]["cod_ine_ciudad"] = "";
 	if (count($fieldToolTipscity["Spanish"]))
 		$tdatacity[".isUseToolTips"] = true;
 }
@@ -134,7 +137,7 @@ $tdatacity[".isUseAjaxSuggest"] = true;
 
 
 
-																																																						
+																																																															
 
 $tdatacity[".ajaxCodeSnippetAdded"] = false;
 
@@ -158,6 +161,7 @@ $tdatacity[".googleLikeFields"][] = "id";
 $tdatacity[".googleLikeFields"][] = "name";
 $tdatacity[".googleLikeFields"][] = "countrycode";
 $tdatacity[".googleLikeFields"][] = "distrito_id";
+$tdatacity[".googleLikeFields"][] = "cod_ine_ciudad";
 
 
 
@@ -191,7 +195,7 @@ $tdatacity[".strOrderBy"] = $tstrOrderBy;
 $tdatacity[".orderindexes"] = array();
 
 
-$tdatacity[".sqlHead"] = "SELECT id,  	name,  	countrycode,  	distrito_id";
+$tdatacity[".sqlHead"] = "SELECT id,  	name,  	countrycode,  	distrito_id,  	cod_ine_ciudad";
 $tdatacity[".sqlFrom"] = "FROM eportal.city";
 $tdatacity[".sqlWhereExpr"] = "";
 $tdatacity[".sqlTail"] = "";
@@ -800,6 +804,145 @@ $tdatacity[".hideMobileList"] = array();
 
 	$tdatacity["distrito_id"] = $fdata;
 		$tdatacity[".searchableFields"][] = "distrito_id";
+//	cod_ine_ciudad
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 5;
+	$fdata["strName"] = "cod_ine_ciudad";
+	$fdata["GoodName"] = "cod_ine_ciudad";
+	$fdata["ownerTable"] = "eportal.city";
+	$fdata["Label"] = GetFieldLabel("eportal_city","cod_ine_ciudad");
+	$fdata["FieldType"] = 200;
+
+
+	
+	
+			
+
+		$fdata["strField"] = "cod_ine_ciudad";
+
+		$fdata["sourceSingle"] = "cod_ine_ciudad";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "cod_ine_ciudad";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text field");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+			$edata["HTML5InuptType"] = "text";
+
+		$edata["EditParams"] = "";
+			$edata["EditParams"].= " maxlength=20";
+
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatacity["cod_ine_ciudad"] = $fdata;
+		$tdatacity[".searchableFields"][] = "cod_ine_ciudad";
 
 
 $tables_data["eportal.city"]=&$tdatacity;
@@ -844,7 +987,7 @@ function createSqlQuery_city()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "id,  	name,  	countrycode,  	distrito_id";
+$proto0["m_strFieldList"] = "id,  	name,  	countrycode,  	distrito_id,  	cod_ine_ciudad";
 $proto0["m_strFrom"] = "FROM eportal.city";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
@@ -940,40 +1083,55 @@ $proto12["m_alias"] = "";
 $obj = new SQLFieldListItem($proto12);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto14=array();
-$proto14["m_link"] = "SQLL_MAIN";
-			$proto15=array();
-$proto15["m_strName"] = "eportal.city";
-$proto15["m_srcTableName"] = "eportal.city";
-$proto15["m_columns"] = array();
-$proto15["m_columns"][] = "id";
-$proto15["m_columns"][] = "name";
-$proto15["m_columns"][] = "countrycode";
-$proto15["m_columns"][] = "distrito_id";
-$obj = new SQLTable($proto15);
+						$proto14=array();
+			$obj = new SQLField(array(
+	"m_strName" => "cod_ine_ciudad",
+	"m_strTable" => "eportal.city",
+	"m_srcTableName" => "eportal.city"
+));
 
-$proto14["m_table"] = $obj;
-$proto14["m_sql"] = "eportal.city";
-$proto14["m_alias"] = "";
+$proto14["m_sql"] = "cod_ine_ciudad";
 $proto14["m_srcTableName"] = "eportal.city";
-$proto16=array();
-$proto16["m_sql"] = "";
-$proto16["m_uniontype"] = "SQLL_UNKNOWN";
+$proto14["m_expr"]=$obj;
+$proto14["m_alias"] = "";
+$obj = new SQLFieldListItem($proto14);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto16=array();
+$proto16["m_link"] = "SQLL_MAIN";
+			$proto17=array();
+$proto17["m_strName"] = "eportal.city";
+$proto17["m_srcTableName"] = "eportal.city";
+$proto17["m_columns"] = array();
+$proto17["m_columns"][] = "id";
+$proto17["m_columns"][] = "name";
+$proto17["m_columns"][] = "countrycode";
+$proto17["m_columns"][] = "distrito_id";
+$proto17["m_columns"][] = "cod_ine_ciudad";
+$obj = new SQLTable($proto17);
+
+$proto16["m_table"] = $obj;
+$proto16["m_sql"] = "eportal.city";
+$proto16["m_alias"] = "";
+$proto16["m_srcTableName"] = "eportal.city";
+$proto18=array();
+$proto18["m_sql"] = "";
+$proto18["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto16["m_column"]=$obj;
-$proto16["m_contained"] = array();
-$proto16["m_strCase"] = "";
-$proto16["m_havingmode"] = false;
-$proto16["m_inBrackets"] = false;
-$proto16["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto16);
+$proto18["m_column"]=$obj;
+$proto18["m_contained"] = array();
+$proto18["m_strCase"] = "";
+$proto18["m_havingmode"] = false;
+$proto18["m_inBrackets"] = false;
+$proto18["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto18);
 
-$proto14["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto14);
+$proto16["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto16);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -989,7 +1147,7 @@ $queryData_city = createSqlQuery_city();
 	
 		;
 
-				
+					
 
 $tdatacity[".sqlquery"] = $queryData_city;
 

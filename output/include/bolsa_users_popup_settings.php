@@ -186,7 +186,7 @@ $tdatabolsa_users_popup[".isUseAjaxSuggest"] = true;
 
 
 
-																																																																																																												
+																																																																																																																														
 
 $tdatabolsa_users_popup[".ajaxCodeSnippetAdded"] = false;
 
@@ -253,8 +253,7 @@ $tdatabolsa_users_popup[".warnLeavingPages"] = true;
 
 
 
-$tstrOrderBy = "ORDER BY
-    bolsa_empleo.bolsa_users.\"id\" DESC, bolsa_empleo.vacancia.id_vacancias DESC";
+$tstrOrderBy = "ORDER BY bolsa_empleo.bolsa_users.id DESC, bolsa_empleo.vacancia.id_vacancias DESC";
 $tdatabolsa_users_popup[".strOrderBy"] = $tstrOrderBy;
 
 $tdatabolsa_users_popup[".orderindexes"] = array();
@@ -262,9 +261,9 @@ $tdatabolsa_users_popup[".orderindexes"] = array();
 			$tdatabolsa_users_popup[".orderindexes"][] = array(21, (0 ? "ASC" : "DESC"), "bolsa_empleo.vacancia.id_vacancias");
 
 
-$tdatabolsa_users_popup[".sqlHead"] = "SELECT bolsa_empleo.bolsa_users.\"id\",      bolsa_empleo.bolsa_users.nro_documento,      bolsa_empleo.bolsa_users.clave,      bolsa_empleo.bolsa_users.clave AS repetir_clave,      bolsa_empleo.bolsa_users.email,      bolsa_empleo.bolsa_users.groupid,      bolsa_empleo.bolsa_users.active,      bolsa_empleo.bolsa_users.reset_token,      bolsa_empleo.bolsa_users.reset_date,      bolsa_empleo.bolsa_users.fecha_alta,      bolsa_empleo.bolsa_users.llave,      bolsa_empleo.bolsa_users.estado_llave,      bolsa_empleo.bolsa_users.senadis,      bolsa_empleo.bolsa_users.trabajo_antes,      bolsa_empleo.bolsa_users.userpic,      bolsa_empleo.bolsa_users.personaid,      bolsa_empleo.bolsa_users.fullname,      bolsa_empleo.bolsa_users.username,      bolsa_empleo.bolsa_users.hash_generado,      bolsa_empleo.bolsa_users.adjunto_foto_perfil,      bolsa_empleo.vacancia.id_vacancias";
-$tdatabolsa_users_popup[".sqlFrom"] = "FROM      bolsa_empleo.bolsa_users  CROSS JOIN      bolsa_empleo.vacancia";
-$tdatabolsa_users_popup[".sqlWhereExpr"] = "bolsa_empleo.bolsa_users.personaid not in (SELECT  	pos.fk_personaid  FROM  	bolsa_empleo.vacancia as va  	INNER JOIN  	bolsa_empleo.postulacion as pos  	ON   va.id_vacancias = pos.id_vacancia  		where 	va.id_vacancias =  	bolsa_empleo.vacancia.id_vacancias   and pos.fk_personaid= 	bolsa_empleo.bolsa_users.personaid)";
+$tdatabolsa_users_popup[".sqlHead"] = "SELECT bolsa_empleo.bolsa_users.id,  bolsa_empleo.bolsa_users.nro_documento,  bolsa_empleo.bolsa_users.clave,  bolsa_empleo.bolsa_users.clave AS repetir_clave,  bolsa_empleo.bolsa_users.email,  bolsa_empleo.bolsa_users.groupid,  bolsa_empleo.bolsa_users.active,  bolsa_empleo.bolsa_users.reset_token,  bolsa_empleo.bolsa_users.reset_date,  bolsa_empleo.bolsa_users.fecha_alta,  bolsa_empleo.bolsa_users.llave,  bolsa_empleo.bolsa_users.estado_llave,  bolsa_empleo.bolsa_users.senadis,  bolsa_empleo.bolsa_users.trabajo_antes,  bolsa_empleo.bolsa_users.userpic,  bolsa_empleo.bolsa_users.personaid,  bolsa_empleo.bolsa_users.fullname,  bolsa_empleo.bolsa_users.username,  bolsa_empleo.bolsa_users.hash_generado,  bolsa_empleo.bolsa_users.adjunto_foto_perfil,  bolsa_empleo.vacancia.id_vacancias";
+$tdatabolsa_users_popup[".sqlFrom"] = "FROM bolsa_empleo.bolsa_users  , bolsa_empleo.vacancia";
+$tdatabolsa_users_popup[".sqlWhereExpr"] = "(bolsa_empleo.bolsa_users.personaid not in (SELECT  	pos.fk_personaid  FROM  	bolsa_empleo.vacancia as va  	INNER JOIN  	bolsa_empleo.postulacion as pos  	ON   va.id_vacancias = pos.id_vacancia  		where 	va.id_vacancias =  	bolsa_empleo.vacancia.id_vacancias   and pos.fk_personaid= 	bolsa_empleo.bolsa_users.personaid))";
 $tdatabolsa_users_popup[".sqlTail"] = "";
 
 
@@ -332,7 +331,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.\"id\"";
+	$fdata["FullName"] = "bolsa_empleo.bolsa_users.id";
 
 	
 	
@@ -3302,10 +3301,10 @@ function createSqlQuery_bolsa_users_popup()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "bolsa_empleo.bolsa_users.\"id\",      bolsa_empleo.bolsa_users.nro_documento,      bolsa_empleo.bolsa_users.clave,      bolsa_empleo.bolsa_users.clave AS repetir_clave,      bolsa_empleo.bolsa_users.email,      bolsa_empleo.bolsa_users.groupid,      bolsa_empleo.bolsa_users.active,      bolsa_empleo.bolsa_users.reset_token,      bolsa_empleo.bolsa_users.reset_date,      bolsa_empleo.bolsa_users.fecha_alta,      bolsa_empleo.bolsa_users.llave,      bolsa_empleo.bolsa_users.estado_llave,      bolsa_empleo.bolsa_users.senadis,      bolsa_empleo.bolsa_users.trabajo_antes,      bolsa_empleo.bolsa_users.userpic,      bolsa_empleo.bolsa_users.personaid,      bolsa_empleo.bolsa_users.fullname,      bolsa_empleo.bolsa_users.username,      bolsa_empleo.bolsa_users.hash_generado,      bolsa_empleo.bolsa_users.adjunto_foto_perfil,      bolsa_empleo.vacancia.id_vacancias";
-$proto0["m_strFrom"] = "FROM      bolsa_empleo.bolsa_users  CROSS JOIN      bolsa_empleo.vacancia";
-$proto0["m_strWhere"] = "bolsa_empleo.bolsa_users.personaid not in (SELECT  	pos.fk_personaid  FROM  	bolsa_empleo.vacancia as va  	INNER JOIN  	bolsa_empleo.postulacion as pos  	ON   va.id_vacancias = pos.id_vacancia  		where 	va.id_vacancias =  	bolsa_empleo.vacancia.id_vacancias   and pos.fk_personaid= 	bolsa_empleo.bolsa_users.personaid)";
-$proto0["m_strOrderBy"] = "ORDER BY      bolsa_empleo.bolsa_users.\"id\" DESC, bolsa_empleo.vacancia.id_vacancias DESC";
+$proto0["m_strFieldList"] = "bolsa_empleo.bolsa_users.id,  bolsa_empleo.bolsa_users.nro_documento,  bolsa_empleo.bolsa_users.clave,  bolsa_empleo.bolsa_users.clave AS repetir_clave,  bolsa_empleo.bolsa_users.email,  bolsa_empleo.bolsa_users.groupid,  bolsa_empleo.bolsa_users.active,  bolsa_empleo.bolsa_users.reset_token,  bolsa_empleo.bolsa_users.reset_date,  bolsa_empleo.bolsa_users.fecha_alta,  bolsa_empleo.bolsa_users.llave,  bolsa_empleo.bolsa_users.estado_llave,  bolsa_empleo.bolsa_users.senadis,  bolsa_empleo.bolsa_users.trabajo_antes,  bolsa_empleo.bolsa_users.userpic,  bolsa_empleo.bolsa_users.personaid,  bolsa_empleo.bolsa_users.fullname,  bolsa_empleo.bolsa_users.username,  bolsa_empleo.bolsa_users.hash_generado,  bolsa_empleo.bolsa_users.adjunto_foto_perfil,  bolsa_empleo.vacancia.id_vacancias";
+$proto0["m_strFrom"] = "FROM bolsa_empleo.bolsa_users  , bolsa_empleo.vacancia";
+$proto0["m_strWhere"] = "(bolsa_empleo.bolsa_users.personaid not in (SELECT  	pos.fk_personaid  FROM  	bolsa_empleo.vacancia as va  	INNER JOIN  	bolsa_empleo.postulacion as pos  	ON   va.id_vacancias = pos.id_vacancia  		where 	va.id_vacancias =  	bolsa_empleo.vacancia.id_vacancias   and pos.fk_personaid= 	bolsa_empleo.bolsa_users.personaid))";
+$proto0["m_strOrderBy"] = "ORDER BY bolsa_empleo.bolsa_users.id DESC, bolsa_empleo.vacancia.id_vacancias DESC";
 	
 		;
 			$proto0["cipherer"] = null;
@@ -3351,7 +3350,7 @@ $proto0["m_fieldlist"] = array();
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto6["m_sql"] = "bolsa_empleo.bolsa_users.\"id\"";
+$proto6["m_sql"] = "bolsa_empleo.bolsa_users.id";
 $proto6["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
 $proto6["m_expr"]=$obj;
 $proto6["m_alias"] = "";
@@ -3709,7 +3708,7 @@ $proto53["m_columns"][] = "imagen_perfil";
 $obj = new SQLTable($proto53);
 
 $proto52["m_table"] = $obj;
-$proto52["m_sql"] = "CROSS JOIN      bolsa_empleo.vacancia";
+$proto52["m_sql"] = ", bolsa_empleo.vacancia";
 $proto52["m_alias"] = "";
 $proto52["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
 $proto54=array();

@@ -3,10 +3,33 @@
 	<head>
 				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{$pagetitle}</title>
+	<title>EmpleaPy :: Admin :: {$pagetitle}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="icon" src="images/imgob23/gob_ico.png" type="image/x-icon" sizes="32x32"> 
 	<base href="{$projectPath}">
-		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	 <link rel="stylesheet" href="images/icons_v4/font/bootstrap-icons.css">
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.mtess.gov.py/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '14']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     crossorigin=""/>
+ <link rel="icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-180x180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
 	{BEGIN rtlCSS}
 	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
 	{END rtlCSS}
@@ -357,7 +380,7 @@
 </div>
 		
 </span>	 
-		<span data-itemtype="custom_button" data-itemid="boton_nueva_oferta_laboral" {$item_boton_nueva_oferta_laboral} data-pageid="{$pageid}" data-small data-button-item>
+		<span data-itemtype="custom_button" data-itemid="boton_nueva_oferta_laboral" {$item_boton_nueva_oferta_laboral} data-pageid="{$pageid}" data-page="vacancia_list" data-small data-button-item>
 	<a type="button" title="" class="btn btn-primary   
 	" id="New_Button2" href="javascript:void(0)" typeid="ib" >
 							 Nueva Oferta Laboral			</a>
@@ -503,7 +526,7 @@
 							<td 
 	class="			"
 	colspan="2"		 
-	data-cellId="grid_cell_top" data-pageid="{$pageid}" data-record-id="{$recId}">
+	data-cellId="grid_cell_top" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list">
  
 
 		
@@ -689,11 +712,6 @@
 									 
 									 
 									 
-									 
-									 
-									 
-									 
-									 
 													</table>
 
 					</div>
@@ -766,7 +784,7 @@
 			 
 		data-field=""
 	 
-	data-cellId="grid_cell_label5" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+	data-cellId="grid_cell_label5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-label-col>
  
 <span data-itemtype="text" data-itemid="text2" {$item_text2} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
 	<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAZCAYAAADaILXQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGDSURBVHgBrVPtUcJAEN29HP5CBzvASoRKxALEWAGhAwQLoASpQEqgAyyBGfMLkj1vY+IcMR+3mDeTmbvblzf79u4hdIxBaAYnoof0qDYaOgKLEsFzShQqu8Wr5Pbf4q4ob40xW0QccU3BhWDRm6mZWdG9AYqs6M4QjeOVHhcccedVnYIx8/itty1zvcXbRK+nqbEO5vGyF4nErX0WjaChUxYGgq24c/vjAgF3ROlLlX2G23EB7wslSDcszPb701PEZ3VrsXgB137dWoSqrnz44s4lY6m90H54GinS99buxD2XjAUbBIf2O3DyOM7lN9zmjvmKBTnG9mCPpD7sYWgFP+1bfgyUunPjLB5LLvjTIcA8CIL3wwIPdV1JxqLzwmu88rPsjqZuXeDstbTZbOK0hsgnFKIQ+QSkkxD5jCWrPSUTrjvfvoonHktWQzP85RhkzrCKd5bQttsvgznsDkGNqurItuBCfC0DzMVn5Rq70pzEwqYECDqbs1Z6nVDyp54c9fobcxaKAPFD1ZwAAAAASUVORK5CYII="></p></span>
@@ -787,7 +805,7 @@
 {$salario_value}
 </span>
 {END salario_fieldcolumn} 
-<span data-itemtype="text" data-itemid="text7" {$item_text7} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
+<span data-itemtype="text" data-itemid="text7" {$item_text7} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
 	|</span>
  
 {BEGIN cantidad_vacancia_fieldcolumn}
@@ -799,7 +817,7 @@
 							<td 
 	class="r-align-right r-ori-vert			"
 			 
-	data-cellId="grid_cell_label9" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+	data-cellId="grid_cell_label9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-value-col>
  
 <span data-itemtype="custom_button_container" data-itemid="custom_button_container" {$item_custom_button_container} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
 	<span class="dropdown ">
@@ -854,69 +872,13 @@
 							<td 
 	class="r-align-right r-ori-vert			"
 			 
-	data-cellId="grid_cell_label17" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+	data-cellId="grid_cell_label17" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-label-col>
 </td>
 						 
 							<td 
 	class="r-align-right r-ori-vert			"
 			 
-	data-cellId="grid_cell_label18" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
-</td>
-											</tr>
-									 
-										<tr>
-						 
-							<td 
-	class="r-align-right r-ori-vert			"
-			 
-	data-cellId="grid_cell_label19" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
-</td>
-						 
-							<td 
-	class="r-align-center r-ori-vert				{$imagen_perfil_class}
-			"
-			 
-		data-field=""
-	 
-	data-cellId="grid_cell_label23" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
- 
-{BEGIN imagen_perfil_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="grid_field9" {$item_grid_field9} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="imagen_perfil" data-fieldname="imagen_perfil" data-default-width >
-{$imagen_perfil_value}
-</span>
-{END imagen_perfil_fieldcolumn}</td>
-											</tr>
-									 
-										<tr>
-						 
-							<td 
-	class="r-align-center r-ori-vert			"
-	colspan="2"		 
-	data-cellId="grid_cell_label16" data-pageid="{$pageid}" data-record-id="{$recId}">
-</td>
-											</tr>
-									 
-										<tr>
-						 
-							<td 
-	class="r-align-right r-ori-vert			"
-			 
-	data-cellId="grid_cell_label20" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
-</td>
-						 
-							<td 
-	class="r-align-right r-ori-vert			"
-			 
-	data-cellId="grid_cell_label22" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
-</td>
-											</tr>
-									 
-										<tr>
-						 
-							<td 
-	class="r-align-right r-ori-vert			"
-	colspan="2"		 
-	data-cellId="grid_cell_label21" data-pageid="{$pageid}" data-record-id="{$recId}">
+	data-cellId="grid_cell_label18" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-value-col>
 </td>
 											</tr>
 									 
@@ -947,7 +909,7 @@
 							<td 
 	class="r-align-right r-ori-vert			"
 			 
-	data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+	data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-value-col>
 </td>
 											</tr>
 									 
@@ -959,7 +921,7 @@
 	colspan="2"		 
 		data-field=""
 	 
-	data-cellId="grid_cell_label1" data-pageid="{$pageid}" data-record-id="{$recId}">
+	data-cellId="grid_cell_label1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list">
  
 {BEGIN id_estado_vacancia_fieldcolumn}
 <span data-itemtype="grid_field" data-itemid="grid_field6" {$item_grid_field6} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="id_estado_vacancia" data-fieldname="id_estado_vacancia" data-default-width >
@@ -976,7 +938,7 @@
 	colspan="2"		 
 		data-field=""
 	 
-	data-cellId="grid_cell_label10" data-pageid="{$pageid}" data-record-id="{$recId}">
+	data-cellId="grid_cell_label10" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list">
  
 {BEGIN fk_id_feria_empleo_fieldcolumn}
 <span data-itemtype="grid_field" data-itemid="grid_field11" {$item_grid_field11} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="fk_id_feria_empleo" data-fieldname="fk_id_feria_empleo" data-default-width >
@@ -993,9 +955,9 @@
 	colspan="2"		 
 		data-field=""
 	 
-	data-cellId="grid_cell_label3" data-pageid="{$pageid}" data-record-id="{$recId}">
+	data-cellId="grid_cell_label3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list">
  
-<span data-itemtype="text" data-itemid="text5" {$item_text5} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
+<span data-itemtype="text" data-itemid="text5" {$item_text5} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
 	Descripcion del Puesto:</span>
  
 {BEGIN descripcion_puesto_fieldcolumn}
@@ -1010,7 +972,7 @@
 							<td 
 	class="r-align-right r-ori-vert			"
 	colspan="2"		 
-	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}">
+	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list">
 </td>
 											</tr>
 									 
@@ -1021,7 +983,7 @@
 	colspan="2"		 
 	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list">
  
-<span data-itemtype="text" data-itemid="text9" {$item_text9} data-pageid="{$pageid}" data-record-id="{$recId}" data-small > 
+<span data-itemtype="text" data-itemid="text9" {$item_text9} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small > 
 	Cargar Postulantes desde Planilla</span>
 </td>
 											</tr>
@@ -1034,14 +996,14 @@
 	colspan="2"		 
 		data-field=""
 	 
-	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}">
+	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list">
  
 {BEGIN importar_archivo_fieldcolumn}
 <span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-field="importar_archivo" data-fieldname="importar_archivo" data-default-width >
 {$importar_archivo_value}
 </span>
 {END importar_archivo_fieldcolumn} 
-<span data-itemtype="custom_button" data-itemid="boton_importar_planilla" {$item_boton_importar_planilla} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+<span data-itemtype="custom_button" data-itemid="boton_importar_planilla" {$item_boton_importar_planilla} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" data-small data-button-item>
 	<a type="button" title="" class="btn btn-danger   
 	" id="btn_importar_planilla1" href="javascript:void(0)" typeid="ib" >
 					<span class="fa fa-share-square"></span>
@@ -1055,7 +1017,7 @@
 							<td 
 	class="r-align-right r-ori-vert			"
 	colspan="2"		 
-	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}">
+	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list">
 </td>
 											</tr>
 									 
@@ -1067,7 +1029,7 @@
 			 
 		data-field=""
 	 
-	data-cellId="grid_cell_label4" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+	data-cellId="grid_cell_label4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-label-col>
  
 {BEGIN fecha_creacion_vacancia_fieldheadercolumn}
 <span 
@@ -1095,7 +1057,7 @@
 			 
 		data-field=""
 	 
-	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-value-col>
  
 {BEGIN fecha_expiracion_vacancia_fieldheadercolumn}
 <span 
@@ -1121,18 +1083,9 @@
 										<tr>
 						 
 							<td 
-	class="r-align-center r-ori-vert			"
-	colspan="2"		 
-	data-cellId="grid_cell_label6" data-pageid="{$pageid}" data-record-id="{$recId}">
-</td>
-											</tr>
-									 
-										<tr>
-						 
-							<td 
 	class="r-align-left r-ori-vert			"
 			 
-	data-cellId="grid_cell_label11" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+	data-cellId="grid_cell_label11" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-label-col>
  
 {BEGIN dtables_link}
 	<a 
@@ -1150,7 +1103,7 @@
 							<td 
 	class=" r-ori-vert			"
 			 
-	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vacancia_list" data-value-col>
 </td>
 											</tr>
 									 
@@ -1165,7 +1118,7 @@
 
  
 		 
-							<div data-itemtype="details_preview" data-itemid="details_preview1" {$item_details_preview1} data-pageid="{$pageid}" data-record-id="{$recId}" 
+							<div data-itemtype="details_preview" data-itemid="details_preview1" {$item_details_preview1} data-pageid="{$pageid}" data-page="vacancia_list" data-record-id="{$recId}" 
 	data-orders="bolsa_users_popup,postulacion_preseleccionado,postulacion_seleccionado,postulacion_convocado,seguimientos,postulacion_importar_planilla,seguimiento_resumen"
 			data-details-bolsa_users_popup			data-details-postulacion_preseleccionado			data-details-postulacion_seleccionado			data-details-postulacion_convocado			data-details-seguimientos			data-details-postulacion_importar_planilla			data-details-seguimiento_resumen	>
 		<span data-details-inside data-short-table="bolsa_users_popup">

@@ -37,7 +37,6 @@ class class_GlobalEvents extends eventsBase
 		$this->events["bolsa_empleo_vacancia_snippet4"] = true;
 		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet7"] = true;
-		$this->events["bolsa_empleo_vacancia_snippet8"] = true;
 		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet1"] = true;
 		$this->events["bolsa_empleo_postulacion_preseleccionado_snippet2"] = true;
 
@@ -59,9 +58,8 @@ class class_GlobalEvents extends eventsBase
 function AfterLogout($username)
 {
 
-		
-	header("Location: login.php");
-	exit; // Asegúrate de terminar el script después de la redirección
+		header("Location: login.php");
+exit; // Asegúrate de terminar el script después de la redirección
 ;		
 } // function AfterLogout
 
@@ -148,9 +146,8 @@ return true;
 function AfterSuccessfulLogin($username, $password, &$data, $pageObject)
 {
 
-			header("Location: vacancia_list.php");
-	exit();
-
+		header("Location: vacancia_list.php");
+exit();
 ;		
 } // function AfterSuccessfulLogin
 
@@ -185,8 +182,7 @@ function AfterSuccessfulLogin($username, $password, &$data, $pageObject)
 }
 	function event_bolsa_empleo_vacancia_snippet2(&$params)
 	{
-	
-echo '<script src="jquery.masknumber.js"></script>';
+	echo '<script src="jquery.masknumber.js"></script>';
 	;
 }
 	function event_bolsa_empleo_bolsa_users_popup_snippet(&$params)
@@ -218,8 +214,7 @@ echo '<script src="jquery.masknumber.js"></script>';
 }
 	function event_bolsa_empleo_vacancia_snippet4(&$params)
 	{
-	
-echo '<script src="xlsx.full.min.js"></script>';
+	echo '<script src="xlsx.full.min.js"></script>';
 	;
 }
 	function event_bolsa_empleo_postulacion_preseleccionado_snippet(&$params)
@@ -308,13 +303,6 @@ echo '
 </script>
 ';
 
-	;
-}
-	function event_bolsa_empleo_vacancia_snippet8(&$params)
-	{
-	echo '
-$sql =
-';
 	;
 }
 	function event_bolsa_empleo_postulacion_preseleccionado_snippet1(&$params)

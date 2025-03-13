@@ -105,6 +105,11 @@ if (in_array($data_result["id_estado_vacancia"], $estadosOcultar)) {
 	$pageObject->showItem("text_cambiar_estado_convocado", $recordId);
 }
 
+
+//Utilizado en el evento 'Client Before' del boton 'Cambiar estado', para poder obtener el 'id_vacancias'.
+$pageObject->setProxyValue("master",$pageObject->getMasterRecord());
+
+
 ;		
 } // function BeforeShowList
 

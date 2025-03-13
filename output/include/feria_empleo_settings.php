@@ -6,11 +6,11 @@ $tdataferia_empleo[".OwnerID"] = "";
 $tdataferia_empleo[".OriginalTable"] = "bolsa_empleo.feria_empleo";
 
 
-$tdataferia_empleo[".pagesByType"] = my_json_decode( "{\"add\":[\"add\"],\"edit\":[\"edit\"],\"list\":[\"list\"],\"masterlist\":[\"masterlist\"],\"masterprint\":[\"masterprint\"]}" );
+$tdataferia_empleo[".pagesByType"] = my_json_decode( "{\"add\":[\"add\"],\"edit\":[\"edit\"],\"list\":[\"list\"],\"masterlist\":[\"masterlist\"],\"masterprint\":[\"masterprint\"],\"search\":[\"search\"]}" );
 $tdataferia_empleo[".originalPagesByType"] = $tdataferia_empleo[".pagesByType"];
-$tdataferia_empleo[".pages"] = types2pages( my_json_decode( "{\"add\":[\"add\"],\"edit\":[\"edit\"],\"list\":[\"list\"],\"masterlist\":[\"masterlist\"],\"masterprint\":[\"masterprint\"]}" ) );
+$tdataferia_empleo[".pages"] = types2pages( my_json_decode( "{\"add\":[\"add\"],\"edit\":[\"edit\"],\"list\":[\"list\"],\"masterlist\":[\"masterlist\"],\"masterprint\":[\"masterprint\"],\"search\":[\"search\"]}" ) );
 $tdataferia_empleo[".originalPages"] = $tdataferia_empleo[".pages"];
-$tdataferia_empleo[".defaultPages"] = my_json_decode( "{\"add\":\"add\",\"edit\":\"edit\",\"list\":\"list\",\"masterlist\":\"masterlist\",\"masterprint\":\"masterprint\"}" );
+$tdataferia_empleo[".defaultPages"] = my_json_decode( "{\"add\":\"add\",\"edit\":\"edit\",\"list\":\"list\",\"masterlist\":\"masterlist\",\"masterprint\":\"masterprint\",\"search\":\"search\"}" );
 $tdataferia_empleo[".originalDefaultPages"] = $tdataferia_empleo[".defaultPages"];
 
 //	field labels
@@ -43,6 +43,12 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsferia_empleo["Spanish"]["asistentes"] = "Asistentes";
 	$fieldToolTipsferia_empleo["Spanish"]["asistentes"] = "";
 	$placeHoldersferia_empleo["Spanish"]["asistentes"] = "";
+	$fieldLabelsferia_empleo["Spanish"]["descripcion"] = "Descripcion";
+	$fieldToolTipsferia_empleo["Spanish"]["descripcion"] = "";
+	$placeHoldersferia_empleo["Spanish"]["descripcion"] = "";
+	$fieldLabelsferia_empleo["Spanish"]["es_programa"] = "Es Programa?";
+	$fieldToolTipsferia_empleo["Spanish"]["es_programa"] = "";
+	$placeHoldersferia_empleo["Spanish"]["es_programa"] = "";
 	$pageTitlesferia_empleo["Spanish"]["add"] = "Tipo de Oferta Laboral, Añadir nuevo";
 	$pageTitlesferia_empleo["Spanish"]["edit"] = "Tipo de Oferta Laboral, Editar [{%id_feria_empleo}]";
 	if (count($fieldToolTipsferia_empleo["Spanish"]))
@@ -142,7 +148,7 @@ $tdataferia_empleo[".isUseAjaxSuggest"] = true;
 
 
 
-																																																						
+																																																															
 
 $tdataferia_empleo[".ajaxCodeSnippetAdded"] = false;
 
@@ -168,6 +174,8 @@ $tdataferia_empleo[".googleLikeFields"][] = "fecha_inicio";
 $tdataferia_empleo[".googleLikeFields"][] = "fecha_fin";
 $tdataferia_empleo[".googleLikeFields"][] = "locacion";
 $tdataferia_empleo[".googleLikeFields"][] = "asistentes";
+$tdataferia_empleo[".googleLikeFields"][] = "descripcion";
+$tdataferia_empleo[".googleLikeFields"][] = "es_programa";
 
 
 
@@ -201,7 +209,7 @@ $tdataferia_empleo[".strOrderBy"] = $tstrOrderBy;
 $tdataferia_empleo[".orderindexes"] = array();
 
 
-$tdataferia_empleo[".sqlHead"] = "SELECT id_feria_empleo,  	nombre,  	fecha_inicio,  	fecha_fin,  	locacion,  	asistentes";
+$tdataferia_empleo[".sqlHead"] = "SELECT id_feria_empleo,  	nombre,  	fecha_inicio,  	fecha_fin,  	locacion,  	asistentes,  	descripcion,  	es_programa";
 $tdataferia_empleo[".sqlFrom"] = "FROM bolsa_empleo.feria_empleo";
 $tdataferia_empleo[".sqlWhereExpr"] = "";
 $tdataferia_empleo[".sqlTail"] = "";
@@ -1121,6 +1129,277 @@ $tdataferia_empleo[".hideMobileList"] = array();
 
 	$tdataferia_empleo["asistentes"] = $fdata;
 		$tdataferia_empleo[".searchableFields"][] = "asistentes";
+//	descripcion
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 7;
+	$fdata["strName"] = "descripcion";
+	$fdata["GoodName"] = "descripcion";
+	$fdata["ownerTable"] = "bolsa_empleo.feria_empleo";
+	$fdata["Label"] = GetFieldLabel("bolsa_empleo_feria_empleo","descripcion");
+	$fdata["FieldType"] = 200;
+
+
+	
+	
+			
+
+		$fdata["strField"] = "descripcion";
+
+		$fdata["sourceSingle"] = "descripcion";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "descripcion";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "HTML");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text area");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+		$edata["UseRTE"] = true;
+
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+				$edata["nRows"] = 100;
+			$edata["nCols"] = 200;
+
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdataferia_empleo["descripcion"] = $fdata;
+		$tdataferia_empleo[".searchableFields"][] = "descripcion";
+//	es_programa
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 8;
+	$fdata["strName"] = "es_programa";
+	$fdata["GoodName"] = "es_programa";
+	$fdata["ownerTable"] = "bolsa_empleo.feria_empleo";
+	$fdata["Label"] = GetFieldLabel("bolsa_empleo_feria_empleo","es_programa");
+	$fdata["FieldType"] = 11;
+
+
+	
+	
+			
+
+		$fdata["strField"] = "es_programa";
+
+		$fdata["sourceSingle"] = "es_programa";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "es_programa";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Checkbox");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Checkbox");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+				$fdata["filterFormat"] = "Options list";
+		$fdata["showCollapsed"] = false;
+
+	
+	
+	
+		$fdata["filterCheckedMessageType"] = "Text";
+	$fdata["filterCheckedMessageText"] = "Checked";
+	$fdata["filterUncheckedMessageType"] = "Text";
+	$fdata["filterUncheckedMessageText"] = "Unchecked";
+
+//end of Filters settings
+
+
+	$tdataferia_empleo["es_programa"] = $fdata;
+		$tdataferia_empleo[".searchableFields"][] = "es_programa";
 
 
 $tables_data["bolsa_empleo.feria_empleo"]=&$tdataferia_empleo;
@@ -1165,7 +1444,7 @@ function createSqlQuery_feria_empleo()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "id_feria_empleo,  	nombre,  	fecha_inicio,  	fecha_fin,  	locacion,  	asistentes";
+$proto0["m_strFieldList"] = "id_feria_empleo,  	nombre,  	fecha_inicio,  	fecha_fin,  	locacion,  	asistentes,  	descripcion,  	es_programa";
 $proto0["m_strFrom"] = "FROM bolsa_empleo.feria_empleo";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
@@ -1289,42 +1568,72 @@ $proto16["m_alias"] = "";
 $obj = new SQLFieldListItem($proto16);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto18=array();
-$proto18["m_link"] = "SQLL_MAIN";
-			$proto19=array();
-$proto19["m_strName"] = "bolsa_empleo.feria_empleo";
-$proto19["m_srcTableName"] = "bolsa_empleo.feria_empleo";
-$proto19["m_columns"] = array();
-$proto19["m_columns"][] = "id_feria_empleo";
-$proto19["m_columns"][] = "nombre";
-$proto19["m_columns"][] = "fecha_inicio";
-$proto19["m_columns"][] = "fecha_fin";
-$proto19["m_columns"][] = "locacion";
-$proto19["m_columns"][] = "asistentes";
-$obj = new SQLTable($proto19);
+						$proto18=array();
+			$obj = new SQLField(array(
+	"m_strName" => "descripcion",
+	"m_strTable" => "bolsa_empleo.feria_empleo",
+	"m_srcTableName" => "bolsa_empleo.feria_empleo"
+));
 
-$proto18["m_table"] = $obj;
-$proto18["m_sql"] = "bolsa_empleo.feria_empleo";
-$proto18["m_alias"] = "";
+$proto18["m_sql"] = "descripcion";
 $proto18["m_srcTableName"] = "bolsa_empleo.feria_empleo";
-$proto20=array();
-$proto20["m_sql"] = "";
-$proto20["m_uniontype"] = "SQLL_UNKNOWN";
+$proto18["m_expr"]=$obj;
+$proto18["m_alias"] = "";
+$obj = new SQLFieldListItem($proto18);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto20=array();
+			$obj = new SQLField(array(
+	"m_strName" => "es_programa",
+	"m_strTable" => "bolsa_empleo.feria_empleo",
+	"m_srcTableName" => "bolsa_empleo.feria_empleo"
+));
+
+$proto20["m_sql"] = "es_programa";
+$proto20["m_srcTableName"] = "bolsa_empleo.feria_empleo";
+$proto20["m_expr"]=$obj;
+$proto20["m_alias"] = "";
+$obj = new SQLFieldListItem($proto20);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto22=array();
+$proto22["m_link"] = "SQLL_MAIN";
+			$proto23=array();
+$proto23["m_strName"] = "bolsa_empleo.feria_empleo";
+$proto23["m_srcTableName"] = "bolsa_empleo.feria_empleo";
+$proto23["m_columns"] = array();
+$proto23["m_columns"][] = "id_feria_empleo";
+$proto23["m_columns"][] = "nombre";
+$proto23["m_columns"][] = "fecha_inicio";
+$proto23["m_columns"][] = "fecha_fin";
+$proto23["m_columns"][] = "locacion";
+$proto23["m_columns"][] = "asistentes";
+$proto23["m_columns"][] = "descripcion";
+$proto23["m_columns"][] = "es_programa";
+$obj = new SQLTable($proto23);
+
+$proto22["m_table"] = $obj;
+$proto22["m_sql"] = "bolsa_empleo.feria_empleo";
+$proto22["m_alias"] = "";
+$proto22["m_srcTableName"] = "bolsa_empleo.feria_empleo";
+$proto24=array();
+$proto24["m_sql"] = "";
+$proto24["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto20["m_column"]=$obj;
-$proto20["m_contained"] = array();
-$proto20["m_strCase"] = "";
-$proto20["m_havingmode"] = false;
-$proto20["m_inBrackets"] = false;
-$proto20["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto20);
+$proto24["m_column"]=$obj;
+$proto24["m_contained"] = array();
+$proto24["m_strCase"] = "";
+$proto24["m_havingmode"] = false;
+$proto24["m_inBrackets"] = false;
+$proto24["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto24);
 
-$proto18["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto18);
+$proto22["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto22);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -1340,7 +1649,7 @@ $queryData_feria_empleo = createSqlQuery_feria_empleo();
 	
 		;
 
-						
+								
 
 $tdataferia_empleo[".sqlquery"] = $queryData_feria_empleo;
 

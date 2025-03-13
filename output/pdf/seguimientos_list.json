@@ -216,7 +216,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"Postulantes","hidden":"{$item_hide_text}","fontSize":26,"bold":true,"isHtml":true},
+			{"text":"Historial de cambios","hidden":"{$item_hide_text}","fontSize":26,"bold":true,"isHtml":true},
 				
 				
 			{"text":"","hidden":"{$item_hide_inline_add}"},

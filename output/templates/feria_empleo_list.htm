@@ -3,10 +3,33 @@
 	<head>
 				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{$pagetitle}</title>
+	<title>EmpleaPy :: Admin :: {$pagetitle}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="icon" src="images/imgob23/gob_ico.png" type="image/x-icon" sizes="32x32"> 
 	<base href="{$projectPath}">
-		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	 <link rel="stylesheet" href="images/icons_v4/font/bootstrap-icons.css">
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://analytics.mtess.gov.py/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '14']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     crossorigin=""/>
+ <link rel="icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-180x180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
 	{BEGIN rtlCSS}
 	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
 	{END rtlCSS}
@@ -204,6 +227,12 @@
 												<span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu">
+								<li data-itemtype="advsearch_link" data-itemid="advsearch_link" {$item_advsearch_link} data-pageid="{$pageid}" data-small >
+				<a   href="feria_empleo_search.php{$stateLink_full}" {$advsearchlink_attrs}  title="" >
+				
+		Búsqueda avanzada		
+		</a>
+	</li>
 							{BEGIN searchPanelTopButtons}
 	<li data-itemtype="show_search_panel" data-itemid="show_search_panel" {$item_show_search_panel} data-pageid="{$pageid}" data-small >
 				<a  id="showOptPanel{$id}"  title="" >
@@ -427,6 +456,32 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_id_feria_empleo}</span>
 						</div>
 		{END searchCtrlBlock_id_feria_empleo}
+																{BEGIN searchCtrlBlock_es_programa}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_es_programa}" {$filterRow_attrs_es_programa}>
+			<label>{$label bolsa_empleo_feria_empleo es_programa }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_es_programa}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_es_programa}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_es_programa}</span>
+						</div>
+		{END searchCtrlBlock_es_programa}
+																{BEGIN searchCtrlBlock_descripcion}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_descripcion}" {$filterRow_attrs_descripcion}>
+			<label>{$label bolsa_empleo_feria_empleo descripcion }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_descripcion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_descripcion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_descripcion}</span>
+						</div>
+		{END searchCtrlBlock_descripcion}
 																{BEGIN searchCtrlBlock_asistentes}
 
 
@@ -555,7 +610,13 @@
 			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="locacion"]:before {
 		content: "{$label bolsa_empleo_feria_empleo locacion}";
 	}
-		}
+				[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="descripcion"]:before {
+		content: "{$label bolsa_empleo_feria_empleo descripcion}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="es_programa"]:before {
+		content: "{$label bolsa_empleo_feria_empleo es_programa}";
+	}
+	}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="topbar" {$form_grid} data-pageid="{$pageid}" class=" table  r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable"
 	cellpadding="0"
@@ -587,28 +648,6 @@
 	
 	</th>
 	{END cellblock_grid_headcell_icons}
-									{BEGIN cellblock_grid_headcell_checkbox}
-	<th
-	
-	{$cell_grid_headcell_checkbox}
-	{$recordattrs}
-	class="
-		 r-ori-vert			"
-
-	
-	data-cellId="grid_headcell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="feria_empleo_list"	
-		data-checkbox-cell
-	>
-
-	 
-		{BEGIN checkbox_column}
-<span data-itemtype="grid_checkbox_head" data-itemid="grid_checkbox_head" {$item_grid_checkbox_head} data-pageid="{$pageid}" data-record-id="{$recId}" >
-	<input type="checkbox" {$checkboxheader_attrs}>
-</span>
-{END checkbox_column}
-	
-	</th>
-	{END cellblock_grid_headcell_checkbox}
 									{BEGIN cellblock_grid_headcell_field}
 	<th
 	
@@ -649,11 +688,45 @@
 	{$cell_grid_headcell_field1}
 	{$recordattrs}
 	class="
+		 r-ori-vert		 {$descripcion_class}	"
+
+			data-field="descripcion"
+	
+	data-cellId="grid_headcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN descripcion_fieldheadercolumn}
+	{BEGIN descripcion_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label" {$item_grid_field_label} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="descripcion" data-fieldname="descripcion" 
+
+			{$descripcion_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_feria_empleo descripcion }</span>
+					{$arrow_icon_descripcion}
+			</span>
+	</span>
+	{END descripcion_fieldheader}
+{END descripcion_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field1}
+									{BEGIN cellblock_grid_headcell_field2}
+	<th
+	
+	{$cell_grid_headcell_field2}
+	{$recordattrs}
+	class="
 		 r-ori-vert		 {$fecha_inicio_class}	"
 
 			data-field="fecha_inicio"
 	
-	data-cellId="grid_headcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -676,18 +749,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field1}
-									{BEGIN cellblock_grid_headcell_field2}
+	{END cellblock_grid_headcell_field2}
+									{BEGIN cellblock_grid_headcell_field3}
 	<th
 	
-	{$cell_grid_headcell_field2}
+	{$cell_grid_headcell_field3}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$fecha_fin_class}	"
 
 			data-field="fecha_fin"
 	
-	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -710,18 +783,18 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field2}
-									{BEGIN cellblock_grid_headcell_field3}
+	{END cellblock_grid_headcell_field3}
+									{BEGIN cellblock_grid_headcell_field4}
 	<th
 	
-	{$cell_grid_headcell_field3}
+	{$cell_grid_headcell_field4}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$locacion_class}	"
 
 			data-field="locacion"
 	
-	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -744,7 +817,56 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field3}
+	{END cellblock_grid_headcell_field4}
+									{BEGIN cellblock_grid_headcell_field5}
+	<th
+	
+	{$cell_grid_headcell_field5}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$es_programa_class}	"
+
+			data-field="es_programa"
+	
+	data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN es_programa_fieldheadercolumn}
+	{BEGIN es_programa_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label1" {$item_grid_field_label1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="es_programa" data-fieldname="es_programa" 
+
+			{$es_programa_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_feria_empleo es_programa }</span>
+					{$arrow_icon_es_programa}
+			</span>
+	</span>
+	{END es_programa_fieldheader}
+{END es_programa_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field5}
+									{BEGIN cellblock_grid_cell_field6}
+	<th
+	
+	{$cell_grid_cell_field6}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field6" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</th>
+	{END cellblock_grid_cell_field6}
 							</tr>
 															
 					{END grid_header}
@@ -783,30 +905,6 @@
 	
 	</td>
 	{END cellblock_grid_cell_icons}
-									{BEGIN cellblock_grid_cell_checkbox}
-	<td
-	
-	{$cell_grid_cell_checkbox}
-	{$recordattrs}
-	class="
-		 r-ori-vert			"
-
-	
-	data-cellId="grid_cell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}"		data-control-cell
-	
-		data-checkbox-cell
-	>
-
-	 
-		{BEGIN checkbox_column}
-<span data-itemtype="grid_checkbox" data-itemid="grid_checkbox" {$item_grid_checkbox} data-pageid="{$pageid}" data-record-id="{$recId}" >
-	<input type="checkbox" {$checkbox_attrs}
-		>
-</span>	
-{END checkbox_column}
-	
-	</td>
-	{END cellblock_grid_cell_checkbox}
 									{BEGIN cellblock_grid_cell_field}
 	<td
 	
@@ -834,11 +932,32 @@
 	{$cell_grid_cell_field1}
 	{$recordattrs}
 	class="
+		 r-ori-vert		 {$descripcion_class}	"
+
+			data-field="descripcion"
+	
+	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN descripcion_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="descripcion" data-fieldname="descripcion" data-default-width >
+{$descripcion_value}
+</span>
+{END descripcion_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field1}
+									{BEGIN cellblock_grid_cell_field2}
+	<td
+	
+	{$cell_grid_cell_field2}
+	{$recordattrs}
+	class="
 		 r-ori-vert		 {$fecha_inicio_class}	"
 
 			data-field="fecha_inicio"
 	
-	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -848,18 +967,18 @@
 </span>
 {END fecha_inicio_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field1}
-									{BEGIN cellblock_grid_cell_field2}
+	{END cellblock_grid_cell_field2}
+									{BEGIN cellblock_grid_cell_field3}
 	<td
 	
-	{$cell_grid_cell_field2}
+	{$cell_grid_cell_field3}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$fecha_fin_class}	"
 
 			data-field="fecha_fin"
 	
-	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -869,18 +988,18 @@
 </span>
 {END fecha_fin_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field2}
-									{BEGIN cellblock_grid_cell_field3}
+	{END cellblock_grid_cell_field3}
+									{BEGIN cellblock_grid_cell_field4}
 	<td
 	
-	{$cell_grid_cell_field3}
+	{$cell_grid_cell_field4}
 	{$recordattrs}
 	class="
 		 r-ori-vert		 {$locacion_class}	"
 
 			data-field="locacion"
 	
-	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -890,8 +1009,55 @@
 </span>
 {END locacion_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field3}
-							</tr>
+	{END cellblock_grid_cell_field4}
+									{BEGIN cellblock_grid_cell_field5}
+	<td
+	
+	{$cell_grid_cell_field5}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$es_programa_class}	"
+
+			data-field="es_programa"
+	
+	data-cellId="grid_cell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN es_programa_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field1" {$item_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="es_programa" data-fieldname="es_programa" data-default-width >
+{$es_programa_value}
+</span>
+{END es_programa_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field5}
+										<td
+	
+	{$cell_grid_cell_field7}
+	{$recordattrs}
+	class="
+				 {$id_feria_empleo_class}	"
+
+			data-field="id_feria_empleo"
+	
+	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN id_feria_empleo_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field2" {$item_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="id_feria_empleo" data-fieldname="id_feria_empleo" data-default-width >
+{$id_feria_empleo_value}
+</span>
+{END id_feria_empleo_fieldcolumn}	 
+		<span data-itemtype="custom_button" data-itemid="custom_button" {$item_custom_button} data-pageid="{$pageid}" data-record-id="{$recId}" data-small data-button-item>
+	<a type="button" title="Descargar Asistentes" class="btn btn-success  btn-xs 
+	" id="New_Button9" href="javascript:void(0)" typeid="ib" >
+					<span class="glyphicon glyphicon-download-alt"></span>
+							Descargar Asistentes			</a>
+</span>
+	
+	</td>
+								</tr>
 										
 											{END grid_row}
 					</tbody>
@@ -917,21 +1083,6 @@
 	
 	</td>
 	{END cellblock_grid_footcell_icons}
-									{BEGIN cellblock_grid_footcell_checkbox}
-	<td
-	
-	{$cell_grid_footcell_checkbox}
-	{$recordattrs}
-	class="
-		 r-ori-vert			"
-
-	
-	data-cellId="grid_footcell_checkbox" data-pageid="{$pageid}" data-record-id="{$recId}"	
-	>
-
-	
-	</td>
-	{END cellblock_grid_footcell_checkbox}
 									{BEGIN cellblock_grid_footcell_field}
 	<td
 	
@@ -953,7 +1104,7 @@
 	{$cell_grid_footcell_field1}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$fecha_inicio_class}	"
+		 r-ori-vert		 {$descripcion_class}	"
 
 	
 	data-cellId="grid_footcell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="feria_empleo_list"	
@@ -968,7 +1119,7 @@
 	{$cell_grid_footcell_field2}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$fecha_fin_class}	"
+		 r-ori-vert		 {$fecha_inicio_class}	"
 
 	
 	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="feria_empleo_list"	
@@ -983,7 +1134,7 @@
 	{$cell_grid_footcell_field3}
 	{$recordattrs}
 	class="
-		 r-ori-vert		 {$locacion_class}	"
+		 r-ori-vert		 {$fecha_fin_class}	"
 
 	
 	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="feria_empleo_list"	
@@ -992,6 +1143,51 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field3}
+									{BEGIN cellblock_grid_footcell_field4}
+	<td
+	
+	{$cell_grid_footcell_field4}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$locacion_class}	"
+
+	
+	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="feria_empleo_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field4}
+									{BEGIN cellblock_grid_footcell_field5}
+	<td
+	
+	{$cell_grid_footcell_field5}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$es_programa_class}	"
+
+	
+	data-cellId="grid_footcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="feria_empleo_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field5}
+									{BEGIN cellblock_grid_cell_field8}
+	<td
+	
+	{$cell_grid_cell_field8}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="feria_empleo_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field8}
 							</tr>
 					
 					</tfoot>

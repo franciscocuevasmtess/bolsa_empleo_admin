@@ -131,7 +131,7 @@ $tdatavacancia_estado[".isUseAjaxSuggest"] = true;
 
 
 
-																																																						
+																																																															
 
 $tdatavacancia_estado[".ajaxCodeSnippetAdded"] = false;
 

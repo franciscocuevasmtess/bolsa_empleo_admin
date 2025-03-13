@@ -8,8 +8,31 @@
 [data-cellid="supertop_c2"][data-page="vacancia_list"][data-cellid="supertop_c2"][data-page="vacancia_list"][data-cellid="supertop_c2"][data-page="vacancia_list"] {
   background-color: transparent;
 }
+[data-cellid="grid_cell_top"][data-page="vacancia_list"][data-cellid="grid_cell_top"][data-page="vacancia_list"][data-cellid="grid_cell_top"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
 [data-cellid="grid_cell_label"][data-page="vacancia_list"][data-cellid="grid_cell_label"][data-page="vacancia_list"][data-cellid="grid_cell_label"][data-page="vacancia_list"] {
+  background-color: #ffffff;
   width: 80%;
+}
+[data-cellid="grid_cell_field"][data-page="vacancia_list"][data-cellid="grid_cell_field"][data-page="vacancia_list"][data-cellid="grid_cell_field"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_label1"][data-page="vacancia_list"][data-cellid="grid_cell_label1"][data-page="vacancia_list"][data-cellid="grid_cell_label1"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_label3"][data-page="vacancia_list"][data-cellid="grid_cell_label3"][data-page="vacancia_list"][data-cellid="grid_cell_label3"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+  color: #ffffff;
+}
+[data-cellid="grid_cell_label4"][data-page="vacancia_list"][data-cellid="grid_cell_label4"][data-page="vacancia_list"][data-cellid="grid_cell_label4"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_field4"][data-page="vacancia_list"][data-cellid="grid_cell_field4"][data-page="vacancia_list"][data-cellid="grid_cell_field4"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_dpreview"][data-page="vacancia_list"][data-cellid="grid_cell_dpreview"][data-page="vacancia_list"][data-cellid="grid_cell_dpreview"][data-page="vacancia_list"] {
+  background-color: #ffffff;
 }
 [data-cellid="grid_cell_label7"][data-page="vacancia_list"][data-cellid="grid_cell_label7"][data-page="vacancia_list"][data-cellid="grid_cell_label7"][data-page="vacancia_list"] {
   background-color: #ffffff;
@@ -18,19 +41,53 @@
   background-color: #ffffff;
   padding: 1px;
 }
+[data-cellid="grid_cell_field5"][data-page="vacancia_list"][data-cellid="grid_cell_field5"][data-page="vacancia_list"][data-cellid="grid_cell_field5"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_label5"][data-page="vacancia_list"][data-cellid="grid_cell_label5"][data-page="vacancia_list"][data-cellid="grid_cell_label5"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_label9"][data-page="vacancia_list"][data-cellid="grid_cell_label9"][data-page="vacancia_list"][data-cellid="grid_cell_label9"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_label10"][data-page="vacancia_list"][data-cellid="grid_cell_label10"][data-page="vacancia_list"][data-cellid="grid_cell_label10"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_label17"][data-page="vacancia_list"][data-cellid="grid_cell_label17"][data-page="vacancia_list"][data-cellid="grid_cell_label17"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_label18"][data-page="vacancia_list"][data-cellid="grid_cell_label18"][data-page="vacancia_list"][data-cellid="grid_cell_label18"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
 [data-cellid="grid_cell_field6"][data-page="vacancia_list"][data-cellid="grid_cell_field6"][data-page="vacancia_list"][data-cellid="grid_cell_field6"][data-page="vacancia_list"] {
+  background-color: #ffffff;
   font-weight: bold;
   font-size: 26px;
+}
+[data-cellid="grid_cell_field7"][data-page="vacancia_list"][data-cellid="grid_cell_field7"][data-page="vacancia_list"][data-cellid="grid_cell_field7"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_field8"][data-page="vacancia_list"][data-cellid="grid_cell_field8"][data-page="vacancia_list"][data-cellid="grid_cell_field8"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_label11"][data-page="vacancia_list"][data-cellid="grid_cell_label11"][data-page="vacancia_list"][data-cellid="grid_cell_label11"][data-page="vacancia_list"] {
+  background-color: #ffffff;
+}
+[data-cellid="grid_cell_field2"][data-page="vacancia_list"][data-cellid="grid_cell_field2"][data-page="vacancia_list"][data-cellid="grid_cell_field2"][data-page="vacancia_list"] {
+  background-color: #ffffff;
 }
 [data-page="vacancia_list"][data-itemid="details_found"] {
   color: #ffffff;
   font-weight: bold;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_field2"] {
   font-size: 14px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_field1"] {
   width: 100%;
+  font-family: "Open Sans";
   white-space: normal;
 }
 [data-page="vacancia_list"][data-itemid="grid_field8"] {
@@ -46,6 +103,7 @@
 [data-page="vacancia_list"][data-itemid="grid_field7"] {
   font-weight: bold;
   font-size: 20px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_field4"] {
   font-weight: bold;
@@ -58,29 +116,36 @@
 }
 [data-page="vacancia_list"][data-itemid="grid_field3"] {
   font-size: 14px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_field6"] {
   font-size: 16px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_field5"] {
   font-weight: bold;
   font-size: 25px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="text"] {
   font-weight: bold;
   font-size: 20px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_field10"] {
   font-weight: bold;
   font-size: 14px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="text2"] {
   font-size: 12px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="text3"] {
   color: #ffffff;
   font-weight: bold;
   font-size: 26px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_details_link"] {
   background-color: #5147f6;
@@ -96,27 +161,73 @@
   font-weight: bold;
   font-size: 12px;
 }
+[data-page="vacancia_list"][data-itemid="text5"] {
+  font-family: "Open Sans";
+}
 [data-page="vacancia_list"][data-itemid="grid_field11"] {
   font-weight: bold;
   font-size: 12px;
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="details_preview"] {
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_alldetails_link"] > a {
   font-weight: bold;
   font-size: 26px;
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="details_preview2"] {
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="details_preview3"] {
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="details_preview1"] {
+  font-family: "Open Sans";
+  padding-right: 30px;
+}
+[data-page="vacancia_list"][data-itemid="details_preview4"] {
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="details_preview5"] {
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="boton_nueva_oferta_laboral"] > .btn {
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="boton_importar_planilla"] > .btn {
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_field12"] {
   font-weight: bold;
   font-size: 12px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="text6"] {
   font-size: 12px;
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_field13"] {
   font-weight: bold;
   font-size: 12px;
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="text7"] {
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="text8"] {
   font-size: 10px;
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="grid_field"] {
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="details_preview6"] {
+  font-family: "Open Sans";
+}
+[data-page="vacancia_list"][data-itemid="text9"] {
+  font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="page_image_ash8f23hr"] {
   width: 400px;
@@ -222,85 +333,208 @@ select.form-control {
     }
 }
 
-/* Put  your custom CSS code here */
-
-/*[data-page="vacancia_list"][data-itemid="grid_field9"] {
-  color: red;
-}*/
-
-/* Put  your custom CSS code here */
-
-/* Link */
-.nav-justified .active a{
- background-color:transparent !important;
- color:#151313 !important;
- border-style:solid !important;
- border-width:1px !important;
- border-color:#faf9f9  !important;
- border-bottom-style:none !important;
+/*
+/* Link /
+.nav-justified .active a {
+	background-color:transparent !important;
+	color:#151313 !important;
+	border-style:solid !important;
+	border-width:1px !important;
+	border-color:#faf9f9  !important;
+	border-bottom-style:none !important;
 }
 
-/* Link */
-.nav-justified li a{
- border-bottom-color:#ececed !important;
- border-bottom-style:solid !important;
- border-top-left-radius:0px !important;
- border-top-right-radius:0px !important;
- border-bottom-left-radius:0px !important;
- border-bottom-right-radius:0px !important;
-}
-/* Select */
-#form_step3_27 tr select{
- /*width:321px !important;*/
- transform:translatex(0px) translatey(0px) !important;
+/* Link /
+.nav-justified li a {
+	border-bottom-color:#ececed !important;
+	border-bottom-style:solid !important;
+	border-top-left-radius:0px !important;
+	border-top-right-radius:0px !important;
+	border-bottom-left-radius:0px !important;
+	border-bottom-right-radius:0px !important;
 }
 
-/* Input */
-#form_step3_27 tr input[type=text]{
- width:321px !important;
-}
-/* Link */
-.r-topbar-page .r-body .r-content .r-data-block .r-above #form_above-grid_1 .row .col-md-12 .nav-justified li a{
- border-bottom-width:1px !important;
+/* Select /
+#form_step3_27 tr select {
+	/*width:321px !important;/
+	transform:translatex(0px) translatey(0px) !important;
 }
 
-/* Select */
-#form_step3_1 tr select{
- width:321px !important;
+/* Input /
+#form_step3_27 tr input[type=text] {
+	width:100% !important;
 }
 
-/* Input */
-#form_step3_1 tr input[type=text]{
- width:321px !important;
+/* Link /
+.r-topbar-page .r-body .r-content .r-data-block .r-above #form_above-grid_1 .row .col-md-12 .nav-justified li a {
+	border-bottom-width:1px !important;
 }
 
-/* Strong Tag */
-#form_top_1 h3 strong{
- color:#0c0c0d !important;
+/* Select /
+#form_step3_1 tr select {
+	width:100% !important;
 }
 
-/* Heading */
-#form_top_1 span h5{
- color:#090a0a !important;
-}
-/* Link */
-.bs-popup .modal-dialog .ui-resizable .modal-body .rnr-pagewrapper #form_above-grid_11 .row .col-md-12 .nav-justified li a{
- border-bottom-width:2px !important;
-}
-/* Button */
-.input-group .input-group-btn .btn-primary{
- background-color:#0d6efd;
- background-blend-mode:multiply;
+/* Input /
+#form_step3_1 tr input[type=text] {
+	width:100% !important;
 }
 
-/* Button */
-#form_above-grid_1 .row .r-align-right > span > .btn-primary{
- background-color:#0c14fc;
- background-blend-mode:saturation;
+/* Strong Tag /
+#form_top_1 h3 strong {
+	color:#0c0c0d !important;
 }
 
+/* Heading /
+#form_top_1 span h5 {
+	color:#090a0a !important;
+}
+
+/* Link /
+.bs-popup .modal-dialog .ui-resizable .modal-body .rnr-pagewrapper #form_above-grid_11 .row .col-md-12 .nav-justified li a {
+	border-bottom-width:2px !important;
+}
+
+/* Button /
+.input-group .input-group-btn .btn-primary {
+	background-color:#0d6efd;
+	background-blend-mode:multiply;
+}
+
+/* Button /
+#form_above-grid_1 .row .r-align-right > span > .btn-primary {
+	background-color:#0c14fc;
+	background-blend-mode:saturation;
+}
+
+.panel-default > .panel-heading {
+	color: #555555;
+	background-color: #ffffff;
+	border-color: #fff;
+}
+
+*/
+
+
+/* ------------------------- */
+/* 🌍 General */
+/* ------------------------- */
+body {
+    margin: 0;
+    background: linear-gradient(100deg, #4e49f8 0%, #d5018a 100%) !important;
+}
+
+/* ------------------------- */
+/* 📌 Links - Menú Justificado */
+/* ------------------------- */
+.nav-justified .active a {
+    background-color: transparent !important;
+    color: #151313 !important;
+    border: 1px solid #faf9f9 !important;
+    border-bottom: none !important;
+}
+
+.nav-justified li a {
+    border-bottom: 1px solid #ececed !important;
+    border-radius: 0px !important;
+}
+
+/* ------------------------- */
+/* 📌 Formulario - Inputs y Selects */
+/* ------------------------- */
+#form_step3_27 tr select,
+#form_step3_1 tr select {
+    width: 100% !important; /* Adaptable a cualquier pantalla */
+}
+
+#form_step3_27 tr input[type="text"],
+#form_step3_1 tr input[type="text"] {
+    width: 100% !important; /* Adaptable a cualquier pantalla */
+}
+
+/* ------------------------- */
+/* 📌 Botones */
+/* ------------------------- */
+.input-group .input-group-btn .btn-primary {
+    background-color: #0d6efd;
+    background-blend-mode: multiply;
+}
+
+#form_above-grid_1 .row .r-align-right > span > .btn-primary {
+    background-color: #0c14fc;
+    background-blend-mode: saturation;
+}
+
+/* ------------------------- */
+/* 📌 Paneles */
+/* ------------------------- */
 .panel-default > .panel-heading {
     color: #555555;
     background-color: #ffffff;
     border-color: #fff;
+}
+
+/* ------------------------- */
+/* 📌 Fuentes y Encabezados */
+/* ------------------------- */
+#form_top_1 h3 strong {
+    color: #0c0c0d !important;
+}
+
+#form_top_1 span h5 {
+    color: #090a0a !important;
+}
+
+/* ------------------------- */
+/* 📌 Modal y Popups */
+/* ------------------------- */
+.bs-popup .modal-dialog .modal-body .rnr-pagewrapper .nav-justified li a {
+    border-bottom-width: 2px !important;
+}
+
+/* ------------------------- */
+/* 📌 Ajustes de ancho - Evitar valores fijos */
+/* ------------------------- */
+.element-style {
+    max-width: 100% !important; /* Se adapta en cualquier pantalla */
+    min-width: 250px !important; /* Evita tamaños demasiado pequeños */
+}
+
+/* ------------------------- */
+/* 📌 Ajustes Responsivos con Media Queries */
+/* ------------------------- */
+@media (max-width: 1200px) { /* Tablets y laptops pequeñas */
+    .nav-justified .active a {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 768px) { /* Tablets */
+    .nav-justified li a {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .panel-default > .panel-heading {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) { /* Celulares */
+    .nav-justified li a {
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .panel-default > .panel-heading {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .input-group .btn-primary {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
 }

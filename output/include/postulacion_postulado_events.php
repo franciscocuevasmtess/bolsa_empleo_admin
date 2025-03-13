@@ -127,11 +127,7 @@
 function BeforeShowList(&$xt, &$templatefile, $pageObject)
 {
 
-		
-
-// Place event code here.
-// Use "Add Action" button to add code snippets.
-$pageObject->hideItem("grid_field6", $recordId); 
+		$pageObject->hideItem("grid_field6", $recordId); 
 ;		
 } // function BeforeShowList
 

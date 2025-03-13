@@ -12,7 +12,6 @@ Runner.buttonEvents["btn_importar_planilla1"] = function( pageObj, proxy, pageid
 	if ( !pageObj.buttonEventAfter['btn_importar_planilla1'] ) {
 		pageObj.buttonEventAfter['btn_importar_planilla1'] = function( result, ctrl, pageObj, proxy, pageid, rowData, row, params ) {
 			var ajax = ctrl;
-
 // Referencia al input de archivo del formulario.
 const fileInput = document.getElementById('fileInput_'+result['id_vacancias']);
 // Obtener el archivo seleccionado por el usuario.
@@ -92,9 +91,17 @@ if (file.name.endsWith('.csv')) {
 
 // Función para procesar datos CSV.
 function processCSV(csvData) {
-    const rows = csvData.split('\n').map(row => row.split(',')); // Dividir el archivo CSV en filas y columnas.
-    console.log('CSV Data:', rows); // Mostrar datos en consola para depuración.
-    sendDataToServer(rows); // Enviar datos al servidor.
+    //const rows = csvData.split('\n').map(row => row.split(',')); // Dividir el archivo CSV en filas y columnas.
+    //console.log('CSV Data:', rows); // Mostrar datos en consola para depuración.
+    //sendDataToServer(rows); // Enviar datos al servidor.
+	
+	const rows = csvData.split('\n')
+			.map(row => row.trim()) // Eliminar espacios innecesarios
+			.filter(row => row.length > 0) // Filtrar filas vacías
+			.map(row => row.split(',')); // Dividir cada fila en columnas
+	
+	console.log('CSV Data (sin filas vacías):', rows); // Verificar en consola
+	sendDataToServer(rows); // Enviar datos al servidor
 }
 
 // Función para procesar datos Excel.
@@ -109,6 +116,7 @@ function sendDataToServer(data) {
 	// Antes de enviar la solicitud AJAX.
 	const loading = document.getElementById('loading_'+result['id_vacancias']);
 	loading.style.display = 'block';
+
 
 	$.ajax({
 		url: 'upload_postulantes_ajax.php', // URL del script PHP que procesará los datos.
@@ -125,7 +133,7 @@ function sendDataToServer(data) {
 			
             try {
                 // Asegúrarse de que la respuesta es un objeto JSON, intentar 
-				//convertir la respuesta en JSON.
+					//convertir la respuesta en JSON.
                 const jsonResponse = typeof response === "string" ? JSON.parse(response) : response;
 				
 				if (jsonResponse.success) {
@@ -147,6 +155,7 @@ function sendDataToServer(data) {
 						title: "¡Aviso Importante!",
 						html: `${jsonResponse.message}`
 					});
+						
                 }
             } catch (error) {
                 console.error("Error procesando la respuesta del servidor:", error.message);
@@ -156,6 +165,7 @@ function sendDataToServer(data) {
 						title: "Error procesando la respuesta del servidor",
 						html: `${error.message}`
 				});
+
             }
 		},
         error: function (xhr, status, error) {
@@ -167,6 +177,7 @@ function sendDataToServer(data) {
 				title: "Error en la Solicitud",
 				html: `${xhr.responseText || error}`
 			});
+
         }
     });
 }

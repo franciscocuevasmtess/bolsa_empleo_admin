@@ -20,9 +20,17 @@ Runner.buttonEvents["btn_cambiar_estado2"] = function( pageObj, proxy, pageid ) 
 // Habilitar el botón antes de ejecutar la lógica
 ctrl.setEnabled();
 
+
+var valorPreSeleccionado = document.getElementById("estados_preseleccionados").value;
+if (valorPreSeleccionado == "2") {
+	textValorPreSeleccionado = "Seleccionado";
+} else {
+	textValorPreSeleccionado = "Convocado";
+}
+
 // Mostrar un cuadro de diálogo de confirmación usando SweetAlert2
 Swal.fire({
-	title: "¿Está seguro que desea realizar el cambio masivo?",
+	title: "¿Está seguro que desea realizar el cambio de estado de Preseleccionado a "+textValorPreSeleccionado+" de la Oferta ID: "+proxy.master['id_vacancias']+"?",
 	showCancelButton: true,
 	confirmButtonText: "Confirmar",
 	cancelButtonText: "Cancelar"

@@ -17,8 +17,6 @@
 		$this->events["BeforeShowEdit"]=true;
 
 
-		$this->events["BeforeMoveNextList"]=true;
-
 
 	}
 
@@ -231,83 +229,6 @@ $pageObject->hideItem("edit_message", $recordId); //el mensaje de cambio de regi
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-				// List page: After record processed
-function BeforeMoveNextList(&$data, &$row, &$record, $recordId, $pageObject)
-{
-
-		
-// Place event code here.
-// Use "Add Action" button to add code snippets.
-
-
-;		
-} // function BeforeMoveNextList
-
 		
 		
 		

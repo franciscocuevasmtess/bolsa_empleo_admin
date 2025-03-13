@@ -226,6 +226,36 @@ if($buttId=='New_Button6')
 	}
 	buttonHandler_New_Button6($params);
 }
+if($buttId=='New_Button7')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_New_Button7($params);
+}
+if($buttId=='New_Button8')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_New_Button8($params);
+}
+if($buttId=='New_Button9')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_New_Button9($params);
+}
 
 
 
@@ -281,8 +311,7 @@ function buttonHandler_Activar($params)
 	}
 
 	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
-	
-// Obtiene el registro actual asociado al botón que activó el evento.
+	// Obtiene el registro actual asociado al botón que activó el evento.
 // Esto permite acceder a los datos específicos de la vacancia seleccionada.
 $record = $button->getCurrentRecord();
 
@@ -1439,7 +1468,7 @@ foreach ($array_cboxes as $idPostulacion) {
 									$params["id_nuevo_estado"],					// Nuevo estado
 									$_SESSION["UserData"]["id"],				// ID del usuario que realiza la acción
 									$_SESSION["UserData"]["username"],	// Nombre del usuario que realiza la acción
-									$data["id_empresa_sucursal"]);			// ID de la sucursalÑ
+									$data["id_empresa_sucursal"]);			// ID de la sucursal
 	DB::Exec($strSqlInsert); // Ejecutar el insert
 }
 
@@ -1853,32 +1882,212 @@ function buttonHandler_New_Button6($params)
 	}
 
 	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
-	// Put your code here.
-//$result["txt"] = $params["txt"]." world!";
+	
 
 
+//se extraen datos generales de la vacancia
+$data = $button->getMasterRecord();
 
-//$record = $button->getCurrentRecord();
-//$result["id_vacancias"] = $record["id_vacancias"];
+//se extraen datos de la tabla detalle
+$data_detail = $button->getCurrentRecord() ?: $button->getNextSelectedRecord();
 
+//se extraen datos del usuario
+$userData = Security::currentUserData();
 
+$result["id_vacancias"] = $data["id_vacancias"];
+$result["id_estado"] = $data_detail["id_estado"];
+$result["descripcion"] = $data["descripcion"];
+$result["empresa"] = $data["legal"];
+$result["fullname"] = $userData["fullname"]
+;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_New_Button7($params)
+{
+	global $strTableName;
+	$result = array();
 
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
 
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
 
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
 
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	$data = $button->getMasterRecord();
 
-header("Content-Type: application/vnd.ms-excel");
-header("Content-Disposition: attachment; filename=registros.xls");
-header("Pragma: no-cache");
-header("Expires: 0");
+//se extraen datos de la tabla detalle
+$data_detail = $button->getCurrentRecord() ?: $button->getNextSelectedRecord();
 
-$record = $button->getMasterRecord();
-$result["id_vacancias"] = $record["id_vacancias"];
+//se extraen datos del usuario
+$userData = Security::currentUserData();
 
+$result["id_vacancias"] = $data["id_vacancias"];
+$result["id_estado"] = $data_detail["id_estado"];
+$result["descripcion"] = $data["descripcion"];
+$result["empresa"] = $data["legal"];
+$result["fullname"] = $userData["fullname"];;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_New_Button8($params)
+{
+	global $strTableName;
+	$result = array();
 
-// Consulta para obtener los datos de la lista
-$sql = "SELECT nombre, apellido, email, telefono FROM empleados";  // Modifica según tu tabla
-$rs = db_query($sql, $conn);
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	//se extraen datos generales de la vacancia
+$data = $button->getMasterRecord();
+
+//se extraen datos de la tabla detalle
+$data_detail = $button->getCurrentRecord() ?: $button->getNextSelectedRecord();
+
+//se extraen datos del usuario
+$userData = Security::currentUserData();
+
+$result["id_vacancias"] = $data["id_vacancias"];
+$result["id_estado"] = $data_detail["id_estado"];
+$result["descripcion"] = $data["descripcion"];
+$result["empresa"] = $data["legal"];
+$result["fullname"] = $userData["fullname"];;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_New_Button9($params)
+{
+	global $strTableName;
+	$result = array();
+
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	$result["id_feria_empleo"] = $params["id_feria_empleo"];
+
 ;
 	RunnerContext::pop();
 	echo my_json_encode($result);

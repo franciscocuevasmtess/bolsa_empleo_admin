@@ -330,6 +330,9 @@ pdfDocument = {
 				
 			{"text":"<label>Estado:</label>\n<select name=\"estados_convocados\" id=\"estados_convocados\" selected=\"selected\">\n<option value=\"1\">Preseleccionado</option>\n\t<option value=\"2\">Seleccionado</option>\n</select>","color":"#000000","hidden":"{$item_hide_text_cambiar_estado_convocado}","isHtml":true},
 				
+				
+			{"text":""},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'right',

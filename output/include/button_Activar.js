@@ -5,7 +5,6 @@ Runner.buttonEvents["Activar"] = function( pageObj, proxy, pageid ) {
 	if ( !pageObj.buttonEventBefore['Activar'] ) {
 		pageObj.buttonEventBefore['Activar'] = function( params, ctrl, pageObj, proxy, pageid, rowData, row, submit ) {		
 			var ajax = ctrl;
-
 // Habilitar el control asociado (asegura que las acciones siguientes puedan ejecutarse correctamente).
 ctrl.setEnabled();
 
@@ -66,7 +65,6 @@ return false;
 	if ( !pageObj.buttonEventAfter['Activar'] ) {
 		pageObj.buttonEventAfter['Activar'] = function( result, ctrl, pageObj, proxy, pageid, rowData, row, params ) {
 			var ajax = ctrl;
-
 // Muestra un cuadro de diálogo de SweetAlert con un mensaje de éxito.
 Swal.fire({
 	// Icono que indica el tipo de mensaje (en este caso, éxito).
