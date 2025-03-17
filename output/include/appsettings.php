@@ -701,6 +701,41 @@ $globalSettings["override"] = array();
 
 $styleOverrides = array();
 
+$styleOverrides["bolsa_empleo.vacancia_list"] = array(
+	"theme" => "cerulean",
+	"size" => "normal",
+	"path" => "",
+);
+$styleOverrides["bolsa_empleo.bolsa_users_list"] = array(
+	"theme" => "cerulean",
+	"size" => "normal",
+	"path" => "",
+);
+$styleOverrides["bolsa_empleo.postulacion_list"] = array(
+	"theme" => "cerulean",
+	"size" => "normal",
+	"path" => "",
+);
+$styleOverrides["bolsa_empleo.empresas_bolsa_sucursales_list"] = array(
+	"theme" => "cerulean",
+	"size" => "normal",
+	"path" => "",
+);
+$styleOverrides["vacancia_pendiente_list"] = array(
+	"theme" => "cerulean",
+	"size" => "normal",
+	"path" => "",
+);
+$styleOverrides["bolsa_empleo.feria_empleo_list"] = array(
+	"theme" => "cerulean",
+	"size" => "normal",
+	"path" => "",
+);
+$styleOverrides["_userinfo"] = array(
+	"theme" => "cerulean",
+	"size" => "normal",
+	"path" => "",
+);
 
 $globalSettings["mapProvider"]=0;
 
@@ -767,9 +802,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "2686_1741094831";
+$projectBuildKey = "2721_1741094831";
 $wizardBuildKey = "41974";
-$projectBuildNumber = "2686";
+$projectBuildNumber = "2721";
 
 $mlang_messages = array();
 $mlang_charsets = array();

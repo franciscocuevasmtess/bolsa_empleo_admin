@@ -4123,6 +4123,7 @@ function GetBaseScriptsForPage($isDisplayLoading, $additionalScripts = "", $cust
 	$result = "";
 	$result .= "<script type=\"text/javascript\" src=\"".GetRootPathForResources("include/loadfirst.js?41974")."\"></script>";
 
+	$result .= "<script type=\"text/javascript\" src=\"".GetRootPathForResources("include/custom_functions.js?".$projectBuildKey)."\"></script>";
 
 	$result .= $additionalScripts;
 	$result .= "<script type=\"text/javascript\" src=\"".GetRootPathForResources("include/lang/".getLangFileName(mlang_getcurrentlang()).".js?41974")."\"></script>";

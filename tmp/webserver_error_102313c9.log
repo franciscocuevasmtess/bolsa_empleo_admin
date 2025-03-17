@@ -1,0 +1,14 @@
+[Thu Mar 13 14:56:40.479192 2025] [core:warn] [pid 19092:tid 356] AH00117: Ignoring deprecated use of DefaultType in line 21 of C:/xampp/htdocs/bolsa_empleo_admin/tmp/webserver.conf.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::4eae:fbef:67fe:b65c. Set the 'ServerName' directive globally to suppress this message
+[Thu Mar 13 14:56:40.634553 2025] [mpm_winnt:notice] [pid 19092:tid 356] AH00455: Apache/2.4.54 (Win64) PHP/7.4.30 configured -- resuming normal operations
+[Thu Mar 13 14:56:40.634553 2025] [mpm_winnt:notice] [pid 19092:tid 356] AH00456: Server built: Jul 26 2022 23:58:26
+[Thu Mar 13 14:56:40.634553 2025] [core:notice] [pid 19092:tid 356] AH00094: Command line: 'C:\\Program Files\\PHPRunner10.91\\EmbeddedServer64\\bin\\httpd.exe -d C:/Program Files/PHPRunner10.91/EmbeddedServer64 -d C:\\Program Files\\PHPRunner10.91\\EmbeddedServer64 -f C:\\xampp\\htdocs\\bolsa_empleo_admin\\tmp\\webserver.conf'
+[Thu Mar 13 14:56:40.634553 2025] [mpm_winnt:notice] [pid 19092:tid 356] AH00418: Parent: Created child process 16080
+[Thu Mar 13 14:56:40.792920 2025] [core:warn] [pid 16080:tid 364] AH00117: Ignoring deprecated use of DefaultType in line 21 of C:/xampp/htdocs/bolsa_empleo_admin/tmp/webserver.conf.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::4eae:fbef:67fe:b65c. Set the 'ServerName' directive globally to suppress this message
+[Thu Mar 13 14:56:40.792920 2025] [core:warn] [pid 16080:tid 364] AH00117: Ignoring deprecated use of DefaultType in line 21 of C:/xampp/htdocs/bolsa_empleo_admin/tmp/webserver.conf.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::4eae:fbef:67fe:b65c. Set the 'ServerName' directive globally to suppress this message
+[Thu Mar 13 14:56:40.809050 2025] [mpm_winnt:notice] [pid 16080:tid 364] AH00354: Child: Starting 64 worker threads.
+[Mon Mar 17 09:05:33.295116 2025] [mpm_winnt:notice] [pid 19092:tid 356] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Mar 17 09:05:35.308350 2025] [mpm_winnt:notice] [pid 16080:tid 364] AH00364: Child: All worker threads have exited.
+[Mon Mar 17 09:05:35.355432 2025] [mpm_winnt:notice] [pid 19092:tid 356] AH00430: Parent: Child process 16080 exited successfully.

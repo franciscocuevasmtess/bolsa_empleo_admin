@@ -29,6 +29,7 @@ class class_GlobalEvents extends eventsBase
 		$this->events["AfterSuccessfulLogin"]=true;
 
 
+
 //	onscreen events
 		$this->events["bolsa_empleo_vacancia_snippet1"] = true;
 		$this->events["bolsa_empleo_vacancia_snippet2"] = true;
@@ -151,6 +152,36 @@ exit();
 ;		
 } // function AfterSuccessfulLogin
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
