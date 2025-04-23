@@ -228,7 +228,7 @@ $tdatavacancia_tmp[".isUseAjaxSuggest"] = true;
 
 
 
-																																																															
+																																																																																							
 
 $tdatavacancia_tmp[".ajaxCodeSnippetAdded"] = false;
 
@@ -5752,7 +5752,9 @@ $tdatavacancia_tmp[".hideMobileList"] = array();
 //	End validation
 
 	
-			
+				$edata["ResizeImage"] = true;
+				$edata["NewSize"] = 600;
+
 	
 	
 	
@@ -5766,7 +5768,7 @@ $tdatavacancia_tmp[".hideMobileList"] = array();
 
 
 // the field's search options settings
-		$fdata["defaultSearchOption"] = "NOT Empty";
+		$fdata["defaultSearchOption"] = "Equals";
 
 			// the default search options list
 				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);

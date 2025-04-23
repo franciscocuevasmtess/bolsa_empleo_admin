@@ -736,6 +736,16 @@ $styleOverrides["_userinfo"] = array(
 	"size" => "normal",
 	"path" => "",
 );
+$styleOverrides["bolsa_empleo.archivo_add"] = array(
+	"theme" => "cerulean",
+	"size" => "normal",
+	"path" => "",
+);
+$styleOverrides["vacancia_pendiente_edit"] = array(
+	"theme" => "cerulean",
+	"size" => "normal",
+	"path" => "",
+);
 
 $globalSettings["mapProvider"]=0;
 
@@ -802,9 +812,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "2721_1741094831";
+$projectBuildKey = "3105_1744295180";
 $wizardBuildKey = "41974";
-$projectBuildNumber = "2721";
+$projectBuildNumber = "3105";
 
 $mlang_messages = array();
 $mlang_charsets = array();
@@ -888,6 +898,9 @@ $tableCaptions["Spanish"]["bolsa_empleo_postulacion_preseleccionado"] = "Postula
 $tableCaptions["Spanish"]["bolsa_empleo_bolsa_users_popup"] = "Bolsa Users Popup";
 $tableCaptions["Spanish"]["bolsa_empleo_postulacion_importar_planilla"] = "Postulacion Importar Planilla";
 $tableCaptions["Spanish"]["bolsa_empleo_seguimiento_resumen"] = "Seguimiento Resumen";
+$tableCaptions["Spanish"]["eportal_persons"] = "Persons";
+$tableCaptions["Spanish"]["bolsa_empleo_archivo"] = "Archivo";
+$tableCaptions["Spanish"]["bolsa_empleo_archivo_tipo"] = "Archivo Tipo";
 
 
 $globalEvents = new class_GlobalEvents;

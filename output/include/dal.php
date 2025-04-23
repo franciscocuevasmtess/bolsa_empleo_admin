@@ -48,6 +48,8 @@ function DBLookup($sql)
 class tDAL
 {
 	var $tbleportal_at_192_168_70_170_bolsa_empleo_admin_gestor_audit_audit;
+	var $tbleportal_at_192_168_70_170_bolsa_empleo_archivo;
+	var $tbleportal_at_192_168_70_170_bolsa_empleo_archivo_tipo;
 	var $tbleportal_at_192_168_70_170_bolsa_empleo_bolsa_sexo;
 	var $tbleportal_at_192_168_70_170_bolsa_empleo_bolsa_users;
 	var $tbleportal_at_192_168_70_170_bolsa_empleo_cargo;
@@ -95,6 +97,7 @@ class tDAL
 	var $tbleportal_at_192_168_70_170_eportal_persons_discap_types;
 	var $tbleportal_at_192_168_70_170_eportal_persons_docs;
 	var $tbleportal_at_192_168_70_170_eportal_persons_estado_civil_type;
+	var $tbleportal_at_192_168_70_170_eportal_persons_indigenas_types;
 	var $tbleportal_at_192_168_70_170_eportal_persons_phones;
 	var $tbleportal_at_192_168_70_170_mtess_empleados_dias;
 	var $tbleportal_at_192_168_70_170_public_actividad_econ;
@@ -106,6 +109,8 @@ class tDAL
 		if($this->lstTables)
 			return;
 		$this->lstTables[] = array("name" => "admin_gestor_audit_audit", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_admin_gestor_audit_audit", "altvarname" => "admin_gestor_audit_audit", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
+		$this->lstTables[] = array("name" => "archivo", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_archivo", "altvarname" => "archivo", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
+		$this->lstTables[] = array("name" => "archivo_tipo", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_archivo_tipo", "altvarname" => "archivo_tipo", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "bolsa_sexo", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_bolsa_sexo", "altvarname" => "bolsa_sexo", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "bolsa_users", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_bolsa_users", "altvarname" => "bolsa_users", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "cargo", "varname" => "eportal_at_192_168_70_170_bolsa_empleo_cargo", "altvarname" => "cargo", "connId" => "eportal_at_192_168_70_170", "schema" => "bolsa_empleo", "connName" => "eportal at 192.168.70.170");
@@ -153,6 +158,7 @@ class tDAL
 		$this->lstTables[] = array("name" => "persons_discap_types", "varname" => "eportal_at_192_168_70_170_eportal_persons_discap_types", "altvarname" => "persons_discap_types", "connId" => "eportal_at_192_168_70_170", "schema" => "eportal", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "persons_docs", "varname" => "eportal_at_192_168_70_170_eportal_persons_docs", "altvarname" => "persons_docs", "connId" => "eportal_at_192_168_70_170", "schema" => "eportal", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "persons_estado_civil_type", "varname" => "eportal_at_192_168_70_170_eportal_persons_estado_civil_type", "altvarname" => "persons_estado_civil_type", "connId" => "eportal_at_192_168_70_170", "schema" => "eportal", "connName" => "eportal at 192.168.70.170");
+		$this->lstTables[] = array("name" => "persons_indigenas_types", "varname" => "eportal_at_192_168_70_170_eportal_persons_indigenas_types", "altvarname" => "persons_indigenas_types", "connId" => "eportal_at_192_168_70_170", "schema" => "eportal", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "persons_phones", "varname" => "eportal_at_192_168_70_170_eportal_persons_phones", "altvarname" => "persons_phones", "connId" => "eportal_at_192_168_70_170", "schema" => "eportal", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "empleados_dias", "varname" => "eportal_at_192_168_70_170_mtess_empleados_dias", "altvarname" => "empleados_dias", "connId" => "eportal_at_192_168_70_170", "schema" => "mtess", "connName" => "eportal at 192.168.70.170");
 		$this->lstTables[] = array("name" => "actividad_econ", "varname" => "eportal_at_192_168_70_170_public_actividad_econ", "altvarname" => "actividad_econ", "connId" => "eportal_at_192_168_70_170", "schema" => "public", "connName" => "eportal at 192.168.70.170");

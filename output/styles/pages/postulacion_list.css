@@ -1,3 +1,6 @@
+[data-cellid="grid_cell_top"][data-page="postulacion_list"][data-cellid="grid_cell_top"][data-page="postulacion_list"][data-cellid="grid_cell_top"][data-page="postulacion_list"] {
+  color: #000000;
+}
 [data-cellid="grid_cell_label"][data-page="postulacion_list"][data-cellid="grid_cell_label"][data-page="postulacion_list"][data-cellid="grid_cell_label"][data-page="postulacion_list"] {
   width: 80%;
 }
@@ -11,10 +14,6 @@
 }
 [data-page="postulacion_list"][data-itemid="text"] {
   font-weight: bold;
-}
-[data-page="postulacion_list"][data-itemid="custom_button"] > .btn {
-  font-weight: bold;
-  font-size: 16px;
 }
 [data-page="postulacion_list"][data-itemid="grid_field3"] {
   font-weight: bold;

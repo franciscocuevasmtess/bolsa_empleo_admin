@@ -148,7 +148,7 @@ $tdataferia_empleo[".isUseAjaxSuggest"] = true;
 
 
 
-																																																															
+																																																																																							
 
 $tdataferia_empleo[".ajaxCodeSnippetAdded"] = false;
 
@@ -1137,7 +1137,7 @@ $tdataferia_empleo[".hideMobileList"] = array();
 	$fdata["GoodName"] = "descripcion";
 	$fdata["ownerTable"] = "bolsa_empleo.feria_empleo";
 	$fdata["Label"] = GetFieldLabel("bolsa_empleo_feria_empleo","descripcion");
-	$fdata["FieldType"] = 200;
+	$fdata["FieldType"] = 201;
 
 
 	

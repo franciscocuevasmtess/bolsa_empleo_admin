@@ -76,6 +76,9 @@ pdfDocument = {
 										{BEGIN col_grid_3}
 					"33%",
 					{END col_grid_3}
+										{BEGIN col_grid_4}
+					"%",
+					{END col_grid_4}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -401,6 +404,32 @@ pdfDocument = {
       },
 
 {END cellblock_grid_headcell_field1}
+																							{BEGIN cellblock_grid_headcell_field5}
+{
+	cellId: 'headcell_field5',
+	col:0,
+	row:0,
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field5}
 											],
 				{END row_grid_0}
 		
@@ -526,9 +555,6 @@ pdfDocument = {
 				
 			{"text":{$id_nivel_programa_pdfvalue},"hidden":"{$item_hide_simple_grid_field3}"},
 				
-				
-			{"text":{$fk_id_vacancia_pdfvalue},"hidden":"{$item_hide_simple_grid_field1}"},
-				
 		  ],
   "border": [ true, true, true, true ],
               "alignment": 'left',
@@ -537,6 +563,38 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_field1}
+																							{BEGIN cellblock_grid_headcell_field6}
+{
+	cellId: 'headcell_field6',
+	col:0,
+	row:0,
+			fieldName: 'fk_id_vacancia',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"vacancia","hidden":"{$item_hide_text}","isHtml":true},
+				
+				
+			{"text":{$fk_id_vacancia_pdfvalue},"hidden":"{$item_hide_simple_grid_field1}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$fk_id_vacancia_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field6}
 											],
 				{END row_grid_1}
 		
@@ -650,6 +708,32 @@ pdfDocument = {
       },
 
 {END cellblock_grid_footcell_field1}
+																							{BEGIN cellblock_grid_headcell_field7}
+{
+	cellId: 'headcell_field7',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field7}
 											],
 				{END row_grid_2}
 		

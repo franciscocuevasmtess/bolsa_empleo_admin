@@ -875,7 +875,7 @@ function BeforeEdit(&$values, &$sqlValues, $where, &$oldvalues, &$keys, &$messag
 	foreach ($habilidades_ids as $habilidad) {
 		if (is_numeric($habilidad)) {
 			//array_push($nuevos_habilidades_ids, $habilidad);
-			$nuevos_habilidades_ids[] = $nuevo_id_habilidad;
+			$nuevos_habilidades_ids[] = $habilidad;
 		}
 	}
 	
@@ -891,7 +891,8 @@ function BeforeEdit(&$values, &$sqlValues, $where, &$oldvalues, &$keys, &$messag
 	$values["descripcion_puesto"] = ucfirst($values["descripcion_puesto"]);
 	$values["requisitos_exclu_formacion"] = ucfirst($values["requisitos_exclu_formacion"]);
 	$values["habilidades_conocimiento"] = ucfirst($values["habilidades_conocimiento"]);
-	
+
+
 	return true;
 ;		
 } // function BeforeEdit
@@ -968,8 +969,15 @@ function CustomEdit(&$values, $where, &$oldvalues, &$keys, &$error, $inline, $pa
 
 		$userData = Security::currentUserData();
 global $cman;
+$sentencia_imagen="";
 
-$vacancia = DB::PrepareSQL("UPDATE bolsa_empleo.vacancia 
+if (empty($oldvalues["imagen_perfil"])) {
+		
+		
+
+						if (!empty($values["imagen_perfil"])) {
+//$values["cantidad_vacancia"]=1010;
+						$sentencia_imagen=DB::PrepareSQL("UPDATE bolsa_empleo.vacancia 
 																SET fecha_expiracion_vacancia = ':1',
 																	cantidad_vacancia = ':2',
 																	fk_id_feria_empleo = ':3',
@@ -979,7 +987,63 @@ $vacancia = DB::PrepareSQL("UPDATE bolsa_empleo.vacancia
 																	$values["cantidad_vacancia"], 
 																	$values["fk_id_feria_empleo"],
 																	pg_escape_bytea($values["imagen_perfil"]),
-																	$keys["id_vacancias"]);
+																	$keys['id_vacancias']);
+
+					}else {
+//$values["cantidad_vacancia"]=77;
+					$sentencia_imagen=DB::PrepareSQL("UPDATE bolsa_empleo.vacancia 
+																SET fecha_expiracion_vacancia = ':1',
+																	cantidad_vacancia = ':2',
+																	fk_id_feria_empleo = ':3',
+																	imagen_perfil = ':4'
+																WHERE id_vacancias = ':5'",
+																	$values["fecha_expiracion_vacancia"],
+																	$values["cantidad_vacancia"], 
+																	$values["fk_id_feria_empleo"],
+																	pg_escape_bytea($values["imagen_perfil"]),
+																	$keys['id_vacancias']);
+					}
+
+      }
+
+
+if (!empty($oldvalues["imagen_perfil"])) {
+				if (empty($values["imagen_perfil"])) {
+//$values["cantidad_vacancia"]=99;
+
+						$sentencia_imagen=DB::PrepareSQL("UPDATE bolsa_empleo.vacancia 
+																SET fecha_expiracion_vacancia = ':1',
+																	cantidad_vacancia = ':2',
+																	fk_id_feria_empleo = ':3'																	
+																WHERE id_vacancias = ':4'",
+																	$values["fecha_expiracion_vacancia"],
+																	$values["cantidad_vacancia"], 
+																	$values["fk_id_feria_empleo"],																	
+																	$keys['id_vacancias']);
+
+					}else {
+//$values["cantidad_vacancia"]=88;
+					$sentencia_imagen=DB::PrepareSQL("UPDATE bolsa_empleo.vacancia 
+																SET fecha_expiracion_vacancia = ':1',
+																	cantidad_vacancia = ':2',
+																	fk_id_feria_empleo = ':3',
+																	imagen_perfil = ':4'
+																WHERE id_vacancias = ':5'",
+																	$values["fecha_expiracion_vacancia"],
+																	$values["cantidad_vacancia"], 
+																	$values["fk_id_feria_empleo"],
+																	pg_escape_bytea($values["imagen_perfil"]),
+																	$keys['id_vacancias']);	
+					}
+
+		}
+
+
+
+
+
+$vacancia =  $sentencia_imagen;
+
 DB::Exec($vacancia);
 
 
@@ -1478,8 +1542,8 @@ if ($data5['horario_rotativo'] == 'f') {
 	$values['horario_rotativo'] = false;
 }
 
-$_SESSION['postid_vacancias'] = $keys['id_vacancias'];
-//$_SESSION['postid_vacancias'] = $values['id_vacancias'];
+//$_SESSION['postid_vacancias'] = $keys['id_vacancias'];
+$_SESSION['postid_vacancias'] = $values['id_vacancias'];
 $values['tipo_remuneracion'] = $data5['tipo_remuneracion'];
 $values['salario_descripcion'] = $data5['descripcion_salario'];
 $values['salario_final'] = $data5['salario'];
@@ -1628,6 +1692,7 @@ $pageObject->hideItem("boton_activar_vacancia", $recordId);		// Oculta el botón
 $pageObject->hideItem("Evaluacion", $recordId);									// Oculta el botón "En Evaluacion". Se mostrará o no dependiendo de las condiciones.
 $pageObject->hideItem("grid_details_link", $recordId);					// Oculta el enlace de detalles de cantidad de postulantes.
 $pageObject->hideItem("text4", $recordId);												// Oculta el texto relacionado con el detalle de postulantes.
+$pageObject->hideItem("btn_evaluacion_empresa", $recordId);    //Oculta el texto relacionado con el detalle de postulantes.
 
 $now = date("Y-m-d H:i:s"); // Obtiene la fecha y hora actual en formato `Y-m-d H:i:s`.
 
@@ -1657,8 +1722,16 @@ if ($data["fecha_expiracion_vacancia"] > $now && $data["id_estado_vacancia"] == 
 if ($data["fecha_expiracion_vacancia"] > $now && $data["id_estado_vacancia"] == 3) {
 	$pageObject->showItem("boton_cerrar_vacancia", $recordId);		// Habilita el botón "Cerrar Vacancia".
 	$pageObject->showItem("boton_activar_vacancia", $recordId);		// Habilita el botón "Activar Vacancia".
+  $pageObject->showItem("btn_evaluacion_empresa", $recordId); 
 }
 
+
+// Condición 4: Si la vacancia está "En Evaluacion" y en proceso (estado = 3), y su fecha de expiración no ha pasado.
+if ($data["fecha_expiracion_vacancia"] > $now && $data["id_estado_vacancia"] == 10) {
+	$pageObject->showItem("boton_cerrar_vacancia", $recordId);		// Habilita el botón "Cerrar Vacancia".
+	$pageObject->showItem("boton_activar_vacancia", $recordId);		// Habilita el botón "Activar Vacancia".
+  $pageObject->showItem("Evaluacion", $recordId); 
+}
 
 // Consultar si existen postulaciones asociadas a la vacancia actual.
 $strSQLExists5 = DB::PrepareSQL("
@@ -1900,6 +1973,7 @@ $pageObject->hideItem("grid_details_link4"); //Oculta el enlace que muestra el t
 $pageObject->hideItem("grid_details_link5"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Insertado
 $pageObject->hideItem("grid_details_link6"); //Oculta el enlace que muestra el total de registros de usuarios que estan con estado=Preseleccionado
 $pageObject->hideItem("grid_details_link8"); //Oculta el enlace que muestra el total de registros de resumen por vacancia
+$pageObject->hideItem("es_programa_field"); //Oculta el enlace que muestra el total de es programa
 //print_r($_SESSION);
 
 //$pageObject->showItem("grid_edit"); //FUERZA A MOSTRAR EL BOTON DE EDICION

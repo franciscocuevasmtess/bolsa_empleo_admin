@@ -18,6 +18,10 @@
 
 		$this->events["BeforeShowEdit"]=true;
 
+		$this->events["BeforeEdit"]=true;
+
+		$this->events["BeforeAdd"]=true;
+
 
 	}
 
@@ -64,7 +68,7 @@
 function BeforeShowList(&$xt, &$templatefile, $pageObject)
 {
 
-		$pageObject->hideItem("simple_grid_field1");
+		//$pageObject->hideItem("simple_grid_field1");
 
 // Place event code here.
 // Use "Add Action" button to add code snippets.
@@ -118,7 +122,6 @@ function CustomAdd(&$values, &$keys, &$error, $inline, $pageObject)
 {
 
 		
-$values['fk_id_vacancia']=$_SESSION['postid_vacancias'];
 // Place event code here.
 // Use "Add Action" button to add code snippets.
 
@@ -222,12 +225,177 @@ function BeforeShowEdit(&$xt, &$templatefile, $values, $pageObject)
 {
 
 		
-$values['fk_id_vacancia']=$_SESSION['postid_vacancias'];
+//$values['fk_id_vacancia']=$_SESSION['postid_vacancias'];
 // Place event code here.
 // Use "Add Action" button to add code snippets.
 ;		
 } // function BeforeShowEdit
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				// Before record updated
+function BeforeEdit(&$values, &$sqlValues, $where, &$oldvalues, &$keys, &$message, $inline, $pageObject)
+{
+
+		$data = $pageObject->getMasterRecord();
+
+if($data){
+  $values['fk_id_vacancia']=$data["id_vacancias"];
+}
+
+
+return true;
+;		
+} // function BeforeEdit
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				// Before record added
+function BeforeAdd(&$values, &$sqlValues, &$message, $inline, $pageObject)
+{
+
+		$data = $pageObject->getMasterRecord();
+
+if($data){
+  $values['fk_id_vacancia']=$data["id_vacancias"];
+}else {
+
+$values['fk_id_vacancia']=$_SESSION['postid_vacancias'];
+}
+
+// Place event code here.
+// Use "Add Action" button to add code snippets.
+
+return true;
+;		
+} // function BeforeAdd
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

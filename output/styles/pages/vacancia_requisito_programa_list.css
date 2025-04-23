@@ -31,6 +31,9 @@
 [data-cellid="grid_headcell_checkbox"][data-page="vacancia_requisito_programa_list"][data-cellid="grid_headcell_checkbox"][data-page="vacancia_requisito_programa_list"][data-cellid="grid_headcell_checkbox"][data-page="vacancia_requisito_programa_list"] {
   width: 30px;
 }
+[data-cellid="grid_headcell_field7"][data-page="vacancia_requisito_programa_list"][data-cellid="grid_headcell_field7"][data-page="vacancia_requisito_programa_list"][data-cellid="grid_headcell_field7"][data-page="vacancia_requisito_programa_list"] {
+  white-space: nowrap;
+}
 [data-page="vacancia_requisito_programa_list"][data-itemid="simple_grid_field"] {
   font-weight: bold;
 }

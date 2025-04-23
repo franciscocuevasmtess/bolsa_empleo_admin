@@ -74,7 +74,7 @@ Swal.fire({
 	title: 'Operación exitosa',
 
 	// Texto descriptivo adicional.
-	text: 'La vacancia esta ativada.',
+	text: 'La vacancia ha sido activada.',
 	
 	// Tiempo en milisegundos antes de que el cuadro de diálogo se cierre automáticamente (1.5 segundos).
 	showConfirmButton: false,

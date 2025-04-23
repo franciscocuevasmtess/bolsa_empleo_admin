@@ -73,6 +73,9 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelspostulacion_insertado["Spanish"]["id_estado"] = "Estado Actual";
 	$fieldToolTipspostulacion_insertado["Spanish"]["id_estado"] = "";
 	$placeHolderspostulacion_insertado["Spanish"]["id_estado"] = "";
+	$fieldLabelspostulacion_insertado["Spanish"]["id"] = "Id";
+	$fieldToolTipspostulacion_insertado["Spanish"]["id"] = "";
+	$placeHolderspostulacion_insertado["Spanish"]["id"] = "";
 	$pageTitlespostulacion_insertado["Spanish"]["list"] = "Estado Insertado";
 	if (count($fieldToolTipspostulacion_insertado["Spanish"]))
 		$tdatapostulacion_insertado[".isUseToolTips"] = true;
@@ -171,7 +174,7 @@ $tdatapostulacion_insertado[".isUseAjaxSuggest"] = true;
 
 
 
-																																																																																																																																																																																													
+																																																																																																																																																																																																																																																																					
 
 $tdatapostulacion_insertado[".ajaxCodeSnippetAdded"] = false;
 
@@ -198,6 +201,7 @@ $tdatapostulacion_insertado[".googleLikeFields"][] = "cedula";
 $tdatapostulacion_insertado[".googleLikeFields"][] = "empresa";
 $tdatapostulacion_insertado[".googleLikeFields"][] = "id_postulacion";
 $tdatapostulacion_insertado[".googleLikeFields"][] = "id_estado";
+$tdatapostulacion_insertado[".googleLikeFields"][] = "id";
 
 
 
@@ -232,7 +236,7 @@ $tdatapostulacion_insertado[".orderindexes"] = array();
 			$tdatapostulacion_insertado[".orderindexes"][] = array(15, (1 ? "ASC" : "DESC"), "bolsa_empleo.postulacion.id_postulacion");
 
 
-$tdatapostulacion_insertado[".sqlHead"] = "SELECT eportal.persons.nombre || ' ' || eportal.persons.apellidos AS nombre_completo,  eportal.persons.fechanac,  eportal.persons.sexo,  eportal.persons.domicilio,  eportal.persons.city_id AS ciudad,  eportal.persons.distrito_id AS distrito,  eportal.persons.nacionalidad AS pais,  eportal.persons_estado_civil_type.name AS estado_civil,  eportal.persons_docs.valor AS cedula,  STRING_AGG(eportal.persons_phones.phone, ', ') AS telefono,  bolsa_empleo.postulacion.id_vacancia,  bolsa_empleo.bolsa_users.hash_generado,  bolsa_empleo.empresas_bolsa_sucursales.ruc || ' - ' || bolsa_empleo.empresas_bolsa_sucursales.legal AS empresa,  ' Oferta de Empleo: ' || bolsa_empleo.vista_ocupaciones.descripcion AS descri_empresa,  bolsa_empleo.postulacion.id_postulacion,  bolsa_empleo.postulacion.id_estado";
+$tdatapostulacion_insertado[".sqlHead"] = "SELECT eportal.persons.nombre || ' ' || eportal.persons.apellidos AS nombre_completo,  eportal.persons.fechanac,  eportal.persons.sexo,  eportal.persons.domicilio,  eportal.persons.city_id AS ciudad,  eportal.persons.distrito_id AS distrito,  eportal.persons.nacionalidad AS pais,  eportal.persons_estado_civil_type.name AS estado_civil,  eportal.persons_docs.valor AS cedula,  STRING_AGG(eportal.persons_phones.phone, ', ') AS telefono,  bolsa_empleo.postulacion.id_vacancia,  bolsa_empleo.bolsa_users.hash_generado,  bolsa_empleo.empresas_bolsa_sucursales.ruc || ' - ' || bolsa_empleo.empresas_bolsa_sucursales.legal AS empresa,  ' Oferta de Empleo: ' || bolsa_empleo.vista_ocupaciones.descripcion AS descri_empresa,  bolsa_empleo.postulacion.id_postulacion,  bolsa_empleo.postulacion.id_estado,  eportal.persons.\"id\"";
 $tdatapostulacion_insertado[".sqlFrom"] = "FROM bolsa_empleo.postulacion  INNER JOIN bolsa_empleo.vacancia ON bolsa_empleo.postulacion.id_vacancia = bolsa_empleo.vacancia.id_vacancias  INNER JOIN eportal.persons ON bolsa_empleo.postulacion.fk_personaid = eportal.persons.id  INNER JOIN eportal.city ON eportal.persons.city_id = eportal.city.id  INNER JOIN eportal.persons_estado_civil_type ON eportal.persons.estado_civil = eportal.persons_estado_civil_type.id  INNER JOIN eportal.persons_docs ON eportal.persons.id = eportal.persons_docs.person_id  INNER JOIN eportal.persons_phones ON eportal.persons.id = eportal.persons_phones.person_id  INNER JOIN bolsa_empleo.bolsa_users ON eportal.persons_docs.valor = bolsa_empleo.bolsa_users.nro_documento  INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_empresa.id_vacancia  INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_puesto.id_vacancia  INNER JOIN bolsa_empleo.vista_ocupaciones ON bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto = bolsa_empleo.vista_ocupaciones.id_ocu_puest_clasi  INNER JOIN bolsa_empleo.empresas_bolsa_sucursales ON bolsa_empleo.vacancia_empresa.id_empresa_sucursal = bolsa_empleo.empresas_bolsa_sucursales.id";
 $tdatapostulacion_insertado[".sqlWhereExpr"] = "";
 $tdatapostulacion_insertado[".sqlTail"] = "";
@@ -2619,6 +2623,147 @@ $tdatapostulacion_insertado[".hideMobileList"] = array();
 
 	$tdatapostulacion_insertado["id_estado"] = $fdata;
 		$tdatapostulacion_insertado[".searchableFields"][] = "id_estado";
+//	id
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 17;
+	$fdata["strName"] = "id";
+	$fdata["GoodName"] = "id";
+	$fdata["ownerTable"] = "eportal.persons";
+	$fdata["Label"] = GetFieldLabel("bolsa_empleo_postulacion_insertado","id");
+	$fdata["FieldType"] = 20;
+
+
+		$fdata["AutoInc"] = true;
+
+	
+			
+
+		$fdata["strField"] = "id";
+
+	
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "eportal.persons.\"id\"";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text field");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+			$edata["HTML5InuptType"] = "text";
+
+		$edata["EditParams"] = "";
+		
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatapostulacion_insertado["id"] = $fdata;
+		$tdatapostulacion_insertado[".searchableFields"][] = "id";
 
 
 $tables_data["bolsa_empleo.postulacion_insertado"]=&$tdatapostulacion_insertado;
@@ -2729,7 +2874,7 @@ function createSqlQuery_postulacion_insertado()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "eportal.persons.nombre || ' ' || eportal.persons.apellidos AS nombre_completo,  eportal.persons.fechanac,  eportal.persons.sexo,  eportal.persons.domicilio,  eportal.persons.city_id AS ciudad,  eportal.persons.distrito_id AS distrito,  eportal.persons.nacionalidad AS pais,  eportal.persons_estado_civil_type.name AS estado_civil,  eportal.persons_docs.valor AS cedula,  STRING_AGG(eportal.persons_phones.phone, ', ') AS telefono,  bolsa_empleo.postulacion.id_vacancia,  bolsa_empleo.bolsa_users.hash_generado,  bolsa_empleo.empresas_bolsa_sucursales.ruc || ' - ' || bolsa_empleo.empresas_bolsa_sucursales.legal AS empresa,  ' Oferta de Empleo: ' || bolsa_empleo.vista_ocupaciones.descripcion AS descri_empresa,  bolsa_empleo.postulacion.id_postulacion,  bolsa_empleo.postulacion.id_estado";
+$proto0["m_strFieldList"] = "eportal.persons.nombre || ' ' || eportal.persons.apellidos AS nombre_completo,  eportal.persons.fechanac,  eportal.persons.sexo,  eportal.persons.domicilio,  eportal.persons.city_id AS ciudad,  eportal.persons.distrito_id AS distrito,  eportal.persons.nacionalidad AS pais,  eportal.persons_estado_civil_type.name AS estado_civil,  eportal.persons_docs.valor AS cedula,  STRING_AGG(eportal.persons_phones.phone, ', ') AS telefono,  bolsa_empleo.postulacion.id_vacancia,  bolsa_empleo.bolsa_users.hash_generado,  bolsa_empleo.empresas_bolsa_sucursales.ruc || ' - ' || bolsa_empleo.empresas_bolsa_sucursales.legal AS empresa,  ' Oferta de Empleo: ' || bolsa_empleo.vista_ocupaciones.descripcion AS descri_empresa,  bolsa_empleo.postulacion.id_postulacion,  bolsa_empleo.postulacion.id_estado,  eportal.persons.\"id\"";
 $proto0["m_strFrom"] = "FROM bolsa_empleo.postulacion  INNER JOIN bolsa_empleo.vacancia ON bolsa_empleo.postulacion.id_vacancia = bolsa_empleo.vacancia.id_vacancias  INNER JOIN eportal.persons ON bolsa_empleo.postulacion.fk_personaid = eportal.persons.id  INNER JOIN eportal.city ON eportal.persons.city_id = eportal.city.id  INNER JOIN eportal.persons_estado_civil_type ON eportal.persons.estado_civil = eportal.persons_estado_civil_type.id  INNER JOIN eportal.persons_docs ON eportal.persons.id = eportal.persons_docs.person_id  INNER JOIN eportal.persons_phones ON eportal.persons.id = eportal.persons_phones.person_id  INNER JOIN bolsa_empleo.bolsa_users ON eportal.persons_docs.valor = bolsa_empleo.bolsa_users.nro_documento  INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_empresa.id_vacancia  INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_puesto.id_vacancia  INNER JOIN bolsa_empleo.vista_ocupaciones ON bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto = bolsa_empleo.vista_ocupaciones.id_ocu_puest_clasi  INNER JOIN bolsa_empleo.empresas_bolsa_sucursales ON bolsa_empleo.vacancia_empresa.id_empresa_sucursal = bolsa_empleo.empresas_bolsa_sucursales.id";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "ORDER BY bolsa_empleo.postulacion.id_postulacion";
@@ -2997,529 +3142,532 @@ $proto38["m_alias"] = "";
 $obj = new SQLFieldListItem($proto38);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto40=array();
-$proto40["m_link"] = "SQLL_MAIN";
-			$proto41=array();
-$proto41["m_strName"] = "bolsa_empleo.postulacion";
-$proto41["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto41["m_columns"] = array();
-$proto41["m_columns"][] = "id_postulacion";
-$proto41["m_columns"][] = "id_vacancia";
-$proto41["m_columns"][] = "id_estado";
-$proto41["m_columns"][] = "fecha_postulacion";
-$proto41["m_columns"][] = "fk_personaid";
-$proto41["m_columns"][] = "metodo_insercion";
-$obj = new SQLTable($proto41);
+						$proto40=array();
+			$obj = new SQLField(array(
+	"m_strName" => "id",
+	"m_strTable" => "eportal.persons",
+	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
+));
 
-$proto40["m_table"] = $obj;
-$proto40["m_sql"] = "bolsa_empleo.postulacion";
-$proto40["m_alias"] = "";
+$proto40["m_sql"] = "eportal.persons.\"id\"";
 $proto40["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto42=array();
-$proto42["m_sql"] = "";
-$proto42["m_uniontype"] = "SQLL_UNKNOWN";
+$proto40["m_expr"]=$obj;
+$proto40["m_alias"] = "";
+$obj = new SQLFieldListItem($proto40);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto42=array();
+$proto42["m_link"] = "SQLL_MAIN";
+			$proto43=array();
+$proto43["m_strName"] = "bolsa_empleo.postulacion";
+$proto43["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto43["m_columns"] = array();
+$proto43["m_columns"][] = "id_postulacion";
+$proto43["m_columns"][] = "id_vacancia";
+$proto43["m_columns"][] = "id_estado";
+$proto43["m_columns"][] = "fecha_postulacion";
+$proto43["m_columns"][] = "fk_personaid";
+$proto43["m_columns"][] = "metodo_insercion";
+$obj = new SQLTable($proto43);
+
+$proto42["m_table"] = $obj;
+$proto42["m_sql"] = "bolsa_empleo.postulacion";
+$proto42["m_alias"] = "";
+$proto42["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto44=array();
+$proto44["m_sql"] = "";
+$proto44["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto42["m_column"]=$obj;
-$proto42["m_contained"] = array();
-$proto42["m_strCase"] = "";
-$proto42["m_havingmode"] = false;
-$proto42["m_inBrackets"] = false;
-$proto42["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto42);
+$proto44["m_column"]=$obj;
+$proto44["m_contained"] = array();
+$proto44["m_strCase"] = "";
+$proto44["m_havingmode"] = false;
+$proto44["m_inBrackets"] = false;
+$proto44["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto44);
 
-$proto40["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto40);
+$proto42["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto42);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto44=array();
-$proto44["m_link"] = "SQLL_INNERJOIN";
-			$proto45=array();
-$proto45["m_strName"] = "bolsa_empleo.vacancia";
-$proto45["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto45["m_columns"] = array();
-$proto45["m_columns"][] = "id_vacancias";
-$proto45["m_columns"][] = "fecha_creacion_vacancia";
-$proto45["m_columns"][] = "id_estado_vacancia";
-$proto45["m_columns"][] = "fecha_expiracion_vacancia";
-$proto45["m_columns"][] = "cantidad_vacancia";
-$proto45["m_columns"][] = "geolocation";
-$proto45["m_columns"][] = "fk_id_feria_empleo";
-$proto45["m_columns"][] = "usuario";
-$proto45["m_columns"][] = "origen";
-$proto45["m_columns"][] = "imagen_perfil";
-$obj = new SQLTable($proto45);
+												$proto46=array();
+$proto46["m_link"] = "SQLL_INNERJOIN";
+			$proto47=array();
+$proto47["m_strName"] = "bolsa_empleo.vacancia";
+$proto47["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto47["m_columns"] = array();
+$proto47["m_columns"][] = "id_vacancias";
+$proto47["m_columns"][] = "fecha_creacion_vacancia";
+$proto47["m_columns"][] = "id_estado_vacancia";
+$proto47["m_columns"][] = "fecha_expiracion_vacancia";
+$proto47["m_columns"][] = "cantidad_vacancia";
+$proto47["m_columns"][] = "geolocation";
+$proto47["m_columns"][] = "fk_id_feria_empleo";
+$proto47["m_columns"][] = "usuario";
+$proto47["m_columns"][] = "origen";
+$proto47["m_columns"][] = "imagen_perfil";
+$obj = new SQLTable($proto47);
 
-$proto44["m_table"] = $obj;
-$proto44["m_sql"] = "INNER JOIN bolsa_empleo.vacancia ON bolsa_empleo.postulacion.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
-$proto44["m_alias"] = "";
-$proto44["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto46=array();
-$proto46["m_sql"] = "bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.postulacion.id_vacancia";
-$proto46["m_uniontype"] = "SQLL_UNKNOWN";
+$proto46["m_table"] = $obj;
+$proto46["m_sql"] = "INNER JOIN bolsa_empleo.vacancia ON bolsa_empleo.postulacion.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
+$proto46["m_alias"] = "";
+$proto46["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto48=array();
+$proto48["m_sql"] = "bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.postulacion.id_vacancia";
+$proto48["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id_vacancias",
 	"m_strTable" => "bolsa_empleo.vacancia",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto46["m_column"]=$obj;
-$proto46["m_contained"] = array();
-$proto46["m_strCase"] = "= bolsa_empleo.postulacion.id_vacancia";
-$proto46["m_havingmode"] = false;
-$proto46["m_inBrackets"] = false;
-$proto46["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto46);
+$proto48["m_column"]=$obj;
+$proto48["m_contained"] = array();
+$proto48["m_strCase"] = "= bolsa_empleo.postulacion.id_vacancia";
+$proto48["m_havingmode"] = false;
+$proto48["m_inBrackets"] = false;
+$proto48["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto48);
 
-$proto44["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto44);
+$proto46["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto46);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto48=array();
-$proto48["m_link"] = "SQLL_INNERJOIN";
-			$proto49=array();
-$proto49["m_strName"] = "eportal.persons";
-$proto49["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto49["m_columns"] = array();
-$proto49["m_columns"][] = "id";
-$proto49["m_columns"][] = "nombre";
-$proto49["m_columns"][] = "apellidos";
-$proto49["m_columns"][] = "nacionalidad";
-$proto49["m_columns"][] = "fechanac";
-$proto49["m_columns"][] = "sexo";
-$proto49["m_columns"][] = "estado_civil";
-$proto49["m_columns"][] = "canthijos";
-$proto49["m_columns"][] = "domicilio";
-$proto49["m_columns"][] = "city_id";
-$proto49["m_columns"][] = "distrito_id";
-$proto49["m_columns"][] = "esindigena";
-$proto49["m_columns"][] = "id_profesion";
-$proto49["m_columns"][] = "actualizado";
-$proto49["m_columns"][] = "porcentaje_discapacidad";
-$proto49["m_columns"][] = "adjunto_potencial_discapacidad";
-$proto49["m_columns"][] = "adjunto_certificado_discapacidad";
-$proto49["m_columns"][] = "foto";
-$proto49["m_columns"][] = "resumen";
-$proto49["m_columns"][] = "fk_habilidades";
-$proto49["m_columns"][] = "id_barrio";
-$obj = new SQLTable($proto49);
+												$proto50=array();
+$proto50["m_link"] = "SQLL_INNERJOIN";
+			$proto51=array();
+$proto51["m_strName"] = "eportal.persons";
+$proto51["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto51["m_columns"] = array();
+$proto51["m_columns"][] = "id";
+$proto51["m_columns"][] = "nombre";
+$proto51["m_columns"][] = "apellidos";
+$proto51["m_columns"][] = "nacionalidad";
+$proto51["m_columns"][] = "fechanac";
+$proto51["m_columns"][] = "sexo";
+$proto51["m_columns"][] = "estado_civil";
+$proto51["m_columns"][] = "canthijos";
+$proto51["m_columns"][] = "domicilio";
+$proto51["m_columns"][] = "city_id";
+$proto51["m_columns"][] = "distrito_id";
+$proto51["m_columns"][] = "esindigena";
+$proto51["m_columns"][] = "id_profesion";
+$proto51["m_columns"][] = "actualizado";
+$proto51["m_columns"][] = "porcentaje_discapacidad";
+$proto51["m_columns"][] = "adjunto_potencial_discapacidad";
+$proto51["m_columns"][] = "adjunto_certificado_discapacidad";
+$proto51["m_columns"][] = "foto";
+$proto51["m_columns"][] = "resumen";
+$proto51["m_columns"][] = "fk_habilidades";
+$proto51["m_columns"][] = "id_barrio";
+$obj = new SQLTable($proto51);
 
-$proto48["m_table"] = $obj;
-$proto48["m_sql"] = "INNER JOIN eportal.persons ON bolsa_empleo.postulacion.fk_personaid = eportal.persons.id";
-$proto48["m_alias"] = "";
-$proto48["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto50=array();
-$proto50["m_sql"] = "eportal.persons.id = bolsa_empleo.postulacion.fk_personaid";
-$proto50["m_uniontype"] = "SQLL_UNKNOWN";
+$proto50["m_table"] = $obj;
+$proto50["m_sql"] = "INNER JOIN eportal.persons ON bolsa_empleo.postulacion.fk_personaid = eportal.persons.id";
+$proto50["m_alias"] = "";
+$proto50["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto52=array();
+$proto52["m_sql"] = "eportal.persons.id = bolsa_empleo.postulacion.fk_personaid";
+$proto52["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id",
 	"m_strTable" => "eportal.persons",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto50["m_column"]=$obj;
-$proto50["m_contained"] = array();
-$proto50["m_strCase"] = "= bolsa_empleo.postulacion.fk_personaid";
-$proto50["m_havingmode"] = false;
-$proto50["m_inBrackets"] = false;
-$proto50["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto50);
+$proto52["m_column"]=$obj;
+$proto52["m_contained"] = array();
+$proto52["m_strCase"] = "= bolsa_empleo.postulacion.fk_personaid";
+$proto52["m_havingmode"] = false;
+$proto52["m_inBrackets"] = false;
+$proto52["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto52);
 
-$proto48["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto48);
+$proto50["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto50);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto52=array();
-$proto52["m_link"] = "SQLL_INNERJOIN";
-			$proto53=array();
-$proto53["m_strName"] = "eportal.city";
-$proto53["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto53["m_columns"] = array();
-$proto53["m_columns"][] = "id";
-$proto53["m_columns"][] = "name";
-$proto53["m_columns"][] = "countrycode";
-$proto53["m_columns"][] = "distrito_id";
-$proto53["m_columns"][] = "cod_ine_ciudad";
-$obj = new SQLTable($proto53);
+												$proto54=array();
+$proto54["m_link"] = "SQLL_INNERJOIN";
+			$proto55=array();
+$proto55["m_strName"] = "eportal.city";
+$proto55["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto55["m_columns"] = array();
+$proto55["m_columns"][] = "id";
+$proto55["m_columns"][] = "name";
+$proto55["m_columns"][] = "countrycode";
+$proto55["m_columns"][] = "distrito_id";
+$proto55["m_columns"][] = "cod_ine_ciudad";
+$obj = new SQLTable($proto55);
 
-$proto52["m_table"] = $obj;
-$proto52["m_sql"] = "INNER JOIN eportal.city ON eportal.persons.city_id = eportal.city.id";
-$proto52["m_alias"] = "";
-$proto52["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto54=array();
-$proto54["m_sql"] = "eportal.city.id = eportal.persons.city_id";
-$proto54["m_uniontype"] = "SQLL_UNKNOWN";
+$proto54["m_table"] = $obj;
+$proto54["m_sql"] = "INNER JOIN eportal.city ON eportal.persons.city_id = eportal.city.id";
+$proto54["m_alias"] = "";
+$proto54["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto56=array();
+$proto56["m_sql"] = "eportal.city.id = eportal.persons.city_id";
+$proto56["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id",
 	"m_strTable" => "eportal.city",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto54["m_column"]=$obj;
-$proto54["m_contained"] = array();
-$proto54["m_strCase"] = "= eportal.persons.city_id";
-$proto54["m_havingmode"] = false;
-$proto54["m_inBrackets"] = false;
-$proto54["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto54);
+$proto56["m_column"]=$obj;
+$proto56["m_contained"] = array();
+$proto56["m_strCase"] = "= eportal.persons.city_id";
+$proto56["m_havingmode"] = false;
+$proto56["m_inBrackets"] = false;
+$proto56["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto56);
 
-$proto52["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto52);
+$proto54["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto54);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto56=array();
-$proto56["m_link"] = "SQLL_INNERJOIN";
-			$proto57=array();
-$proto57["m_strName"] = "eportal.persons_estado_civil_type";
-$proto57["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto57["m_columns"] = array();
-$proto57["m_columns"][] = "id";
-$proto57["m_columns"][] = "short";
-$proto57["m_columns"][] = "name";
-$obj = new SQLTable($proto57);
+												$proto58=array();
+$proto58["m_link"] = "SQLL_INNERJOIN";
+			$proto59=array();
+$proto59["m_strName"] = "eportal.persons_estado_civil_type";
+$proto59["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto59["m_columns"] = array();
+$proto59["m_columns"][] = "id";
+$proto59["m_columns"][] = "short";
+$proto59["m_columns"][] = "name";
+$obj = new SQLTable($proto59);
 
-$proto56["m_table"] = $obj;
-$proto56["m_sql"] = "INNER JOIN eportal.persons_estado_civil_type ON eportal.persons.estado_civil = eportal.persons_estado_civil_type.id";
-$proto56["m_alias"] = "";
-$proto56["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto58=array();
-$proto58["m_sql"] = "eportal.persons_estado_civil_type.id = eportal.persons.estado_civil";
-$proto58["m_uniontype"] = "SQLL_UNKNOWN";
+$proto58["m_table"] = $obj;
+$proto58["m_sql"] = "INNER JOIN eportal.persons_estado_civil_type ON eportal.persons.estado_civil = eportal.persons_estado_civil_type.id";
+$proto58["m_alias"] = "";
+$proto58["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto60=array();
+$proto60["m_sql"] = "eportal.persons_estado_civil_type.id = eportal.persons.estado_civil";
+$proto60["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id",
 	"m_strTable" => "eportal.persons_estado_civil_type",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto58["m_column"]=$obj;
-$proto58["m_contained"] = array();
-$proto58["m_strCase"] = "= eportal.persons.estado_civil";
-$proto58["m_havingmode"] = false;
-$proto58["m_inBrackets"] = false;
-$proto58["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto58);
+$proto60["m_column"]=$obj;
+$proto60["m_contained"] = array();
+$proto60["m_strCase"] = "= eportal.persons.estado_civil";
+$proto60["m_havingmode"] = false;
+$proto60["m_inBrackets"] = false;
+$proto60["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto60);
 
-$proto56["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto56);
+$proto58["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto58);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto60=array();
-$proto60["m_link"] = "SQLL_INNERJOIN";
-			$proto61=array();
-$proto61["m_strName"] = "eportal.persons_docs";
-$proto61["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto61["m_columns"] = array();
-$proto61["m_columns"][] = "id";
-$proto61["m_columns"][] = "doctype_id";
-$proto61["m_columns"][] = "person_id";
-$proto61["m_columns"][] = "valor";
-$obj = new SQLTable($proto61);
+												$proto62=array();
+$proto62["m_link"] = "SQLL_INNERJOIN";
+			$proto63=array();
+$proto63["m_strName"] = "eportal.persons_docs";
+$proto63["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto63["m_columns"] = array();
+$proto63["m_columns"][] = "id";
+$proto63["m_columns"][] = "doctype_id";
+$proto63["m_columns"][] = "person_id";
+$proto63["m_columns"][] = "valor";
+$obj = new SQLTable($proto63);
 
-$proto60["m_table"] = $obj;
-$proto60["m_sql"] = "INNER JOIN eportal.persons_docs ON eportal.persons.id = eportal.persons_docs.person_id";
-$proto60["m_alias"] = "";
-$proto60["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto62=array();
-$proto62["m_sql"] = "eportal.persons_docs.person_id = eportal.persons.id";
-$proto62["m_uniontype"] = "SQLL_UNKNOWN";
+$proto62["m_table"] = $obj;
+$proto62["m_sql"] = "INNER JOIN eportal.persons_docs ON eportal.persons.id = eportal.persons_docs.person_id";
+$proto62["m_alias"] = "";
+$proto62["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto64=array();
+$proto64["m_sql"] = "eportal.persons_docs.person_id = eportal.persons.id";
+$proto64["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "person_id",
 	"m_strTable" => "eportal.persons_docs",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto62["m_column"]=$obj;
-$proto62["m_contained"] = array();
-$proto62["m_strCase"] = "= eportal.persons.id";
-$proto62["m_havingmode"] = false;
-$proto62["m_inBrackets"] = false;
-$proto62["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto62);
+$proto64["m_column"]=$obj;
+$proto64["m_contained"] = array();
+$proto64["m_strCase"] = "= eportal.persons.id";
+$proto64["m_havingmode"] = false;
+$proto64["m_inBrackets"] = false;
+$proto64["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto64);
 
-$proto60["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto60);
+$proto62["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto62);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto64=array();
-$proto64["m_link"] = "SQLL_INNERJOIN";
-			$proto65=array();
-$proto65["m_strName"] = "eportal.persons_phones";
-$proto65["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto65["m_columns"] = array();
-$proto65["m_columns"][] = "id";
-$proto65["m_columns"][] = "person_id";
-$proto65["m_columns"][] = "type";
-$proto65["m_columns"][] = "phone";
-$obj = new SQLTable($proto65);
+												$proto66=array();
+$proto66["m_link"] = "SQLL_INNERJOIN";
+			$proto67=array();
+$proto67["m_strName"] = "eportal.persons_phones";
+$proto67["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto67["m_columns"] = array();
+$proto67["m_columns"][] = "id";
+$proto67["m_columns"][] = "person_id";
+$proto67["m_columns"][] = "type";
+$proto67["m_columns"][] = "phone";
+$obj = new SQLTable($proto67);
 
-$proto64["m_table"] = $obj;
-$proto64["m_sql"] = "INNER JOIN eportal.persons_phones ON eportal.persons.id = eportal.persons_phones.person_id";
-$proto64["m_alias"] = "";
-$proto64["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto66=array();
-$proto66["m_sql"] = "eportal.persons_phones.person_id = eportal.persons.id";
-$proto66["m_uniontype"] = "SQLL_UNKNOWN";
+$proto66["m_table"] = $obj;
+$proto66["m_sql"] = "INNER JOIN eportal.persons_phones ON eportal.persons.id = eportal.persons_phones.person_id";
+$proto66["m_alias"] = "";
+$proto66["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto68=array();
+$proto68["m_sql"] = "eportal.persons_phones.person_id = eportal.persons.id";
+$proto68["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "person_id",
 	"m_strTable" => "eportal.persons_phones",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto66["m_column"]=$obj;
-$proto66["m_contained"] = array();
-$proto66["m_strCase"] = "= eportal.persons.id";
-$proto66["m_havingmode"] = false;
-$proto66["m_inBrackets"] = false;
-$proto66["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto66);
+$proto68["m_column"]=$obj;
+$proto68["m_contained"] = array();
+$proto68["m_strCase"] = "= eportal.persons.id";
+$proto68["m_havingmode"] = false;
+$proto68["m_inBrackets"] = false;
+$proto68["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto68);
 
-$proto64["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto64);
+$proto66["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto66);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto68=array();
-$proto68["m_link"] = "SQLL_INNERJOIN";
-			$proto69=array();
-$proto69["m_strName"] = "bolsa_empleo.bolsa_users";
-$proto69["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto69["m_columns"] = array();
-$proto69["m_columns"][] = "id";
-$proto69["m_columns"][] = "nro_documento";
-$proto69["m_columns"][] = "clave";
-$proto69["m_columns"][] = "email";
-$proto69["m_columns"][] = "groupid";
-$proto69["m_columns"][] = "active";
-$proto69["m_columns"][] = "reset_token";
-$proto69["m_columns"][] = "reset_date";
-$proto69["m_columns"][] = "fecha_alta";
-$proto69["m_columns"][] = "llave";
-$proto69["m_columns"][] = "estado_llave";
-$proto69["m_columns"][] = "senadis";
-$proto69["m_columns"][] = "trabajo_antes";
-$proto69["m_columns"][] = "userpic";
-$proto69["m_columns"][] = "personaid";
-$proto69["m_columns"][] = "fullname";
-$proto69["m_columns"][] = "username";
-$proto69["m_columns"][] = "hash_generado";
-$proto69["m_columns"][] = "adjunto_foto_perfil";
-$proto69["m_columns"][] = "cantidad_omision_cambio_password";
-$obj = new SQLTable($proto69);
+												$proto70=array();
+$proto70["m_link"] = "SQLL_INNERJOIN";
+			$proto71=array();
+$proto71["m_strName"] = "bolsa_empleo.bolsa_users";
+$proto71["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto71["m_columns"] = array();
+$proto71["m_columns"][] = "id";
+$proto71["m_columns"][] = "nro_documento";
+$proto71["m_columns"][] = "clave";
+$proto71["m_columns"][] = "email";
+$proto71["m_columns"][] = "groupid";
+$proto71["m_columns"][] = "active";
+$proto71["m_columns"][] = "reset_token";
+$proto71["m_columns"][] = "reset_date";
+$proto71["m_columns"][] = "fecha_alta";
+$proto71["m_columns"][] = "llave";
+$proto71["m_columns"][] = "estado_llave";
+$proto71["m_columns"][] = "senadis";
+$proto71["m_columns"][] = "trabajo_antes";
+$proto71["m_columns"][] = "userpic";
+$proto71["m_columns"][] = "personaid";
+$proto71["m_columns"][] = "fullname";
+$proto71["m_columns"][] = "username";
+$proto71["m_columns"][] = "hash_generado";
+$proto71["m_columns"][] = "adjunto_foto_perfil";
+$proto71["m_columns"][] = "cantidad_omision_cambio_password";
+$obj = new SQLTable($proto71);
 
-$proto68["m_table"] = $obj;
-$proto68["m_sql"] = "INNER JOIN bolsa_empleo.bolsa_users ON eportal.persons_docs.valor = bolsa_empleo.bolsa_users.nro_documento";
-$proto68["m_alias"] = "";
-$proto68["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto70=array();
-$proto70["m_sql"] = "bolsa_empleo.bolsa_users.nro_documento = eportal.persons_docs.valor";
-$proto70["m_uniontype"] = "SQLL_UNKNOWN";
+$proto70["m_table"] = $obj;
+$proto70["m_sql"] = "INNER JOIN bolsa_empleo.bolsa_users ON eportal.persons_docs.valor = bolsa_empleo.bolsa_users.nro_documento";
+$proto70["m_alias"] = "";
+$proto70["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto72=array();
+$proto72["m_sql"] = "bolsa_empleo.bolsa_users.nro_documento = eportal.persons_docs.valor";
+$proto72["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "nro_documento",
 	"m_strTable" => "bolsa_empleo.bolsa_users",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto70["m_column"]=$obj;
-$proto70["m_contained"] = array();
-$proto70["m_strCase"] = "= eportal.persons_docs.valor";
-$proto70["m_havingmode"] = false;
-$proto70["m_inBrackets"] = false;
-$proto70["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto70);
+$proto72["m_column"]=$obj;
+$proto72["m_contained"] = array();
+$proto72["m_strCase"] = "= eportal.persons_docs.valor";
+$proto72["m_havingmode"] = false;
+$proto72["m_inBrackets"] = false;
+$proto72["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto72);
 
-$proto68["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto68);
+$proto70["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto70);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto72=array();
-$proto72["m_link"] = "SQLL_INNERJOIN";
-			$proto73=array();
-$proto73["m_strName"] = "bolsa_empleo.vacancia_empresa";
-$proto73["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto73["m_columns"] = array();
-$proto73["m_columns"][] = "id_empresa_vacancia";
-$proto73["m_columns"][] = "id_empresa_sucursal";
-$proto73["m_columns"][] = "id_contacto_sucursal";
-$proto73["m_columns"][] = "id_cidudad";
-$proto73["m_columns"][] = "id_departamento";
-$proto73["m_columns"][] = "id_vacancia";
-$obj = new SQLTable($proto73);
+												$proto74=array();
+$proto74["m_link"] = "SQLL_INNERJOIN";
+			$proto75=array();
+$proto75["m_strName"] = "bolsa_empleo.vacancia_empresa";
+$proto75["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto75["m_columns"] = array();
+$proto75["m_columns"][] = "id_empresa_vacancia";
+$proto75["m_columns"][] = "id_empresa_sucursal";
+$proto75["m_columns"][] = "id_contacto_sucursal";
+$proto75["m_columns"][] = "id_cidudad";
+$proto75["m_columns"][] = "id_departamento";
+$proto75["m_columns"][] = "id_vacancia";
+$obj = new SQLTable($proto75);
 
-$proto72["m_table"] = $obj;
-$proto72["m_sql"] = "INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_empresa.id_vacancia";
-$proto72["m_alias"] = "";
-$proto72["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto74=array();
-$proto74["m_sql"] = "bolsa_empleo.vacancia_empresa.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
-$proto74["m_uniontype"] = "SQLL_UNKNOWN";
+$proto74["m_table"] = $obj;
+$proto74["m_sql"] = "INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_empresa.id_vacancia";
+$proto74["m_alias"] = "";
+$proto74["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto76=array();
+$proto76["m_sql"] = "bolsa_empleo.vacancia_empresa.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
+$proto76["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id_vacancia",
 	"m_strTable" => "bolsa_empleo.vacancia_empresa",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto74["m_column"]=$obj;
-$proto74["m_contained"] = array();
-$proto74["m_strCase"] = "= bolsa_empleo.vacancia.id_vacancias";
-$proto74["m_havingmode"] = false;
-$proto74["m_inBrackets"] = false;
-$proto74["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto74);
+$proto76["m_column"]=$obj;
+$proto76["m_contained"] = array();
+$proto76["m_strCase"] = "= bolsa_empleo.vacancia.id_vacancias";
+$proto76["m_havingmode"] = false;
+$proto76["m_inBrackets"] = false;
+$proto76["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto76);
 
-$proto72["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto72);
+$proto74["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto74);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto76=array();
-$proto76["m_link"] = "SQLL_INNERJOIN";
-			$proto77=array();
-$proto77["m_strName"] = "bolsa_empleo.vacancia_puesto";
-$proto77["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto77["m_columns"] = array();
-$proto77["m_columns"][] = "id_puesto_vacancia";
-$proto77["m_columns"][] = "nombre_puesto";
-$proto77["m_columns"][] = "salario";
-$proto77["m_columns"][] = "tipo_contrato";
-$proto77["m_columns"][] = "descripcion_puesto";
-$proto77["m_columns"][] = "id_vacancia";
-$proto77["m_columns"][] = "id_rubro";
-$proto77["m_columns"][] = "anos_experiencia_vacancia";
-$proto77["m_columns"][] = "fk_ocupacion_puesto";
-$proto77["m_columns"][] = "meses_experiencia_vacancia";
-$proto77["m_columns"][] = "horario_rotativo";
-$proto77["m_columns"][] = "beneficios";
-$proto77["m_columns"][] = "modalidad_trabajo";
-$proto77["m_columns"][] = "descripcion_salario";
-$proto77["m_columns"][] = "color";
-$proto77["m_columns"][] = "tipo_remuneracion";
-$obj = new SQLTable($proto77);
+												$proto78=array();
+$proto78["m_link"] = "SQLL_INNERJOIN";
+			$proto79=array();
+$proto79["m_strName"] = "bolsa_empleo.vacancia_puesto";
+$proto79["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto79["m_columns"] = array();
+$proto79["m_columns"][] = "id_puesto_vacancia";
+$proto79["m_columns"][] = "nombre_puesto";
+$proto79["m_columns"][] = "salario";
+$proto79["m_columns"][] = "tipo_contrato";
+$proto79["m_columns"][] = "descripcion_puesto";
+$proto79["m_columns"][] = "id_vacancia";
+$proto79["m_columns"][] = "id_rubro";
+$proto79["m_columns"][] = "anos_experiencia_vacancia";
+$proto79["m_columns"][] = "fk_ocupacion_puesto";
+$proto79["m_columns"][] = "meses_experiencia_vacancia";
+$proto79["m_columns"][] = "horario_rotativo";
+$proto79["m_columns"][] = "beneficios";
+$proto79["m_columns"][] = "modalidad_trabajo";
+$proto79["m_columns"][] = "descripcion_salario";
+$proto79["m_columns"][] = "color";
+$proto79["m_columns"][] = "tipo_remuneracion";
+$obj = new SQLTable($proto79);
 
-$proto76["m_table"] = $obj;
-$proto76["m_sql"] = "INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_puesto.id_vacancia";
-$proto76["m_alias"] = "";
-$proto76["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto78=array();
-$proto78["m_sql"] = "bolsa_empleo.vacancia_puesto.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
-$proto78["m_uniontype"] = "SQLL_UNKNOWN";
+$proto78["m_table"] = $obj;
+$proto78["m_sql"] = "INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_puesto.id_vacancia";
+$proto78["m_alias"] = "";
+$proto78["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto80=array();
+$proto80["m_sql"] = "bolsa_empleo.vacancia_puesto.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
+$proto80["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id_vacancia",
 	"m_strTable" => "bolsa_empleo.vacancia_puesto",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto78["m_column"]=$obj;
-$proto78["m_contained"] = array();
-$proto78["m_strCase"] = "= bolsa_empleo.vacancia.id_vacancias";
-$proto78["m_havingmode"] = false;
-$proto78["m_inBrackets"] = false;
-$proto78["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto78);
+$proto80["m_column"]=$obj;
+$proto80["m_contained"] = array();
+$proto80["m_strCase"] = "= bolsa_empleo.vacancia.id_vacancias";
+$proto80["m_havingmode"] = false;
+$proto80["m_inBrackets"] = false;
+$proto80["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto80);
 
-$proto76["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto76);
+$proto78["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto78);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto80=array();
-$proto80["m_link"] = "SQLL_INNERJOIN";
-			$proto81=array();
-$proto81["m_strName"] = "bolsa_empleo.vista_ocupaciones";
-$proto81["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto81["m_columns"] = array();
-$proto81["m_columns"][] = "id_ocu_puest_clasi";
-$proto81["m_columns"][] = "descripcion";
-$proto81["m_columns"][] = "codigo";
-$proto81["m_columns"][] = "color";
-$obj = new SQLTable($proto81);
+												$proto82=array();
+$proto82["m_link"] = "SQLL_INNERJOIN";
+			$proto83=array();
+$proto83["m_strName"] = "bolsa_empleo.vista_ocupaciones";
+$proto83["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto83["m_columns"] = array();
+$proto83["m_columns"][] = "id_ocu_puest_clasi";
+$proto83["m_columns"][] = "descripcion";
+$proto83["m_columns"][] = "codigo";
+$proto83["m_columns"][] = "color";
+$obj = new SQLTable($proto83);
 
-$proto80["m_table"] = $obj;
-$proto80["m_sql"] = "INNER JOIN bolsa_empleo.vista_ocupaciones ON bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto = bolsa_empleo.vista_ocupaciones.id_ocu_puest_clasi";
-$proto80["m_alias"] = "";
-$proto80["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto82=array();
-$proto82["m_sql"] = "bolsa_empleo.vista_ocupaciones.id_ocu_puest_clasi = bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto";
-$proto82["m_uniontype"] = "SQLL_UNKNOWN";
+$proto82["m_table"] = $obj;
+$proto82["m_sql"] = "INNER JOIN bolsa_empleo.vista_ocupaciones ON bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto = bolsa_empleo.vista_ocupaciones.id_ocu_puest_clasi";
+$proto82["m_alias"] = "";
+$proto82["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto84=array();
+$proto84["m_sql"] = "bolsa_empleo.vista_ocupaciones.id_ocu_puest_clasi = bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto";
+$proto84["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id_ocu_puest_clasi",
 	"m_strTable" => "bolsa_empleo.vista_ocupaciones",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto82["m_column"]=$obj;
-$proto82["m_contained"] = array();
-$proto82["m_strCase"] = "= bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto";
-$proto82["m_havingmode"] = false;
-$proto82["m_inBrackets"] = false;
-$proto82["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto82);
+$proto84["m_column"]=$obj;
+$proto84["m_contained"] = array();
+$proto84["m_strCase"] = "= bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto";
+$proto84["m_havingmode"] = false;
+$proto84["m_inBrackets"] = false;
+$proto84["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto84);
 
-$proto80["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto80);
+$proto82["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto82);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto84=array();
-$proto84["m_link"] = "SQLL_INNERJOIN";
-			$proto85=array();
-$proto85["m_strName"] = "bolsa_empleo.empresas_bolsa_sucursales";
-$proto85["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto85["m_columns"] = array();
-$proto85["m_columns"][] = "id";
-$proto85["m_columns"][] = "empresas_bolsa_id";
-$proto85["m_columns"][] = "ruc";
-$proto85["m_columns"][] = "legal";
-$proto85["m_columns"][] = "fantasy";
-$proto85["m_columns"][] = "city_id";
-$proto85["m_columns"][] = "distrito_id";
-$proto85["m_columns"][] = "tel";
-$proto85["m_columns"][] = "email";
-$proto85["m_columns"][] = "id_tipo_sucursal";
-$proto85["m_columns"][] = "nro_patronal";
-$proto85["m_columns"][] = "direccion";
-$proto85["m_columns"][] = "fecha_creacion";
-$obj = new SQLTable($proto85);
+												$proto86=array();
+$proto86["m_link"] = "SQLL_INNERJOIN";
+			$proto87=array();
+$proto87["m_strName"] = "bolsa_empleo.empresas_bolsa_sucursales";
+$proto87["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto87["m_columns"] = array();
+$proto87["m_columns"][] = "id";
+$proto87["m_columns"][] = "empresas_bolsa_id";
+$proto87["m_columns"][] = "ruc";
+$proto87["m_columns"][] = "legal";
+$proto87["m_columns"][] = "fantasy";
+$proto87["m_columns"][] = "city_id";
+$proto87["m_columns"][] = "distrito_id";
+$proto87["m_columns"][] = "tel";
+$proto87["m_columns"][] = "email";
+$proto87["m_columns"][] = "id_tipo_sucursal";
+$proto87["m_columns"][] = "nro_patronal";
+$proto87["m_columns"][] = "direccion";
+$proto87["m_columns"][] = "fecha_creacion";
+$obj = new SQLTable($proto87);
 
-$proto84["m_table"] = $obj;
-$proto84["m_sql"] = "INNER JOIN bolsa_empleo.empresas_bolsa_sucursales ON bolsa_empleo.vacancia_empresa.id_empresa_sucursal = bolsa_empleo.empresas_bolsa_sucursales.id";
-$proto84["m_alias"] = "";
-$proto84["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
-$proto86=array();
-$proto86["m_sql"] = "bolsa_empleo.empresas_bolsa_sucursales.id = bolsa_empleo.vacancia_empresa.id_empresa_sucursal";
-$proto86["m_uniontype"] = "SQLL_UNKNOWN";
+$proto86["m_table"] = $obj;
+$proto86["m_sql"] = "INNER JOIN bolsa_empleo.empresas_bolsa_sucursales ON bolsa_empleo.vacancia_empresa.id_empresa_sucursal = bolsa_empleo.empresas_bolsa_sucursales.id";
+$proto86["m_alias"] = "";
+$proto86["m_srcTableName"] = "bolsa_empleo.postulacion_insertado";
+$proto88=array();
+$proto88["m_sql"] = "bolsa_empleo.empresas_bolsa_sucursales.id = bolsa_empleo.vacancia_empresa.id_empresa_sucursal";
+$proto88["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id",
 	"m_strTable" => "bolsa_empleo.empresas_bolsa_sucursales",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto86["m_column"]=$obj;
-$proto86["m_contained"] = array();
-$proto86["m_strCase"] = "= bolsa_empleo.vacancia_empresa.id_empresa_sucursal";
-$proto86["m_havingmode"] = false;
-$proto86["m_inBrackets"] = false;
-$proto86["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto86);
+$proto88["m_column"]=$obj;
+$proto88["m_contained"] = array();
+$proto88["m_strCase"] = "= bolsa_empleo.vacancia_empresa.id_empresa_sucursal";
+$proto88["m_havingmode"] = false;
+$proto88["m_inBrackets"] = false;
+$proto88["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto88);
 
-$proto84["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto84);
+$proto86["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto86);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
-												$proto88=array();
+												$proto90=array();
 						$obj = new SQLField(array(
 	"m_strName" => "name",
 	"m_strTable" => "eportal.persons_estado_civil_type",
-	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
-));
-
-$proto88["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto88);
-
-$proto0["m_groupby"][]=$obj;
-												$proto90=array();
-						$obj = new SQLField(array(
-	"m_strName" => "valor",
-	"m_strTable" => "eportal.persons_docs",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
@@ -3529,8 +3677,8 @@ $obj = new SQLGroupByItem($proto90);
 $proto0["m_groupby"][]=$obj;
 												$proto92=array();
 						$obj = new SQLField(array(
-	"m_strName" => "id_vacancia",
-	"m_strTable" => "bolsa_empleo.postulacion",
+	"m_strName" => "valor",
+	"m_strTable" => "eportal.persons_docs",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
@@ -3540,8 +3688,8 @@ $obj = new SQLGroupByItem($proto92);
 $proto0["m_groupby"][]=$obj;
 												$proto94=array();
 						$obj = new SQLField(array(
-	"m_strName" => "hash_generado",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
+	"m_strName" => "id_vacancia",
+	"m_strTable" => "bolsa_empleo.postulacion",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
@@ -3551,8 +3699,8 @@ $obj = new SQLGroupByItem($proto94);
 $proto0["m_groupby"][]=$obj;
 												$proto96=array();
 						$obj = new SQLField(array(
-	"m_strName" => "id_postulacion",
-	"m_strTable" => "bolsa_empleo.postulacion",
+	"m_strName" => "hash_generado",
+	"m_strTable" => "bolsa_empleo.bolsa_users",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
@@ -3562,8 +3710,8 @@ $obj = new SQLGroupByItem($proto96);
 $proto0["m_groupby"][]=$obj;
 												$proto98=array();
 						$obj = new SQLField(array(
-	"m_strName" => "id",
-	"m_strTable" => "eportal.persons",
+	"m_strName" => "id_postulacion",
+	"m_strTable" => "bolsa_empleo.postulacion",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
@@ -3573,8 +3721,8 @@ $obj = new SQLGroupByItem($proto98);
 $proto0["m_groupby"][]=$obj;
 												$proto100=array();
 						$obj = new SQLField(array(
-	"m_strName" => "ruc",
-	"m_strTable" => "bolsa_empleo.empresas_bolsa_sucursales",
+	"m_strName" => "id",
+	"m_strTable" => "eportal.persons",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
@@ -3584,7 +3732,7 @@ $obj = new SQLGroupByItem($proto100);
 $proto0["m_groupby"][]=$obj;
 												$proto102=array();
 						$obj = new SQLField(array(
-	"m_strName" => "legal",
+	"m_strName" => "ruc",
 	"m_strTable" => "bolsa_empleo.empresas_bolsa_sucursales",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
@@ -3595,8 +3743,8 @@ $obj = new SQLGroupByItem($proto102);
 $proto0["m_groupby"][]=$obj;
 												$proto104=array();
 						$obj = new SQLField(array(
-	"m_strName" => "descripcion",
-	"m_strTable" => "bolsa_empleo.vista_ocupaciones",
+	"m_strName" => "legal",
+	"m_strTable" => "bolsa_empleo.empresas_bolsa_sucursales",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
@@ -3604,18 +3752,40 @@ $proto104["m_column"]=$obj;
 $obj = new SQLGroupByItem($proto104);
 
 $proto0["m_groupby"][]=$obj;
-$proto0["m_orderby"] = array();
 												$proto106=array();
+						$obj = new SQLField(array(
+	"m_strName" => "descripcion",
+	"m_strTable" => "bolsa_empleo.vista_ocupaciones",
+	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
+));
+
+$proto106["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto106);
+
+$proto0["m_groupby"][]=$obj;
+												$proto108=array();
+						$obj = new SQLField(array(
+	"m_strName" => "id",
+	"m_strTable" => "eportal.persons",
+	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
+));
+
+$proto108["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto108);
+
+$proto0["m_groupby"][]=$obj;
+$proto0["m_orderby"] = array();
+												$proto110=array();
 						$obj = new SQLField(array(
 	"m_strName" => "id_postulacion",
 	"m_strTable" => "bolsa_empleo.postulacion",
 	"m_srcTableName" => "bolsa_empleo.postulacion_insertado"
 ));
 
-$proto106["m_column"]=$obj;
-$proto106["m_bAsc"] = 1;
-$proto106["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto106);
+$proto110["m_column"]=$obj;
+$proto110["m_bAsc"] = 1;
+$proto110["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto110);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="bolsa_empleo.postulacion_insertado";		
@@ -3629,7 +3799,7 @@ $queryData_postulacion_insertado = createSqlQuery_postulacion_insertado();
 	
 		;
 
-																
+																	
 
 $tdatapostulacion_insertado[".sqlquery"] = $queryData_postulacion_insertado;
 

@@ -3,33 +3,10 @@
 	<head>
 				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>EmpleaPy :: Admin :: {$pagetitle}</title>
+	<title>{$pagetitle}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="icon" src="images/imgob23/gob_ico.png" type="image/x-icon" sizes="32x32"> 
 	<base href="{$projectPath}">
-	 <link rel="stylesheet" href="images/icons_v4/font/bootstrap-icons.css">
-<!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://analytics.mtess.gov.py/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '14']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Code -->
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     crossorigin=""/>
- <link rel="icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-180x180.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
 	{BEGIN rtlCSS}
 	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
 	{END rtlCSS}
@@ -161,28 +138,6 @@
 
 {END nro_documento_fieldblock}
 											
-{BEGIN clave_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_clave}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="clave{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field2" {$item_integrated_search_field2} data-pageid="{$pageid}" data-field="clave" data-fieldname="clave" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_clave}">
-		{$label bolsa_empleo_bolsa_users_popup clave }	</label>
-	<div class="r-search-option">
-		{$searchtype_clave}
-	</div>
-	<div class="r-search-field">
-		{$clave_editcontrol}	</div>
-	<div class="r-search-field">
-		{$clave_editcontrol1}
-	</div>
-	
-</div>
-
-{END clave_fieldblock}
-											
 {BEGIN email_fieldblock}
 
 <div class="r-integrated-field form-group clearfix {$fielddispclass_email}  r-horizontal-field form-horizontal" 	
@@ -204,204 +159,6 @@
 </div>
 
 {END email_fieldblock}
-											
-{BEGIN groupid_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_groupid}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="groupid{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field4" {$item_integrated_search_field4} data-pageid="{$pageid}" data-field="groupid" data-fieldname="groupid" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_groupid}">
-		{$label bolsa_empleo_bolsa_users_popup groupid }	</label>
-	<div class="r-search-option">
-		{$searchtype_groupid}
-	</div>
-	<div class="r-search-field">
-		{$groupid_editcontrol}	</div>
-	<div class="r-search-field">
-		{$groupid_editcontrol1}
-	</div>
-	
-</div>
-
-{END groupid_fieldblock}
-											
-{BEGIN active_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_active}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="active{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field5" {$item_integrated_search_field5} data-pageid="{$pageid}" data-field="active" data-fieldname="active" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_active}">
-		{$label bolsa_empleo_bolsa_users_popup active }	</label>
-	<div class="r-search-option">
-		{$searchtype_active}
-	</div>
-	<div class="r-search-field">
-		{$active_editcontrol}	</div>
-	<div class="r-search-field">
-		{$active_editcontrol1}
-	</div>
-	
-</div>
-
-{END active_fieldblock}
-											
-{BEGIN reset_token_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_reset_token}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="reset_token{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field6" {$item_integrated_search_field6} data-pageid="{$pageid}" data-field="reset_token" data-fieldname="reset_token" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_reset_token}">
-		{$label bolsa_empleo_bolsa_users_popup reset_token }	</label>
-	<div class="r-search-option">
-		{$searchtype_reset_token}
-	</div>
-	<div class="r-search-field">
-		{$reset_token_editcontrol}	</div>
-	<div class="r-search-field">
-		{$reset_token_editcontrol1}
-	</div>
-	
-</div>
-
-{END reset_token_fieldblock}
-											
-{BEGIN reset_date_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_reset_date}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="reset_date{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field7" {$item_integrated_search_field7} data-pageid="{$pageid}" data-field="reset_date" data-fieldname="reset_date" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_reset_date}">
-		{$label bolsa_empleo_bolsa_users_popup reset_date }	</label>
-	<div class="r-search-option">
-		{$searchtype_reset_date}
-	</div>
-	<div class="r-search-field">
-		{$reset_date_editcontrol}	</div>
-	<div class="r-search-field">
-		{$reset_date_editcontrol1}
-	</div>
-	
-</div>
-
-{END reset_date_fieldblock}
-											
-{BEGIN fecha_alta_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_fecha_alta}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="fecha_alta{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field8" {$item_integrated_search_field8} data-pageid="{$pageid}" data-field="fecha_alta" data-fieldname="fecha_alta" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_fecha_alta}">
-		{$label bolsa_empleo_bolsa_users_popup fecha_alta }	</label>
-	<div class="r-search-option">
-		{$searchtype_fecha_alta}
-	</div>
-	<div class="r-search-field">
-		{$fecha_alta_editcontrol}	</div>
-	<div class="r-search-field">
-		{$fecha_alta_editcontrol1}
-	</div>
-	
-</div>
-
-{END fecha_alta_fieldblock}
-											
-{BEGIN llave_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_llave}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="llave{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field9" {$item_integrated_search_field9} data-pageid="{$pageid}" data-field="llave" data-fieldname="llave" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_llave}">
-		{$label bolsa_empleo_bolsa_users_popup llave }	</label>
-	<div class="r-search-option">
-		{$searchtype_llave}
-	</div>
-	<div class="r-search-field">
-		{$llave_editcontrol}	</div>
-	<div class="r-search-field">
-		{$llave_editcontrol1}
-	</div>
-	
-</div>
-
-{END llave_fieldblock}
-											
-{BEGIN estado_llave_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_estado_llave}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="estado_llave{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field10" {$item_integrated_search_field10} data-pageid="{$pageid}" data-field="estado_llave" data-fieldname="estado_llave" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_estado_llave}">
-		{$label bolsa_empleo_bolsa_users_popup estado_llave }	</label>
-	<div class="r-search-option">
-		{$searchtype_estado_llave}
-	</div>
-	<div class="r-search-field">
-		{$estado_llave_editcontrol}	</div>
-	<div class="r-search-field">
-		{$estado_llave_editcontrol1}
-	</div>
-	
-</div>
-
-{END estado_llave_fieldblock}
-											
-{BEGIN senadis_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_senadis}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="senadis{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field11" {$item_integrated_search_field11} data-pageid="{$pageid}" data-field="senadis" data-fieldname="senadis" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_senadis}">
-		{$label bolsa_empleo_bolsa_users_popup senadis }	</label>
-	<div class="r-search-option">
-		{$searchtype_senadis}
-	</div>
-	<div class="r-search-field">
-		{$senadis_editcontrol}	</div>
-	<div class="r-search-field">
-		{$senadis_editcontrol1}
-	</div>
-	
-</div>
-
-{END senadis_fieldblock}
-											
-{BEGIN trabajo_antes_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_trabajo_antes}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="trabajo_antes{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field12" {$item_integrated_search_field12} data-pageid="{$pageid}" data-field="trabajo_antes" data-fieldname="trabajo_antes" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_trabajo_antes}">
-		{$label bolsa_empleo_bolsa_users_popup trabajo_antes }	</label>
-	<div class="r-search-option">
-		{$searchtype_trabajo_antes}
-	</div>
-	<div class="r-search-field">
-		{$trabajo_antes_editcontrol}	</div>
-	<div class="r-search-field">
-		{$trabajo_antes_editcontrol1}
-	</div>
-	
-</div>
-
-{END trabajo_antes_fieldblock}
 											
 {BEGIN personaid_fieldblock}
 
@@ -469,28 +226,6 @@
 
 {END username_fieldblock}
 											
-{BEGIN hash_generado_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_hash_generado}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="hash_generado{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field16" {$item_integrated_search_field16} data-pageid="{$pageid}" data-field="hash_generado" data-fieldname="hash_generado" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_hash_generado}">
-		{$label bolsa_empleo_bolsa_users_popup hash_generado }	</label>
-	<div class="r-search-option">
-		{$searchtype_hash_generado}
-	</div>
-	<div class="r-search-field">
-		{$hash_generado_editcontrol}	</div>
-	<div class="r-search-field">
-		{$hash_generado_editcontrol1}
-	</div>
-	
-</div>
-
-{END hash_generado_fieldblock}
-											
 {BEGIN adjunto_foto_perfil_fieldblock}
 
 <div class="r-integrated-field form-group clearfix {$fielddispclass_adjunto_foto_perfil}  r-horizontal-field form-horizontal" 	
@@ -512,28 +247,6 @@
 </div>
 
 {END adjunto_foto_perfil_fieldblock}
-											
-{BEGIN repetir_clave_fieldblock}
-
-<div class="r-integrated-field form-group clearfix {$fielddispclass_repetir_clave}  r-horizontal-field form-horizontal" 	
-	data-signal-error-for="repetir_clave{$id}" 
-	data-itemtype="integrated_search_field" data-itemid="integrated_search_field18" {$item_integrated_search_field18} data-pageid="{$pageid}" data-field="repetir_clave" data-fieldname="repetir_clave" >
-
-
-	<label class="r-search-label control-label" for="{$labelfor_repetir_clave}">
-		{$label bolsa_empleo_bolsa_users_popup repetir_clave }	</label>
-	<div class="r-search-option">
-		{$searchtype_repetir_clave}
-	</div>
-	<div class="r-search-field">
-		{$repetir_clave_editcontrol}	</div>
-	<div class="r-search-field">
-		{$repetir_clave_editcontrol1}
-	</div>
-	
-</div>
-
-{END repetir_clave_fieldblock}
 											
 {BEGIN id_vacancias_fieldblock}
 

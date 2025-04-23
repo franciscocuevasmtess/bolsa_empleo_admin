@@ -3,33 +3,10 @@
 	<head>
 				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>EmpleaPy :: Admin :: {$pagetitle}</title>
+	<title>{$pagetitle}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="icon" src="images/imgob23/gob_ico.png" type="image/x-icon" sizes="32x32"> 
 	<base href="{$projectPath}">
-	 <link rel="stylesheet" href="images/icons_v4/font/bootstrap-icons.css">
-<!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://analytics.mtess.gov.py/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '14']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Code -->
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     crossorigin=""/>
- <link rel="icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-180x180.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
 	{BEGIN rtlCSS}
 	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
 	{END rtlCSS}
@@ -392,6 +369,58 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_id_vacancias}</span>
 						</div>
 		{END searchCtrlBlock_id_vacancias}
+																{BEGIN searchCtrlBlock_es_programa}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_es_programa}" {$filterRow_attrs_es_programa}>
+			<label>{$label bolsa_empleo_postulacion_convocado es_programa }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_es_programa}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_es_programa}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_es_programa}</span>
+						</div>
+		{END searchCtrlBlock_es_programa}
+																{BEGIN searchCtrlBlock_evaluacion}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_evaluacion}" {$filterRow_attrs_evaluacion}>
+			<label>{$label bolsa_empleo_postulacion_convocado evaluacion }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_evaluacion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_evaluacion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_evaluacion}</span>
+						</div>
+		{END searchCtrlBlock_evaluacion}
+																{BEGIN searchCtrlBlock_test_psicotecnico}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_test_psicotecnico}" {$filterRow_attrs_test_psicotecnico}>
+			<label>{$label bolsa_empleo_postulacion_convocado test_psicotecnico }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_test_psicotecnico}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_test_psicotecnico}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_test_psicotecnico}</span>
+						</div>
+		{END searchCtrlBlock_test_psicotecnico}
+																{BEGIN searchCtrlBlock_persona_id}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_persona_id}" {$filterRow_attrs_persona_id}>
+			<label>{$label bolsa_empleo_postulacion_convocado persona_id }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_persona_id}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_persona_id}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_persona_id}</span>
+						</div>
+		{END searchCtrlBlock_persona_id}
 		
 
 	</div>
@@ -580,6 +609,12 @@
 									[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="id_estado"]:before {
 		content: "{$label bolsa_empleo_postulacion_convocado id_estado}";
 	}
+					[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="test_psicotecnico"]:before {
+		content: "{$label bolsa_empleo_postulacion_convocado test_psicotecnico}";
+	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="evaluacion"]:before {
+		content: "{$label bolsa_empleo_postulacion_convocado evaluacion}";
+	}
 		}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="topbar" {$form_grid} data-pageid="{$pageid}" class=" table  r-horizontal-grid  r-flexgrid rnr-b-grid rnr-gridtable"
@@ -700,6 +735,74 @@
 	
 	</th>
 	{END cellblock_grid_headcell_field1}
+									{BEGIN cellblock_grid_headcell_field5}
+	<th
+	
+	{$cell_grid_headcell_field5}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$test_psicotecnico_class}	"
+
+			data-field="test_psicotecnico"
+	
+	data-cellId="grid_headcell_field5" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN test_psicotecnico_fieldheadercolumn}
+	{BEGIN test_psicotecnico_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label4" {$item_grid_field_label4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="test_psicotecnico" data-fieldname="test_psicotecnico" 
+
+			{$test_psicotecnico_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_postulacion_convocado test_psicotecnico }</span>
+					{$arrow_icon_test_psicotecnico}
+			</span>
+	</span>
+	{END test_psicotecnico_fieldheader}
+{END test_psicotecnico_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field5}
+									{BEGIN cellblock_grid_headcell_field10}
+	<th
+	
+	{$cell_grid_headcell_field10}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$evaluacion_class}	"
+
+			data-field="evaluacion"
+	
+	data-cellId="grid_headcell_field10" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN evaluacion_fieldheadercolumn}
+	{BEGIN evaluacion_fieldheader}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label5" {$item_grid_field_label5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="evaluacion" data-fieldname="evaluacion" 
+
+			{$evaluacion_orderlinkattrs}
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_postulacion_convocado evaluacion }</span>
+					{$arrow_icon_evaluacion}
+			</span>
+	</span>
+	{END evaluacion_fieldheader}
+{END evaluacion_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field10}
 									{BEGIN cellblock_grid_headcell_field2}
 	<th
 	
@@ -836,6 +939,48 @@
 {END cedula_fieldcolumn}	
 	</td>
 	{END cellblock_grid_headcell_field3}
+									{BEGIN cellblock_grid_headcell_field8}
+	<td
+	
+	{$cell_grid_headcell_field8}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$test_psicotecnico_class}	"
+
+			data-field="test_psicotecnico"
+	
+	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN test_psicotecnico_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field6" {$item_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="test_psicotecnico" data-fieldname="test_psicotecnico" data-default-width >
+{$test_psicotecnico_value}
+</span>
+{END test_psicotecnico_fieldcolumn}	
+	</td>
+	{END cellblock_grid_headcell_field8}
+									{BEGIN cellblock_grid_headcell_field11}
+	<td
+	
+	{$cell_grid_headcell_field11}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$evaluacion_class}	"
+
+			data-field="evaluacion"
+	
+	data-cellId="grid_headcell_field11" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN evaluacion_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field7" {$item_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="evaluacion" data-fieldname="evaluacion" data-default-width >
+{$evaluacion_value}
+</span>
+{END evaluacion_fieldcolumn}	
+	</td>
+	{END cellblock_grid_headcell_field11}
 									{BEGIN cellblock_grid_cell_field2}
 	<td
 	
@@ -938,6 +1083,36 @@
 	
 	</td>
 	{END cellblock_grid_headcell_field4}
+									{BEGIN cellblock_grid_headcell_field9}
+	<td
+	
+	{$cell_grid_headcell_field9}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$test_psicotecnico_class}	"
+
+	
+	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="postulacion_convocado_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_headcell_field9}
+									{BEGIN cellblock_grid_headcell_field12}
+	<td
+	
+	{$cell_grid_headcell_field12}
+	{$recordattrs}
+	class="
+		 r-ori-vert		 {$evaluacion_class}	"
+
+	
+	data-cellId="grid_headcell_field12" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="postulacion_convocado_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_headcell_field12}
 									{BEGIN cellblock_grid_footcell_field2}
 	<td
 	

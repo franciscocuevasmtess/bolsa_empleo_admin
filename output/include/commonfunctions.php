@@ -319,6 +319,12 @@ function checkTableName($shortTName )
 		return true;
 	if ("seguimiento_resumen" == $shortTName )
 		return true;
+	if ("persons" == $shortTName )
+		return true;
+	if ("archivo" == $shortTName )
+		return true;
+	if ("archivo_tipo" == $shortTName )
+		return true;
 	return false;
 }
 
@@ -891,6 +897,33 @@ function GetTablesList($pdfMode = false)
 	if( $tableAvailable ) {
 		$arr[]="bolsa_empleo.seguimiento_resumen";
 	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("eportal.persons");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="eportal.persons";
+	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("bolsa_empleo.archivo");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="bolsa_empleo.archivo";
+	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("bolsa_empleo.archivo_tipo");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="bolsa_empleo.archivo_tipo";
+	}
 	return $arr;
 }
 
@@ -958,6 +991,9 @@ function GetTablesListWithoutSecurity()
 	$arr[]="bolsa_empleo.bolsa_users_popup";
 	$arr[]="bolsa_empleo.postulacion_importar_planilla";
 	$arr[]="bolsa_empleo.seguimiento_resumen";
+	$arr[]="eportal.persons";
+	$arr[]="bolsa_empleo.archivo";
+	$arr[]="bolsa_empleo.archivo_tipo";
 	return $arr;
 }
 
@@ -2093,6 +2129,33 @@ function GetUserPermissionsStatic( $table )
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="bolsa_empleo.seguimiento_resumen" )
+	{
+		if( $sUserGroup=="<Guest>" )
+		{
+						return "S".$extraPerm;
+		}
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="eportal.persons" )
+	{
+		if( $sUserGroup=="<Guest>" )
+		{
+						return "S".$extraPerm;
+		}
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="bolsa_empleo.archivo" )
+	{
+		if( $sUserGroup=="<Guest>" )
+		{
+						return "S".$extraPerm;
+		}
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="bolsa_empleo.archivo_tipo" )
 	{
 		if( $sUserGroup=="<Guest>" )
 		{

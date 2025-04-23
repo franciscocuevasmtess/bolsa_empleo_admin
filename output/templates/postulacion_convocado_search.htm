@@ -3,33 +3,10 @@
 	<head>
 				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>EmpleaPy :: Admin :: {$pagetitle}</title>
+	<title>{$pagetitle}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="icon" src="images/imgob23/gob_ico.png" type="image/x-icon" sizes="32x32"> 
 	<base href="{$projectPath}">
-	 <link rel="stylesheet" href="images/icons_v4/font/bootstrap-icons.css">
-<!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://analytics.mtess.gov.py/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '14']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Code -->
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     crossorigin=""/>
- <link rel="icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-180x180.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
 	{BEGIN rtlCSS}
 	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
 	{END rtlCSS}
@@ -490,6 +467,94 @@
 </div>
 
 {END id_vacancias_fieldblock}
+											
+{BEGIN persona_id_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_persona_id}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="persona_id{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field14" {$item_integrated_search_field14} data-pageid="{$pageid}" data-field="persona_id" data-fieldname="persona_id" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_persona_id}">
+		{$label bolsa_empleo_postulacion_convocado persona_id }	</label>
+	<div class="r-search-option">
+		{$searchtype_persona_id}
+	</div>
+	<div class="r-search-field">
+		{$persona_id_editcontrol}	</div>
+	<div class="r-search-field">
+		{$persona_id_editcontrol1}
+	</div>
+	
+</div>
+
+{END persona_id_fieldblock}
+											
+{BEGIN test_psicotecnico_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_test_psicotecnico}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="test_psicotecnico{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field18" {$item_integrated_search_field18} data-pageid="{$pageid}" data-field="test_psicotecnico" data-fieldname="test_psicotecnico" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_test_psicotecnico}">
+		{$label bolsa_empleo_postulacion_convocado test_psicotecnico }	</label>
+	<div class="r-search-option">
+		{$searchtype_test_psicotecnico}
+	</div>
+	<div class="r-search-field">
+		{$test_psicotecnico_editcontrol}	</div>
+	<div class="r-search-field">
+		{$test_psicotecnico_editcontrol1}
+	</div>
+	
+</div>
+
+{END test_psicotecnico_fieldblock}
+											
+{BEGIN evaluacion_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_evaluacion}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="evaluacion{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field19" {$item_integrated_search_field19} data-pageid="{$pageid}" data-field="evaluacion" data-fieldname="evaluacion" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_evaluacion}">
+		{$label bolsa_empleo_postulacion_convocado evaluacion }	</label>
+	<div class="r-search-option">
+		{$searchtype_evaluacion}
+	</div>
+	<div class="r-search-field">
+		{$evaluacion_editcontrol}	</div>
+	<div class="r-search-field">
+		{$evaluacion_editcontrol1}
+	</div>
+	
+</div>
+
+{END evaluacion_fieldblock}
+											
+{BEGIN es_programa_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_es_programa}  r-horizontal-field form-horizontal" 	
+	data-signal-error-for="es_programa{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field20" {$item_integrated_search_field20} data-pageid="{$pageid}" data-field="es_programa" data-fieldname="es_programa" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_es_programa}">
+		{$label bolsa_empleo_postulacion_convocado es_programa }	</label>
+	<div class="r-search-option">
+		{$searchtype_es_programa}
+	</div>
+	<div class="r-search-field">
+		{$es_programa_editcontrol}	</div>
+	<div class="r-search-field">
+		{$es_programa_editcontrol1}
+	</div>
+	
+</div>
+
+{END es_programa_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c3}

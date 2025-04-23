@@ -175,6 +175,9 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsvacancia["Spanish"]["imagen_perfil"] = "FLYER";
 	$fieldToolTipsvacancia["Spanish"]["imagen_perfil"] = "Visualizar FLYER";
 	$placeHoldersvacancia["Spanish"]["imagen_perfil"] = "Visualizar FLYER";
+	$fieldLabelsvacancia["Spanish"]["es_programa"] = "Es Programa";
+	$fieldToolTipsvacancia["Spanish"]["es_programa"] = "";
+	$placeHoldersvacancia["Spanish"]["es_programa"] = "";
 	$pageTitlesvacancia["Spanish"]["edit"] = "Oferta de Empleo, Editar";
 	if (count($fieldToolTipsvacancia["Spanish"]))
 		$tdatavacancia[".isUseToolTips"] = true;
@@ -273,7 +276,7 @@ $tdatavacancia[".isUseAjaxSuggest"] = true;
 
 
 
-																																																															
+																																																																																							
 
 $tdatavacancia[".ajaxCodeSnippetAdded"] = false;
 
@@ -341,6 +344,7 @@ $tdatavacancia[".googleLikeFields"][] = "otro_tipo_movilidad";
 $tdatavacancia[".googleLikeFields"][] = "id_tipo_sucursal";
 $tdatavacancia[".googleLikeFields"][] = "fk_id_feria_empleo";
 $tdatavacancia[".googleLikeFields"][] = "descripcion";
+$tdatavacancia[".googleLikeFields"][] = "es_programa";
 
 
 
@@ -376,8 +380,8 @@ $tdatavacancia[".orderindexes"] = array();
 			$tdatavacancia[".orderindexes"][] = array(31, (1 ? "ASC" : "DESC"), "bolsa_empleo.vacancia.id_estado_vacancia");
 
 
-$tdatavacancia[".sqlHead"] = "SELECT bolsa_empleo.vacancia.id_vacancias,  bolsa_empleo.vacancia.id_vacancias AS lavacancias,  bolsa_empleo.vacancia_empresa.id_empresa_sucursal,  bolsa_empleo.vacancia_empresa.id_empresa_sucursal AS empresa,  bolsa_empleo.vacancia_empresa.id_contacto_sucursal,  bolsa_empleo.vacancia_puesto.nombre_puesto,  bolsa_empleo.vacancia_puesto.id_rubro,  bolsa_empleo.vacancia_empresa.id_cidudad,  bolsa_empleo.vacancia_empresa.id_departamento,  bolsa_empleo.vacancia_puesto.salario,  '' AS tipo_remuneracion,  '' AS otro_tipo_remuneracion,  bolsa_empleo.vacancia_puesto.tipo_contrato,  bolsa_empleo.vacancia.fecha_expiracion_vacancia,  bolsa_empleo.vacancia.cantidad_vacancia,  bolsa_empleo.vacancia_requisito.documentos,  bolsa_empleo.vacancia_requisito.nacionalidad,  bolsa_empleo.vacancia_requisito.genero,  bolsa_empleo.vacancia_requisito.id_formacion_academica,  bolsa_empleo.vacancia_requisito.movilidad_propia,  bolsa_empleo.vacancia_requisito.tipo_movilidad,  bolsa_empleo.vacancia_requisito.id_registro_conducir,  bolsa_empleo.vacancia_requisito.discapacidad_aceptada,  '' AS sin_discapacidad,  '' AS edad_rango_bajo,  '' AS edad_rango_alto,  bolsa_empleo.vacancia_puesto.descripcion_puesto,  bolsa_empleo.vacancia_requisito.requisitos_exclu_formacion,  bolsa_empleo.vacancia_requisito.habilidades_conocimiento,  bolsa_empleo.vacancia_puesto.anos_experiencia_vacancia,  bolsa_empleo.vacancia.id_estado_vacancia,  bolsa_empleo.vacancia.id_estado_vacancia AS estadodevacancias,  bolsa_empleo.vacancia.fecha_creacion_vacancia,  bolsa_empleo.empresas_bolsa_sucursales.ruc,  bolsa_empleo.vacancia_requisito.id_vacancia_requisito,  bolsa_empleo.empresas_bolsa_sucursales.legal,  '' AS salario_final,  bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto,  bolsa_empleo.vacancia_puesto.meses_experiencia_vacancia,  bolsa_empleo.vacancia_puesto.horario_rotativo AS horario_rotativo,  bolsa_empleo.vacancia_puesto.modalidad_trabajo,  bolsa_empleo.vacancia.geolocation,  bolsa_empleo.vacancia_puesto.descripcion_salario,  '' AS salario_descripcion,  '' AS otro_tipo_movilidad,  bolsa_empleo.empresas_bolsa_sucursales.id_tipo_sucursal,  bolsa_empleo.vacancia.fk_id_feria_empleo,  bolsa_empleo.ocupaciones_nuevas.descripcion,  '' AS importar_archivo,  bolsa_empleo.vacancia.imagen_perfil";
-$tdatavacancia[".sqlFrom"] = "FROM bolsa_empleo.vacancia  INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_empresa.id_vacancia  INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_puesto.id_vacancia  INNER JOIN bolsa_empleo.vacancia_requisito ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_requisito.id_vacancia  INNER JOIN bolsa_empleo.empresas_bolsa_sucursales ON bolsa_empleo.vacancia_empresa.id_empresa_sucursal = bolsa_empleo.empresas_bolsa_sucursales.id  INNER JOIN bolsa_empleo.ocupaciones_nuevas ON bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto = bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic";
+$tdatavacancia[".sqlHead"] = "SELECT bolsa_empleo.vacancia.id_vacancias,  bolsa_empleo.vacancia.id_vacancias AS lavacancias,  bolsa_empleo.vacancia_empresa.id_empresa_sucursal,  bolsa_empleo.vacancia_empresa.id_empresa_sucursal AS empresa,  bolsa_empleo.vacancia_empresa.id_contacto_sucursal,  bolsa_empleo.vacancia_puesto.nombre_puesto,  bolsa_empleo.vacancia_puesto.id_rubro,  bolsa_empleo.vacancia_empresa.id_cidudad,  bolsa_empleo.vacancia_empresa.id_departamento,  bolsa_empleo.vacancia_puesto.salario,  '' AS tipo_remuneracion,  '' AS otro_tipo_remuneracion,  bolsa_empleo.vacancia_puesto.tipo_contrato,  bolsa_empleo.vacancia.fecha_expiracion_vacancia,  bolsa_empleo.vacancia.cantidad_vacancia,  bolsa_empleo.vacancia_requisito.documentos,  bolsa_empleo.vacancia_requisito.nacionalidad,  bolsa_empleo.vacancia_requisito.genero,  bolsa_empleo.vacancia_requisito.id_formacion_academica,  bolsa_empleo.vacancia_requisito.movilidad_propia,  bolsa_empleo.vacancia_requisito.tipo_movilidad,  bolsa_empleo.vacancia_requisito.id_registro_conducir,  bolsa_empleo.vacancia_requisito.discapacidad_aceptada,  '' AS sin_discapacidad,  '' AS edad_rango_bajo,  '' AS edad_rango_alto,  bolsa_empleo.vacancia_puesto.descripcion_puesto,  bolsa_empleo.vacancia_requisito.requisitos_exclu_formacion,  bolsa_empleo.vacancia_requisito.habilidades_conocimiento,  bolsa_empleo.vacancia_puesto.anos_experiencia_vacancia,  bolsa_empleo.vacancia.id_estado_vacancia,  bolsa_empleo.vacancia.id_estado_vacancia AS estadodevacancias,  bolsa_empleo.vacancia.fecha_creacion_vacancia,  bolsa_empleo.empresas_bolsa_sucursales.ruc,  bolsa_empleo.vacancia_requisito.id_vacancia_requisito,  bolsa_empleo.empresas_bolsa_sucursales.legal,  '' AS salario_final,  bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto,  bolsa_empleo.vacancia_puesto.meses_experiencia_vacancia,  bolsa_empleo.vacancia_puesto.horario_rotativo AS horario_rotativo,  bolsa_empleo.vacancia_puesto.modalidad_trabajo,  bolsa_empleo.vacancia.geolocation,  bolsa_empleo.vacancia_puesto.descripcion_salario,  '' AS salario_descripcion,  '' AS otro_tipo_movilidad,  bolsa_empleo.empresas_bolsa_sucursales.id_tipo_sucursal,  bolsa_empleo.vacancia.fk_id_feria_empleo,  bolsa_empleo.ocupaciones_nuevas.descripcion,  '' AS importar_archivo,  bolsa_empleo.vacancia.imagen_perfil,  bolsa_empleo.feria_empleo.es_programa as es_programa";
+$tdatavacancia[".sqlFrom"] = "FROM bolsa_empleo.vacancia  INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_empresa.id_vacancia  INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_puesto.id_vacancia  INNER JOIN bolsa_empleo.vacancia_requisito ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_requisito.id_vacancia  INNER JOIN bolsa_empleo.empresas_bolsa_sucursales ON bolsa_empleo.vacancia_empresa.id_empresa_sucursal = bolsa_empleo.empresas_bolsa_sucursales.id  INNER JOIN bolsa_empleo.ocupaciones_nuevas ON bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto = bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic  INNER JOIN bolsa_empleo.feria_empleo ON bolsa_empleo.feria_empleo.id_feria_empleo = bolsa_empleo.vacancia.fk_id_feria_empleo";
 $tdatavacancia[".sqlWhereExpr"] = "(bolsa_empleo.vacancia.id_estado_vacancia <>'1')";
 $tdatavacancia[".sqlTail"] = "";
 
@@ -8347,25 +8351,13 @@ $tdatavacancia[".hideMobileList"] = array();
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
 
-	$vdata = array("ViewFormat" => "Database Image");
+	$vdata = array("ViewFormat" => "Database File");
 
 	
 	
-				$vdata["ImageWidth"] = 280;
-	$vdata["ImageHeight"] = 180;
-
-		
-			$vdata["showGallery"] = true;
-	$vdata["galleryMode"] = 2;
-	$vdata["captionMode"] = 1;
-	$vdata["captionField"] = "";
-
-	$vdata["imageBorder"] = 1;
-	$vdata["imageFullWidth"] = 1;
-
-
 	
 	
+			
 	
 	
 	
@@ -8387,7 +8379,7 @@ $tdatavacancia[".hideMobileList"] = array();
 //	Begin Edit Formats
 	$fdata["EditFormats"] = array();
 
-	$edata = array("EditFormat" => "Database image");
+	$edata = array("EditFormat" => "Database file");
 
 	
 		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
@@ -8472,7 +8464,139 @@ $tdatavacancia[".hideMobileList"] = array();
 
 
 	$tdatavacancia["imagen_perfil"] = $fdata;
+	//	es_programa
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 51;
+	$fdata["strName"] = "es_programa";
+	$fdata["GoodName"] = "es_programa";
+	$fdata["ownerTable"] = "bolsa_empleo.feria_empleo";
+	$fdata["Label"] = GetFieldLabel("bolsa_empleo_vacancia","es_programa");
+	$fdata["FieldType"] = 11;
+
+
 	
+	
+			
+
+		$fdata["strField"] = "es_programa";
+
+	
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "bolsa_empleo.feria_empleo.es_programa";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Checkbox");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Checkbox");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+				$fdata["filterFormat"] = "Options list";
+		$fdata["showCollapsed"] = false;
+
+	
+	
+	
+		$fdata["filterCheckedMessageType"] = "Text";
+	$fdata["filterCheckedMessageText"] = "Checked";
+	$fdata["filterUncheckedMessageType"] = "Text";
+	$fdata["filterUncheckedMessageText"] = "Unchecked";
+
+//end of Filters settings
+
+
+	$tdatavacancia["es_programa"] = $fdata;
+		$tdatavacancia[".searchableFields"][] = "es_programa";
+
 
 $tables_data["bolsa_empleo.vacancia"]=&$tdatavacancia;
 $field_labels["bolsa_empleo_vacancia"] = &$fieldLabelsvacancia;
@@ -8876,8 +9000,8 @@ function createSqlQuery_vacancia()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "bolsa_empleo.vacancia.id_vacancias,  bolsa_empleo.vacancia.id_vacancias AS lavacancias,  bolsa_empleo.vacancia_empresa.id_empresa_sucursal,  bolsa_empleo.vacancia_empresa.id_empresa_sucursal AS empresa,  bolsa_empleo.vacancia_empresa.id_contacto_sucursal,  bolsa_empleo.vacancia_puesto.nombre_puesto,  bolsa_empleo.vacancia_puesto.id_rubro,  bolsa_empleo.vacancia_empresa.id_cidudad,  bolsa_empleo.vacancia_empresa.id_departamento,  bolsa_empleo.vacancia_puesto.salario,  '' AS tipo_remuneracion,  '' AS otro_tipo_remuneracion,  bolsa_empleo.vacancia_puesto.tipo_contrato,  bolsa_empleo.vacancia.fecha_expiracion_vacancia,  bolsa_empleo.vacancia.cantidad_vacancia,  bolsa_empleo.vacancia_requisito.documentos,  bolsa_empleo.vacancia_requisito.nacionalidad,  bolsa_empleo.vacancia_requisito.genero,  bolsa_empleo.vacancia_requisito.id_formacion_academica,  bolsa_empleo.vacancia_requisito.movilidad_propia,  bolsa_empleo.vacancia_requisito.tipo_movilidad,  bolsa_empleo.vacancia_requisito.id_registro_conducir,  bolsa_empleo.vacancia_requisito.discapacidad_aceptada,  '' AS sin_discapacidad,  '' AS edad_rango_bajo,  '' AS edad_rango_alto,  bolsa_empleo.vacancia_puesto.descripcion_puesto,  bolsa_empleo.vacancia_requisito.requisitos_exclu_formacion,  bolsa_empleo.vacancia_requisito.habilidades_conocimiento,  bolsa_empleo.vacancia_puesto.anos_experiencia_vacancia,  bolsa_empleo.vacancia.id_estado_vacancia,  bolsa_empleo.vacancia.id_estado_vacancia AS estadodevacancias,  bolsa_empleo.vacancia.fecha_creacion_vacancia,  bolsa_empleo.empresas_bolsa_sucursales.ruc,  bolsa_empleo.vacancia_requisito.id_vacancia_requisito,  bolsa_empleo.empresas_bolsa_sucursales.legal,  '' AS salario_final,  bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto,  bolsa_empleo.vacancia_puesto.meses_experiencia_vacancia,  bolsa_empleo.vacancia_puesto.horario_rotativo AS horario_rotativo,  bolsa_empleo.vacancia_puesto.modalidad_trabajo,  bolsa_empleo.vacancia.geolocation,  bolsa_empleo.vacancia_puesto.descripcion_salario,  '' AS salario_descripcion,  '' AS otro_tipo_movilidad,  bolsa_empleo.empresas_bolsa_sucursales.id_tipo_sucursal,  bolsa_empleo.vacancia.fk_id_feria_empleo,  bolsa_empleo.ocupaciones_nuevas.descripcion,  '' AS importar_archivo,  bolsa_empleo.vacancia.imagen_perfil";
-$proto0["m_strFrom"] = "FROM bolsa_empleo.vacancia  INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_empresa.id_vacancia  INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_puesto.id_vacancia  INNER JOIN bolsa_empleo.vacancia_requisito ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_requisito.id_vacancia  INNER JOIN bolsa_empleo.empresas_bolsa_sucursales ON bolsa_empleo.vacancia_empresa.id_empresa_sucursal = bolsa_empleo.empresas_bolsa_sucursales.id  INNER JOIN bolsa_empleo.ocupaciones_nuevas ON bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto = bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic";
+$proto0["m_strFieldList"] = "bolsa_empleo.vacancia.id_vacancias,  bolsa_empleo.vacancia.id_vacancias AS lavacancias,  bolsa_empleo.vacancia_empresa.id_empresa_sucursal,  bolsa_empleo.vacancia_empresa.id_empresa_sucursal AS empresa,  bolsa_empleo.vacancia_empresa.id_contacto_sucursal,  bolsa_empleo.vacancia_puesto.nombre_puesto,  bolsa_empleo.vacancia_puesto.id_rubro,  bolsa_empleo.vacancia_empresa.id_cidudad,  bolsa_empleo.vacancia_empresa.id_departamento,  bolsa_empleo.vacancia_puesto.salario,  '' AS tipo_remuneracion,  '' AS otro_tipo_remuneracion,  bolsa_empleo.vacancia_puesto.tipo_contrato,  bolsa_empleo.vacancia.fecha_expiracion_vacancia,  bolsa_empleo.vacancia.cantidad_vacancia,  bolsa_empleo.vacancia_requisito.documentos,  bolsa_empleo.vacancia_requisito.nacionalidad,  bolsa_empleo.vacancia_requisito.genero,  bolsa_empleo.vacancia_requisito.id_formacion_academica,  bolsa_empleo.vacancia_requisito.movilidad_propia,  bolsa_empleo.vacancia_requisito.tipo_movilidad,  bolsa_empleo.vacancia_requisito.id_registro_conducir,  bolsa_empleo.vacancia_requisito.discapacidad_aceptada,  '' AS sin_discapacidad,  '' AS edad_rango_bajo,  '' AS edad_rango_alto,  bolsa_empleo.vacancia_puesto.descripcion_puesto,  bolsa_empleo.vacancia_requisito.requisitos_exclu_formacion,  bolsa_empleo.vacancia_requisito.habilidades_conocimiento,  bolsa_empleo.vacancia_puesto.anos_experiencia_vacancia,  bolsa_empleo.vacancia.id_estado_vacancia,  bolsa_empleo.vacancia.id_estado_vacancia AS estadodevacancias,  bolsa_empleo.vacancia.fecha_creacion_vacancia,  bolsa_empleo.empresas_bolsa_sucursales.ruc,  bolsa_empleo.vacancia_requisito.id_vacancia_requisito,  bolsa_empleo.empresas_bolsa_sucursales.legal,  '' AS salario_final,  bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto,  bolsa_empleo.vacancia_puesto.meses_experiencia_vacancia,  bolsa_empleo.vacancia_puesto.horario_rotativo AS horario_rotativo,  bolsa_empleo.vacancia_puesto.modalidad_trabajo,  bolsa_empleo.vacancia.geolocation,  bolsa_empleo.vacancia_puesto.descripcion_salario,  '' AS salario_descripcion,  '' AS otro_tipo_movilidad,  bolsa_empleo.empresas_bolsa_sucursales.id_tipo_sucursal,  bolsa_empleo.vacancia.fk_id_feria_empleo,  bolsa_empleo.ocupaciones_nuevas.descripcion,  '' AS importar_archivo,  bolsa_empleo.vacancia.imagen_perfil,  bolsa_empleo.feria_empleo.es_programa as es_programa";
+$proto0["m_strFrom"] = "FROM bolsa_empleo.vacancia  INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_empresa.id_vacancia  INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_puesto.id_vacancia  INNER JOIN bolsa_empleo.vacancia_requisito ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_requisito.id_vacancia  INNER JOIN bolsa_empleo.empresas_bolsa_sucursales ON bolsa_empleo.vacancia_empresa.id_empresa_sucursal = bolsa_empleo.empresas_bolsa_sucursales.id  INNER JOIN bolsa_empleo.ocupaciones_nuevas ON bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto = bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic  INNER JOIN bolsa_empleo.feria_empleo ON bolsa_empleo.feria_empleo.id_feria_empleo = bolsa_empleo.vacancia.fk_id_feria_empleo";
 $proto0["m_strWhere"] = "(bolsa_empleo.vacancia.id_estado_vacancia <>'1')";
 $proto0["m_strOrderBy"] = "ORDER BY bolsa_empleo.vacancia.fecha_creacion_vacancia DESC, bolsa_empleo.vacancia.id_estado_vacancia";
 	
@@ -9600,292 +9724,347 @@ $proto104["m_alias"] = "";
 $obj = new SQLFieldListItem($proto104);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto106=array();
-$proto106["m_link"] = "SQLL_MAIN";
-			$proto107=array();
-$proto107["m_strName"] = "bolsa_empleo.vacancia";
-$proto107["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto107["m_columns"] = array();
-$proto107["m_columns"][] = "id_vacancias";
-$proto107["m_columns"][] = "fecha_creacion_vacancia";
-$proto107["m_columns"][] = "id_estado_vacancia";
-$proto107["m_columns"][] = "fecha_expiracion_vacancia";
-$proto107["m_columns"][] = "cantidad_vacancia";
-$proto107["m_columns"][] = "geolocation";
-$proto107["m_columns"][] = "fk_id_feria_empleo";
-$proto107["m_columns"][] = "usuario";
-$proto107["m_columns"][] = "origen";
-$proto107["m_columns"][] = "imagen_perfil";
-$obj = new SQLTable($proto107);
+						$proto106=array();
+			$obj = new SQLField(array(
+	"m_strName" => "es_programa",
+	"m_strTable" => "bolsa_empleo.feria_empleo",
+	"m_srcTableName" => "bolsa_empleo.vacancia"
+));
 
-$proto106["m_table"] = $obj;
-$proto106["m_sql"] = "bolsa_empleo.vacancia";
-$proto106["m_alias"] = "";
+$proto106["m_sql"] = "bolsa_empleo.feria_empleo.es_programa";
 $proto106["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto108=array();
-$proto108["m_sql"] = "";
-$proto108["m_uniontype"] = "SQLL_UNKNOWN";
+$proto106["m_expr"]=$obj;
+$proto106["m_alias"] = "es_programa";
+$obj = new SQLFieldListItem($proto106);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto108=array();
+$proto108["m_link"] = "SQLL_MAIN";
+			$proto109=array();
+$proto109["m_strName"] = "bolsa_empleo.vacancia";
+$proto109["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto109["m_columns"] = array();
+$proto109["m_columns"][] = "id_vacancias";
+$proto109["m_columns"][] = "fecha_creacion_vacancia";
+$proto109["m_columns"][] = "id_estado_vacancia";
+$proto109["m_columns"][] = "fecha_expiracion_vacancia";
+$proto109["m_columns"][] = "cantidad_vacancia";
+$proto109["m_columns"][] = "geolocation";
+$proto109["m_columns"][] = "fk_id_feria_empleo";
+$proto109["m_columns"][] = "usuario";
+$proto109["m_columns"][] = "origen";
+$proto109["m_columns"][] = "imagen_perfil";
+$obj = new SQLTable($proto109);
+
+$proto108["m_table"] = $obj;
+$proto108["m_sql"] = "bolsa_empleo.vacancia";
+$proto108["m_alias"] = "";
+$proto108["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto110=array();
+$proto110["m_sql"] = "";
+$proto110["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto108["m_column"]=$obj;
-$proto108["m_contained"] = array();
-$proto108["m_strCase"] = "";
-$proto108["m_havingmode"] = false;
-$proto108["m_inBrackets"] = false;
-$proto108["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto108);
+$proto110["m_column"]=$obj;
+$proto110["m_contained"] = array();
+$proto110["m_strCase"] = "";
+$proto110["m_havingmode"] = false;
+$proto110["m_inBrackets"] = false;
+$proto110["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto110);
 
-$proto106["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto106);
+$proto108["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto108);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto110=array();
-$proto110["m_link"] = "SQLL_INNERJOIN";
-			$proto111=array();
-$proto111["m_strName"] = "bolsa_empleo.vacancia_empresa";
-$proto111["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto111["m_columns"] = array();
-$proto111["m_columns"][] = "id_empresa_vacancia";
-$proto111["m_columns"][] = "id_empresa_sucursal";
-$proto111["m_columns"][] = "id_contacto_sucursal";
-$proto111["m_columns"][] = "id_cidudad";
-$proto111["m_columns"][] = "id_departamento";
-$proto111["m_columns"][] = "id_vacancia";
-$obj = new SQLTable($proto111);
+												$proto112=array();
+$proto112["m_link"] = "SQLL_INNERJOIN";
+			$proto113=array();
+$proto113["m_strName"] = "bolsa_empleo.vacancia_empresa";
+$proto113["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto113["m_columns"] = array();
+$proto113["m_columns"][] = "id_empresa_vacancia";
+$proto113["m_columns"][] = "id_empresa_sucursal";
+$proto113["m_columns"][] = "id_contacto_sucursal";
+$proto113["m_columns"][] = "id_cidudad";
+$proto113["m_columns"][] = "id_departamento";
+$proto113["m_columns"][] = "id_vacancia";
+$obj = new SQLTable($proto113);
 
-$proto110["m_table"] = $obj;
-$proto110["m_sql"] = "INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_empresa.id_vacancia";
-$proto110["m_alias"] = "";
-$proto110["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto112=array();
-$proto112["m_sql"] = "bolsa_empleo.vacancia_empresa.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
-$proto112["m_uniontype"] = "SQLL_UNKNOWN";
+$proto112["m_table"] = $obj;
+$proto112["m_sql"] = "INNER JOIN bolsa_empleo.vacancia_empresa ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_empresa.id_vacancia";
+$proto112["m_alias"] = "";
+$proto112["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto114=array();
+$proto114["m_sql"] = "bolsa_empleo.vacancia_empresa.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
+$proto114["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id_vacancia",
 	"m_strTable" => "bolsa_empleo.vacancia_empresa",
 	"m_srcTableName" => "bolsa_empleo.vacancia"
 ));
 
-$proto112["m_column"]=$obj;
-$proto112["m_contained"] = array();
-$proto112["m_strCase"] = "= bolsa_empleo.vacancia.id_vacancias";
-$proto112["m_havingmode"] = false;
-$proto112["m_inBrackets"] = false;
-$proto112["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto112);
+$proto114["m_column"]=$obj;
+$proto114["m_contained"] = array();
+$proto114["m_strCase"] = "= bolsa_empleo.vacancia.id_vacancias";
+$proto114["m_havingmode"] = false;
+$proto114["m_inBrackets"] = false;
+$proto114["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto114);
 
-$proto110["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto110);
+$proto112["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto112);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto114=array();
-$proto114["m_link"] = "SQLL_INNERJOIN";
-			$proto115=array();
-$proto115["m_strName"] = "bolsa_empleo.vacancia_puesto";
-$proto115["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto115["m_columns"] = array();
-$proto115["m_columns"][] = "id_puesto_vacancia";
-$proto115["m_columns"][] = "nombre_puesto";
-$proto115["m_columns"][] = "salario";
-$proto115["m_columns"][] = "tipo_contrato";
-$proto115["m_columns"][] = "descripcion_puesto";
-$proto115["m_columns"][] = "id_vacancia";
-$proto115["m_columns"][] = "id_rubro";
-$proto115["m_columns"][] = "anos_experiencia_vacancia";
-$proto115["m_columns"][] = "fk_ocupacion_puesto";
-$proto115["m_columns"][] = "meses_experiencia_vacancia";
-$proto115["m_columns"][] = "horario_rotativo";
-$proto115["m_columns"][] = "beneficios";
-$proto115["m_columns"][] = "modalidad_trabajo";
-$proto115["m_columns"][] = "descripcion_salario";
-$proto115["m_columns"][] = "color";
-$proto115["m_columns"][] = "tipo_remuneracion";
-$obj = new SQLTable($proto115);
+												$proto116=array();
+$proto116["m_link"] = "SQLL_INNERJOIN";
+			$proto117=array();
+$proto117["m_strName"] = "bolsa_empleo.vacancia_puesto";
+$proto117["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto117["m_columns"] = array();
+$proto117["m_columns"][] = "id_puesto_vacancia";
+$proto117["m_columns"][] = "nombre_puesto";
+$proto117["m_columns"][] = "salario";
+$proto117["m_columns"][] = "tipo_contrato";
+$proto117["m_columns"][] = "descripcion_puesto";
+$proto117["m_columns"][] = "id_vacancia";
+$proto117["m_columns"][] = "id_rubro";
+$proto117["m_columns"][] = "anos_experiencia_vacancia";
+$proto117["m_columns"][] = "fk_ocupacion_puesto";
+$proto117["m_columns"][] = "meses_experiencia_vacancia";
+$proto117["m_columns"][] = "horario_rotativo";
+$proto117["m_columns"][] = "beneficios";
+$proto117["m_columns"][] = "modalidad_trabajo";
+$proto117["m_columns"][] = "descripcion_salario";
+$proto117["m_columns"][] = "color";
+$proto117["m_columns"][] = "tipo_remuneracion";
+$obj = new SQLTable($proto117);
 
-$proto114["m_table"] = $obj;
-$proto114["m_sql"] = "INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_puesto.id_vacancia";
-$proto114["m_alias"] = "";
-$proto114["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto116=array();
-$proto116["m_sql"] = "bolsa_empleo.vacancia_puesto.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
-$proto116["m_uniontype"] = "SQLL_UNKNOWN";
+$proto116["m_table"] = $obj;
+$proto116["m_sql"] = "INNER JOIN bolsa_empleo.vacancia_puesto ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_puesto.id_vacancia";
+$proto116["m_alias"] = "";
+$proto116["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto118=array();
+$proto118["m_sql"] = "bolsa_empleo.vacancia_puesto.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
+$proto118["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id_vacancia",
 	"m_strTable" => "bolsa_empleo.vacancia_puesto",
 	"m_srcTableName" => "bolsa_empleo.vacancia"
 ));
 
-$proto116["m_column"]=$obj;
-$proto116["m_contained"] = array();
-$proto116["m_strCase"] = "= bolsa_empleo.vacancia.id_vacancias";
-$proto116["m_havingmode"] = false;
-$proto116["m_inBrackets"] = false;
-$proto116["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto116);
+$proto118["m_column"]=$obj;
+$proto118["m_contained"] = array();
+$proto118["m_strCase"] = "= bolsa_empleo.vacancia.id_vacancias";
+$proto118["m_havingmode"] = false;
+$proto118["m_inBrackets"] = false;
+$proto118["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto118);
 
-$proto114["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto114);
+$proto116["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto116);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto118=array();
-$proto118["m_link"] = "SQLL_INNERJOIN";
-			$proto119=array();
-$proto119["m_strName"] = "bolsa_empleo.vacancia_requisito";
-$proto119["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto119["m_columns"] = array();
-$proto119["m_columns"][] = "id_vacancia_requisito";
-$proto119["m_columns"][] = "genero";
-$proto119["m_columns"][] = "movilidad_propia";
-$proto119["m_columns"][] = "tipo_movilidad";
-$proto119["m_columns"][] = "id_registro_conducir";
-$proto119["m_columns"][] = "discapacidad_aceptada";
-$proto119["m_columns"][] = "id_vacancia";
-$proto119["m_columns"][] = "nacionalidad";
-$proto119["m_columns"][] = "documentos";
-$proto119["m_columns"][] = "edad";
-$proto119["m_columns"][] = "requisitos_exclu_formacion";
-$proto119["m_columns"][] = "habilidades_conocimiento";
-$proto119["m_columns"][] = "id_formacion_academica";
-$obj = new SQLTable($proto119);
+												$proto120=array();
+$proto120["m_link"] = "SQLL_INNERJOIN";
+			$proto121=array();
+$proto121["m_strName"] = "bolsa_empleo.vacancia_requisito";
+$proto121["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto121["m_columns"] = array();
+$proto121["m_columns"][] = "id_vacancia_requisito";
+$proto121["m_columns"][] = "genero";
+$proto121["m_columns"][] = "movilidad_propia";
+$proto121["m_columns"][] = "tipo_movilidad";
+$proto121["m_columns"][] = "id_registro_conducir";
+$proto121["m_columns"][] = "discapacidad_aceptada";
+$proto121["m_columns"][] = "id_vacancia";
+$proto121["m_columns"][] = "nacionalidad";
+$proto121["m_columns"][] = "documentos";
+$proto121["m_columns"][] = "edad";
+$proto121["m_columns"][] = "requisitos_exclu_formacion";
+$proto121["m_columns"][] = "habilidades_conocimiento";
+$proto121["m_columns"][] = "id_formacion_academica";
+$obj = new SQLTable($proto121);
 
-$proto118["m_table"] = $obj;
-$proto118["m_sql"] = "INNER JOIN bolsa_empleo.vacancia_requisito ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_requisito.id_vacancia";
-$proto118["m_alias"] = "";
-$proto118["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto120=array();
-$proto120["m_sql"] = "bolsa_empleo.vacancia_requisito.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
-$proto120["m_uniontype"] = "SQLL_UNKNOWN";
+$proto120["m_table"] = $obj;
+$proto120["m_sql"] = "INNER JOIN bolsa_empleo.vacancia_requisito ON bolsa_empleo.vacancia.id_vacancias = bolsa_empleo.vacancia_requisito.id_vacancia";
+$proto120["m_alias"] = "";
+$proto120["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto122=array();
+$proto122["m_sql"] = "bolsa_empleo.vacancia_requisito.id_vacancia = bolsa_empleo.vacancia.id_vacancias";
+$proto122["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id_vacancia",
 	"m_strTable" => "bolsa_empleo.vacancia_requisito",
 	"m_srcTableName" => "bolsa_empleo.vacancia"
 ));
 
-$proto120["m_column"]=$obj;
-$proto120["m_contained"] = array();
-$proto120["m_strCase"] = "= bolsa_empleo.vacancia.id_vacancias";
-$proto120["m_havingmode"] = false;
-$proto120["m_inBrackets"] = false;
-$proto120["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto120);
+$proto122["m_column"]=$obj;
+$proto122["m_contained"] = array();
+$proto122["m_strCase"] = "= bolsa_empleo.vacancia.id_vacancias";
+$proto122["m_havingmode"] = false;
+$proto122["m_inBrackets"] = false;
+$proto122["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto122);
 
-$proto118["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto118);
+$proto120["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto120);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto122=array();
-$proto122["m_link"] = "SQLL_INNERJOIN";
-			$proto123=array();
-$proto123["m_strName"] = "bolsa_empleo.empresas_bolsa_sucursales";
-$proto123["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto123["m_columns"] = array();
-$proto123["m_columns"][] = "id";
-$proto123["m_columns"][] = "empresas_bolsa_id";
-$proto123["m_columns"][] = "ruc";
-$proto123["m_columns"][] = "legal";
-$proto123["m_columns"][] = "fantasy";
-$proto123["m_columns"][] = "city_id";
-$proto123["m_columns"][] = "distrito_id";
-$proto123["m_columns"][] = "tel";
-$proto123["m_columns"][] = "email";
-$proto123["m_columns"][] = "id_tipo_sucursal";
-$proto123["m_columns"][] = "nro_patronal";
-$proto123["m_columns"][] = "direccion";
-$proto123["m_columns"][] = "fecha_creacion";
-$obj = new SQLTable($proto123);
+												$proto124=array();
+$proto124["m_link"] = "SQLL_INNERJOIN";
+			$proto125=array();
+$proto125["m_strName"] = "bolsa_empleo.empresas_bolsa_sucursales";
+$proto125["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto125["m_columns"] = array();
+$proto125["m_columns"][] = "id";
+$proto125["m_columns"][] = "empresas_bolsa_id";
+$proto125["m_columns"][] = "ruc";
+$proto125["m_columns"][] = "legal";
+$proto125["m_columns"][] = "fantasy";
+$proto125["m_columns"][] = "city_id";
+$proto125["m_columns"][] = "distrito_id";
+$proto125["m_columns"][] = "tel";
+$proto125["m_columns"][] = "email";
+$proto125["m_columns"][] = "id_tipo_sucursal";
+$proto125["m_columns"][] = "nro_patronal";
+$proto125["m_columns"][] = "direccion";
+$proto125["m_columns"][] = "fecha_creacion";
+$obj = new SQLTable($proto125);
 
-$proto122["m_table"] = $obj;
-$proto122["m_sql"] = "INNER JOIN bolsa_empleo.empresas_bolsa_sucursales ON bolsa_empleo.vacancia_empresa.id_empresa_sucursal = bolsa_empleo.empresas_bolsa_sucursales.id";
-$proto122["m_alias"] = "";
-$proto122["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto124=array();
-$proto124["m_sql"] = "bolsa_empleo.empresas_bolsa_sucursales.id = bolsa_empleo.vacancia_empresa.id_empresa_sucursal";
-$proto124["m_uniontype"] = "SQLL_UNKNOWN";
+$proto124["m_table"] = $obj;
+$proto124["m_sql"] = "INNER JOIN bolsa_empleo.empresas_bolsa_sucursales ON bolsa_empleo.vacancia_empresa.id_empresa_sucursal = bolsa_empleo.empresas_bolsa_sucursales.id";
+$proto124["m_alias"] = "";
+$proto124["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto126=array();
+$proto126["m_sql"] = "bolsa_empleo.empresas_bolsa_sucursales.id = bolsa_empleo.vacancia_empresa.id_empresa_sucursal";
+$proto126["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id",
 	"m_strTable" => "bolsa_empleo.empresas_bolsa_sucursales",
 	"m_srcTableName" => "bolsa_empleo.vacancia"
 ));
 
-$proto124["m_column"]=$obj;
-$proto124["m_contained"] = array();
-$proto124["m_strCase"] = "= bolsa_empleo.vacancia_empresa.id_empresa_sucursal";
-$proto124["m_havingmode"] = false;
-$proto124["m_inBrackets"] = false;
-$proto124["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto124);
+$proto126["m_column"]=$obj;
+$proto126["m_contained"] = array();
+$proto126["m_strCase"] = "= bolsa_empleo.vacancia_empresa.id_empresa_sucursal";
+$proto126["m_havingmode"] = false;
+$proto126["m_inBrackets"] = false;
+$proto126["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto126);
 
-$proto122["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto122);
+$proto124["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto124);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto126=array();
-$proto126["m_link"] = "SQLL_INNERJOIN";
-			$proto127=array();
-$proto127["m_strName"] = "bolsa_empleo.ocupaciones_nuevas";
-$proto127["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto127["m_columns"] = array();
-$proto127["m_columns"][] = "id_ocu_puest_clasic";
-$proto127["m_columns"][] = "descripcion";
-$proto127["m_columns"][] = "codigo";
-$proto127["m_columns"][] = "color";
-$proto127["m_columns"][] = "tipo_registro";
-$obj = new SQLTable($proto127);
+												$proto128=array();
+$proto128["m_link"] = "SQLL_INNERJOIN";
+			$proto129=array();
+$proto129["m_strName"] = "bolsa_empleo.ocupaciones_nuevas";
+$proto129["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto129["m_columns"] = array();
+$proto129["m_columns"][] = "id_ocu_puest_clasic";
+$proto129["m_columns"][] = "descripcion";
+$proto129["m_columns"][] = "codigo";
+$proto129["m_columns"][] = "color";
+$proto129["m_columns"][] = "tipo_registro";
+$obj = new SQLTable($proto129);
 
-$proto126["m_table"] = $obj;
-$proto126["m_sql"] = "INNER JOIN bolsa_empleo.ocupaciones_nuevas ON bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto = bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic";
-$proto126["m_alias"] = "";
-$proto126["m_srcTableName"] = "bolsa_empleo.vacancia";
-$proto128=array();
-$proto128["m_sql"] = "bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic = bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto";
-$proto128["m_uniontype"] = "SQLL_UNKNOWN";
+$proto128["m_table"] = $obj;
+$proto128["m_sql"] = "INNER JOIN bolsa_empleo.ocupaciones_nuevas ON bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto = bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic";
+$proto128["m_alias"] = "";
+$proto128["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto130=array();
+$proto130["m_sql"] = "bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic = bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto";
+$proto130["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "id_ocu_puest_clasic",
 	"m_strTable" => "bolsa_empleo.ocupaciones_nuevas",
 	"m_srcTableName" => "bolsa_empleo.vacancia"
 ));
 
-$proto128["m_column"]=$obj;
-$proto128["m_contained"] = array();
-$proto128["m_strCase"] = "= bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto";
-$proto128["m_havingmode"] = false;
-$proto128["m_inBrackets"] = false;
-$proto128["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto128);
+$proto130["m_column"]=$obj;
+$proto130["m_contained"] = array();
+$proto130["m_strCase"] = "= bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto";
+$proto130["m_havingmode"] = false;
+$proto130["m_inBrackets"] = false;
+$proto130["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto130);
 
-$proto126["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto126);
+$proto128["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto128);
+
+$proto0["m_fromlist"][]=$obj;
+												$proto132=array();
+$proto132["m_link"] = "SQLL_INNERJOIN";
+			$proto133=array();
+$proto133["m_strName"] = "bolsa_empleo.feria_empleo";
+$proto133["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto133["m_columns"] = array();
+$proto133["m_columns"][] = "id_feria_empleo";
+$proto133["m_columns"][] = "nombre";
+$proto133["m_columns"][] = "fecha_inicio";
+$proto133["m_columns"][] = "fecha_fin";
+$proto133["m_columns"][] = "locacion";
+$proto133["m_columns"][] = "asistentes";
+$proto133["m_columns"][] = "descripcion";
+$proto133["m_columns"][] = "es_programa";
+$obj = new SQLTable($proto133);
+
+$proto132["m_table"] = $obj;
+$proto132["m_sql"] = "INNER JOIN bolsa_empleo.feria_empleo ON bolsa_empleo.feria_empleo.id_feria_empleo = bolsa_empleo.vacancia.fk_id_feria_empleo";
+$proto132["m_alias"] = "";
+$proto132["m_srcTableName"] = "bolsa_empleo.vacancia";
+$proto134=array();
+$proto134["m_sql"] = "bolsa_empleo.feria_empleo.id_feria_empleo = bolsa_empleo.vacancia.fk_id_feria_empleo";
+$proto134["m_uniontype"] = "SQLL_UNKNOWN";
+						$obj = new SQLField(array(
+	"m_strName" => "id_feria_empleo",
+	"m_strTable" => "bolsa_empleo.feria_empleo",
+	"m_srcTableName" => "bolsa_empleo.vacancia"
+));
+
+$proto134["m_column"]=$obj;
+$proto134["m_contained"] = array();
+$proto134["m_strCase"] = "= bolsa_empleo.vacancia.fk_id_feria_empleo";
+$proto134["m_havingmode"] = false;
+$proto134["m_inBrackets"] = false;
+$proto134["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto134);
+
+$proto132["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto132);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
-												$proto130=array();
+												$proto136=array();
 						$obj = new SQLField(array(
 	"m_strName" => "fecha_creacion_vacancia",
 	"m_strTable" => "bolsa_empleo.vacancia",
 	"m_srcTableName" => "bolsa_empleo.vacancia"
 ));
 
-$proto130["m_column"]=$obj;
-$proto130["m_bAsc"] = 0;
-$proto130["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto130);
+$proto136["m_column"]=$obj;
+$proto136["m_bAsc"] = 0;
+$proto136["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto136);
 
 $proto0["m_orderby"][]=$obj;					
-												$proto132=array();
+												$proto138=array();
 						$obj = new SQLField(array(
 	"m_strName" => "id_estado_vacancia",
 	"m_strTable" => "bolsa_empleo.vacancia",
 	"m_srcTableName" => "bolsa_empleo.vacancia"
 ));
 
-$proto132["m_column"]=$obj;
-$proto132["m_bAsc"] = 1;
-$proto132["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto132);
+$proto138["m_column"]=$obj;
+$proto138["m_bAsc"] = 1;
+$proto138["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto138);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="bolsa_empleo.vacancia";		
@@ -9899,7 +10078,7 @@ $queryData_vacancia = createSqlQuery_vacancia();
 	
 		;
 
-																																																		
+																																																			
 
 $tdatavacancia[".sqlquery"] = $queryData_vacancia;
 

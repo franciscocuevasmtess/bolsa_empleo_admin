@@ -302,14 +302,15 @@ return true;
 function AfterAdd(&$values, &$keys, $inline, $pageObject)
 {
 
-		DB::Exec($auditoria);
+		/*
+DB::Exec($auditoria);
 
 $vacancia = DB::PrepareSQL("update bolsa_empleo.vacancia_tmp 
 																	set origen = 'DGE-MTESS'
 																	where id_vacancias = ':1'",
 $keys["id_vacancias"]);
 DB::Exec($vacancia);
-
+*/
 //**********  Redirect to another page  ************
 //header("Location: vacancia_list.php");
 //exit();

@@ -90,7 +90,7 @@ $data_result = db_fetch_array($result);
 // ──────────────────────────────────────────────────────────────────────────
 // LISTA DE ESTADOS DONDE SE DEBEN OCULTAR LOS ELEMENTOS
 // ──────────────────────────────────────────────────────────────────────────
-$estadosOcultar = [1, 2, 4, 5, 6, 7]; // Estados en los que se deshabilita el cambio de estado masivo
+$estadosOcultar = [1, 2, 4, 5, 6, 7, 10]; // Estados en los que se deshabilita el cambio de estado masivo
 
 
 // Verificar si la vacancia está en un estado restringido

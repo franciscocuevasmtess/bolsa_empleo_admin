@@ -1354,6 +1354,31 @@ if ($data["id_nuevo_estado"] == 'Evaluacion-Empresa') {
 function fileCustomExpression($file, $data, $field, $ptype, $table )
 {
 	$value = "";
+				if($table=="bolsa_empleo.postulacion_seleccionado" && $field=="test_psicotecnico")
+	{
+		;
+		return $value;
+	}
+				if($table=="bolsa_empleo.postulacion_seleccionado" && $field=="evaluacion")
+	{
+		;
+		return $value;
+	}
+				if($table=="bolsa_empleo.postulacion_convocado" && $field=="test_psicotecnico")
+	{
+		;
+		return $value;
+	}
+				if($table=="bolsa_empleo.postulacion_convocado" && $field=="evaluacion")
+	{
+		;
+		return $value;
+	}
+				if($table=="bolsa_empleo.archivo" && $field=="archivo")
+	{
+		;
+		return $value;
+	}
 	return $value;
 }
 
@@ -1492,6 +1517,14 @@ $fecha;
 	{
 		return "08:00-18:00";
 	}
+				if($table=="bolsa_empleo.archivo" && $field=="fecha_creacion")
+	{
+		return now();
+	}
+				if($table=="bolsa_empleo.archivo" && $field=="id_tipo_archivo")
+	{
+		return $_SESSION['_enviar_archivo_id_tipo_archivo'];
+	}
 	return "";
 }
 
@@ -1519,6 +1552,13 @@ function GetAutoUpdateValue($field, $ptype, $table="")
  */
 function GetUploadFolderExpression($field, $file, $table )
 {
+	if($table=="bolsa_empleo.archivo" && $field=="archivo")
+	{
+		$folder = $_SERVER["DOCUMENT_ROOT"]. "/bolsa_doc_adjuntos";
+
+;
+		return $folder;
+	}
 	return "";
 }
 

@@ -3694,6 +3694,12 @@ function fillProjectEntites()
 	$projectEntitiesReverse[ "postulacion_importar_planilla" ] = "bolsa_empleo.postulacion_importar_planilla";
 	$projectEntities[ "bolsa_empleo.seguimiento_resumen" ] = array( "url" => "seguimiento_resumen", "type" => 1 );
 	$projectEntitiesReverse[ "seguimiento_resumen" ] = "bolsa_empleo.seguimiento_resumen";
+	$projectEntities[ "eportal.persons" ] = array( "url" => "persons", "type" => 0 );
+	$projectEntitiesReverse[ "persons" ] = "eportal.persons";
+	$projectEntities[ "bolsa_empleo.archivo" ] = array( "url" => "archivo", "type" => 0 );
+	$projectEntitiesReverse[ "archivo" ] = "bolsa_empleo.archivo";
+	$projectEntities[ "bolsa_empleo.archivo_tipo" ] = array( "url" => "archivo_tipo", "type" => 0 );
+	$projectEntitiesReverse[ "archivo_tipo" ] = "bolsa_empleo.archivo_tipo";
 }
 
 function findTable( $table ) {

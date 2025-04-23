@@ -709,7 +709,21 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
 'custom_button2' ),
 'label' => array( 'type' => 0,
 'text' => 'Acciones' ),
-'buttonStyle' => 'success' ),
+'buttonStyle' => 'primary',
+'buttonSize' => 'normal',
+'tooltip' => array( 'type' => 0,
+'text' => 'Acciones' ),
+'customCSS' => '/* Put  your custom CSS code here */
+
+:host {
+  color: red;
+}
+
+
+/* Forzar texto negro en las opciones del menú desplegable */
+.dropdown-menu .dropdown-item {
+  color: #000 !important;
+}' ),
 'custom_button' => array( 'eventId' => 'Activar',
 'label' => array( 'text' => 'Activar',
 'type' => 0 ),
@@ -905,6 +919,18 @@ array( 'cells' => array( array( 'cell' => 'cell_dpreview',
     color: #555555;
     background-color: #ffffff;
     border-color: #fff;
-}',
+}
+
+
+
+
+
+/* *** */
+/* Forzar texto negro en las opciones del menú desplegable */
+/*.dropdown-menu .dropdown-item {
+  color: #000 !important;
+}*/
+/* *** */
+',
 'listTotals' => 1 );
 		?>

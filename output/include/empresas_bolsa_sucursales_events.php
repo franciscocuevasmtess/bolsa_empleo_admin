@@ -61,7 +61,7 @@ function BeforeShowList(&$xt, &$templatefile, $pageObject)
 {
 
 		//Ocultar elementos que no seran visibles en el listado.
-$pageObject->hideItem("list_options", $recordId); //oculta la lista de opciones del menu.
+$pageObject->hideItem("list_options", $recordId); // Oculta la lista de opciones del menu.
 ;		
 } // function BeforeShowList
 

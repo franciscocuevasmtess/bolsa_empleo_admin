@@ -6,11 +6,11 @@ $tdatacvc_niveles_academicos[".OwnerID"] = "";
 $tdatacvc_niveles_academicos[".OriginalTable"] = "bolsa_empleo.cvc_niveles_academicos";
 
 
-$tdatacvc_niveles_academicos[".pagesByType"] = my_json_decode( "{}" );
+$tdatacvc_niveles_academicos[".pagesByType"] = my_json_decode( "{\"search\":[\"search\"]}" );
 $tdatacvc_niveles_academicos[".originalPagesByType"] = $tdatacvc_niveles_academicos[".pagesByType"];
-$tdatacvc_niveles_academicos[".pages"] = types2pages( my_json_decode( "{}" ) );
+$tdatacvc_niveles_academicos[".pages"] = types2pages( my_json_decode( "{\"search\":[\"search\"]}" ) );
 $tdatacvc_niveles_academicos[".originalPages"] = $tdatacvc_niveles_academicos[".pages"];
-$tdatacvc_niveles_academicos[".defaultPages"] = my_json_decode( "{}" );
+$tdatacvc_niveles_academicos[".defaultPages"] = my_json_decode( "{\"search\":\"search\"}" );
 $tdatacvc_niveles_academicos[".originalDefaultPages"] = $tdatacvc_niveles_academicos[".defaultPages"];
 
 //	field labels
@@ -31,6 +31,9 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelscvc_niveles_academicos["Spanish"]["descripcion"] = "Descripcion";
 	$fieldToolTipscvc_niveles_academicos["Spanish"]["descripcion"] = "";
 	$placeHolderscvc_niveles_academicos["Spanish"]["descripcion"] = "";
+	$fieldLabelscvc_niveles_academicos["Spanish"]["orden"] = "Orden";
+	$fieldToolTipscvc_niveles_academicos["Spanish"]["orden"] = "";
+	$placeHolderscvc_niveles_academicos["Spanish"]["orden"] = "";
 	if (count($fieldToolTipscvc_niveles_academicos["Spanish"]))
 		$tdatacvc_niveles_academicos[".isUseToolTips"] = true;
 }
@@ -128,7 +131,7 @@ $tdatacvc_niveles_academicos[".isUseAjaxSuggest"] = true;
 
 
 
-																																																															
+																																																																																							
 
 $tdatacvc_niveles_academicos[".ajaxCodeSnippetAdded"] = false;
 
@@ -150,6 +153,7 @@ $tdatacvc_niveles_academicos[".requiredSearchFields"] = array();
 $tdatacvc_niveles_academicos[".googleLikeFields"] = array();
 $tdatacvc_niveles_academicos[".googleLikeFields"][] = "cvc_id_niveles_academicos";
 $tdatacvc_niveles_academicos[".googleLikeFields"][] = "descripcion";
+$tdatacvc_niveles_academicos[".googleLikeFields"][] = "orden";
 
 
 
@@ -183,7 +187,7 @@ $tdatacvc_niveles_academicos[".strOrderBy"] = $tstrOrderBy;
 $tdatacvc_niveles_academicos[".orderindexes"] = array();
 
 
-$tdatacvc_niveles_academicos[".sqlHead"] = "SELECT cvc_id_niveles_academicos,  	descripcion";
+$tdatacvc_niveles_academicos[".sqlHead"] = "SELECT cvc_id_niveles_academicos,  	descripcion,  	orden";
 $tdatacvc_niveles_academicos[".sqlFrom"] = "FROM bolsa_empleo.cvc_niveles_academicos";
 $tdatacvc_niveles_academicos[".sqlWhereExpr"] = "";
 $tdatacvc_niveles_academicos[".sqlTail"] = "";
@@ -512,6 +516,145 @@ $tdatacvc_niveles_academicos[".hideMobileList"] = array();
 
 	$tdatacvc_niveles_academicos["descripcion"] = $fdata;
 		$tdatacvc_niveles_academicos[".searchableFields"][] = "descripcion";
+//	orden
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 3;
+	$fdata["strName"] = "orden";
+	$fdata["GoodName"] = "orden";
+	$fdata["ownerTable"] = "bolsa_empleo.cvc_niveles_academicos";
+	$fdata["Label"] = GetFieldLabel("bolsa_empleo_cvc_niveles_academicos","orden");
+	$fdata["FieldType"] = 3;
+
+
+	
+	
+			
+
+		$fdata["strField"] = "orden";
+
+		$fdata["sourceSingle"] = "orden";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "orden";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text field");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+			$edata["HTML5InuptType"] = "text";
+
+		$edata["EditParams"] = "";
+		
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");
+							
+	
+//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatacvc_niveles_academicos["orden"] = $fdata;
+		$tdatacvc_niveles_academicos[".searchableFields"][] = "orden";
 
 
 $tables_data["bolsa_empleo.cvc_niveles_academicos"]=&$tdatacvc_niveles_academicos;
@@ -556,7 +699,7 @@ function createSqlQuery_cvc_niveles_academicos()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "cvc_id_niveles_academicos,  	descripcion";
+$proto0["m_strFieldList"] = "cvc_id_niveles_academicos,  	descripcion,  	orden";
 $proto0["m_strFrom"] = "FROM bolsa_empleo.cvc_niveles_academicos";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
@@ -624,38 +767,53 @@ $proto8["m_alias"] = "";
 $obj = new SQLFieldListItem($proto8);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto10=array();
-$proto10["m_link"] = "SQLL_MAIN";
-			$proto11=array();
-$proto11["m_strName"] = "bolsa_empleo.cvc_niveles_academicos";
-$proto11["m_srcTableName"] = "bolsa_empleo.cvc_niveles_academicos";
-$proto11["m_columns"] = array();
-$proto11["m_columns"][] = "cvc_id_niveles_academicos";
-$proto11["m_columns"][] = "descripcion";
-$obj = new SQLTable($proto11);
+						$proto10=array();
+			$obj = new SQLField(array(
+	"m_strName" => "orden",
+	"m_strTable" => "bolsa_empleo.cvc_niveles_academicos",
+	"m_srcTableName" => "bolsa_empleo.cvc_niveles_academicos"
+));
 
-$proto10["m_table"] = $obj;
-$proto10["m_sql"] = "bolsa_empleo.cvc_niveles_academicos";
-$proto10["m_alias"] = "";
+$proto10["m_sql"] = "orden";
 $proto10["m_srcTableName"] = "bolsa_empleo.cvc_niveles_academicos";
-$proto12=array();
-$proto12["m_sql"] = "";
-$proto12["m_uniontype"] = "SQLL_UNKNOWN";
+$proto10["m_expr"]=$obj;
+$proto10["m_alias"] = "";
+$obj = new SQLFieldListItem($proto10);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto12=array();
+$proto12["m_link"] = "SQLL_MAIN";
+			$proto13=array();
+$proto13["m_strName"] = "bolsa_empleo.cvc_niveles_academicos";
+$proto13["m_srcTableName"] = "bolsa_empleo.cvc_niveles_academicos";
+$proto13["m_columns"] = array();
+$proto13["m_columns"][] = "cvc_id_niveles_academicos";
+$proto13["m_columns"][] = "descripcion";
+$proto13["m_columns"][] = "orden";
+$obj = new SQLTable($proto13);
+
+$proto12["m_table"] = $obj;
+$proto12["m_sql"] = "bolsa_empleo.cvc_niveles_academicos";
+$proto12["m_alias"] = "";
+$proto12["m_srcTableName"] = "bolsa_empleo.cvc_niveles_academicos";
+$proto14=array();
+$proto14["m_sql"] = "";
+$proto14["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto12["m_column"]=$obj;
-$proto12["m_contained"] = array();
-$proto12["m_strCase"] = "";
-$proto12["m_havingmode"] = false;
-$proto12["m_inBrackets"] = false;
-$proto12["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto12);
+$proto14["m_column"]=$obj;
+$proto14["m_contained"] = array();
+$proto14["m_strCase"] = "";
+$proto14["m_havingmode"] = false;
+$proto14["m_inBrackets"] = false;
+$proto14["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto14);
 
-$proto10["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto10);
+$proto12["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto12);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -671,7 +829,7 @@ $queryData_cvc_niveles_academicos = createSqlQuery_cvc_niveles_academicos();
 	
 		;
 
-		
+			
 
 $tdatacvc_niveles_academicos[".sqlquery"] = $queryData_cvc_niveles_academicos;
 

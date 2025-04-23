@@ -31,42 +31,9 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsbolsa_users_popup["Spanish"]["nro_documento"] = "Nro. Documento";
 	$fieldToolTipsbolsa_users_popup["Spanish"]["nro_documento"] = "";
 	$placeHoldersbolsa_users_popup["Spanish"]["nro_documento"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["clave"] = "<font color=\"white\"> Contraseña </font>";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["clave"] = "Mínimo 8 caracteres. Combina mayúsculas, minúsculas, números y símbolos.";
-	$placeHoldersbolsa_users_popup["Spanish"]["clave"] = "";
 	$fieldLabelsbolsa_users_popup["Spanish"]["email"] = "<font color=\"white\"> Email </font>";
 	$fieldToolTipsbolsa_users_popup["Spanish"]["email"] = "Tu dirección de correo electrónico se utilizará para comunicarte contigo. Por favor, verifica que sea correcta.";
 	$placeHoldersbolsa_users_popup["Spanish"]["email"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["groupid"] = "Groupid";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["groupid"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["groupid"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["active"] = "Active";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["active"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["active"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["reset_token"] = "Reset Token";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["reset_token"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["reset_token"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["reset_date"] = "Reset Date";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["reset_date"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["reset_date"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["fecha_alta"] = "Fecha Alta";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["fecha_alta"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["fecha_alta"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["llave"] = "Llave";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["llave"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["llave"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["estado_llave"] = "Estado Llave";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["estado_llave"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["estado_llave"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["senadis"] = "Senadis";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["senadis"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["senadis"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["trabajo_antes"] = "Trabajo Antes";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["trabajo_antes"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["trabajo_antes"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["userpic"] = "Userpic";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["userpic"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["userpic"] = "";
 	$fieldLabelsbolsa_users_popup["Spanish"]["personaid"] = "Personaid";
 	$fieldToolTipsbolsa_users_popup["Spanish"]["personaid"] = "";
 	$placeHoldersbolsa_users_popup["Spanish"]["personaid"] = "";
@@ -76,15 +43,9 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsbolsa_users_popup["Spanish"]["username"] = "Username";
 	$fieldToolTipsbolsa_users_popup["Spanish"]["username"] = "";
 	$placeHoldersbolsa_users_popup["Spanish"]["username"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["hash_generado"] = "Hash Generado";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["hash_generado"] = "";
-	$placeHoldersbolsa_users_popup["Spanish"]["hash_generado"] = "";
 	$fieldLabelsbolsa_users_popup["Spanish"]["adjunto_foto_perfil"] = "Adjunto Foto Perfil";
 	$fieldToolTipsbolsa_users_popup["Spanish"]["adjunto_foto_perfil"] = "";
 	$placeHoldersbolsa_users_popup["Spanish"]["adjunto_foto_perfil"] = "";
-	$fieldLabelsbolsa_users_popup["Spanish"]["repetir_clave"] = "<font color=\"white\"> Repetir Contraseña </font>";
-	$fieldToolTipsbolsa_users_popup["Spanish"]["repetir_clave"] = "Mínimo 8 caracteres. Combina mayúsculas, minúsculas, números y símbolos.";
-	$placeHoldersbolsa_users_popup["Spanish"]["repetir_clave"] = "";
 	$fieldLabelsbolsa_users_popup["Spanish"]["id_vacancias"] = "Id Vacancias";
 	$fieldToolTipsbolsa_users_popup["Spanish"]["id_vacancias"] = "";
 	$placeHoldersbolsa_users_popup["Spanish"]["id_vacancias"] = "";
@@ -186,7 +147,7 @@ $tdatabolsa_users_popup[".isUseAjaxSuggest"] = true;
 
 
 
-																																																																																																																														
+																																																																																																																																																																														
 
 $tdatabolsa_users_popup[".ajaxCodeSnippetAdded"] = false;
 
@@ -208,22 +169,10 @@ $tdatabolsa_users_popup[".requiredSearchFields"] = array();
 $tdatabolsa_users_popup[".googleLikeFields"] = array();
 $tdatabolsa_users_popup[".googleLikeFields"][] = "id";
 $tdatabolsa_users_popup[".googleLikeFields"][] = "nro_documento";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "clave";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "repetir_clave";
 $tdatabolsa_users_popup[".googleLikeFields"][] = "email";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "groupid";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "active";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "reset_token";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "reset_date";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "fecha_alta";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "llave";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "estado_llave";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "senadis";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "trabajo_antes";
 $tdatabolsa_users_popup[".googleLikeFields"][] = "personaid";
 $tdatabolsa_users_popup[".googleLikeFields"][] = "fullname";
 $tdatabolsa_users_popup[".googleLikeFields"][] = "username";
-$tdatabolsa_users_popup[".googleLikeFields"][] = "hash_generado";
 $tdatabolsa_users_popup[".googleLikeFields"][] = "adjunto_foto_perfil";
 $tdatabolsa_users_popup[".googleLikeFields"][] = "id_vacancias";
 
@@ -253,17 +202,19 @@ $tdatabolsa_users_popup[".warnLeavingPages"] = true;
 
 
 
-$tstrOrderBy = "ORDER BY bolsa_empleo.bolsa_users.id DESC, bolsa_empleo.vacancia.id_vacancias DESC";
+$tstrOrderBy = "ORDER BY 
+    bu.id DESC, 
+    v.id_vacancias desc";
 $tdatabolsa_users_popup[".strOrderBy"] = $tstrOrderBy;
 
 $tdatabolsa_users_popup[".orderindexes"] = array();
-			$tdatabolsa_users_popup[".orderindexes"][] = array(1, (0 ? "ASC" : "DESC"), "bolsa_empleo.bolsa_users.id");
-			$tdatabolsa_users_popup[".orderindexes"][] = array(21, (0 ? "ASC" : "DESC"), "bolsa_empleo.vacancia.id_vacancias");
+			$tdatabolsa_users_popup[".orderindexes"][] = array(1, (0 ? "ASC" : "DESC"), "bu.id");
+			$tdatabolsa_users_popup[".orderindexes"][] = array(8, (0 ? "ASC" : "DESC"), "v.id_vacancias");
 
 
-$tdatabolsa_users_popup[".sqlHead"] = "SELECT bolsa_empleo.bolsa_users.id,  bolsa_empleo.bolsa_users.nro_documento,  bolsa_empleo.bolsa_users.clave,  bolsa_empleo.bolsa_users.clave AS repetir_clave,  bolsa_empleo.bolsa_users.email,  bolsa_empleo.bolsa_users.groupid,  bolsa_empleo.bolsa_users.active,  bolsa_empleo.bolsa_users.reset_token,  bolsa_empleo.bolsa_users.reset_date,  bolsa_empleo.bolsa_users.fecha_alta,  bolsa_empleo.bolsa_users.llave,  bolsa_empleo.bolsa_users.estado_llave,  bolsa_empleo.bolsa_users.senadis,  bolsa_empleo.bolsa_users.trabajo_antes,  bolsa_empleo.bolsa_users.userpic,  bolsa_empleo.bolsa_users.personaid,  bolsa_empleo.bolsa_users.fullname,  bolsa_empleo.bolsa_users.username,  bolsa_empleo.bolsa_users.hash_generado,  bolsa_empleo.bolsa_users.adjunto_foto_perfil,  bolsa_empleo.vacancia.id_vacancias";
-$tdatabolsa_users_popup[".sqlFrom"] = "FROM bolsa_empleo.bolsa_users  , bolsa_empleo.vacancia";
-$tdatabolsa_users_popup[".sqlWhereExpr"] = "(bolsa_empleo.bolsa_users.personaid not in (SELECT  	pos.fk_personaid  FROM  	bolsa_empleo.vacancia as va  	INNER JOIN  	bolsa_empleo.postulacion as pos  	ON   va.id_vacancias = pos.id_vacancia  		where 	va.id_vacancias =  	bolsa_empleo.vacancia.id_vacancias   and pos.fk_personaid= 	bolsa_empleo.bolsa_users.personaid))";
+$tdatabolsa_users_popup[".sqlHead"] = "/*SELECT  bolsa_empleo.bolsa_users.id,  bolsa_empleo.bolsa_users.nro_documento,  bolsa_empleo.bolsa_users.clave,  bolsa_empleo.bolsa_users.clave AS repetir_clave,  bolsa_empleo.bolsa_users.email,  bolsa_empleo.bolsa_users.groupid,  bolsa_empleo.bolsa_users.active,  bolsa_empleo.bolsa_users.reset_token,  bolsa_empleo.bolsa_users.reset_date,  bolsa_empleo.bolsa_users.fecha_alta,  bolsa_empleo.bolsa_users.llave,  bolsa_empleo.bolsa_users.estado_llave,  bolsa_empleo.bolsa_users.senadis,  bolsa_empleo.bolsa_users.trabajo_antes,  bolsa_empleo.bolsa_users.userpic,  bolsa_empleo.bolsa_users.personaid,  bolsa_empleo.bolsa_users.fullname,  bolsa_empleo.bolsa_users.username,  bolsa_empleo.bolsa_users.hash_generado,  bolsa_empleo.bolsa_users.adjunto_foto_perfil,  bolsa_empleo.vacancia.id_vacancias  FROM bolsa_empleo.bolsa_users  , bolsa_empleo.vacancia  WHERE (bolsa_empleo.bolsa_users.personaid not in (SELECT  	pos.fk_personaid  FROM  	bolsa_empleo.vacancia as va  	INNER JOIN  	bolsa_empleo.postulacion as pos  	ON   va.id_vacancias = pos.id_vacancia  		where 	va.id_vacancias =  	bolsa_empleo.vacancia.id_vacancias   and pos.fk_personaid= 	bolsa_empleo.bolsa_users.personaid))  ORDER BY bolsa_empleo.bolsa_users.id DESC, bolsa_empleo.vacancia.id_vacancias DESC  */  /* 2024-04-10 */  SELECT bu.id,      bu.nro_documento,         bu.email,         bu.personaid,      bu.fullname,      bu.username,      bu.adjunto_foto_perfil,      v.id_vacancias";
+$tdatabolsa_users_popup[".sqlFrom"] = "FROM       bolsa_empleo.vacancia v  JOIN       bolsa_empleo.bolsa_users bu ON bu.personaid NOT IN (          SELECT p.fk_personaid          FROM bolsa_empleo.postulacion p          WHERE p.id_vacancia = v.id_vacancias and p.id_vacancia in (3, 5, 7, 2)					      )";
+$tdatabolsa_users_popup[".sqlWhereExpr"] = "";
 $tdatabolsa_users_popup[".sqlTail"] = "";
 
 
@@ -331,7 +282,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.id";
+	$fdata["FullName"] = "bu.id";
 
 	
 	
@@ -472,7 +423,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.nro_documento";
+	$fdata["FullName"] = "bu.nro_documento";
 
 	
 	
@@ -590,284 +541,10 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	$tdatabolsa_users_popup["nro_documento"] = $fdata;
 		$tdatabolsa_users_popup[".searchableFields"][] = "nro_documento";
-//	clave
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 3;
-	$fdata["strName"] = "clave";
-	$fdata["GoodName"] = "clave";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","clave");
-	$fdata["FieldType"] = 200;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "clave";
-
-		$fdata["sourceSingle"] = "clave";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.clave";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Password");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-	
-		$edata["EditParams"] = "";
-			$edata["EditParams"].= " maxlength=255";
-
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["clave"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "clave";
-//	repetir_clave
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 4;
-	$fdata["strName"] = "repetir_clave";
-	$fdata["GoodName"] = "repetir_clave";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","repetir_clave");
-	$fdata["FieldType"] = 200;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "clave";
-
-	
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.clave";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Password");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-	
-		$edata["EditParams"] = "";
-		
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["repetir_clave"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "repetir_clave";
 //	email
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 5;
+	$fdata["Index"] = 3;
 	$fdata["strName"] = "email";
 	$fdata["GoodName"] = "email";
 	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
@@ -885,7 +562,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.email";
+	$fdata["FullName"] = "bu.email";
 
 	
 	
@@ -1003,1408 +680,10 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	$tdatabolsa_users_popup["email"] = $fdata;
 		$tdatabolsa_users_popup[".searchableFields"][] = "email";
-//	groupid
+//	personaid
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 6;
-	$fdata["strName"] = "groupid";
-	$fdata["GoodName"] = "groupid";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","groupid");
-	$fdata["FieldType"] = 200;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "groupid";
-
-		$fdata["sourceSingle"] = "groupid";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.groupid";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Text field");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-			$edata["HTML5InuptType"] = "text";
-
-		$edata["EditParams"] = "";
-			$edata["EditParams"].= " maxlength=255";
-
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["groupid"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "groupid";
-//	active
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 7;
-	$fdata["strName"] = "active";
-	$fdata["GoodName"] = "active";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","active");
-	$fdata["FieldType"] = 3;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "active";
-
-		$fdata["sourceSingle"] = "active";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.active";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Text field");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-			$edata["HTML5InuptType"] = "text";
-
-		$edata["EditParams"] = "";
-		
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");
-							
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["active"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "active";
-//	reset_token
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 8;
-	$fdata["strName"] = "reset_token";
-	$fdata["GoodName"] = "reset_token";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","reset_token");
-	$fdata["FieldType"] = 200;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "reset_token";
-
-		$fdata["sourceSingle"] = "reset_token";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.reset_token";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Text field");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-			$edata["HTML5InuptType"] = "text";
-
-		$edata["EditParams"] = "";
-		
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["reset_token"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "reset_token";
-//	reset_date
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 9;
-	$fdata["strName"] = "reset_date";
-	$fdata["GoodName"] = "reset_date";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","reset_date");
-	$fdata["FieldType"] = 135;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "reset_date";
-
-		$fdata["sourceSingle"] = "reset_date";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.reset_date";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "Short Date");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Date");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-		$edata["DateEditType"] = 13;
-	$edata["InitialYearFactor"] = 100;
-	$edata["LastYearFactor"] = 10;
-
-	
-	
-	
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between", EMPTY_SEARCH, NOT_EMPTY );
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["reset_date"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "reset_date";
-//	fecha_alta
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 10;
-	$fdata["strName"] = "fecha_alta";
-	$fdata["GoodName"] = "fecha_alta";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","fecha_alta");
-	$fdata["FieldType"] = 135;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "fecha_alta";
-
-		$fdata["sourceSingle"] = "fecha_alta";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.fecha_alta";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "Short Date");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Date");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-		$edata["DateEditType"] = 13;
-	$edata["InitialYearFactor"] = 100;
-	$edata["LastYearFactor"] = 10;
-
-	
-	
-	
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Equals";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between", EMPTY_SEARCH, NOT_EMPTY );
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["fecha_alta"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "fecha_alta";
-//	llave
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 11;
-	$fdata["strName"] = "llave";
-	$fdata["GoodName"] = "llave";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","llave");
-	$fdata["FieldType"] = 201;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "llave";
-
-		$fdata["sourceSingle"] = "llave";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.llave";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Text area");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 0;
-
-	
-	
-	
-				$edata["nRows"] = 100;
-			$edata["nCols"] = 200;
-
-	
-	
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-		$edata["CreateThumbnail"] = true;
-	$edata["StrThumbnail"] = "th";
-			$edata["ThumbnailSize"] = 600;
-
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["llave"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "llave";
-//	estado_llave
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 12;
-	$fdata["strName"] = "estado_llave";
-	$fdata["GoodName"] = "estado_llave";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","estado_llave");
-	$fdata["FieldType"] = 3;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "estado_llave";
-
-		$fdata["sourceSingle"] = "estado_llave";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.estado_llave";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Text field");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-			$edata["HTML5InuptType"] = "text";
-
-		$edata["EditParams"] = "";
-		
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");
-							
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["estado_llave"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "estado_llave";
-//	senadis
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 13;
-	$fdata["strName"] = "senadis";
-	$fdata["GoodName"] = "senadis";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","senadis");
-	$fdata["FieldType"] = 200;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "senadis";
-
-		$fdata["sourceSingle"] = "senadis";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.senadis";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Text field");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-			$edata["HTML5InuptType"] = "text";
-
-		$edata["EditParams"] = "";
-			$edata["EditParams"].= " maxlength=255";
-
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["senadis"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "senadis";
-//	trabajo_antes
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 14;
-	$fdata["strName"] = "trabajo_antes";
-	$fdata["GoodName"] = "trabajo_antes";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","trabajo_antes");
-	$fdata["FieldType"] = 200;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "trabajo_antes";
-
-		$fdata["sourceSingle"] = "trabajo_antes";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.trabajo_antes";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Text field");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-			$edata["HTML5InuptType"] = "text";
-
-		$edata["EditParams"] = "";
-		
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["trabajo_antes"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "trabajo_antes";
-//	userpic
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 15;
-	$fdata["strName"] = "userpic";
-	$fdata["GoodName"] = "userpic";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","userpic");
-	$fdata["FieldType"] = 128;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "userpic";
-
-		$fdata["sourceSingle"] = "userpic";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.userpic";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "Database Image");
-
-	
-	
-				$vdata["ImageWidth"] = 600;
-	$vdata["ImageHeight"] = 400;
-
-		
-			$vdata["showGallery"] = true;
-	$vdata["galleryMode"] = 2;
-	$vdata["captionMode"] = 1;
-	$vdata["captionField"] = "";
-
-	$vdata["imageBorder"] = 1;
-	$vdata["imageFullWidth"] = 1;
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Database image");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-	
-	
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "NOT Empty";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["userpic"] = $fdata;
-	//	personaid
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 16;
+	$fdata["Index"] = 4;
 	$fdata["strName"] = "personaid";
 	$fdata["GoodName"] = "personaid";
 	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
@@ -2422,7 +701,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.personaid";
+	$fdata["FullName"] = "bu.personaid";
 
 	
 	
@@ -2543,7 +822,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 //	fullname
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 17;
+	$fdata["Index"] = 5;
 	$fdata["strName"] = "fullname";
 	$fdata["GoodName"] = "fullname";
 	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
@@ -2561,7 +840,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.fullname";
+	$fdata["FullName"] = "bu.fullname";
 
 	
 	
@@ -2682,7 +961,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 //	username
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 18;
+	$fdata["Index"] = 6;
 	$fdata["strName"] = "username";
 	$fdata["GoodName"] = "username";
 	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
@@ -2700,7 +979,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.username";
+	$fdata["FullName"] = "bu.username";
 
 	
 	
@@ -2818,149 +1097,10 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	$tdatabolsa_users_popup["username"] = $fdata;
 		$tdatabolsa_users_popup[".searchableFields"][] = "username";
-//	hash_generado
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 19;
-	$fdata["strName"] = "hash_generado";
-	$fdata["GoodName"] = "hash_generado";
-	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
-	$fdata["Label"] = GetFieldLabel("bolsa_empleo_bolsa_users_popup","hash_generado");
-	$fdata["FieldType"] = 200;
-
-
-	
-	
-			
-
-		$fdata["strField"] = "hash_generado";
-
-		$fdata["sourceSingle"] = "hash_generado";
-
-	
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.hash_generado";
-
-	
-	
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	
-		$vdata["truncateText"] = true;
-	$vdata["NumberOfChars"] = 80;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Text field");
-
-	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
-	$edata["weekdays"] = "[]";
-
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypesHtml"] = "";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-			$edata["HTML5InuptType"] = "text";
-
-		$edata["EditParams"] = "";
-			$edata["EditParams"].= " maxlength=255";
-
-		$edata["controlWidth"] = 200;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-// the field's search options settings
-		$fdata["defaultSearchOption"] = "Contains";
-
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
-// the end of search options settings
-
-
-//Filters settings
-	$fdata["filterTotals"] = 0;
-		$fdata["filterMultiSelect"] = 0;
-			$fdata["filterFormat"] = "Values list";
-		$fdata["showCollapsed"] = false;
-
-		$fdata["sortValueType"] = 0;
-		$fdata["numberOfVisibleItems"] = 10;
-
-		$fdata["filterBy"] = 0;
-
-	
-
-	
-	
-//end of Filters settings
-
-
-	$tdatabolsa_users_popup["hash_generado"] = $fdata;
-		$tdatabolsa_users_popup[".searchableFields"][] = "hash_generado";
 //	adjunto_foto_perfil
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 20;
+	$fdata["Index"] = 7;
 	$fdata["strName"] = "adjunto_foto_perfil";
 	$fdata["GoodName"] = "adjunto_foto_perfil";
 	$fdata["ownerTable"] = "bolsa_empleo.bolsa_users";
@@ -2978,7 +1118,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.bolsa_users.adjunto_foto_perfil";
+	$fdata["FullName"] = "bu.adjunto_foto_perfil";
 
 	
 	
@@ -3101,7 +1241,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 //	id_vacancias
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 21;
+	$fdata["Index"] = 8;
 	$fdata["strName"] = "id_vacancias";
 	$fdata["GoodName"] = "id_vacancias";
 	$fdata["ownerTable"] = "bolsa_empleo.vacancia";
@@ -3119,7 +1259,7 @@ $tdatabolsa_users_popup[".hideMobileList"] = array();
 	
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "bolsa_empleo.vacancia.id_vacancias";
+	$fdata["FullName"] = "v.id_vacancias";
 
 	
 	
@@ -3300,26 +1440,24 @@ require_once(getabspath("classes/sql.php"));
 function createSqlQuery_bolsa_users_popup()
 {
 $proto0=array();
-$proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "bolsa_empleo.bolsa_users.id,  bolsa_empleo.bolsa_users.nro_documento,  bolsa_empleo.bolsa_users.clave,  bolsa_empleo.bolsa_users.clave AS repetir_clave,  bolsa_empleo.bolsa_users.email,  bolsa_empleo.bolsa_users.groupid,  bolsa_empleo.bolsa_users.active,  bolsa_empleo.bolsa_users.reset_token,  bolsa_empleo.bolsa_users.reset_date,  bolsa_empleo.bolsa_users.fecha_alta,  bolsa_empleo.bolsa_users.llave,  bolsa_empleo.bolsa_users.estado_llave,  bolsa_empleo.bolsa_users.senadis,  bolsa_empleo.bolsa_users.trabajo_antes,  bolsa_empleo.bolsa_users.userpic,  bolsa_empleo.bolsa_users.personaid,  bolsa_empleo.bolsa_users.fullname,  bolsa_empleo.bolsa_users.username,  bolsa_empleo.bolsa_users.hash_generado,  bolsa_empleo.bolsa_users.adjunto_foto_perfil,  bolsa_empleo.vacancia.id_vacancias";
-$proto0["m_strFrom"] = "FROM bolsa_empleo.bolsa_users  , bolsa_empleo.vacancia";
-$proto0["m_strWhere"] = "(bolsa_empleo.bolsa_users.personaid not in (SELECT  	pos.fk_personaid  FROM  	bolsa_empleo.vacancia as va  	INNER JOIN  	bolsa_empleo.postulacion as pos  	ON   va.id_vacancias = pos.id_vacancia  		where 	va.id_vacancias =  	bolsa_empleo.vacancia.id_vacancias   and pos.fk_personaid= 	bolsa_empleo.bolsa_users.personaid))";
-$proto0["m_strOrderBy"] = "ORDER BY bolsa_empleo.bolsa_users.id DESC, bolsa_empleo.vacancia.id_vacancias DESC";
+$proto0["m_strHead"] = "/*SELECT  bolsa_empleo.bolsa_users.id,  bolsa_empleo.bolsa_users.nro_documento,  bolsa_empleo.bolsa_users.clave,  bolsa_empleo.bolsa_users.clave AS repetir_clave,  bolsa_empleo.bolsa_users.email,  bolsa_empleo.bolsa_users.groupid,  bolsa_empleo.bolsa_users.active,  bolsa_empleo.bolsa_users.reset_token,  bolsa_empleo.bolsa_users.reset_date,  bolsa_empleo.bolsa_users.fecha_alta,  bolsa_empleo.bolsa_users.llave,  bolsa_empleo.bolsa_users.estado_llave,  bolsa_empleo.bolsa_users.senadis,  bolsa_empleo.bolsa_users.trabajo_antes,  bolsa_empleo.bolsa_users.userpic,  bolsa_empleo.bolsa_users.personaid,  bolsa_empleo.bolsa_users.fullname,  bolsa_empleo.bolsa_users.username,  bolsa_empleo.bolsa_users.hash_generado,  bolsa_empleo.bolsa_users.adjunto_foto_perfil,  bolsa_empleo.vacancia.id_vacancias  FROM bolsa_empleo.bolsa_users  , bolsa_empleo.vacancia  WHERE (bolsa_empleo.bolsa_users.personaid not in (SELECT  	pos.fk_personaid  FROM  	bolsa_empleo.vacancia as va  	INNER JOIN  	bolsa_empleo.postulacion as pos  	ON   va.id_vacancias = pos.id_vacancia  		where 	va.id_vacancias =  	bolsa_empleo.vacancia.id_vacancias   and pos.fk_personaid= 	bolsa_empleo.bolsa_users.personaid))  ORDER BY bolsa_empleo.bolsa_users.id DESC, bolsa_empleo.vacancia.id_vacancias DESC  */  /* 2024-04-10 */  SELECT";
+$proto0["m_strFieldList"] = "bu.id,      bu.nro_documento,         bu.email,         bu.personaid,      bu.fullname,      bu.username,      bu.adjunto_foto_perfil,      v.id_vacancias";
+$proto0["m_strFrom"] = "FROM       bolsa_empleo.vacancia v  JOIN       bolsa_empleo.bolsa_users bu ON bu.personaid NOT IN (          SELECT p.fk_personaid          FROM bolsa_empleo.postulacion p          WHERE p.id_vacancia = v.id_vacancias and p.id_vacancia in (3, 5, 7, 2)					      )";
+$proto0["m_strWhere"] = "";
+$proto0["m_strOrderBy"] = "ORDER BY       bu.id DESC,       v.id_vacancias desc";
 	
 		;
 			$proto0["cipherer"] = null;
 $proto2=array();
-$proto2["m_sql"] = "bolsa_empleo.bolsa_users.personaid not in (SELECT  	pos.fk_personaid  FROM  	bolsa_empleo.vacancia as va  	INNER JOIN  	bolsa_empleo.postulacion as pos  	ON   va.id_vacancias = pos.id_vacancia  		where 	va.id_vacancias =  	bolsa_empleo.vacancia.id_vacancias   and pos.fk_personaid= 	bolsa_empleo.bolsa_users.personaid)";
+$proto2["m_sql"] = "";
 $proto2["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "personaid",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
+	$obj = new SQLNonParsed(array(
+	"m_sql" => ""
 ));
 
 $proto2["m_column"]=$obj;
 $proto2["m_contained"] = array();
-$proto2["m_strCase"] = "not in (SELECT  	pos.fk_personaid  FROM  	bolsa_empleo.vacancia as va  	INNER JOIN  	bolsa_empleo.postulacion as pos  	ON   va.id_vacancias = pos.id_vacancia  		where 	va.id_vacancias =  	bolsa_empleo.vacancia.id_vacancias   and pos.fk_personaid= 	bolsa_empleo.bolsa_users.personaid)";
+$proto2["m_strCase"] = "";
 $proto2["m_havingmode"] = false;
 $proto2["m_inBrackets"] = false;
 $proto2["m_useAlias"] = false;
@@ -3346,11 +1484,11 @@ $proto0["m_fieldlist"] = array();
 						$proto6=array();
 			$obj = new SQLField(array(
 	"m_strName" => "id",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
+	"m_strTable" => "bu",
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto6["m_sql"] = "bolsa_empleo.bolsa_users.id";
+$proto6["m_sql"] = "bu.id";
 $proto6["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
 $proto6["m_expr"]=$obj;
 $proto6["m_alias"] = "";
@@ -3360,11 +1498,11 @@ $proto0["m_fieldlist"][]=$obj;
 						$proto8=array();
 			$obj = new SQLField(array(
 	"m_strName" => "nro_documento",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
+	"m_strTable" => "bu",
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto8["m_sql"] = "bolsa_empleo.bolsa_users.nro_documento";
+$proto8["m_sql"] = "bu.nro_documento";
 $proto8["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
 $proto8["m_expr"]=$obj;
 $proto8["m_alias"] = "";
@@ -3373,12 +1511,12 @@ $obj = new SQLFieldListItem($proto8);
 $proto0["m_fieldlist"][]=$obj;
 						$proto10=array();
 			$obj = new SQLField(array(
-	"m_strName" => "clave",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
+	"m_strName" => "email",
+	"m_strTable" => "bu",
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto10["m_sql"] = "bolsa_empleo.bolsa_users.clave";
+$proto10["m_sql"] = "bu.email";
 $proto10["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
 $proto10["m_expr"]=$obj;
 $proto10["m_alias"] = "";
@@ -3387,26 +1525,26 @@ $obj = new SQLFieldListItem($proto10);
 $proto0["m_fieldlist"][]=$obj;
 						$proto12=array();
 			$obj = new SQLField(array(
-	"m_strName" => "clave",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
+	"m_strName" => "personaid",
+	"m_strTable" => "bu",
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto12["m_sql"] = "bolsa_empleo.bolsa_users.clave";
+$proto12["m_sql"] = "bu.personaid";
 $proto12["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
 $proto12["m_expr"]=$obj;
-$proto12["m_alias"] = "repetir_clave";
+$proto12["m_alias"] = "";
 $obj = new SQLFieldListItem($proto12);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto14=array();
 			$obj = new SQLField(array(
-	"m_strName" => "email",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
+	"m_strName" => "fullname",
+	"m_strTable" => "bu",
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto14["m_sql"] = "bolsa_empleo.bolsa_users.email";
+$proto14["m_sql"] = "bu.fullname";
 $proto14["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
 $proto14["m_expr"]=$obj;
 $proto14["m_alias"] = "";
@@ -3415,12 +1553,12 @@ $obj = new SQLFieldListItem($proto14);
 $proto0["m_fieldlist"][]=$obj;
 						$proto16=array();
 			$obj = new SQLField(array(
-	"m_strName" => "groupid",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
+	"m_strName" => "username",
+	"m_strTable" => "bu",
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto16["m_sql"] = "bolsa_empleo.bolsa_users.groupid";
+$proto16["m_sql"] = "bu.username";
 $proto16["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
 $proto16["m_expr"]=$obj;
 $proto16["m_alias"] = "";
@@ -3429,12 +1567,12 @@ $obj = new SQLFieldListItem($proto16);
 $proto0["m_fieldlist"][]=$obj;
 						$proto18=array();
 			$obj = new SQLField(array(
-	"m_strName" => "active",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
+	"m_strName" => "adjunto_foto_perfil",
+	"m_strTable" => "bu",
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto18["m_sql"] = "bolsa_empleo.bolsa_users.active";
+$proto18["m_sql"] = "bu.adjunto_foto_perfil";
 $proto18["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
 $proto18["m_expr"]=$obj;
 $proto18["m_alias"] = "";
@@ -3443,319 +1581,139 @@ $obj = new SQLFieldListItem($proto18);
 $proto0["m_fieldlist"][]=$obj;
 						$proto20=array();
 			$obj = new SQLField(array(
-	"m_strName" => "reset_token",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
+	"m_strName" => "id_vacancias",
+	"m_strTable" => "v",
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto20["m_sql"] = "bolsa_empleo.bolsa_users.reset_token";
+$proto20["m_sql"] = "v.id_vacancias";
 $proto20["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
 $proto20["m_expr"]=$obj;
 $proto20["m_alias"] = "";
 $obj = new SQLFieldListItem($proto20);
 
 $proto0["m_fieldlist"][]=$obj;
-						$proto22=array();
-			$obj = new SQLField(array(
-	"m_strName" => "reset_date",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto22["m_sql"] = "bolsa_empleo.bolsa_users.reset_date";
-$proto22["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto22["m_expr"]=$obj;
-$proto22["m_alias"] = "";
-$obj = new SQLFieldListItem($proto22);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto24=array();
-			$obj = new SQLField(array(
-	"m_strName" => "fecha_alta",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto24["m_sql"] = "bolsa_empleo.bolsa_users.fecha_alta";
-$proto24["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto24["m_expr"]=$obj;
-$proto24["m_alias"] = "";
-$obj = new SQLFieldListItem($proto24);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto26=array();
-			$obj = new SQLField(array(
-	"m_strName" => "llave",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto26["m_sql"] = "bolsa_empleo.bolsa_users.llave";
-$proto26["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto26["m_expr"]=$obj;
-$proto26["m_alias"] = "";
-$obj = new SQLFieldListItem($proto26);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto28=array();
-			$obj = new SQLField(array(
-	"m_strName" => "estado_llave",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto28["m_sql"] = "bolsa_empleo.bolsa_users.estado_llave";
-$proto28["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto28["m_expr"]=$obj;
-$proto28["m_alias"] = "";
-$obj = new SQLFieldListItem($proto28);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto30=array();
-			$obj = new SQLField(array(
-	"m_strName" => "senadis",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto30["m_sql"] = "bolsa_empleo.bolsa_users.senadis";
-$proto30["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto30["m_expr"]=$obj;
-$proto30["m_alias"] = "";
-$obj = new SQLFieldListItem($proto30);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto32=array();
-			$obj = new SQLField(array(
-	"m_strName" => "trabajo_antes",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto32["m_sql"] = "bolsa_empleo.bolsa_users.trabajo_antes";
-$proto32["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto32["m_expr"]=$obj;
-$proto32["m_alias"] = "";
-$obj = new SQLFieldListItem($proto32);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto34=array();
-			$obj = new SQLField(array(
-	"m_strName" => "userpic",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto34["m_sql"] = "bolsa_empleo.bolsa_users.userpic";
-$proto34["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto34["m_expr"]=$obj;
-$proto34["m_alias"] = "";
-$obj = new SQLFieldListItem($proto34);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto36=array();
-			$obj = new SQLField(array(
-	"m_strName" => "personaid",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto36["m_sql"] = "bolsa_empleo.bolsa_users.personaid";
-$proto36["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto36["m_expr"]=$obj;
-$proto36["m_alias"] = "";
-$obj = new SQLFieldListItem($proto36);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto38=array();
-			$obj = new SQLField(array(
-	"m_strName" => "fullname",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto38["m_sql"] = "bolsa_empleo.bolsa_users.fullname";
-$proto38["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto38["m_expr"]=$obj;
-$proto38["m_alias"] = "";
-$obj = new SQLFieldListItem($proto38);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto40=array();
-			$obj = new SQLField(array(
-	"m_strName" => "username",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto40["m_sql"] = "bolsa_empleo.bolsa_users.username";
-$proto40["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto40["m_expr"]=$obj;
-$proto40["m_alias"] = "";
-$obj = new SQLFieldListItem($proto40);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto42=array();
-			$obj = new SQLField(array(
-	"m_strName" => "hash_generado",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto42["m_sql"] = "bolsa_empleo.bolsa_users.hash_generado";
-$proto42["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto42["m_expr"]=$obj;
-$proto42["m_alias"] = "";
-$obj = new SQLFieldListItem($proto42);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto44=array();
-			$obj = new SQLField(array(
-	"m_strName" => "adjunto_foto_perfil",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto44["m_sql"] = "bolsa_empleo.bolsa_users.adjunto_foto_perfil";
-$proto44["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto44["m_expr"]=$obj;
-$proto44["m_alias"] = "";
-$obj = new SQLFieldListItem($proto44);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto46=array();
-			$obj = new SQLField(array(
-	"m_strName" => "id_vacancias",
-	"m_strTable" => "bolsa_empleo.vacancia",
-	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
-));
-
-$proto46["m_sql"] = "bolsa_empleo.vacancia.id_vacancias";
-$proto46["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto46["m_expr"]=$obj;
-$proto46["m_alias"] = "";
-$obj = new SQLFieldListItem($proto46);
-
-$proto0["m_fieldlist"][]=$obj;
 $proto0["m_fromlist"] = array();
-												$proto48=array();
-$proto48["m_link"] = "SQLL_MAIN";
-			$proto49=array();
-$proto49["m_strName"] = "bolsa_empleo.bolsa_users";
-$proto49["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto49["m_columns"] = array();
-$proto49["m_columns"][] = "id";
-$proto49["m_columns"][] = "nro_documento";
-$proto49["m_columns"][] = "clave";
-$proto49["m_columns"][] = "email";
-$proto49["m_columns"][] = "groupid";
-$proto49["m_columns"][] = "active";
-$proto49["m_columns"][] = "reset_token";
-$proto49["m_columns"][] = "reset_date";
-$proto49["m_columns"][] = "fecha_alta";
-$proto49["m_columns"][] = "llave";
-$proto49["m_columns"][] = "estado_llave";
-$proto49["m_columns"][] = "senadis";
-$proto49["m_columns"][] = "trabajo_antes";
-$proto49["m_columns"][] = "userpic";
-$proto49["m_columns"][] = "personaid";
-$proto49["m_columns"][] = "fullname";
-$proto49["m_columns"][] = "username";
-$proto49["m_columns"][] = "hash_generado";
-$proto49["m_columns"][] = "adjunto_foto_perfil";
-$proto49["m_columns"][] = "cantidad_omision_cambio_password";
-$obj = new SQLTable($proto49);
+												$proto22=array();
+$proto22["m_link"] = "SQLL_MAIN";
+			$proto23=array();
+$proto23["m_strName"] = "bolsa_empleo.vacancia";
+$proto23["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
+$proto23["m_columns"] = array();
+$proto23["m_columns"][] = "id_vacancias";
+$proto23["m_columns"][] = "fecha_creacion_vacancia";
+$proto23["m_columns"][] = "id_estado_vacancia";
+$proto23["m_columns"][] = "fecha_expiracion_vacancia";
+$proto23["m_columns"][] = "cantidad_vacancia";
+$proto23["m_columns"][] = "geolocation";
+$proto23["m_columns"][] = "fk_id_feria_empleo";
+$proto23["m_columns"][] = "usuario";
+$proto23["m_columns"][] = "origen";
+$proto23["m_columns"][] = "imagen_perfil";
+$obj = new SQLTable($proto23);
 
-$proto48["m_table"] = $obj;
-$proto48["m_sql"] = "bolsa_empleo.bolsa_users";
-$proto48["m_alias"] = "";
-$proto48["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto50=array();
-$proto50["m_sql"] = "";
-$proto50["m_uniontype"] = "SQLL_UNKNOWN";
+$proto22["m_table"] = $obj;
+$proto22["m_sql"] = "bolsa_empleo.vacancia v";
+$proto22["m_alias"] = "v";
+$proto22["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
+$proto24=array();
+$proto24["m_sql"] = "";
+$proto24["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto50["m_column"]=$obj;
-$proto50["m_contained"] = array();
-$proto50["m_strCase"] = "";
-$proto50["m_havingmode"] = false;
-$proto50["m_inBrackets"] = false;
-$proto50["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto50);
+$proto24["m_column"]=$obj;
+$proto24["m_contained"] = array();
+$proto24["m_strCase"] = "";
+$proto24["m_havingmode"] = false;
+$proto24["m_inBrackets"] = false;
+$proto24["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto24);
 
-$proto48["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto48);
+$proto22["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto22);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto52=array();
-$proto52["m_link"] = "SQLL_CROSSJOIN";
-			$proto53=array();
-$proto53["m_strName"] = "bolsa_empleo.vacancia";
-$proto53["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto53["m_columns"] = array();
-$proto53["m_columns"][] = "id_vacancias";
-$proto53["m_columns"][] = "fecha_creacion_vacancia";
-$proto53["m_columns"][] = "id_estado_vacancia";
-$proto53["m_columns"][] = "fecha_expiracion_vacancia";
-$proto53["m_columns"][] = "cantidad_vacancia";
-$proto53["m_columns"][] = "geolocation";
-$proto53["m_columns"][] = "fk_id_feria_empleo";
-$proto53["m_columns"][] = "usuario";
-$proto53["m_columns"][] = "origen";
-$proto53["m_columns"][] = "imagen_perfil";
-$obj = new SQLTable($proto53);
+												$proto26=array();
+$proto26["m_link"] = "SQLL_INNERJOIN";
+			$proto27=array();
+$proto27["m_strName"] = "bolsa_empleo.bolsa_users";
+$proto27["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
+$proto27["m_columns"] = array();
+$proto27["m_columns"][] = "id";
+$proto27["m_columns"][] = "nro_documento";
+$proto27["m_columns"][] = "clave";
+$proto27["m_columns"][] = "email";
+$proto27["m_columns"][] = "groupid";
+$proto27["m_columns"][] = "active";
+$proto27["m_columns"][] = "reset_token";
+$proto27["m_columns"][] = "reset_date";
+$proto27["m_columns"][] = "fecha_alta";
+$proto27["m_columns"][] = "llave";
+$proto27["m_columns"][] = "estado_llave";
+$proto27["m_columns"][] = "senadis";
+$proto27["m_columns"][] = "trabajo_antes";
+$proto27["m_columns"][] = "userpic";
+$proto27["m_columns"][] = "personaid";
+$proto27["m_columns"][] = "fullname";
+$proto27["m_columns"][] = "username";
+$proto27["m_columns"][] = "hash_generado";
+$proto27["m_columns"][] = "adjunto_foto_perfil";
+$proto27["m_columns"][] = "cantidad_omision_cambio_password";
+$obj = new SQLTable($proto27);
 
-$proto52["m_table"] = $obj;
-$proto52["m_sql"] = ", bolsa_empleo.vacancia";
-$proto52["m_alias"] = "";
-$proto52["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
-$proto54=array();
-$proto54["m_sql"] = "";
-$proto54["m_uniontype"] = "SQLL_UNKNOWN";
-	$obj = new SQLNonParsed(array(
-	"m_sql" => ""
+$proto26["m_table"] = $obj;
+$proto26["m_sql"] = "JOIN       bolsa_empleo.bolsa_users bu ON bu.personaid NOT IN (          SELECT p.fk_personaid          FROM bolsa_empleo.postulacion p          WHERE p.id_vacancia = v.id_vacancias and p.id_vacancia in (3, 5, 7, 2)					      )";
+$proto26["m_alias"] = "bu";
+$proto26["m_srcTableName"] = "bolsa_empleo.bolsa_users_popup";
+$proto28=array();
+$proto28["m_sql"] = "bu.personaid NOT IN (          SELECT p.fk_personaid          FROM bolsa_empleo.postulacion p          WHERE p.id_vacancia = v.id_vacancias and p.id_vacancia in (3, 5, 7, 2)					      )";
+$proto28["m_uniontype"] = "SQLL_UNKNOWN";
+						$obj = new SQLField(array(
+	"m_strName" => "personaid",
+	"m_strTable" => "bu",
+	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto54["m_column"]=$obj;
-$proto54["m_contained"] = array();
-$proto54["m_strCase"] = "";
-$proto54["m_havingmode"] = false;
-$proto54["m_inBrackets"] = false;
-$proto54["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto54);
+$proto28["m_column"]=$obj;
+$proto28["m_contained"] = array();
+$proto28["m_strCase"] = "NOT IN (          SELECT p.fk_personaid          FROM bolsa_empleo.postulacion p          WHERE p.id_vacancia = v.id_vacancias and p.id_vacancia in (3, 5, 7, 2)					      )";
+$proto28["m_havingmode"] = false;
+$proto28["m_inBrackets"] = false;
+$proto28["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto28);
 
-$proto52["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto52);
+$proto26["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto26);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
-												$proto56=array();
+												$proto30=array();
 						$obj = new SQLField(array(
 	"m_strName" => "id",
-	"m_strTable" => "bolsa_empleo.bolsa_users",
+	"m_strTable" => "bu",
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto56["m_column"]=$obj;
-$proto56["m_bAsc"] = 0;
-$proto56["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto56);
+$proto30["m_column"]=$obj;
+$proto30["m_bAsc"] = 0;
+$proto30["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto30);
 
 $proto0["m_orderby"][]=$obj;					
-												$proto58=array();
+												$proto32=array();
 						$obj = new SQLField(array(
 	"m_strName" => "id_vacancias",
-	"m_strTable" => "bolsa_empleo.vacancia",
+	"m_strTable" => "v",
 	"m_srcTableName" => "bolsa_empleo.bolsa_users_popup"
 ));
 
-$proto58["m_column"]=$obj;
-$proto58["m_bAsc"] = 0;
-$proto58["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto58);
+$proto32["m_column"]=$obj;
+$proto32["m_bAsc"] = 0;
+$proto32["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto32);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="bolsa_empleo.bolsa_users_popup";		
@@ -3769,7 +1727,7 @@ $queryData_bolsa_users_popup = createSqlQuery_bolsa_users_popup();
 	
 		;
 
-																					
+								
 
 $tdatabolsa_users_popup[".sqlquery"] = $queryData_bolsa_users_popup;
 

@@ -198,8 +198,10 @@ pdfDocument = {
 	
 			"text": [
 		
-				'',
-	  ],
+				
+			{"text":"","hidden":"{$item_hide_simple_search}"},
+				
+		  ],
   "border": [ false, false, false, false ],
               "alignment": 'right',
      
@@ -247,13 +249,8 @@ pdfDocument = {
 	
 			"text": [
 		
-				
-			{"text":"","hidden":"{$item_hide_simple_search}"},
-				
-				
-			{"text":"","hidden":"{$item_hide_print_panel}"},
-				
-		  ],
+				'',
+	  ],
   "border": [ false, false, false, false ],
               "alignment": 'right',
      
@@ -289,11 +286,8 @@ pdfDocument = {
 							tableForm: true,
 							widths: [
 																{BEGIN col_grid_0}
-								"40%",
+								"80%",
 								{END col_grid_0}
-																{BEGIN col_grid_1}
-								"40%",
-								{END col_grid_1}
 															],
 													heights: [
 															{BEGIN row_grid_0}			
@@ -332,6 +326,12 @@ pdfDocument = {
 															{BEGIN row_grid_11}			
 								"%",
 								{END row_grid_11}
+															{BEGIN row_grid_12}			
+								"%",
+								{END row_grid_12}
+															{BEGIN row_grid_13}			
+								"%",
+								{END row_grid_13}
 														],
 													
 							body: [
@@ -348,9 +348,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_top}
-			colSpan: {$colspan_grid_cell_top},
-			{END colspan_grid_cell_top}
 		
 		
 	
@@ -359,10 +356,39 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"","fontSize":16,"bold":true},
-				
-				
 			{"text":"","hidden":"{$item_hide_grid_inline_cancel}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+        color: '#000000',      "alignment": 'right',
+     
+      
+      },
+
+{END cellblock_grid_cell_top}
+											],
+				{END row_grid_0}
+						{BEGIN row_grid_1}
+				[
+																{BEGIN cellblock_grid_cell_label3}
+{
+	cellId: 'cell_label3',
+	col:0,
+	row:0,
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":""},
 				
 		  ],
   "border": [ false, false, false, false ],
@@ -371,17 +397,10 @@ pdfDocument = {
       
       },
 
-{END cellblock_grid_cell_top}
-																		{ 
-				cellId: 'cell_top',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_0}
-						{BEGIN row_grid_1}
+{END cellblock_grid_cell_label3}
+											],
+				{END row_grid_1}
+						{BEGIN row_grid_2}
 				[
 																{BEGIN cellblock_grid_cell_label2}
 {
@@ -394,9 +413,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_label2}
-			colSpan: {$colspan_grid_cell_label2},
-			{END colspan_grid_cell_label2}
 		
 		
 	
@@ -417,7 +433,7 @@ pdfDocument = {
 			{"text":{$descri_empresa_pdfvalue},"color":"#aa0a72","background":"transparent","hidden":"{$item_hide_grid_field4}","fontSize":24,"bold":true},
 				
 				
-			{"text":{$hash_generado_pdfvalue},"hidden":"{$item_hide_grid_field2}"},
+			{"text":{$hash_generado_pdfvalue},"hidden":"{$item_hide_hash_generado}"},
 				
 				
 			{"text":" || Cod.Vacancia:","color":"#555555","hidden":"{$item_hide_text4}","bold":true,"isHtml":true},
@@ -433,16 +449,9 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_label2}
-																		{ 
-				cellId: 'cell_label2',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_1}
-						{BEGIN row_grid_2}
+											],
+				{END row_grid_2}
+						{BEGIN row_grid_3}
 				[
 																{BEGIN cellblock_grid_cell_label}
 {
@@ -455,9 +464,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_label}
-			colSpan: {$colspan_grid_cell_label},
-			{END colspan_grid_cell_label}
 		
 		
 	
@@ -485,16 +491,9 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_label}
-																		{ 
-				cellId: 'cell_label',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_2}
-						{BEGIN row_grid_3}
+											],
+				{END row_grid_3}
+						{BEGIN row_grid_4}
 				[
 																{BEGIN cellblock_grid_cell_label1}
 {
@@ -507,9 +506,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_label1}
-			colSpan: {$colspan_grid_cell_label1},
-			{END colspan_grid_cell_label1}
 		
 		
 	
@@ -534,16 +530,9 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_label1}
-																		{ 
-				cellId: 'cell_label1',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_3}
-						{BEGIN row_grid_4}
+											],
+				{END row_grid_4}
+						{BEGIN row_grid_5}
 				[
 																{BEGIN cellblock_grid_cell_label35}
 {
@@ -556,9 +545,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_label35}
-			colSpan: {$colspan_grid_cell_label35},
-			{END colspan_grid_cell_label35}
 		
 		
 	
@@ -580,16 +566,9 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_label35}
-																		{ 
-				cellId: 'cell_label35',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_4}
-						{BEGIN row_grid_5}
+											],
+				{END row_grid_5}
+						{BEGIN row_grid_6}
 				[
 																{BEGIN cellblock_grid_cell_label45}
 {
@@ -602,9 +581,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_label45}
-			colSpan: {$colspan_grid_cell_label45},
-			{END colspan_grid_cell_label45}
 		
 		
 	
@@ -629,16 +605,9 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_label45}
-																		{ 
-				cellId: 'cell_label45',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_5}
-						{BEGIN row_grid_6}
+											],
+				{END row_grid_6}
+						{BEGIN row_grid_7}
 				[
 																{BEGIN cellblock_grid_cell_label33}
 {
@@ -651,9 +620,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_label33}
-			colSpan: {$colspan_grid_cell_label33},
-			{END colspan_grid_cell_label33}
 		
 		
 	
@@ -675,16 +641,9 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_label33}
-																		{ 
-				cellId: 'cell_label33',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_6}
-						{BEGIN row_grid_7}
+											],
+				{END row_grid_7}
+						{BEGIN row_grid_8}
 				[
 																{BEGIN cellblock_grid_cell_label31}
 {
@@ -697,9 +656,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_label31}
-			colSpan: {$colspan_grid_cell_label31},
-			{END colspan_grid_cell_label31}
 		
 		
 	
@@ -724,16 +680,9 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_label31}
-																		{ 
-				cellId: 'cell_label31',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_7}
-						{BEGIN row_grid_8}
+											],
+				{END row_grid_8}
+						{BEGIN row_grid_9}
 				[
 																{BEGIN cellblock_grid_cell_label29}
 {
@@ -746,9 +695,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_label29}
-			colSpan: {$colspan_grid_cell_label29},
-			{END colspan_grid_cell_label29}
 		
 		
 	
@@ -773,16 +719,9 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_label29}
-																		{ 
-				cellId: 'cell_label29',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_8}
-						{BEGIN row_grid_9}
+											],
+				{END row_grid_9}
+						{BEGIN row_grid_10}
 				[
 																{BEGIN cellblock_grid_cell_label27}
 {
@@ -795,9 +734,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_label27}
-			colSpan: {$colspan_grid_cell_label27},
-			{END colspan_grid_cell_label27}
 		
 		
 	
@@ -828,16 +764,9 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_label27}
-																		{ 
-				cellId: 'cell_label27',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_9}
-						{BEGIN row_grid_10}
+											],
+				{END row_grid_10}
+						{BEGIN row_grid_11}
 				[
 																{BEGIN cellblock_grid_cell_label41}
 {
@@ -850,9 +779,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_label41}
-			colSpan: {$colspan_grid_cell_label41},
-			{END colspan_grid_cell_label41}
 		
 		
 	
@@ -874,16 +800,39 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_label41}
-																		{ 
-				cellId: 'cell_label41',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_10}
-						{BEGIN row_grid_11}
+											],
+				{END row_grid_11}
+						{BEGIN row_grid_12}
+				[
+																{BEGIN cellblock_grid_cell_label42}
+{
+	cellId: 'cell_label42',
+	col:0,
+	row:0,
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'right',
+     
+      
+      },
+
+{END cellblock_grid_cell_label42}
+											],
+				{END row_grid_12}
+						{BEGIN row_grid_13}
 				[
 																{BEGIN cellblock_grid_cell_dpreview}
 {
@@ -895,9 +844,6 @@ pdfDocument = {
 		
 	//	dynamic colspan/rowspan
 
-					{BEGIN colspan_grid_cell_dpreview}
-			colSpan: {$colspan_grid_cell_dpreview},
-			{END colspan_grid_cell_dpreview}
 		
 		
 	
@@ -914,15 +860,8 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_dpreview}
-																		{ 
-				cellId: 'cell_dpreview',
-				row:  0,
-				col:  1,
-				text: '',
-				compensateColspan: true
-			},
-							],
-				{END row_grid_11}
+											],
+				{END row_grid_13}
 		
 							]
 						}

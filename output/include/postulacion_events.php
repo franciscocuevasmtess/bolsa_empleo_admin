@@ -216,10 +216,8 @@ function BeforeShowList(&$xt, &$templatefile, $pageObject)
 {
 
 		//Ocultar items que no van a ser utilizados visualmente en el formulario.
-$pageObject->hideItem("grid_field2"); //Oculta el campo hash
-
-
-$pageObject->hideItem("print_panel"); //Oculta el icono de la impresora
+//$pageObject->hideItem("grid_field2"); //Oculta el campo hash
+$pageObject->hideItem("hash_generado"); //Oculta el campo hash
 
 ;		
 } // function BeforeShowList

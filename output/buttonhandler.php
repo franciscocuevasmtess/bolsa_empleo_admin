@@ -256,6 +256,86 @@ if($buttId=='New_Button9')
 	}
 	buttonHandler_New_Button9($params);
 }
+if($buttId=='Descargar_Empresa_Integrada_a_Rubro')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_Descargar_Empresa_Integrada_a_Rubro($params);
+}
+if($buttId=='link_add_archivo')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_link_add_archivo($params);
+}
+if($buttId=='Evaluacion')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_Evaluacion($params);
+}
+if($buttId=='evaluacion_empresa')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_evaluacion_empresa($params);
+}
+if($buttId=='btn_event_descargar2')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_btn_event_descargar2($params);
+}
+if($buttId=='New_Button10')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_New_Button10($params);
+}
+if($buttId=='New_Button11')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_New_Button11($params);
+}
+if($buttId=='New_Button12')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_New_Button12($params);
+}
 
 
 
@@ -322,7 +402,6 @@ $userData = Security::currentUserData();
 // Línea comentada para depuración: puedes descomentarla para imprimir el ID del usuario en pantalla si es necesario.
 // print_r($userData["id"] );
 
-
 // Obtiene el ID de la vacancia actual desde el registro.
 // Este valor se utiliza para identificar la vacancia que será actualizada.
 $result["id_vacancias"] = $record["id_vacancias"];
@@ -339,8 +418,6 @@ $strSQLExists = DB::PrepareSQL("
 // Ejecuta la consulta preparada anteriormente para actualizar el estado de la vacancia.
 DB::Exec($strSQLExists);
 
-
-
 // Prepara una consulta SQL para registrar el cambio de estado en la tabla de historial.
 // Esta tabla (`vacancia_cambio_estado`) almacena información sobre:
 // - El ID de la vacancia modificada.
@@ -348,19 +425,18 @@ DB::Exec($strSQLExists);
 // - La fecha del cambio (`now()` obtiene la fecha y hora actual).
 // - El estado anterior de la vacancia (`5` en este caso).
 // - El usuario que realizó el cambio (el ID del usuario actual).
-$strSQLExistscambio = DB::PrepareSQL("
-	INSERT INTO bolsa_empleo.vacancia_cambio_estado(id_vacancia, 
-																															estado_vacancia, 
-																															fecha_cambio, 
-																															estado_anterior, 
-																															usuario) 
-	VALUES (':1',':2',':3',':4',':5');",
-						$result["id_vacancias"],		// ID de la vacancia modificada.
-						2,															// Nuevo estado (estado actualizado).
-						now(),													// Fecha y hora actuales.
-						5,															// Estado anterior de la vacancia.
-						$userData["id"]							// ID del usuario autenticado que realizó el cambio.
-);
+$strSQLExistscambio = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_cambio_estado(id_vacancia, 
+																						estado_vacancia, 
+																						fecha_cambio, 
+																						estado_anterior, 
+																						usuario) 
+																							VALUES (':1',':2',':3',':4',':5');",
+																												$result["id_vacancias"],		// ID de la vacancia modificada.
+																												2,															// Nuevo estado (estado actualizado).
+																												now(),													// Fecha y hora actuales.
+																												5,															// Estado anterior de la vacancia.
+																												$userData["id"]							// ID del usuario autenticado que realizó el cambio.
+																															);
 
 // Ejecuta la consulta preparada anteriormente para registrar el cambio de estado en la tabla `vacancia_cambio_estado`.
 DB::Exec($strSQLExistscambio);;
@@ -1543,6 +1619,7 @@ function buttonHandler_New_Button1($params)
 // ────────────────────────────────────────────────
 // Paso 1: Limpiar el array de IDs de postulaciones
 // ────────────────────────────────────────────────
+
 $array_cboxes = explode(",", $params["cboxes"]); // Convertir los IDs en un array
 array_pop($array_cboxes); // Eliminar el último elemento vacío (coma extra al final)
 
@@ -2089,6 +2166,588 @@ function buttonHandler_New_Button9($params)
 	$result["id_feria_empleo"] = $params["id_feria_empleo"];
 
 ;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_Descargar_Empresa_Integrada_a_Rubro($params)
+{
+	global $strTableName;
+	$result = array();
+
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_link_add_archivo($params)
+{
+	global $strTableName;
+	$result = array();
+
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	//llamara agregar archivo de Test Psioctecnico 
+//id_tipo_archivo= 2
+unset($_SESSION['_enviar_archivo_id_tipo_archivo']);
+unset($_SESSION['_enviar_archivo_id_persona']);
+unset($_SESSION['_enviar_archivo_id_postulacion']);
+$data = $button->getCurrentRecord();
+$_SESSION['_enviar_archivo_id_tipo_archivo']=2;
+$_SESSION['_enviar_archivo_id_persona']=$data["persona_id"];
+$_SESSION['_enviar_archivo_id_postulacion']=0;;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_Evaluacion($params)
+{
+	global $strTableName;
+	$result = array();
+
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	//llamara agregar archivo de Test Psioctecnico 
+//id_tipo_archivo= 2
+unset($_SESSION['_enviar_archivo_id_tipo_archivo']);
+unset($_SESSION['_enviar_archivo_id_persona']);
+unset($_SESSION['_enviar_archivo_id_postulacion']);
+$data = $button->getCurrentRecord();
+$_SESSION['_enviar_archivo_id_tipo_archivo']=1;
+$_SESSION['_enviar_archivo_id_persona']=$data["persona_id"];
+$_SESSION['_enviar_archivo_id_postulacion']=$data["id_postulacion"];;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_evaluacion_empresa($params)
+{
+	global $strTableName;
+	$result = array();
+
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	// Obtiene el registro actual asociado al botón que activó el evento.
+// Esto permite acceder a los datos específicos de la vacancia seleccionada.
+$record = $button->getCurrentRecord();
+//print_r($record);
+$actualizar=false;
+// Obtiene los datos del usuario actualmente autenticado.
+// Este objeto contiene información como el ID del usuario y otros datos relacionados.
+$userData = Security::currentUserData();
+
+// Línea comentada para depuración: puedes descomentarla para imprimir el ID del usuario en pantalla si es necesario.
+// print_r($userData["id"] );
+
+// Obtiene el ID de la vacancia actual desde el registro.
+// Este valor se utiliza para identificar la vacancia que será actualizada.
+$result["id_vacancias"] = $record["id_vacancias"];
+if($record["es_programa"]=='t') //significa que debe haber control para cambiar de estado
+{
+
+					//antes de cambiar de estado, primero verificamos que tenga al menos una postulación correcta. 
+					// Construye una consulta SQL para verificar que tenga al menos una postulación correcta.
+					$strSQL_count = DB::PrepareSQL("SELECT 
+																					 p.id_vacancia , COUNT(*) AS total_postulaciones_con_archivos
+																				FROM 
+																					 bolsa_empleo.postulacion p
+																				WHERE 
+																					 EXISTS (
+																						  SELECT 1 
+																						  FROM bolsa_empleo.archivo a1 
+																						  WHERE a1.person_id = p.fk_personaid 
+																						  AND a1.id_tipo_archivo = 2 
+																						  AND a1.archivo IS NOT NULL 
+																						  AND a1.archivo != ''
+																					 )
+																					 AND EXISTS (
+																						  SELECT 1 
+																						  FROM bolsa_empleo.archivo a2 
+																						  WHERE a2.person_id = p.fk_personaid
+																						  AND a2.id_tipo_archivo = 1 
+																						  AND a2.postulacion_id::int4 = p.id_postulacion
+																						  AND a2.archivo IS NOT NULL 
+																						  AND a2.archivo != ''
+																					 )
+																					 AND p.id_estado = 2
+																					 and p.id_vacancia = ".$record["id_vacancias"]."
+																				group by p.id_vacancia;" );
+
+					// Ejecuta la consulta SQL preparada anteriormente.
+					$resultSQL_count = DB::Query($strSQL_count);
+
+					// Obtiene el resultado de la consulta como un array asociativo.
+					$data2 = $resultSQL_count->fetchAssoc();
+
+					if($data2["total_postulaciones_con_archivos"]>0){
+						$result["x"]=$data2["total_postulaciones_con_archivos"];
+						//actualizar
+						$actualizar=true;
+					}else{
+						$result["xmensaje"]="Hace falta al menos un postulante con Test Psicotécnico y Evaluación de la DGE para cambiar de estado.";
+						}
+
+
+}
+else //seguir como de costumbre
+{
+$actualizar=true;
+}
+
+
+
+
+
+
+
+
+
+
+
+if($actualizar==true)
+{
+			/*VACANCIA*/
+			// Prepara una consulta SQL para actualizar el estado de la vacancia en la base de datos.
+			// Cambia el estado de la vacancia especificada a "2" (nuevo estado).
+			$strSQLExists = DB::PrepareSQL("
+				UPDATE bolsa_empleo.vacancia 
+				SET id_estado_vacancia = 10
+				WHERE bolsa_empleo.vacancia.id_vacancias = ':1'", 
+				$record["id_vacancias"]
+			);
+
+			// Ejecuta la consulta preparada anteriormente para actualizar el estado de la vacancia.
+			DB::Exec($strSQLExists);
+
+				// Prepara una consulta SQL para registrar el cambio de estado en la tabla de historial.
+				// Esta tabla (`vacancia_cambio_estado`) almacena información sobre:
+				// - El ID de la vacancia modificada.
+				// - El nuevo estado (`2` en este caso).
+				// - La fecha del cambio (`now()` obtiene la fecha y hora actual).
+				// - El estado anterior de la vacancia (`5` en este caso).
+				// - El usuario que realizó el cambio (el ID del usuario actual).
+				$strSQLExistscambio = DB::PrepareSQL("INSERT INTO bolsa_empleo.vacancia_cambio_estado(id_vacancia, 
+																										estado_vacancia, 
+																										fecha_cambio, 
+																										estado_anterior, 
+																										usuario) 
+																											VALUES (':1',':2',':3',':4',':5');",
+																																$result["id_vacancias"],		// ID de la vacancia modificada.
+																																10,															// Nuevo estado (estado actualizado).
+																																now(),													// Fecha y hora actuales.
+																																3,															// Estado anterior de la vacancia.
+																																$userData["id"]							// ID del usuario autenticado que realizó el cambio.
+																																			);
+
+				// Ejecuta la consulta preparada anteriormente para registrar el cambio de estado en la tabla `vacancia_cambio_estado`.
+				DB::Exec($strSQLExistscambio);
+
+		$result["xicon"]="success";
+		$result["xtitle"]="Operación exitosa";
+		$result["xmensaje"]='La vacancia ha pasado para Evaluación por parte de la Empresa. ';
+
+		/*Cargar Notificación*/
+
+
+}
+else {
+    $result["xicon"]="error";
+    $result["xtitle"]="Operación no Realizada";
+  
+   if(isset($result["xmensaje"])){
+				//nohacer nada
+    }
+				else{$result["xmensaje"]="No se ha podido actualizar estado de la vacancia";
+			};
+};
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_btn_event_descargar2($params)
+{
+	global $strTableName;
+	$result = array();
+
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_New_Button10($params)
+{
+	global $strTableName;
+	$result = array();
+
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_New_Button11($params)
+{
+	global $strTableName;
+	$result = array();
+
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	// Put your code here.
+$result["txt"] = $params["txt"]." world!";
+;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_New_Button12($params)
+{
+	global $strTableName;
+	$result = array();
+
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	;
 	RunnerContext::pop();
 	echo my_json_encode($result);
 	$button->deleteTempFiles();

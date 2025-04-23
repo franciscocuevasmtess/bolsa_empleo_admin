@@ -74,7 +74,17 @@
   width: 400px;
 }
 
+/* Put  your custom CSS code here */
 
+[data-page="vacancia_pendiente_list"][data-itemid="custom_button_container"] {
+  color: red;
+}
+
+
+/* Forzar texto negro en las opciones del menú desplegable */
+.dropdown-menu .dropdown-item {
+  color: #000 !important;
+}
 /* ***CODIGO ORIGINAL*** */
 /*
 body {
@@ -329,6 +339,38 @@ body {
     }
 }
 /* ********************* */
+
+
+/* ************************************************************************** */
+
+/* 
+   Personalización del menú desplegable:
+   Se cambia el color de fondo del menú en los botones de "Acciones"
+   dentro de la pantalla "Vacancias" para mejorar la visibilidad de los enlaces.
+*/
+.dropdown-menu {
+    background-color: #afc7f7 !important;
+}
+
+/* Forzar texto negro en las opciones del menú desplegable */
+/*.dropdown-menu .dropdown-item {
+  color: #000 !important;
+}*/
+
+
+/* Forzar texto negro dentro del menú "Acciones" */
+/*.dropdown-menu li a {
+  color: #000 !important;
+}
+
+/* Opcional: al pasar el mouse /
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+  color: #000 !important;
+}*/
+
+/* ************************************************************************** */
+
 
 
 
@@ -13824,3 +13866,14 @@ span span span input[type=search]{
     background-color: #ffffff;
     border-color: #fff;
 }
+
+
+
+
+
+/* *** */
+/* Forzar texto negro en las opciones del menú desplegable */
+/*.dropdown-menu .dropdown-item {
+  color: #000 !important;
+}*/
+/* *** */

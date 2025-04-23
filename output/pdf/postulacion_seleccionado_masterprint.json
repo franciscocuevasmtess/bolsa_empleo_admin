@@ -118,6 +118,18 @@ pdfDocument = {
 										{BEGIN col_grid_17}
 					"%",
 					{END col_grid_17}
+										{BEGIN col_grid_18}
+					"%",
+					{END col_grid_18}
+										{BEGIN col_grid_19}
+					"%",
+					{END col_grid_19}
+										{BEGIN col_grid_20}
+					"%",
+					{END col_grid_20}
+										{BEGIN col_grid_21}
+					"%",
+					{END col_grid_21}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -288,7 +300,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado nombre_completo }","hidden":"{$item_hide_simple_grid_field17}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado nombre_completo }","hidden":"{$item_hide_simple_grid_field21}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -317,7 +329,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado fechanac }","hidden":"{$item_hide_simple_grid_field18}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado fechanac }","hidden":"{$item_hide_simple_grid_field22}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -346,7 +358,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado sexo }","hidden":"{$item_hide_simple_grid_field19}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado sexo }","hidden":"{$item_hide_simple_grid_field23}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -375,7 +387,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado domicilio }","hidden":"{$item_hide_simple_grid_field20}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado domicilio }","hidden":"{$item_hide_simple_grid_field24}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -404,7 +416,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado ciudad }","hidden":"{$item_hide_simple_grid_field21}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado ciudad }","hidden":"{$item_hide_simple_grid_field25}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -433,7 +445,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado distrito }","hidden":"{$item_hide_simple_grid_field22}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado distrito }","hidden":"{$item_hide_simple_grid_field26}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -462,7 +474,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado pais }","hidden":"{$item_hide_simple_grid_field23}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado pais }","hidden":"{$item_hide_simple_grid_field27}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -491,7 +503,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado estado_civil }","hidden":"{$item_hide_simple_grid_field24}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado estado_civil }","hidden":"{$item_hide_simple_grid_field28}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -520,7 +532,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado cedula }","hidden":"{$item_hide_simple_grid_field25}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado cedula }","hidden":"{$item_hide_simple_grid_field29}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -549,7 +561,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado telefono }","hidden":"{$item_hide_simple_grid_field26}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado telefono }","hidden":"{$item_hide_simple_grid_field30}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -578,7 +590,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado id_vacancia }","hidden":"{$item_hide_simple_grid_field27}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado id_vacancia }","hidden":"{$item_hide_simple_grid_field31}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -607,7 +619,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado hash_generado }","hidden":"{$item_hide_simple_grid_field28}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado hash_generado }","hidden":"{$item_hide_simple_grid_field32}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -636,7 +648,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado empresa }","hidden":"{$item_hide_simple_grid_field29}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado empresa }","hidden":"{$item_hide_simple_grid_field33}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -665,7 +677,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado descri_empresa }","hidden":"{$item_hide_simple_grid_field30}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado descri_empresa }","hidden":"{$item_hide_simple_grid_field34}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -694,7 +706,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado id_postulacion }","hidden":"{$item_hide_simple_grid_field31}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado id_postulacion }","hidden":"{$item_hide_simple_grid_field35}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -723,7 +735,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado id_estado }","hidden":"{$item_hide_simple_grid_field32}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado id_estado }","hidden":"{$item_hide_simple_grid_field36}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -752,7 +764,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado id_vacancias }","hidden":"{$item_hide_simple_grid_field33}","bold":true},
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado id_vacancias }","hidden":"{$item_hide_simple_grid_field37}","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -762,6 +774,122 @@ pdfDocument = {
       },
 
 {END cellblock_grid_headcell_field16}
+																							{BEGIN cellblock_grid_headcell_field17}
+{
+	cellId: 'headcell_field17',
+	col:0,
+	row:0,
+			fieldName: 'persona_id',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado persona_id }","hidden":"{$item_hide_simple_grid_field38}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$persona_id_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field17}
+																							{BEGIN cellblock_grid_headcell_field18}
+{
+	cellId: 'headcell_field18',
+	col:0,
+	row:0,
+			fieldName: 'test_psicotecnico',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado test_psicotecnico }","hidden":"{$item_hide_simple_grid_field39}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$test_psicotecnico_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field18}
+																							{BEGIN cellblock_grid_headcell_field19}
+{
+	cellId: 'headcell_field19',
+	col:0,
+	row:0,
+			fieldName: 'evaluacion',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado evaluacion }","hidden":"{$item_hide_simple_grid_field40}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$evaluacion_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field19}
+																							{BEGIN cellblock_grid_headcell_field20}
+{
+	cellId: 'headcell_field20',
+	col:0,
+	row:0,
+			fieldName: 'es_programa',
+				style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":"{$jslabel bolsa_empleo_postulacion_seleccionado es_programa }","hidden":"{$item_hide_simple_grid_field41}","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$es_programa_align}',
+     
+      
+      },
+
+{END cellblock_grid_headcell_field20}
 											],
 				{END row_grid_0}
 		
@@ -1292,6 +1420,122 @@ pdfDocument = {
       },
 
 {END cellblock_grid_cell_field16}
+																							{BEGIN cellblock_grid_cell_field17}
+{
+	cellId: 'cell_field17',
+	col:0,
+	row:0,
+			fieldName: 'persona_id',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$persona_id_pdfvalue},"hidden":"{$item_hide_simple_grid_field17}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$persona_id_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field17}
+																							{BEGIN cellblock_grid_cell_field18}
+{
+	cellId: 'cell_field18',
+	col:0,
+	row:0,
+			fieldName: 'test_psicotecnico',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$test_psicotecnico_pdfvalue},"hidden":"{$item_hide_simple_grid_field18}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$test_psicotecnico_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field18}
+																							{BEGIN cellblock_grid_cell_field19}
+{
+	cellId: 'cell_field19',
+	col:0,
+	row:0,
+			fieldName: 'evaluacion',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$evaluacion_pdfvalue},"hidden":"{$item_hide_simple_grid_field19}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$evaluacion_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field19}
+																							{BEGIN cellblock_grid_cell_field20}
+{
+	cellId: 'cell_field20',
+	col:0,
+	row:0,
+			fieldName: 'es_programa',
+				style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				
+			{"text":{$es_programa_pdfvalue},"hidden":"{$item_hide_simple_grid_field20}"},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$es_programa_align}',
+     
+      
+      },
+
+{END cellblock_grid_cell_field20}
 											],
 				{END row_grid_1}
 		
@@ -1769,6 +2013,110 @@ pdfDocument = {
       },
 
 {END cellblock_grid_footcell_field16}
+																							{BEGIN cellblock_grid_footcell_field17}
+{
+	cellId: 'footcell_field17',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field17}
+																							{BEGIN cellblock_grid_footcell_field18}
+{
+	cellId: 'footcell_field18',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field18}
+																							{BEGIN cellblock_grid_footcell_field19}
+{
+	cellId: 'footcell_field19',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field19}
+																							{BEGIN cellblock_grid_footcell_field20}
+{
+	cellId: 'footcell_field20',
+	col:0,
+	row:0,
+				style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+		
+	
+			
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+     
+      
+      },
+
+{END cellblock_grid_footcell_field20}
 											],
 				{END row_grid_2}
 		

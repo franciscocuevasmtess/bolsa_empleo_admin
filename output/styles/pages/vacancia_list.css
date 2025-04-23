@@ -73,9 +73,6 @@
 [data-cellid="grid_cell_label11"][data-page="vacancia_list"][data-cellid="grid_cell_label11"][data-page="vacancia_list"][data-cellid="grid_cell_label11"][data-page="vacancia_list"] {
   background-color: #ffffff;
 }
-[data-cellid="grid_cell_field2"][data-page="vacancia_list"][data-cellid="grid_cell_field2"][data-page="vacancia_list"][data-cellid="grid_cell_field2"][data-page="vacancia_list"] {
-  background-color: #ffffff;
-}
 [data-page="vacancia_list"][data-itemid="details_found"] {
   color: #ffffff;
   font-weight: bold;
@@ -92,6 +89,7 @@
 }
 [data-page="vacancia_list"][data-itemid="grid_field1"] {
   width: 100%;
+  color: #000000;
   font-family: "Open Sans";
   white-space: normal;
 }
@@ -158,6 +156,7 @@
 }
 [data-page="vacancia_list"][data-itemid="grid_details_link"] {
   background-color: #5147f6;
+  padding-right: 10px;
 }
 [data-page="vacancia_list"][data-itemid="grid_details_link"] > a {
   color: #ffffff;
@@ -169,8 +168,10 @@
   color: #ffffff;
   font-weight: bold;
   font-size: 12px;
+  padding-right: 10px;
 }
 [data-page="vacancia_list"][data-itemid="text5"] {
+  color: #000000;
   font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_field11"] {
@@ -182,6 +183,7 @@
   font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="grid_alldetails_link"] > a {
+  color: #000000;
   font-weight: bold;
   font-size: 26px;
   font-family: "Open Sans";
@@ -193,6 +195,7 @@
   font-family: "Open Sans";
 }
 [data-page="vacancia_list"][data-itemid="details_preview1"] {
+  font-weight: bold;
   font-family: "Open Sans";
   padding-right: 30px;
 }
@@ -362,142 +365,50 @@ select.form-control {
     }
 }
 
-/* ***CODIGO ORIGINAL*** */
-/*
-body {
-	margin: 0;
-	background-image: linear-gradient(100deg,#4e49f8 0%,#d5018a 100%)!important;
-}
-
-.panel-default > .panel-heading {
-	color: #555555;
-	background-color: #ffffff;
-	border-color: #fff;
-}
-
-.panel-info > .panel-heading {
-	color: #3a87ad;
-	background-color: #d5018a;
-	border-color: #ddd;
-}
-
-/* Button /
-.clearfix .bs-details .details-grid .panel-heading .panel-title span span:nth-child(1) .btn-info{
-	background-color:#4e49f8;
-}
-
-.panel-info > .panel-heading .btn.btn-info:not(:hover) {
-	background-color: #4e49f8;
-}
-
-.r-topbar-page .r-topheader{
-	background-color:transparent;
-}
-
-/* Form supertop 1 /
-#form_supertop_1{
-	background-color:transparent;
-	border-style:none;
-	border-top-style:none;
-	border-right-style:none;
-	border-bottom-style:none;
-	border-left-style:none;
-}
-
-.badge-pendiente {  
-	background-color: #946D00!important;
-	color: #FFFFFF!important;
-}  
-
-.badge-busqueda {  
-	background-color: #398361!important;
-	color: #FFFFFF!important;
-}  
-
-.badge-evaluacion {  
-	background-color: #6F42C1!important;
-	color: #FFFFFF!important;
-}
-
-.badge-rechazado {  
-	background-color: #DC3545!important; 
-	color: #FFFFFF!important;
-}
-
-.badge-completada {  
-	background-color:  #FF0000!important; 
-	color: #FFFFFF!important;
-}
-
-.badge-cerrada {  
-	background-color: #FF0000 !important; 
-	color: #FFFFFF!important;
-}
-
-.badge {  
-	font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;  
-	font-weight: 600;  
-	padding: 2px 8px;  
-	text-shadow: none;      
-	border-radius: .25em !important;  
-	float: left!important;  
-}
-
-/* Contact /
-#contact{
-	background-color:#ffffff;
-}
-
-[data-itemid="puesto_select"] .select2-container {
-	width: 135vh !important; /* Ancho deseado para el campo select2 /
-}
-
-[data-itemid="salario_descripcion"] .select2-container {
-	width: 650px !important; /* Ancho deseado para el campo select2 /
-}
-
-[data-itemid="field_requisitos_exclu_formacion"] .select2-container {
-	width: 135vh !important; /* Ancho deseado para el campo select2 /
-}
-
-[data-itemid="habilidades_cono"] .select2-container {
-	width: 135vh !important; /* Ancho deseado para el campo select2 /
-}
-
-[data-itemid="puesto_select1"] .select2-container {
-	width: 160vh !important; /* Ancho deseado para el campo select2 /
-}
-
-[data-itemid="descripcion_salario"] .select2-selection--single { 
-	width: 715px !important; /* Ancho deseado para el campo select2 /
-}
-
-[data-itemid="descripcion_salario"] .select2-container {
-	width: 78vh !important; /* Ancho deseado para el campo select2 /
-}
-
-[data-itemid="field_requisitos_exclu_formacion1"] .select2-container {
-	width: 160vh !important; /* Ancho deseado para el campo select2 /
-}
-
-[data-itemid="habilidades_cono1"] .select2-container {
-	width: 160vh !important; /* Ancho deseado para el campo select2 /
-}
-
-[data-itemid="descripcion_salario"].select2-dropdown.select2-dropdown--below {
-	width: 78vh !important; /* Ancho deseado para el campo select2 /
-}
-*/
-
-
-/* ***CODIGO MODIFICADO*** */
-/* General */
+/* -------------------------------------------------------------------------- */
+/* 🌍 General */
+/* -------------------------------------------------------------------------- */
 body {
     margin: 0;
     background-image: linear-gradient(100deg, #4e49f8 0%, #d5018a 100%) !important;
+    /* Jerarquía tipográfica */
+    font-family: var(--font-primary);
+    /* font-size: var(--text-md); */ /* 16px base */
+    font-weight: var(--weight-normal);
 }
 
+
+/* -------------------------------------------------------------------------- */
+/* Jerarquía tipográfica para elementos específicos */
+/* -------------------------------------------------------------------------- */
+h1, .h1 { font-size: var(--text-xl); font-weight: var(--weight-bold); }
+h2, .h2 { font-size: var(--text-lg); }
+.breadcrumb, .small-text { font-size: var(--text-xs); }
+.btn, .form-control { font-size: var(--text-sm); }
+
+
+/* -------------------------------------------------------------------------- */
+/* Jerarquía tipográfica para elementos específicos botones */
+/* -------------------------------------------------------------------------- */
+.btn {
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Jerarquía tipográfica para elementos específicos tablas evitar 
+herencias inconsistentes */
+/* -------------------------------------------------------------------------- */
+.table {
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+}
+
+
+/* -------------------------------------------------------------------------- */
 /* Paneles */
+/* -------------------------------------------------------------------------- */
 .panel-default > .panel-heading {
     color: #555555;
     background-color: #ffffff;
@@ -510,7 +421,10 @@ body {
     border-color: #ddd;
 }
 
+
+/* -------------------------------------------------------------------------- */
 /* Botón */
+/* -------------------------------------------------------------------------- */
 .clearfix .bs-details .details-grid .panel-heading .panel-title span span:nth-child(1) .btn-info {
     background-color: #4e49f8;
 }
@@ -519,18 +433,27 @@ body {
     background-color: #4e49f8;
 }
 
+
+/* -------------------------------------------------------------------------- */
 /* Barra superior */
+/* -------------------------------------------------------------------------- */
 .r-topbar-page .r-topheader {
     background-color: transparent;
 }
 
+
+/* -------------------------------------------------------------------------- */
 /* Form supertop 1 */
+/* -------------------------------------------------------------------------- */
 #form_supertop_1 {
     background-color: transparent;
     border: none;
 }
 
+
+/* -------------------------------------------------------------------------- */
 /* Etiquetas tipo "badge" */
+/* -------------------------------------------------------------------------- */
 .badge {
     font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600;
@@ -540,25 +463,37 @@ body {
     float: left !important;
 }
 
+
+/* -------------------------------------------------------------------------- */
 /* Colores de etiquetas */
+/* -------------------------------------------------------------------------- */
 .badge-pendiente { background-color: #946D00 !important; color: #FFFFFF !important; }
 .badge-busqueda { background-color: #398361 !important; color: #FFFFFF !important; }
 .badge-evaluacion { background-color: #6F42C1 !important; color: #FFFFFF !important; }
 .badge-rechazado { background-color: #DC3545 !important; color: #FFFFFF !important; }
 .badge-completada, .badge-cerrada { background-color: #FF0000 !important; color: #FFFFFF !important; }
 
+
+/* -------------------------------------------------------------------------- */
 /* Contact */
+/* -------------------------------------------------------------------------- */
 #contact {
     background-color: #ffffff;
 }
 
+
+/* -------------------------------------------------------------------------- */
 /* Ajustes generales para Select2 */
+/* -------------------------------------------------------------------------- */
 .select2-container {
     max-width: 100% !important; /* Evita que se desborde en pantallas pequeñas */
     min-width: 250px !important; /* Para asegurar un tamaño mínimo */
 }
 
+
+/* -------------------------------------------------------------------------- */
 /* Ajustes específicos para diferentes elementos */
+/* -------------------------------------------------------------------------- */
 [data-itemid="puesto_select"],
 [data-itemid="field_requisitos_exclu_formacion"],
 [data-itemid="habilidades_cono"],
@@ -568,13 +503,19 @@ body {
     width: 100% !important; /* Ajuste dinámico */
 }
 
+
+/* -------------------------------------------------------------------------- */
 /* Ajuste para descripción de salario */
+/* -------------------------------------------------------------------------- */
 [data-itemid="descripcion_salario"] .select2-selection--single,
 [data-itemid="descripcion_salario"] .select2-container {
     width: 100% !important;
 }
 
+
+/* -------------------------------------------------------------------------- */
 /* Media Queries para Responsividad */
+/* -------------------------------------------------------------------------- */
 @media (max-width: 1200px) { /* Tablets y laptops pequeñas */
     .panel-info > .panel-heading {
         font-size: 16px;
@@ -615,102 +556,89 @@ body {
         min-width: 150px !important;
     }
 }
-/* ********************* */
 
-/*
-/* Link /
-.nav-justified .active a {
-	background-color:transparent !important;
-	color:#151313 !important;
-	border-style:solid !important;
-	border-width:1px !important;
-	border-color:#faf9f9  !important;
-	border-bottom-style:none !important;
-}
 
-/* Link /
-.nav-justified li a {
-	border-bottom-color:#ececed !important;
-	border-bottom-style:solid !important;
-	border-top-left-radius:0px !important;
-	border-top-right-radius:0px !important;
-	border-bottom-left-radius:0px !important;
-	border-bottom-right-radius:0px !important;
-}
 
-/* Select /
-#form_step3_27 tr select {
-	/*width:321px !important;/
-	transform:translatex(0px) translatey(0px) !important;
-}
-
-/* Input /
-#form_step3_27 tr input[type=text] {
-	width:100% !important;
-}
-
-/* Link /
-.r-topbar-page .r-body .r-content .r-data-block .r-above #form_above-grid_1 .row .col-md-12 .nav-justified li a {
-	border-bottom-width:1px !important;
-}
-
-/* Select /
-#form_step3_1 tr select {
-	width:100% !important;
-}
-
-/* Input /
-#form_step3_1 tr input[type=text] {
-	width:100% !important;
-}
-
-/* Strong Tag /
-#form_top_1 h3 strong {
-	color:#0c0c0d !important;
-}
-
-/* Heading /
-#form_top_1 span h5 {
-	color:#090a0a !important;
-}
-
-/* Link /
-.bs-popup .modal-dialog .ui-resizable .modal-body .rnr-pagewrapper #form_above-grid_11 .row .col-md-12 .nav-justified li a {
-	border-bottom-width:2px !important;
-}
-
-/* Button /
-.input-group .input-group-btn .btn-primary {
-	background-color:#0d6efd;
-	background-blend-mode:multiply;
-}
-
-/* Button /
-#form_above-grid_1 .row .r-align-right > span > .btn-primary {
-	background-color:#0c14fc;
-	background-blend-mode:saturation;
-}
-
-.panel-default > .panel-heading {
-	color: #555555;
-	background-color: #ffffff;
-	border-color: #fff;
-}
-
+/* -------------------------------------------------------------------------- */
+/* ************************************************************************** */
+/* -------------------------------------------------------------------------- */
+/* 
+   Personalización del menú desplegable:
+   Se cambia el color de fondo del menú en los botones de "Acciones"
+   dentro de la pantalla "Vacancias" para mejorar la visibilidad de los enlaces.
 */
+.dropdown-menu {
+    background-color: #afc7f7 !important;
+}
 
+/* 
+   Estilos personalizados para los enlaces de detalles:
+   - Aplica un color específico a los enlaces "Ver Detalles" y otros 
+     relacionados con los estados de los postulantes en la 
+     pantalla "Vacancias List".
+   - Se mejora la apariencia general con un diseño más visible y alineado.
+*/
+a[data-itemtype="grid_alldetails_link"] {
+    color: #157ab5 !important;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* 
+   Ajuste del icono dentro del enlace "Ver Detalles":
+   - Se define un tamaño de fuente específico para mantener la proporción.
+   - Se agrega un margen derecho para evitar que el ícono se vea pegado al texto.
+*/
+a[data-itemtype="grid_alldetails_link"] span.glyphicon {
+    font-size: 14px;
+    margin-right: 5px;
+}
+/* 
+   Mantener el color del enlace en todos los estados:
+   - Se asegura que los enlaces no cambien de color al ser visitados, activos o enfocados.
+   - Se refuerza la visibilidad con un peso de fuente en negrita.
+*/
+a[data-itemtype="grid_alldetails_link"]:visited,
+a[data-itemtype="grid_alldetails_link"]:active,
+a[data-itemtype="grid_alldetails_link"]:focus {
+    color: #157ab5;
+    font-weight: bold;
+}
 
-/* ------------------------- */
+/* 
+   Corrección de visibilidad en los Tabs:
+   - Se establecen colores específicos para los textos de los Tabs 
+   en "Vacancias List".
+   - Se mantiene la misma tonalidad en todos los estados para mejorar la 
+   experiencia de usuario.
+*/
+li[data-tabidx="0"] a,
+li[data-tabidx="1"] a, 
+li[data-tabidx="2"] a, 
+li[data-tabidx="3"] a, 
+li[data-tabidx="4"] a, 
+li[data-tabidx="5"] a, 
+li[data-tabidx="6"] a {
+    color: #2FA4E7;
+}
+/* -------------------------------------------------------------------------- */
+/* ************************************************************************** */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
 /* 🌍 General */
-/* ------------------------- */
+/* -------------------------------------------------------------------------- */
 body {
     margin: 0;
     background: linear-gradient(100deg, #4e49f8 0%, #d5018a 100%) !important;
 }
 
-/* ------------------------- */
+
+/* -------------------------------------------------------------------------- */
 /* 📌 Links - Menú Justificado */
-/* ------------------------- */
+/* -------------------------------------------------------------------------- */
 .nav-justified .active a {
     background-color: transparent !important;
     color: #151313 !important;
@@ -723,9 +651,10 @@ body {
     border-radius: 0px !important;
 }
 
-/* ------------------------- */
+
+/* -------------------------------------------------------------------------- */
 /* 📌 Formulario - Inputs y Selects */
-/* ------------------------- */
+/* -------------------------------------------------------------------------- */
 #form_step3_27 tr select,
 #form_step3_1 tr select {
     width: 100% !important; /* Adaptable a cualquier pantalla */
@@ -736,9 +665,10 @@ body {
     width: 100% !important; /* Adaptable a cualquier pantalla */
 }
 
-/* ------------------------- */
+
+/* -------------------------------------------------------------------------- */
 /* 📌 Botones */
-/* ------------------------- */
+/* -------------------------------------------------------------------------- */
 .input-group .input-group-btn .btn-primary {
     background-color: #0d6efd;
     background-blend-mode: multiply;
@@ -749,18 +679,20 @@ body {
     background-blend-mode: saturation;
 }
 
-/* ------------------------- */
+
+/* -------------------------------------------------------------------------- */
 /* 📌 Paneles */
-/* ------------------------- */
+/* -------------------------------------------------------------------------- */
 .panel-default > .panel-heading {
     color: #555555;
     background-color: #ffffff;
     border-color: #fff;
 }
 
-/* ------------------------- */
+
+/* -------------------------------------------------------------------------- */
 /* 📌 Fuentes y Encabezados */
-/* ------------------------- */
+/* -------------------------------------------------------------------------- */
 #form_top_1 h3 strong {
     color: #0c0c0d !important;
 }
@@ -769,24 +701,27 @@ body {
     color: #090a0a !important;
 }
 
-/* ------------------------- */
+
+/* -------------------------------------------------------------------------- */
 /* 📌 Modal y Popups */
-/* ------------------------- */
+/* -------------------------------------------------------------------------- */
 .bs-popup .modal-dialog .modal-body .rnr-pagewrapper .nav-justified li a {
     border-bottom-width: 2px !important;
 }
 
-/* ------------------------- */
+
+/* -------------------------------------------------------------------------- */
 /* 📌 Ajustes de ancho - Evitar valores fijos */
-/* ------------------------- */
+/* -------------------------------------------------------------------------- */
 .element-style {
     max-width: 100% !important; /* Se adapta en cualquier pantalla */
     min-width: 250px !important; /* Evita tamaños demasiado pequeños */
 }
 
-/* ------------------------- */
+
+/* -------------------------------------------------------------------------- */
 /* 📌 Ajustes Responsivos con Media Queries */
-/* ------------------------- */
+/* -------------------------------------------------------------------------- */
 @media (max-width: 1200px) { /* Tablets y laptops pequeñas */
     .nav-justified .active a {
         font-size: 14px;
@@ -822,3 +757,44 @@ body {
         padding: 5px 10px;
     }
 }
+
+.nav-tabs > li > a {
+    text-shadow: 2px 2px 10px #000000;
+    color: #fff;
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* Personalizacion especial para el div que muestra las vacancias subsidiadas */
+/* -------------------------------------------------------------------------- */
+@keyframes pulse {
+  0% { transform: rotate(-45deg) scale(1); opacity: 0; }
+  50% { transform: rotate(-45deg) scale(1.05); opacity: 1; }
+  100% { transform: rotate(-45deg) scale(1); opacity: 1; }
+}
+
+.badge-especial {
+  position: absolute;
+  top: 8px;
+  left: -20px;
+  /*background: rgba(40, 167, 69, 0.85);*/ /* Verde con transparencia */
+  background: rgba(40, 167, 69, 0.65);
+  color: white;
+  /*padding: 3px 25px;*/
+  padding: 7px 8px;
+  transform: rotate(-45deg);
+  font-weight: 600;
+  font-size: 10px;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  pointer-events: none;
+  animation: pulse 0.8s ease-in-out;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+/* -------------------------------------------------------------------------- */
+/* Fin Personalizacion especial */
+/* -------------------------------------------------------------------------- */

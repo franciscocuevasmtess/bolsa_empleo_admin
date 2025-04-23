@@ -123232,3 +123232,1750 @@ Array
         )
 
 )
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+---2605---1Array
+(
+)
+---2605---1 SELECT 
+        ROW_NUMBER() OVER () AS nro_de_orden,
+        x.nro_documento,
+        x.fullname AS nombre_completo,
+        /* EXPERIENCIA LABORAL */
+        concat_ws (
+        ' | ',
+        (
+            SELECT string_agg(
+                concat_ws(' | ', M.empresa, M.descripcion_puesto, 
+                    concat(M.anhos_de_experiencia, ' años ', M.meses_de_experiencia, ' meses')
+                ),
+                ', '
+            )
+            FROM bolsa_empleo.cvc_experiencia_laboral M 
+            WHERE M.fk_persona_id = x.personaid AND M.proveedor::TEXT = 'REOP'::TEXT
+        ),
+        (
+            SELECT string_agg(
+                concat_ws(' | ', M.empresa, M.descripcion_puesto, 
+                    concat(M.anhos_de_experiencia, ' años ', M.meses_de_experiencia, ' meses')
+                ),
+                ', '
+            )
+            FROM bolsa_empleo.cvc_experiencia_laboral M 
+            WHERE M.fk_persona_id = x.personaid AND M.proveedor::TEXT = 'IPS'::TEXT
+        ),
+        (
+            SELECT string_agg(
+                concat_ws(' | ', M.empresa, M.descripcion_puesto, 
+                    concat(M.anhos_de_experiencia, ' años ', M.meses_de_experiencia, ' meses')
+                ),
+                ', '
+            )
+            FROM bolsa_empleo.cvc_experiencia_laboral M 
+            WHERE M.fk_persona_id = x.personaid AND M.proveedor::TEXT = 'Usuario'::TEXT
+        )
+    ) AS experiencia_laboral,
+    COALESCE(eportal.persons_phones.phone, '') AS telefono,
+    eportal.city.name AS ciudad,
+    eportal.distritos.name AS departamento,
+    /* FORMACION ACADEMICA */
+    concat_ws(' | ',
+        (
+            SELECT string_agg(
+                concat_ws('|', j.titulo_obtenido, j.institucion_eucativa, j.nivel_academico), 
+                ', '
+            )
+            FROM bolsa_empleo.vista_materializada_union_mec j
+            WHERE j.fk_personaid = x.personaid AND j.proveedor = 'MEC'::text
+        ),
+        (
+            SELECT string_agg(
+                concat_ws('|', j.titulo_obtenido, j.institucion_eucativa, j.nivel_academico), 
+                ', '
+            )
+            FROM bolsa_empleo.vista_materializada_union_mec j
+            WHERE j.fk_personaid = x.personaid AND j.proveedor = 'SNPP'::text
+        ),
+        (
+            SELECT string_agg(
+                concat_ws('|', j.titulo_obtenido, j.institucion_eucativa, j.nivel_academico), 
+                ', '
+            )
+            FROM bolsa_empleo.vista_materializada_union_mec j
+            WHERE j.fk_personaid = x.personaid AND j.proveedor = 'Usuario'::text
+        )
+    ) AS formacion_academica,
+    date_part('year', age(CURRENT_DATE, persons.fechanac))::integer AS edad_postulante,
+    eportal.persons.sexo,
+    empresa_sucursal.legal AS razon_social,
+    empresa_sucursal.ruc,
+    bolsa_empleo.ocupaciones_nuevas.descripcion AS vacancia_laboral,
+    bolsa_empleo.postulacion.id_vacancia AS codigo,
+    bolsa_empleo.postulacion.fecha_postulacion AS fecha,
+    discap_type.descripcion AS discapacidad,
+	eportal.persons.porcentaje_discapacidad AS porcentaje_discapacidad,
+    /* TIPO DE MOVILIDAD */
+	(SELECT STRING_AGG(CONCAT_WS(' | ', 
+									'TIPO_MOVILIDAD: ' || bolsa_empleo.tipo_movilidad.descripcion, 
+									'TIPO_REGISTRO_CONDUCIR: ' || bolsa_empleo.tipo_registro_conducir.nombre, 
+									'TIENE_REGISTRO_CONDUCIR: ' || bolsa_empleo.cvc_movilidad.registro_conducir, 
+									'TIENE_MOVILIDAD_PROPIA: ' || bolsa_empleo.cvc_movilidad.movilidad_propia
+								), ', '
+						)
+		FROM bolsa_empleo.cvc_movilidad
+				INNER JOIN bolsa_empleo.movilidad_detalle_cvc ON bolsa_empleo.cvc_movilidad.fk_persona_id = bolsa_empleo.movilidad_detalle_cvc.id_persona_pk
+				INNER JOIN bolsa_empleo.tipo_movilidad ON bolsa_empleo.movilidad_detalle_cvc.id_tipo_movilidad_cvc = bolsa_empleo.tipo_movilidad.id_tipo_movilidad
+				INNER JOIN bolsa_empleo.registro_conducir_detalle_cvc ON bolsa_empleo.cvc_movilidad.fk_persona_id = bolsa_empleo.registro_conducir_detalle_cvc.id_persona_pk
+				INNER JOIN bolsa_empleo.tipo_registro_conducir ON bolsa_empleo.registro_conducir_detalle_cvc.id_tipo_registro_conducir_cvc = bolsa_empleo.tipo_registro_conducir.id_registro_conducir
+		WHERE bolsa_empleo.cvc_movilidad.fk_persona_id = x.personaid
+	) AS movilidad_propia
+    FROM bolsa_empleo.postulacion
+        JOIN bolsa_empleo.bolsa_users x 
+            ON postulacion.fk_personaid = x.personaid
+        JOIN eportal.persons 
+            ON x.personaid = persons.id 
+        -- Cambiar este JOIN por LEFT JOIN para que se incluya el registro aún sin teléfono
+        LEFT JOIN eportal.persons_phones 
+            ON x.personaid = eportal.persons_phones.person_id
+        JOIN bolsa_empleo.vacancia_empresa AS vacancia_empresa 
+            ON vacancia_empresa.id_vacancia = bolsa_empleo.postulacion.id_vacancia
+        JOIN eportal.city 
+            ON persons.city_id = eportal.city.id
+        JOIN eportal.distritos 
+            ON persons.distrito_id = eportal.distritos.id
+        JOIN bolsa_empleo.empresas_bolsa_sucursales AS empresa_sucursal 
+            ON vacancia_empresa.id_empresa_sucursal = empresa_sucursal.id
+        JOIN bolsa_empleo.vacancia_puesto 
+            ON bolsa_empleo.vacancia_puesto.id_vacancia = bolsa_empleo.postulacion.id_vacancia
+        JOIN bolsa_empleo.ocupaciones_nuevas 
+            ON bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic = bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto
+        LEFT JOIN eportal.eportal.persons_discapacidades AS discap ON discap.person_id = eportal.persons.id
+        LEFT JOIN eportal.eportal.persons_discap_types AS  discap_type ON discap_type.persons_discap_types_id = discap.tipo_discapacidad_id
+    WHERE bolsa_empleo.postulacion.id_vacancia = :id_vacancias
+    AND id_estado = :id_estado;
+    Array
+(
+)
+---2605---1 SELECT 
+        ROW_NUMBER() OVER () AS nro_de_orden,
+        x.nro_documento,
+        x.fullname AS nombre_completo,
+        /* EXPERIENCIA LABORAL */
+        concat_ws (
+        ' | ',
+        (
+            SELECT string_agg(
+                concat_ws(' | ', M.empresa, M.descripcion_puesto, 
+                    concat(M.anhos_de_experiencia, ' años ', M.meses_de_experiencia, ' meses')
+                ),
+                ', '
+            )
+            FROM bolsa_empleo.cvc_experiencia_laboral M 
+            WHERE M.fk_persona_id = x.personaid AND M.proveedor::TEXT = 'REOP'::TEXT
+        ),
+        (
+            SELECT string_agg(
+                concat_ws(' | ', M.empresa, M.descripcion_puesto, 
+                    concat(M.anhos_de_experiencia, ' años ', M.meses_de_experiencia, ' meses')
+                ),
+                ', '
+            )
+            FROM bolsa_empleo.cvc_experiencia_laboral M 
+            WHERE M.fk_persona_id = x.personaid AND M.proveedor::TEXT = 'IPS'::TEXT
+        ),
+        (
+            SELECT string_agg(
+                concat_ws(' | ', M.empresa, M.descripcion_puesto, 
+                    concat(M.anhos_de_experiencia, ' años ', M.meses_de_experiencia, ' meses')
+                ),
+                ', '
+            )
+            FROM bolsa_empleo.cvc_experiencia_laboral M 
+            WHERE M.fk_persona_id = x.personaid AND M.proveedor::TEXT = 'Usuario'::TEXT
+        )
+    ) AS experiencia_laboral,
+    COALESCE(eportal.persons_phones.phone, '') AS telefono,
+    eportal.city.name AS ciudad,
+    eportal.distritos.name AS departamento,
+    /* FORMACION ACADEMICA */
+    concat_ws(' | ',
+        (
+            SELECT string_agg(
+                concat_ws('|', j.titulo_obtenido, j.institucion_eucativa, j.nivel_academico), 
+                ', '
+            )
+            FROM bolsa_empleo.vista_materializada_union_mec j
+            WHERE j.fk_personaid = x.personaid AND j.proveedor = 'MEC'::text
+        ),
+        (
+            SELECT string_agg(
+                concat_ws('|', j.titulo_obtenido, j.institucion_eucativa, j.nivel_academico), 
+                ', '
+            )
+            FROM bolsa_empleo.vista_materializada_union_mec j
+            WHERE j.fk_personaid = x.personaid AND j.proveedor = 'SNPP'::text
+        ),
+        (
+            SELECT string_agg(
+                concat_ws('|', j.titulo_obtenido, j.institucion_eucativa, j.nivel_academico), 
+                ', '
+            )
+            FROM bolsa_empleo.vista_materializada_union_mec j
+            WHERE j.fk_personaid = x.personaid AND j.proveedor = 'Usuario'::text
+        )
+    ) AS formacion_academica,
+    date_part('year', age(CURRENT_DATE, persons.fechanac))::integer AS edad_postulante,
+    eportal.persons.sexo,
+    empresa_sucursal.legal AS razon_social,
+    empresa_sucursal.ruc,
+    bolsa_empleo.ocupaciones_nuevas.descripcion AS vacancia_laboral,
+    bolsa_empleo.postulacion.id_vacancia AS codigo,
+    bolsa_empleo.postulacion.fecha_postulacion AS fecha,
+    discap_type.descripcion AS discapacidad,
+	eportal.persons.porcentaje_discapacidad AS porcentaje_discapacidad,
+    /* TIPO DE MOVILIDAD */
+	(SELECT STRING_AGG(CONCAT_WS(' | ', 
+									'TIPO_MOVILIDAD: ' || bolsa_empleo.tipo_movilidad.descripcion, 
+									'TIPO_REGISTRO_CONDUCIR: ' || bolsa_empleo.tipo_registro_conducir.nombre, 
+									'TIENE_REGISTRO_CONDUCIR: ' || bolsa_empleo.cvc_movilidad.registro_conducir, 
+									'TIENE_MOVILIDAD_PROPIA: ' || bolsa_empleo.cvc_movilidad.movilidad_propia
+								), ', '
+						)
+		FROM bolsa_empleo.cvc_movilidad
+				INNER JOIN bolsa_empleo.movilidad_detalle_cvc ON bolsa_empleo.cvc_movilidad.fk_persona_id = bolsa_empleo.movilidad_detalle_cvc.id_persona_pk
+				INNER JOIN bolsa_empleo.tipo_movilidad ON bolsa_empleo.movilidad_detalle_cvc.id_tipo_movilidad_cvc = bolsa_empleo.tipo_movilidad.id_tipo_movilidad
+				INNER JOIN bolsa_empleo.registro_conducir_detalle_cvc ON bolsa_empleo.cvc_movilidad.fk_persona_id = bolsa_empleo.registro_conducir_detalle_cvc.id_persona_pk
+				INNER JOIN bolsa_empleo.tipo_registro_conducir ON bolsa_empleo.registro_conducir_detalle_cvc.id_tipo_registro_conducir_cvc = bolsa_empleo.tipo_registro_conducir.id_registro_conducir
+		WHERE bolsa_empleo.cvc_movilidad.fk_persona_id = x.personaid
+	) AS movilidad_propia
+    FROM bolsa_empleo.postulacion
+        JOIN bolsa_empleo.bolsa_users x 
+            ON postulacion.fk_personaid = x.personaid
+        JOIN eportal.persons 
+            ON x.personaid = persons.id 
+        -- Cambiar este JOIN por LEFT JOIN para que se incluya el registro aún sin teléfono
+        LEFT JOIN eportal.persons_phones 
+            ON x.personaid = eportal.persons_phones.person_id
+        JOIN bolsa_empleo.vacancia_empresa AS vacancia_empresa 
+            ON vacancia_empresa.id_vacancia = bolsa_empleo.postulacion.id_vacancia
+        JOIN eportal.city 
+            ON persons.city_id = eportal.city.id
+        JOIN eportal.distritos 
+            ON persons.distrito_id = eportal.distritos.id
+        JOIN bolsa_empleo.empresas_bolsa_sucursales AS empresa_sucursal 
+            ON vacancia_empresa.id_empresa_sucursal = empresa_sucursal.id
+        JOIN bolsa_empleo.vacancia_puesto 
+            ON bolsa_empleo.vacancia_puesto.id_vacancia = bolsa_empleo.postulacion.id_vacancia
+        JOIN bolsa_empleo.ocupaciones_nuevas 
+            ON bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic = bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto
+        LEFT JOIN eportal.eportal.persons_discapacidades AS discap ON discap.person_id = eportal.persons.id
+        LEFT JOIN eportal.eportal.persons_discap_types AS  discap_type ON discap_type.persons_discap_types_id = discap.tipo_discapacidad_id
+    WHERE bolsa_empleo.postulacion.id_vacancia = :id_vacancias
+    AND id_estado = :id_estado;
+    Array
+(
+)
+---2605---1 SELECT 
+        ROW_NUMBER() OVER () AS nro_de_orden,
+        x.nro_documento,
+        x.fullname AS nombre_completo,
+        /* EXPERIENCIA LABORAL */
+        concat_ws (
+        ' | ',
+        (
+            SELECT string_agg(
+                concat_ws(' | ', M.empresa, M.descripcion_puesto, 
+                    concat(M.anhos_de_experiencia, ' años ', M.meses_de_experiencia, ' meses')
+                ),
+                ', '
+            )
+            FROM bolsa_empleo.cvc_experiencia_laboral M 
+            WHERE M.fk_persona_id = x.personaid AND M.proveedor::TEXT = 'REOP'::TEXT
+        ),
+        (
+            SELECT string_agg(
+                concat_ws(' | ', M.empresa, M.descripcion_puesto, 
+                    concat(M.anhos_de_experiencia, ' años ', M.meses_de_experiencia, ' meses')
+                ),
+                ', '
+            )
+            FROM bolsa_empleo.cvc_experiencia_laboral M 
+            WHERE M.fk_persona_id = x.personaid AND M.proveedor::TEXT = 'IPS'::TEXT
+        ),
+        (
+            SELECT string_agg(
+                concat_ws(' | ', M.empresa, M.descripcion_puesto, 
+                    concat(M.anhos_de_experiencia, ' años ', M.meses_de_experiencia, ' meses')
+                ),
+                ', '
+            )
+            FROM bolsa_empleo.cvc_experiencia_laboral M 
+            WHERE M.fk_persona_id = x.personaid AND M.proveedor::TEXT = 'Usuario'::TEXT
+        )
+    ) AS experiencia_laboral,
+    COALESCE(eportal.persons_phones.phone, '') AS telefono,
+    eportal.city.name AS ciudad,
+    eportal.distritos.name AS departamento,
+    /* FORMACION ACADEMICA */
+    concat_ws(' | ',
+        (
+            SELECT string_agg(
+                concat_ws('|', j.titulo_obtenido, j.institucion_eucativa, j.nivel_academico), 
+                ', '
+            )
+            FROM bolsa_empleo.vista_materializada_union_mec j
+            WHERE j.fk_personaid = x.personaid AND j.proveedor = 'MEC'::text
+        ),
+        (
+            SELECT string_agg(
+                concat_ws('|', j.titulo_obtenido, j.institucion_eucativa, j.nivel_academico), 
+                ', '
+            )
+            FROM bolsa_empleo.vista_materializada_union_mec j
+            WHERE j.fk_personaid = x.personaid AND j.proveedor = 'SNPP'::text
+        ),
+        (
+            SELECT string_agg(
+                concat_ws('|', j.titulo_obtenido, j.institucion_eucativa, j.nivel_academico), 
+                ', '
+            )
+            FROM bolsa_empleo.vista_materializada_union_mec j
+            WHERE j.fk_personaid = x.personaid AND j.proveedor = 'Usuario'::text
+        )
+    ) AS formacion_academica,
+    date_part('year', age(CURRENT_DATE, persons.fechanac))::integer AS edad_postulante,
+    eportal.persons.sexo,
+    empresa_sucursal.legal AS razon_social,
+    empresa_sucursal.ruc,
+    bolsa_empleo.ocupaciones_nuevas.descripcion AS vacancia_laboral,
+    bolsa_empleo.postulacion.id_vacancia AS codigo,
+    bolsa_empleo.postulacion.fecha_postulacion AS fecha,
+    discap_type.descripcion AS discapacidad,
+	eportal.persons.porcentaje_discapacidad AS porcentaje_discapacidad,
+    /* TIPO DE MOVILIDAD */
+	(SELECT STRING_AGG(CONCAT_WS(' | ', 
+									'TIPO_MOVILIDAD: ' || bolsa_empleo.tipo_movilidad.descripcion, 
+									'TIPO_REGISTRO_CONDUCIR: ' || bolsa_empleo.tipo_registro_conducir.nombre, 
+									'TIENE_REGISTRO_CONDUCIR: ' || bolsa_empleo.cvc_movilidad.registro_conducir, 
+									'TIENE_MOVILIDAD_PROPIA: ' || bolsa_empleo.cvc_movilidad.movilidad_propia
+								), ', '
+						)
+		FROM bolsa_empleo.cvc_movilidad
+				INNER JOIN bolsa_empleo.movilidad_detalle_cvc ON bolsa_empleo.cvc_movilidad.fk_persona_id = bolsa_empleo.movilidad_detalle_cvc.id_persona_pk
+				INNER JOIN bolsa_empleo.tipo_movilidad ON bolsa_empleo.movilidad_detalle_cvc.id_tipo_movilidad_cvc = bolsa_empleo.tipo_movilidad.id_tipo_movilidad
+				INNER JOIN bolsa_empleo.registro_conducir_detalle_cvc ON bolsa_empleo.cvc_movilidad.fk_persona_id = bolsa_empleo.registro_conducir_detalle_cvc.id_persona_pk
+				INNER JOIN bolsa_empleo.tipo_registro_conducir ON bolsa_empleo.registro_conducir_detalle_cvc.id_tipo_registro_conducir_cvc = bolsa_empleo.tipo_registro_conducir.id_registro_conducir
+		WHERE bolsa_empleo.cvc_movilidad.fk_persona_id = x.personaid
+	) AS movilidad_propia
+    FROM bolsa_empleo.postulacion
+        JOIN bolsa_empleo.bolsa_users x 
+            ON postulacion.fk_personaid = x.personaid
+        JOIN eportal.persons 
+            ON x.personaid = persons.id 
+        -- Cambiar este JOIN por LEFT JOIN para que se incluya el registro aún sin teléfono
+        LEFT JOIN eportal.persons_phones 
+            ON x.personaid = eportal.persons_phones.person_id
+        JOIN bolsa_empleo.vacancia_empresa AS vacancia_empresa 
+            ON vacancia_empresa.id_vacancia = bolsa_empleo.postulacion.id_vacancia
+        JOIN eportal.city 
+            ON persons.city_id = eportal.city.id
+        JOIN eportal.distritos 
+            ON persons.distrito_id = eportal.distritos.id
+        JOIN bolsa_empleo.empresas_bolsa_sucursales AS empresa_sucursal 
+            ON vacancia_empresa.id_empresa_sucursal = empresa_sucursal.id
+        JOIN bolsa_empleo.vacancia_puesto 
+            ON bolsa_empleo.vacancia_puesto.id_vacancia = bolsa_empleo.postulacion.id_vacancia
+        JOIN bolsa_empleo.ocupaciones_nuevas 
+            ON bolsa_empleo.ocupaciones_nuevas.id_ocu_puest_clasic = bolsa_empleo.vacancia_puesto.fk_ocupacion_puesto
+        LEFT JOIN eportal.eportal.persons_discapacidades AS discap ON discap.person_id = eportal.persons.id
+        LEFT JOIN eportal.eportal.persons_discap_types AS  discap_type ON discap_type.persons_discap_types_id = discap.tipo_discapacidad_id
+    WHERE bolsa_empleo.postulacion.id_vacancia = :id_vacancias
+    AND id_estado = :id_estado;
+    Array
+(
+    [0] => Array
+        (
+            [nro_de_orden] => 1
+            [nro_documento] => 2196920
+            [nombre_completo] => FRANCISCO GIMENEZ ROJAS
+            [experiencia_laboral] => T. G. CUIR INTERNATIONAL SA | CORTADOR | 5 años 6 meses, AMSPEC DE PARAGUAY SOCIEDAD ANÓNIMA | INSPECTOR AGRICOLA | 1 años 2 meses
+            [telefono] => (0981)-258305
+            [ciudad] => SAN ANTONIO                        
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 49
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.060562
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+    [1] => Array
+        (
+            [nro_de_orden] => 2
+            [nro_documento] => 4244096
+            [nombre_completo] => RAINE DIVINO BENITEZ
+            [experiencia_laboral] => LUA SRL | TIENDISTA | 0 años 2 meses, CELLULAR S.A. | ENCARGADO DE STOCK CENTRAL | 0 años 1 meses, PROSEGUR PARAGUAY S.A. | GARITERO | 8 años 10 meses
+            [telefono] => (0982)-375589
+            [ciudad] => LIMPIO                             
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 40
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.248326
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+    [2] => Array
+        (
+            [nro_de_orden] => 3
+            [nro_documento] => 3691890
+            [nombre_completo] => SERGIO ALEJANDRO DEJESUS TORRES MEDINA
+            [experiencia_laboral] => CAFEPAR SA | REPOSITOR TECNICO | 0 años 6 meses, BROUMARKETS SA | COBRADOR | 1 años 8 meses
+            [telefono] => (0994)-259322
+            [ciudad] => FERNANDO DE LA MORA                
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 32
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.624458
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+    [3] => Array
+        (
+            [nro_de_orden] => 4
+            [nro_documento] => 4498178
+            [nombre_completo] => JUAN MARCELO QUINTANA
+            [experiencia_laboral] => JUAN DE LA CRUZ MORENO  | AYUDANTE DE ALBAÑIL | 0 años 0 meses
+            [telefono] => (0984)-186960
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 34
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.796103
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+    [4] => Array
+        (
+            [nro_de_orden] => 5
+            [nro_documento] => 4813524
+            [nombre_completo] => MELODI FILOMENA SERVIN BERNAL
+            [experiencia_laboral] => GRUPO ASUCOR SRL | LIC. EN KINESIOLOGÍA Y FISIOTERAPIA | 0 años 2 meses
+            [telefono] => (0984)-704610
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => LICENCIADO/A|UNIVERSIDAD DEL NORTE|Educación Superior, 3er Curso|COLEGIO PRIVADO CAMPUS SCHOOL|Educacion Básica	
+            [edad_postulante] => 23
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.000564
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+    [5] => Array
+        (
+            [nro_de_orden] => 6
+            [nro_documento] => 5125401
+            [nombre_completo] => FATIMA ISABEL DUARTE VARGAS
+            [experiencia_laboral] => GEMA SA | PARAMEDICO | 1 años 2 meses
+            [telefono] => (0982)-457252
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => LICENCIADO/A|UNIVERSIDAD NACIONAL DE ASUNCIÓN - ANDRES BARBERO|Educación Superior, 3er Curso|COLEGIO NACIONAL DR. LUIS ALBERTO DE HERRERA|Educacion Básica	
+            [edad_postulante] => 26
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.334109
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+    [6] => Array
+        (
+            [nro_de_orden] => 7
+            [nro_documento] => 6797079
+            [nombre_completo] => LAURA BELEN MORINIGO SANDOVAL
+            [experiencia_laboral] => CINEMARK PARAGUAY S.R.L. | STAFF DE CINE | 0 años 1 meses, FOODCO S.A. | CREW / ATENCION AL CLIENTE | 1 años 1 meses | CINEMARK PARAGUAY   S.R.L. | 0 años 1 meses
+            [telefono] => (0991)-501496
+            [ciudad] => MARIANO ROQUE ALONSO               
+            [departamento] => CENTRAL
+            [formacion_academica] => 4to Nivel| CENTRO DE EDUCACIÓN MEDIA PARA PERSONAS JÓVENES Y ADULTAS SAN NICOLÁS|Educacion Básica	
+            [edad_postulante] => 25
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.632345
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+    [7] => Array
+        (
+            [nro_de_orden] => 8
+            [nro_documento] => 5854324
+            [nombre_completo] => NADIA SOFIA DUARTE ALVAREZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => ENCARNACIÓN                        
+            [departamento] => ITAPÚA
+            [formacion_academica] => 4to Ciclo|CENTRO DE EDUCACIÓN BÁSICA PARA PERSONAS JÓVENES Y ADULTAS N° 7-15 SANTA MARÍA DEL PERPETUO SOCORRO|Educacion Básica	
+            [edad_postulante] => 22
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.812079
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+    [8] => Array
+        (
+            [nro_de_orden] => 9
+            [nro_documento] => 7381273
+            [nombre_completo] => VICTOR DANIEL DUARTE BAEZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 21
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.212565
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+    [9] => Array
+        (
+            [nro_de_orden] => 10
+            [nro_documento] => 7317259
+            [nombre_completo] => RUTH VALERIA GALEANO VILLAN
+            [experiencia_laboral] => SECRETARíA NACIONAL DE LA JUVENTUD |  | 0 años 3 meses
+            [telefono] => (0992)-853118
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => 3er Curso|COLEGIO NACIONAL SAN RAMÓN|Educacion Básica	
+            [edad_postulante] => 23
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.416566
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+    [10] => Array
+        (
+            [nro_de_orden] => 11
+            [nro_documento] => 6803751
+            [nombre_completo] => GRICELDA ARACELI JIMENEZ GONZALEZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => YPANÉ                              
+            [departamento] => CENTRAL
+            [formacion_academica] => Ciencias Sociales|COLEGIO NACIONAL MEDALLA MILAGROSA|Educación Media, 3er Curso|COLEGIO NACIONAL MEDALLA MILAGROSA|Educacion Básica	
+            [edad_postulante] => 22
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.656326
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [nro_de_orden] => 1
+            [nro_documento] => 2196920
+            [nombre_completo] => FRANCISCO GIMENEZ ROJAS
+            [experiencia_laboral] => T. G. CUIR INTERNATIONAL SA | CORTADOR | 5 años 6 meses, AMSPEC DE PARAGUAY SOCIEDAD ANÓNIMA | INSPECTOR AGRICOLA | 1 años 2 meses
+            [telefono] => (0981)-258305
+            [ciudad] => SAN ANTONIO                        
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 49
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.060562
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "B" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [1] => Array
+        (
+            [nro_de_orden] => 2
+            [nro_documento] => 4244096
+            [nombre_completo] => RAINE DIVINO BENITEZ
+            [experiencia_laboral] => LUA SRL | TIENDISTA | 0 años 2 meses, CELLULAR S.A. | ENCARGADO DE STOCK CENTRAL | 0 años 1 meses, PROSEGUR PARAGUAY S.A. | GARITERO | 8 años 10 meses
+            [telefono] => (0982)-375589
+            [ciudad] => LIMPIO                             
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 40
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.248326
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => 
+        )
+
+    [2] => Array
+        (
+            [nro_de_orden] => 3
+            [nro_documento] => 3691890
+            [nombre_completo] => SERGIO ALEJANDRO DEJESUS TORRES MEDINA
+            [experiencia_laboral] => CAFEPAR SA | REPOSITOR TECNICO | 0 años 6 meses, BROUMARKETS SA | COBRADOR | 1 años 8 meses
+            [telefono] => (0994)-259322
+            [ciudad] => FERNANDO DE LA MORA                
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 32
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.624458
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => 
+        )
+
+    [3] => Array
+        (
+            [nro_de_orden] => 4
+            [nro_documento] => 4498178
+            [nombre_completo] => JUAN MARCELO QUINTANA
+            [experiencia_laboral] => JUAN DE LA CRUZ MORENO  | AYUDANTE DE ALBAÑIL | 0 años 0 meses
+            [telefono] => (0984)-186960
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 34
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.796103
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Motocicleta | TIPO_REGISTRO_CONDUCIR: Motociclista | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: NO
+        )
+
+    [4] => Array
+        (
+            [nro_de_orden] => 5
+            [nro_documento] => 4813524
+            [nombre_completo] => MELODI FILOMENA SERVIN BERNAL
+            [experiencia_laboral] => GRUPO ASUCOR SRL | LIC. EN KINESIOLOGÍA Y FISIOTERAPIA | 0 años 2 meses
+            [telefono] => (0984)-704610
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => LICENCIADO/A|UNIVERSIDAD DEL NORTE|Educación Superior, 3er Curso|COLEGIO PRIVADO CAMPUS SCHOOL|Educacion Básica	
+            [edad_postulante] => 23
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.000564
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "B" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [5] => Array
+        (
+            [nro_de_orden] => 6
+            [nro_documento] => 5125401
+            [nombre_completo] => FATIMA ISABEL DUARTE VARGAS
+            [experiencia_laboral] => GEMA SA | PARAMEDICO | 1 años 2 meses
+            [telefono] => (0982)-457252
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => LICENCIADO/A|UNIVERSIDAD NACIONAL DE ASUNCIÓN - ANDRES BARBERO|Educación Superior, 3er Curso|COLEGIO NACIONAL DR. LUIS ALBERTO DE HERRERA|Educacion Básica	
+            [edad_postulante] => 26
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.334109
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Particular | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [6] => Array
+        (
+            [nro_de_orden] => 7
+            [nro_documento] => 6797079
+            [nombre_completo] => LAURA BELEN MORINIGO SANDOVAL
+            [experiencia_laboral] => CINEMARK PARAGUAY S.R.L. | STAFF DE CINE | 0 años 1 meses, FOODCO S.A. | CREW / ATENCION AL CLIENTE | 1 años 1 meses | CINEMARK PARAGUAY   S.R.L. | 0 años 1 meses
+            [telefono] => (0991)-501496
+            [ciudad] => MARIANO ROQUE ALONSO               
+            [departamento] => CENTRAL
+            [formacion_academica] => 4to Nivel| CENTRO DE EDUCACIÓN MEDIA PARA PERSONAS JÓVENES Y ADULTAS SAN NICOLÁS|Educacion Básica	
+            [edad_postulante] => 25
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.632345
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "C" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [7] => Array
+        (
+            [nro_de_orden] => 8
+            [nro_documento] => 5854324
+            [nombre_completo] => NADIA SOFIA DUARTE ALVAREZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => ENCARNACIÓN                        
+            [departamento] => ITAPÚA
+            [formacion_academica] => 4to Ciclo|CENTRO DE EDUCACIÓN BÁSICA PARA PERSONAS JÓVENES Y ADULTAS N° 7-15 SANTA MARÍA DEL PERPETUO SOCORRO|Educacion Básica	
+            [edad_postulante] => 22
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.812079
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Bicicleta | TIPO_REGISTRO_CONDUCIR: Prof. Clase "D" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [8] => Array
+        (
+            [nro_de_orden] => 9
+            [nro_documento] => 7381273
+            [nombre_completo] => VICTOR DANIEL DUARTE BAEZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 21
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.212565
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Ninguna | TIPO_REGISTRO_CONDUCIR: Ninguna | TIENE_REGISTRO_CONDUCIR: NO | TIENE_MOVILIDAD_PROPIA: NO
+        )
+
+    [9] => Array
+        (
+            [nro_de_orden] => 10
+            [nro_documento] => 7317259
+            [nombre_completo] => RUTH VALERIA GALEANO VILLAN
+            [experiencia_laboral] => SECRETARíA NACIONAL DE LA JUVENTUD |  | 0 años 3 meses
+            [telefono] => (0992)-853118
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => 3er Curso|COLEGIO NACIONAL SAN RAMÓN|Educacion Básica	
+            [edad_postulante] => 23
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.416566
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Extranjero | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [10] => Array
+        (
+            [nro_de_orden] => 11
+            [nro_documento] => 6803751
+            [nombre_completo] => GRICELDA ARACELI JIMENEZ GONZALEZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => YPANÉ                              
+            [departamento] => CENTRAL
+            [formacion_academica] => Ciencias Sociales|COLEGIO NACIONAL MEDALLA MILAGROSA|Educación Media, 3er Curso|COLEGIO NACIONAL MEDALLA MILAGROSA|Educacion Básica	
+            [edad_postulante] => 22
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.656326
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Motocicleta | TIPO_REGISTRO_CONDUCIR: Motociclista | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [11] => Array
+        (
+            [nro_de_orden] => 12
+            [nro_documento] => 4949610
+            [nombre_completo] => MIGUEL ALEJANDRO CABALLERO ALEN
+            [experiencia_laboral] => FSDAFASD |  | 5 años 54 meses
+            [telefono] => (0981)-485464
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => ESPECIALISTA|UNIVERSIDAD NACIONAL DE ASUNCIÓN|Educación Superior, 3er Curso|COLEGIO NACIONAL DE E.M.D. PRESIDENTE FRANCO|Educacion Básica	
+            [edad_postulante] => 33
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-04-04 10:53:46.773078
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => 
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [nro_de_orden] => 1
+            [nro_documento] => 2196920
+            [nombre_completo] => FRANCISCO GIMENEZ ROJAS
+            [experiencia_laboral] => T. G. CUIR INTERNATIONAL SA | CORTADOR | 5 años 6 meses, AMSPEC DE PARAGUAY SOCIEDAD ANÓNIMA | INSPECTOR AGRICOLA | 1 años 2 meses
+            [telefono] => (0981)-258305
+            [ciudad] => SAN ANTONIO                        
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 49
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.060562
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 25
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "B" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [1] => Array
+        (
+            [nro_de_orden] => 2
+            [nro_documento] => 4244096
+            [nombre_completo] => RAINE DIVINO BENITEZ
+            [experiencia_laboral] => LUA SRL | TIENDISTA | 0 años 2 meses, CELLULAR S.A. | ENCARGADO DE STOCK CENTRAL | 0 años 1 meses, PROSEGUR PARAGUAY S.A. | GARITERO | 8 años 10 meses
+            [telefono] => (0982)-375589
+            [ciudad] => LIMPIO                             
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 40
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.248326
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => 
+        )
+
+    [2] => Array
+        (
+            [nro_de_orden] => 3
+            [nro_documento] => 3691890
+            [nombre_completo] => SERGIO ALEJANDRO DEJESUS TORRES MEDINA
+            [experiencia_laboral] => CAFEPAR SA | REPOSITOR TECNICO | 0 años 6 meses, BROUMARKETS SA | COBRADOR | 1 años 8 meses
+            [telefono] => (0994)-259322
+            [ciudad] => FERNANDO DE LA MORA                
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 32
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.624458
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => 
+        )
+
+    [3] => Array
+        (
+            [nro_de_orden] => 4
+            [nro_documento] => 4498178
+            [nombre_completo] => JUAN MARCELO QUINTANA
+            [experiencia_laboral] => JUAN DE LA CRUZ MORENO  | AYUDANTE DE ALBAÑIL | 0 años 0 meses
+            [telefono] => (0984)-186960
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 34
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.796103
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Motocicleta | TIPO_REGISTRO_CONDUCIR: Motociclista | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: NO
+        )
+
+    [4] => Array
+        (
+            [nro_de_orden] => 5
+            [nro_documento] => 4813524
+            [nombre_completo] => MELODI FILOMENA SERVIN BERNAL
+            [experiencia_laboral] => GRUPO ASUCOR SRL | LIC. EN KINESIOLOGÍA Y FISIOTERAPIA | 0 años 2 meses
+            [telefono] => (0984)-704610
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => LICENCIADO/A|UNIVERSIDAD DEL NORTE|Educación Superior, 3er Curso|COLEGIO PRIVADO CAMPUS SCHOOL|Educacion Básica	
+            [edad_postulante] => 23
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.000564
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "B" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [5] => Array
+        (
+            [nro_de_orden] => 6
+            [nro_documento] => 5125401
+            [nombre_completo] => FATIMA ISABEL DUARTE VARGAS
+            [experiencia_laboral] => GEMA SA | PARAMEDICO | 1 años 2 meses
+            [telefono] => (0982)-457252
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => LICENCIADO/A|UNIVERSIDAD NACIONAL DE ASUNCIÓN - ANDRES BARBERO|Educación Superior, 3er Curso|COLEGIO NACIONAL DR. LUIS ALBERTO DE HERRERA|Educacion Básica	
+            [edad_postulante] => 26
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.334109
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Particular | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [6] => Array
+        (
+            [nro_de_orden] => 7
+            [nro_documento] => 6797079
+            [nombre_completo] => LAURA BELEN MORINIGO SANDOVAL
+            [experiencia_laboral] => CINEMARK PARAGUAY S.R.L. | STAFF DE CINE | 0 años 1 meses, FOODCO S.A. | CREW / ATENCION AL CLIENTE | 1 años 1 meses | CINEMARK PARAGUAY   S.R.L. | 0 años 1 meses
+            [telefono] => (0991)-501496
+            [ciudad] => MARIANO ROQUE ALONSO               
+            [departamento] => CENTRAL
+            [formacion_academica] => 4to Nivel| CENTRO DE EDUCACIÓN MEDIA PARA PERSONAS JÓVENES Y ADULTAS SAN NICOLÁS|Educacion Básica	
+            [edad_postulante] => 25
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.632345
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "C" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [7] => Array
+        (
+            [nro_de_orden] => 8
+            [nro_documento] => 5854324
+            [nombre_completo] => NADIA SOFIA DUARTE ALVAREZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => ENCARNACIÓN                        
+            [departamento] => ITAPÚA
+            [formacion_academica] => 4to Ciclo|CENTRO DE EDUCACIÓN BÁSICA PARA PERSONAS JÓVENES Y ADULTAS N° 7-15 SANTA MARÍA DEL PERPETUO SOCORRO|Educacion Básica	
+            [edad_postulante] => 22
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.812079
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Bicicleta | TIPO_REGISTRO_CONDUCIR: Prof. Clase "D" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [8] => Array
+        (
+            [nro_de_orden] => 9
+            [nro_documento] => 7381273
+            [nombre_completo] => VICTOR DANIEL DUARTE BAEZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 21
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.212565
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Ninguna | TIPO_REGISTRO_CONDUCIR: Ninguna | TIENE_REGISTRO_CONDUCIR: NO | TIENE_MOVILIDAD_PROPIA: NO
+        )
+
+    [9] => Array
+        (
+            [nro_de_orden] => 10
+            [nro_documento] => 7317259
+            [nombre_completo] => RUTH VALERIA GALEANO VILLAN
+            [experiencia_laboral] => SECRETARíA NACIONAL DE LA JUVENTUD |  | 0 años 3 meses
+            [telefono] => (0992)-853118
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => 3er Curso|COLEGIO NACIONAL SAN RAMÓN|Educacion Básica	
+            [edad_postulante] => 23
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.416566
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Extranjero | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [10] => Array
+        (
+            [nro_de_orden] => 11
+            [nro_documento] => 6803751
+            [nombre_completo] => GRICELDA ARACELI JIMENEZ GONZALEZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => YPANÉ                              
+            [departamento] => CENTRAL
+            [formacion_academica] => Ciencias Sociales|COLEGIO NACIONAL MEDALLA MILAGROSA|Educación Media, 3er Curso|COLEGIO NACIONAL MEDALLA MILAGROSA|Educacion Básica	
+            [edad_postulante] => 22
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.656326
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Motocicleta | TIPO_REGISTRO_CONDUCIR: Motociclista | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [11] => Array
+        (
+            [nro_de_orden] => 12
+            [nro_documento] => 4949610
+            [nombre_completo] => MIGUEL ALEJANDRO CABALLERO ALEN
+            [experiencia_laboral] => FSDAFASD |  | 5 años 54 meses
+            [telefono] => (0981)-485464
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => ESPECIALISTA|UNIVERSIDAD NACIONAL DE ASUNCIÓN|Educación Superior, 3er Curso|COLEGIO NACIONAL DE E.M.D. PRESIDENTE FRANCO|Educacion Básica	
+            [edad_postulante] => 33
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-04-04 10:56:53.071455
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => 
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [nro_de_orden] => 1
+            [nro_documento] => 2196920
+            [nombre_completo] => FRANCISCO GIMENEZ ROJAS
+            [experiencia_laboral] => T. G. CUIR INTERNATIONAL SA | CORTADOR | 5 años 6 meses, AMSPEC DE PARAGUAY SOCIEDAD ANÓNIMA | INSPECTOR AGRICOLA | 1 años 2 meses
+            [telefono] => (0981)-258305
+            [ciudad] => SAN ANTONIO                        
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 49
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.060562
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 25
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "B" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [1] => Array
+        (
+            [nro_de_orden] => 2
+            [nro_documento] => 4244096
+            [nombre_completo] => RAINE DIVINO BENITEZ
+            [experiencia_laboral] => LUA SRL | TIENDISTA | 0 años 2 meses, CELLULAR S.A. | ENCARGADO DE STOCK CENTRAL | 0 años 1 meses, PROSEGUR PARAGUAY S.A. | GARITERO | 8 años 10 meses
+            [telefono] => (0982)-375589
+            [ciudad] => LIMPIO                             
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 40
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.248326
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => 
+        )
+
+    [2] => Array
+        (
+            [nro_de_orden] => 3
+            [nro_documento] => 3691890
+            [nombre_completo] => SERGIO ALEJANDRO DEJESUS TORRES MEDINA
+            [experiencia_laboral] => CAFEPAR SA | REPOSITOR TECNICO | 0 años 6 meses, BROUMARKETS SA | COBRADOR | 1 años 8 meses
+            [telefono] => (0994)-259322
+            [ciudad] => FERNANDO DE LA MORA                
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 32
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.624458
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => 
+        )
+
+    [3] => Array
+        (
+            [nro_de_orden] => 4
+            [nro_documento] => 4498178
+            [nombre_completo] => JUAN MARCELO QUINTANA
+            [experiencia_laboral] => JUAN DE LA CRUZ MORENO  | AYUDANTE DE ALBAÑIL | 0 años 0 meses
+            [telefono] => (0984)-186960
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 34
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.796103
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Motocicleta | TIPO_REGISTRO_CONDUCIR: Motociclista | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: NO
+        )
+
+    [4] => Array
+        (
+            [nro_de_orden] => 5
+            [nro_documento] => 4813524
+            [nombre_completo] => MELODI FILOMENA SERVIN BERNAL
+            [experiencia_laboral] => GRUPO ASUCOR SRL | LIC. EN KINESIOLOGÍA Y FISIOTERAPIA | 0 años 2 meses
+            [telefono] => (0984)-704610
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => LICENCIADO/A|UNIVERSIDAD DEL NORTE|Educación Superior, 3er Curso|COLEGIO PRIVADO CAMPUS SCHOOL|Educacion Básica	
+            [edad_postulante] => 23
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.000564
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "B" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [5] => Array
+        (
+            [nro_de_orden] => 6
+            [nro_documento] => 5125401
+            [nombre_completo] => FATIMA ISABEL DUARTE VARGAS
+            [experiencia_laboral] => GEMA SA | PARAMEDICO | 1 años 2 meses
+            [telefono] => (0982)-457252
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => LICENCIADO/A|UNIVERSIDAD NACIONAL DE ASUNCIÓN - ANDRES BARBERO|Educación Superior, 3er Curso|COLEGIO NACIONAL DR. LUIS ALBERTO DE HERRERA|Educacion Básica	
+            [edad_postulante] => 26
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.334109
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Particular | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [6] => Array
+        (
+            [nro_de_orden] => 7
+            [nro_documento] => 6797079
+            [nombre_completo] => LAURA BELEN MORINIGO SANDOVAL
+            [experiencia_laboral] => CINEMARK PARAGUAY S.R.L. | STAFF DE CINE | 0 años 1 meses, FOODCO S.A. | CREW / ATENCION AL CLIENTE | 1 años 1 meses | CINEMARK PARAGUAY   S.R.L. | 0 años 1 meses
+            [telefono] => (0991)-501496
+            [ciudad] => MARIANO ROQUE ALONSO               
+            [departamento] => CENTRAL
+            [formacion_academica] => 4to Nivel| CENTRO DE EDUCACIÓN MEDIA PARA PERSONAS JÓVENES Y ADULTAS SAN NICOLÁS|Educacion Básica	
+            [edad_postulante] => 25
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.632345
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "C" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [7] => Array
+        (
+            [nro_de_orden] => 8
+            [nro_documento] => 5854324
+            [nombre_completo] => NADIA SOFIA DUARTE ALVAREZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => ENCARNACIÓN                        
+            [departamento] => ITAPÚA
+            [formacion_academica] => 4to Ciclo|CENTRO DE EDUCACIÓN BÁSICA PARA PERSONAS JÓVENES Y ADULTAS N° 7-15 SANTA MARÍA DEL PERPETUO SOCORRO|Educacion Básica	
+            [edad_postulante] => 22
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.812079
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Bicicleta | TIPO_REGISTRO_CONDUCIR: Prof. Clase "D" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [8] => Array
+        (
+            [nro_de_orden] => 9
+            [nro_documento] => 7381273
+            [nombre_completo] => VICTOR DANIEL DUARTE BAEZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 21
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.212565
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Ninguna | TIPO_REGISTRO_CONDUCIR: Ninguna | TIENE_REGISTRO_CONDUCIR: NO | TIENE_MOVILIDAD_PROPIA: NO
+        )
+
+    [9] => Array
+        (
+            [nro_de_orden] => 10
+            [nro_documento] => 7317259
+            [nombre_completo] => RUTH VALERIA GALEANO VILLAN
+            [experiencia_laboral] => SECRETARíA NACIONAL DE LA JUVENTUD |  | 0 años 3 meses
+            [telefono] => (0992)-853118
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => 3er Curso|COLEGIO NACIONAL SAN RAMÓN|Educacion Básica	
+            [edad_postulante] => 23
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.416566
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Extranjero | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [10] => Array
+        (
+            [nro_de_orden] => 11
+            [nro_documento] => 6803751
+            [nombre_completo] => GRICELDA ARACELI JIMENEZ GONZALEZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => YPANÉ                              
+            [departamento] => CENTRAL
+            [formacion_academica] => Ciencias Sociales|COLEGIO NACIONAL MEDALLA MILAGROSA|Educación Media, 3er Curso|COLEGIO NACIONAL MEDALLA MILAGROSA|Educacion Básica	
+            [edad_postulante] => 22
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.656326
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Motocicleta | TIPO_REGISTRO_CONDUCIR: Motociclista | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [nro_de_orden] => 1
+            [nro_documento] => 2196920
+            [nombre_completo] => FRANCISCO GIMENEZ ROJAS
+            [experiencia_laboral] => T. G. CUIR INTERNATIONAL SA | CORTADOR | 5 años 6 meses, AMSPEC DE PARAGUAY SOCIEDAD ANÓNIMA | INSPECTOR AGRICOLA | 1 años 2 meses
+            [telefono] => (0981)-258305
+            [ciudad] => SAN ANTONIO                        
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 49
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.060562
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 25
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "B" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [1] => Array
+        (
+            [nro_de_orden] => 2
+            [nro_documento] => 4244096
+            [nombre_completo] => RAINE DIVINO BENITEZ
+            [experiencia_laboral] => LUA SRL | TIENDISTA | 0 años 2 meses, CELLULAR S.A. | ENCARGADO DE STOCK CENTRAL | 0 años 1 meses, PROSEGUR PARAGUAY S.A. | GARITERO | 8 años 10 meses
+            [telefono] => (0982)-375589
+            [ciudad] => LIMPIO                             
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 40
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.248326
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => 
+        )
+
+    [2] => Array
+        (
+            [nro_de_orden] => 3
+            [nro_documento] => 3691890
+            [nombre_completo] => SERGIO ALEJANDRO DEJESUS TORRES MEDINA
+            [experiencia_laboral] => CAFEPAR SA | REPOSITOR TECNICO | 0 años 6 meses, BROUMARKETS SA | COBRADOR | 1 años 8 meses
+            [telefono] => (0994)-259322
+            [ciudad] => FERNANDO DE LA MORA                
+            [departamento] => CENTRAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 32
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.624458
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => 
+        )
+
+    [3] => Array
+        (
+            [nro_de_orden] => 4
+            [nro_documento] => 4498178
+            [nombre_completo] => JUAN MARCELO QUINTANA
+            [experiencia_laboral] => JUAN DE LA CRUZ MORENO  | AYUDANTE DE ALBAÑIL | 0 años 0 meses
+            [telefono] => (0984)-186960
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 34
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:18.796103
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Motocicleta | TIPO_REGISTRO_CONDUCIR: Motociclista | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: NO
+        )
+
+    [4] => Array
+        (
+            [nro_de_orden] => 5
+            [nro_documento] => 4813524
+            [nombre_completo] => MELODI FILOMENA SERVIN BERNAL
+            [experiencia_laboral] => GRUPO ASUCOR SRL | LIC. EN KINESIOLOGÍA Y FISIOTERAPIA | 0 años 2 meses
+            [telefono] => (0984)-704610
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => LICENCIADO/A|UNIVERSIDAD DEL NORTE|Educación Superior, 3er Curso|COLEGIO PRIVADO CAMPUS SCHOOL|Educacion Básica	
+            [edad_postulante] => 23
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.000564
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "B" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [5] => Array
+        (
+            [nro_de_orden] => 6
+            [nro_documento] => 5125401
+            [nombre_completo] => FATIMA ISABEL DUARTE VARGAS
+            [experiencia_laboral] => GEMA SA | PARAMEDICO | 1 años 2 meses
+            [telefono] => (0982)-457252
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => LICENCIADO/A|UNIVERSIDAD NACIONAL DE ASUNCIÓN - ANDRES BARBERO|Educación Superior, 3er Curso|COLEGIO NACIONAL DR. LUIS ALBERTO DE HERRERA|Educacion Básica	
+            [edad_postulante] => 26
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.334109
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Particular | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [6] => Array
+        (
+            [nro_de_orden] => 7
+            [nro_documento] => 6797079
+            [nombre_completo] => LAURA BELEN MORINIGO SANDOVAL
+            [experiencia_laboral] => CINEMARK PARAGUAY S.R.L. | STAFF DE CINE | 0 años 1 meses, FOODCO S.A. | CREW / ATENCION AL CLIENTE | 1 años 1 meses | CINEMARK PARAGUAY   S.R.L. | 0 años 1 meses
+            [telefono] => (0991)-501496
+            [ciudad] => MARIANO ROQUE ALONSO               
+            [departamento] => CENTRAL
+            [formacion_academica] => 4to Nivel| CENTRO DE EDUCACIÓN MEDIA PARA PERSONAS JÓVENES Y ADULTAS SAN NICOLÁS|Educacion Básica	
+            [edad_postulante] => 25
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.632345
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Prof. Clase "C" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [7] => Array
+        (
+            [nro_de_orden] => 8
+            [nro_documento] => 5854324
+            [nombre_completo] => NADIA SOFIA DUARTE ALVAREZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => ENCARNACIÓN                        
+            [departamento] => ITAPÚA
+            [formacion_academica] => 4to Ciclo|CENTRO DE EDUCACIÓN BÁSICA PARA PERSONAS JÓVENES Y ADULTAS N° 7-15 SANTA MARÍA DEL PERPETUO SOCORRO|Educacion Básica	
+            [edad_postulante] => 22
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:19.812079
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Bicicleta | TIPO_REGISTRO_CONDUCIR: Prof. Clase "D" | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [8] => Array
+        (
+            [nro_de_orden] => 9
+            [nro_documento] => 7381273
+            [nombre_completo] => VICTOR DANIEL DUARTE BAEZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => PRUEBA|ALFABETIZACIÓN DE ADULTOS MBERU PIRAPO'I|Primaria
+            [edad_postulante] => 21
+            [sexo] => M
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.212565
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Ninguna | TIPO_REGISTRO_CONDUCIR: Ninguna | TIENE_REGISTRO_CONDUCIR: NO | TIENE_MOVILIDAD_PROPIA: NO
+        )
+
+    [9] => Array
+        (
+            [nro_de_orden] => 10
+            [nro_documento] => 7317259
+            [nombre_completo] => RUTH VALERIA GALEANO VILLAN
+            [experiencia_laboral] => SECRETARíA NACIONAL DE LA JUVENTUD |  | 0 años 3 meses
+            [telefono] => (0992)-853118
+            [ciudad] => ASUNCIÓN                           
+            [departamento] => CAPITAL
+            [formacion_academica] => 3er Curso|COLEGIO NACIONAL SAN RAMÓN|Educacion Básica	
+            [edad_postulante] => 23
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.416566
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Automóvil | TIPO_REGISTRO_CONDUCIR: Extranjero | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+    [10] => Array
+        (
+            [nro_de_orden] => 11
+            [nro_documento] => 6803751
+            [nombre_completo] => GRICELDA ARACELI JIMENEZ GONZALEZ
+            [experiencia_laboral] => SIN DATOS | SIN DATOS | 0 años 0 meses
+            [telefono] => (0981)-111222
+            [ciudad] => YPANÉ                              
+            [departamento] => CENTRAL
+            [formacion_academica] => Ciencias Sociales|COLEGIO NACIONAL MEDALLA MILAGROSA|Educación Media, 3er Curso|COLEGIO NACIONAL MEDALLA MILAGROSA|Educacion Básica	
+            [edad_postulante] => 22
+            [sexo] => F
+            [razon_social] => BIGGIE S.A.
+            [ruc] => 80077406-0
+            [vacancia_laboral] => ABOGADO
+            [codigo] => 2605
+            [fecha] => 2025-03-13 10:52:20.656326
+            [discapacidad] => No
+            [porcentaje_discapacidad] => 0
+            [movilidad_propia] => TIPO_MOVILIDAD: Motocicleta | TIPO_REGISTRO_CONDUCIR: Motociclista | TIENE_REGISTRO_CONDUCIR: SI | TIENE_MOVILIDAD_PROPIA: SI
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id_integracion] => 37
+            [fecha_integracion] => 2025-04-14 11:59:27.2681
+            [empresa_ruc] => 3385727-0
+            [empresa_legal] => DENIS OMAR GONZALEZ GONZALEZ 
+            [empresa_fantasia] => PRUEBA
+            [empresa_ciudad] => KARAPAÍ                            
+            [empresa_distrito] => AMAMBAY
+            [empresa_tel] => 32424
+            [empresa_email] => denispy@me.com
+            [empresa_direccion] => 324
+            [tipo_sucursal] => Matriz
+            [nro_patronal] => 10
+            [confirmacion] => SI
+            [usuario_confirmacion] => admin
+        )
+
+    [1] => Array
+        (
+            [id_integracion] => 40
+            [fecha_integracion] => 2025-04-14 12:41:02.249166
+            [empresa_ruc] => 80045219-4
+            [empresa_legal] => CONCEPCION PALACE HOTEL S.A
+            [empresa_fantasia] => CONCEPCION PALACE HOTEL S.A.
+            [empresa_ciudad] => CONCEPCIÓN                         
+            [empresa_distrito] => CONCEPCIÓN
+            [empresa_tel] => 0972467726
+            [empresa_email] => estefania.florentin@frigoconcepcion.com.py
+            [empresa_direccion] => GRAL. GARAY E/ MCAL. LOPEZ Y CNEL. MARTINEZ
+            [tipo_sucursal] => Sucursal
+            [nro_patronal] => 60424
+            [confirmacion] => SI
+            [usuario_confirmacion] => admin
+        )
+
+    [2] => Array
+        (
+            [id_integracion] => 26
+            [fecha_integracion] => 2025-04-10 13:30:37.939902
+            [empresa_ruc] => 80052778-0
+            [empresa_legal] => CASA MASS S.A.
+            [empresa_fantasia] => CASA MASS S.A.
+            [empresa_ciudad] => FERNANDO DE LA MORA                
+            [empresa_distrito] => CENTRAL
+            [empresa_tel] => 
+            [empresa_email] => 
+            [empresa_direccion] => AVDA. ZAVALAS CUE C/ MAGALLANES
+            [tipo_sucursal] => Sucursal
+            [nro_patronal] => 60006
+            [confirmacion] => SI
+            [usuario_confirmacion] => admin
+        )
+
+    [3] => Array
+        (
+            [id_integracion] => 32
+            [fecha_integracion] => 2025-04-14 09:50:04.956891
+            [empresa_ruc] => 80070581-5
+            [empresa_legal] => ESPIN S.A
+            [empresa_fantasia] => ESPIN S.A.
+            [empresa_ciudad] => LAMBARÉ                            
+            [empresa_distrito] => CENTRAL
+            [empresa_tel] => 021-555919
+            [empresa_email] => adm.rrhh@joseph.com.py
+            [empresa_direccion] => AVENIDA FERNANDO DE LA MORA
+            [tipo_sucursal] => Matriz
+            [nro_patronal] => 66663
+            [confirmacion] => SI
+            [usuario_confirmacion] => admin
+        )
+
+    [4] => Array
+        (
+            [id_integracion] => 27
+            [fecha_integracion] => 2025-04-10 13:49:05.634467
+            [empresa_ruc] => 800712325-3
+            [empresa_legal] => DOREMI S.A. IMPORTACION EXPORTACION
+            [empresa_fantasia] => DOREMI S.A. - MEGA SHOP
+            [empresa_ciudad] => ENCARNACIÓN                        
+            [empresa_distrito] => ITAPÚA
+            [empresa_tel] => 0985741955
+            [empresa_email] => contabilidadoremi@gmail.com
+            [empresa_direccion] => RUTA INTERNACIONAL AVDA. SAN ROQUE GONZALEZ DE SANTA CRUZ E/ GERMAN AYALA SCHULER Y DANIEL MORENO OCAMPO
+            [tipo_sucursal] => Matriz
+            [nro_patronal] => 65498
+            [confirmacion] => SI
+            [usuario_confirmacion] => admin
+        )
+
+    [5] => Array
+        (
+            [id_integracion] => 25
+            [fecha_integracion] => 2025-04-10 13:23:34.917741
+            [empresa_ruc] => 80132370-3
+            [empresa_legal] => GRANJA NONI E.A.S.
+            [empresa_fantasia] => GRANJA NONI
+            [empresa_ciudad] => CAAGUAZÚ                           
+            [empresa_distrito] => CAAGUAZÚ
+            [empresa_tel] => (0971)444502
+            [empresa_email] => irhilrem@gmail.com
+            [empresa_direccion] => RUTA DE C9 A R.A.O
+            [tipo_sucursal] => Sucursal
+            [nro_patronal] => 118259
+            [confirmacion] => SI
+            [usuario_confirmacion] => admin
+        )
+
+)

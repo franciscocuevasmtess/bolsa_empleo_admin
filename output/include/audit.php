@@ -642,6 +642,18 @@ class AuditTrailTable
 		{
 			return false;
 		}
+		if($table=="eportal.persons")
+		{
+			return false;
+		}
+		if($table=="bolsa_empleo.archivo")
+		{
+			return false;
+		}
+		if($table=="bolsa_empleo.archivo_tipo")
+		{
+			return false;
+		}
 	}
 
 	protected function insert($datetime, $ip, $user, $table, $action, $description)
@@ -1233,6 +1245,18 @@ class AuditTrailFile
 			return false;
 		}
 		if($table=="bolsa_empleo.seguimiento_resumen")
+		{
+			return false;
+		}
+		if($table=="eportal.persons")
+		{
+			return false;
+		}
+		if($table=="bolsa_empleo.archivo")
+		{
+			return false;
+		}
+		if($table=="bolsa_empleo.archivo_tipo")
 		{
 			return false;
 		}

@@ -415,7 +415,7 @@
         }
     
         // Conexión a la base de datos.
-        $conn = pg_connect("host=192.168.70.170 dbname=eportal user=franciscocuevas password=6XP4fJe8tX7sdTaL6Rfk");
+        $conn = pg_connect("host=192.168.70.186 dbname=eportal user=postgres password=i54R1943cMzrkbH1");
         if (!$conn) {
             respond(false, 'Error al conectar con la base de datos.');
         }

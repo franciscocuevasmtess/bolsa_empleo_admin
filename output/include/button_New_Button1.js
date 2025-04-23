@@ -108,6 +108,7 @@ if (result["bandera"] == 1) {
 			window.location.href = "vacancia_list.php";
 		});
 }
+
 		}
 	}
 	

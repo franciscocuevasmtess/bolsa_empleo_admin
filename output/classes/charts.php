@@ -494,6 +494,12 @@ class Chart
 			return true;
 		if("bolsa_empleo.seguimiento_resumen" == $this->chrt_array['tables'][0])
 			return true;
+		if("eportal.persons" == $this->chrt_array['tables'][0])
+			return true;
+		if("bolsa_empleo.archivo" == $this->chrt_array['tables'][0])
+			return true;
+		if("bolsa_empleo.archivo_tipo" == $this->chrt_array['tables'][0])
+			return true;
 		return false;
 	}
 

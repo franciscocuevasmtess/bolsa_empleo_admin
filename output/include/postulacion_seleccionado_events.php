@@ -14,6 +14,8 @@
 	// fill list of events
 		$this->events["BeforeShowList"]=true;
 
+		$this->events["BeforeMoveNextList"]=true;
+
 
 	}
 
@@ -64,7 +66,7 @@ function BeforeShowList(&$xt, &$templatefile, $pageObject)
 // ──────────────────────────────────────────────────────────────────────────
 // OCULTAR CAMPOS QUE NO DEBEN SER VISIBLES EN EL LISTADO
 // ──────────────────────────────────────────────────────────────────────────
-$pageObject->hideItem("grid_field1", $recordId);	//Oculta el campo "id_vacancia"
+//$pageObject->hideItem("grid_field1", $recordId);	//Oculta el campo "id_vacancia"
 $pageObject->hideItem("grid_field2", $recordId);	//Oculta el campo "id_vacancias"
 $pageObject->hideItem("grid_field", $recordId);		//Oculta el campo "id_postulacion"
 
@@ -92,7 +94,7 @@ $data_result = db_fetch_array($result);
 // ──────────────────────────────────────────────────────────────────────────
 // LISTA DE ESTADOS DONDE SE DEBEN OCULTAR LOS ELEMENTOS
 // ──────────────────────────────────────────────────────────────────────────
-$estadosOcultar = [1, 2, 4, 5, 6, 7]; // Estados en los que se deshabilita el cambio de estado masivo
+$estadosOcultar = [1, 2, 4, 5, 6, 7, 10]; // Estados en los que se deshabilita el cambio de estado masivo
 
 
 // Verificar si la vacancia está en un estado restringido
@@ -114,6 +116,83 @@ $pageObject->setProxyValue("master",$pageObject->getMasterRecord());
 ;		
 } // function BeforeShowList
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				// List page: After record processed
+function BeforeMoveNextList(&$data, &$row, &$record, $recordId, $pageObject)
+{
+
+		if ($data['es_programa']==true){
+	if(empty($data['test_psicotecnico'])||empty($data['evaluacion'])){
+	$pageObject->hideItem("grid_checkbox", $recordId);
+	}
+}
+;		
+} // function BeforeMoveNextList
+
+		
+		
+		
+		
+		
+		
 		
 		
 		

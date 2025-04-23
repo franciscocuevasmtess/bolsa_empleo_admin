@@ -313,6 +313,9 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_integrated_edit_field38}","stack":[{"text":"{$jslabel bolsa_empleo_vacancia imagen_perfil }","bold":true},{"text":{$imagen_perfil_pdfvalue}}],"margin":[0,0,0,15]},
 				
+				
+			{"hidden":"{$item_hide_integrated_edit_field39}","stack":[{"text":"{$jslabel bolsa_empleo_vacancia es_programa }","bold":true},{"text":{$es_programa_pdfvalue}}],"margin":[0,0,0,15]},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

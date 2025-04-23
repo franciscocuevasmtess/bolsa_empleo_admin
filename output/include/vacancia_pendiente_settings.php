@@ -266,7 +266,7 @@ $tdatavacancia_pendiente[".isUseAjaxSuggest"] = true;
 
 
 
-																																																															
+																																																																																							
 
 $tdatavacancia_pendiente[".ajaxCodeSnippetAdded"] = false;
 
@@ -769,7 +769,7 @@ $tdatavacancia_pendiente[".hideMobileList"] = array();
 
 // Begin Lookup settings
 				$edata["LookupType"] = 2;
-	$edata["LookupTable"] = "bolsa_empleo.empresas_bolsa_sucursales4";
+	$edata["LookupTable"] = "bolsa_empleo.empresas_bolsa_sucursales";
 			$edata["autoCompleteFieldsOnEdit"] = 0;
 	$edata["autoCompleteFields"] = array();
 		$edata["LCType"] = 0;
@@ -778,11 +778,12 @@ $tdatavacancia_pendiente[".hideMobileList"] = array();
 		
 	$edata["LinkField"] = "id";
 	$edata["LinkFieldType"] = 0;
-	$edata["DisplayField"] = "ruc||' - '||nro_patronal|| '-  ' ||legal|| '-  ' ||direccion||'- '||descripcion";
+	$edata["DisplayField"] = "ruc || ' - ' || nro_patronal || ' - ' || legal || ' - ' || direccion";
 
 	
 
-	
+		$edata["CustomDisplay"] = "true";
+
 	$edata["LookupOrderBy"] = "";
 
 	

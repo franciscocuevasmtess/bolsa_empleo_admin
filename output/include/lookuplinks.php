@@ -383,13 +383,13 @@ function InitLookupLinks()
 			$lookupTableLinks["eportal.city"]["feria_empleo.locacion"] = array();
 		}
 		$lookupTableLinks["eportal.city"]["feria_empleo.locacion"]["edit"] = array("table" => "bolsa_empleo.feria_empleo", "field" => "locacion", "page" => "edit");
-		if( !isset( $lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales4"] ) ) {
-			$lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales4"] = array();
+		if( !isset( $lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales"] ) ) {
+			$lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales"] = array();
 		}
-		if( !isset( $lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales4"]["vacancia_pendiente.id_empresa_sucursal"] )) {
-			$lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales4"]["vacancia_pendiente.id_empresa_sucursal"] = array();
+		if( !isset( $lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales"]["vacancia_pendiente.id_empresa_sucursal"] )) {
+			$lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales"]["vacancia_pendiente.id_empresa_sucursal"] = array();
 		}
-		$lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales4"]["vacancia_pendiente.id_empresa_sucursal"]["edit"] = array("table" => "vacancia_pendiente", "field" => "id_empresa_sucursal", "page" => "edit");
+		$lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales"]["vacancia_pendiente.id_empresa_sucursal"]["edit"] = array("table" => "vacancia_pendiente", "field" => "id_empresa_sucursal", "page" => "edit");
 		if( !isset( $lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales"] ) ) {
 			$lookupTableLinks["bolsa_empleo.empresas_bolsa_sucursales"] = array();
 		}
@@ -859,6 +859,20 @@ function InitLookupLinks()
 			$lookupTableLinks["bolsa_empleo.estado_postulacion"]["postulacion_seleccionado.id_estado"] = array();
 		}
 		$lookupTableLinks["bolsa_empleo.estado_postulacion"]["postulacion_seleccionado.id_estado"]["edit"] = array("table" => "bolsa_empleo.postulacion_seleccionado", "field" => "id_estado", "page" => "edit");
+		if( !isset( $lookupTableLinks["bolsa_empleo.archivo"] ) ) {
+			$lookupTableLinks["bolsa_empleo.archivo"] = array();
+		}
+		if( !isset( $lookupTableLinks["bolsa_empleo.archivo"]["postulacion_seleccionado.test_psicotecnico"] )) {
+			$lookupTableLinks["bolsa_empleo.archivo"]["postulacion_seleccionado.test_psicotecnico"] = array();
+		}
+		$lookupTableLinks["bolsa_empleo.archivo"]["postulacion_seleccionado.test_psicotecnico"]["edit"] = array("table" => "bolsa_empleo.postulacion_seleccionado", "field" => "test_psicotecnico", "page" => "edit");
+		if( !isset( $lookupTableLinks["bolsa_empleo.archivo"] ) ) {
+			$lookupTableLinks["bolsa_empleo.archivo"] = array();
+		}
+		if( !isset( $lookupTableLinks["bolsa_empleo.archivo"]["postulacion_seleccionado.evaluacion"] )) {
+			$lookupTableLinks["bolsa_empleo.archivo"]["postulacion_seleccionado.evaluacion"] = array();
+		}
+		$lookupTableLinks["bolsa_empleo.archivo"]["postulacion_seleccionado.evaluacion"]["edit"] = array("table" => "bolsa_empleo.postulacion_seleccionado", "field" => "evaluacion", "page" => "edit");
 		if( !isset( $lookupTableLinks["eportal.city"] ) ) {
 			$lookupTableLinks["eportal.city"] = array();
 		}
@@ -894,6 +908,20 @@ function InitLookupLinks()
 			$lookupTableLinks["bolsa_empleo.estado_postulacion"]["postulacion_convocado.id_estado"] = array();
 		}
 		$lookupTableLinks["bolsa_empleo.estado_postulacion"]["postulacion_convocado.id_estado"]["edit"] = array("table" => "bolsa_empleo.postulacion_convocado", "field" => "id_estado", "page" => "edit");
+		if( !isset( $lookupTableLinks["bolsa_empleo.archivo"] ) ) {
+			$lookupTableLinks["bolsa_empleo.archivo"] = array();
+		}
+		if( !isset( $lookupTableLinks["bolsa_empleo.archivo"]["postulacion_convocado.test_psicotecnico"] )) {
+			$lookupTableLinks["bolsa_empleo.archivo"]["postulacion_convocado.test_psicotecnico"] = array();
+		}
+		$lookupTableLinks["bolsa_empleo.archivo"]["postulacion_convocado.test_psicotecnico"]["edit"] = array("table" => "bolsa_empleo.postulacion_convocado", "field" => "test_psicotecnico", "page" => "edit");
+		if( !isset( $lookupTableLinks["bolsa_empleo.archivo"] ) ) {
+			$lookupTableLinks["bolsa_empleo.archivo"] = array();
+		}
+		if( !isset( $lookupTableLinks["bolsa_empleo.archivo"]["postulacion_convocado.evaluacion"] )) {
+			$lookupTableLinks["bolsa_empleo.archivo"]["postulacion_convocado.evaluacion"] = array();
+		}
+		$lookupTableLinks["bolsa_empleo.archivo"]["postulacion_convocado.evaluacion"]["edit"] = array("table" => "bolsa_empleo.postulacion_convocado", "field" => "evaluacion", "page" => "edit");
 		if( !isset( $lookupTableLinks["eportal.city"] ) ) {
 			$lookupTableLinks["eportal.city"] = array();
 		}
@@ -999,6 +1027,34 @@ function InitLookupLinks()
 			$lookupTableLinks["bolsa_empleo.estado_postulacion"]["postulacion_preseleccionado.id_estado"] = array();
 		}
 		$lookupTableLinks["bolsa_empleo.estado_postulacion"]["postulacion_preseleccionado.id_estado"]["edit"] = array("table" => "bolsa_empleo.postulacion_preseleccionado", "field" => "id_estado", "page" => "edit");
+		if( !isset( $lookupTableLinks["eportal.country"] ) ) {
+			$lookupTableLinks["eportal.country"] = array();
+		}
+		if( !isset( $lookupTableLinks["eportal.country"]["persons.nacionalidad"] )) {
+			$lookupTableLinks["eportal.country"]["persons.nacionalidad"] = array();
+		}
+		$lookupTableLinks["eportal.country"]["persons.nacionalidad"]["edit"] = array("table" => "eportal.persons", "field" => "nacionalidad", "page" => "edit");
+		if( !isset( $lookupTableLinks["eportal.persons_estado_civil_type"] ) ) {
+			$lookupTableLinks["eportal.persons_estado_civil_type"] = array();
+		}
+		if( !isset( $lookupTableLinks["eportal.persons_estado_civil_type"]["persons.estado_civil"] )) {
+			$lookupTableLinks["eportal.persons_estado_civil_type"]["persons.estado_civil"] = array();
+		}
+		$lookupTableLinks["eportal.persons_estado_civil_type"]["persons.estado_civil"]["edit"] = array("table" => "eportal.persons", "field" => "estado_civil", "page" => "edit");
+		if( !isset( $lookupTableLinks["eportal.persons_indigenas_types"] ) ) {
+			$lookupTableLinks["eportal.persons_indigenas_types"] = array();
+		}
+		if( !isset( $lookupTableLinks["eportal.persons_indigenas_types"]["persons.esindigena"] )) {
+			$lookupTableLinks["eportal.persons_indigenas_types"]["persons.esindigena"] = array();
+		}
+		$lookupTableLinks["eportal.persons_indigenas_types"]["persons.esindigena"]["edit"] = array("table" => "eportal.persons", "field" => "esindigena", "page" => "edit");
+		if( !isset( $lookupTableLinks["bolsa_empleo.archivo_tipo"] ) ) {
+			$lookupTableLinks["bolsa_empleo.archivo_tipo"] = array();
+		}
+		if( !isset( $lookupTableLinks["bolsa_empleo.archivo_tipo"]["archivo.id_tipo_archivo"] )) {
+			$lookupTableLinks["bolsa_empleo.archivo_tipo"]["archivo.id_tipo_archivo"] = array();
+		}
+		$lookupTableLinks["bolsa_empleo.archivo_tipo"]["archivo.id_tipo_archivo"]["edit"] = array("table" => "bolsa_empleo.archivo", "field" => "id_tipo_archivo", "page" => "edit");
 }
 
 ?>

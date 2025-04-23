@@ -3,33 +3,10 @@
 	<head>
 				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>EmpleaPy :: Admin :: {$pagetitle}</title>
+	<title>{$pagetitle}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="icon" src="images/imgob23/gob_ico.png" type="image/x-icon" sizes="32x32"> 
 	<base href="{$projectPath}">
-	 <link rel="stylesheet" href="images/icons_v4/font/bootstrap-icons.css">
-<!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://analytics.mtess.gov.py/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '14']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Code -->
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     crossorigin=""/>
- <link rel="icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://emplea.mtess.gov.py/wp-content/uploads/2023/11/cropped-elemento_logo-emplea-py-colores-180x180.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
 	{BEGIN rtlCSS}
 	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
 	{END rtlCSS}
@@ -235,6 +212,30 @@
 		</a>
 	</li>
 {END deleteselected_link}
+							<li role="separator" class="divider"></li>							{BEGIN searchPanelTopButtons}
+	<li data-itemtype="show_search_panel" data-itemid="show_search_panel" {$item_show_search_panel} data-pageid="{$pageid}" data-small >
+				<a  id="showOptPanel{$id}"  title="" >
+				
+		Mostrar panel de búsqueda		
+		</a>
+	</li>
+{END searchPanelTopButtons}
+							{BEGIN searchPanelTopButtons}
+	<li data-itemtype="hide_search_panel" data-itemid="hide_search_panel" {$item_hide_search_panel} data-pageid="{$pageid}" data-small >
+				<a  id="hideOptPanel{$id}"  title="" >
+				
+		Ocultar panel de búsqueda		
+		</a>
+	</li>
+{END searchPanelTopButtons}
+							<li role="separator" class="divider"></li>							{BEGIN import_link}
+	<li data-itemtype="import" data-itemid="import" {$item_import} data-pageid="{$pageid}" data-small >
+				<a  {$importlink_attrs} href="postulacion_seleccionado_import.php{$stateLink_full}"  title="" >
+				
+		Importar		
+		</a>
+	</li>
+{END import_link}
 					</ul>
 	</span>
 </span>
@@ -323,6 +324,109 @@
 	class=" r-ori-vert			"
 			 
 	data-cellId="left_c1" data-pageid="{$pageid}">
+ 
+<!-- Begin Search panel content -->
+<div class="searchOptions panel panel-primary searchPanelContainer " {$srchOpt_attrs} data-itemtype="search_panel" data-itemid="search_panel" {$item_search_panel} data-pageid="{$pageid}"	 >
+
+	<div class="panel-heading">
+		<div class="btn-group r-sp-addfield" id="addSearchFieldButton{$id}">
+			<button id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle btn-sm )" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Búsqueda			<span class="caret"></span>
+			</button>
+		</div>
+
+
+		<div class="btn-group r-sp-options" id="searchPanelOptions{$id}">
+			<button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon glyphicon-option-vertical"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-left">
+				<li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}><a>Mostrar opciones</a></li>
+				<li role="separator" class="divider"></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}><label for="radioAll"><span class="glyphicon">&nbsp;</span>todas las condiciones</label></a></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}><label for="radioAny"><span class="glyphicon">&nbsp;</span>cualquier condición</label></a></li>
+				<li role="separator" class="divider"></li>
+				<li><a class="close-button"><span class="glyphicon glyphicon-remove">&nbsp;</span>esconder</a></li>
+			</ul>
+		</div>
+
+
+		</div>
+	<div class="panel-body controlsBlock" {$bottomSearchButt_attrs} >
+
+
+		
+		{BEGIN searchCtrlBlock}
+		<div class="srchPanelRow form-group" {$filterRow_attrs}>
+			<label>{$fLabel}</label>	{$delCtrlButt}
+				<span class="rnr-searchtype">{$searchtype}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol1}</span>
+		</div>
+		{END searchCtrlBlock}
+																		{BEGIN searchCtrlBlock_persona_id}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_persona_id}" {$filterRow_attrs_persona_id}>
+			<label>{$label bolsa_empleo_postulacion_seleccionado persona_id }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_persona_id}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_persona_id}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_persona_id}</span>
+						</div>
+		{END searchCtrlBlock_persona_id}
+																{BEGIN searchCtrlBlock_es_programa}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_es_programa}" {$filterRow_attrs_es_programa}>
+			<label>{$label bolsa_empleo_postulacion_seleccionado es_programa }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_es_programa}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_es_programa}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_es_programa}</span>
+						</div>
+		{END searchCtrlBlock_es_programa}
+																{BEGIN searchCtrlBlock_evaluacion}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_evaluacion}" {$filterRow_attrs_evaluacion}>
+			<label>{$label bolsa_empleo_postulacion_seleccionado evaluacion }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_evaluacion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_evaluacion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_evaluacion}</span>
+						</div>
+		{END searchCtrlBlock_evaluacion}
+																{BEGIN searchCtrlBlock_test_psicotecnico}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_test_psicotecnico}" {$filterRow_attrs_test_psicotecnico}>
+			<label>{$label bolsa_empleo_postulacion_seleccionado test_psicotecnico }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_test_psicotecnico}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_test_psicotecnico}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_test_psicotecnico}</span>
+						</div>
+		{END searchCtrlBlock_test_psicotecnico}
+		
+
+	</div>
+
+	<div class="panel-footer bottomSearchButt" {$bottomSearchButt_attrs}>
+		<button class="btn btn-primary btn-sm" id="searchButton{$id}" {$searchbutton_attrs}>Buscar</button>
+
+				<button class="btn btn-default btn-sm" {$showAllCont_attrs} {$showallbutton_attrs}>Mostrar todo</button>
+	</div>
+</div>
+<!-- End Search panel content -->
 </td>
 							</tr>
 											<tr {$row_left_1} >
@@ -380,6 +484,14 @@
 							Añadir nuevo			</a>
 </span>
 {END inlineadd_link}
+	 
+		{BEGIN deleteselected_link}
+<span data-itemtype="delete" data-itemid="delete" {$item_delete} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$deleteselectedlink_attrs} {$deleteselectedlink_span} disabled >
+							Borrar artículos seleccionados			</a>
+</span>
+{END deleteselected_link}
 		</div>			 
 				<div 
 	data-cellId="above-grid_c2" data-pageid="{$pageid}"	{$cell_above-grid_c2}
@@ -433,7 +545,7 @@
 					Seguimientos				</label>
 			</div>
 			{END print_details_seguimientos}
-						</div>
+														</div>
 </div>
 {END print_details}
 				 
@@ -496,26 +608,61 @@
 </span>
 {END inline_cancel}
  
+{BEGIN dtables_link}
+	<a 
+		data-itemtype="grid_alldetails_link" data-itemid="grid_alldetails_link" {$item_grid_alldetails_link} data-pageid="{$pageid}" data-record-id="{$recId}" 
+		{$dtables_link_attrs} 
+		class="{$dtables_link_class}" 
+		title="Mostrar detalles"
+				
+	>
+					<span class="glyphicon glyphicon-th-list"></span>
+					</a>
+{END dtables_link}
  
 
-	{BEGIN dtables_link}
-				<span data-itemtype="grid_details_link" data-itemid="grid_details_link" {$item_grid_details_link} data-pageid="{$pageid}" data-record-id="{$recId}">
-		<a 
-			{$seguimientos_link_attrs} 
-			class="{$dtables_link_class} details-badge badge seguimientos_badge" 
-			title="Mostrar detalles"
-						
-		>
-							<span class="glyphicon glyphicon-th-list"></span>
-									<span class="{$seguimientos_cntspan_class}" {$seguimientos_childnumber_attr}>
-				{$seguimientos_childnumber}				
-			</span>
-		</a>
-		</span>
-	{END dtables_link}
+		
+	{BEGIN seguimientos_dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link" {$item_grid_details_link} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$seguimientos_link_attrs} data-short-details="seguimientos"
+		class="{$seguimientos_dlink_class}" 
+		title="{$caption bolsa_empleo_seguimientos }"			>
+								
+									{BEGIN seguimientos_childcount}
+				<span class="details-badge badge seguimientos_badge" {$seguimientos_childnumber_attr}>
+					{$seguimientos_childnumber}				
+				</span>
+				{END seguimientos_childcount}
+						</a>
+	</span>
+	{END seguimientos_dtable_link}
+
+
+ 
+
+		
+	{BEGIN _dtable_link}
+	<span data-itemtype="grid_details_link" data-itemid="grid_details_link1" {$item_grid_details_link1} data-pageid="{$pageid}" data-record-id="{$recId}">
+	<a  {$_link_attrs} data-short-details=""
+		class="{$_dlink_class}" 
+		title="{$caption bolsa_empleo_archivos_relacionados }"			>
+								
+									{BEGIN _childcount}
+				<span class="details-badge badge _badge" {$_childnumber_attr}>
+					{$_childnumber}				
+				</span>
+				{END _childcount}
+						</a>
+	</span>
+	{END _dtable_link}
+
 
 </td>
 											</tr>
+									 
+									 
+									 
+									 
 									 
 									 
 									 
@@ -870,6 +1017,166 @@
 {END id_vacancias_fieldcolumn}</td>
 											</tr>
 									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert				{$persona_id_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_label4" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+ 
+{BEGIN persona_id_fieldheadercolumn}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label2" {$item_grid_field_label2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="persona_id" data-fieldname="persona_id" 
+
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_postulacion_seleccionado persona_id }</span>
+			</span>
+	</span>
+{END persona_id_fieldheadercolumn}
+
+</td>
+						 
+							<td 
+	class=" r-ori-vert				{$persona_id_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_field1" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+ 
+{BEGIN persona_id_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field7" {$item_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="persona_id" data-fieldname="persona_id" data-default-width >
+{$persona_id_value}
+</span>
+{END persona_id_fieldcolumn}</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert				{$test_psicotecnico_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_label5" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+ 
+{BEGIN test_psicotecnico_fieldheadercolumn}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label3" {$item_grid_field_label3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="test_psicotecnico" data-fieldname="test_psicotecnico" 
+
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_postulacion_seleccionado test_psicotecnico }</span>
+			</span>
+	</span>
+{END test_psicotecnico_fieldheadercolumn}
+
+</td>
+						 
+							<td 
+	class=" r-ori-vert				{$test_psicotecnico_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+ 
+{BEGIN test_psicotecnico_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field8" {$item_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="test_psicotecnico" data-fieldname="test_psicotecnico" data-default-width >
+{$test_psicotecnico_value}
+</span>
+{END test_psicotecnico_fieldcolumn}</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert				{$evaluacion_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_label6" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+ 
+{BEGIN evaluacion_fieldheadercolumn}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label4" {$item_grid_field_label4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="evaluacion" data-fieldname="evaluacion" 
+
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_postulacion_seleccionado evaluacion }</span>
+			</span>
+	</span>
+{END evaluacion_fieldheadercolumn}
+
+</td>
+						 
+							<td 
+	class=" r-ori-vert				{$evaluacion_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+ 
+{BEGIN evaluacion_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field9" {$item_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="evaluacion" data-fieldname="evaluacion" data-default-width >
+{$evaluacion_value}
+</span>
+{END evaluacion_fieldcolumn}</td>
+											</tr>
+									 
+										<tr>
+						 
+							<td 
+	class="r-align-right r-ori-vert				{$es_programa_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_label7" data-pageid="{$pageid}" data-record-id="{$recId}" data-label-col>
+ 
+{BEGIN es_programa_fieldheadercolumn}
+<span 
+	data-itemtype="grid_field_label" data-itemid="grid_field_label5" {$item_grid_field_label5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="es_programa" data-fieldname="es_programa" 
+
+	
+	
+	>
+	<span class="text-label">
+		<span>{$label bolsa_empleo_postulacion_seleccionado es_programa }</span>
+			</span>
+	</span>
+{END es_programa_fieldheadercolumn}
+
+</td>
+						 
+							<td 
+	class=" r-ori-vert				{$es_programa_class}
+			"
+			 
+		data-field=""
+	 
+	data-cellId="grid_cell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-value-col>
+ 
+{BEGIN es_programa_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field10" {$item_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="es_programa" data-fieldname="es_programa" data-default-width >
+{$es_programa_value}
+</span>
+{END es_programa_fieldcolumn}</td>
+											</tr>
+									 
 													</table>
 
 				
@@ -881,14 +1188,17 @@
 
  
 		 
-	<div data-itemtype="details_preview" data-itemid="details_preview" {$item_details_preview} data-pageid="{$pageid}" data-record-id="{$recId}" 
-	data-orders="seguimientos"
-			data-details-seguimientos	>
+		<div data-itemtype="details_preview" data-itemid="details_preview" {$item_details_preview} data-pageid="{$pageid}" data-record-id="{$recId}" 
+	data-orders="seguimientos,"
+			data-details-seguimientos			data-details-	>
 		<span data-details-inside data-short-table="seguimientos">
+			</span>
+		<span data-details-inside data-short-table="">
 			</span>
 		<div data-details-preview>
 	</div>
 </div>
+ 
 	{END grid_vrecord}
 	{END grid_record}
 {END grid_row}

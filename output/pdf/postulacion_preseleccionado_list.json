@@ -210,6 +210,9 @@ pdfDocument = {
 				
 			{"text":"","hidden":"{$item_hide_inline_add}"},
 				
+				
+			{"text":"","hidden":"{$item_hide_delete}"},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',
@@ -329,7 +332,7 @@ pdfDocument = {
 			{"text":""},
 				
 				
-			{"text":"<label>Estado:</label>\n<select name=\"estados_preseleccionados\" id=\"estados_preseleccionados\">\n\t<option value=\"2\" selected=\"selected\">Seleccionado</option>\n\t<option value=\"3\">Evaluacion-Empresa</option>\n</select>","color":"#000000","hidden":"{$item_hide_text_cambiar_estado_preseleccionado}","isHtml":true},
+			{"text":"<label>Estado:</label>\n<select name=\"estados_preseleccionados\" id=\"estados_preseleccionados\">\n\t<option value=\"2\" selected=\"selected\">Seleccionado</option>\t\n</select>","color":"#000000","hidden":"{$item_hide_text_cambiar_estado_preseleccionado}","isHtml":true},
 				
 				
 			{"text":""},

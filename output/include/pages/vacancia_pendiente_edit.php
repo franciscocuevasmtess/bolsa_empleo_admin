@@ -760,7 +760,8 @@ array( 'section' => '',
 'integrated_edit_field1' => array( 'field' => 'id_empresa_sucursal',
 'type' => 'integrated_edit_field',
 'orientation' => 0,
-'updateOnEdit' => false ),
+'updateOnEdit' => false,
+'color' => '#000000' ),
 'integrated_edit_field3' => array( 'field' => 'id_rubro',
 'type' => 'integrated_edit_field',
 'orientation' => 0,
@@ -933,5 +934,20 @@ array( 'location' => 'step4',
 'imageBgColor' => '#f2f2f2',
 'controlsBgColor' => 'white',
 'imagePosition' => 'right',
+'pageCSS' => '/* Put  your custom CSS code here */
+/*
+select.form-control option {
+  color: #000 !important;
+}
+
+select.form-control {
+  color: #000 !important;
+}
+
+select.form-control, .dropdown-menu > li > a {
+    color: black !important;
+    background-color: white !important;
+}
+*/',
 'listTotals' => 1 );
 		?>

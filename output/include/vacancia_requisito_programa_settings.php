@@ -134,7 +134,7 @@ $tdatavacancia_requisito_programa[".isUseAjaxSuggest"] = true;
 
 
 
-																																																																																																																																																																																													
+																																																																																																																																																																																																																																																																					
 
 $tdatavacancia_requisito_programa[".ajaxCodeSnippetAdded"] = false;
 
@@ -196,6 +196,17 @@ $tdatavacancia_requisito_programa[".sqlFrom"] = "FROM bolsa_empleo.vacancia_requ
 $tdatavacancia_requisito_programa[".sqlWhereExpr"] = "";
 $tdatavacancia_requisito_programa[".sqlTail"] = "";
 
+//fill array of tabs for list page
+$arrGridTabs = array();
+$arrGridTabs[] = array(
+	'tabId' => "",
+	'name' => "All data",
+	'nameType' => 'Text',
+	'where' => "",
+	'showRowCount' => 0,
+	'hideEmpty' => 0,
+);
+$tdatavacancia_requisito_programa[".arrGridTabs"] = $arrGridTabs;
 
 
 
@@ -460,7 +471,7 @@ $tdatavacancia_requisito_programa[".hideMobileList"] = array();
 		
 	$edata["LinkField"] = "id_vacancias";
 	$edata["LinkFieldType"] = 20;
-	$edata["DisplayField"] = "id_estado_vacancia";
+	$edata["DisplayField"] = "id_vacancias";
 
 	
 
